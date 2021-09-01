@@ -1,0 +1,129 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- ADD Toast Grid -->
+        <link rel="stylesheet" href="tui-grid.css" />
+        <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
+        <script src="tui-grid.js"></script>
+        <script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.min.js" />
+        </script>
+        <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+
+        <!-- 가맹점 css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            function drawGrid() {
+                var data = [
+                    {
+                        colA_ID: 'colA_val1',
+                        colB_ID: 'colB_val1',
+                        colC_ID: 'colC_val1'
+                    },
+                    {
+                        colA_ID: 'colA_val2',
+                        colB_ID: 'colB_val2',
+                        colC_ID: 'colC_val2'
+                    },
+                    {
+                        colA_ID: 'colA_val3',
+                        colB_ID: 'colB_val3',
+                        colC_ID: 'colC_val3'
+                    },
+                    {
+                        colA_ID: 'colA_val4',
+                        colB_ID: 'colB_val4',
+                        colC_ID: 'colC_val4'
+                    }
+                ];
+                var Grid = tui.Grid;
+                const grid = new Grid({
+                    el: document.getElementById('grid'),
+                    /* 
+                    column을 정의해줍니다.
+                    - header: 테이블에 표시될 칼럼 명
+                    - name: data에서 넘어올 ID
+                    */
+                    columns: [
+                        {
+                            header: '해법 수학', name: 'colA_ID'
+                        },
+                        {
+                            header: '해법 영어', name: 'colB_ID'
+                        },
+                        {
+                            header: '전과목 text input', name: 'colC_ID', editor: 'text'
+                        },
+                        {
+                            header: '저장', name: '저장', formatter: () => { return '<a href="#"> 저장 </a>' }
+                        },
+                        {
+                            header: '버튼', name: '버튼', formatter: () => { return '<button class="btn_table blue"> 버튼 </button>' }
+                        }
+                    ],
+                    data: data,
+                    rowHeaders: ['checkbox']
+                });
+                /*
+                */
+
+                /*grid.resetData(data);*/
+                /*Grid.applyTheme('striped'); */
+            }
+            function drawCalendar() {
+                var cal = new tui.Calendar('#calendar', {
+                    defaultView: 'month' // monthly view option
+                });
+                // 달력 값 세팅 
+                cal.createSchedules([
+                    {
+                        id: '1',
+                        calendarId: 'Major Lecture',
+                        title: '자료 구조',
+                        category: 'time',
+                        start: '2021-04-03T10:30:00',
+                        end: '2021-04-05T12:30:00'
+                    },
+                    {
+                        id: '2',
+                        calendarId: 'General Lecture',
+                        title: '건강과 영양',
+                        category: 'time',
+                        dueDateClass: '',
+                        start: '2021-04-01T14:30:00',
+                        end: '2021-04-03T16:30:00',
+                        isReadOnly: true // schedule is read-only
+                    },
+                    {
+                        id: '3',
+                        calendarId: 'General Lecture',
+                        title: '공업수학',
+                        category: 'time',
+                        dueDateClass: '',
+                        start: '2021-04-20T14:30:00',
+                        end: '2021-04-20T16:30:00',
+                        isReadOnly: true // schedule is read-only
+                    }
+                ]);
+
+
+            }
+            setTimeout(drawGrid, 100);
+            setTimeout(drawCalendar, 200);
+
+        </script>
+    </head>
+
+    <body>
+        <!-- Git test -->
+        <h3> Test Table </h3>
+        <div id="grid"></div>
+        <p> Table End </p>
+        <h3> Test Calendar </h3>
+        <div id="calendar"></div>
+        <p> Calendar End </p>
+    </body>
+
+</html>

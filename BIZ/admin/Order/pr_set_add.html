@@ -1,0 +1,165 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("상품 관리");
+        $(".three_tit,.align_right h2").text("세트그룹등록");
+
+
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" onclick="movepage('index.html?page=order/pr_add01');" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+                <th>세트명<span class="required"></span></th>
+                <td><input type="text">
+                    <label for="set_chk01" class="chk_idt">
+                        <input type="checkbox" name="set" id="chk_rdo01" />
+                        <span>초도 발송용</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>카테고리1<span class="required"></span></th>
+                <td><select>
+                        <option>카테고리1</option>
+                    </select></td>
+                <th>카테고리2<span class="required"></span></th>
+                <td><select>
+                        <option>카테고리2</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <th>상품코드</th>
+                <td><input type="text"></td>
+                <th>세트재고</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>학년<span class="required"></span></th>
+                <td><select>
+                        <option>학년 선택</option>
+                    </select></td>
+                <th>이미지</th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">찾아보기</label>
+                </td>
+            </tr>
+            <tr>
+                <th>비고</th>
+                <td colspan="3"><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>세트설명</th>
+                <td colspan="3"><textarea></textarea></td>
+            </tr>
+            <tr>
+                <th>노출메뉴</th>
+                <td colspan="3">
+                    <select>
+                        <option>메뉴</option>
+                    </select>
+                    <select>
+                        <option>상세</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>가격<span class="required"></span></th>
+                <td><input type="text"></td>
+                <th>주문단위(set)<span class="required"></span></th>
+                <td>최소<input type="text" class="mr_10">추가<input type="text" class="mr_10">출고<input type="text"></td>
+            </tr>
+            <tr>
+                <th>과세여부<span class="required"></span></th>
+                <td><select>
+                        <option>과세여부 선택</option>
+                    </select></td>
+                <th>판매상태<span class="required"></span></th>
+                <td><select>
+                        <option>판매상태 선택</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <th>세트구성<span class="required"></span><br /><a href="javascript:openPop('../admin/order/pop_set_import.html','940','620');" class="btn_table gray">상품 추가</a></th>
+                <td class="in_table" colspan="3">
+                    <table class="table_sub_list">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col>
+                            <col style="width:10%">
+                            <col style="width:10%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>상품코드</th>
+                                <th>카테고리1</th>
+                                <th>카테고리2</th>
+                                <th>상품명</th>
+                                <th>수량</th>
+                                <th>삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="font_gmarket13">1112330211</span></td>
+                                <td>학원교재</td>
+                                <td>초등기본편</td>
+                                <td class="tl">e수학 연산쏙쏙 B4권</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><a href="" class="btn_table black">삭제</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <p>
+        <a href="" class="btn_basic line">취소</a>
+    </p>
+    <p>
+        <a href="" class="btn_basic">등록</a>
+    </p>
+</div>

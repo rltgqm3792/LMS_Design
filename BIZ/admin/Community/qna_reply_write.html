@@ -1,0 +1,101 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("고객센터");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><a href="javascript:void(0);" class="ly_info"></a>
+    <div class="ly_info_pop">
+        <p><a href="javascript:void(0);" class="ly_info_close"></a>
+            <span>에듀 지사주문 내용 설명입니다.<br>
+                에듀 지사주문 내용 설명입니다. <br>
+                에듀 지사주문 내용 설명입니다. <br>
+            </span>
+        </p>
+    </div>
+    </p>
+</div>
+<!--//타이틀-->
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%">
+            <col style="width: 38%">
+            <col style="width: 12%">
+            <col style="width: 38%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>문의제목</th>
+                <td>시스템오류 질문입니다~</td>
+                <th>작성일시</th>
+                <td>2019-08-14 17:59</td>
+            </tr>
+            <tr>
+                <th>작성자 정보</th>
+                <td colspan="3">
+                    <span class="bar_txt">
+                        <span>김해법 강사</span>
+                        <span>010-1234-1234</span>
+                        <span>안성 공도금호점(H001)</span>
+                        <span>수강생 43명</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>문의내용</th>
+                <td colspan="3">갑자기 해답지가 출력이 안됩니다.<br>컴퓨터를 업그레이드했는데 이게 문제일까요?</td>
+            </tr>
+            <tr>
+                <th>문의유형</th>
+                <td colspan="3">시스템 &gt; 원격지원</td>
+            </tr>
+            <tr>
+                <th>파일선택</th>
+                <td colspan="3"><span class="ico_attach_file"><a href="">eventwinner.pdf</a></span></td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td colspan="3"><input type="text" class="input_full" value="RE: " /></td>
+            </tr>
+            <tr>
+                <th>답변(A)<span class="required"></span></th>
+                <td colspan="3">에디터영역</td>
+            </tr>
+            <tr>
+                <th>파일첨부</th>
+                <td colspan="3">
+                    <div class="attach_file_lst">
+                        <ul>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <span class="delete_File"></span></li>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <span class="delete_File"></span></li>
+                        </ul>
+                        <!-- [D] 파일첨부전 드래그/드롭 시 on클래스 추가 -->
+                        <p class="guide_tx"><span>첨부할 파일을 직접 드래그 앤 드롭 해주세요</span></p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_bottom_wrap between">
+    <a href="index.html?page=community/qna_list" class="btn_basic cancel">목록</a>
+    <span>
+        <a href="" class="btn_basic cancel">VOC 등록</a>
+        <a href="index.html?page=community/faq_write" class="btn_basic confirm">FAQ 등록</a>
+        <a href="" class="btn_basic confirm">저장</a>
+    </span>
+</div>

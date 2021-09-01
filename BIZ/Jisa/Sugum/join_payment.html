@@ -1,0 +1,314 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("가맹점 입금내역");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<script>
+    /* 셀렉트박스 보이게 하기 */
+    $(".dropdown dt a").on('click', function () {
+        $(".dropdown dd ul").slideToggle('fast');
+    });
+
+    $(".dropdown dd ul li a").on('click', function () {
+        $(".dropdown dd ul").hide();
+    });
+
+    function getSelectedValue(id) {
+        return $("#" + id).find("dt a span.value").html();
+    }
+
+    $(document).bind('click', function (e) {
+        var $clicked = $(e.target);
+        if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
+    });
+
+    $('.mutliSelect input[type="checkbox"]').on('click', function () {
+
+        var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
+            title = $(this).val() + ",";
+
+        if ($(this).is(':checked')) {
+            var html = '<span title="' + title + '">' + title + '</span>';
+            $('.multiSel').append(html);
+            $(".hida").hide();
+        } else {
+            $('span[title="' + title + '"]').remove();
+            var ret = $(".hida");
+            $('.dropdown dt a').append(ret);
+
+        }
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>월선택</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>가맹점 선택</dt>
+                <dd>
+                    <input type="text" class="txt_search" />&nbsp;
+                    <a href="" class="btn_table gray">찾아보기</a>
+                    <label for="join_chk01" class="chk_idt01 ml_10">
+                        <input type="checkbox" name="join" id="join_chk01" />
+                        <span>가맹점전체</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="final" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="final_chk01" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk01" />
+                        <span>활동</span>
+                    </label>
+                    <label for="final_chk02" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk02" />
+                        <span>정지</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>입금여부</dt>
+                <dd>
+                    <dl class="dropdown">
+                        <dt><a href="#"><span class="hida">Select</span>
+                                <p class="multiSel"></p>
+                            </a></dt>
+                        <dd>
+                            <div class="mutliSelect">
+                                <ul>
+                                    <li><label><input type="checkbox" value="전체" />전체</label></li>
+                                    <li><label><input type="checkbox" value="미입금" />미입금</label></li>
+                                    <li><label><input type="checkbox" value="현금입금(자동이체)" />현금입금(자동이체)</label></li>
+                                    <li><label><input type="checkbox" value="자동이체대기" />자동이체대기</label></li>
+                                    <li><label><input type="checkbox" value="카드입금" />카드입금</label></li>
+                                    <li><label><input type="checkbox" value="부분입금" />부분입금</label></li>
+                                    <li><label><input type="checkbox" value="실시간 계좌이체" />실시간 계좌이체</label></li>
+                                    <li><label><input type="checkbox" value="수수료차감" />수수료차감</label></li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd><select>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<h4 class="tit_h4 mt_20">가맹점입금내역 요약정보</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>총 통보액 (원)</th>
+                <th>총 매출액</th>
+                <th>전월 미입금액(원)</th>
+                <th>현 입금액(원)</th>
+                <th>현 미수금(원)</th>
+                <th>수급율</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">39,998,430</span></td>
+                <td><span class="font_gmarket13">39,998,430</span></td>
+                <td><span class="font_gmarket13">39,998,430</span></td>
+                <td><span class="font_gmarket13">39,998,430</span></td>
+                <td><span class="font_gmarket13">39,998,430</span></td>
+                <td><span class="font_gmarket13">68%</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<span class="point_guide">교재비 입금은 매월 마지막 영업일 1시까지만 진행됩니다. (이후에는 시스템 점검 및 수금통보서 작업으로 인해 입금이 제한됨. 익월 1일부터 입금 가능)</span>
+<div class="table_list scroll_x mt_20">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:50px" />
+            <col style="width:50px" />
+            <col style="width:70px" />
+            <col style="width:80px" />
+            <col style="width:250px" />
+            <col style="width:80px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:80px" />
+            <col style="width:100px" />
+            <col style="width:120px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:80px" />
+            <col style="width:100px" />
+            <col style="width:140px" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>가맹점코드</th>
+                <th>가맹점명</th>
+                <th>상태</th>
+                <th>정지일</th>
+                <th>본사입금</th>
+                <th>판촉물</th>
+                <th>전월 미입금액</th>
+                <th>기타금액</th>
+                <th>총 통보액</th>
+                <th>매출비율</th>
+                <th>수금 월</th>
+                <th>수금확인</th>
+                <th>현 수금액</th>
+                <th>현 미수금</th>
+                <th>수금율</th>
+                <th>입금일</th>
+                <th>계좌번호</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>전과목</td>
+                <td><span class="font_gmarket13">G0987</span></td>
+                <td class="tl">가산푸르지오점</td>
+                <td>활동</td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">65%</span></td>
+                <td><span class="font_gmarket13">2021.03</span></td>
+                <td>자동이체 대기</td>
+                <td><span class="font_gmarket13">28,000</span></td>
+                <td><span class="font_gmarket13">28,000</span></td>
+                <td><span class="font_gmarket13">65%</span></td>
+                <td><a href="javascript:openPop('../jisa/sugum/pop_pay_detail.html','940','670');"><span class="font_gmarket13">2021.10.30</span></a></td>
+                <td><span class="font_gmarket13">122-4516585-655</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

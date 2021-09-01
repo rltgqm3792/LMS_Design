@@ -1,0 +1,264 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("월별 주문 통계");
+        $(".align_right h2").text("미주문율 통계");
+
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문기간</dt>
+                <dd>
+                    <select>
+                        <option>2021년</option>
+                    </select>
+                    <select>
+                        <option>02월</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>담당자</dt>
+                <dd>
+                    <select>
+                        <option>선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점</dt>
+                <dd>
+                    <select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹점전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <h4 class="tit_h4">본사 총합</h4>
+    <p><a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a></p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%" />
+            <col style="width:4%" />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">FC구분</th>
+                <th rowspan="2">활동 수강생 수</th>
+                <th colspan="8">당월</th>
+                <th colspan="8">익월</th>
+            </tr>
+            <tr>
+                <th>학습설정 완료</th>
+                <th>학습미설정</th>
+                <th>미설정률</th>
+                <th>주문완료권수</th>
+                <th>주문가능권수</th>
+                <th>미주문수</th>
+                <th>미주문율</th>
+                <th>최종제출가맹</th>
+                <th>학습설정 완료</th>
+                <th>학습미설정</th>
+                <th>미설정률</th>
+                <th>주문완료권수</th>
+                <th>주문가능권수</th>
+                <th>미주문수</th>
+                <th>미주문율</th>
+                <th>최종제출가맹</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>영어</td>
+                <td><span class="font_gmarket13">130</span></td>
+                <td><span class="font_gmarket13">130</span></td>
+                <td><span class="font_gmarket13">13</span></td>
+                <td><span class="font_gmarket13">10%</span></td>
+                <td><span class="font_gmarket13">50</span></td>
+                <td><span class="font_gmarket13">50</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0%</span></td>
+                <td><span class="font_gmarket13">458/685</span></td>
+                <td><span class="font_gmarket13">130</span></td>
+                <td><span class="font_gmarket13">13</span></td>
+                <td><span class="font_gmarket13">10%</span></td>
+                <td><span class="font_gmarket13">50</span></td>
+                <td><span class="font_gmarket13">50</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0%</span></td>
+                <td><span class="font_gmarket13">458/685</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4 mt_20">지사별 부분합</h4>
+<div class="btn_top_wrap between" style="margin-top:0px !important;">
+    <p>
+        <span class="list_num">전체 <strong>70</strong>개</span>
+    </p>
+    <p><a href="" class="btn_top line">가맹점 상세보기</a></p>
+</div>
+<div class="table_scroll" style="height:300px;">
+    <div class="table_list culumn" style="width:2000px;">
+        <table>
+            <colgroup>
+                <col style="width:4%" />
+                <col style="width:4%" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2">No</th>
+                    <th rowspan="2">FC구분</th>
+                    <th rowspan="2">지사코드</th>
+                    <th rowspan="2">지사명</th>
+                    <th rowspan="2">활동 수강생 수</th>
+                    <th colspan="8">당월</th>
+                    <th colspan="8">익월</th>
+                </tr>
+                <tr>
+                    <th>학습설정 완료</th>
+                    <th>학습미설정</th>
+                    <th>미설정률</th>
+                    <th>주문완료권수</th>
+                    <th>주문가능권수</th>
+                    <th>미주문수</th>
+                    <th>미주문율</th>
+                    <th>최종제출가맹</th>
+                    <th>학습설정 완료</th>
+                    <th>학습미설정</th>
+                    <th>미설정률</th>
+                    <th>주문완료권수</th>
+                    <th>주문가능권수</th>
+                    <th>미주문수</th>
+                    <th>미주문율</th>
+                    <th>최종제출가맹</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>영어</td>
+                    <td><a href="javascript:openPop('../admin/order/pop_order_detail.html','940','670');"><span class="font_gmarket13">J0007</span></a></td>
+                    <td><a href="javascript:openPop('../admin/order/pop_order_detail.html','940','670');">은평서대문 강서 양천 지사</a></td>
+                    <td><span class="font_gmarket13">130</span></td>
+                    <td><span class="font_gmarket13">130</span></td>
+                    <td><span class="font_gmarket13">13</span></td>
+                    <td><span class="font_gmarket13">10%</span></td>
+                    <td><span class="font_gmarket13">50</span></td>
+                    <td><span class="font_gmarket13">50</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0%</span></td>
+                    <td><span class="font_gmarket13">458/685</span></td>
+                    <td><span class="font_gmarket13">130</span></td>
+                    <td><span class="font_gmarket13">13</span></td>
+                    <td><span class="font_gmarket13">10%</span></td>
+                    <td><span class="font_gmarket13">50</span></td>
+                    <td><span class="font_gmarket13">50</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0%</span></td>
+                    <td><span class="font_gmarket13">458/685</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

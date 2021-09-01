@@ -1,0 +1,42 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("학부모 설명회");
+
+
+        //달력
+        calendar();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="index.html?page=jisa/jisa_parent01_01">본사 학부모 설명회</a></li>
+    <li><a href="index.html?page=jisa/jisa_parent02">지사 학부모 설명회</a></li>
+</ul>
+<ul class="tab_3depth">
+    <li class="on"><a href="index.html?page=jisa/jisa_parent01_01">신청현황</a></li>
+    <li><a href="index.html?page=jisa/jisa_parent01_02">접수완료현황</a></li>
+</ul>
+<ul class="tip_box">
+    <li><span class="tip">Tip 1.</span>학부모 설명회 추가 등록은 일별 등록제한 건수와 관계없이 등록 가능합니다. <a href="javascript:openPop('../admin/jisa/pop_schedule_request.html','940','670');">[추가신청]</a></li>
+    <li><span class="tip">Tip 2.</span>교육 담당자 등록 시 오른쪽 버튼을 선택 후, 등록해주세요 <a href="javascript:openPop('../admin/jisa/pop_person_add.html','640','670');">[교육담당자 등록]</a></li>
+    <li><span class="tip">Tip 3.</span>1회 신청한 가맹점은 180일 이내 재신청이 불가하며, 지사는 1주에 1회만 신청 가능합니다.</li>
+    <li><span class="tip">Tip 4.</span>2주 이내 학부모설명회를 취소할 경우, 90일 동안 본사 학부모설명회 지원이 불가합니다.</li>
+    <li><span class="tip">Tip 5.</span>신청 후 수정 및 상세 내용은 해당 가맹점명을 클릭하세요.</li>
+</ul>
+<div id="calendar"></div>
+<a href="javascript:openPop('../jisa/jisa/pop_pr_request.html','940','670');">신청</a><br />

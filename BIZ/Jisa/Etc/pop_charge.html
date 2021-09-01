@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>SMS 포인트 충전</h1>
+        </header>        
+        <section class="pop_content">
+            <!-- tit_sub_txt --> 
+            <div class="tbl_flex mb_5">
+                <h2 class="tit_pop">결제 수단과 충전 금액을 선택해 주세요.</h2>
+                <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+            </div>
+            <div class="table_input">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:80%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>결제 수단<span class="required"></span></th>
+                            <td>
+                                <label for="pay_01" class="rdo_idt table">
+                                    <input type="radio" name="pay" id="pay_01" checked />
+                                    <span>카드</span>
+                                </label>
+                                <label for="pay_02" class="rdo_idt table">
+                                    <input type="radio" name="pay" id="pay_02" />
+                                    <span>계좌이체</span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>충전금액<span class="required"></span></th>
+                            <td>
+                                <label for="money_01" class="rdo_idt table">
+                                    <input type="radio" name="money" id="money_01" checked />
+                                    <span>10,000원</span>
+                                </label>
+                                <label for="money_02" class="rdo_idt table">
+                                    <input type="radio" name="money" id="money_02" />
+                                    <span>20,000원</span>
+                                </label>
+                                <label for="money_03" class="rdo_idt table">
+                                    <input type="radio" name="money" id="money_03" />
+                                    <span>30,000원</span>
+                                </label>
+                                <label for="money_04" class="rdo_idt table">
+                                    <input type="radio" name="money" id="money_04" />
+                                    <span>50,000원</span>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn_bottom_wrap right">
+                <p>
+                    <a href="" class="btn_basic">충전하기</a>
+                </p>
+            </div>
+            <div class="box_guide">
+                <div>
+                    <p class="tit">카드 결제 안내</p>
+                    <ul>
+                        <li>고객님의 개인정보유출과 카드의 부정 사용을 방지하기 위하여 보유하신 카드에 따라 인터넷안전결제(ISP) 또는 안심클릭결제를 의무적으로 사용해야 합니다.</li>
+                        <li>전자금융거래기본법에 의해 30만원 이상의 상품을 주문하실 경우에는 BC, KB(국민)카드는 공인인증서를 의무적으로 사용하여야 하며, BC, KB(국민)카드 이외의 카드는 안심클릭결제와 공인인증서를 선택하여 사용할 수 있습니다.</li>
+                    </ul>
+                    <div class="pay_guide">
+                        <a href="" class="btn_basic line">공인인증안내</a>
+                        <a href="" class="btn_basic line">인터넷안전결제(ISP)안내</a>
+                        <a href="" class="btn_basic line">안심클릭결제안내</a>  
+                    </div>
+                </div>
+            </div>
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+        </section>
+    </article>
+</body>
+</html>
+

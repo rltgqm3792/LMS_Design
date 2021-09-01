@@ -1,0 +1,194 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit, .align_right h2").text("수수료 관리");
+
+        //달력
+        datepicker();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+
+        $('.ly_info01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'block');
+        });
+        $('.ly_info_close01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'none');
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- tab_2depth -->
+<div class="align_right">
+    <ul class="tab_2depth">
+        <li class="on"><a href="index.html?page=sugum/charge_list01">수수료 지급내역</a></li>
+        <li><a href="index.html?page=sugum/charge_list02">물품대행내역</a></li>
+        <li><a href="index.html?page=sugum/charge_list03">월 별 수수료</a></li>
+        <li><a href="index.html?page=sugum/charge_list04">수금마감 입금액</a></li>
+    </ul>
+    <p><a href="https://www.nts.go.kr/nts/main.do" target="_blank" class="btn_top">국세청 바로가기</a></p>
+</div>
+<!-- tab_2depth -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" checked />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>월선택</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<h4 class="tit_h4 mt_20">가맹점 모집 대행수수료 지급내역</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>FC구분</th>
+                <th>마감 일</th>
+                <th>구분</th>
+                <th>가맹점 대행수수료</th>
+                <th>개원홍보비</th>
+                <th>계산서 발행액</th>
+                <th>공급가액</th>
+                <th>세액</th>
+                <th>실지급액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>수학</td>
+                <td><span class="font_gmarket13">2020.10.30</span></td>
+                <td></td>
+                <td><span class="font_gmarket13">98,430</span></td>
+                <td><a href="javascript:openPop('../jisa/sugum/pop_pr.html','940','670');"><span class="font_gmarket13">300,000</span></a></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">277,777</span></td>
+                <td><span class="font_gmarket13">277,777</span></td>
+                <td><span class="font_gmarket13">277,777</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="tooltip mt_20">
+    <h4 class="tit_h4 mt_20">물품대행수수료 지급내역</h4>
+    <p>
+        <a href="javascript:void(0);" class="ly_info01"></a>
+    <div class="ly_info_pop01">
+        <div><a href="javascript:void(0);" class="ly_info_close01"></a>
+            <ul>
+                <li>- 실제 입금되는 금액은 교육비/광고비/미수금을 제외하고 입금됩니다.</li>
+                <li>- 상세금액(파란색)클릭 시 해당항목의 상세 내역을 볼 수 있습니다.</li>
+                <li>- 카드 수수료: 월별 카드수수료 내역에서 확인 / 미수금 : 주문관리 > 지사물품내역 에서 확인 가능</li>
+            </ul>
+        </div>
+    </div>
+    </p>
+</div>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col />
+            <col style="width:7%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>FC구분</th>
+                <th>마감월</th>
+                <th>구분</th>
+                <th>지사수수료</th>
+                <th>카드수수료</th>
+                <th>광고비</th>
+                <th>미수금</th>
+                <th>운반비</th>
+                <th>계산서 발행액</th>
+                <th>공급가액</th>
+                <th>세액</th>
+                <th>실 지급액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>전과목</td>
+                <td><span class="font_gmarket13">2021.10</span></td>
+                <td></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><a href=""><span class="font_gmarket13">300,000</span></a></td>
+                <td><a href="javascript:openPop('../jisa/sugum/pop_ad.html','940','670');"><span class="font_gmarket13">300,000</span></a></td>
+                <td><a href=""><span class="font_gmarket13">300,000</span></a></td>
+                <td><a href=""><span class="font_gmarket13">300,000</span></a></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

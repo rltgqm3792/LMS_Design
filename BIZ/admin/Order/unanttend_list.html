@@ -1,0 +1,424 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("미처리리스트");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문기간</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문대상</dt>
+                <dd>
+                    <label for="all_chk02" class="chk_idt all">
+                        <input type="checkbox" name="category" id="all_chk02" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="category_chk01" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk01" />
+                        <span>지사</span>
+                    </label>
+                    <label for="category_chk02" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk02" />
+                        <span>가맹점</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문구분</dt>
+                <dd>
+                    <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="order" id="all_chk03" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="order_chk01" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk01" />
+                        <span>수강생</span>
+                    </label>
+                    <label for="order_chk02" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk02" />
+                        <span>일반</span>
+                    </label>
+                    <label for="order_chk03" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk03" />
+                        <span>홍보판촉</span>
+                    </label>
+                    <label for="order_chk04" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk04" />
+                        <span>부록지</span>
+                    </label>
+                    <label for="order_chk05" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk05" />
+                        <span>초도</span>
+                    </label>
+                    <label for="order_chk06" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk06" />
+                        <span>오발송㈜</span>
+                    </label>
+                    <label for="order_chk07" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk07" />
+                        <span>파본㈜</span>
+                    </label>
+                    <label for="order_chk08" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk08" />
+                        <span>미반품㈜</span>
+                    </label>
+                    <label for="order_chk08" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk08" />
+                        <span>교환㈜</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생 주문 구분</dt>
+                <dd>
+                    <label for="order_check01" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_check01" />
+                        <span>신규</span>
+                    </label>
+                    <label for="order_check02" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_check02" />
+                        <span>복회</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>지사명</option>
+                        <option>지사코드</option>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                        <option>가맹점ERP코드</option>
+                        <option>주문번호</option>
+                        <option>상품코드</option>
+                        <option>상품명</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>최종제출</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="final" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="final_chk01" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk01" />
+                        <span>제출전</span>
+                    </label>
+                    <label for="final_chk02" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk02" />
+                        <span>제출완료</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <div class="btn_more">
+        <a href="">화살표</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+        <span class="bar"></span>
+        <span class="list_num">
+            미처리 주문건수
+            <strong class="mt_1">35</strong>
+            건
+        </span>
+        <span class="bar"></span>
+        <span class="list_num">
+            가맹점 수
+            <strong class="mt_1">29</strong>
+            건
+        </span>
+        <span class="bar"></span>
+        <span class="list_num">
+            수량
+            <strong class="mt_1">92</strong>
+            개
+        </span>
+        <span class="bar"></span>
+        <span class="list_num">
+            금액
+            <strong class="mt_1">129,500</strong>
+            원
+        </span>
+    </p>
+    <p><a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="javascript:alert_open('주문이 취소되어 가맹점 장바구니로 돌아갑니다.<br/>수정 후 다시 주문해야 합니다.');" class="btn_top black">주문취소</a>
+        <a href="javascript:alert_confirm('해당 주문을 승인처리하시겠습니까?');" class="btn_top">주문처리</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:3%;" />
+            <col style="width:5%;" />
+            <col style="width:5%;" />
+            <col style="width:5%;" />
+            <col />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+            <col style="width:10%;" />
+            <col style="width:10%;" />
+            <col style="width:5%;" />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>지사코드</th>
+                <th>지사명</th>
+                <th>가맹코드<br />(ERP코드)</th>
+                <th>가맹점명</th>
+                <th>주문대상</th>
+                <th>주문구분</th>
+                <th>주문일</th>
+                <th>주문번호</th>
+                <th>수량</th>
+                <th>주문금액(원)</th>
+                <th>최종제출여부</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>영어</td>
+                <td><span class="font_gmarket13">0910</span></td>
+                <td class="tl">금천영등포</td>
+                <td><span class="font_gmarket13">H6016<br />(6775)</span></td>
+                <td>트리플A교실</td>
+                <td>가맹점</td>
+                <td>수강생<br />(신,복,월,추,부)</td>
+                <td><span class="font_gmarket13">2021.06.30 17:58</span></td>
+                <td><a href="javascript:openPop('../admin/order/pop_ordernumber_detail.html','940','670');"><span class="font_gmarket13">20201001215</span></a></td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td><span class="font_gmarket13">362,000</span></td>
+                <td><span>제출전</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>영어</td>
+                <td><span class="font_gmarket13">0910</span></td>
+                <td class="tl">금천영등포</td>
+                <td><span class="font_gmarket13">H6016<br />(6775)</span></td>
+                <td>트리플A교실</td>
+                <td>가맹점</td>
+                <td>수강생<br />(신,복,월,추,부)</td>
+                <td><span class="font_gmarket13">2021.06.30 17:58</span></td>
+                <td><a href="javascript:openPop('../admin/order/pop_ordernumber_detail.html','940','670');"><span class="font_gmarket13">20201001215</span></a></td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td><span class="font_gmarket13">362,000</span></td>
+                <td><span>제출전</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>영어</td>
+                <td><span class="font_gmarket13">0910</span></td>
+                <td class="tl">금천영등포</td>
+                <td><span class="font_gmarket13">H6016<br />(6775)</span></td>
+                <td>트리플A교실</td>
+                <td>가맹점</td>
+                <td>수강생<br />(신,복,월,추,부)</td>
+                <td><span class="font_gmarket13">2021.06.30 17:58</span></td>
+                <td><a href="javascript:openPop('../admin/order/pop_ordernumber_detail.html','940','670');"><span class="font_gmarket13">20201001215</span></a></td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td><span class="font_gmarket13">362,000</span></td>
+                <td><span>제출전</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>영어</td>
+                <td><span class="font_gmarket13">0910</span></td>
+                <td class="tl">금천영등포</td>
+                <td><span class="font_gmarket13">H6016<br />(6775)</span></td>
+                <td>트리플A교실</td>
+                <td>가맹점</td>
+                <td>수강생<br />(신,복,월,추,부)</td>
+                <td><span class="font_gmarket13">2021.06.30 17:58</span></td>
+                <td><a href="javascript:openPop('../admin/order/pop_ordernumber_detail.html','940','670');"><span class="font_gmarket13">20201001215</span></a></td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td><span class="font_gmarket13">362,000</span></td>
+                <td><span>제출전</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>영어</td>
+                <td><span class="font_gmarket13">0910</span></td>
+                <td class="tl">금천영등포</td>
+                <td><span class="font_gmarket13">H6016<br />(6775)</span></td>
+                <td>트리플A교실</td>
+                <td>가맹점</td>
+                <td>수강생<br />(신,복,월,추,부)</td>
+                <td><span class="font_gmarket13">2021.06.30 17:58</span></td>
+                <td><a href="javascript:openPop('../admin/order/pop_ordernumber_detail.html','940','670');"><span class="font_gmarket13">20201001215</span></a></td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td><span class="font_gmarket13">362,000</span></td>
+                <td><span>제출전</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

@@ -1,0 +1,50 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("HME학습컨설팅평가");
+
+
+        //달력
+        calendar();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>연도선택</dt>
+                <dd><select>
+                        <option>2021년</option>
+                    </select></dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+
+</div>
+<!-- //초기화,검색 버튼 -->
+
+<div id="grid"></div>
+<a href="" class="btn_table gray">수정</a>
+<a href="" class="btn_table black">삭제</a>
+<a href="" class="btn_table line excel"><span>엑셀 다운로드</span></a>
+<div class="btn_bottom_wrap right">
+    <a href="javascript:openPop('../admin/Etc/pop_hme.html','940','470');" class="btn_basic">등록</a>
+</div>

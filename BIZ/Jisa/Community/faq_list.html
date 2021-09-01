@@ -1,0 +1,193 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("고객센터");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+
+    // $(function () {
+    //     $('.btn_slide, .btn_slide_text').on('click', function () {
+    //         $('.btn_slide').toggleClass('on');
+    //         // $('.box_reg_guide dd').slideToggle();
+    //         $(this).parent().siblings("dd").slideToggle();
+    //     });
+    // });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p>
+        <a href="javascript:void(0);" class="ly_info"></a>
+    <div class="ly_info_pop">
+        <div><a href="javascript:void(0);" class="ly_info_close"></a>
+            <span>에듀 지사주문 내용 설명입니다.<br> 에듀 지사주문 내용 설명입니다. <br> 에듀 지사주문 내용 설명입니다. <br>
+            </span>
+        </div>
+    </div>
+    </p>
+</div>
+<!--//타이틀-->
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on"><a href="index.html?page=community/faq_list">FAQ</a></li>
+    <li><a href="index.html?page=community/qna_list">Q&amp;A</a></li>
+</ul>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all check">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);">
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk01">
+                        <span>공통</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk02">
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk03">
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk04">
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <label for="cate_chk01" class="rdo_idt table">
+                        <input type="radio" name="cate" id="cate_chk01">
+                        <span>Best 5</span>
+                    </label>
+                    <label for="cate_chk02" class="rdo_idt table">
+                        <input type="radio" name="cate" id="cate_chk02">
+                        <span>주문/배송</span>
+                    </label>
+                    <label for="cate_chk03" class="rdo_idt table">
+                        <input type="radio" name="cate" id="cate_chk03">
+                        <span>수금</span>
+                    </label>
+                    <label for="cate_chk04" class="rdo_idt table">
+                        <input type="radio" name="cate" id="cate_chk04">
+                        <span>수강생</span>
+                    </label>
+                    <label for="cate_chk05" class="rdo_idt table">
+                        <input type="radio" name="cate" id="cate_chk05">
+                        <span>학습</span>
+                    </label>
+                    <label for="cate_chk06" class="rdo_idt table">
+                        <input type="radio" name="cate" id="cate_chk06">
+                        <span>전산</span>
+                    </label>
+                    <label for="cate_chk07" class="rdo_idt table">
+                        <input type="radio" name="cate" id="cate_chk07">
+                        <span>기타</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>선택1</option>
+                        <option>선택2</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요.">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!--//조건검색 -->
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+    </p>
+</div>
+<div class="accordion">
+    <dl class="box_reg_guide">
+        <dt>
+            <div>
+                <span class="faq_q">Q.</span>
+                <span class="fc">수학</span>
+                <a class="btn_slide_text">수강생 등록 안내</a><span class="best_bullet">Best 5</span></a>
+            </div>
+            <a class="btn_slide">열기/닫기</a>
+        </dt>
+        <dd>
+            <div>
+                <p class="att_file"><span class="pdf"></span><a href="">eventwinner.pdf</a></p> 1. 담당 지사에서 접수 가능<br />2, 자녀 등록 시 필요서류 : 가족관계증명서 or 등본 등 자녀확인 가능 서류<br />3. 생보 등록 시 필요서류 : 수급자증명서(최근 3개월 기준)<br /><span class="guide"><a href="">수강생 등록 정보 자세히 보기</a></span>
+            </div>
+        </dd>
+    </dl>
+    <dl class="box_reg_guide">
+        <dt>
+            <div>
+                <span class="faq_q">Q.</span>
+                <span class="fc">수학</span>
+                <a class="btn_slide_text">수강생 등록 안내</a></a>
+            </div>
+            <a class="btn_slide">열기/닫기</a>
+        </dt>
+        <dd>
+            <div>
+                <p class="att_file"><span class="pdf"></span><a href="">eventwinner.pdf</a></p> 1. 담당 지사에서 접수 가능<br />2, 자녀 등록 시 필요서류 : 가족관계증명서 or 등본 등 자녀확인 가능 서류<br />3. 생보 등록 시 필요서류 : 수급자증명서(최근 3개월 기준)<br /><span class="guide"><a href="">수강생 등록 정보 자세히 보기</a></span>
+            </div>
+        </dd>
+    </dl>
+    <dl class="box_reg_guide">
+        <dt>
+            <div>
+                <span class="faq_q">Q.</span>
+                <span class="fc">수학</span>
+                <a class="btn_slide_text">수강생 등록 안내</a></a>
+            </div>
+            <a class="btn_slide">열기/닫기</a>
+        </dt>
+        <dd>
+            <div>
+                <p class="att_file"><span class="pdf"></span><a href="">eventwinner.pdf</a></p> 1. 담당 지사에서 접수 가능<br />2, 자녀 등록 시 필요서류 : 가족관계증명서 or 등본 등 자녀확인 가능 서류<br />3. 생보 등록 시 필요서류 : 수급자증명서(최근 3개월 기준)<br /><span class="guide"><a href="">수강생 등록 정보 자세히 보기</a></span>
+            </div>
+        </dd>
+    </dl>
+    <dl class="box_reg_guide">
+        <dt>
+            <div>
+                <span class="faq_q">Q.</span>
+                <span class="fc">수학</span>
+                <a class="btn_slide_text">수강생 등록 안내</a></a>
+            </div>
+            <a class="btn_slide">열기/닫기</a>
+        </dt>
+        <dd>
+            <div>
+                <p class="att_file"><span class="pdf"></span><a href="">eventwinner.pdf</a></p> 1. 담당 지사에서 접수 가능<br />2, 자녀 등록 시 필요서류 : 가족관계증명서 or 등본 등 자녀확인 가능 서류<br />3. 생보 등록 시 필요서류 : 수급자증명서(최근 3개월 기준)<br /><span class="guide"><a href="">수강생 등록 정보 자세히 보기</a></span>
+            </div>
+        </dd>
+    </dl>
+</div>
+

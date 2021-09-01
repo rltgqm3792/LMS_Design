@@ -1,0 +1,58 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("SMS 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<span class="point_guide mb_10">단문 SMS 작성 시, 패키지, 장문으로 Byte 변경 시, 충전식 요금이 부과됩니다.</span>
+<ul class="tab_1depth">
+    <li><a href="index.html?page=etc/sms_manage01">SMS 발송</a></li>
+    <li><a href="index.html?page=etc/sms_manage02">SMS 발송내역</a></li>
+    <li class="on"><a href="index.html?page=etc/sms_manage03">SMS 설정</a></li>
+    <li><a href="index.html?page=etc/sms_manage04">포인트 충전</a></li>
+    <li><a href="index.html?page=etc/sms_manage05">SMS 포인트 사용내역</a></li>
+</ul>
+<div class="search_wrap">
+    <h4 class="tit_h4">SMS발송 설정</h4>
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>발신자 번호</dt>
+                <dd>
+                    <label for="tel_rdo02" class="rdo_idt">
+                        <input type="radio" name="tel" id="tel_rdo02" checked />
+                        <span>전화번호(사업자)</span>
+                    </label>
+                    <label for="tel_rdo03" class="rdo_idt">
+                        <input type="radio" name="tel" id="tel_rdo03" />
+                        <span>휴대폰 번호</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!-- //초기화,검색 버튼 -->
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="" class="btn_basic">저장</a>
+    </p>
+</div>

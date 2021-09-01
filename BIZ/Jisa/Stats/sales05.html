@@ -1,0 +1,311 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("영업통계");
+        $(".align_right h2").text("종 별 출고 현황");
+
+        datepicker();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+
+</style>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>연도 선택</option>
+                    </select>
+                    <!-- 2021.8.26 지사이동 :hee -->
+                    <select>
+                        <option>지사선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <!-- 2021.8.26 삭제 :hee -->
+        <!-- <li>
+            <dl>
+                <dt>지사</dt>
+                <dd>
+                    <select>
+                        <option>지사선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li> -->
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<h4 class="tit_h4 mt_20">통계 표시 방안</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%">
+            <col style="width:80%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>종 별 출고 현황 표시방법</th>
+                <td><span class="main_color">종 별 출고 현황</span>(수학/영어/전과목)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="chart">
+    <div id="chartdiv"></div>
+</div>
+<div class="align_right">
+    <ul class="tab_2depth mt_30">
+        <li class="on"><a href="">수학</a></li>
+        <li><a href="">영어</a></li>
+        <li><a href="">전과목</a></li>
+    </ul>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">
+            조회기간은 <strong class="mt_1">2020</strong>년도, 총 <strong class="mt_1">1,000</strong>개의 검색결과가 표시됩니다.</span>
+    </p>
+    <p>
+        <label for="sort_rdo01" class="rdo_idt table">
+            <input type="radio" name="sort" id="sort_rdo01" checked />
+            <span>내림차순</span>
+        </label>
+        <label for="sort_rdo02" class="rdo_idt table">
+            <input type="radio" name="sort" id="sort_rdo02" />
+            <span>오름차순</span>
+        </label>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+
+<!-- Chart code -->
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+
+
+        var chart = am4core.create('chartdiv', am4charts.XYChart)
+        // chart.colors.step = 2;
+
+        chart.colors.list = [
+            am4core.color("#0093ff"),
+            am4core.color("#1bbcbc"),
+            am4core.color("#8697af"),
+        ];
+
+        chart.legend = new am4charts.Legend()
+        chart.legend.position = 'bottom'
+        chart.legend.paddingBottom = 20
+        chart.legend.labels.template.maxWidth = 95
+
+        var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+        xAxis.dataFields.category = 'category'
+        xAxis.renderer.cellStartLocation = 0.1
+        xAxis.renderer.cellEndLocation = 0.9
+        xAxis.renderer.grid.template.location = 0;
+        xAxis.dataFields.category.fontSize = "13px"
+
+
+        var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        yAxis.min = 0;
+
+        function createSeries(value, name) {
+            var series = chart.series.push(new am4charts.ColumnSeries())
+            series.dataFields.valueY = value
+            series.dataFields.categoryX = 'category'
+            series.name = name
+
+            series.events.on("hidden", arrangeColumns);
+            series.events.on("shown", arrangeColumns);
+
+            var bullet = series.bullets.push(new am4charts.LabelBullet())
+            bullet.interactionsEnabled = false
+            bullet.dy = 30;
+            bullet.label.text = '{valueY}'
+            bullet.label.fill = am4core.color('#ffffff')
+            bullet.label.fontSize = "13px"
+
+            return series;
+        }
+
+        chart.data = [
+            {
+                category: '1월',
+                수학: 40,
+                영어: 55,
+                전과목: 60
+            },
+            {
+                category: '2월',
+                수학: 30,
+                영어: 78,
+                전과목: 69
+            },
+            {
+                category: '3월',
+                수학: 27,
+                영어: 40,
+                전과목: 45
+            },
+            {
+                category: '4월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '5월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '6월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '7월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '8월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '9월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '10월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '11월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            },
+            {
+                category: '12월',
+                수학: 50,
+                영어: 33,
+                전과목: 22
+            }
+        ]
+
+
+        createSeries('수학', '수학');
+        createSeries('영어', '영어');
+        createSeries('전과목', '전과목');
+
+        function arrangeColumns() {
+
+            var series = chart.series.getIndex(0);
+
+            var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+            if (series.dataItems.length > 1) {
+                var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+                var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+                var delta = ((x1 - x0) / chart.series.length) * w;
+                if (am4core.isNumber(delta)) {
+                    var middle = chart.series.length / 2;
+
+                    var newIndex = 0;
+                    chart.series.each(function (series) {
+                        if (!series.isHidden && !series.isHiding) {
+                            series.dummyData = newIndex;
+                            newIndex++;
+                        }
+                        else {
+                            series.dummyData = chart.series.indexOf(series);
+                        }
+                    })
+                    var visibleCount = newIndex;
+                    var newMiddle = visibleCount / 2;
+
+                    chart.series.each(function (series) {
+                        var trueIndex = chart.series.indexOf(series);
+                        var newIndex = series.dummyData;
+
+                        var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+                        series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                        series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                    })
+                }
+            }
+        }
+
+    }); // end am4core.ready()
+</script>

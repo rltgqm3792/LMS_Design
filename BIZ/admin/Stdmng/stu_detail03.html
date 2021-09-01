@@ -1,0 +1,141 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수강생상세정보");
+        $(".group_nav.one_depth .tit").text("수강생관리"); // navigator 1차 menu error 때문에 추가 (2021.8.19) :chan
+
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=Stdmng/stu_detail01">기본정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail02_01">학습정보</a></li>
+    <li class="on"><a href="index.html?page=Stdmng/stu_detail03">주문정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail04">상담정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail05">출결정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail06">납부정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail07">변경이력</a></li>
+</ul>
+<h4 class="tit_h4">수학</h3>
+    <div class="table_list">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:45%">
+                <col style="width:10%">
+                <col style="width:45%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>직전 주문교재</th>
+                    <th>구분</th>
+                    <th>주문예정교재</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Textbook Title</td>
+                    <td>교재 1</td>
+                    <td>계산력 신)해법계산2학년 B1 SET(01~02) </td>
+                </tr>
+                <tr>
+                    <td>Textbook Title</td>
+                    <td>교재 1</td>
+                    <td>계산력 신)해법계산2학년 B1 SET(01~02) </td>
+                </tr>
+                <tr>
+                    <td>Textbook Title</td>
+                    <td>교재 1</td>
+                    <td>계산력 신)해법계산2학년 B1 SET(01~02) </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h4 class="tit_h4 mt_20">영어</h3>
+        <div class="table_list">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:45%">
+                    <col style="width:10%">
+                    <col style="width:45%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>직전 주문교재</th>
+                        <th>구분</th>
+                        <th>주문예정교재</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Textbook Title</td>
+                        <td>Program1</td>
+                        <td>Cognitive Level > Level선택 > LA1_39_1_School English</td>
+                    </tr>
+                    <tr>
+                        <td>Textbook Title</td>
+                        <td>Program1</td>
+                        <td>주문안함</td>
+                    </tr>
+                    <tr>
+                        <td>Textbook Title</td>
+                        <td>Program1</td>
+                        <td>주문안함</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4 class="tit_h4 mt_20">전과목</h3>
+            <div class="table_list">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:45%">
+                        <col style="width:10%">
+                        <col style="width:45%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>직전 주문교재</th>
+                            <th>구분</th>
+                            <th>주문예정교재</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Textbook Title</td>
+                            <td>전과목(국/사/과)</td>
+                            <td>1학기 > 해법계산2학</td>
+                        </tr>
+                        <tr>
+                            <td>Textbook Title</td>
+                            <td>전과목(국/사/과)</td>
+                            <td>1학기 > 해법계산2학</td>
+                        </tr>
+                        <tr>
+                            <td>Textbook Title</td>
+                            <td>전과목(국/사/과)</td>
+                            <td>1학기 > 해법계산2학</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>

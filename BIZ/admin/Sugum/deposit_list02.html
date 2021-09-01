@@ -1,0 +1,183 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("보증금관리");
+
+        //달력
+        // calendar();
+        monthpicker(); // 월 선택 datepicker 추가 2021.8.17 :chan
+
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_2depth">
+    <li><a href="index.html?page=sugum/deposit_list01">신청가맹점</a></li>
+    <li class="on"><a href="index.html?page=sugum/deposit_list02">납입완료</a></li>
+</ul>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <!-- <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan --> -->
+                    <!-- 월 선택 datepicker 추가 2021.8.2 :chan -->
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input-ko" aria-label="Year-Month">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div class="datepicker-cell" id="datepicker-month-ko" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사 선택</dt>
+                <dd>
+                    <select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹점전체</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                    <a href="" class="btn_gray ml_2">팝업 상세검색</a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <span class="list_num">전체 <strong>250</strong>개</span>
+    </p>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:4%" />
+            <col style="width:6%" />
+            <col style="width:8%" />
+            <col style="width:6%" />
+            <col />
+            <col style="width:10%" />
+            <col />
+            <col style="width:8%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+            <col style="width:8%" />
+            <col style="width:10%" />
+        </colgroup>
+        <thead>
+            <th>
+                <label for="all_chk04" class="chk_idt all">
+                    <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                    <span>전체</span>
+                </label>
+            </th>
+            <th>No</th>
+            <th>FC구분</th>
+            <th>지사코드</th>
+            <th>지사명</th>
+            <th>가맹점코드</th>
+            <th>가맹점명</th>
+            <th>신청일</th>
+            <th>보증금액</th>
+            <th>분납횟수</th>
+            <th>분납액</th>
+            <th>누적분납횟수</th>
+            <th>
+                <div class="btn_sort">
+                    누적분납액
+                    <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                    <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                </div>
+            </th>
+        </thead>
+        <tbody>
+            <!--
+            <tr>
+                <td colspan="13">
+                    <div class="no_data">검색한 데이터가 없습니다.</div>
+                </td>
+            </tr>
+            -->
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>전과목</td>
+                <td><span class="font_gmarket13">M0987</span></td>
+                <td class="tl">금천점</td>
+                <td><span class="font_gmarket13">M0987</span></td>
+                <td class="tl">가산푸르지오점</td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+                <td><span class="font_gmarket13">500,000</span></td>
+                <td><span class="font_gmarket13">5</span></td>
+                <td><span class="font_gmarket13">50,000</span></td>
+                <td><a href="javascript:openPop('../admin/sugum/pop_divide_num.html','640','470');"><span class="font_gmarket13">0</span></a></td>
+                <td><span class="font_gmarket13">160,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="" class="btn_basic">저장</a>
+    </p>
+</div>

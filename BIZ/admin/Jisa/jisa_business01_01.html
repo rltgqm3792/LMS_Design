@@ -1,0 +1,53 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("사업 설명회");
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="index.html?page=jisa/jisa_business01_01">사업설명회(공개)</a></li>
+    <li><a href="index.html?page=jisa/jisa_business02">지사 사업설명회</a></li>
+</ul>
+<ul class="tab_3depth">
+    <li class="on"><a href="index.html?page=jisa/jisa_business01_01">신청현황</a></li>
+    <li><a href="index.html?page=jisa/jisa_business01_02">접수완료현황</a></li>
+</ul>
+<ul class="tip_box">
+    <li><span class="tip">Tip 1.</span>사업설명회 추가등록은 일별 등록제한 건수와 관계없이 등록 가능합니다.. <a href="javascript:openPop('../admin/jisa/pop_business_add.html','940','670');">[추가신청]</a></li>
+    <li><span class="tip">Tip 2.</span>본사에서 자체 진행하는 사업설명회는 본사등록으로 바로 등록 가능합니다. <a href="javascript:openPop('../admin/jisa/pop_business_submit.html','940','520');">[본사 등록]</a></li>
+    <li><span class="tip">Tip 3.</span>해당 지사명을 클릭 시 상세내용을 확인할 수 있습니다.</li>
+</ul>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <label for="fc_01" class="rdo_idt table">
+            <input type="radio" name="fc" id="fc_01" checked />
+            <span>수학</span>
+        </label>
+        <label for="fc_02" class="rdo_idt table">
+            <input type="radio" name="fc" id="fc_02" />
+            <span>영어</span>
+        </label>
+        <label for="fc_03" class="rdo_idt table">
+            <input type="radio" name="fc" id="fc_03" />
+            <span>전과목</span>
+        </label>
+    </p>
+    <p>
+        <a href="javascript:openPop('../admin/jisa/pop_business_calendar.html','940','670');" class="btn_top">일괄 등록</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="calendar"></div>
+<a href="javascript:openPop('../admin/jisa/pop_business_sc.html','940','520');">캘린더 날짜 클릭시</a><br />
+<a href="javascript:openPop('../admin/jisa/pop_business_jisa.html','940','620');">지사명 클릭시</a>

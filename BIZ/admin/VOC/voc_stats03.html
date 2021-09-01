@@ -1,0 +1,77 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("VOD 현황");
+
+        calendar();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_2depth">
+    <li><a href="index.html?page=VOC/voc_stats01">접수처리(상담구분)</a></li>
+    <li><a href="index.html?page=VOC/voc_stats02">처리건수(문의유형)</a></li>
+    <li class="on"><a href="index.html?page=VOC/voc_stats03">상담원별 처리건수</a></li>
+</ul>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_rdo02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo02" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_rdo03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo03" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_rdo04" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo04" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">
+            조회기간 : <strong class="mt_1">2020.07.01 ~ 2020.07.31</strong></span>
+    </p>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>

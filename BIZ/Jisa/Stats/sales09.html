@@ -1,0 +1,112 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("영업통계");
+        $(".align_right h2").text("가맹 기간별 현황");
+
+        calendar();
+        datepicker();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>가맹일자</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <!-- 2021.8.26 삭제 :hee -->
+                    <!-- <label for="month_rdo02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo02" checked />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_rdo03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo03" />
+                        <span>2개월</span>
+                    </label>
+                    <label for="month_rdo04" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo04" />
+                        <span>3개월</span>
+                    </label> -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생 수 구간</dt>
+                <dd>
+                    <input type="text" class="input_100" placeholder="입력"><span class="line">~</span><input type="text" class="input_100" placeholder="입력">
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기준일자</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사</dt>
+                <dd><select>
+                        <option>지사선택</option>
+                    </select></dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<div id="grid"></div>

@@ -1,0 +1,213 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("교육자료실");
+        $(".align_right h2").text("교육자료실");
+
+        //달력
+        //calendar();
+        datePickerByClass(); // 추가 :chan
+        timePickerByClass(); // 추가 :chan
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_01" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>유형<span class="required"></span></th>
+                <td>
+                    <label for="type_01" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_01" />
+                        <span>사전교육</span>
+                    </label>
+                    <label for="type_02" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_02" />
+                        <span>신입문교육</span>
+                    </label>
+                    <label for="type_03" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_03" />
+                        <span>The큰도전</span>
+                    </label>
+                    <label for="type_04" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_04" />
+                        <span>리더스 클럽 콘서트</span>
+                    </label>
+                    <label for="type_05" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_05" />
+                        <span>전문가 교육</span>
+                    </label>
+                    <label for="type_06" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_06" />
+                        <span>지사월 교육</span>
+                    </label>
+                    <!-- 2021.8.31 추가 :hee -->
+                    <label for="type_07" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_07" />
+                        <span>기타</span>
+                    </label>
+                    <select>
+                        <option>교육과정 더 보기</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터</td>
+            </tr>
+            <tr>
+                <th>파일 첨부<span class="required"></span></th>
+                <td>파일 드래그 앤 드롭</td>
+            </tr>
+            <tr>
+                <th>동영상</th>
+                <td class="in_table">
+                    <table class="table_sub">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:40%">
+                            <col style="width:10%">
+                            <col style="width:40%">
+                        </colgroup>
+                        <tr>
+                            <th>제목</th>
+                            <td><input type="text" placeholder="동영상 제목을 입력하세요" class="input_300"></td>
+                            <th>URL</th>
+                            <td><input type="text" placeholder="동영상 URL을 입력하세요" class="input_300">
+                                <a href="" class="input_plus">추가</a>
+                                <a href="" class="input_minus">삭제</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>제목</th>
+                            <td><input type="text" placeholder="동영상 제목을 입력하세요" class="input_300"></td>
+                            <th>URL</th>
+                            <td><input type="text" placeholder="동영상 URL을 입력하세요" class="input_300">
+                                <a href="" class="input_plus">추가</a>
+                                <a href="" class="input_minus">삭제</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>공개기간<span class="required"></span></th>
+                <td>
+                    <label for="period_01" class="rdo_idt">
+                        <input type="radio" name="period" id="period_01" checked />
+                        <span>공개</span>
+                    </label>
+                    <label for="period_02" class="rdo_idt">
+                        <input type="radio" name="period" id="period_02" />
+                        <span>비공개</span>
+                    </label>
+                    <label for="period_03" class="rdo_idt">
+                        <input type="radio" name="periode" id="periode_03" />
+                        <span>예약</span>
+                    </label>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                    <span class="line">~</span>
+                   <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>상단 고정<span class="required"></span></th>
+                <td>
+                    <label for="top_01" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_01" checked />
+                        <span>설정</span>
+                    </label>
+                    <label for="top_02" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_02" />
+                        <span>기간제한</span>
+                    </label>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>공개설정<span class="required"></span></th>
+                <td>
+                    <label for="all_chk" class="chk_idt all table">
+                        <input type="checkbox" name="open" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="open_chk02" class="chk_idt table">
+                        <input type="checkbox" name="open" id="open_chk02" />
+                        <span>지사</span>
+                    </label>
+                    <label for="open_chk03" class="chk_idt table">
+                        <input type="checkbox" name="open" id="open_chk03" />
+                        <span>가맹</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <p><a href="index.html?page=education/edu_info" class="btn_basic line">목록</a></p>
+    <p><a href="" class="btn_basic">저장</a></p>
+</div>

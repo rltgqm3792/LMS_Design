@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>문자문구</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <!--tab_1Depth-->
+                <ul class="tab_1depth">
+                    <li class="on"><a href="">스마트 수학</a></li>
+                    <li><a href="">스마트 영어</a></li>
+                    <li><a href="">스마트전과목</a></li>
+                </ul>
+                <!--tab_1Depth-->
+                <div class="table_input">
+                    <table>
+                        <colgroup>
+                            <col style="width:30%;" />
+                            <col style="width:70%;" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>지사 문자 발송 문구</th>
+                                <td>[스마트 ""] 전일 기준 미수내역<br />미수총액 : xxxxx원<br />정지가맹점수 : xx개<br />자세한 내역은 지사사이트에서 확인 가능합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>담당자 문자 발송 문구</th>
+                                <td>[수학사업단] 전일 기준 미수내역<br />미수총액 : xxxxx원<br />정지가맹점수 : xx개<br />자세한 내역은 관리사이트에서 확인 가능합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>미수가맹점 문자</th>
+                                <td>[e해법&셀파수학] 현재 09월 교재비가 미입금 상태입니다.<br />수금 통보서를 확인하신 후 10/14일(일)까지 입금 부탁드립니다.<br />미입금시 사이트 사용이 제한화 될 수 있음을 양해 부탁드립니다.<br />(사이트 사용제한일 : 10/15(월))</td>
+                            </tr>
+                            <tr>
+                                <th>부분납(96%이하) 미수문자</th><!-- 2021.8.17 문구수정 :chan -->
+                                <td>[e해법&셀파수학] 현재 09월 교재비가 미입금 상태입니다.<br />수금 통보서를 확인하신 후 10/14일(일)까지 입금 부탁드립니다.<br />미입금시 사이트 사용이 제한화 될 수 있음을 양해 부탁드립니다.<br />(사이트 사용제한일 : 10/15(월))</td>
+                            </tr>
+                            <tr>
+                                <th>지사미수문자</th>
+                                <td>[수학사업단] 2차 사이트 사용제한이 10/15(월) 있을 예정입니다.<br />지사에서는 09월분 미입금 및 부분납(일부 미입금) 가맹점을 확인하시어 입금독려 부탁드립니다.<br />현재 가맹점에서는 미입금 및 부분납 문자 발송이 완료되었습니다. 감사합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>미입금 가맹점 사이트 정지</th>
+                                <td>[e해법&셀파수학] 현재 09월분 교재비가 미입금으로 사이트 사용이 제한화 되었습니다.<br />사이트 오픈 관련 무든 권한은 지사에 있사오니 해당지사로 문의하여 주시기 바랍니다.<br />감사합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>부분납(96%이하) 가맹점 사이트 정지</th><!-- 2021.8.17 문구수정 :chan -->
+                                <td>[e해법&셀파수학] 현재 09월분 교재비가 일부 미입금으로 사이트 사용이 제한화 되었습니다.<br />사이트 오픈 관련 무든 권한은 지사에 있사오니 해당지사로 문의하여 주시기 바랍니다.<br />감사합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>지사ㆍ가맹점 사이트 정지 후 문자</th>
+                                <td>[수학사업단] 현재 10월분 미입금 및 부분납(일부미입금) 2차 가맹점 사이트 사용이 제한화 되었습니다.<br />지사에서는 정지가맹점을 확인하시어 전화응대 부탁드립니다. 감사합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+        </article>
+    </body>
+
+</html>

@@ -1,0 +1,129 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("홍보시안&판촉물어워드");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+    //대뎃글 더보기
+    $('.reply_lst li a.more').click(function () {
+        $(this).toggleClass('on');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+
+<!-- 해당FC노출 -->
+<div class="fc_area">
+    <a href="">수학</a>
+</div>
+<!-- //해당FC노출 -->
+
+<dl class="board_view">
+    <dt>
+        <div class="tit">
+            <span class="table_bullet red_bullet">필독</span>스마트러닝 서비스 확대 개편 이벤트 당첨자를 발표합니다.
+            <span class="chk_like"><input type="checkbox" id="chk_like"><label for="chk_like">좋아요</label> <em class="num">3</em></span>
+        </div>
+        <div class="info">
+            <!-- <span>노하우</span> -->
+            <span>수학사업부</span>
+            <span class="date">2019.08.14 17:59</span>
+            <span>조회수 22000</span>
+        </div>
+    </dt>
+
+    <dd>
+        <div class="cont">
+            <span class="ico_attach_file"><a href=""">eventwinner.pdf</a></span>
+            반응이 좋았던 전단지 시안입니다<br>학교 앞에서 나눠주었어요
+        </div>
+    </dd>
+</dl>
+
+<!--답변-->
+<div class=" reply_area">
+                    <ul class="reply_lst">
+                        <li><span class="writer">강동 투플러스 학원점</span><span class="date">20/12/09 20:35</span>
+                            <p class="txt">좋은 노하우 감사합니다
+                                <a href="" class="btn_ico modify">수정</a>
+                                <a href="" class="btn_ico del">삭제</a>
+                                <a href="" class="btn_ico reply">답변</a>
+                            </p>
+                            <!-- [D] 대댓글 쓰기-->
+                            <ul>
+                                <li><span class="writer">강동 투플러스 학원점</span><span class="date">20/12/09 20:35</span>
+                                    <p class="txt">좋은 노하우 감사합니다
+                                        <a href="" class="btn_ico modify">수정</a>
+                                        <a href="" class="btn_ico del">삭제</a>
+                                        <a href="" class="btn_ico reply">답변</a>
+                                    </p>
+                                    <!--댓글 더보기-->
+                                    <a href="javascript:void(0);" class="more">더보기 1/2)</a>
+                                    <!--//댓글 더보기-->
+                                    <ul>
+                                        <li>
+                                            <!-- [D] 대댓글 쓰기-->
+                                            <div class="write">
+                                                <input type="text">
+                                                <button type="button" class="btn_table line">취소</button>
+                                                <button type="button" class="btn_table blue">등록</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span class="writer">강동 투플러스 학원점</span><span class="date">20/12/09 20:35</span>
+                                    <p class="txt">좋은 노하우 감사합니다
+                                        <a href="" class="btn_ico reply">답변</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--댓글등록-->
+                    <div class="reply_wrt">
+                        <span class="writer">강동 투플러스 학원점</span>
+                        <input type="text">
+                        <button type="button" class="btn_table blue">댓글등록</button>
+                    </div>
+                    <!--//댓글등록-->
+        </div>
+        <!--답글-->
+
+        <!-- 하단버튼 -->
+        <div class="btn_bottom_wrap between">
+            <a href="index.html?page=community/pr_list" class="btn_basic line">목록</a>
+            <span>
+                <a href="javascript:alert_confirm('','삭제하시겠습니까?');" class="btn_basic black">삭제</a>
+                <a href="index.html?page=community/pr_write" class="btn_basic line">수정</a>
+            </span>
+        </div>
+        <!-- //하단버튼 -->
+        <!--다음이전글-->
+        <div class="table_preview mt_30">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:10%">
+                    <col style="width:90%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>이전 글<span class="pre_view"></span></th>
+                        <td><a href=""">[안내] 영역별 정밀진단평가 일부학년 및 단원업데이트 안내</a></td>
+        </tr>
+        <tr>
+            <th>다음 글<span class=" next_view"></span></th>
+                        <td><a href=""">개인정보보호법 시행에 따른 정보제공 동의 절차 안내(첨부수정)</a></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<!--//다음이전글-->

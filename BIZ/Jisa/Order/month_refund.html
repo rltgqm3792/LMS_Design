@@ -1,0 +1,136 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("월별 반품현황");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>신청기간</dt>
+                <dd><select>
+                        <option>2021년</option>
+                    </select>
+                    <select>
+                        <option>02월</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문대상</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="final" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="final_chk01" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk01" />
+                        <span>지사</span>
+                    </label>
+                    <label for="final_chk02" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk02" />
+                        <span>가맹점</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>화면보기</dt>
+                <dd>
+                    <label for="all_chk05" class="chk_idt all">
+                        <input type="checkbox" name="delivery" id="all_chk05" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="delivery_chk01" class="chk_idt">
+                        <input type="checkbox" name="delivery" id="delivery_chk01" />
+                        <span>지사부분합</span>
+                    </label>
+                    <label for="delivery_chk02" class="chk_idt">
+                        <input type="checkbox" name="delivery" id="delivery_chk02" />
+                        <span>상세현황</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                        <option>가맹점 ERP코드</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<h4 class="tit_h4 mt_20">합계</h4>
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">전체 : <strong class="mt_1">50</strong>개</span>
+        <span class="bar"></span>
+        <span class="list_num">총 수량 : <strong class="mt_1">50</strong>건</span>
+        <span class="bar"></span>
+        <span class="list_num">금액 : <strong class="mt_1">23,050</strong>원</span>
+    </p>
+    <p><a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+</div>
+<!--//테이블 상단-->
+<div class="grid"><a href="javascript:openPop('../jisa/jisa/pop_month.html','940','670');">월별반품 상세현황</a><br />
+    <a href="javascript:openPop('../jisa/jisa/pop_month_join.html','940','670');">월별반품 가맹점 상세현황</a>
+</div>

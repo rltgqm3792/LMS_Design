@@ -1,0 +1,243 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("이벤트 수강생 유형관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h3 class="tit_h3">이벤트 설정</h3>
+<div class="tbl_flex">
+    <h4 class="tit_h4">이벤트 기본정보</h4>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo01" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>이벤트명<span class="required"></span></th>
+                <td><input type="text" class="input_full"></td>
+                <th>SMS 자동발송<span class="required"></span></th>
+                <td><a href="javascript:openPop('../admin/Etc/pop_sms.html','940','670');" class="btn_table gray">문자 설정하기</a></td>
+            </tr>
+            <tr>
+                <th>대상 수강생<span class="required"></span></th>
+                <td>
+                    <label for="tar_chk01" class="chk_idt">
+                        <input type="checkbox" name="tar" id="tar_chk01" />
+                        <span>신규</span>
+                    </label>
+                    <label for="tar_chk02" class="chk_idt">
+                        <input type="checkbox" name="tar" id="tar_chk02" />
+                        <span>복회</span>
+                    </label>
+                </td>
+                <th>대상학년<span class="required"></span></th>
+                <td>
+                    <label for="year_rdo01" class="rdo_idt table">
+                        <input type="radio" name="year" id="year_rdo01" />
+                        <span>전체</span>
+                    </label>
+                    <label for="year_rdo02" class="rdo_idt table">
+                        <input type="radio" name="year" id="year_rdo02" onclick="openPop('../admin/Etc/pop_year.html','800','550');" />
+                        <span>선택</span>
+                    </label>
+                    <div class="year_select"><span class="main_color strong">8</span>/26</div>
+                </td>
+            </tr>
+            <tr>
+                <th>휴회기간<span class="required"></span></th>
+                <td colspan="3">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>실 회원수 반영<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="member_01" class="rdo_idt">
+                        <input type="radio" name="member" id="member_01" />
+                        <span>Y</span>
+                    </label>
+                    <label for="member_02" class="rdo_idt">
+                        <input type="radio" name="member" id="member_02" />
+                        <span>N</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>이벤트 기간<span class="required"></span></th>
+                <td colspan="3">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>가맹점 노출기간<span class="required"></span></th>
+                <td colspan="3">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="tbl_flex">
+    <h4 class="tit_h4">이벤트 유형정보</h4>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>쿠폰명<span class="required"></span></th>
+                <td><input type="text">
+                    <label for="event_01" class="chk_idt">
+                        <input type="checkbox" name="event" id="event_01" />
+                        <span>이벤트명과 동일</span>
+                    </label>
+                </td>
+                <th>혜택종류</th>
+                <td>무료</td>
+            </tr>
+            <tr>
+                <th>무료혜택기간<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="week_01" class="rdo_idt">
+                        <input type="radio" name="week" id="week_01" />
+                        <span>1주</span>
+                    </label>
+                    <label for="week_02" class="rdo_idt">
+                        <input type="radio" name="week" id="week_02" />
+                        <span>2주</span>
+                    </label>
+                    <label for="week_03" class="rdo_idt">
+                        <input type="radio" name="week" id="week_03" />
+                        <span>3주</span>
+                    </label>
+                    <label for="week_04" class="rdo_idt">
+                        <input type="radio" name="week" id="week_04" />
+                        <span>4주</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>갯수<span class="required"></span></th>
+                <td colspan="3"><input type="text">&nbsp;<a href="" class="btn_table">생성</a>&nbsp;<a href="" class="btn_table">초기화</a>&nbsp;<a href="" class="btn_table line excel"><span>엑셀 다운로드</span></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">저장</a>
+    </p>
+</div>

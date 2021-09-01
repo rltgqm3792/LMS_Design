@@ -1,0 +1,280 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("해지/취소신청 상세내역");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+</script>
+
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h4 class="tit_h4">가맹점 정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>브랜드</th>
+                <td class="tl">수학</td>
+                <th>형태</th>
+                <td class="tl">교습소</td>
+            </tr>
+            <tr>
+                <th>가맹점코드</th>
+                <td class="tl"><span class="font_gmarket13">H9090</span></td>
+                <th>가맹점명</th>
+                <td class="tl">서울시 양천구 목동 7단지점</td>
+            </tr>
+            <tr>
+                <th>원장명</th>
+                <td>홍길동</td>
+                <th>생년월일</th>
+                <td class="tl"><span class="font_gmarket13">1970.12.13</span></td>
+            </tr>
+            <tr>
+                <th>휴대폰번호</th>
+                <td class="tl"><span class="font_gmarket13">010-3333-5555</span></td>
+                <th>전화번호</th>
+                <td class="tl"><span class="font_gmarket13">02-333-5655</span></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td colspan="3" class="tl"><span class="font_gmarket13">abc@abc.com</span></td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td colspan="3" class="tl">[15803] 서울 양천구 목동 925번지 목동7단지 아파트 B상가 111-1</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">해지정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신청구분<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="divide_01" class="rdo_idt table">
+                        <input type="radio" name="divide" id="divide_01" checked>
+                        <span>1개월</span>
+                    </label>
+                    <label for="divide_02" class="rdo_idt table">
+                        <input type="radio" name="divide" id="divide_02">
+                        <span>3개월</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>반환계좌은행<span class="required"></span></th>
+                <td><input type="text"></td>
+                <th>반환계좌번호<span class="required"></span></th>
+                <td><input type="text" class="font_gmarket13">예금주<input type="text"><br /><span class="point_guide">예금주는 가맹점 원장님의 성함과 일치해야 합니다.</span></td>
+            </tr>
+            <tr>
+                <th>해지사유<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="reason_01" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_01" checked>
+                        <span>이전/양도</span>
+                    </label>
+                    <label for="reason_02" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_02">
+                        <span>육아/출산</span>
+                    </label>
+                    <label for="reason_03" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_03">
+                        <span>브랜드변경</span>
+                    </label>
+                    <label for="reason_04" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_04">
+                        <span>업종변경</span>
+                    </label>
+                    <label for="reason_05" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_05">
+                        <span>시스템불만</span>
+                    </label>
+                    <label for="reason_06" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_06">
+                        <span>개인사정</span>
+                    </label>
+                    <label for="reason_07" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_07">
+                        <span>운영부진</span>
+                    </label>
+                    <label for="reason_08" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_08">
+                        <span>규정위반</span>
+                    </label>
+                    <label for="reason_09" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_09">
+                        <span>가맹취소</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>상세사유</th>
+                <td colspan="3"><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>간판철거 이미지 첨부<span class="required"></span></th>
+                <td colspan="3"><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label><br />
+                    <input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file mt_5" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label><br />
+                    <span class="point_guide">간판 철거한 사진을 반드시 2장 첨부해주세요</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">이전 12개월 평균 수강생 수</h4>
+<div id="grid"></div>
+<span class="warning">가맹점은 가맹계약서에 의거하여 아래의 사항을 가맹지역 본부의 지사장 감독하에 기한을 준수하여 이행 완료할 것을 동의합니다.</span>
+<label for="agree_09" class="chk_idt">
+    <input type="checkbox" name="agree" id="agree_09">
+    <span>동의</span>
+</label>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>이행 완료기한</th>
+                <!-- [D] 캘린더 호출 -->
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </td>
+                <th>지역본부 확인</th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>간판, 창문스티커, 현수막, 포스터 등 외부 홍보물 철거</li>
+            <li>상표와 관련된 모든 설치물 및 비품 철거</li>
+            <li>상표와 관련된 공급품, 소모품 등 사용금지</li>
+            <li>상표와 관련된 온라인, 오프라인 교재 일체 사용 금지</li>
+            <li>가맹점 미수금 입금완료</li>
+            <li>기타 가맹지역본부에서 지시한 상표와 관련된 물품 철거 및 사용금지</li>
+            <li>수강생에 관련 된 모든 자료 인계</li>
+            <li>온라인에 등록된 모든 수강생 휴회 처리 (휴회시까지 비용이 발생됩니다.</li>
+        </ul>
+    </div>
+</div>
+<div class="align_right mt_20">
+    <h4 class="tit_h4">정산금 신청서</h4>
+    <p>
+        <a href="" class="btn_top mtt_10">정산금 내역 가져오기</a>
+    </p>
+</div>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:30%">
+            <col style="width:30%">
+            <col style="width:30%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>정산구분</th>
+                <th>수학</th>
+                <th>영어</th>
+                <th>전과목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>보증금</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>미수채권</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th><span class="point">SMS포인트잔액</span><span class="required"></span></th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>교육비</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>초도비</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td class="tr"><span class="font_gmarket13">3,450</span></td>
+                <td class="tr"><span class="font_gmarket13">0</span></td>
+                <td class="tr"><span class="font_gmarket13">0</span></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="btn_bottom_wrap between mt_40">
+    <p><a href="" class="btn_basic line">목록</a></p>
+    <p>
+        <a href="" class="btn_basic">신청</a>
+    </p>
+</div>

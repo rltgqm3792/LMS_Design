@@ -1,0 +1,165 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("설문조사");
+        $(".align_right h2").text("설문조사 상세보기");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:33.33%">
+            <col style="width:33.33%">
+            <col style="width:33.33%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분</th>
+                <th>설문조사 제목</th>
+                <th>조사기간</th>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td>2020년 10월 신입입문교육</td>
+                <td><span class="font_gmarket13">2020.07.14 ~ 2020.07.14</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4 mt_20">조사 내용</h4>
+<textarea placeholder="사전교육 과정에 대한 설문지 입니다. 학습을 완료한 이후에 진행하실 수 있습니다. "></textarea>
+<h4 class="tit_h4 mt_20">설문 내용</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup></colgroup>
+        <thead>
+            <th class="tl">Q01. [필수] 강의 진행은 체계적이었다.</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tl"><label for="item01" class="rdo_idt">
+                        <input type="radio" name="item" id="item01" />
+                        <span>매우 그렇다</span>
+                    </label></td>
+            </tr>
+            <tr>
+                <td class="tl"><label for="item01" class="rdo_idt">
+                        <input type="radio" name="item" id="item01" />
+                        <span>다소 그렇다</span>
+                    </label></td>
+            </tr>
+            <tr>
+                <td class="tl"><label for="item01" class="rdo_idt">
+                        <input type="radio" name="item" id="item01" />
+                        <span>보통이다</span>
+                    </label></td>
+            </tr>
+            <tr>
+                <td class="tl"><label for="item01" class="rdo_idt">
+                        <input type="radio" name="item" id="item01" />
+                        <span>그렇지 않다</span>
+                    </label></td>
+            </tr>
+            <tr>
+                <td class="tl"><label for="item01" class="rdo_idt">
+                        <input type="radio" name="item" id="item01" />
+                        <span>매우 그렇지 않다</span>
+                    </label></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table_list mt_10">
+    <table>
+        <caption></caption>
+        <colgroup></colgroup>
+        <thead>
+            <th class="tl">Q01. 강의 진행은 체계적이었다.</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tl"><label for="item01" class="rdo_idt">
+                        <input type="radio" name="item" id="item01" />
+                        <span>예</span>
+                    </label></td>
+            </tr>
+            <tr>
+                <td class="tl"><label for="item01" class="rdo_idt">
+                        <input type="radio" name="item" id="item01" />
+                        <span>아니오</span>
+                    </label></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table_list mt_10">
+    <table>
+        <caption></caption>
+        <colgroup></colgroup>
+        <thead>
+            <th class="tl">Q01. 본 과정에 대한 기타 의견이 있으시면 간단히 작성해주세요(감사합니다.)</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table_list mt_10">
+    <table>
+        <caption></caption>
+        <colgroup></colgroup>
+        <thead>
+            <th class="tl">Q01. 본 과정에 대한 기타 의견이 있으시면 작성해주세요(감사합니다.)</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><textarea></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between com_btn_group">
+    <p>
+        <a href="" class="btn_basic line pre"><span>이전</span></a>
+    </p>
+    <p>
+        <a href="" class="btn_basic black">삭제</a>
+        <a href="" class="btn_basic gray">초기화</a>
+        <a href="" class="btn_basic gray">수정</a>
+        <a href="" class="btn_basic">제출</a>
+    </p>
+</div>
+<div class="table_preview mt_30">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>이전 글<span class="pre_view"></span></th>
+                <td><a href="">[안내] 영역별 정밀진단평가 일부학년 및 단원업데이트 안내</a></td>
+            </tr>
+            <tr>
+                <th>다음 글<span class="next_view"></span></th>
+                <td><a href="">개인정보보호법 시행에 따른 정보제공 동의 절차 안내(첨부수정)</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

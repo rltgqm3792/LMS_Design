@@ -1,0 +1,319 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("가맹점리스트");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <div>
+        <h2 class="tit_main" style=" display:inline-block;"></h2>
+        <select class="mtt_20 ml_10">
+            <option>가맹점리스트</option>
+        </select>
+    </div>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all check">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>가맹일</option>
+                    </select>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>활동</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>해지대기</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>미수채권</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>해지</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>가맹구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>일반재택</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>전용재택</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>교습소</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>학원</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>가맹기간</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>1년 미만</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>1년 이상</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>지사명</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+    <!-- <div class="btn_more">
+        <a href="">화살표</a>
+    </div>   -->
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>250</strong>개</span>
+    </p>
+    <p>
+        <select class="h34">
+            <option>활동</option>
+            <option>정지</option>
+        </select><a href="" class="btn_top gray">상태변경</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:3%">
+            <col style="width:6%">
+            <col style="width:7%">
+            <col />
+            <col style="width:7%">
+            <col style="width:9%" />
+            <col style="width:9%" />
+            <col style="width:5%">
+            <col style="width:6%">
+            <col style="width:5%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:6%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        FC구분
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        가맹점 코드
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        가맹점명
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        원장명
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>휴대폰번호</th>
+                <th>전화번호</th>
+                <th>형태</th>
+                <th>가맹경로</th>
+                <th>수강생수</th>
+                <th>
+                    <div class="btn_sort">
+                        가맹일
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>정지일</th>
+                <th>해지일</th>
+                <th>상세보기</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td>전과목</td>
+                <td><a href="" class="font_gmarket13">H7309</a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">프라임교실</a></td>
+                <td>이순신</td>
+                <td><span class="font_gmarket13">010-1234-1234</span></td>
+                <td><span class="font_gmarket13">02-3333-2222</span></td>
+                <td>교습소</td>
+                <td>브랜드전환</td>
+                <td><span class="font_gmarket13">345</span></td>
+                <td><span class="font_gmarket13">2020.10.23</span></td>
+                <td><span class="font_gmarket13">2020.01.23</span></td>
+                <td><span class="font_gmarket13">2020.01.23</span></td>
+                <td><a href="index.html?page=jisa/jisa_detail" class="btn_table line">보기</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

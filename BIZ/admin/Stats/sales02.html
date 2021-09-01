@@ -1,0 +1,71 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("영업 통계");
+        $(".align_right h2").text("월별 성장률");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>2020</option>
+                    </select>
+                    <select>
+                        <option>지사 선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+    </p>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid">

@@ -1,0 +1,105 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("교육신청");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>과정명</th>
+                <td>2020년 하반기 전문가과정 교육</td>
+                <th>교육기간</th>
+                <td><span class="font_gmarket13">2020-12-17 ~ 2020-12-17</span></td>
+            </tr>
+            <tr>
+                <th>신청기간</th>
+                <td><span class="font_gmarket13">2020-11-23 ~ 2020-12-09</span></td>
+                <th>상태</th>
+                <td>접수중</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">교육일정</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:70%">
+            <col style="width:10%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="2">1차교육</th>
+                <th>교육일시<span class="required"></span></th>
+                <td><span class="font_gmarket13">2020-11-23 13:00 ~ 2020-12-09 15:00</span></td>
+                <td rowspan="2" class="tc"><a href="" class="btn_table">선택</a></td>
+            </tr>
+            <tr>
+                <th>교육방식<span class="required"></span></th>
+                <td>
+                    <div class="tbl_flex">
+                        <span>경기 하남시 미사강변대로 270 (선동, 미사강변 센트리버)</span>
+                        <a href="javascript:openPop('../jisa/Education/pop_map.html','640','570');" class="btn_table gray">위치보기</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2">2차교육</th>
+                <th>교육일시<span class="required"></span></th>
+                <td><span class="font_gmarket13">2020-11-23 13:00 ~ 2020-12-09 15:00</span></td>
+                <td rowspan="2" class="tc"><a href="" class="btn_table line">선택</a></td>
+            </tr>
+            <tr>
+                <th>네이버밴드<span class="required"></span></th>
+                <td><a href="Band.naver.com/1234" target="_blank"><span class="font_gmarket13">Band.naver.com/1234</span></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">대상자 선택</h4>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+        <span class="bar"></span>
+        <span class="list_num">교육비 <strong>10,000</strong>개</span>
+    </p>
+    <p>
+        <a href="" class="btn_top black">삭제</a>
+        <a href="" class="btn_top">추가</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">신청</a>
+    </p>
+</div>

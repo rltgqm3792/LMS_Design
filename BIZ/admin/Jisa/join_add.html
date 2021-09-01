@@ -1,0 +1,766 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("가맹점 정보 추가등록");
+
+        //달력
+        datepicker();
+
+
+
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h4 class="tit_h4">기본정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <!-- <tr>
+                <th>아이디</th>
+                <td><span class="font_gmarket13">H2345</span></td>
+                <th>비밀번호</th>
+                <td><a href="" class="btn_table gray">비밀번호 초기화</a></td>
+            </tr> -->
+            <tr>
+                <th>원장명<span class="required"></span></th>
+                <td><input type="text" readonly="readonly" value="김해법"></td>
+                <th>성별</th>
+                <td>
+                    <label for="gender_01" class="rdo_idt table">
+                        <input type="radio" name="gender" id="gender_01" checked readonly="readonly" />
+                        <span>남</span>
+                    </label>
+                    <label for="gender_02" class="rdo_idt table">
+                        <input type="radio" name="gender" id="gender_02" disabled="disabled" />
+                        <span>여</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일<span class="required"></span></th>
+                <td><input type="text" class="btn_date mr_3" value="2020.07.08">
+                    <label for="gender_01" class="rdo_idt table">
+                        <input type="radio" name="gender" id="gender_01" checked readonly="readonly" />
+                        <span>양력</span>
+                    </label>
+                    <label for="gender_02" class="rdo_idt table">
+                        <input type="radio" name="gender" id="gender_02" disabled="disabled" />
+                        <span>음력</span>
+                    </label>
+                </td>
+                <th>휴대폰번호<span class="required"></span></th>
+                <td><input type="text" class="input_300" value=01011110000></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="">수학</a></li>
+    <li><a href="">영어</a></li>
+    <li><a href="">전과목</a></li>
+</ul>
+<h4 class="tit_h4">FC정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>가맹점명<span class="required"></span></th>
+                <td><input type="text" value="수학" class="input_300"><a class="btn_table gray ml_2">중복확인</a></td>
+                <th>전화번호</th>
+                <td><input type="text" class="input_300" placeholder="'-'없이 숫자만 입력해주세요"></td>
+            </tr>
+            <tr>
+                <th>관할지사</th>
+                <td>서울지사(002 1234 1200)</td>
+                <th>이메일</th>
+                <td><input type="text"><span class="email"></span><select>
+                        <option>naver.com</option>
+                    </select><input type="text"></td>
+            </tr>
+            <tr>
+                <th>형태<span class="required"></span></th>
+                <td> <label for="fc_chk01" class="chk_idt table">
+                        <input type="checkbox" name="fc" id="fc_chk01" checked />
+                        <span>일반재택</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt table">
+                        <input type="checkbox" name="fc" id="fc_chk02" disabled />
+                        <span>전용재택</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt table">
+                        <input type="checkbox" name="fc" id="fc_chk03" disabled />
+                        <span>교습소</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt table">
+                        <input type="checkbox" name="fc" id="fc_chk04" disabled />
+                        <span>학원</span>
+                    </label>
+                </td>
+                <th>SNS주소</th>
+                <td><input type="text" class="input_300"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="tit_h4">추가정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>지역</th>
+                <td><select>
+                        <option>(10) 서울</option>
+                    </select></td>
+                <th>지역 구분</th>
+                <td><select>
+                        <option>본사소속</option>
+                    </select>
+                    <select>
+                        <option>본사관리</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>보증금 형태</th>
+                <td><select>
+                        <option>보증금</option>
+                        <option>기타보증금</option>
+                    </select></td>
+                <th>가상계좌</th>
+                <td><input type="text" value="[국민은행] 260-998466-031" class="input_300">&nbsp;<a href="" class="btn_table gray">가상계좌</a></td>
+            </tr>
+            <tr>
+                <th>예치번호<span class="required"></span></th>
+                <td><input type="text" class="input_200"></td>
+                <th>예치일자<span class="required"></span></th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>예치금<span class="required"></span></th>
+                <td><input type="text" class="input_200"></td>
+                <th>예치완료일<span class="required"></span></th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>가맹지원비<span class="required"></span></th>
+                <td colspan="3"><select>
+                        <option>강북파주인천프로모션(16)</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <th>보증금</th>
+                <td><span class="font_gmarket13">500,000</span></td>
+                <th>교육비</th>
+                <td><span class="font_gmarket13">500,000</span></td>
+            </tr>
+            <tr>
+                <th>초도상품</th>
+                <td><span class="font_gmarket13">500,000</span></td>
+                <th>홍보1</th>
+                <td><span class="font_gmarket13">500,000</span></td>
+            </tr>
+            <tr>
+                <th>홍보2</th>
+                <td><span class="font_gmarket13">500,000</span></td>
+                <th>개원홍보비</th>
+                <td><span class="font_gmarket13">500,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">사업장정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>사업장 상호명</th>
+                <td><input type="text" value="해법 가산"></td>
+                <th>사업자번호</th>
+                <td>201-2345-234</td>
+            </tr>
+            <tr>
+                <th>업태</th>
+                <td><input type="text" value="업태명"></td>
+                <th>업종</th>
+                <td><input type="text" value="업종명"></td>
+            </tr>
+            <tr>
+                <th>사업장 오픈일</th>
+                <td colspan="3"><input type="text" class="btn_date" value="2021.07.08"></td>
+            </tr>
+            <tr>
+                <th>사업장 주소<span class="required"></span></th>
+                <td colspan="3">
+                    <a href="" class="btn_table">우편검색</a>
+                    <input type="text">
+                    <input type="text"><br>
+                    <input type="text" class="mt_5" style="width:600px;">
+                </td>
+            </tr>
+            <tr>
+                <th>배송지 주소<span class="required"></span></th>
+                <td colspan="3">
+                    <a href="" class="btn_table">우편검색</a>
+                    <input type="text">
+                    <input type="text">
+                    <label for="add" class="chk_idt">
+                        <input type="checkbox" name="add" id="add" />
+                        <span>사업장 주소와 동일</span>
+                    </label><br>
+                    <input type="text" class="mt_5" style="width:600px;">
+                </td>
+            </tr>
+            <tr>
+                <th>관할학교<span class="required"></span></th>
+                <td colspan="3">
+                    <div class="region_add">
+                        <a href="javascript:openPop('../admin/jisa/pop_region.html','940','670');" class="btn_table gray">학교등록</a>
+                        <div>구로 초등학교<span class="delete_File">삭제</span></div>
+                        <div>금천 초등학교<span class="delete_File">삭제</span></div>
+                        <div>가산 초등학교<span class="delete_File">삭제</span></div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="tit_h4">가맹정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>가맹정보<span class="required"></span></th>
+                <td> <label for="join_rdo01" class="rdo_idt table">
+                        <input type="radio" name="join" id="join_rdo01" checked />
+                        <span>신규</span>
+                    </label>
+                    <label for="join_rdo02" class="rdo_idt table">
+                        <input type="radio" name="join" id="join_rdo02" disabled />
+                        <span>과목추가</span>
+                    </label>
+                    <label for="join_rdo03" class="rdo_idt table">
+                        <input type="radio" name="join" id="join_rdo03" disabled />
+                        <span>전환가맹</span>
+                    </label>
+                    <label for="join_rdo04" class="rdo_idt table">
+                        <input type="radio" name="join" id="join_rdo04" disabled />
+                        <span>인수인계</span>
+                    </label>
+                    <label for="join_rdo05" class="rdo_idt table">
+                        <input type="radio" name="join" id="join_rdo05" disabled />
+                        <span>1안2가맹</span>
+                    </label>
+                    <label for="join_rdo06" class="rdo_idt table">
+                        <input type="radio" name="join" id="join_rdo06" disabled />
+                        <span>재가맹</span>
+                    </label>
+                    <label for="join_rdo07" class="rdo_idt table">
+                        <input type="radio" name="join" id="join_rdo07" disabled />
+                        <span>이사</span>
+                    </label>
+                </td>
+            </tr>
+            <!-- 신규, 과목추가일 경우-->
+            <tr>
+                <th>기타</th>
+                <td><input type="text" class="input_500">
+                    <div class="mt_5">
+                        <label for="etc_chk01" class="chk_idt">
+                            <input type="checkbox" name="etc" id="etc_chk01" />
+                            <span>수학 지사소개</span>
+                        </label><span class="bottom_guide">해법 수학 지사의 소개로 들어온 경우만 체크</span>
+                    </div>
+                </td>
+            </tr>
+            <!-- 전환가맹일 경우 
+            <tr>
+                <th>전환가맹<span class="required"></span></th>
+                <td><select><option>가맹코드</option></select><input type="text" placeholder="가맹코드를 입력하세요" class="input_300">
+                    <a href="" class="btn_table gray">검색</a></td>
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td><textarea></textarea></td>
+            </tr>-->
+            <!-- 인수인계일 경우 
+            <tr>
+                <th>인수인계<span class="required"></span></th>
+                <td><select><option>가맹코드</option></select><input type="text" placeholder="가맹코드를 입력하세요" class="input_300">
+                    <a href="" class="btn_table gray">검색</a></td>
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td><textarea></textarea></td>
+            </tr>-->
+            <!-- 1인2가맹일 경우 
+             <tr>
+                <th>1인2가맹<span class="required"></span></th>
+                <td><select><option>가맹코드</option></select><input type="text" placeholder="가맹코드를 입력하세요" class="input_300">
+                    <a href="" class="btn_table gray">검색</a></td>
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td><textarea></textarea></td>
+            </tr>-->
+            <!--재가맹일 경우
+            <tr>
+                <th>재가맹<span class="required"></span></th>
+                <td><input type="text" class="input_300" placeholder="휴대폰번호로 검색">
+                    <a href="" class="btn_table gray">검색</a><br/>
+                <select class="mt_5"><option>가맹코드</option></select><input type="text" class="mt_5 input_300" placeholder="가맹코드를 입력하세요">
+                <a href="" class="btn_table gray mt_5">검색</a></td>                
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td><textarea></textarea></td>
+            </tr>-->
+            <!--이사일 경우
+            <tr>
+                <th>이사<span class="required"></span></th>
+                <td><select><option>가맹코드</option></select><input type="text" placeholder="가맹코드를 입력하세요" class="input_300">
+                    <a href="" class="btn_table gray">검색</a></td>
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td><textarea></textarea></td>
+            </tr>-->
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">CMS정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>사용여부</th>
+                <td>
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="cms" id="fc_rdo01" checked />
+                        <span>사용</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="cms" id="fc_rdo02" disabled />
+                        <span>미사용</span>
+                    </label>
+                </td>
+                <th>통장구분<span class="required"></span></th>
+                <td>
+                    <label for="bankbook_rdo01" class="rdo_idt table">
+                        <input type="radio" name="bankbook" id="bankbook_rdo01" checked />
+                        <span>개인통장</span>
+                    </label>
+                    <label for="bankbook_rdo02" class="rdo_idt table">
+                        <input type="radio" name="bankbook" id="bankbook_rdo02" disabled />
+                        <span>사업자통장</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>계좌정보<span class="required"></span></th>
+                <td colspan="3">은행&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;/&nbsp;&nbsp;계좌번호&nbsp;<input type="text">&nbsp;&nbsp;/&nbsp;&nbsp;예금주&nbsp;<input type="text"></td>
+            </tr>
+            <tr>
+                <th>출금일</th>
+                <td colspan="3"><span class="font_gmarket13">2021.07.01</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">교육이수</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신입교육이수일</th>
+                <td><input type="text" class="btn_date" value="2021.07.01"></td>
+                <th>행상교육이수일</th>
+                <td><input type="text" class="btn_date" value="2021.07.01"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">브랜드 세부정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>계약서 수령일</th>
+                <td><input type="text" class="btn_date" value="2021.07.01"></td>
+                <th>정보공개서 열람일</th>
+                <td><input type="text" class="btn_date" value="2021.07.01"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">가맹점 전용면적</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>가맹점 전용면적<span class="required"></span></th>
+                <td><input type="text">㎡&nbsp;&nbsp;/&nbsp;&nbsp;<input type="text">(평)</td>
+            </tr>
+            <tr>
+                <th>영업지역표기<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">지역.jpg</a><span class="delete_File"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">부가정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:90%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>간편사진</th>
+                <td><a href="">간편사진.pdf</a></td>
+            </tr>
+            <tr>
+                <th>가맹점계약서</th>
+                <td><a href="">가맹점계약서.pdf</a></td>
+            </tr>
+            <tr>
+                <th>사업자등록증사본</th>
+                <td><a href="">사업자등록증사본.pdf</a></td>
+            </tr>
+            <tr>
+                <th>인허가증</th>
+                <td><a href="">인허가증.pdf</a></td>
+            </tr>
+            <tr>
+                <th>개인과외교습자</th>
+                <td><a href="">개인과외교습자.pdf</a></td>
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td><textarea></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">학력사항</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:10%;" />
+            <col style="width:80%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="3">최종학력</th>
+                <th>고등학교<span class="required"></span></th>
+                <td><input type="text">고등학교&nbsp;&nbsp;/&nbsp;&nbsp;졸업년도&nbsp;<input type="text">년&nbsp;<input type="text">월</td>
+            </tr>
+            <tr>
+                <th>대학교</th>
+                <td><input type="text">&nbsp;대학&nbsp;&nbsp;<input type="text">&nbsp;전공
+                    <label for="grad_01" class="rdo_idt table">
+                        <input type="radio" name="grad" id="grad_01" />
+                        <span>졸업</span>
+                    </label>
+                    <label for="grad_02" class="rdo_idt table">
+                        <input type="radio" name="grad" id="grad_02" />
+                        <span>수료</span>
+                    </label>
+                    <label for="grad_03" class="rdo_idt table">
+                        <input type="radio" name="grad" id="grad_03" />
+                        <span>중퇴</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>대학원</th>
+                <td><input type="text">&nbsp;대학&nbsp;&nbsp;<input type="text">&nbsp;전공
+                    <label for="grad01_01" class="rdo_idt table">
+                        <input type="radio" name="grad01" id="grad01_01" />
+                        <span>졸업</span>
+                    </label>
+                    <label for="grad01_02" class="rdo_idt table">
+                        <input type="radio" name="grad01" id="grad01_02" />
+                        <span>수료</span>
+                    </label>
+                    <label for="grad01_03" class="rdo_idt table">
+                        <input type="radio" name="grad01" id="grad01_03" />
+                        <span>중퇴</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="align_right">
+    <h4 class="tit_h4">경력사항</h4>
+    <p class="mtt_15"><a href="" class="btn_table">추가</a>
+        <a href="javascript:alert_confirm('해당 리스트를 삭제하시겠습니까?','','확인','취소');" class="btn_table black">삭제</a>
+    </p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:3%;" />
+            <col style="width:7%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="2"> <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="company01" id="all_chk03" onchange="all_check(this);" />
+                        <span></span>
+                    </label></th>
+                <th>근무처명</th>
+                <td colspan="3"><input type="text">
+                    <label for="company01_01" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_01" />
+                        <span>학습지</span>
+                    </label>
+                    <label for="company01_02" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_02" />
+                        <span>학원장</span>
+                    </label>
+                    <label for="company01_03" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_03" />
+                        <span>학원강사</span>
+                    </label>
+                    <label for="company01_04" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_04" />
+                        <span>과외</span>
+                    </label>
+                    <label for="company01_05" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_05" />
+                        <span>기타</span>
+                    </label>
+                    <input type="text" disabled="disabled">
+                </td>
+            </tr>
+            <tr>
+                <th>근무기간</th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+                <th>직위</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th rowspan="2"> <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="company01" id="all_chk03" onchange="all_check(this);" />
+                        <span></span>
+                    </label></th>
+                <th>근무처명</th>
+                <td colspan="3"><input type="text">
+                    <label for="company01_01" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_01" />
+                        <span>학습지</span>
+                    </label>
+                    <label for="company01_02" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_02" />
+                        <span>학원장</span>
+                    </label>
+                    <label for="company01_03" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_03" />
+                        <span>학원강사</span>
+                    </label>
+                    <label for="company01_04" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_04" />
+                        <span>과외</span>
+                    </label>
+                    <label for="company01_05" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_05" />
+                        <span>기타</span>
+                    </label>
+                    <input type="text" disabled="disabled">
+                </td>
+            </tr>
+            <tr>
+                <th>근무기간</th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+                <th>직위</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th rowspan="2"> <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="company01" id="all_chk03" onchange="all_check(this);" />
+                        <span></span>
+                    </label></th>
+                <th>근무처명</th>
+                <td colspan="3"><input type="text">
+                    <label for="company01_01" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_01" />
+                        <span>학습지</span>
+                    </label>
+                    <label for="company01_02" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_02" />
+                        <span>학원장</span>
+                    </label>
+                    <label for="company01_03" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_03" />
+                        <span>학원강사</span>
+                    </label>
+                    <label for="company01_04" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_04" />
+                        <span>과외</span>
+                    </label>
+                    <label for="company01_05" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_05" />
+                        <span>기타</span>
+                    </label>
+                    <input type="text" disabled="disabled">
+                </td>
+            </tr>
+            <tr>
+                <th>근무기간</th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+                <th>직위</th>
+                <td><input type="text"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <a href="index.html?page=jisa/join_open_state01" class="btn_basic line">목록</a>
+    <p>
+        <a href="javascript:alert_confirm('지사의 정보를 저장하시겠습니까?','','확인','취소');" class="btn_basic">최종승인</a>
+    </p>
+</div>

@@ -1,0 +1,198 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("학습자료실");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- //타이틀 -->
+
+
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+
+
+<!-- // 1Depth Tab -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_01" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_01" checked>
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_02" onclick="movepage('index.html?page=pds/study_english_list');">
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_03" onclick="movepage('index.html?page=pds/study_class_list');">
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <label for="category_01" class="rdo_idt">
+                        <input type="radio" name="category" id="category_01" checked />
+                        <span>교재</span>
+                    </label>
+                    <label for="category_02" class="rdo_idt">
+                        <input type="radio" name="category" id="category_02" onclick="movepage('index.html?page=pds/study_play_list');">
+                        <span>놀이수학 자료실</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>도서조회</dt>
+                <dd>
+                    <label for="year_01" class="rdo_idt">
+                        <input type="radio" name="year" id="year_01" />
+                        <span>초등</span>
+                    </label>
+                    <label for="year_02" class="rdo_idt">
+                        <input type="radio" name="year" id="year_02" />
+                        <span>예비중</span>
+                    </label>
+                    <label for="year_03" class="rdo_idt">
+                        <input type="radio" name="year" id="year_03" />
+                        <span>중등</span>
+                    </label>
+                    <label for="year_04" class="rdo_idt">
+                        <input type="radio" name="year" id="year_04" />
+                        <span>고등</span>
+                    </label>
+                    <select>
+                        <option>학년선택</option>
+                    </select>
+                    <select>
+                        <option>도서선택</option>
+                    </select>
+                    <select>
+                        <option>구분선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset">초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_20">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 25개</span>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col />
+            <col style="width:80px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:80px;" />
+            <col style="width:80px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2" class="btl">No</th>
+                <th rowspan="2" class="btl">과정</th>
+                <th rowspan="2" class="btl">교재명</th>
+                <th rowspan="2" class="btl">구분</th>
+                <th colspan="2">E-book</th>
+                <th rowspan="2" class="btl td_line">해답지</th>
+                <th rowspan="2" class="btl">정오표</th>
+                <th rowspan="2" class="btl">빠른정답</th>
+                <th rowspan="2" class="btl">년판</th>
+                <th rowspan="2" class="btl">조회수</th>
+            </tr>
+            <tr>
+                <th>학생용</th>
+                <th>교사용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="table_bullet red_bullet">공지</span></td>
+                <td>예비중3</td>
+                <td class="tl"><a href="index.html?page=pds/study_book_view"">해법 중학 수학 계산 G1권</a><span class=" ico_img new">새 글</span></td>
+                <td>2호</td>
+                <td><a href="javascript:openPop('../jisa/pds/pop_ebook_view.html','940','670');" class="ico_img readme">책</a></td>
+                <td><a href="javascript:openPop('../jisa/pds/pop_ebook_view.html','940','670');" class="ico_img readme">책</a></td>
+                <td><a href="" class="ico_img readme">책</a><a href="" class="ico_img download">다운로드</span></td>
+                <td><a href="" class="ico_img readme">책</a><a href="" class="ico_img download">다운로드</span></td>
+                <td><a href="" class="ico_img readme">책</a><a href="" class="ico_img download">다운로드</span></td>
+                <td><span class="font_gmarket13">2021</span></td>
+                <td><a href="javascript:openPop('../jisa/community/pop_search_branch01.html','800','650');""><span class=" font_gmarket13">28900</span></a></td>
+            </tr>
+            <!-- <tr>
+                <td colspan="13" class="no_data">해당 검색 결과가 없습니다.</td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

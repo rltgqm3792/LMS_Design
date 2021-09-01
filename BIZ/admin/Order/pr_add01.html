@@ -1,0 +1,270 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("상품 관리");
+        $(".align_right h2").text("상품 등록 관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="btn_right">
+    <a href="javascript:openPop('../admin/order/pop_import.html','940','670');" class="btn_top">상품정보 불러오기</a>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" onclick="movepage('index.html?page=order/pr_add01');" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+                <th>상품코드<span class="required"></span></th>
+                <td><input type="text"> <a class="btn_table gray">ERP검색</a></td>
+            </tr>
+            <tr>
+                <th>상품명<span class="required"></span></th>
+                <td><input type="text" class="input_full"></td>
+                <th>학년<span class="required"></span></th>
+                <td><select>
+                        <option>학년 선택</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <th>레벨<span class="required"></span></th>
+                <td>
+                    <select>
+                        <option>Cognitive Level</option>
+                    </select>
+                    <select>
+                        <option>Level 전체</option>
+                    </select>
+                </td>
+                <th>영역</th>
+                <td><select>
+                        <option>영역 선택</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>카테고리<span class="required"></span></th>
+                <td>
+                    <select>
+                        <option>카테고리 1</option>
+                    </select>
+                    <select>
+                        <option>카테고리 2</option>
+                    </select>
+                </td>
+                <th>이미지</th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">찾아보기</label>
+                </td>
+            </tr>
+            <tr>
+                <th>ERP 재고<span class="required"></span></th>
+                <td><input type="text"></td>
+                <th>ERP코드2</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>상품설명</th>
+                <td colspan="3"><textarea></textarea></td>
+            </tr>
+            <tr>
+                <th>과세여부<span class="required"></span></th>
+                <td><select>
+                        <option>과세여부 선택</option>
+                    </select>
+                </td>
+                <th>교재순서<span class="required"></span></th>
+                <td><input type="text"> 의 뒤</td>
+            </tr>
+            <tr>
+                <th>노출메뉴</th>
+                <td><select>
+                        <option>메뉴</option>
+                    </select>
+                    <select>
+                        <option>상세</option>
+                    </select>
+                </td>
+                <th>가격</th>
+                <td><input type="text">
+                </td>
+            </tr>
+            <tr>
+                <th>판매상태</th>
+                <td><select>
+                        <option>판매상태 선택</option>
+                    </select>
+                </td>
+                <th>주문단위</th>
+                <td>최소 <input type="text">&nbsp;&nbsp;
+                    추가 <input type="text">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_right">
+    <a href="javascript:alert_confirm('해당 리스트를 삭제하시겠습니까?','','확인','취소');" class="btn_table black ml_2">삭제</a>
+    <a href="" class="btn_table">추가</a>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:3%;" />
+            <col style="width:10%;" />
+            <col style="width:38.5%;" />
+            <col style="width:10%;" />
+            <col style="width:38.5%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="4"> <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="company01" id="all_chk03" onchange="all_check(this);" />
+                        <span></span>
+                    </label></th>
+                <th>카테고리<span class="required"></span></th>
+                <td><select>
+                        <option>카테고리1</option>
+                    </select><select>
+                        <option>카테고리2</option>
+                    </select></td>
+                <th class="td_line">가격<span class="required"></span></th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>교재순서</th>
+                <td><input type="text">의 뒤</td>
+                <th>주문단위</th>
+                <td>최소<input type="text">추가<input type="text"></td>
+            </tr>
+            <tr>
+                <th>과세여부<span class="required"></span></th>
+                <td><select>
+                        <option>과세여부 선택</option>
+                    </select></td>
+                <th>판매상태</th>
+                <td><select>
+                        <option>판매상태 선택</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <th>노출메뉴</th>
+                <td>
+                    <label for="open_chk02" class="chk_idt">
+                        <input type="checkbox" name="open" id="open_chk02" checked />
+                        <span>main</span>
+                    </label>
+                    <label for="open_chk03" class="chk_idt">
+                        <input type="checkbox" name="open" id="open_chk03" />
+                        <span>sub</span>
+                    </label>
+                    <label for="open_chk04" class="chk_idt">
+                        <input type="checkbox" name="open" id="open_chk04" />
+                        <span>special</span>
+                    </label>
+                </td>
+                <th>세부내용</th>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+
+            <tr>
+                <th rowspan="4"> <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="company01" id="all_chk03" onchange="all_check(this);" />
+                        <span></span>
+                    </label></th>
+                <th>카테고리<span class="required"></span></th>
+                <td><select>
+                        <option>카테고리1</option>
+                    </select><select>
+                        <option>카테고리2</option>
+                    </select></td>
+                <th class="td_line">가격<span class="required"></span></th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>교재순서</th>
+                <td><input type="text">의 뒤</td>
+                <th>주문단위</th>
+                <td>최소<input type="text">추가<input type="text"></td>
+            </tr>
+            <tr>
+                <th>과세여부<span class="required"></span></th>
+                <td><select>
+                        <option>과세여부 선택</option>
+                    </select></td>
+                <th>판매상태</th>
+                <td><select>
+                        <option>판매상태 선택</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <th>노출메뉴</th>
+                <td>
+                    <label for="open_chk02" class="chk_idt">
+                        <input type="checkbox" name="open" id="open_chk02" checked />
+                        <span>main</span>
+                    </label>
+                    <label for="open_chk03" class="chk_idt">
+                        <input type="checkbox" name="open" id="open_chk03" />
+                        <span>sub</span>
+                    </label>
+                    <label for="open_chk04" class="chk_idt">
+                        <input type="checkbox" name="open" id="open_chk04" />
+                        <span>special</span>
+                    </label>
+                </td>
+                <th>세부내용</th>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <p>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+    <p>
+        <a href="" class="btn_basic">등록</a>
+    </p>
+</div>

@@ -1,0 +1,427 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("고객센터");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><a href="javascript:void(0);" class="ly_info"></a>
+    <div class="ly_info_pop">
+        <p><a href="javascript:void(0);" class="ly_info_close"></a>
+            <span>에듀 지사주문 내용 설명입니다.<br>
+                에듀 지사주문 내용 설명입니다. <br>
+                에듀 지사주문 내용 설명입니다. <br>
+            </span>
+        </p>
+    </div>
+    </p>
+</div>
+<!--//타이틀-->
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li><a href="index.html?page=community/faq_list">FAQ</a></li>
+    <li class="on"><a href="index.html?page=community/qna_list">Q&amp;A</a></li>
+</ul>
+
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all check">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" checked>
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk02">
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk03">
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk04">
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan --><span class="line">~</span><!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" checked>
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02">
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03">
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>문의유형</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>사업운영</option>
+                        <option>교재내용</option>
+                        <option>시스템</option>
+                        <option>기타</option>
+                    </select>
+                    <select>
+                        <option>2depth 선택</option>
+                        <option>선택1</option>
+                        <option>선택2</option>
+                    </select>
+                    <button class="btn_table gray">추가 +</button>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                        <option>지사명</option>
+                        <option>지사코드</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요.">
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>추가된 유형</dt>
+                <dd>
+                    <div class="region_add">
+                        <div class="font_13">사업운영 &gt; 주문/배송 <span class="delete_File"></span></div>
+                        <div class="font_13">시스템 &gt; 원격지원 <span class="delete_File"></span></span>
+                        </div>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!--//조건검색 -->
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+    <!--토글버튼-->
+    <div class="btn_more">
+        <a href="">화살표</a>
+    </div>
+    <!--//토글버튼-->
+</div>
+
+<div class="btn_top_wrap between">
+    <p class="fl">
+        <select class="line_type num">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+    </p>
+    <p class="fr"><a class="btn_top black">삭제</a></p>
+</div>
+
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:3%">
+            <col style="width:5%">
+            <col style="width:5%">
+            <col style="width:5%">
+            <col>
+            <col style="width:5%">
+            <col style="width:15%">
+            <col style="width:10%">
+            <col style="width:8%">
+            <col style="width:8%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk2" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk2" onchange="all_check(this);">
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>NO</th>
+                <th>FC</th>
+                <th>유형</th>
+                <th>제목</th>
+                <th>파일</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>답변상태</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td colspan="10">
+                    <div class="no_data">해당 검색 결과가 없습니다.</div>
+                </td>
+            </tr> -->
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="tl">
+                    <div class="ellipsis"><a href="index.html?page=community/qna_view">시스템 오류 질문입니다.!</a> <span class="ico_img new">new</span></div>
+                </td>
+                <td><a href="" class="ico_img file">file</a></td>
+                <td>안성 공도금호점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="ellipsis"><a href="index.html?page=community/qna_view">시스템 오류 질문입니다.!</a></div>
+                </td>
+                <td></td>
+                <td>안성 공도금호점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="td_reply ellipsis"><a href="index.html?page=community/qna_reply_view">RE: 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요!</a><span class="ico_img new">new</span></div>
+                </td>
+                <td></td>
+                <td>관리자</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="td_reply reply2 ellipsis"><a href="index.html?page=community/qna_view">RE: RE: 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요!</a><span class="ico_img new">new</span></div>
+                </td>
+                <td></td>
+                <td>관리자</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="td_reply reply3 ellipsis"><a href="index.html?page=community/qna_view">RE: RE: RE: 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요! 이렇게 해보세요!</a><span class="ico_img new">new</span></div>
+                </td>
+                <td></td>
+                <td>관리자</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="ellipsis"><a href="index.html?page=community/qna_view">시스템 오류 질문입니다.!</a><span class="ico_img lock">비밀글</span></div>
+                </td>
+                <td></td>
+                <td>안성 공도금호점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="ellipsis"><a href="index.html?page=community/qna_view">시스템 오류 질문입니다.!</a></div>
+                </td>
+                <td></td>
+                <td>안성 공도금호점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="ellipsis"><a href="index.html?page=community/qna_view">시스템 오류 질문입니다.!</a></div>
+                </td>
+                <td></td>
+                <td>안성 공도금호점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="ellipsis"><a href="index.html?page=community/qna_view">시스템 오류 질문입니다.!</a></div>
+                </td>
+                <td></td>
+                <td>안성 공도금호점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk22" class="chk_idt">
+                        <input type="checkbox" name="board" id="all_chk22">
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">20</span></td>
+                <td>전과목</td>
+                <td>사업운영</td>
+                <td class="subject">
+                    <div class="ellipsis"><a href="index.html?page=community/qna_view">시스템 오류 질문입니다.!</a></div>
+                </td>
+                <td></td>
+                <td>안성 공도금호점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td>답변완료</td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

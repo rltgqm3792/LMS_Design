@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-tree.css"  rel="stylesheet" type="text/css"/>
+    <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-tree.js" type="text/javascript"></script><!-- Tree -->
+
+    <!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+ var data = [
+            {text: 'rootA', children: [
+                {text: 'sub-A1'},
+                {text: 'sub-A2'},
+                {text: 'sub-A3'},
+                {text: 'sub-A4'},
+                {text: 'sub-A5', state: 'closed', children: [
+                    {text:'sub-A5A', children:[
+                        {text:'sub-A5A1'}
+                    ]},
+                    {text:'sub_A5B'}
+                ]},
+                {text: 'sub-A6'},
+                {text: 'sub-A7'},
+                {text: 'sub-A8'},
+                {text: 'sub-A9', state: 'closed', children: [
+                    {text:'sub-A9A'},
+                    {text:'sub-A9B'}
+                ]},
+                {text: 'sub-A10'},
+                {text: 'sub-A11'},
+                {text: 'sub-A12'}
+            ]},
+            {text: 'rootB', state:'closed', children: [
+                {text:'sub-B1'},
+                {text:'sub-B2'},
+                {text:'sub-B3'}
+            ]}
+        ];
+
+        var tree = new tui.Tree('#tree', {
+            data: data,
+            nodeDefaultState: 'opened'
+        }).enableFeature('Editable', {
+            dataKey: 'text'
+        });
+</script>
+   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>주소록 관리</h1>
+        </header>        
+        <section class="pop_content">
+            <!-- tit_sub_txt -->
+            <div class="sms_table">
+                <div class="div03">
+                    <div class="btn_right">                        
+                        <a href="" class="btn_table black ml_10">삭제</a>
+                        <a href="" class="btn_table">추가</a>
+                    </div>
+                    <div id="tree" class="tui-tree-wrap"></div>
+                </div>
+                <div class="div04">
+                    <div class="tbl_flex">
+                        <h2 class="tit_pop">연락처 목록<span>등록된 연락처 54건</span></h2>
+                        <p>
+                            <select><option>즐겨찾기 그룹 선택</option></select>
+                            <a href="" class="btn_top line">이동</a>
+                        </p>
+                    </div>
+                    <!--테이블 상단-->
+                    <div class="btn_top_wrap between mt_40">
+                        <p>
+                            <select class="h34">
+                                <option value="">수학</option>
+                            </select>
+                        </p> 
+                        <p>
+                            <a href="" class="btn_top black">삭제</a>
+                        </p>
+                    </div>
+                    <!--//테이블 상단-->
+                    <div id="grid"></div>                                       
+                    <div class="paging">
+                        <a href="" class="btn_paging back"></a>
+                        <a href="" class="btn_paging pre"></a>
+                        <ul>
+                            <li class="pop_paging_now">1,653</li>
+                            <li class="pop_paging_line">/</li>
+                            <li class="pop_paging_total">1,653</li>
+                        </ul>
+                        <a href="" class="btn_paging next"></a>
+                        <a href="" class="btn_paging forward"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+        </section>
+    </article>
+</body>
+</html>
+

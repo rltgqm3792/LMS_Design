@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+    <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-rolling.js" type="text/javascript"></script><!-- Rolling -->
+    <script type="text/javascript">
+        var htmlData = '<div class="panel-heading pan">default content</div>';
+        
+        var rolling1 = new tui.Rolling({
+            element: document.getElementById('rolling'),
+            initNum: 0,
+            direction: 'horizontal',
+            isVariable: true,
+            duration: 400,
+            motion: 'linear',
+            isCircle: false
+        }, htmlData);
+        
+        var control = document.getElementById('control');
+        var nextText = document.getElementById('next-data');
+        var prevText = document.getElementById('prev-data');
+        var prevcount = 0, nextcount = 0;
+        
+        control.onclick = function(e) {
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+            var className;
+        
+            if (target.tagName.toLowerCase() !== 'button') {
+                return;
+            }
+        
+            className = target.className;
+        
+            if (className.indexOf('prev') > -1) {
+                prevcount += 1;
+                rolling1.roll(nextText.value.replace(/{number}/g, prevcount), 'prev');
+            } else {
+                nextcount += 1;
+                rolling1.roll(prevText.value.replace(/{number}/g, nextcount), 'next');
+            }
+        };
+        </script>
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>BI/인테리어 상세보기</h1>
+        </header> 
+        <section class="pop_content">
+            <!-- tit_sub_txt --> 
+            <div id="rolling" class="rolling">
+                <ul>
+                    <li class="panel"></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="control">
+                <button class="prev">prev</button>
+                <button class="next">next</button>
+            </div>
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            <a href="javascript:window.close();" class="btn">수정</a>
+            <a href="javascript:window.close();" class="btn green">등록</a>
+        </section>
+    </article>
+</body>
+</html>
+

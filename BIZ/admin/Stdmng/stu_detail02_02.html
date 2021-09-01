@@ -1,0 +1,76 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수강생상세정보");
+        $(".group_nav.one_depth .tit").text("수강생관리"); // navigator 1차 menu error 때문에 추가 (2021.8.19) :chan
+
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=Stdmng/stu_detail01">기본정보</a></li>
+    <li class="on"><a href="index.html?page=Stdmng/stu_detail02_01">학습정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail03">주문정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail04">상담정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail05">출결정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail06">납부정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail07">변경이력</a></li>
+</ul>
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=Stdmng/stu_detail02_01">수학</a></li>
+    <li class="on"><a href="index.html?page=Stdmng/stu_detail02_02">영어</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail02_03">전과목</a></li>
+</ul>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>학습유형</th>
+                <td colspan="3">표준진도</td>
+            </tr>
+            <tr>
+                <th>학습레벨</th>
+                <td>표준진도</td>
+                <th>Placement Test</th>
+                <td>
+                    <div class="tbl_flex">
+                        <p><span class="font_gmarket13">2021.01.04</span></p>
+                        <p><a href="" class="btn_table line">보기</a></p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>DaBooks</th>
+                <td>테스트 시작</td>
+                <th>레벨설정</th>
+                <td>Level 3.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

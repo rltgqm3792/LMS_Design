@@ -1,0 +1,64 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("학부모 설명회");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=jisa/jisa_parent01_01">본사 학부모 설명회</a></li>
+    <li class="on"><a href="index.html?page=jisa/jisa_parent02">지사 학부모 설명회</a></li>
+</ul>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>진행월</dt>
+                <dd><select>
+                        <option>2021년</option>
+                    </select>
+                    <select>
+                        <option>1월</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <span class="list_num">
+            Total :
+            <strong class="mt_1">1,256</strong>
+            건
+        </span>
+    </p>
+    <p>
+        <a href="" class="btn_top gray">체크리스트</a>
+        <a href="javascript:openPop('../jisa/jisa/pop_schedule.html','740','470');" class="btn_top">일정등록</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+<a href="javascript:openPop('../jisa/jisa/pop_parent_result.html','740','670');">학부모설명회 결과등록</a><br />

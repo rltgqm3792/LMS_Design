@@ -1,0 +1,207 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("VOC 유형관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+<link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-tree.css" rel="stylesheet" type="text/css" />
+<script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-tree.js" type="text/javascript"></script><!-- calendar -->
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="two_table">
+    <div>
+        <div class="search_wrap">
+            <ul class="info_group">
+                <li>
+                    <dl>
+                        <dt>브랜드</dt>
+                        <dd>
+                            <label for="fc_chk01" class="chk_idt">
+                                <input type="checkbox" name="fc" id="fc_chk01">
+                                <span>수학</span>
+                            </label>
+                            <label for="fc_chk02" class="chk_idt">
+                                <input type="checkbox" name="fc" id="fc_chk02">
+                                <span>영어</span>
+                            </label>
+                            <label for="fc_chk03" class="chk_idt">
+                                <input type="checkbox" name="fc" id="fc_chk03">
+                                <span>전과목</span>
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>검색어</dt>
+                        <dd><input type="text"></dd>
+                    </dl>
+                </li>
+            </ul>
+            <!-- 초기화,검색 버튼 -->
+            <div class="btn_wrap box_in">
+                <a href="" class="btn_search big">검색</a>
+            </div>
+        </div>
+        <div class="tbl_flex">
+            <div>전체 : 7</div>
+            <div class="arr_updown" style="width:105px;">
+                <a href="" class="arr_up">위로</a>
+                <a href="" class="arr_down">아래로</a>
+            </div>
+        </div>
+        <div id="tree" class="tui-tree-wrap"></div>
+    </div>
+    <div>
+        <h4 class="tit_h4">카테고리 정보</h4>
+        <div class="table_input">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:20%">
+                    <col style="width:80%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>FC구분</th>
+                        <td>
+                            <label for="radio_01" class="rdo_idt table">
+                                <input type="radio" name="radio" id="radio_01" checked="checked">
+                                <span>수학</span>
+                            </label>
+                            <label for="radio_02" class="rdo_idt table">
+                                <input type="radio" name="radio" id="radio_02">
+                                <span>영어</span>
+                            </label>
+                            <label for="radio_02" class="rdo_idt table">
+                                <input type="radio" name="radio" id="radio_02">
+                                <span>전과목</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>카테고리 1</th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>카테고리 2</th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                        <td><textarea></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--테이블 상단-->
+        <div class="tbl_flex">
+            <h4 class="tit_h4 mt_10">담당자 정보</h4>
+            <p>
+                <a href="" class="btn_top">담당자 선택</a>
+                <a href="" class="btn_top black">삭제</a>
+            </p>
+        </div>
+        <!--//테이블 상단-->
+        <div id="grid"></div>
+        <div class="btn_bottom_wrap right mt_40">
+            <p>
+                <a href="" class="btn_basic gray">삭제</a>
+                <a href="" class="btn_basic">저장</a>
+            </p>
+        </div>
+    </div>
+    <script>
+        var util = {
+            addEventListener: function (element, eventName, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(eventName, handler, false);
+                } else {
+                    element.attachEvent('on' + eventName, handler);
+                }
+            }
+        };
+
+        var data = [
+            {
+                text: 'rootA', children: [
+                    { text: 'sub-A1' },
+                    { text: 'sub-A2' },
+                    { text: 'sub-A3' },
+                    { text: 'sub-A4' },
+                    {
+                        text: 'sub-A5', state: 'closed', children: [
+                            {
+                                text: 'sub-A5A', children: [
+                                    { text: 'sub-A5A1' }
+                                ]
+                            },
+                            { text: 'sub_A5B' }
+                        ]
+                    },
+                    { text: 'sub-A6' },
+                    { text: 'sub-A7' },
+                    { text: 'sub-A8' },
+                    {
+                        text: 'sub-A9', state: 'closed', children: [
+                            { text: 'sub-A9A' },
+                            { text: 'sub-A9B' }
+                        ]
+                    },
+                    { text: 'sub-A10' },
+                    { text: 'sub-A11' },
+                    { text: 'sub-A12' }
+                ]
+            },
+            {
+                text: 'rootB', state: 'closed', children: [
+                    { text: 'sub-B1' },
+                    { text: 'sub-B2' },
+                    { text: 'sub-B3' }
+                ]
+            }
+        ];
+
+        var tree = new tui.Tree('#tree', {
+            data: data,
+            nodeDefaultState: 'opened'
+        });
+
+        var addChildBtn = document.getElementById('addChildBtn');
+        var removeChildBtn = document.getElementById('removeChildBtn');
+        var sortBtn = document.getElementById('sortBtn');
+        var rootNodeId = tree.getRootNodeId();
+        var firstChildId = tree.getChildIds(rootNodeId)[0];
+
+        util.addEventListener(addChildBtn, 'click', function () {
+            tree.add({ text: 'hello world' }, firstChildId);
+        });
+
+        util.addEventListener(removeChildBtn, 'click', function () {
+            var lastGrandChildId = tree.getChildIds(firstChildId).slice(-1)[0];
+            tree.remove(lastGrandChildId);
+        });
+
+        util.addEventListener(sortBtn, 'click', function () {
+            tree.sort(function (nodeA, nodeB) {
+                var aValue = nodeA.getData('text'),
+                    bValue = nodeB.getData('text');
+
+                if (!aValue.localeCompare) {
+                    return 0;
+                }
+                return aValue.localeCompare(bValue);
+            });
+        });
+    </script>

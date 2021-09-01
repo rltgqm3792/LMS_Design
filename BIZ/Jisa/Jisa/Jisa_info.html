@@ -1,0 +1,363 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+  $(function () {
+    //타이틀 텍스트
+    $(".nav_two .two_tit").text("지사관리");
+    $(".align_right h2").text("지사정보");
+
+    //달력
+    calendar();
+
+    $('.ly_info').on('click', function () {
+      $('.ly_info_pop').css('display', 'block');
+    });
+    $('.ly_info_close').on('click', function () {
+      $('.ly_info_pop').css('display', 'none');
+    });
+  });
+  function fileChange() {
+    var cur = $("#fileUpload").val().split("\\");
+    $("#fileNm").val(cur[cur.length - 1]);
+  }
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+  <h2 class="tit_main"></h2>
+  <p>
+    <a href="javascript:void(0);" class="ly_info"></a>
+  <div class="ly_info_pop">
+    <div><a href="javascript:void(0);" class="ly_info_close"></a>
+      <span>에듀 지사주문 내용 설명입니다.<br>
+        에듀 지사주문 내용 설명입니다. <br>
+        에듀 지사주문 내용 설명입니다. <br>
+      </span>
+    </div>
+  </div>
+  </p>
+</div>
+<h4 class="tit_h4">기본정보</h4>
+<div class="table_input">
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="width:10%" />
+      <col style="width:35%" />
+      <col style="width:10%" />
+      <col style="width:35%" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>아이디</th>
+        <td><span class="font_gmarket13">1234</span></td>
+        <th>비밀번호</th>
+        <td><a href="javascript:ly_open('../jisa/jisa/ly_change_password.html');" class="btn_table gray">비밀번호 변경</a></td>
+        <td rowspan="4" class="td_line">(직인 미 등록)
+          <a href="javascript:ly_open('../jisa/jisa/ly_stamp_add.html');" class="btn_table gray mt_20">직인 등록/수정</a>
+        </td>
+      </tr>
+      <tr>
+        <th>지사장명<span class="required"></span></th>
+        <td>김해법(남)</td>
+        <th>원격 연수원</th>
+        <td><span class="font_gmarket13">J0009</span></td>
+      </tr>
+      <tr>
+        <th>휴대폰번호<span class="required"></span></th>
+        <td><input type="text" value="01011111111" /></td>
+        <th>생년월일<span class="required"></span></th>
+        <td><span class="font_gmarket13">1988-11-11</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ul class="tab_2depth">
+  <!-- [D] 활성화 : select-->
+  <li class="on"><a href="">수학</a></li>
+  <li><a href="">영어</a></li>
+</ul>
+<div class="tbl_flex">
+  <h4 class="tit_h4">FC정보</h4>
+  <p>
+    <span class="paleblue"></span><span class="font_13">부분은 동일정보 적용대상입니다.</span>&nbsp;<a href="" class="btn_top">동일정보 불러오기</a>
+  </p>
+</div>
+<div class="table_input">
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="width:10%">
+      <col style="width:40%">
+      <col style="width:10%">
+      <col style="width:40%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>지사명<span class="required"></span></th>
+        <td>수학지사</td>
+        <th>지사코드</th>
+        <td><span class="font_gmarket13">1234-1200</span></td>
+      </tr>
+      <tr>
+        <th>ERP코드</th>
+        <td><span class="font_gmarket13">A10000</span></td>
+        <th>등록일</th>
+        <td><span class="font_gmarket13">2021.11.11</span></td>
+      </tr>
+      <tr>
+        <th>이메일<span class="required"></span></th>
+        <td><input type="text">@<select>
+            <option>naver.com</option>
+          </select><input type="text"></td>
+        <th>전화번호</th>
+        <td><span class="font_gmarket13">010-9999-9999</span></td>
+      </tr>
+      <tr>
+        <th>SNS</th>
+        <td colspan="3"><input type="text" class="input_300"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h4 class="tit_h4">사업장정보</h4>
+<div class="table_input">
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="width:10%">
+      <col style="width:40%">
+      <col style="width:10%">
+      <col style="width:40%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>사업자 상호명<span class="required"></span></th>
+        <td>해법가산지사</td>
+        <th>사업자번호<span class="required"></span></th>
+        <td><span class="font_gmarket13">00-1234-1234</span></td>
+      </tr>
+      <tr>
+        <th>업태</th>
+        <td>교육용역</td>
+        <th>업종</th>
+        <td>학원 프랜차이즈 가맹점 모집 및 관리</td>
+      </tr>
+      <tr>
+        <th>영업담당자<span class="required"></span></th>
+        <td>박문수</td>
+        <th>주문 등급</th>
+        <td>5%(2021년 2월 기준)</td>
+      </tr>
+      <tr>
+        <th>사업장 주소<span class="required"></span></th>
+        <td colspan="3">[08591] 서울 금천구 가산디지털로 16 (가산동, 천재교육R&D센터) 1</td>
+      </tr>
+      <tr>
+        <th class="blue">배송지 주소<span class="required"></span></th>
+        <td colspan="3">
+          <a href="" class="btn_table">우편검색</a>
+          <input type="text">
+          <input type="text">
+          <label for="add" class="chk_idt">
+            <input type="checkbox" name="add" id="add" />
+            <span>사업장 주소와 동일</span>
+          </label><br>
+          <input type="text" class="mt_5" style="width:600px;">
+        </td>
+      </tr>
+      <tr>
+        <th>관할구역 A<span class="required"></span></th>
+        <td colspan="3">
+          <div class="region_add">
+            <a href="javascript:openPop('../jisa/jisa/pop_region.html','940','670');" class="btn_table gray">관할구역 추가</a>
+            <div class="disabled">서울시 구로구<span class="delete_File disabled">삭제</span></div>
+            <div class="disabled">전라북도 남양시<span class="delete_File disabled">삭제</span></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>관할구역 B</th>
+        <td colspan="3">
+          <div class="region_add">
+            <a href="javascript:openPop('../jisa/jisa/pop_region.html','940','670');" class="btn_table gray">관할구역 추가</a>
+            <div class="disabled">서울시 구로구<span class="delete_File disabled">삭제</span></div>
+            <div class="disabled">전라북도 남양시<span class="delete_File disabled">삭제</span></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>관할구역 C</th>
+        <td colspan="3">
+          <div class="region_add">
+            <a href="javascript:openPop('../jisa/jisa/pop_region.html','940','670');" class="btn_table gray">관할구역 추가</a>
+            <div class="disabled">서울시 구로구<span class="delete_File disabled">삭제</span></div>
+            <div class="disabled">전라북도 남양시<span class="delete_File disabled">삭제</span></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h4 class="tit_h4">계좌정보</h4>
+<div class="table_input">
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="width:10%">
+      <col style="width:90%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>주문등급</th>
+        <td>2%</td>
+      </tr>
+      <tr>
+        <th>수수료 지급 계좌 정보</th>
+        <td>은행 / 계좌번호 / 예금주</td>
+      </tr>
+      <tr>
+        <th>가상계좌</th>
+        <td>은행 / 계좌번호 / 예금주</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h4 class="tit_h4">학력사항</h4>
+<div class="table_input">
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="width:5%" />
+      <col style="width:5%" />
+      <col style="width:90%" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th rowspan="3">최종학력</th>
+        <th>고등학교</th>
+        <td>해법여자 고등학교&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;졸업년도&nbsp;년&nbsp;&nbsp;월</td>
+      </tr>
+      <tr>
+        <th>대학교</th>
+        <td>해법여자 대학&nbsp;전공&nbsp;졸업</td>
+      </tr>
+      <tr>
+        <th>대학원</th>
+        <td>해법여자 대학&nbsp;전공&nbsp;졸업</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h4 class="tit_h4">경력사항</h4>
+<div class="table_input">
+  <table>
+    <caption></caption>
+    <colgroup>
+      <col style="width:4%" />
+      <col style="width:10%" />
+      <col style="width:38%" />
+      <col style="width:10%" />
+      <col style="width:38%" />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th rowspan="2" class="tc"><span class="font_gmarket13">1</span></th>
+        <th>근무처명</th>
+        <td colspan="3">해법
+          <label for="com_01" class="rdo_idt table">
+            <input type="radio" name="com" id="com_01" checked />
+            <span>학습지</span>
+          </label>
+          <label for="com_02" class="rdo_idt table">
+            <input type="radio" name="com" id="com_02" disabled />
+            <span>학원장</span>
+          </label>
+          <label for="com_03" class="rdo_idt table">
+            <input type="radio" name="com" id="com_03" disabled />
+            <span>학원강사</span>
+          </label>
+          <label for="com_04" class="rdo_idt table">
+            <input type="radio" name="com" id="com_04" disabled />
+            <span>과외</span>
+          </label>
+          <label for="com_05" class="rdo_idt table">
+            <input type="radio" name="com" id="com_05" disabled />
+            <span>기타</span>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <th>근무기간</th>
+        <td><span class="font_gmarket13">2021.07.01 ~ 2021.07.08</span></td>
+        <th>직위</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2" class="tc"><span class="font_gmarket13">1</span></th>
+        <th>근무처명</th>
+        <td colspan="3">해법
+          <label for="com_01" class="rdo_idt table">
+            <input type="radio" name="com" id="com_01" checked />
+            <span>학습지</span>
+          </label>
+          <label for="com_02" class="rdo_idt table">
+            <input type="radio" name="com" id="com_02" disabled />
+            <span>학원장</span>
+          </label>
+          <label for="com_03" class="rdo_idt table">
+            <input type="radio" name="com" id="com_03" disabled />
+            <span>학원강사</span>
+          </label>
+          <label for="com_04" class="rdo_idt table">
+            <input type="radio" name="com" id="com_04" disabled />
+            <span>과외</span>
+          </label>
+          <label for="com_05" class="rdo_idt table">
+            <input type="radio" name="com" id="com_05" disabled />
+            <span>기타</span>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <th>근무기간</th>
+        <td><span class="font_gmarket13">2021.07.01 ~ 2021.07.08</span></td>
+        <th>직위</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th rowspan="2" class="tc"><span class="font_gmarket13">1</span></th>
+        <th>근무처명</th>
+        <td colspan="3">해법
+          <label for="com_01" class="rdo_idt table">
+            <input type="radio" name="com" id="com_01" checked />
+            <span>학습지</span>
+          </label>
+          <label for="com_02" class="rdo_idt table">
+            <input type="radio" name="com" id="com_02" disabled />
+            <span>학원장</span>
+          </label>
+          <label for="com_03" class="rdo_idt table">
+            <input type="radio" name="com" id="com_03" disabled />
+            <span>학원강사</span>
+          </label>
+          <label for="com_04" class="rdo_idt table">
+            <input type="radio" name="com" id="com_04" disabled />
+            <span>과외</span>
+          </label>
+          <label for="com_05" class="rdo_idt table">
+            <input type="radio" name="com" id="com_05" disabled />
+            <span>기타</span>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <th>근무기간</th>
+        <td><span class="font_gmarket13">2021.07.01 ~ 2021.07.08</span></td>
+        <th>직위</th>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="btn_bottom_wrap right">
+  <a href="javascript:alert_confirm('지사의 정보를 저장하시겠습니까?','','확인','취소');" class="btn_basic">저장</a>
+</div>

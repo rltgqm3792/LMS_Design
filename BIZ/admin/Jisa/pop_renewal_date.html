@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+        <!--plugin -->
+        <!-- <link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.js" type="text/javascript"></script> -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-date-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-date-picker.js" type="text/javascript"></script><!-- calendar -->
+
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-time-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-time-picker.js" type="text/javascript"></script><!-- time picker -->
+
+        <script>
+            $(function () {
+                // 달력
+                // calendar();
+                datePickerByClass(); // 추가 2021.8.18 :chan
+            });
+            function fileChange() {
+                var cur = $("#fileUpload").val().split("\\");
+                $("#fileNm").val(cur[cur.length - 1]);
+            }
+        </script>
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>가맹점 재계약서 생성</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <h2 class="tit_pop">기간설정</h2>
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:25%;" />
+                            <col style="width:75%" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>재계약 대상기준일자</th>
+                                <td>
+                                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </span>
+                                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>FC구분</th>
+                                <td>
+                                    <label for="all_chk" class="chk_idt all table">
+                                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                                        <span>전체</span>
+                                    </label>
+                                    <label for="fc_chk02" class="chk_idt table">
+                                        <input type="checkbox" name="fc" id="fc_chk02" />
+                                        <span>수학</span>
+                                    </label>
+                                    <label for="fc_chk03" class="chk_idt table">
+                                        <input type="checkbox" name="fc" id="fc_chk03" />
+                                        <span>영어</span>
+                                    </label>
+                                    <label for="fc_chk04" class="chk_idt table">
+                                        <input type="checkbox" name="fc" id="fc_chk04" />
+                                        <span>전과목</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>정보공개서 오픈일</th>
+                                <td>
+                                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </span>
+                                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                                    <span class="line">~</span>
+                                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </span>
+                                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>가맹점 재계약기간</th>
+                                <td>
+                                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </span>
+                                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                                    <span class="line">~</span>
+                                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </span>
+                                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>가맹 계약일</th>
+                                <td>
+                                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </span>
+                                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>최종 확인날짜</th>
+                                <td>
+                                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </span>
+                                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>정보공개서</th>
+                                <td><input type="file" name="files" id="fileUpload" style="display: none;" onChange="fileChange()" />
+                                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                                    <label for="fileUpload" class="btn_table gray">파일첨부</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>가맹점계약서</th>
+                                <td><input type="file" name="files" id="fileUpload" style="display: none;" onChange="fileChange()" />
+                                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                                    <label for="fileUpload" class="btn_table gray">파일첨부</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>기준년도</th>
+                                <td><select>
+                                        <option>2021</option>
+                                    </select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="bottom_guide">최종확인날짜 : 설정날짜 이후에 정보공개서 및 가맹계약서 확인 시에도 계약서에는 최종확인날짜로 설정된다.</span>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn confirm">재계약
+                    <!--등록-->
+                </a>
+            </section>
+        </article>
+    </body>
+
+</html>

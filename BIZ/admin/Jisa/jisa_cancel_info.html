@@ -1,0 +1,307 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("해지/취소 신청내역");
+
+
+        //달력
+        //  calendar();
+        datePickerByClass(); // 추가 2021.8.18 :chan
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h4 class="tit_h4">가맹점 정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>브랜드</th>
+                <td>수학</td>
+                <th>형태</th>
+                <td>교습소</td>
+            </tr>
+            <tr>
+                <th>가맹점코드</th>
+                <td><span class="font_gmarket13">H9090</span></td>
+                <th>가맹점명</th>
+                <td>서울시 양천구 목동 7단지점</td>
+            </tr>
+            <tr>
+                <th>원장명</th>
+                <td>홍길동</td>
+                <th>생년월일</th>
+                <td><span class="font_gmarket13">1970.11.11</span></td>
+            </tr>
+            <tr>
+                <th>휴대폰번호</th>
+                <td><span class="font_gmarket13">010-3333-5555</span></td>
+                <th>전화번호</th>
+                <td><span class="font_gmarket13">02-2121-1355</span></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td colspan="3"><span class="font_gmarket13">abc@naver.com</span></td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td colspan="3">[15080] 서울시 양천구 목동 925번지 목동7단지 아파트 8상가 111-1</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="tit_h4">해지 정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신청구분</th>
+                <td colspan="3">
+                    <label for="divide_01" class="rdo_idt table">
+                        <input type="radio" name="divide" id="divide_01" checked />
+                        <span>해지</span>
+                    </label>
+                    <label for="divide_02" class="rdo_idt table">
+                        <input type="radio" name="divide" id="divide_02" />
+                        <span>취소</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>반환계좌은행</th>
+                <td>국민은행</td>
+                <th>반환계좌번호<span class="required"></span></th>
+                <td><span class="font_gmarket13">959021514-4687415</span>(예금주 : 안경옥)</td>
+            </tr>
+            <tr>
+                <th>해지사유</th>
+                <td colspan="3">
+                    <label for="reason_01" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_01" checked />
+                        <span>이전/양도</span>
+                    </label>
+                    <label for="reason_02" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_02" />
+                        <span>육아/출산</span>
+                    </label>
+                    <label for="reason_03" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_03" />
+                        <span>브랜드변경</span>
+                    </label>
+                    <label for="reason_04" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_04" />
+                        <span>업종변경</span>
+                    </label>
+                    <label for="reason_05" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_05" />
+                        <span>시스템불만</span>
+                    </label>
+                    <label for="reason_06" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_06" />
+                        <span>개인사정</span>
+                    </label>
+                    <label for="reason_07" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_07" />
+                        <span>운영부진</span>
+                    </label>
+                    <label for="reason_08" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_08" />
+                        <span>규정위반</span>
+                    </label>
+                    <label for="reason_09" class="rdo_idt table">
+                        <input type="radio" name="reason" id="reason_09" />
+                        <span>가맹취소</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>세부사유</th>
+                <td colspan="3">업종변경으로 인한 사유</td>
+            </tr>
+            <tr>
+                <th>간판철거 이미지 첨부<span class="required"></span></th>
+                <td colspan="3"><span class="ico_img file"></span><span class="ico_img file"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">이전 12개월 평균 수강생 수</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:7.5%">
+            <col style="width:10%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>1월</th>
+                <th>2월</th>
+                <th>3월</th>
+                <th>4월</th>
+                <th>5월</th>
+                <th>6월</th>
+                <th>7월</th>
+                <th>8월</th>
+                <th>9월</th>
+                <th>10월</th>
+                <th>11월</th>
+                <th>12월</th>
+                <th>평균수강생수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13">0</span></td>
+                <td><span class="font_gmarket13 point">1,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4 mt_30">이행완료일 및 확인정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgrouop>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgrouop>
+        <tbody>
+            <th>이행 완료기한</th>
+            <td>
+                <!-- 달력 추가 시작 2021.8.18 :chan -->
+                <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                    <input type="text" class="datepicker-input" aria-label="Date-Time">
+                    <span class="tui-ico-date"></span>
+                </span>
+                <span class="dateWrapper" style="margin-top: -1px;"></span>
+                <!-- 달력 추가 끝 2021.8.18 :chan -->
+            </td>
+            <th>지역본부 확인</th>
+            <td>
+                <!-- 달력 추가 시작 2021.8.18 :chan -->
+                <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                    <input type="text" class="datepicker-input" aria-label="Date-Time">
+                    <span class="tui-ico-date"></span>
+                </span>
+                <span class="dateWrapper" style="margin-top: -1px;"></span>
+                <!-- 달력 추가 끝 2021.8.18 :chan -->
+            </td>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">정산금 신청서</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:25%">
+            <col style="width:25%">
+            <col style="width:25%">
+            <col style="width:25%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>정산구분</th>
+                <th>수학</th>
+                <th>영어</th>
+                <th>셀파우등생</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>보증금</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>미수채권</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>SMS포인트잔액</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>교육비</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>초도비</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td class="tr tdr_line"><span class="font_gmarket13"></span></td>
+                <td class="tr tdr_line"><span class="font_gmarket13"></span></td>
+                <td class="tr"><span class="font_gmarket13"></span></td>
+            </tr>
+        </tfoot>
+    </table>
+    <span class="point_guide">해당 FC구분만 제시</span>
+</div>
+<div class="btn_bottom_wrap between mt_40">
+    <a href="index.html?page=jisa/jisa_cancel" class="btn_basic line">목록</a>
+    <p>
+        <a href="" class="btn_basic black">기각</a>
+        <a href="" class="btn_basic line">수정</a>
+        <a href="" class="btn_basic">승인</a>
+    </p>
+</div>

@@ -1,0 +1,339 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("주문완료리스트");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문기간</dt>
+                <dd>
+                    <select>
+                        <option>주문일</option>
+                        <option>발송일</option>
+                        <option>승인일</option>
+                        <option>전표발행일</option>
+                    </select>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <!-- <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                        <option>가맹점 ERP코드</option>
+                        <option>주문번호</option>
+                        <option>전표번호</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li> -->
+        <li>
+            <dl>
+                <dt>최종제출</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="final" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="final_chk01" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk01" />
+                        <span>제출전</span>
+                    </label>
+                    <label for="final_chk02" class="chk_idt">
+                        <input type="checkbox" name="final" id="final_chk02" />
+                        <span>제출완료</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문대상</dt>
+                <dd>
+                    <label for="all_chk02" class="chk_idt all">
+                        <input type="checkbox" name="category" id="all_chk02" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="category_chk01" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk01" />
+                        <span>지사</span>
+                    </label>
+                    <label for="category_chk02" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk02" />
+                        <span>가맹점</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>발송구분</dt>
+                <dd>
+                    <label for="all_chk05" class="chk_idt all">
+                        <input type="checkbox" name="delivery" id="all_chk05" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="delivery_chk01" class="chk_idt">
+                        <input type="checkbox" name="delivery" id="delivery_chk01" />
+                        <span>주문완료</span>
+                    </label>
+                    <label for="delivery_chk02" class="chk_idt">
+                        <input type="checkbox" name="delivery" id="delivery_chk02" />
+                        <span>준비중</span>
+                    </label>
+                    <label for="delivery_chk03" class="chk_idt">
+                        <input type="checkbox" name="delivery" id="delivery_chk03" />
+                        <span>발송준비중</span>
+                    </label>
+                    <label for="delivery_chk04" class="chk_idt">
+                        <input type="checkbox" name="delivery" id="delivery_chk04" />
+                        <span>배송중</span>
+                    </label>
+                    <label for="delivery_chk05" class="chk_idt">
+                        <input type="checkbox" name="delivery" id="delivery_chk05" />
+                        <span>배송완료</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문구분</dt>
+                <dd>
+                    <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="order" id="all_chk03" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="order_chk01" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk01" />
+                        <span>수강생</span>
+                    </label>
+                    <label for="order_chk02" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk02" />
+                        <span>일반</span>
+                    </label>
+                    <label for="order_chk03" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk03" />
+                        <span>홍보판촉</span>
+                    </label>
+                    <label for="order_chk04" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk04" />
+                        <span>부록지</span>
+                    </label>
+                    <label for="order_chk05" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk05" />
+                        <span>초도</span>
+                    </label>
+                    <label for="order_chk06" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk06" />
+                        <span>오발송㈜</span>
+                    </label>
+                    <label for="order_chk07" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk07" />
+                        <span>불량㈜</span>
+                    </label>
+                    <label for="order_chk08" class="chk_idt">
+                        <input type="checkbox" name="order" id="order_chk08" />
+                        <span>미반품㈜</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- <div class="btn_more">
+        <a href="">화살표</a>
+    </div>  -->
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>250</strong>개</span>
+        <span class="bar"></span>
+        <span class="list_num">총수량 : <strong class="mt_1">250</strong>개</span>
+        <span class="bar"></span>
+        <span class="list_num">금액 : <strong class="mt_1">129,500</strong>원</span>
+    </p>
+    <p><a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a class="btn_top black">취소</a>
+</div>
+<!--//테이블 상단-->
+<div class="table_list scroll_x">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:50px" />
+            <col style="width:50px" />
+            <col style="width:70px" />
+            <col style="width:150px" />
+            <col style="width:120px" />
+            <col style="width:150px" />
+            <col style="width:80px" />
+            <col style="width:250px" />
+            <col style="width:70px" />
+            <col style="width:80px" />
+            <col style="width:110px" />
+            <col style="width:100px" />
+            <col style="width:90px" />
+            <col style="width:130px" />
+            <col style="width:100px" />
+            <col style="width:70px" />
+            <col style="width:140px" />
+            <col style="width:110px" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>주문일</th>
+                <th>주문번호</th>
+                <th>승인일</th>
+                <th>가맹점코드<br />(ERP코드)</th>
+                <th>가맹점명</th>
+                <th>구분</th>
+                <th>주문구분</th>
+                <th>주문상세</th>
+                <th>주문금액(원)</th>
+                <th>발송여부</th>
+                <th>전표번호</th>
+                <th>발송일</th>
+                <th>박스 수</th>
+                <th>송장번호</th>
+                <th>오발송 접수여부</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">698</span></td>
+                <td>전과목</td>
+                <td><span class="font_gmarket13">2021.06.30 17:30</span></td>
+                <td><a href="javascript:openPop('../jisa/order/pop_order_detail.html','940','670');"><span class="font_gmarket13">20201001215</span></a></td>
+                <td><span class="font_gmarket13">2021.06.30 20:59</span></td>
+                <td><span class="font_gmarket13">H6016<br />(6775)</span></td>
+                <td class="tl">트리플A교실</td>
+                <td>가맹점</td>
+                <td>수강생</td>
+                <td>신,복,월,추,다</td>
+                <td><span class="font_gmarket13">362,000</span></td>
+                <td>발송준비중</td>
+                <td><a href="javascript:openPop('../jisa/order/pop_order_detail.html','940','670');"><span class="font_gmarket13">20200626H649</span></a></td>
+                <td><span class="font_gmarket13">2021.06.30</span></td>
+                <td><span class="font_gmarket13">2</span></td>
+                <td><a href="javascript:openPop('../jisa/order/pop_invoice_detail.html','940','670');"><span class="font_gmarket13">6076870914115</span></a></td>
+                <td><a href="">접수중</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

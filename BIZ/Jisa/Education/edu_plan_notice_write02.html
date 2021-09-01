@@ -1,0 +1,303 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("교육 공지");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h4 class="tit_h4">기본정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분</th>
+                <td>
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo01" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>교육과정</th>
+                <td>
+                    <!-- 수학 -->
+                    <label for="edu_04" class="rdo_idt table">
+                        <input type="radio" name="edu" id="edu_04" checked />
+                        <span>전문가 교육</span>
+                    </label>
+                    <select>
+                        <option>기타교육</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>교육명</th>
+                <td><input type="text" class="input_full" value="2020년 10월 사전교육 안내"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">교육정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgrouop>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgrouop>
+        <tbody>
+            <tr>
+                <th>신청기간<span class="required"></span></th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span> ~
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span>
+                </td>
+                <th>교육기간</th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span> ~
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>교육장소<spsn class="required"></spsn>
+                </th>
+                <td colspan="3"><input type="text" class="input_500" placeholder="교육장소를 입력하세요">&nbsp;<a href="javascript:openPop('../jisa/Education/pop_map.html','970','670');" class="btn_table gray">위치보기</a></td>
+            </tr>
+            <tr>
+                <th>대상자 지정여부<spsn class="required"></spsn>
+                </th>
+                <td colspan="3" class="in_table">
+                    <table class="table_sub">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:25%">
+                            <col style="width:75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="edu_chk01" class="chk_idt">
+                                        <input type="checkbox" name="edu" id="edu_chk01" checked />
+                                        <span>지정</span>
+                                    </label></th>
+                                <td>
+                                    <div><a href="javascript:openPop('../jisa/Education/pop_subject.html','1000','670');" class="btn_table gray">대상자 추가</a>
+                                        <span style="margin:0 10px;"><a href=""">1,234</a>명 추가되었습니다.</span>
+                                    <label for=" auto_chk01" class="chk_idt">
+                                                <input type="checkbox" name="auto" id="auto_chk01" />
+                                                <span>자동신청</span>
+                                    </div>
+                                    <div class="bottom_guide">특정 대상자 교육의 경우 대상자를 업로드 해주세요</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="edu_chk01" class="chk_idt">
+                                        <input type="checkbox" name="edu" id="edu_chk01" />
+                                        <span>미지정</span>
+                                    </label></th>
+                                <td>
+                                    <label for="auto_chk02" class="chk_idt">
+                                        <input type="checkbox" name="auto" id="auto_chk02" />
+                                        <span>자동신청</span>
+</div><br />
+<div class="bottom_guide">특정 대상자 교육이 아닌 전체 혹은 지사, 가맹점입니다.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 class="tit_h4">공지등록</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>등록여부</th>
+                <td>
+                    <label for="submit_rdo01" class="rdo_idt">
+                        <input type="radio" name="submit" id="submit_rdo01" checked />
+                        <span>등록</span></label>
+                    <label for="submit_rdo02" class="rdo_idt">
+                        <input type="radio" name="submit" id="submit_rdo02" />
+                        <span>미등록</span></label>
+                </td>
+            </tr>
+            <tr>
+                <th>게시내역</th>
+                <td>
+                    <label for="all_chk02" class="chk_idt table all">
+                        <input type="checkbox" name="post" id="all_chk02" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="post_chk01" class="chk_idt table">
+                        <input type="checkbox" name="post" id="post_chk01" />
+                        <span>신청기간</span>
+                    </label>
+                    <label for="post_chk02" class="chk_idt table">
+                        <input type="checkbox" name="post" id="post_chk02" />
+                        <span>교육기간</span>
+                    </label>
+                    <label for="post_chk03" class="chk_idt table">
+                        <input type="checkbox" name="post" id="post_chk03" />
+                        <span>추가인원비용</span>
+                    </label>
+                    <label for="post_chk04" class="chk_idt table">
+                        <input type="checkbox" name="post" id="post_chk04" />
+                        <span>교육방식</span>
+                    </label>
+                    <label for="post_chk05" class="chk_idt table">
+                        <input type="checkbox" name="post" id="post_chk05" />
+                        <span>커리큘럼</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>공지제목<span class="required"></span></th>
+                <td><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>상단고정</th>
+                <td>
+                    <label for="top_chk01" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_chk01" />
+                        <span>설정</span>
+                    </label>
+                    <label for="top_chk02" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_chk02" />
+                        <span>기간제한</span>
+                    </label>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span> ~
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>공지일</th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span> ~
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터 영역</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn_bottom_wrap between mt_40">
+        <a href="index.html?page=education/edu_plan_notice" class="btn_basic line">목록</a>
+        <p>
+            <a href="" class="btn_basic line">미리보기</a>
+            <a href="" class="btn_basic">저장</a>
+        </p>
+    </div>

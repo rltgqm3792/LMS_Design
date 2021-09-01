@@ -1,0 +1,167 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트        
+        $(".nav_two .two_tit,.align_right h2").text("수동 웹주문 생성");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품구분</dt>
+                <dd>
+                    <label for="divide_rdo01" class="rdo_idt">
+                        <input type="radio" name="divide" id="divide_rdo01" checked />
+                        <span>학생용</span>
+                    </label>
+                    <label for="divide_rdo02" class="rdo_idt">
+                        <input type="radio" name="divide" id="divide_rdo02" />
+                        <span>교사용</span>
+                    </label>
+                    <label for="divide_rdo03" class="rdo_idt">
+                        <input type="radio" name="divide" id="divide_rdo03" />
+                        <span>부록지</span>
+                    </label>
+                    <label for="divide_rdo04" class="rdo_idt">
+                        <input type="radio" name="divide" id="divide_rdo04" />
+                        <span>홍보판촉물</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품카테고리</dt>
+                <dd><select>
+                        <option>카테고리1</option>
+                    </select>
+                    <select>
+                        <option>카테고리2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품명</dt>
+                <dd><input type="text" placeholder="상품명을 입력하세요"></dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점</dt>
+                <dd><select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹점전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<div class="box_guide mt_20">
+    <div>
+        <ul>
+            <li>주문접수기간 : <span class="font_gmarket13">2021.10.30 ~ 2021.12.30</span></li>
+            <li>발송예정일 : <span class="font_gmarket13">2021.12.30</span></li>
+        </ul>
+    </div>
+</div>
+<div class="table_list mt_20">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%;">
+            <col style="width:6%;">
+            <col style="width:10%" />
+            <col />
+            <col />
+            <col style="width:10%;">
+            <col style="width:13%;">
+            <col style="width:10%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>학년</th>
+                <th>상품명</th>
+                <th>상품상세</th>
+                <th>가격(원)</th>
+                <th>수량</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>&nbsp;</td>
+                <td class="tl"><span class="noimg"></span>&nbsp;&nbsp;&nbsp;&nbsp;영어__A02(교구)</td>
+                <td>&nbsp;</td>
+                <td class="tr"><span class="font_gmarket13">22,000</span></td>
+                <td>
+                    <div class="amount">
+                        <a href="" class="amount_puls"></a>
+                        <input type="text" value="1">
+                        <a href="" class="amount_minus"></a>
+                    </div>
+                </td>
+                <td class="tr"><span class="font_gmarket13">22,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <a href="" class="btn_basic confirm">장바구니 담기</a>
+</div>

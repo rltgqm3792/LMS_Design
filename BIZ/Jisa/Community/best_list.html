@@ -1,0 +1,182 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("우수 가맹점 소개");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- //타이틀 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all check">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);">
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk01">
+                        <span>공통</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk02">
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk03">
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk04">
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>연도</dt>
+                <dd><select>
+                        <option>2021년</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요.">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!--//조건검색 -->
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+
+<div class="btn_top_wrap between">
+    <p class="fl">
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+    </p>
+</div>
+
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:5%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col>
+            <col style="width:7%">
+            <col style="width:10%">
+            <col style="width:7%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>FC 구분</th>
+                <th>년/월</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td colspan="8">
+                    <div class="no_data">해당 검색 결과가 없습니다.</div>
+                </td>
+            </tr> -->
+            <tr>
+                <td><span class="font_gmarket13">3</span></td>
+                <td>수학</td>
+                <td>2021년 7월</td>
+                <td class="tl">
+                    <div class="ellipsis"><a href="index.html?page=community/best_view"">노원 월계대동점 이은영 원장님</a><span class=" ico_img new">new</span></div>
+                </td>
+                <td>관리자</td>
+                <td><span class="font_gmarket13">2020.7.14</span></td>
+                <td><a href="javascript:openPop('community/pop_search_branch01.html','800','650');" class="font_gmarket13">28900</a></td>
+            </tr>
+            <tr>
+                <td><span class="font_gmarket13">2</span></td>
+                <td>수학</td>
+                <td>2021년 7월</td>
+                <td class="tl">
+                    <div class="ellipsis"><a href="index.html?page=community/best_view"">노원 월계대동점 이은영 원장님</a></div></td>
+                <td>관리자</td>
+                <td><span class=" font_gmarket13">2020.7.14</span>
+                </td>
+                <td><a href="javascript:openPop('community/pop_search_branch01.html','800','650');" class="font_gmarket13">28900</a></td>
+            </tr>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>수학</td>
+                <td>2021년 7월</td>
+                <td class="tl">
+                    <div class="ellipsis"><a href="index.html?page=community/best_view"">노원 월계대동점 이은영 원장님</a></div></td>
+                <td>관리자</td>
+                <td><span class=" font_gmarket13">2020.7.14</span>
+                </td>
+                <td><a href="javascript:openPop('community/pop_search_branch01.html','800','650');" class="font_gmarket13">28900</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

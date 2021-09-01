@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+        <script>
+            $(function () {
+                $('.btn_slide').on('click', function () {
+                    $('.pr_slide').slideToggle(-300);
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>전단지 주문현황</h1>
+            </header>
+            <h2 class="tit_pop">상품 기본정보</h2>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <div class="table_list">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:8%">
+                            <col>
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:10%">
+                            <col style="width:13%">
+                            <col style="width:13%">
+                            <col style="width:10%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>FC구분</th>
+                                <th>상품명</th>
+                                <th>지사판매가(원)</th>
+                                <th>가맹판매가(원)</th>
+                                <th>노출대상</th>
+                                <th>판매(주문)시작일</th>
+                                <th>판매(주문)마감일</th>
+                                <th>재고수량</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>전과목</td>
+                                <td>수학 겨울방학 홍보 전단지</td>
+                                <td><span class="font_gmarket13">1,000</span></td>
+                                <td><span class="font_gmarket13">1,000</span></td>
+                                <td>지사전체</td>
+                                <td><span class="font_gmarket13">2021.10.30</span></td>
+                                <td><span class="font_gmarket13">2021.10.30</span></td>
+                                <td>제한없음</td>
+                                <!-- <td><span class="font_gmarket13">11,000</span></td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="tit_pop" style="margin: 30px 0 0;">주문현황</h2>
+                <!--테이블 상단-->
+                <div class="btn_top_wrap between">
+                    <p>
+                        <select class="h34">
+                            <option value="">10</option>
+                            <option value="" selected>20</option>
+                            <option value="">50</option>
+                            <option value="">100</option>
+                        </select>
+                        <span class="list_num">전체 <strong>250</strong>개</span>
+                    </p>
+                    <p><a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+                        <a href="" class="btn_top">승인</a>
+                    </p>
+                </div>
+                <!--//테이블 상단-->
+                <div class="table_list mt_10">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:6%">
+                            <col style="width:6%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:8%">
+                            <col />
+                            <col style="width:9%">
+                            <col />
+                            <col style="width:9%">
+                            <col style="width:11%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label for="all_chk04" class="chk_idt all">
+                                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                                        <span>전체</span>
+                                    </label>
+                                </th>
+                                <th>No</th>
+                                <th>주문일</th>
+                                <th>주문번호</th>
+                                <th>지사코드</th>
+                                <th>지사명</th>
+                                <th>가맹점코드</th>
+                                <th>가맹점명</th>
+                                <th>승인여부</th>
+                                <th>승인일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="board01" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board01" />
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td><span class="font_gmarket13">10</span></td>
+                                <td><a class="btn_slide"><span class="font_gmarket13">2020.10.05</span></a></td>
+                                <td><a class="btn_slide"><span class="font_gmarket13">2020104008</span></a></td>
+                                <td><span class="font_gmarket13">jissa</span></td>
+                                <td class="tl">남양주의정부</td>
+                                <td><span class="font_gmarket13">H0021</span></td>
+                                <td class="tl">남양주의정부</td>
+                                <td>1차승인</td>
+                                <td><span class="font_gmarket13">2021.11.30</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" class="pr_slide">
+                                    <div class="pr_file">
+                                        <table>
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col style="width:20%">
+                                                <col style="width:80%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>가맹점명</th>
+                                                    <td class="tl">해법가산점 (A0987)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>이미지</th>
+                                                    <td class="tl"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>수령자명</th>
+                                                    <td class="tl">박찬호</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>수령자 연락처</th>
+                                                    <td class="tl"><span class="font_gmarket13">010-9876-5422</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>수령지</th>
+                                                    <td class="tl">[15830] 서울 금천구 가산디지털로 1로 16</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="btn_bottom_wrap right mt_10">
+                                            <a class="btn_slide btn_table line">닫기</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="board01" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board01" />
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td><span class="font_gmarket13">10</span></td>
+                                <td><a class="btn_slide"><span class="font_gmarket13">2020.10.05</span></a></td>
+                                <td><a class="btn_slide"><span class="font_gmarket13">2020104008</span></a></td>
+                                <td><span class="font_gmarket13">jissa</span></td>
+                                <td class="tl">남양주의정부</td>
+                                <td><span class="font_gmarket13">H0021</span></td>
+                                <td class="tl">남양주의정부</td>
+                                <td>1차승인</td>
+                                <td><span class="font_gmarket13">2021.11.30</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="10" class="pr_slide">
+                                    <div class="pr_file">
+                                        <table>
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col style="width:20%">
+                                                <col style="width:80%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>가맹점명</th>
+                                                    <td class="tl">해법가산점 (A0987)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>이미지</th>
+                                                    <td class="tl"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>수령자명</th>
+                                                    <td class="tl">박찬호</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>수령자 연락처</th>
+                                                    <td class="tl"><span class="font_gmarket13">010-9876-5422</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>수령지</th>
+                                                    <td class="tl">[15830] 서울 금천구 가산디지털로 1로 16</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="btn_bottom_wrap right mt_10">
+                                            <a class="btn_slide btn_table line">닫기</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="paging">
+                    <a href="" class="btn_paging back"></a>
+                    <a href="" class="btn_paging pre"></a>
+                    <ul>
+                        <li class="pop_paging_now">1,653</li>
+                        <li class="pop_paging_line">/</li>
+                        <li class="pop_paging_total">1,653</li>
+                    </ul>
+                    <a href="" class="btn_paging next"></a>
+                    <a href="" class="btn_paging forward"></a>
+                </div> -->
+                <div class="paging">
+                    <a href="" class="btn_paging back"></a>
+                    <a href="" class="btn_paging pre"></a>
+                    <ul>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">5</a></li>
+                        <li><a href="">6</a></li>
+                        <li><a href="">7</a></li>
+                        <li><a href="">8</a></li>
+                        <li><a href="">9</a></li>
+                        <li><a href="">10</a></li>
+                    </ul>
+                    <a href="" class="btn_paging next"></a>
+                    <a href="" class="btn_paging forward"></a>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+        </article>
+    </body>
+
+</html>

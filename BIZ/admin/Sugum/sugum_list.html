@@ -1,0 +1,487 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수금정보관리");
+
+        //달력
+        datepicker();
+
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="btn_right">
+    <a href="javascript:openPop('../admin/sugum/pop_sugum_view.html','940','670');" class="btn_top">수금열람 설정</a>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점 선택</dt>
+                <dd>
+                    <select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹점전체</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                    <a href="javascript:openPop('../admin/sugum/pop_sugum_search01.html','940','670');" class="btn_gray ml_2">팝업 상세검색</a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <span class="list_num">가맹점명 / </span>
+        <span class="list_num">수강생 <strong>250</strong>명</span>
+        <span class="bar"></span>
+        <span class="list_num">가맹시작일 : <strong class="mt_1">2021.10.30</strong></span>
+    </p>
+    <p> <label for="all_rdo01" class="rdo_idt">
+            <input type="radio" name="join" id="all_rdo01" checked />
+            <span>검색결과</span>
+        </label>
+        <label for="all_rdo02" class="rdo_idt">
+            <input type="radio" name="join" id="all_rdo02" />
+            <span>전체</span>
+        </label>
+        <a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="javascript:openPop('../admin/sugum/pop_discount.html','500','670');" class="btn_top line excel"><span>할인액 일괄 업로드</span></a>
+        <!-- 수강생 할인 업로드 <a href="javascript:openPop('../admin/sugum/pop_discount_upload.html','900','670');" class="btn_top line excel"><span>할인액 일괄 업로드</span></a> -->
+        <!-- 가맹점 할인 업로드 <a href="javascript:openPop('../admin/sugum/pop_join_upload.html','900','670');" class="btn_top line excel"><span>할인액 일괄 업로드</span></a> -->
+        <a class="btn_top">수금정보수정</a>
+</div>
+<!--//테이블 상단-->
+<div class="table_scroll" style="width:100%">
+    <div class="table_list" style="height:300px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:60px;" />
+                <col style="width:80px;" />
+                <col style="width:100px;" />
+                <col style="width:80px;" />
+                <col style="width:150px;" />
+                <col style="width:120px;" />
+                <col style="width:200px;" />
+                <col style="width:100px;" />
+                <col style="width:80px;" />
+                <col style="width:80px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:80px;" />
+                <col style="width:80px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:80px;" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <label for="all_chk04" class="chk_idt all">
+                            <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                            <span>전체</span>
+                        </label>
+                    </th>
+                    <th>No</th>
+                    <th>
+                        <div class="btn_sort">
+                            FC구분
+                            <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th>지사코드</th>
+                    <th>지사명</th>
+                    <th>
+                        <div class="btn_sort">
+                            가맹점코드
+                            <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th>가맹점명</th>
+                    <th>수강생번호</th>
+                    <th>수강생이름</th>
+                    <th>학년</th>
+                    <th>청구액(원)</th>
+                    <th>추가액1(원)</th>
+                    <th>추가액2(원)</th>
+                    <th>할인액(원)</th>
+                    <th>최종청구액(원)</th>
+                    <th>수금일</th>
+                    <th>수업일</th>
+                    <th>상태</th>
+                    <th>가입일</th>
+                    <th>복회일</th>
+                    <th>휴회일</th>
+                    <th>수강생구분</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--
+                <tr>
+                    <td colspan="24">
+                        <div class="no_data">수금 정보관리를 위한 연월을 선택해 주세요</div>
+                    </td>
+                </tr>
+                -->
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>박찬호</td>
+                    <td>중등2</td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>23일</td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td>일반</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,354 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수강생상세정보");
+        $(".group_nav.one_depth .tit").text("수강생관리"); // navigator 1차 menu error 때문에 추가 (2021.8.19) :chan
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=Stdmng/stu_detail01">기본정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail02_01">학습정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail03">주문정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail04">상담정보</a></li>
+    <li class="on"><a href="index.html?page=Stdmng/stu_detail05">출결정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail06">납부정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail07">변경이력</a></li>
+</ul>
+<h4 class="tit_h4">출결번호</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>수학</th>
+                <td><span class="font_gmarket13">1234</span></td>
+                <th>학습시간</th>
+                <td>40분</td>
+            </tr>
+            <tr>
+                <th>영어</th>
+                <td><span class="font_gmarket13">1234</span></td>
+                <th>학습시간</th>
+                <td>40분</td>
+            </tr>
+            <tr>
+                <th>전과목</th>
+                <td><span class="font_gmarket13">1234</span></td>
+                <th>학습시간</th>
+                <td>40분</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="search_calendar">
+    <button class="prev">이전달</button>
+    <span class="txt">2021. 1월</span>
+    <button class="next">다음달</button>
+</div>
+<div class="align_right between">
+    <h4 class="tit_h4">출결정보</h4>
+    <p class="mtt_15">
+        <label for="cal_01" class="rdo_list">
+            <input type="radio" name="cal" value="1" id="cal_01" checked />
+            <span>리스트형</span>
+        </label><label for="cal_02" class="rdo_cal">
+            <input type="radio" name="cal" value="2" id="cal_02" />
+            <span>달력형</span>
+        </label>
+    </p>
+</div>
+<div id="pop1" class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>날짜</th>
+                <th>FC구분</th>
+                <th>입실시간</th>
+                <th>퇴실시간</th>
+                <th>학습시간(분)</th>
+                <th>결석여부</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">2020.10.21</span></td>
+                <td>수학</td>
+                <td><span class="font_gmarket13">10:00</span></td>
+                <td><span class="font_gmarket13">10:41</span></td>
+                <td><span class="font_gmarket13">40</span></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><span class="font_gmarket13">2020.10.21</span></td>
+                <td>수학</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="font_gmarket13">○</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="pop2" class="table_calendar" style="display:none;">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:14.285%">
+            <col style="width:14.285%">
+            <col style="width:14.285%">
+            <col style="width:14.285%">
+            <col style="width:14.285%">
+            <col style="width:14.285%">
+            <col style="width:14.285%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>일요일</th>
+                <th>월요일</th>
+                <th>화요일</th>
+                <th>수요일</th>
+                <th>목요일</th>
+                <th>금요일</th>
+                <th>토요일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul>
+                        <li class="last">30</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li class="last">30</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>1</li>
+                        <li>수업시간 <span>50</span>분</li>
+                        <li class="enter">입실 am 10:30</li>
+                        <li class="leaving">퇴실 pm 9:30</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>2</li>
+                        <li><span>결석</span></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>3</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>4</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li class="sat">5</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li class="sun">6</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>7</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>8</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>9</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>10</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>11</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li class="sat">12</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li class="sun">13</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>14</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>15</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>16</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>17</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>18</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li class="sat">19</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li class="sun">20</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>21</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>22</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>23</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>24</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>25</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li class="sat">26</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li class="sun">27</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>28</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>29</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>30</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>31</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li class="last">1</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li class="last">2</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    $('input[type=radio][name=cal]').on('click', function () {
+        var chkValue = $('input[type=radio][name=cal]:checked').val();
+        if (chkValue == '1') {
+            $('#pop1').css('display', 'block');
+            $('#pop2').css('display', 'none');
+        } else if (chkValue == '2') {
+            $('#pop1').css('display', 'none');
+            $('#pop2').css('display', 'block');
+        }
+    });
+</script>

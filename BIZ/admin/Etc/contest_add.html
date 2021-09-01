@@ -1,0 +1,151 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("콘테스트 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+        datepicker();
+        timepicker();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>회차</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" class="input_full" placeholder="제목을 30자 이내로 입력해주세요."></td>
+            </tr>
+            <tr>
+                <th>진행기간<span class="required"></span></th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>개념카드<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" placeholder="파일을 첨부하세요" />
+                    <label for="fileUpload" class="btn_table gray">찾아보기</label>
+                    <a href="" class="btn_table line excel"><span>양식 다운로드</span></a>
+                </td>
+            </tr>
+            <tr>
+                <th>수상자 발표일<span class="required"></span></th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>수상자 팝업</th>
+                <td>URL &nbsp;<input type="text" class="input_500">&nbsp;&nbsp;Width&nbsp;<input type="text">px&nbsp;&nbsp;Height&nbsp;<input type="text">px</td>
+            </tr>
+            <tr>
+                <th>등록일<span class="required"></span></th>
+                <td>
+                    <label for="date_rdo02" class="rdo_idt">
+                        <input type="radio" name="date" id="date_rdo02" checked />
+                        <span>공개</span>
+                    </label>
+                    <label for="date_rdo03" class="rdo_idt">
+                        <input type="radio" name="date" id="date_rdo03" />
+                        <span>비공개</span>
+                    </label>
+                    <label for="date_rdo04" class="rdo_idt">
+                        <input type="radio" name="date" id="date_rdo04" />
+                        <span>예약</span>
+                    </label>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px; display:inline-block;"></div>
+                    <div id="timepicker-selectbox"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>공개설정<span class="required"></span></th>
+                <td>
+                    <label for="open_rdo02" class="rdo_idt table">
+                        <input type="radio" name="open" id="open_rdo02" />
+                        <span>지사</span>
+                    </label>
+                    <label for="open_rdo03" class="rdo_idt table">
+                        <input type="radio" name="open" id="open_rdo03" />
+                        <span>가맹점</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>콘테스트 URL</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">등록</a>
+        <!-- <a href="" class="btn_basic line">수정</a> -->
+    </p>
+</div>

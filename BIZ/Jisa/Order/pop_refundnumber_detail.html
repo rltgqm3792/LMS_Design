@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>반품번호 상세</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <h4 class="tit_pop">주문 정보</h4>
+                <div class="table_list scroll_x">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:80px;">
+                            <col style="width:100px;">
+                            <col style="width:150px;">
+                            <col style="width:100px;">
+                            <col style="width:120px;">
+                            <col style="width:80px;">
+                            <col style="width:250px;">
+                            <col style="width:80px;">
+                            <col style="width:80px;">
+                            <col style="width:80px;">
+                            <col style="width:80px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>FC구분</th>
+                                <th>반품번호</th>
+                                <th>반품신청일</th>
+                                <th>연관주문번호</th>
+                                <th>연관전표번호</th>
+                                <th>가맹점코드<br />(ERP코드)</th>
+                                <th>가맹점명</th>
+                                <th>주문구분</th>
+                                <th>사유</th>
+                                <th>반품금액</th>
+                                <th>파일선택</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>수학</td>
+                                <td><span class="font_gmarket13">202006211</span></td>
+                                <td><span class="font_gmarket13">2021.06.30 08:50</span></td>
+                                <td><span class="font_gmarket13">202006211</span></td>
+                                <td><span class="font_gmarket13">20200626H649</span></td>
+                                <td><span class="font_gmarket13">H9998<br />(1256)</span></td>
+                                <td class="tl">천재금천교실</td>
+                                <td>휴회(반)</td>
+                                <td>휴회</td>
+                                <td>-</td>
+                                <td><a href="" class="ico_img data">저장</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4 class="tit_pop mt_20">반품 상세 정보</h3>
+                    <div class="table_list">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:8%">
+                                <col style="width:8%">
+                                <col style="width:8%">
+                                <col style="width:15%">
+                                <col style="width:12%">
+                                <col />
+                                <col />
+                                <col style="width:8%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>수강생번호</th>
+                                    <th>수강생명</th>
+                                    <th>학습구분</th>
+                                    <th>학습월</th>
+                                    <th>사유</th>
+                                    <th>반품금액</th>
+                                    <th>워크북</th>
+                                    <th>커리큘럼명</th>
+                                    <th>학습차시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font_gmarket13">M000002</span></td>
+                                    <td>김해법</td>
+                                    <td>표준</td>
+                                    <td><span class="font_gmarket13">2021.07</span></td>
+                                    <td>휴회</td>
+                                    <td><span class="font_gmarket13">250,000</span></td>
+                                    <td class="tl">Genius Kids 2 SET<br />(스마터 2.0)</td>
+                                    <td class="tl">수학 : [스마트교재]명<br />영어 : [프로그램명]</td>
+                                    <td><span class="font_gmarket13">0</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 오발송반품인경우 
+                <table>
+                    <caption></caption>
+                    <colgroup></colgroup>
+                    <thead>
+                        <tr>
+                            <th>수강생번호</th>
+                            <th>수강생명</th>
+                            <th>학습구분</th>
+                            <th>학습월</th>
+                            <th>사유</th>
+                            <th>반품금액</th>
+                            <th>주문 워크북</th>
+                            <th>오발송 워크북</th>
+                            <th>커리큘럼명</th>
+                            <th>학습차시</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="font_gmarket13">M000002</span></td>
+                            <td>김해법</td>
+                            <td>표준</td>
+                            <td><span class="font_gmarket13">2021.07</span></td>
+                            <td>휴회</td>
+                            <td><span class="font_gmarket13">250,000</span></td>
+                            <td>Genius Kids 2 SET<br/>(스마터 2.0)</td>
+                            <td>TopStoryBook(strong Mouse)1~2 <br/>SET(스마터 2.0)</td>
+                            <td>수학 : [스마트교재]명<br/>영어 : [프로그램명]</td>
+                            <td><span class="font_gmarket13">0</span></td>
+                        </tr>
+                    </tbody>
+                </table>-->
+                        <!-- 교환인경우 
+                <table>
+                    <caption></caption>
+                    <colgroup></colgroup>
+                    <thead>
+                        <tr>
+                            <th>수강생번호</th>
+                            <th>수강생명</th>
+                            <th>학습구분</th>
+                            <th>학습월</th>
+                            <th>사유</th>
+                            <th>반품금액</th>
+                            <th>주문 워크북</th>
+                            <th>교환 워크북</th>
+                            <th>커리큘럼명</th>
+                            <th>학습차시</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="font_gmarket13">M000002</span></td>
+                            <td>김해법</td>
+                            <td>표준</td>
+                            <td><span class="font_gmarket13">2021.07</span></td>
+                            <td>휴회</td>
+                            <td><span class="font_gmarket13">250,000</span></td>
+                            <td>Genius Kids 2 SET<br/>(스마터 2.0)</td>
+                            <td>TopStoryBook(strong Mouse)1~2 <br/>SET(스마터 2.0)</td>
+                            <td>수학 : [스마트교재]명<br/>영어 : [프로그램명]</td>
+                            <td><span class="font_gmarket13">0</span></td>
+                        </tr>
+                    </tbody>
+                </table>-->
+                    </div>
+                    <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+        </article>
+    </body>
+
+</html>

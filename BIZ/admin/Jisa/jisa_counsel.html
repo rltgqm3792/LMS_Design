@@ -1,0 +1,214 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("온라인 가맹상담신청");
+
+
+        //달력
+        //  calendar();
+        datePickerByClass(); // 추가 2021.8.18 :chan
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>신청일</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>상담완료</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>상담대기</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>상담중</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd><select>
+                        <option>지사명</option>
+                        <option>지사코드</option>
+                        <option>원장명</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <span class="list_num">
+            전체 :
+            <strong class="mt_1">1,256</strong>
+            건</span>
+    </p>
+    <p><a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table class="thead">
+        <colgroup>
+            <col style="width:4%">
+            <col style="width:6%">
+            <col>
+            <col style="width:6%">
+            <col style="width:10%">
+            <col style="width:8%">
+            <col style="width:6%">
+            <col style="width:6%">
+            <col style="width:6%">
+            <col style="width:8%">
+            <col style="width:8%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>지사코드</th>
+                <th>지사명</th>
+                <th>원장명</th>
+                <th>핸드폰번호</th>
+                <th>지역</th>
+                <th>브랜드</th>
+                <th>구분</th>
+                <th>신청서</th>
+                <th>신청일</th>
+                <th>가맹진행 여부</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="height:350px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width:4%">
+                <col style="width:6%">
+                <col>
+                <col style="width:6%">
+                <col style="width:10%">
+                <col style="width:8%">
+                <col style="width:6%">
+                <col style="width:6%">
+                <col style="width:6%">
+                <col style="width:8%">
+                <col style="width:8%">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">0101</span></td>
+                    <td class="tl">은평지사</td>
+                    <td>이순신</td>
+                    <td><span class="font_gmarket13">010-2121-5488</span></td>
+                    <td>서대문구</td>
+                    <td>전과목</td>
+                    <td>상담완료</td>
+                    <td><a href="javascript:openPop('../admin/jisa/pop_counsel_detail.html','940','670');" class="btn_table line">보기</a></td>
+                    <td><span class="font_gmarket13">2021.10.22</span></td>
+                    <td><span class="font_gmarket13">Y</span></td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="15">
+                        <div class="no_data">조회된 데이터가 없습니다.</div>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

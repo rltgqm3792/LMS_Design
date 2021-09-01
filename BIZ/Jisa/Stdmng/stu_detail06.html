@@ -1,0 +1,170 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("수강생상세정보");
+        $(".align_right h2").text("수강생상세정보");
+
+        //달력
+        calendar();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=Stdmng/stu_detail01">기본정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail02_01">학습정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail03">주문정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail04">상담정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail05">출결정보</a></li>
+    <li class="on"><a href="index.html?page=Stdmng/stu_detail06">납부정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail07">변경이력</a></li>
+</ul>
+<h4 class="tit_h4">납부예정일</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:33.33%">
+            <col style="width:33.33%">
+            <col style="width:33.33%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>FC구분</th>
+                <th>납부일</th>
+                <th>금액(원)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>수학</th>
+                <td>10일</td>
+                <td class="tr"><span class="font_gmarket13">30,000</span></td>
+            </tr>
+            <tr>
+                <th>영어</th>
+                <td>10일</td>
+                <td class="tr"><span class="font_gmarket13">30,000</span></td>
+            </tr>
+            <tr>
+                <th>전과목</th>
+                <td>10일</td>
+                <td class="tr"><span class="font_gmarket13">30,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4 mt_20">납부정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분</th>
+                <td>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>수학</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="search_calendar mt_20">
+    <button class="prev">이전년도</button>
+    <span class="txt">2021</span>
+    <button class="next">다음년도</button>
+</div>
+<div class="btn_bottom_wrap right">
+    <a href="javascript:openPop('../jisa/Stdmng/pop_bill.html','940','670');" class="btn_top">영수증 출력</a>
+</div>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%">
+            <col style="width:32%">
+            <col style="width:32%">
+            <col style="width:32%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>납입일</th>
+                <th>납부여부</th>
+                <th>메시지 전송</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td>10월</td>
+                <td>미납부</td>
+                <td><a href="" class="btn_table gray">SMS 전송</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td>10월</td>
+                <td>미납부</td>
+                <td><a href="" class="btn_table gray">SMS 전송</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4 mt_20">기타정보</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>결제정보</th>
+                <td class="tl">현금<br /><span class="bottom_guide">현금영수증 발급정보 010-1234-1234</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

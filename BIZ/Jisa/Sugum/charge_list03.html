@@ -1,0 +1,155 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("수수료 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+
+        $('.ly_info01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'block');
+        });
+        $('.ly_info_close01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'none');
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- tab_2depth -->
+<ul class="tab_2depth">
+    <li><a href="index.html?page=sugum/charge_list01">수수료 지급내역</a></li>
+    <li><a href="index.html?page=sugum/charge_list02">물품대행내역</a></li>
+    <li class="on"><a href="index.html?page=sugum/charge_list03">월 별 수수료</a></li>
+    <li><a href="index.html?page=sugum/charge_list04">수금마감 입금액</a></li>
+</ul>
+<!-- tab_2depth -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" checked />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>연월선택</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<div class="tooltip">
+    <h4 class="tit_h4 mt_20">월 별 지사 수수료</h4>
+    <p>
+        <a href="javascript:void(0);" class="ly_info01"></a>
+    <div class="ly_info_pop01" style="left:170px;">
+        <div><a href="javascript:void(0);" class="ly_info_close01"></a>
+            <ul>
+                <li>- 수금율은 전체 수금액에 대한 수금율이며 지사수수료와는 연관되지 않습니다.</li>
+            </ul>
+        </div>
+    </div>
+    </p>
+</div>
+<div class="table_list culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%" />
+            <col style="width:5%" />
+            <col style="width:5%" />
+            <col />
+            <col style="width:9%" />
+            <col style="width:9%" />
+            <col style="width:9%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:6%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">FC구분</th>
+                <th rowspan="2">연/월</th>
+                <th rowspan="2">실회원수</th>
+                <th colspan="3">교재매출(청구액)</th>
+                <th colspan="3">수금액</th>
+                <th rowspan="2" class="td_line">수금율</th>
+                <th rowspan="2">지사 수수료</th>
+                <th rowspan="2">교재 미입금액</th>
+            </tr>
+            <tr>
+                <th>당월 매출(EHB)</th>
+                <th>당월매출(쏙쏙)</th>
+                <th>전월교재 미수금</th>
+                <th>당월</th>
+                <th>전월</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><span class="font_gmarket13">2021.01</span></td>
+                <td><span class="font_gmarket13">2,154</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">65%</span></td>
+                <td><span class="font_gmarket13">5.5%</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

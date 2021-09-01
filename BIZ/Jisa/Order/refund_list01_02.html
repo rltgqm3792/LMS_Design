@@ -1,0 +1,231 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("반품/오배송 신청");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- 2Depth Tab -->
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on"><a href="index.html?page=order/refund_list01">반품/오배송 신청</a></li>
+    <li><a href="index.html?page=order/refund_list02">반품/오배송 신청현황</a></li>
+    <li><a href="index.html?page=order/refund_list03">반품/오배송 접수리스트</a></li>
+</ul>
+<!-- // 2Depth Tab -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li> 
+
+        <li>
+            <dl>
+                <dt>신청구분</dt>
+                <dd>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" onclick="movepage('index.html?page=order/refund_list01');" />
+                        <span>반품</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" checked />
+                        <span>오배송</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" onclick="movepage('index.html?page=order/refund_list01_03');" />
+                        <span>불량</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색</dt>
+                <dd>
+                    <input type="text">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset">초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<div class="align_right">
+    <h4 class="tit_h4 mt_20">반품신청 가능 목록</h4>
+    <p class="mtt_10">
+        <a href="" class="btn_top line">반품접수</a>
+    </p>
+</div>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:6%">
+            <col>
+            <col>
+            <col style="width:10%">
+            <col style="width:10%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>전표번호</th>
+                <th>주문번호</th>
+                <th>주문일</th>
+                <th>배송완료일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td rowspan="2"><a href=""><span class="font_gmarket13">123456789455</span></a></td>
+                <td><span class="font_gmarket13">11111111</span></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+            </tr>
+            <tr>
+                <td><span class="font_gmarket13">2</span></td>
+                <td><span class="font_gmarket13">11111111</span></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+            </tr>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td><a href=""><span class="font_gmarket13">123456789455</span></a></td>
+                <td><span class="font_gmarket13">11111111</span></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">반품신청 주문정보 상세</h4>
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <!-- <select class="line_type num">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select> -->
+        <span class="list_num">전체 : <strong>25</strong>개</span>
+        <span class="bar"></span>
+        <span class="list_num">
+            반품총액 :
+            <strong>250,000</strong>
+            원
+        </span>
+    </p>
+
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%" />
+            <col style="width:6%" />
+            <col style="width:10%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <!-- <col style="width:7%" />
+            <col style="width:7%" /> -->
+            <col />
+            <col style="width:5%" />
+            <col style="width:7%" />
+            <col style="width:10%" />
+            <col style="width:10%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>주문번호</th>
+                <th>주문일</th>
+                <th>배송완료일</th>
+                <!-- <th>수강생명</th>
+                <th>학습월</th> -->
+                <th>교재(상품)명</th>
+                <th>수량</th>
+                <th>금액</th>
+                <th>사유</th>
+                <th>상세</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td><span class="font_gmarket13">11111111</td>
+                <td><span class="font_gmarket13">2021.06.30</td>
+                <td><span class="font_gmarket13">2021.06.30</td>
+                <!-- <td>홍길동</td>
+                <td><span class="font_gmarket13">2020.07</span></td> -->
+                <td class="tl">원리쏙쏙 3-1-1</td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td class="ta_r"><span class="font_gmarket13">2,500</span></td>
+                <td><select>
+                        <option>누락</option>
+                        <option>다른상품 오배송</option>
+                    </select></td>
+                <td><a href="javascript:openPop('../jisa/order/pop_error_select.html','940','670');" class="btn_table gray">오배송 교재선택</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

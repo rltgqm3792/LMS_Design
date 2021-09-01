@@ -1,0 +1,134 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("홍보시안&판촉물어워드");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!--//타이틀-->
+<!--테이블-->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%">
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>구분<span class="required"></span></th>
+                <td>
+                    <label for="radio_01" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_01" checked="checked">
+                        <span>공통</span>
+                    </label>
+                    <label for="radio_02" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_02">
+                        <span>수학</span>
+                    </label>
+                    <label for="radio_03" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_03">
+                        <span>영어</span>
+                    </label>
+                    <label for="radio_04" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_04">
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" class="input_full" placeholder="제목을 30자 이내로 입력해주세요" /></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터영역</td>
+            </tr>
+            <tr>
+                <th>파일첨부<span class="required"></span></th>
+                <td>
+                    <div class="attach_file_lst">
+                        <ul>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <a class="delete_File"></a></li>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <a class="delete_File"></a></li>
+                        </ul>
+                        <!-- [D] 파일첨부전 드래그/드롭 시 on클래스 추가 -->
+                        <p class="guide_tx"><span>첨부할 파일을 직접 드래그 앤 드롭 해주세요</span></p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>상단고정</th>
+                <td>
+                    <label for="period_01" class="chk_idt">
+                        <input type="checkbox" name="month" id="period_01" />
+                        <span>설정</span>
+                    </label>
+                    <label for="period_02" class="chk_idt">
+                        <input type="checkbox" name="month" id="period_02" />
+                        <span>기간제한</span>
+                    </label>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span> ~
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>공개설정<span class="required"></span></th>
+                <td>
+                    <label for="radio_21" class="rdo_idt table">
+                        <input type="radio" name="radio2" id="radio_21" checked="checked">
+                        <span>지사</span>
+                    </label>
+                    <label for="radio_22" class="rdo_idt table">
+                        <input type="radio" name="radio2" id="radio_22">
+                        <span>가맹</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--//테이블-->
+<!-- 버튼 -->
+<div class="btn_bottom_wrap between">
+    <a href="index.html?page=community/pr_list" class="btn_basic line">목록</a>
+    <p>
+        <a href="javascript:alert_confirm('','저장하시겠습니까?','index.html?page=community/pr_list');" class="btn_basic">저장</a>
+    </p>
+</div>
+<!-- //버튼 -->

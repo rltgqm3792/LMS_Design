@@ -1,0 +1,312 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("VOC 현황");
+
+        calendar();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+
+    $(function () {
+        $('.btn_slide, .btn_slide_text').on('click', function () {
+            $('.btn_slide').toggleClass('off');
+            $('.box_chart dd').slideToggle();
+        });
+    });
+</script>
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+</style>
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_rdo02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo02" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_rdo03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo03" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_rdo04" class="rdo_idt">
+                        <input type="radio" name="month" id="month_rdo04" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>답변여부</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="as" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="as_chk02" class="chk_idt">
+                        <input type="checkbox" name="as" id="as_chk02" />
+                        <span>답변완료</span>
+                    </label>
+                    <label for="as_chk03" class="chk_idt">
+                        <input type="checkbox" name="as" id="as_chk03" />
+                        <span>미답변</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>처리상태</dt>
+                <dd>
+                    <label for="all_chk02" class="chk_idt all">
+                        <input type="checkbox" name="state" id="all_chk02" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="state_chk02" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk02" />
+                        <span>처리완료</span>
+                    </label>
+                    <label for="state_chk03" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk03" />
+                        <span>처리중</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>문의유형</dt>
+                <dd>
+                    <select>
+                        <option>사업운영</option>
+                    </select>
+                    <select>
+                        <option>주문/배송</option>
+                    </select>
+                    <a href="" class="btn_gray">추가 +</a>
+                    <div class="region_add">
+                        <div class="font_13">사업운영 > 주문배송<span class="delete_File"></span></div>
+                        <div class="font_13">시스템 > 원격지원<span class="delete_File"></span></div>
+                    </div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상담원</dt>
+                <dd><select>
+                        <option>전체</option>
+                    </select></dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd><select>
+                        <option>전체</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<div class="accordion mt_30">
+    <dl class="box_chart">
+        <dt>
+            <div>일단 통계 그래프
+            </div>
+            <a class="btn_slide">열기/닫기</a>
+        </dt>
+        <dd class="vod_chart">
+            <div>
+                <div id="chartdiv"></div>
+            </div>
+        </dd>
+    </dl>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">
+            전체 : <strong class="mt_1">1,225</strong></span>
+    </p>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="" class="btn_top gray">이관</a>
+        <a href="" class="btn_top black">삭제</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid">
+    <a href="index.html?page=VOC/voc_write">VOC 처리완료</a><br />
+    <a href="index.html?page=VOC/voc_view">VOC 처리중</a>
+
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <!-- Chart code -->
+    <script>
+        am4core.ready(function () {
+            am4core.addLicense("CH230677325");
+
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+
+            // Create chart instance
+            var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+
+            // Add data
+            chart.data = [{
+                "date": "7월 10일",
+                "답변완료": 2.5,
+                "미답변": 2.5,
+                "이관": 2.1,
+            }, {
+                "date": "7월 11일",
+                "답변완료": 2.6,
+                "미답변": 2.7,
+                "이관": 2.2,
+            }, {
+                "date": "7월 12일",
+                "답변완료": 2.8,
+                "미답변": 2.9,
+                "이관": 2.4,
+            }, {
+                "date": "7월 13일",
+                "답변완료": 2.8,
+                "미답변": 2.9,
+                "이관": 2.4,
+            }, {
+                "date": "7월 14일",
+                "답변완료": 2.8,
+                "미답변": 2.9,
+                "이관": 2.4,
+            }, {
+                "date": "7월 15일",
+                "답변완료": 2.8,
+                "미답변": 2.9,
+                "이관": 2.4,
+            }];
+
+            chart.colors.list = [
+                am4core.color("#0093ff"),
+                am4core.color("#ff5858"),
+                am4core.color("#eaeaea"),
+            ];
+
+            // Create axes
+            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            categoryAxis.dataFields.category = "date";
+            categoryAxis.renderer.grid.template.location = 0;
+
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis.renderer.inside = false;
+            valueAxis.renderer.labels.template.disabled = false;
+            valueAxis.min = 0;
+
+            // Create series
+            function createSeries(field, name) {
+
+                // Set up series
+                var series = chart.series.push(new am4charts.ColumnSeries());
+                series.name = name;
+                series.dataFields.valueY = field;
+                series.dataFields.categoryX = "date";
+                series.sequencedInterpolation = true;
+
+                // Make it stacked
+                series.stacked = true;
+
+                // Configure columns
+                series.columns.template.width = am4core.percent(60);
+                series.columns.template.tooltipText = "[bold]{name}[/]\n[font-size:14px]{categoryX}: {valueY}";
+
+                // Add label
+                var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+                labelBullet.label.text = "{valueY}";
+                labelBullet.locationY = 0.5;
+                labelBullet.label.hideOversized = true;
+
+                return series;
+            }
+
+            createSeries("답변완료", "답변완료");
+            createSeries("미답변", "미답변");
+            createSeries("이관", "이관");
+
+            // Legend
+            chart.legend = new am4charts.Legend();
+
+        }); // end am4core.ready()
+    </script>

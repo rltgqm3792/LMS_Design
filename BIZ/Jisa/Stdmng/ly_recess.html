@@ -1,0 +1,120 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+</script>
+
+<article class="ly_popup_wrap">
+    <div class="ly_popup_group">
+        <header class="ly_header">
+            <h1>휴회처리</h1>
+        </header>
+        <section class="ly_content">
+            <!-- tit_sub_txt -->
+            <div class="table_input">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:80%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>휴회사유</th>
+                            <td>
+                                <select>
+                                    <option>휴회사유선택</option>
+                                    <option>단기휴회</option>
+                                    <option>이사</option>
+                                    <option>시스템불만(부적응)</option>
+                                    <option>경제적이유(회비가 비싸서)</option>
+                                    <option>차량미운행</option>
+                                    <option>가맹점 환경이 나빠서</option>
+                                    <option>전과목학원으로 이동</option>
+                                    <option>과외로 이동</option>
+                                    <option>시험결과 불만족</option>
+                                    <option>인수인계</option>
+                                    <option>가맹점해지</option>
+                                    <option>기타</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기타</th>
+                            <td><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table_input" style="display:none">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:80%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>휴회사유</th>
+                            <td>
+                                <select>
+                                    <option>휴회사유선택</option>
+                                    <option selected>단기휴회</option>
+                                    <option>이사</option>
+                                    <option>시스템불만(부적응)</option>
+                                    <option>경제적이유(회비가 비싸서)</option>
+                                    <option>차량미운행</option>
+                                    <option>가맹점 환경이 나빠서</option>
+                                    <option>전과목학원으로 이동</option>
+                                    <option>과외로 이동</option>
+                                    <option>시험결과 불만족</option>
+                                    <option>인수인계</option>
+                                    <option>가맹점해지</option>
+                                    <option>기타</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>복회예정일</th>
+                            <td>
+                                <!-- 달력 추가 시작 2021.8.18 :chan -->
+                                <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input type="text" class="datepicker-input" aria-label="Date-Time">
+                                    <span class="tui-ico-date"></span>
+                                </span>
+                                <span class="dateWrapper" style="margin-top: -1px;"></span>
+                                <!-- 달력 추가 끝 2021.8.18 :chan --><br />
+                                <label for="board01" class="chk_idt">
+                                    <input type="checkbox" name="board" id="board01" checked />
+                                    <span>복회예정일에 자동 복회</span>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //tit_sub_txt -->
+        </section>
+        <!-- [D] 버튼3개일때 class : btn_three 추가-->
+        <section class="ly_btn_group">
+            <a href="javascript:ly_close();" class="btn cancel">닫기</a>
+            <a href="javascript:ly_close();" class="btn">휴회처리</a>
+            <!--
+                <a href="javascript:ly_close();" class="btn green">인쇄</a>
+                -->
+        </section>
+
+    </div>
+    <!-- 닫기버튼 -->
+    <a href="javascript:ly_close();" class="btn_ly_close">창닫기</a>
+    <!-- //닫기버튼 -->
+</article>
+
+<!-- 마스크 -->
+<article class="mask"></article>
+<!-- //마스크 -->

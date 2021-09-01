@@ -1,0 +1,87 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("전자문서관리");
+        $(".align_right h2").text("가맹점 재계약");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tip_box">
+    <li><span class="tip">Tip 1.</span>아래 가맹점 리스트에 열람날짜는 명시되어 있지만 전자문서(sform) 상에 재계약서류가 없는 경우는, 가맹점 사이트에서 "최종승인"이 되어있지 않은 경우입니다.</li>
+    <li><span class="tip">Tip 2.</span>문서완료가 N으로 되어있는 경우는 계약서 작성이 완벽히 이루어지지 않은 상태입니다. 전자문서(sform) 에서 검토해주세요.</li>
+    <li><span class="tip">Tip 3.</span>정보공개서 및 계약서 수령확인증의 날짜 : 가맹점 최종승인 완료 (공란일 경우 sform에 서류가 이관되지 않습니다. 최종승인을 독려해주세요.)</li>
+</ul>
+<div class="search_wrap mt_20">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all check">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>2021</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>250</strong>개</span>
+    </p>
+    <p>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>

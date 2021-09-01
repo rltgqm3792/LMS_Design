@@ -1,0 +1,213 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("SMS 관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<span class="point_guide mb_10">단문 SMS 작성 시, 패키지, 장문으로 Byte 변경 시, 충전식 요금이 부과됩니다.</span>
+<ul class="tab_1depth">
+    <li class="on"><a href="index.html?page=etc/sms_manage01">SMS 발송</a></li>
+    <li><a href="index.html?page=etc/sms_manage02">SMS 발송내역</a></li>
+    <li><a href="index.html?page=etc/sms_manage03">가맹점별 SMS 포인트</a></li>
+</ul>
+<div class="sms_table">
+    <div class="div01">
+        <!-- sms 발송내용 -->
+        <ul class="sms_send">
+            <li>
+                <input type="text" placeholder="제목을 입력해 주세요. (발송관리용)" class="sms_send_tit" />
+                <div class="sms_byte">
+                    <span>59</span><span class="blue_color">80byte</span>
+                </div>
+            </li>
+            <li>
+                <textarea class="smsTextArea" placeholder="보내실 내용을 입력해 주세요. 80byte 초과시 장문으로 자동 전환됩니다"></textarea>
+                <div class="sms_bottom_wrap">
+                    <span>
+                        <!-- <a href="javascript:openPop('Hakwon/emoticonPop.html','459','593');" class="btn_emoji">특수문자</a> -->
+                        <button type="button" onclick="openLayerPopup()" class="btn_emoji">특수문자</button><!-- button으로 교체 :chan -->
+                        <a href="" class="btn_sms_refresh">초기화</a>
+                    </span>
+                    <div class="sms_byte">
+                        <span>500</span><span class="blue_color">2,000byte (장문)</span>
+                    </div>
+                </div>
+                <div class="sms_btn_wrap">
+                    <a href="javascript:openPop('../admin/etc/pop_save.html','400','270');" class="btn_table">문자저장</a>
+                    <a href="javascript:openPop('../admin/etc/pop_import01.html','940','670');" class="btn_table">문자 불러오기</a>
+                    <a href="javascript:openPop('../admin/etc/pop_import02.html','940','670');" class="btn_table">문자 카테고리</a>
+                </div>
+            </li>
+            <li>
+                <span>발신번호</span>
+                <input type="text" value="02-0000-0000" />
+            </li>
+        </ul>
+        <!-- //sms 발송내용 -->
+    </div>
+    <div class="div02">
+        <ul class="tab_2depth">
+            <li class="on"><a href="index.html?page=etc/sms_manage01">지사전체</a></li>
+            <li><a href="">지사장+직원</a></li>
+            <li><a href="">가맹점전체</a></li>
+            <li><a href="">미입금 가맹점</a></li>
+            <li><a href="">부분납 가맹점</a></li>
+            <li><a href="">자동이체 가맹점</a></li>
+            <li><a href="">본사직원</a></li>
+            <li><a href="index.html?page=etc/sms_manage01_08">주소록</a></li>
+        </ul>
+        <select>
+            <option>수학</option>
+        </select>
+        <div id="grid"></div>
+    </div>
+</div>
+<div class="btn_bottom_wrap right">
+    <a href="" class="btn_basic">SMS 발송</a>
+</div>
+
+
+<!-- Layer pop up 추가 : 시작 2021.8.31 :chan -->
+<div class="layerPopup specialCharPopup">
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/dragdrop.js"></script>
+    <h2>특수문자</h2>
+    <div class="specialCharWrap">
+        <button type="button" class="insertSpecialCharBtn">☆</button>
+        <button type="button" class="insertSpecialCharBtn">★</button>
+        <button type="button" class="insertSpecialCharBtn">○</button>
+        <button type="button" class="insertSpecialCharBtn">●</button>
+        <button type="button" class="insertSpecialCharBtn">◎</button>
+        <button type="button" class="insertSpecialCharBtn">◇</button>
+        <button type="button" class="insertSpecialCharBtn">◆</button>
+        <button type="button" class="insertSpecialCharBtn">□</button>
+        <button type="button" class="insertSpecialCharBtn">■</button>
+        <button type="button" class="insertSpecialCharBtn">△</button>
+        <button type="button" class="insertSpecialCharBtn">▲</button>
+        <button type="button" class="insertSpecialCharBtn">▽</button>
+        <button type="button" class="insertSpecialCharBtn">▼</button>
+        <button type="button" class="insertSpecialCharBtn">※</button>
+        <button type="button" class="insertSpecialCharBtn">▷</button>
+        <button type="button" class="insertSpecialCharBtn">◀</button>
+        <button type="button" class="insertSpecialCharBtn">▷</button>
+        <button type="button" class="insertSpecialCharBtn">▶</button>
+        <button type="button" class="insertSpecialCharBtn">♤</button>
+        <button type="button" class="insertSpecialCharBtn">♠</button>
+        <button type="button" class="insertSpecialCharBtn">♡</button>
+        <button type="button" class="insertSpecialCharBtn">♥</button>
+        <button type="button" class="insertSpecialCharBtn">♧</button>
+        <button type="button" class="insertSpecialCharBtn">⊙</button>
+        <button type="button" class="insertSpecialCharBtn">◈</button>
+        <button type="button" class="insertSpecialCharBtn">▣</button>
+        <button type="button" class="insertSpecialCharBtn">◐</button>
+        <button type="button" class="insertSpecialCharBtn">◑</button>
+        <button type="button" class="insertSpecialCharBtn">▒</button>
+        <button type="button" class="insertSpecialCharBtn">▤</button>
+        <button type="button" class="insertSpecialCharBtn">▥</button>
+        <button type="button" class="insertSpecialCharBtn">▨</button>
+        <button type="button" class="insertSpecialCharBtn">▧</button>
+        <button type="button" class="insertSpecialCharBtn">▦</button>
+        <button type="button" class="insertSpecialCharBtn">▩</button>
+        <button type="button" class="insertSpecialCharBtn">♨</button>
+        <button type="button" class="insertSpecialCharBtn">☏</button>
+        <button type="button" class="insertSpecialCharBtn">☎</button>
+        <button type="button" class="insertSpecialCharBtn">☜</button>
+        <button type="button" class="insertSpecialCharBtn">☞</button>
+        <button type="button" class="insertSpecialCharBtn">♭</button>
+        <button type="button" class="insertSpecialCharBtn">♩</button>
+        <button type="button" class="insertSpecialCharBtn">♪</button>
+        <button type="button" class="insertSpecialCharBtn">♬</button>
+        <button type="button" class="insertSpecialCharBtn">¶</button>
+        <button type="button" class="insertSpecialCharBtn">†</button>
+        <button type="button" class="insertSpecialCharBtn">‡</button>
+        <button type="button" class="insertSpecialCharBtn">↕</button>
+        <button type="button" class="insertSpecialCharBtn">↗</button>
+        <button type="button" class="insertSpecialCharBtn">↙</button>
+        <button type="button" class="insertSpecialCharBtn">↖</button>
+        <button type="button" class="insertSpecialCharBtn">↘</button>
+        <button type="button" class="insertSpecialCharBtn">→</button>
+        <button type="button" class="insertSpecialCharBtn">←</button>
+        <button type="button" class="insertSpecialCharBtn">↑</button>
+        <button type="button" class="insertSpecialCharBtn">↓</button>
+        <button type="button" class="insertSpecialCharBtn">↔</button>
+        <button type="button" class="insertSpecialCharBtn">∑</button>
+        <button type="button" class="insertSpecialCharBtn">∏</button>
+        <button type="button" class="insertSpecialCharBtn">＿</button>
+        <button type="button" class="insertSpecialCharBtn">￣</button>
+        <button type="button" class="insertSpecialCharBtn">。</button>
+        <button type="button" class="insertSpecialCharBtn">·</button>
+        <button type="button" class="insertSpecialCharBtn">‥</button>
+        <button type="button" class="insertSpecialCharBtn">…</button>
+        <button type="button" class="insertSpecialCharBtn">㉿</button>
+        <button type="button" class="insertSpecialCharBtn">㈜</button>
+        <button type="button" class="insertSpecialCharBtn">∥</button>
+        <button type="button" class="insertSpecialCharBtn">＼</button>
+        <button type="button" class="insertSpecialCharBtn">Ω</button>
+        <button type="button" class="insertSpecialCharBtn">㏇</button>
+        <button type="button" class="insertSpecialCharBtn">™</button>
+        <button type="button" class="insertSpecialCharBtn">㏂</button>
+        <button type="button" class="insertSpecialCharBtn">㏘</button>
+        <button type="button" class="insertSpecialCharBtn">①</button>
+        <button type="button" class="insertSpecialCharBtn">②</button>
+        <button type="button" class="insertSpecialCharBtn">③</button>
+        <button type="button" class="insertSpecialCharBtn">④</button>
+        <button type="button" class="insertSpecialCharBtn">⑤</button>
+        <button type="button" class="insertSpecialCharBtn">⑥</button>
+        <button type="button" class="insertSpecialCharBtn">⑦</button>
+        <button type="button" class="insertSpecialCharBtn">⑧</button>
+        <button type="button" class="insertSpecialCharBtn">⑨</button>
+        <button type="button" class="insertSpecialCharBtn">⑩</button>
+        <button type="button" class="insertSpecialCharBtn">⑪</button>
+        <button type="button" class="insertSpecialCharBtn">⑫</button>
+        <button type="button" class="insertSpecialCharBtn">⑬</button>
+        <button type="button" class="insertSpecialCharBtn">⑭</button>
+        <button type="button" class="insertSpecialCharBtn">⑮</button>
+        <button type="button" class="insertSpecialCharBtn">⑴</button>
+        <button type="button" class="insertSpecialCharBtn">⑵</button>
+        <button type="button" class="insertSpecialCharBtn">⑶</button>
+        <button type="button" class="insertSpecialCharBtn">⑷</button>
+        <button type="button" class="insertSpecialCharBtn">⑸</button>
+    </div>
+    <h2>표정문자</h2>
+    <div class="specialCharGroupWrap">
+        <button type="button" class="insertSpecialCharBtn">^_^</button>
+        <button type="button" class="insertSpecialCharBtn">^o^</button>
+        <button type="button" class="insertSpecialCharBtn">^~^</button>
+        <button type="button" class="insertSpecialCharBtn">(*^o^*)</button>
+        <button type="button" class="insertSpecialCharBtn">(ノ^O^)ノ</button>
+        <button type="button" class="insertSpecialCharBtn">↖(^▽^)↗</button>
+        <button type="button" class="insertSpecialCharBtn">(⌒ε⌒*)</button>
+        <button type="button" class="insertSpecialCharBtn">(つ＾з＾)つ</button>
+        <button type="button" class="insertSpecialCharBtn">(*^^)</button>
+        <button type="button" class="insertSpecialCharBtn">(*^.^)♂</button>
+        <button type="button" class="insertSpecialCharBtn">☜(^^*)☞</button>
+        <button type="button" class="insertSpecialCharBtn">ⓛⓞⓥⓔ</button>
+        <button type="button" class="insertSpecialCharBtn">o(T^T)o</button>
+        <button type="button" class="insertSpecialCharBtn">(=_=;)</button>
+        <button type="button" class="insertSpecialCharBtn">(￣^￣)</button>
+        <button type="button" class="insertSpecialCharBtn">ㅠ.ㅠ</button>
+        <button type="button" class="insertSpecialCharBtn">(&gt;_&lt;)</button>
+        <button type="button" class="insertSpecialCharBtn">ご.ご</button>
+        <button type="button" class="insertSpecialCharBtn">s(￣へ￣)z</button>
+        <button type="button" class="insertSpecialCharBtn">(づ'0')づ</button>
+        <button type="button" class="insertSpecialCharBtn">(ㆀㅡ,.ㅡ)</button>
+        <button type="button" class="insertSpecialCharBtn">┏(;-_-)┛</button>
+        <button type="button" class="insertSpecialCharBtn">s(￣▽￣)/</button>
+        <button type="button" class="insertSpecialCharBtn">~m[-_-]m~</button>
+    </div>
+    <button type="button" class="btn_basic btn_gray hideLayerPopup">닫기</button>
+</div>
+<!-- Layer pop up 추가 : 끝 2021.8.31 :chan -->

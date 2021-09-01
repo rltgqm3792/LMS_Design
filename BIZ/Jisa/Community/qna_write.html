@@ -1,0 +1,98 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("고객센터");
+
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+<link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/dropzone.css" rel="stylesheet" type="text/css" />
+<script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/dropzone.js" type="text/javascript"></script><!-- calendar -->
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><a href="javascript:void(0);" class="ly_info"></a>
+    <div class="ly_info_pop">
+        <p><a href="javascript:void(0);" class="ly_info_close"></a>
+            <span>에듀 지사주문 내용 설명입니다.<br>
+                에듀 지사주문 내용 설명입니다. <br>
+                에듀 지사주문 내용 설명입니다. <br>
+            </span>
+        </p>
+    </div>
+    </p>
+</div>
+<!--//타이틀-->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%">
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>구분<span class="required"></span></th>
+                <td>
+                    <label for="radio_01" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_01" checked="checked">
+                        <span>수학</span>
+                    </label>
+                    <label for="radio_02" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_02">
+                        <span>영어</span>
+                    </label>
+                    <label for="radio_03" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_03">
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>유형<span class="required"></span></th>
+                <td>
+                    <select>
+                        <option value="">사업운영</option>
+                        <option value="">교재내용</option>
+                        <option value="">시스템</option>
+                        <option value="">기타</option>
+                    </select>
+                    <select>
+                        <option value="">주문/배송</option>
+                        <option value="">선택2</option>
+                        <option value="">선택3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" class="input_full" placeholder="제목을 30자 이내로 입력해주세요" /></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터영역</td>
+            </tr>
+            <tr>
+                <th>파일첨부<span class="required"></span></th>
+                <td>
+                    <form action="#" class="dropzone" id="dropzone" enctype="multipart/form-data">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_bottom_wrap between">
+    <a href="index.html?page=community/qna_list" class="btn_basic cancel">목록</a>
+    <a href="" class="btn_basic confirm">저장</a>
+</div>

@@ -1,0 +1,433 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("실적통계");
+        $(".align_right h2").text("일별 수강생 실적조회");
+
+        datepicker();
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+
+</style>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>연월
+                <dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="year" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="year_chk02" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk02" />
+                        <span>초등</span>
+                    </label>
+                    <label for="year_chk03" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk03" />
+                        <span>중등</span>
+                    </label>
+                    <label for="year_chk04" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk04" />
+                        <span>고등</span>
+                    </label>
+                    <select>
+                        <option>전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점</dt>
+                <dd>
+                    <select>
+                        <option>가맹점선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지역</dt>
+                <dd>
+                    <select>
+                        <option>시도선택</option>
+                    </select>
+                    <select>
+                        <option>구군선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<h4 class="tit_h4 mt_20">통계 표시 방안</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%">
+            <col style="width:80%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>수강생수 표시방법</th>
+                <td><span class="main_color">전체 수강생 수</span>(수학/영어/전과목)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="chart">
+    <div class="chart_color">
+        <span class="color1"></span>수학
+        <span class="color2"></span>영어
+        <span class="color3"></span>전과목
+    </div>
+    <div id="chartdiv"></div>
+</div>
+<div class="align_right">
+    <ul class="tab_2depth mt_30">
+        <li class="on"><a href="">수학</a></li>
+        <li><a href="">영어</a></li>
+        <li><a href="">전과목</a></li>
+    </ul>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">
+            조회기간은 <strong class="mt_1">2020</strong>년도, 총 <strong class="mt_1">1,000</strong>개의 검색결과가 표시됩니다.</span>
+    </p>
+    <p>
+        <label for="sort_rdo01" class="rdo_idt table">
+            <input type="radio" name="sort" id="sort_rdo01" checked />
+            <span>내림차순</span>
+        </label>
+        <label for="sort_rdo02" class="rdo_idt table">
+            <input type="radio" name="sort" id="sort_rdo02" />
+            <span>오름차순</span>
+        </label>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+
+<!-- Chart code -->
+<script>
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+        // some extra padding for range labels
+        chart.paddingBottom = 30;
+        chart.cursor = new am4charts.XYCursor();
+
+        // will use this to store colors of the same items
+        var colors = { "수학": "#0093ff", "영어": "#1bbcbc", "전과목": "#8697af" };
+
+        // 2021.8.27 범례추가 :hee
+        chart.legend = new am4charts.Legend()
+        chart.legend.position = 'bottom'
+        chart.legend.paddingBottom = 20
+        chart.legend.labels.template.maxWidth = 95
+
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "category";
+        categoryAxis.renderer.minGridDistance = 30;
+        categoryAxis.renderer.grid.template.location = 100;
+        categoryAxis.dataItems.template.text = "";
+        categoryAxis.strokeOpacity = 0;
+        categoryAxis.adapter.add("tooltipText", function (tooltipText, target) {
+            return categoryAxis.tooltipDataItem.dataContext.realName;
+        })
+
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.tooltip.disabled = true;
+        valueAxis.min = 0;
+
+        // single column series for all data
+        var columnSeries = chart.series.push(new am4charts.ColumnSeries());
+        columnSeries.columns.template.width = am4core.percent(40);
+        columnSeries.tooltipText = "{provider}: {realName}, {valueY}";
+        columnSeries.dataFields.categoryX = "category";
+        columnSeries.dataFields.valueY = "value";
+
+        // second value axis for quantity
+        // var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
+        // valueAxis2.renderer.opposite = true;
+        // valueAxis2.syncWithAxis = valueAxis;
+        // valueAxis2.tooltip.disabled = true;
+
+        // quantity line series
+        var lineSeries = chart.series.push(new am4charts.LineSeries());
+        lineSeries.tooltipText = "{valueY}";
+        lineSeries.dataFields.categoryX = "category";
+        lineSeries.dataFields.valueY = "quantity";
+        // lineSeries.yAxis = valueAxis2;
+        lineSeries.bullets.push(new am4charts.CircleBullet());
+        lineSeries.stroke = am4core.color("#0093ff");
+        lineSeries.fill = lineSeries.stroke;
+        lineSeries.strokeWidth = 2;
+        lineSeries.snapTooltip = true;
+
+
+
+
+        // when data validated, adjust location of data item based on count
+        lineSeries.events.on("datavalidated", function () {
+            lineSeries.dataItems.each(function (dataItem) {
+                // if count divides by two, location is 0 (on the grid)
+                if (dataItem.dataContext.count / 2 == Math.round(dataItem.dataContext.count / 2)) {
+                    dataItem.setLocation("categoryX", 0);
+                }
+                // otherwise location is 0.5 (middle)
+                else {
+                    dataItem.setLocation("categoryX", 0.5);
+                }
+            })
+        })
+
+        // // fill adapter, here we save color value to colors object so that each time the item has the same name, the same color is used
+        columnSeries.columns.template.adapter.add("fill", function (fill, target) {
+            var name = target.dataItem.dataContext.realName;
+            if (!colors[name]) {
+                colors[name] = chart.colors.next();
+            }
+            target.stroke = colors[name];
+            return colors[name];
+        })
+
+
+        var rangeTemplate = categoryAxis.axisRanges.template;
+        rangeTemplate.tick.disabled = false;
+        rangeTemplate.tick.location = 0;
+        rangeTemplate.tick.strokeOpacity = 0;
+        rangeTemplate.tick.length = 100;
+        rangeTemplate.grid.strokeOpacity = 0;
+        rangeTemplate.label.tooltip = new am4core.Tooltip();
+        rangeTemplate.label.tooltip.dy = -30;
+        rangeTemplate.label.cloneTooltip = false;
+
+        ///// DATA
+        var chartData = [];
+        var lineSeriesData = [];
+
+        var data =
+        {
+            "1월": {
+                "수학": 10,
+                "영어": 35,
+                "전과목": 5,
+                "quantity": 30
+            },
+            "2월": {
+                "수학": 15,
+                "영어": 21,
+                "전과목": 21,
+                "quantity": 10
+            },
+            "3월": {
+                "수학": 25,
+                "영어": 11,
+                "전과목": 17,
+                "quantity": 65
+            },
+            "4월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "5월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "6월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "7월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "8월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "9월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "10월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "11월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            },
+            "12월": {
+                "수학": 12,
+                "영어": 12,
+                "전과목": 15,
+                "quantity": 98
+            }
+        }
+
+
+
+
+        // process data ant prepare it for the chart
+        for (var providerName in data) {
+            var providerData = data[providerName];
+
+            // add data of one provider to temp array
+            var tempArray = [];
+            var count = 0;
+            // add items
+            for (var itemName in providerData) {
+                if (itemName != "quantity") {
+                    count++;
+                    // we generate unique category for each column (providerName + "_" + itemName) and store realName
+                    tempArray.push({ category: providerName + itemName, realName: itemName, value: providerData[itemName], provider: providerName })
+                }
+            }
+            // sort temp array
+            //  tempArray.sort(function(a, b) {
+            //    if (a.value > b.value) {
+            //    return 1;
+            //    }
+            //    else if (a.value < b.value) {
+            //    return -1
+            //    }
+            //    else {
+            //    return 0;
+            //    }
+            //  })
+
+            // add quantity and count to middle data item (line series uses it)
+            var lineSeriesDataIndex = Math.floor(count / 2);
+            tempArray[lineSeriesDataIndex].quantity = providerData.quantity;
+            tempArray[lineSeriesDataIndex].count = count;
+            // push to the final data
+            am4core.array.each(tempArray, function (item) {
+                chartData.push(item);
+            })
+
+            // create range (the additional label at the bottom)
+            var range = categoryAxis.axisRanges.create();
+            range.category = tempArray[0].category;
+            range.endCategory = tempArray[tempArray.length - 1].category;
+            range.label.text = tempArray[0].provider;
+            range.label.dy = 10;
+            range.label.truncate = true;
+            range.label.fontFamily = "NotoSans";
+            range.label.fontSize = "13px";
+            range.label.tooltipText = tempArray[0].provider;
+
+
+            range.label.adapter.add("maxWidth", function (maxWidth, target) {
+                var range = target.dataItem;
+                var startPosition = categoryAxis.categoryToPosition(range.category, 0);
+                var endPosition = categoryAxis.categoryToPosition(range.endCategory, 0);
+                var startX = categoryAxis.positionToCoordinate(startPosition);
+                var endX = categoryAxis.positionToCoordinate(endPosition);
+                return endX - startX;
+            })
+        }
+
+        chart.data = chartData;
+
+        // last tick
+        var range = categoryAxis.axisRanges.create();
+        range.category = chart.data[chart.data.length - 1].category;
+        range.label.disabled = false;
+        range.tick.location = 1;
+        range.grid.location = 1;
+
+    }); // end am4core.ready()
+</script>

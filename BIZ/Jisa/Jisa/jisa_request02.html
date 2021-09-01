@@ -1,0 +1,54 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("신규신청서작성");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="step">
+    <li><a href="index.html?page=jisa/jisa_request01">01. 기본정보 작성</a></li>
+    <li class="on"><a href="index.html?page=jisa/jisa_request02">02. 인근 가맹 선택</a></li>
+    <li><a href="index.html?page=jisa/jisa_request03">03. 매출산정 가맹 선택</a></li>
+</ul>
+<ul class="tip_box">
+    <li><span class="tip">Tip 1.</span>선택 인근 가맹점 현황입니다.</li>
+    <li><span class="tip">Tip 2.</span>[가맹점선택] 버튼을 선택 후, 인근 가맹점을 선택해주세요</li>
+    <li><span class="tip">Tip 3.</span>인근 가맹점 10개 리스트가 선택완료 되어야 [확인서 출력]이 가능합니다.</li>
+</ul>
+<div class="tbl_flex mt_20">
+    <h4 class="tit_h4">수학</h4>
+    <a href="javascript:ly_open('../jisa/jisa/ly_jisa_select.html');" class="btn_top">가맹점 선택</a>
+</div>
+<div id="grid"></div>
+<div class="tbl_flex mt_20">
+    <h4 class="tit_h4">영어</h4>
+    <a href="javascript:ly_open('../jisa/jisa/ly_jisa_select.html');" class="btn_top">가맹점 선택</a>
+</div>
+<div id="grid"></div>
+<div class="tbl_flex mt_20">
+    <h4 class="tit_h4">전과목</h4>
+    <a href="javascript:ly_open('../jisa/jisa/ly_jisa_select.html');" class="btn_top">가맹점 선택</a>
+</div>
+<div id="grid"></div>
+<div class="btn_bottom_wrap between">
+    <p>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+    <p>
+        <a href="index.html?page=jisa/jisa_request01" class="btn_basic line pre"><span>이전</span></a>
+        <a href="index.html?page=jisa/jisa_request03" class="btn_basic line next"><span>다음</span></a>
+    </p>
+</div>

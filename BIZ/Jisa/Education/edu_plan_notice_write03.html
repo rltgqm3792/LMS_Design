@@ -1,0 +1,103 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("교육 공지");
+
+        //달력
+        //calendar();
+        // timepicker();
+        datePickerByClass(); // 추가 :chan
+        timePickerByClass(); // 추가 :chan
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo01" checked />
+                        <span>공통</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" placeholder="제목을 30자 이내로 입력해주세요." class="input_full"></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터 부분</td>
+            </tr>
+            <tr>
+                <th>파일첨부<span class="required"></span></th>
+                <td>
+                    <div class="attach_file_lst">
+                        <ul>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <a class="delete_File"></a></li>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <a class="delete_File"></a></li>
+                        </ul>
+                        <!-- [D] 파일첨부전 드래그/드롭 시 on클래스 추가 -->
+                        <p class="guide_tx"><span>첨부할 파일을 직접 드래그 앤 드롭 해주세요</span></p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>공지일<span class="required"></span></th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between mt_40">
+    <a href="index.html?page=education/edu_plan_notice" class="btn_basic line">목록</a>
+    <p>
+        <a href="" class="btn_basic black">삭제</a>
+        <a href="" class="btn_basic">저장</a>
+    </p>
+</div>

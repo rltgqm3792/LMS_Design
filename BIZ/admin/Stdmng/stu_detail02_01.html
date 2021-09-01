@@ -1,0 +1,347 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수강생상세정보");
+        $(".group_nav.one_depth .tit").text("수강생관리"); // navigator 1차 menu error 때문에 추가 (2021.8.19) :chan
+
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=Stdmng/stu_detail01">기본정보</a></li>
+    <li class="on"><a href="index.html?page=Stdmng/stu_detail02_01">학습정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail03">주문정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail04">상담정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail05">출결정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail06">납부정보</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail07">변경이력</a></li>
+</ul>
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="index.html?page=Stdmng/stu_detail02_01">수학</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail02_02">영어</a></li>
+    <li><a href="index.html?page=Stdmng/stu_detail02_03">전과목</a></li>
+</ul>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:80%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="2" class="tc">스마트교재</th>
+                <th class="tc">커리큘럼 1<span class="required"></span></th>
+                <td>
+                    <div class="tbl_flex">
+                        <p>
+                            <label for="curr_01" class="rdo_idt table">
+                                <input type="radio" name="curr" id="curr_01" checked />
+                                <span>표준학습</span>
+                            </label>
+                            <label for="curr_02" class="rdo_idt table">
+                                <input type="radio" name="curr" id="curr_02" />
+                                <span>개별학습</span>
+                            </label>
+                        </p>
+                        <p>
+                            <a href=""><span class="pass">연간표준커리큘럼</span></a>
+                        </p>
+                    </div>
+                    <table class="table_sub_list mt_10">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>학년</th>
+                                <th>월</th>
+                                <th>수준</th>
+                                <th>스마트교재</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>초3</td>
+                                <td>7월</td>
+                                <td>1~3수준</td>
+                                <td class="tl">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형 )</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table_sub mt_10">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:20%">
+                            <col style="width:80%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>스마트맞춤문항</th>
+                                <td>
+                                    <label for="smart01" class="rdo_idt table">
+                                        <input type="radio" name="smart01" id="smart" checked />
+                                        <span>5</span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="tc">커리큘럼 2</th>
+                <td>
+                    <p>
+                        <label for="curr_01" class="rdo_idt table">
+                            <input type="radio" name="curr01" id="curr_01" />
+                            <span>표준학습</span>
+                        </label>
+                        <label for="curr_02" class="rdo_idt table">
+                            <input type="radio" name="curr01" id="curr_02" checked />
+                            <span>개별학습</span>
+                        </label>
+                    </p>
+                    <table class="table_sub_list mt_10">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>학년</th>
+                                <th>학기</th>
+                                <th>유형</th>
+                                <th>스마트교재</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>초3</td>
+                                <td>1학기</td>
+                                <td>유형완성</td>
+                                <td class="tl">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table_sub mt_10">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:20%">
+                            <col style="width:80%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>스마트맞춤문항</th>
+                                <td>
+                                    <label for="smart02" class="rdo_idt table">
+                                        <input type="radio" name="smart02" id="smart" checked />
+                                        <span>5</span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th class="tc" rowspan="4">주차별 맟춤학습<span class="required"></span></th>
+                <th class="tc">주기</th>
+                <td>3일진도 + 1일평가</td>
+            </tr>
+            <tr>
+                <th class="tc">단계</th>
+                <td>1단계</td>
+            </tr>
+            <tr>
+                <th class="tc">단원주기</th>
+                <td>표준학습</td>
+            </tr>
+            <tr>
+                <th class="tc">문항 수</th>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th class="tc" rowspan="4">워크북주문</th>
+                <th class="tc">커리큘럼1</th>
+                <td>
+                    <div class="tbl_flex">
+                        <p>초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형 )</p>
+                        <p>
+                            <label for="book_01" class="rdo_idt">
+                                <input type="radio" name="book01" id="book_01" checked />
+                                <span>Y</span>
+                            </label>
+                            <label for="book_02" class="rdo_idt">
+                                <input type="radio" name="book01" id="book_02" disabled />
+                                <span>N</span>
+                            </label>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="tc">커리큘럼2</th>
+                <td>
+                    <div class="tbl_flex">
+                        <p>초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형 )</p>
+                        <p>
+                            <label for="book_03" class="rdo_idt">
+                                <input type="radio" name="book02" id="book_03" disabled />
+                                <span>Y</span>
+                            </label>
+                            <label for="book_04" class="rdo_idt">
+                                <input type="radio" name="book02" id="book_04" checked />
+                                <span>N</span>
+                            </label>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="tc">추가교재</th>
+                <td>
+                    <div class="tbl_flex">
+                        <p>초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형 )</p>
+                        <p>
+                            <label for="book_05" class="rdo_idt">
+                                <input type="radio" name="book03" id="book_05" checked />
+                                <span>Y</span>
+                            </label>
+                            <label for="book_06" class="rdo_idt">
+                                <input type="radio" name="book03" id="book_06" disabled />
+                                <span>N</span>
+                            </label>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="total tr" colspan="2"><strong class="font_15">추가금액 : 0원</strong></td>
+            </tr>
+            <tr>
+                <th class="tc" rowspan="4">권한</th>
+                <th class="tc">채점</th>
+                <td>
+                    <label for="all_chk" class="chk_idt all table">
+                        <input type="checkbox" name="marking" id="all_chk" onchange="all_check(this);" checked />
+                        <span>전체</span>
+                    </label>
+                    <label for="marking_chk01" class="chk_idt table">
+                        <input type="checkbox" name="marking" id="marking_chk01" />
+                        <span>스마트 교재 학습</span>
+                    </label>
+                    <label for="marking_chk02" class="chk_idt table">
+                        <input type="checkbox" name="marking" id="marking_chk02" />
+                        <span>AI 맞춤학습</span>
+                    </label>
+                    <label for="marking_chk03" class="chk_idt table">
+                        <input type="checkbox" name="marking" id="marking_chk03" />
+                        <span>평가학습</span>
+                    </label>
+                    <label for="marking_chk04" class="chk_idt table">
+                        <input type="checkbox" name="marking" id="marking_chk04" />
+                        <span>보충학습</span>
+                    </label><br />
+                    <span class="bottom_guide">체크시 해당 수강생에게 채점권한 부여</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="tc">스마트맞춤문제<br />문항수 변경</th>
+                <td> <label for="change01" class="rdo_idt">
+                        <input type="radio" name="change" id="change01" checked />
+                        <span>Y</span>
+                    </label>
+                    <label for="change02" class="rdo_idt">
+                        <input type="radio" name="change" id="change02" disabled />
+                        <span>N</span>
+                    </label><span class="bottom_guide">"N"체크시 해당 수강생이 스마트 맞춤문제 출제 문항수 변경 불가</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="tc">일일리포트</th>
+                <td> <label for="daily01" class="rdo_idt">
+                        <input type="radio" name="daily" id="daily01" disabled />
+                        <span>Y</span>
+                    </label>
+                    <label for="daily02" class="rdo_idt">
+                        <input type="radio" name="daily" id="daily02" checked />
+                        <span>N</span>
+                    </label><span class="bottom_guide">"Y"체크시 해당 수강생이 퇴실할 때 학부모 앱으로 자동 발송</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="tc">문제풀이 영상</th>
+                <td>상시노출</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="tc">월별 학습 스케쥴</th>
+                <td>사용</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="tc">학습일</th>
+                <td>
+                    <table class="table_sub_list">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:80%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>수업일</th>
+                                <th>수업형태</th>
+                                <th>시간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>월</td>
+                                <td>대면</td>
+                                <td><span class="font_gmarket13">10:00 ~ 11:00</span></td>
+                            </tr>
+                            <tr>
+                                <td>수</td>
+                                <td>대면</td>
+                                <td><span class="font_gmarket13">12:00 ~ 15:00</span></td>
+                            </tr>
+                            <tr>
+                                <td>금</td>
+                                <td>비대면</td>
+                                <td><span class="font_gmarket13">13:00 ~ 16:00</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

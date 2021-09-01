@@ -1,0 +1,290 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("가맹점 해지/취소 신청");
+
+
+        //달력
+        //  calendar();
+        datePickerByClass(); // 추가 2021.8.18 :chan
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간/날짜</dt>
+                <dd>
+                    <select>
+                        <option>해지신청일</option>
+                        <option>해지완료일</option>
+                        <option>보증금지급일</option>
+                    </select>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>처리상태</dt>
+                <dd>
+                    <label for="state_chk01" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk01" />
+                        <span>대기</span>
+                    </label>
+                    <label for="state_chk02" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk02" />
+                        <span>승인</span>
+                    </label>
+                    <label for="state_chk03" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk03" />
+                        <span>수정</span>
+                    </label>
+                    <label for="state_chk04" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk04" />
+                        <span>기각</span>
+                    </label>
+                    <label for="state_chk05" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk05" />
+                        <span>전체</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>구분</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="close" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="close_chk02" class="chk_idt">
+                        <input type="checkbox" name="close" id="close_chk02" />
+                        <span>정지</span>
+                    </label>
+                    <label for="close_chk03" class="chk_idt">
+                        <input type="checkbox" name="close" id="close_chk03" />
+                        <span>해지</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>해지사유</dt>
+                <dd>
+                    <select>
+                        <option>해지사유 선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>처리상태</dt>
+                <dd>
+                    <select>
+                        <option>가맹점코드</option>
+                        <option>가맹점명</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">
+            Total :
+            <strong class="mt_1">1,256</strong>
+            건
+        </span>
+    </p>
+    <p>
+        <a href="" class="btn_top line">정산금 출력</a>
+        <a href="" class="btn_top line excel"><span>엑셀저장</span></a>
+        <a href="" class="btn_top black">신청 취소</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list scroll_x culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:40px;" />
+            <col style="width:80px" />
+            <col style="width:250px" />
+            <col style="width:80px" />
+            <col style="width:250px" />
+            <col style="width:80px" />
+            <col style="width:80px" />
+            <col style="width:80px" />
+            <col style="width:140px" />
+            <col style="width:140px" />
+            <col style="width:100px" />
+            <col style="width:200px" />
+            <col style="width:120px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:80px" />
+            <col style="width:80px" />
+            <col style="width:100px" />
+            <col style="width:80px" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th rowspan="2">지사코드</th>
+                <th rowspan="2">지사명</th>
+                <th rowspan="2">가맹점코드</th>
+                <th rowspan="2">가맹점명</th>
+                <th rowspan="2">원장명</th>
+                <th rowspan="2">FC구분</th>
+                <th rowspan="2">구분</th>
+                <th rowspan="2">전화번호</th>
+                <th rowspan="2">휴대폰번호</th>
+                <th rowspan="2">평균수강생수</th>
+                <th rowspan="2">가맹기간</th>
+                <th rowspan="2">해지신청일</th>
+                <th rowspan="2">해지사유</th>
+                <th rowspan="2">첨부사진</th>
+                <th colspan="2">해지/취소/정산 현황내역</th>
+                <th rowspan="2">해지완료일</th>
+                <th rowspan="2">처리상태</th>
+            </tr>
+            <tr>
+                <th>전자문서</th>
+                <th>신청서</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">0101</span></td>
+                <td class="tl">은평지사</td>
+                <td><span class="font_gmarket13">H7309</span></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_cancel_info">프라임교실</a></td>
+                <td>이해법</td>
+                <td>수학</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">02-1234-1234</span></td>
+                <td><span class="font_gmarket13">010-1234-1234</span></td>
+                <td><span class="font_gmarket13">10</span></td>
+                <td><span class="font_gmarket13">2021.10.30 ~ 2021.10.30</span></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+                <td>시스템불만</td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_photo01.html','600','670');"><span class="ico_img file"></span></a><a href="javascript:openPop('../admin/jisa/pop_photo02.html','600','670');"><span class="ico_img file"></span></a></td>
+                <td><a href="" class="btn_table line">보기</a></td>
+                <td><a href=""><span class="ico_img file"></span></a></td>
+                <td><span class="font_gmarket13">2021.10.30</span></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_reason.html','600','570');">기각</a></td>
+            </tr>
+            <!-- <tr>
+                <td colspan="19">
+                    <div class="no_data">조회된 데이터가 없습니다.</div>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

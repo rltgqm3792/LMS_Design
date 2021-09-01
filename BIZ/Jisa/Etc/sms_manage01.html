@@ -1,0 +1,77 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("SMS 관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<span class="point_guide mb_10">단문 SMS 작성 시, 패키지, 장문으로 Byte 변경 시, 충전식 요금이 부과됩니다.</span>
+<ul class="tab_1depth">
+    <li class="on"><a href="index.html?page=etc/sms_manage01">SMS 발송</a></li>
+    <li><a href="index.html?page=etc/sms_manage02">SMS 발송내역</a></li>
+    <li><a href="index.html?page=etc/sms_manage03">SMS 설정</a></li>
+    <li><a href="index.html?page=etc/sms_manage04">포인트 충전</a></li>
+    <li><a href="index.html?page=etc/sms_manage05">SMS 포인트 사용내역</a></li>
+</ul>
+<div class="sms_table">
+    <div class="div01">
+        <!-- sms 발송내용 -->
+        <ul class="sms_send">
+            <li>
+                <input type="text" placeholder="제목을 입력해 주세요." class="sms_send_tit" />
+                <div class="sms_byte">
+                    <span>59</span><span class="blue_color">80byte</span>
+                </div>
+            </li>
+            <li>
+                <textarea placeholder="보내실 내용을 입력해 주세요.
+80byte 초과시 장문으로 자동 전환됩니다"></textarea>
+                <div class="sms_bottom_wrap">
+                    <span>
+                        <a href="javascript:openPop('Hakwon/emoticonPop.html','459','593');" class="btn_emoji">특수문자</a>
+                        <a href="" class="btn_sms_refresh">초기화</a>
+                    </span>
+                    <div class="sms_byte">
+                        <span>0</span><span class="blue_color">80byte (장문)</span>
+                    </div>
+                </div>
+                <div class="sms_btn_wrap">
+                    <a href="javascript:openPop('etc/pop_save.html','400','270');" class="btn_table">문자저장</a>
+                    <a href="javascript:openPop('etc/pop_import01.html','940','670');" class="btn_table">문자 불러오기</a>
+                    <a href="javascript:openPop('etc/pop_import02.html','940','670');" class="btn_table">문자 카테고리</a>
+                </div>
+            </li>
+            <li>
+                <span>발신번호</span>
+                <input type="text" value="02-0000-0000" />
+            </li>
+        </ul>
+        <!-- //sms 발송내용 -->
+    </div>
+    <div class="div02">
+        <ul class="tab_2depth">
+            <li class="on"><a href="index.html?page=etc/sms_manage01">가맹점 전체</a></li>
+            <li><a href="index.html?page=etc/sms_manage01_08">주소록</a></li>
+        </ul>
+        <select>
+            <option>수학</option>
+        </select>
+        <div id="grid"></div>
+    </div>
+</div>
+<div class="btn_bottom_wrap right">
+    <a href="" class="btn_basic">SMS 발송</a>
+</div>

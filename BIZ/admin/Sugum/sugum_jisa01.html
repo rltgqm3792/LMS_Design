@@ -1,0 +1,439 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("지사수수료관리");
+
+        //달력
+        // calendar();
+        monthpicker(); // 월 선택 datepicker 추가 2021.8.17 :chan
+
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="align_right">
+    <ul class="tab_2depth">
+        <li class="on"><a href="index.html?page=sugum/sugum_jisa01">물품대행수수료</a></li>
+        <li><a href="index.html?page=sugum/sugum_jisa02">수수료지급내역</a></li>
+    </ul>
+    <p>
+        <a href="javascript:openPop('../admin/sugum/pop_charge.html','640','470');" class="btn_top">수수료 생성</a>
+    </p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <!-- <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan --> -->
+                    <!-- 월 선택 datepicker 추가 2021.8.2 :chan -->
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input-ko" aria-label="Year-Month">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div class="datepicker-cell" id="datepicker-month-ko" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사 선택</dt>
+                <dd>
+                    <select>
+                        <option>지사명</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+
+<h4 class="tit_h4 mt_20" style="margin-bottom:15px;">대행수수료 합계액</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:10%">
+        </colgroup>
+        <thead>
+            <th>월</th>
+            <th>지사수수료(원)</th>
+            <th>카드수수료(원)</th>
+            <th>광고비(원)</th>
+            <th>미수금(원)</th>
+            <th>운반비(원)</th>
+            <th>합계(원)</th>
+            <th>공급가액(원)</th>
+            <th>세액(원)</th>
+            <th>실지급액(원)</th>
+        </thead>
+        <tbody>
+            <td><span class="font_gmarket13">2020.10</span></td>
+            <td class="tr total"><span class="font_gmarket13">300,000</span></td>
+            <td class="tr"><span class="font_gmarket13">300,000</span></td>
+            <td class="tr"><span class="font_gmarket13">300,000</span></td>
+            <td class="tr"><span class="font_gmarket13">300,000</span></td>
+            <td class="tr"><span class="font_gmarket13">300,000</span></td>
+            <td class="tr"><span class="font_gmarket13">50,000</span></td>
+            <td class="tr"><span class="font_gmarket13">170,000</span></td>
+            <td class="tr"><span class="font_gmarket13">300,000</span></td>
+            <td class="tr"><span class="font_gmarket13">300,000</span></td>
+        </tbody>
+    </table>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <h4 class="tit_h4 mtt_10">대행수수료 목록</h4>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="" class="btn_top line excel"><span>자사 수수료1</span></a>
+        <a href="" class="btn_top line excel"><span>자사 수수료2</span></a>
+        <a href="" class="btn_top line excel"><span>자사 수수료3</span></a>
+        <a href="javascript:openPop('../admin/sugum/pop_ad_upload.html','640','470');" class="btn_top line excel"><span>광고비/미수금/운반비 업로드</span></a>
+        <a href="" class="btn_top line excel"><span>광고비 업로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table class="thead">
+        <colgroup>
+            <col style="width:40px;" />
+            <col style="width:60px;" />
+            <col style="width:100px;" />
+            <col style="width:80px;" />
+            <col style="width:150px;" />
+            <col style="width:120px;" />
+            <col style="width:150px;" />
+            <col style="width:100px;" />
+            <col style="width:150px;" />
+            <col style="width:150px;" />
+            <col style="width:150px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>
+                    <div class="btn_sort">
+                        FC구분
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>지사코드</th>
+                <th>지사명</th>
+                <th>지사수수료(원)</th>
+                <th>카드수수료(원)</th>
+                <th>광고비(원)</th>
+                <th>미수금(원)</th>
+                <th>운반비(원)</th>
+                <th>합계(원)</th>
+                <th>공급가액(원)</th>
+                <th>세액(원)</th>
+                <th>실지급액(원)</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="height:300px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width:40px;" />
+                <col style="width:60px;" />
+                <col style="width:100px;" />
+                <col style="width:80px;" />
+                <col style="width:150px;" />
+                <col style="width:120px;" />
+                <col style="width:150px;" />
+                <col style="width:100px;" />
+                <col style="width:150px;" />
+                <col style="width:150px;" />
+                <col style="width:150px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+            </colgroup>
+            <tbody>
+                <!--
+                    <tr>
+                        <td colspan="14">
+                            <div class="no_data">검색한 데이터가 없습니다.</div>
+                        </td>
+                    </tr>
+                    -->
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">금천점</td>
+                    <td class="tr"><span class="font_gmarket13">30,000</span></td>
+                    <td><input type="text" class="font_gmarket13 input_120 tr"></td>
+                    <td><span class="font_gmarket13">9,000</span></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td><input type="text" value="2,0000" class="font_gmarket13 input_120 tr"></td>
+                    <td class="tr"><span class="font_gmarket13">72,000</span></td>
+                    <td class="tr"><span class="font_gmarket13">1,100</span></td>
+                    <td class="tr"><span class="font_gmarket13">73,000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

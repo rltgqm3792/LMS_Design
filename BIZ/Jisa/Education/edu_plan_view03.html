@@ -1,0 +1,187 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("교육과정명");
+        $(".align_right h2").text("[수학] 2020년 12월 사전교육");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신청기간</th>
+                <td><span class="font_gmarket13">2020.07.14 ~ 2020.07.14</span></td>
+                <th>교육기간</th>
+                <td><span class="font_gmarket13">2020.07.14 ~ 2020.07.14</span></td>
+            </tr>
+            <tr>
+                <th>상태</th>
+                <td>접수 중</td>
+                <th>출석체크</th>
+                <td><span class="ico_img data"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="align_right">
+    <ul class="tab_2depth">
+        <li><a href="index.html?page=education/edu_plan_view01">접수현황</a></li>
+        <li><a href="index.html?page=education/edu_plan_view02">수료자</a></li>
+        <li class="on"><a href="index.html?page=education/edu_plan_view03">미수료자</a></li>
+    </ul>
+    <p><a href="" class="btn_top gray">만족도 현황</a></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>신청여부</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="state" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="state_chk02" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk02" />
+                        <span>미수료</span>
+                    </label>
+                    <label for="state_chk03" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk03" />
+                        <span>면제자</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 : <strong>25</strong>건</span>
+    </p>
+    <p>
+        <a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <select class="h34">
+            <option>면제자처리</option>
+        </select><a href="" class="btn_top gray">변경</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:6%;">
+            <col style="width:6%;">
+            <col>
+            <col style="width:6%;">
+            <col>
+            <col style="width:6%;">
+            <col style="width:6%;">
+            <col style="width:6%;">
+            <col style="width:6%;">
+            <col style="width:6%;">
+            <col style="width:10%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>지사명</th>
+                <th>지사코드</th>
+                <th>가맹점</th>
+                <th>가맹코드</th>
+                <th>성명</th>
+                <th>성별</th>
+                <th>수료여부</th>
+                <th>대상자</th>
+                <th>연락처</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">21</span></td>
+                <td class="tl">광주지사</td>
+                <td><span class="font_gmarket13">J1245</span></td>
+                <td class="tl">광주 에듀테크학원점</td>
+                <td><span class="font_gmarket13">HC874</span></td>
+                <td>이진우</td>
+                <td>남</td>
+                <td>미수료</td>
+                <td>원장</td>
+                <td><span class="font_gmarket13">010-4575-4568</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

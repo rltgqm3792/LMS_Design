@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+        <!-- 페이지에 관련된 스크립트 -->
+        <script type="text/javascript">
+
+        </script>
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>문자내용 설정하기</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <div class="table_list">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:20%">
+                            <col style="width:60%">
+                            <col style="width:20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>발송정보</th>
+                                <th>문구</th>
+                                <th>자동발송</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>입회동의</td>
+                                <td class="tl">[해법에듀]스마트수학 이벤트수강생 입회동의서 작성하기<br />[#URL] 위 주소로 접속하셔서 정보를 기입해 주세요.</td>
+                                <td>
+                                    <label for="sms_chk01" class="chk_idt01">
+                                        <input type="checkbox" name="sms" id="sms_chk01" />
+                                        <span>학부모</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>복회등록</td>
+                                <td class="tl">[해법에듀]<수강생 가입안내> [#NAME]수강생님!<br />수학전문브랜드 스마트수학 [#2주 무료] 혜택으로 복회하신 것을 축하합니다.<br />지금부터 [#NAME]수강생의 1:1 맞춤 학습을 시작합니다.</td>
+                                <td>
+                                    <label for="sms_chk02" class="chk_idt01">
+                                        <input type="checkbox" name="sms" id="sms_chk02" />
+                                        <span>학부모</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>정규수강생 등록 완료<br />(입회동의 완료 시)</td>
+                                <td class="tl">
+                                    <수강생 가입 안내> [#NAME]수강생님! 수학전문 브랜드 스마트수학 수강생이 되신 것을 축하합니다.<br />수강생님께는 [#2주 무료] 혜택이 적용되었습니다.<br />
+                                        지금부터 [#NAME]수강생의 1:1 맞춤 학습을 시작합니다.<br />
+                                        - 수강생번호 안내: [#H*********]<br />
+                                        - 자녀의 학습관리를 위한 학부모앱을 설치하여 주시기 바랍니다.<br />
+                                        안드로이드 설치:<br />
+                                        https://goo.gl/lT8pvL<br />
+                                        아이폰 설치:<br />
+                                        http://goo.gl/BiJsWS<br />
+                                        - 공식 홈페이지:<br />
+                                        www.smarthb-math.co.kr<br />
+                                        - 수강생 혜택<br />
+                                        *학생용App: 태블릿으로 재미있게 개념을 익히고 실력을 높이는 개념서 스마트학습<br />
+                                        *1:1 맞춤학습: 문제은행 기반 맞춤 문제지 제공<br />
+                                        *7가지 커리큘럼으로 시기별 목적에 따른 학습설계<br />
+                                        *신호등유형학습: 학생 개인별 취약 유형 집중관리<br />
+                                        *무한 오답 시스템을 통한 결손 보완 학습완성<br />
+                                        - 무료수신거부: 080-863-5868
+                                </td>
+                                <td>
+                                    <label for="sms_chk03" class="chk_idt01">
+                                        <input type="checkbox" name="sms" id="sms_chk03" />
+                                        <span>학부모</span>
+                                    </label><br />
+                                    <label for="sms_chk04" class="chk_idt01">
+                                        <input type="checkbox" name="sms" id="sms_chk04" />
+                                        <span>가맹점</span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn">저장</a>
+            </section>
+        </article>
+    </body>
+
+</html>

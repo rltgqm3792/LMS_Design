@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-date-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-date-picker.js" type="text/javascript"></script><!-- calendar -->
+
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-time-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-time-picker.js" type="text/javascript"></script><!-- calendar -->
+        <!-- 페이지에 관련된 스크립트 -->
+        <script type="text/javascript">
+            $(function () {
+                datepicker();
+                timepicker();
+                timePickerByClass(); // 추가 :chan
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>공개 사업설명회 추가신청</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <h2 class="tit_pop">신청 상세정보</h2>
+                <!--테이블 상단-->
+                <div class="tbl_flex mb_10">
+                    <p>
+                        <span class="point_guide">신청 지사코드 검색 후 기타 정보를 입력해주세요</span>
+                    </p>
+                    <p>
+                        <label for="fc_01" class="rdo_idt table">
+                            <input type="radio" name="fc" id="fc_01" checked />
+                            <span>수학</span>
+                        </label>
+                    </p>
+                </div>
+                <!--//테이블 상단-->
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:40%">
+                            <col style="width:10%">
+                            <col style="width:40%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>신청지사<span class="required"></span></th>
+                                <td><input type="text"><a href="" class="btn_table gray ml_2">검색</a></td>
+                                <th>지사명</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>일정<span class="required"></span></th>
+                                <td>
+                                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                                        <span class="tui-ico-date"></span>
+                                    </div>
+                                    <div id="wrapper" style="margin-top: -1px;"></div>
+                                </td>
+                                <th>연락처</th>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>설명회 시간<span class="required"></span></th>
+                                <td colspan="3">
+                                    <span class="timepicker-selectbox"></span>&nbsp;&nbsp;분&nbsp;&nbsp;~&nbsp;&nbsp;
+                                    <span class="timepicker-selectbox"></span>&nbsp;&nbsp;분
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">설명회 방식<span class="required"></span></th>
+                                <td colspan="3">
+                                    <label for="edu_01" class="rdo_idt">
+                                        <input type="radio" name="edu" id="edu_01" checked />
+                                        <span>온라인 설명회</span>
+                                    </label>
+                                    <select>
+                                        <option>전체</option>
+                                        <option>네이버밴드</option>
+                                        <option>유투브</option>
+                                        <option>원격연수원</option>
+                                        <option>기타</option>
+                                    </select>
+                                    <input type="text" class="input_300" placeholder="상세 내용 혹은 URL을 입력하세요(필수아님)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <label for="edu_02" class="rdo_idt">
+                                        <input type="radio" name="edu" id="edu_02" />
+                                        <span>오프라인 설명회</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>설명회 주소<span class="required"></span></th>
+                                <td colspan="3">
+                                    <input type="text">
+                                    <a href="" class="btn_table">우편번호검색</a><br>
+                                    <input type="text" class="input_300 mt_5">
+                                    <input type="text" class="mt_5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>설명회 장소<span class="required"></span></th>
+                                <td colspan="3"><input type="text" class="input_full"></td>
+                            </tr>
+                            <tr>
+                                <th>비고</th>
+                                <td colspan="3"><input type="text" class="input_full"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn">신청</a>
+            </section>
+        </article>
+    </body>
+
+</html>

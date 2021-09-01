@@ -1,0 +1,334 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수강생별 교재주문이력");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문기간</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>담당자</dt>
+                <dd>
+                    <select>
+                        <option>선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학습형태</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="study" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="study_chk02" class="chk_idt">
+                        <input type="checkbox" name="study" id="study_chk02" />
+                        <span>표준</span>
+                    </label>
+                    <label for="study_chk03" class="chk_idt">
+                        <input type="checkbox" name="study" id="study_chk03" />
+                        <span>개별</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="year" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="year_chk02" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk02" />
+                        <span>초등</span>
+                    </label>
+                    <label for="year_chk03" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk03" />
+                        <span>중등</span>
+                    </label>
+                    <label for="year_chk04" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk04" />
+                        <span>고등</span>
+                    </label>
+                    <span>학년선택</span><select class="ml_10">
+                        <option>전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>레벨</dt>
+                <dd><select>
+                        <option></option>
+                    </select>
+                    <select>
+                        <option></option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹 선택</dt>
+                <dd><select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd><select>
+                        <option>수강생이름</option>
+                        <option>수강생번호</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- <div class="btn_more">
+       <a href="">화살표</a>
+   </div>  -->
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<h4 class="tit_h4">수강생 목록</h4>
+<!--//테이블 상단-->
+<div class="table_scroll" style="height:350px;">
+    <div class="table_list" style="width:3000px;">
+        <table>
+            <colgroup>
+                <col style="width:60px;" />
+                <col style="width:60px;" />
+                <col style="width:80px;" />
+                <col style="width:250px;" />
+                <col style="width:80px;" />
+                <col style="width:250px;" />
+                <col style="width:130px;" />
+                <col style="width:80px;" />
+                <col style="width:60px;" />
+                <col style="width:100px;" />
+                <col style="width:80px;" />
+                <col style="width:80px;" />
+                <col style="width:250px;" />
+                <col style="width:120px;" />
+                <col style="width:120px;" />
+                <col style="width:100px;" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>FC구분</th>
+                    <th>지사코드</th>
+                    <th>지사명</th>
+                    <th>가맹점코드</th>
+                    <th>가맹점명</th>
+                    <th>수강생번호</th>
+                    <th>수강생명</th>
+                    <th>실제학년</th>
+                    <th>학습학년(Lv)</th>
+                    <th>학습형태</th>
+                    <th>학습월</th>
+                    <th>학습내용</th>
+                    <th>주문가능일</th>
+                    <th>주문현황</th>
+                    <th>주문여부</th>
+                    <th>1월</th>
+                    <th>12월</th>
+                    <th>11월</th>
+                    <th>10월</th>
+                    <th>9월</th>
+                    <th>8월</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">J2602</span></td>
+                    <td class="tl">수원지사</td>
+                    <td><span class="font_gmarket13">HC639</span></td>
+                    <td class="tl">수원 인천1점</td>
+                    <td><span class="font_gmarket13">M0000373154</span></td>
+                    <td><a href="javascript:openPop('../admin/order/pop_order_career01.html','940','670');">홍길동</a></td>
+                    <td>초1</td>
+                    <td>초3</td>
+                    <td>자율</td>
+                    <td>1월</td>
+                    <td></td>
+                    <td><span class="font_gmarket13">2020.10.30</span></td>
+                    <td>주문처리중(2권)</td>
+                    <td>주문가능</td>
+                    <td class="tl">셀파 계산 I2권<br />셀파 내신 중3(2학기 중간</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">J2602</span></td>
+                    <td class="tl">수원지사</td>
+                    <td><span class="font_gmarket13">HC639</span></td>
+                    <td class="tl">수원 인천1점</td>
+                    <td><span class="font_gmarket13">M0000373154</span></td>
+                    <td>홍길동</td>
+                    <td>초1</td>
+                    <td>초3</td>
+                    <td>자율</td>
+                    <td>1월</td>
+                    <td></td>
+                    <td><span class="font_gmarket13">2020.10.30</span></td>
+                    <td>주문처리중(2권)</td>
+                    <td class="point">주문불가</td>
+                    <td class="tl">셀파 계산 I2권<br />셀파 내신 중3(2학기 중간</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">J2602</span></td>
+                    <td class="tl">수원지사</td>
+                    <td><span class="font_gmarket13">HC639</span></td>
+                    <td class="tl">수원 인천1점</td>
+                    <td><span class="font_gmarket13">M0000373154</span></td>
+                    <td>홍길동</td>
+                    <td>초1</td>
+                    <td>초3</td>
+                    <td>자율</td>
+                    <td>1월</td>
+                    <td></td>
+                    <td><span class="font_gmarket13">2020.10.30</span></td>
+                    <td>주문처리중(2권)</td>
+                    <td class="point">주문불가</td>
+                    <td class="tl">셀파 계산 I2권<br />셀파 내신 중3(2학기 중간</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">J2602</span></td>
+                    <td class="tl">수원지사</td>
+                    <td><span class="font_gmarket13">HC639</span></td>
+                    <td class="tl">수원 인천1점</td>
+                    <td><span class="font_gmarket13">M0000373154</span></td>
+                    <td>홍길동</td>
+                    <td>초1</td>
+                    <td>초3</td>
+                    <td>자율</td>
+                    <td>1월</td>
+                    <td></td>
+                    <td><span class="font_gmarket13">2020.10.30</span></td>
+                    <td>주문처리중(2권)</td>
+                    <td class="point">주문불가</td>
+                    <td class="tl">셀파 계산 I2권<br />셀파 내신 중3(2학기 중간</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                    <td class="tl">원리쏙쏙 6-2-1권<br />유형완성 6-2-9호<br />월간 우등생학습(9호)6학년 2,500원</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

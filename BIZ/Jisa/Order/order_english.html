@@ -1,0 +1,194 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("지사주문관리");
+        $(".align_right h2").text("지사주문신청");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+
+<!-- <ul class="step">
+    <li class="on"><a href="index.html?page=order/order_math01_step01">01. 주문정보</a></li>
+    <li><a href="index.html?page=order/order_step02">02. 장바구니(주문정보)확인</a></li>
+    <li><a href="index.html?page=order/order_step03">03. 주문완료</a></li>
+</ul> -->
+<!-- // 1Depth Tab -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_01" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_01" onclick="movepage('index.html?page=order/order_math01');" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_02" checked>
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_03">
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품구분</dt>
+                <dd>
+                    <label for="goods_01" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_01" checked />
+                        <span>연구용</span>
+                    </label>
+                    <label for="goods_02" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_02">
+                        <span>지도서</span>
+                    </label>
+                    <label for="goods_03" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_03">
+                        <span>단어장</span>
+                    </label>
+                    <label for="goods_04" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_04">
+                        <span>디북스</span>
+                    </label>
+                    <label for="goods_05" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_05">
+                        <span>데일리노트</span>
+                    </label>
+                    <label for="goods_06" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_06">
+                        <span>홍보판촉물</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>영역</dt>
+                <dd><select>
+                        <option>Grammer</option>
+                        <option>Speaking</option>
+                    </select></dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>레벨</dt>
+                <dd><select>
+                        <option>Cognitive level</option>
+                    </select>
+                    <select>
+                        <option>Level 전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품명</dt>
+                <dd><input type="text" class="input_300" placeholder="상품명을 입력하세요"></dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+<div class="box_guide mt_20">
+    <div>
+        <ul>
+            <li>주문접수기간 : <span class="font_gmarket13">2021.10.30 ~ 2021.12.30</span></li>
+            <li>발송예정일 : 2021.12.30</li>
+        </ul>
+    </div>
+</div>
+<div class="table_list mt_20">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%;">
+            <col style="width:6%;">
+            <col style="width:10%" />
+            <col style="width:10%" />
+            <!-- <col style="width:6%" /> -->
+            <col />
+            <col />
+            <col style="width:10%;">
+            <col style="width:13%;">
+            <col style="width:10%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>Cognitive level</th>
+                <th>Level</th>
+                <!-- <th>구분</th> -->
+                <th>상품명</th>
+                <th>상품상세</th>
+                <th>가격(원)</th>
+                <th>수량</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <!-- <td>홍보판촉물</td> -->
+                <td class="tl"><span class="noimg"></span>영어__A02(교구)</td>
+                <td>&nbsp;</td>
+                <td class="tr"><span class="font_gmarket13">22,000</span></td>
+                <td>
+                    <div class="amount">
+                        <a href="" class="amount_puls"></a>
+                        <input type="text" value="1">
+                        <a href="" class="amount_minus"></a>
+                    </div>
+                </td>
+                <td class="tr"><span class="font_gmarket13">22,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <a href="" class="btn_basic confirm">장바구니 담기</a>
+</div>

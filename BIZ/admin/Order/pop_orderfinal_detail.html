@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>주문번호 상세</h1>
+        </header>        
+        <section class="pop_content">
+             <!-- tit_sub_txt -->
+             <div class="align_right">
+                <h2 class="tit_pop">주문 정보</h2>
+                <p><a href="" class="btn_top line print"><span>프린트</span></a></p>
+            </div>
+            <div class="table_list scroll_x01">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:70px;" />
+                        <col style="width:70px;" />
+                        <col style="width:100px;" />
+                        <col style="width:100px;" />
+                        <col style="width:70px;" />
+                        <col >
+                        <col style="width:80px;" />
+                        <col>
+                        <col style="width:70px;" />
+                        <col style="width:50px;" />
+                        <col style="width:100px;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>FC구분</th>
+                            <th>주문구분</th>
+                            <th>주문번호</th>
+                            <th>주문일</th>
+                            <th>지사코드</th>
+                            <th>지사명</th>
+                            <th>가맹점코드</th>
+                            <th>가맹점명</th>
+                            <th>ERP코드</th>
+                            <th>수량</th>
+                            <th>총금액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>수학</td>
+                            <td>수강생</td>
+                            <td><span class="font_gmarket13">20201001215</span></td>
+                            <td><span class="font_gmarket13">2012.06.30</span></td>
+                            <td><span class="font_gmarket13">0910</span></td>
+                            <td>남양주</td>
+                            <td><span class="font_gmarket13">H4791</span</td>
+                            <td>가능동교실</td>
+                            <td><span class="font_gmarket13">5256</span></td>
+                            <td><span class="font_gmarket13">7</span></td>
+                            <td><span class="font_gmarket13">17,500</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div_flex mt_20">
+                <h2 class="tit_pop">주문 상세 정보</h2>
+                <div class="mb_10 ml_10">
+                    <label for="detail_01" class="rdo_idt">
+                        <input type="radio" name="detail" id="detail_01" value="1" checked="checked" />
+                        <span>상세전표</span>
+                    </label>
+                    <label for="detail_02" class="rdo_idt">
+                        <input type="radio" name="detail" id="detail_02" value="2" />
+                        <span>발송전표</span>
+                    </label>               
+                </div>
+            </div>      
+            <div id="pop1" class="table_list">
+                <table class="thead">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:40px;">
+                        <col style="width:80px;">
+                        <col style="width:60px;">
+                        <col style="width:60px;">
+                        <col style="width:120px;">
+                        <col style="width:60px;">
+                        <col style="width:100px;">
+                        <col style="width:60px;">
+                        <col>
+                        <col style="width:60px;">
+                        <col style="width:100px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>수강생번호</th>
+                            <th>수강생명</th>
+                            <th>학년</th>
+                            <th>주문구분</th>
+                            <th>학습월</th>
+                            <th>주문일</th>
+                            <th>학습구분</th>
+                            <th>상품명</th>
+                            <th>수량</th>
+                            <th>금액(원)</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="scroll" style="height:280px;">
+                    <table class="tbody">
+                        <colgroup>
+                            <col style="width:40px;">
+                            <col style="width:80px;">
+                            <col style="width:60px;">
+                            <col style="width:60px;">
+                            <col style="width:120px;">
+                            <col style="width:60px;">
+                            <col style="width:100px;">
+                            <col style="width:60px;">
+                            <col>
+                            <col style="width:60px;">
+                            <col style="width:100px;">
+                        </colgroup>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">M000002</span></td>
+                                <td>박찬호</td>
+                                <td>중등2</td>
+                                <td>수강생주문(신)</td>
+                                <td>8월</td>
+                                <td><span class="font_gmarket13">2021.06.30</span></td>
+                                <td>표준</td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">4,000</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>      
+            <div id="pop2" class="table_list" style="display:none;">
+                <table class="thead">
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:40px;">
+                        <col style="width:60px;">
+                        <col style="width:100px;">
+                        <col style="width:60px;">
+                        <col>
+                        <col style="width:60px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>상품코드</th>
+                            <th>ERP 상품코드</th>
+                            <th>연판</th>
+                            <th>상품명</th>
+                            <th>수량</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="scroll" style="height:250px;">
+                    <table class="tbody">
+                        <colgroup>
+                            <col style="width:40px;">
+                            <col style="width:60px;">
+                            <col style="width:100px;">
+                            <col style="width:60px;">
+                            <col>
+                            <col style="width:60px;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="font_gmarket13">1</span></td>
+                                <td><span class="font_gmarket13">11111</span></td>
+                                <td><span class="font_gmarket13">9934001000</span></td>
+                                <td><span class="font_gmarket13">2019</span></td>
+                                <td class="tl">(신)e해법 유형완성 2-2-8호</td>
+                                <td><span class="font_gmarket13">1</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>      
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+        </section>
+    </article>
+    <script>
+        $('input[type=radio][name=detail]').on('click',function(){
+            var chkValue = $('input[type=radio][name=detail]:checked').val();
+            if (chkValue == '1') {
+                $('#pop1').css('display','block');
+                $('#pop2').css('display','none');
+            } else if (chkValue == '2') {
+                $('#pop1').css('display','none');
+                $('#pop2').css('display','block');
+            }
+        });   
+    </script>
+</body>
+</html>

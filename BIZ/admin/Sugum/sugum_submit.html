@@ -1,0 +1,602 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수금확인내역");
+
+        //달력
+        datepicker();
+
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="btn_right">
+    <a href="javascript:openPop('../admin/sugum/pop_text.html','940','670');" class="btn_top ml_2 gray">문구확인</a>
+    <a href="javascript:openPop('../admin/sugum/pop_date02.html','940','670');" class="btn_top gray">정지일 관리</a>
+    <div class="now_month"><span class="main_color mt_01">당월 수금 처리일</span><span class="ml_2">2020.10.30(토) 13:00</span></div>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점 선택</dt>
+                <dd>
+                    <select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹점전체</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                    <select class="ml_2">
+                        <option>상태전체</option>
+                    </select>
+                    <select>
+                        <option>입금상태전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<div class="table_input mt_20">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:80%">
+            <col style="width:10%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="2">정보설정</th>
+                <td>
+                    <label for="bank_chk01" class="chk_idt table">
+                        <input type="checkbox" name="bank" id="bank_chk01" />
+                        <span>미입금</span>
+                    </label>
+                    <label for="bank_chk02" class="chk_idt table">
+                        <input type="checkbox" name="bank" id="bank_chk02" />
+                        <span>현금입금</span>
+                    </label>
+                    <label for="bank_chk03" class="chk_idt table">
+                        <input type="checkbox" name="bank" id="bank_chk03" />
+                        <span>카드결제</span>
+                    </label>
+                    <label for="bank_chk04" class="chk_idt table">
+                        <input type="checkbox" name="bank" id="bank_chk04" />
+                        <span>부분납부(95%이하)</span>
+                    </label>
+                    <label for="bank_chk05" class="chk_idt table">
+                        <input type="checkbox" name="bank" id="bank_chk05" />
+                        <span>부분납부(95%이상)</span>
+                    </label>
+                    <label for="bank_chk06" class="chk_idt table">
+                        <input type="checkbox" name="bank" id="bank_chk06" />
+                        <span>자동이체</span>
+                    </label>
+                </td>
+                <td rowspan="2" class="td_line tc"><a href="" class="btn_top gray">정보변경</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="all_chk01" class="chk_idt all table">
+                        <input type="checkbox" name="state" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="state_chk02" class="chk_idt table">
+                        <input type="checkbox" name="state" id="state_chk02" />
+                        <span>활동</span>
+                    </label>
+                    <label for="state_chk03" class="chk_idt table">
+                        <input type="checkbox" name="state" id="statec_chk03" />
+                        <span>정지</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <a href="javascript:openPop('../admin/sugum/pop_payment.html','940','670')" class="btn_top gray">입금순서 확인</a>
+    </p>
+    <p> <label for="all_rdo01" class="rdo_idt">
+            <input type="radio" name="join" id="all_rdo01" checked />
+            <span>검색결과</span>
+        </label>
+        <label for="all_rdo02" class="rdo_idt">
+            <input type="radio" name="join" id="all_rdo02" />
+            <span>전체</span>
+        </label>
+        <a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a class="btn_top line excel"><span>영림원 엑셀 다운로드</span></a>
+        <a href="javascript:openPop('../admin/sugum/pop_sugum_upload.html','600','470');" class="btn_top line excel"><span>엑셀 업로드</span></a>
+        <a href="javascript:openPop('../admin/sugum/pop_erp.html','600','470');" class="btn_top line">ERP 전송</a>
+</div>
+<!--//테이블 상단-->
+<div class="table_scroll" style="width:100%">
+    <div class="table_list culumn" style="height:300px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:60px;" />
+                <col style="width:80px;" />
+                <col style="width:90px;" />
+                <col style="width:250px;" />
+                <col style="width:115px;" />
+                <col style="width:250px;" />
+                <col style="width:100px;" />
+                <col style="width:80px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:100px;" />
+                <col style="width:120px;" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2">
+                        <label for="all_chk04" class="chk_idt all">
+                            <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                            <span>전체</span>
+                        </label>
+                    </th>
+                    <th rowspan="2">No</th>
+                    <th rowspan="2">
+                        <div class="btn_sort">
+                            FC구분
+                            <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th rowspan="2">지사명</th>
+                    <th rowspan="2">
+                        <div class="btn_sort">
+                            가맹점코드
+                            <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th rowspan="2">가맹점명</th>
+                    <th rowspan="2">ERP코드</th>
+                    <th rowspan="2">상태</th>
+                    <th rowspan="2">정지일</th>
+                    <th rowspan="2">보증금</th>
+                    <th rowspan="2">본사입금(원)</th>
+                    <th rowspan="2">판촉물(원)</th>
+                    <th colspan="2">미입금액(원)</th>
+                    <th rowspan="2">기타금액(원)</th>
+                    <th rowspan="2">총수금액(원)</th>
+                    <th rowspan="2">수금확인</th>
+                    <th colspan="4">현재 수금액(원)</th>
+                    <th colspan="4">현재 미수금액(원)</th>
+                    <th rowspan="2" class="td_line">수금율(%)</th>
+                    <th rowspan="2">입금일</th>
+                </tr>
+                <tr>
+                    <th>교재비(원)</th>
+                    <th>판촉비(원)</th>
+                    <th>교재비(원)</th>
+                    <th>판촉비(원)</th>
+                    <th>기타</th>
+                    <th>합계</th>
+                    <th>교재비(원)</th>
+                    <th>판촉비(원)</th>
+                    <th>기타</th>
+                    <th>합계</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td class="tl">금천점</td>
+                    <td><span class="font_gmarket13">G0987</span></td>
+                    <td class="tl">가산푸르지오점</td>
+                    <td><span class="font_gmarket13">H12345678</span></td>
+                    <td>활동</td>
+                    <td><span class="font_gmarket13">2021.06.30</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">80,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">70,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td>자동이체</td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><input type="text" class="input_full"></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><span class="font_gmarket13">5,000</span></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_payment_day.html','500','670');"><span class="font_gmarket13">2021.06.30</span></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="" class="btn_basic confirm">저장</a>
+    </p>
+</div>

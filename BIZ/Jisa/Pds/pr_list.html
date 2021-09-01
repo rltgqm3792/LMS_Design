@@ -1,0 +1,286 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("홍보시안&판촉물어워드");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- 2Depth Tab -->
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on"><a href="">전체</a></li>
+    <li><a href="">필독보기</a></li>
+</ul>
+<!-- // 2Depth Tab -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>공통</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="category" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="category_chk01" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk01" />
+                        <span>BI</span>
+                    </label>
+                    <label for="category_chk02" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk02" />
+                        <span>인테리어</span>
+                    </label>
+                    <label for="category_chk03" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk03" />
+                        <span>전단</span>
+                    </label>
+                    <label for="category_chk04" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk04" />
+                        <span>현수막</span>
+                    </label>
+                    <label for="category_chk05" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk05" />
+                        <span>배너</span>
+                    </label>
+                    <label for="category_chk06" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk06" />
+                        <span>포스터</span>
+                    </label>
+                    <label for="category_chk07" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk07" />
+                        <span>모바일</span>
+                    </label>
+                    <label for="category_chk08" class="chk_idt">
+                        <input type="checkbox" name="category" id="category_chk08" />
+                        <span>캐릭터</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset">초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>25</strong>개</span><!-- 2021.7.7 수정 :chan -->
+    </p>
+    <p>
+        <label for="thum_01" class="rdo_list">
+            <input type="radio" name="thum" value="1" id="thum_01" />
+            <span>리스트형</span>
+        </label><label for="thum_02" class="rdo_cal">
+            <input type="radio" name="thum" value="2" id="thum_02" checked />
+            <span>썸네일형</span>
+        </label>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="pop1" class="table_list" style="display:none">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col />
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:7%">
+            <col style="width:7%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>FC구분</th>
+                <th>제목</th>
+                <th>도서조회</th>
+                <th>공개설정</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>전과목</td>
+                <td class="tl"><a href="">학부모 설명회 문어발 전단지</a></td>
+                <td>인테리어</td>
+                <td>지사/가맹</td>
+                <td>2021.10.30</td>
+                <td><a href="javascript:openPop('../jisa/community/pop_search_branch01.html','800','650');""><span class=" font_gmarket13">28900</span></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="pop2" class="thum_list">
+    <div>
+        <dl>
+            <dt><a href="index.html?page=pds/pr_view"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="table_bullet red_bullet thum_bullet">필독</span></dt>
+            <!-- 2021.7.7 <class="new"> 추가 :chan -->
+            <dd class="title"><a href="index.html?page=pds/pr_view">내신 5000제 학교별 챕터테스<i class="new"></i></a></dd>
+            <dd class="list">
+                <p>
+                    <!-- 2021.7.7 글자 수정 :chan -->
+                    <span class="bookMath">수학</span>
+                    <span class="bar"></span>
+                    <span class="open">지사/가맹</span>
+                </p>
+                <p class="category">본사</p>
+            </dd>
+        </dl>
+        <dl>
+            <dt><a href="index.html?page=pds/pr_view"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="table_bullet red_bullet thum_bullet">필독</span></dt>
+            <!-- 2021.7.7 <class="new"> 추가 :chan -->
+            <dd class="title"><a href="index.html?page=pds/pr_view">내신 5000제 학교별 챕터테스 챕터테스 챕터테스 챕터테스<i class="new"></i></a></dd>
+            <dd class="list">
+                <p>
+                    <!-- 2021.7.7 글자 수정 :chan -->
+                    <span class="bookMath">수학</span>
+                    <span class="bar"></span>
+                    <span class="open">지사/가맹</span>
+                </p>
+                <p class="category">우수가맹</p>
+            </dd>
+        </dl>
+        <dl>
+            <dt><a href="index.html?page=pds/pr_view"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="table_bullet red_bullet thum_bullet">필독</span></dt>
+            <dd class="title"><a href="index.html?page=pds/pr_view">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="list">
+                <p>
+                    <!-- 2021.7.7 글자 수정 :chan -->
+                    <span class="bookMath">수학</span>
+                    <span class="bar"></span>
+                    <span class="open">지사/가맹</span>
+                </p>
+                <p class="category">전산</p>
+            </dd>
+        </dl>
+        <dl>
+            <dt><a href="index.html?page=pds/pr_view"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="table_bullet red_bullet thum_bullet">필독</span></dt>
+            <dd class="title"><a href="index.html?page=pds/pr_view">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="list">
+                <p>
+                    <!-- 2021.7.7 글자 수정 :chan -->
+                    <span class="bookTclass">전과목</span>
+                    <span class="bar"></span>
+                    <span class="open">지사/가맹</span>
+                </p>
+                <p class="category">본사</p>
+            </dd>
+        </dl>
+        <dl>
+            <dt><a href="index.html?page=pds/pr_view"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="table_bullet red_bullet thum_bullet">필독</span></dt>
+            <dd class="title"><a href="index.html?page=pds/pr_view">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="list">
+                <p>
+                    <!-- 2021.7.7 글자 수정 :chan -->
+                    <span class="bookTclass">전과목</span>
+                    <span class="bar"></span>
+                    <span class="open">지사/가맹</span>
+                </p>
+                <p class="category">우수가맹</p>
+            </dd>
+        </dl>
+        <dl>
+            <dt><a href="index.html?page=pds/pr_view"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="table_bullet red_bullet thum_bullet">필독</span></dt>
+            <dd class="title"><a href="index.html?page=pds/pr_view">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="list">
+                <p>
+                    <!-- 2021.7.7 글자 수정 :chan -->
+                    <span class="bookTclass">전과목</span>
+                    <span class="bar"></span>
+                    <span class="open">지사/가맹</span>
+                </p>
+                <p class="category">인테리어</p>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<script>
+    $('input[type=radio][name=thum]').on('click', function () {
+        var chkValue = $('input[type=radio][name=thum]:checked').val();
+        if (chkValue == '1') {
+            $('#pop1').css('display', 'block');
+            $('#pop2').css('display', 'none');
+        } else if (chkValue == '2') {
+            $('#pop1').css('display', 'none');
+            $('#pop2').css('display', 'block');
+        }
+    });
+</script>

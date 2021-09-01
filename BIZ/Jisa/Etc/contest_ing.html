@@ -1,0 +1,204 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("콘테스트 관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>가맹점 선택</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>부문</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="sector" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="sector_chk02" class="chk_idt">
+                        <input type="checkbox" name="sector" id="sector_chk02" />
+                        <span>프리젠트</span>
+                    </label>
+                    <label for="sector_chk03" class="chk_idt">
+                        <input type="checkbox" name="sector" id="sector_chk03" />
+                        <span>퍼포먼스</span>
+                    </label>
+                    <label for="sector_chk04" class="chk_idt">
+                        <input type="checkbox" name="sector" id="sector_chk04" />
+                        <span>광고</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd style="width:90% !important">
+                    <label for="all_chk02" class="chk_idt all">
+                        <input type="checkbox" name="year" id="all_chk02" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="year_chk01" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk01" />
+                        <span>예비초</span>
+                    </label>
+                    <label for="year_chk02" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk02" />
+                        <span>초등1</span>
+                    </label>
+                    <label for="year_chk03" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk03" />
+                        <span>초등2</span>
+                    </label>
+                    <label for="year_chk04" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk04" />
+                        <span>초등3</span>
+                    </label>
+                    <label for="year_chk05" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk05" />
+                        <span>초등4</span>
+                    </label>
+                    <label for="year_chk06" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk06" />
+                        <span>초등5</span>
+                    </label>
+                    <label for="year_chk07" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk07" />
+                        <span>초등6</span>
+                    </label>
+                    <label for="year_chk08" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk08" />
+                        <span>중등1</span>
+                    </label>
+                    <label for="year_chk09" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk09" />
+                        <span>중등2</span>
+                    </label>
+                    <label for="year_chk10" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk10" />
+                        <span>중등3</span>
+                    </label>
+                    <label for="year_chk11" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk11" />
+                        <span>고등1</span>
+                    </label>
+                    <label for="year_chk12" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk12" />
+                        <span>고등2</span>
+                    </label>
+                    <!-- <label for="year_chk13" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk13" />
+                        <span>고등3</span>
+                    </label> -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>참가자명</dt>
+                <dd><input type="text" placeholder="이름을 입력하세요"></dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<div class="tc font_25 strong mt_20">제 2회 수학 말하기 콘테스트</div>
+<div class="contest_type mt_20">
+    <a href="" class="con_all on">
+        <dl>
+            <dt>전체</dt>
+            <dd><span>162</span>건</dd>
+        </dl>
+    </a>
+    <a href="" class="con_stand">
+        <dl>
+            <dt>대기</dt>
+            <dd><span>162</span>명</dd>
+        </dl>
+    </a>
+    <a href="" class="con_app">
+        <dl>
+            <dt>승인</dt>
+            <dd><span>162</span>건</dd>
+        </dl>
+    </a>
+    <a href="" class="con_reject">
+        <dl>
+            <dt>기각</dt>
+            <dd><span>162</span>건</dd>
+        </dl>
+    </a>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <select class="h34">
+            <option value="">학년순</option>
+            <option value="">투표순</option>
+            <option value="">상태순</option>
+            <option value="">등록일순</option>
+        </select>
+        <span class="list_num">
+            전체 : <strong class="mt_1">1,256</strong>명</span>
+    </p>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+<div class="btn_bottom_wrap">
+    <p><a href="" class="btn_basic line">목록</a></p>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

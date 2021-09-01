@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>신청서 상세정보</h1>
+        </header> 
+        <section class="pop_content">
+             <!-- tit_sub_txt -->  
+             <div class="table_input">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:15%">
+                        <col style="width:35%">
+                        <col style="width:15%">
+                        <col style="width:35%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>FC구분</th>
+                            <td colspan="3"> 
+                            <label for="fc_rdo02" class="rdo_idt table">
+                                <input type="radio" name="fc" id="fc_rdo02" />
+                                <span>수학</span>
+                            </label>
+                            <label for="fc_rdo03" class="rdo_idt table">
+                                <input type="radio" name="fc" id="fc_rdo03" />
+                                <span>영어</span>
+                            </label>
+                            <label for="fc_rdo04" class="rdo_idt table">
+                                <input type="radio" name="fc" id="fc_rdo04" />
+                                <span>전과목</span>
+                            </label></td>
+                        </tr>
+                        <tr>
+                            <th>형태<span class="required"></span></th>
+                            <td colspan="3">
+                                <label for="state_rdo02" class="rdo_idt table">
+                                    <input type="radio" name="state" id="state_rdo02" />
+                                    <span>수학</span>
+                                </label>
+                                <label for="state_rdo03" class="rdo_idt table">
+                                    <input type="radio" name="state" id="state_rdo03" />
+                                    <span>영어</span>
+                                </label>
+                                <label for="state_rdo04" class="rdo_idt table">
+                                    <input type="radio" name="state" id="state_rdo04" />
+                                    <span>전과목</span>
+                                </label>
+                                <label for="state_rdo04" class="rdo_idt table">
+                                    <input type="radio" name="state" id="state_rdo04" />
+                                    <span>전과목</span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>성명<span class="required"></span></th>
+                            <td colspan="3">김해법</td>
+                        </tr>
+                        <tr>
+                            <th>휴대폰번호</th>
+                            <td colspan="3"><span class="font_gmarket13">010-4564-45278</span></td>
+                        </tr>
+                        <tr>
+                            <th>주소<span class="required"></span></th>
+                            <td colspan="3">[12345] 서울시 금천구 가산로9길 해법 APT 1234호</td>
+                        </tr>
+                        <tr>
+                            <th>가맹희망지역</th>
+                            <td>한강로</td>
+                            <th>가맹희망지역</th>
+                            <td>서울 강북구,서울 도봉구 ,경기 의정부 ,경기 동두천시,경기 양주시,경기 포천시,강원 철원군,경기 연천군</td>
+                        </tr>
+                        <tr>
+                            <th>면적<span class="required"></span></th>
+                            <td colspan="3"> 62 m2 (18.76 평)</td>
+                        </tr>
+                        <tr>
+                            <th>문의내용</th>
+                            <td colspan="3">가맹점 상담을 진행하고 싶습니다.</td>
+                        </tr>
+                        <tr>
+                            <th>상담내용</th>
+                            <td colspan="3"><textarea></textarea></td>
+                        </tr>
+                        <tr>
+                            <th>상담상태</th>
+                            <td>
+                                <label for="counsel_rdo02" class="rdo_idt table">
+                                    <input type="radio" name="counsel" id="counsel_rdo02" />
+                                    <span>상담중</span>
+                                </label>
+                                <label for="counsel_rdo03" class="rdo_idt table">
+                                    <input type="radio" name="counsel" id="counsel_rdo03" />
+                                    <span>상담대기</span>
+                                </label>
+                                <label for="counsel_rdo04" class="rdo_idt table">
+                                    <input type="radio" name="counsel" id="counsel_rdo04" />
+                                    <span>상담완료</span>
+                                </label>
+                            </td>
+                            <th>가입여부</th>
+                            <td>
+                                <label for="join_rdo02" class="rdo_idt table">
+                                    <input type="radio" name="join" id="join_rdo02" />
+                                    <span>Y</span>
+                                </label>
+                                <label for="join_rdo03" class="rdo_idt table">
+                                    <input type="radio" name="join" id="join_rdo03" />
+                                    <span>N</span>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            <a href="javascript:window.close();" class="btn">저장</a>
+        </section>
+    </article>
+</body>
+</html>
+

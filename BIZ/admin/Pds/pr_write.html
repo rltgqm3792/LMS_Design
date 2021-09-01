@@ -1,0 +1,207 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("홍보자료실");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%">
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="radio_01" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_01">
+                        <span>공통</span>
+                    </label>
+                    <label for="radio_02" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_02">
+                        <span>수학</span>
+                    </label>
+                    <label for="radio_03" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_03">
+                        <span>영어</span>
+                    </label>
+                    <label for="radio_04" class="rdo_idt table">
+                        <input type="radio" name="radio" id="radio_04">
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>카테고리<span class="required"></span></th>
+                <td>
+                    <label for="radio_11" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_11">
+                        <span>BI</span>
+                    </label>
+                    <label for="radio_12" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_12">
+                        <span>인테리어</span>
+                    </label>
+                    <label for="radio_13" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_13">
+                        <span>전단</span>
+                    </label>
+                    <label for="radio_14" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_14">
+                        <span>현수막</span>
+                    </label>
+                    <label for="radio_15" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_15">
+                        <span>배너</span>
+                    </label>
+                    <label for="radio_16" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_16">
+                        <span>포스터</span>
+                    </label>
+                    <label for="radio_17" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_17">
+                        <span>모바일</span>
+                    </label>
+                    <label for="radio_18" class="rdo_idt table">
+                        <input type="radio" name="radio1" id="radio_18">
+                        <span>캐릭터</span>
+                    </label>
+                    <label for="reding" class="chk_idt">
+                        <input type="checkbox" name="reding" id="reding" />
+                        <span>필독</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" placeholder="제목을 30자 이내로 입력해주세요" class="input_full" /></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터영역</td>
+            </tr>
+            <tr>
+                <th>썸네일<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>&nbsp;(이미지 사이즈 300px*150px)
+                </td>
+            </tr>
+            <tr>
+                <th>AI 첨부<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+            </tr>
+            <tr>
+                <th>Jpeg 첨부<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                    <a href="" class="add_file">Vod01.png</a><span class="delete_File"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>문서 첨부</th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+            </tr>
+            <tr>
+                <th>등록시간<span class="required"></span></th>
+                <td>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>공개</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>비공개</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>예약</span>
+                    </label>
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시"> : <input type="text" placeholder="분">
+                    </span>
+                    <!-- <span class="line">~</span>
+                    <input type="text" class="btn_date" disabled="disabled" />
+                    <span class="input_txt_time">
+                        <input type="text" placeholder="시" disabled="disabled"> : <input type="text" placeholder="분" disabled="disabled">
+                    </span> -->
+                </td>
+            </tr>
+            <tr>
+                <th>상단 고정</th>
+                <td>
+                    <label for="top_01" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_01" />
+                        <span>설정</span>
+                    </label>
+                    <label for="top_02" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_02" />
+                        <span>기간제한</span>
+                    </label>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+            </tr>
+            <tr>
+                <th>공개설정<span class="required"></span></th>
+                <td>
+                    <label for="all_chk01" class="chk_idt table all">
+                        <input type="checkbox" name="open" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="open_chk01" class="chk_idt table">
+                        <input type="checkbox" name="open" id="open_chk01" />
+                        <span>지사</span>
+                    </label>
+                    <label for="open_chk02" class="chk_idt table">
+                        <input type="checkbox" name="open" id="open_chk02" />
+                        <span>가맹</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="tbl_flex mt_20">
+    <a href="index.html?page=pds/pr_list" class="btn_basic cancel">목록</a>
+    <a href="" class="btn_basic confirm">저장</a>
+</div>

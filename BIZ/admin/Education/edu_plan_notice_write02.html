@@ -1,0 +1,151 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("교육일정");
+        $(".align_right h2").text("교육공지");
+
+        //달력
+        //calendar();
+        datePickerByClass(); // 추가 :chan
+        timePickerByClass(); // 추가 :chan
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h4 class="tit_h4">기본정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo01" checked />
+                        <span>공통</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" class="input_full" placeholder="제목을 30자 이내로 입력해주세요."></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터 영역</td>
+            </tr>
+            <tr>
+                <th>파일첨부<span class="required"></span></th>
+                <td>
+                    <div class="attach_file_lst">
+                        <ul>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <span class="delete_File"></span></li>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <span class="delete_File"></span></li>
+                        </ul>
+                        <!-- [D] 파일첨부전 드래그/드롭 시 on클래스 추가 -->
+                        <p class="guide_tx"><span>첨부할 파일을 직접 드래그 앤 드롭 해주세요</span></p>
+                    </div>
+                </td>
+            </tr>
+            <!-- <tr>
+                <th>공지일</th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <div id="timepicker-selectbox"></div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <div id="timepicker-selectbox"></div>
+                </td>
+            </tr> -->
+            <tr>
+                <th>상단고정</th>
+                <td colspan="3">
+                    <label for="top_chk01" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_chk01" />
+                        <span>설정</span>
+                    </label>
+                    <label for="top_chk02" class="chk_idt">
+                        <input type="checkbox" name="top" id="top_chk02" />
+                        <span>기간제한</span>
+                    </label>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input class="datepicker-input" type="text" aria-label="Date-Time">
+                            <span class="tui-ico-date"></span>
+                            <div class="dateWrapper" style="margin-left: -1px;"></div>
+                        </div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input class="datepicker-input" type="text" aria-label="Date-Time">
+                            <span class="tui-ico-date"></span>
+                            <div class="dateWrapper" style="margin-left: -1px;"></div>
+                        </div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>공개 설정</th>
+                <td><label for="all_chk03" class="chk_idt table all">
+                        <input type="checkbox" name="fc01" id="all_chk03" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc01_chk01" class="chk_idt table">
+                        <input type="checkbox" name="fc01" id="fc01_chk01" />
+                        <span>가맹점</span>
+                    </label>
+                    <label for="fc01_chk02" class="chk_idt table">
+                        <input type="checkbox" name="fc01" id="fc01_chk02" />
+                        <span>지사</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn_bottom_wrap between mt_40">
+        <a href="index.html?page=education/edu_plan_notice" class="btn_basic line">목록</a>
+        <p>
+            <a href="" class="btn_basic line">미리보기</a>
+            <!-- <a href="" class="btn_basic gray">삭제</a> -->
+            <a href="" class="btn_basic">저장</a>
+        </p>
+    </div>

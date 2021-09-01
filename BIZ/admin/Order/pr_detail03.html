@@ -1,0 +1,226 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("상품 등록/수정");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<p><span class="required mr_10"></span>필수값입니다.</p>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_chk02" class="chk_idt table">
+                        <input type="checkbox" name="fc" id="fc_chk02" checked />
+                        <span>수학</span>
+                    </label>
+                </td>
+                <th>상품구분<span class="required"></span></th>
+                <td>
+                    <label for="divide_01" class="rdo_idt table">
+                        <input type="radio" name="divide" id="divide_01" />
+                        <span>홍보판촉물</span>
+                    </label>
+                    <label for="divide_02" class="rdo_idt table">
+                        <input type="radio" name="divide" id="divide_02" />
+                        <span>전단지</span>
+                    </label>
+                    <label for="divide_03" class="rdo_idt table">
+                        <input type="radio" name="divide" id="divide_03" checked />
+                        <span>부록지/표지</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>상품명<span class="required"></span></th>
+                <td colspan="3"><input type="text" class="input_300"></td>
+            </tr>
+            <tr>
+                <th>구분<span class="required"></span></th>
+                <td colspan="3" class="in_table">
+                    <table class="table_sub">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:40%">
+                            <col style="width:10%">
+                            <col style="width:40%">
+                        </colgroup>
+                        <tr>
+                            <th>초등1</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 1학년</option>
+                                </select></td>
+                            <th>초등6</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 6학년</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <th>초등2</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 2학년</option>
+                                </select></td>
+                            <th>중등1</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 중1학년</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <th>초등3</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 3학년</option>
+                                </select></td>
+                            <th>중등2</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 중2학년</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <th>초등4</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 4학년</option>
+                                </select></td>
+                            <th>중등3</th>
+                            <td><select>
+                                    <option>서술형 + 단원평가(6호) 중3학년</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <th>초등5</th>
+                            <td colspan="3"><select>
+                                    <option>서술형 + 단원평가(6호) 5학년</option>
+                                </select></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>가맹점 신청기간<span class="required"></span></th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+                <th>지사 주문기간<span class="required"></span></th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+            </tr>
+            <tr>
+                <th>발송예정일</th>
+                <td colspan="3">
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+            </tr>
+            <tr>
+                <th>노출대상</th>
+                <td> <label for="open_01" class="rdo_idt table">
+                        <input type="radio" name="open" id="open_01" />
+                        <span>전체노출</span>
+                    </label>
+                    <label for="open_02" class="rdo_idt table">
+                        <input type="radio" name="open" id="open_02" checked />
+                        <span>제한있음</span>
+                    </label>
+                    <label for="join_01" class="rdo_idt">
+                        <input type="radio" name="join" id="join_01" checked />
+                        <span>지사</span>
+                    </label>
+                    <label for="join_02" class="rdo_idt">
+                        <input type="radio" name="join" id="join_02" />
+                        <span>가맹점</span>
+                    </label><a href="javascript:openPop('../admin/order/pop_jisa.html','940','670');" class="btn_table gray">검색</a>
+                </td>
+                <th>예상발송일 </th>
+                <td>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </td>
+            </tr>
+            <tr>
+                <th>대상리스트</th>
+                <td colspan="3">
+                    <div class="region_add">
+                        <div>포항1지사(J0001) <a href="" class="delete_File"></a></div>
+                        <div>포항1지사(J0001) <a href="" class="delete_File"></a></div>
+                        <div>포항1지사(J0001) <a href="" class="delete_File"></a></div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <a href="index.html?page=order/pr_manage" class="btn_basic line">목록</a>
+    <p>
+        <a href="" class="btn_basic">등록</a>
+    </p>
+</div>

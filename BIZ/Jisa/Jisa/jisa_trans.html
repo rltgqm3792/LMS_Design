@@ -1,0 +1,203 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("가맹점 인수인계");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main" style=" display:inline-block;"></h2>
+    <p></p>
+</div>
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>인수인계 시 인계하지 않을 수강생은 반드시 휴회 후에 인수인계를 진행해주세요.</li>
+            <li>인수인계 시 인계된 수강생의 학습정보/수강생정보/주문정보 모두 같이 전송됩니다.</li>
+            <li>수강생의 교재 주문이력에 따라 인수가맹점에서 주문 불가할 수 있습니다.</li>
+        </ul>
+    </div>
+</div>
+<dl class="step_box mt_30">
+    <dt><span class="title">STEP <em>01</em></span> <span class="text">인계할 가맹점을 선택해주세요.</span></dt>
+    <dd>
+        <div class="search_wrap">
+            <ul class="info_group">
+                <li>
+                    <dl>
+                        <dt>FC구분</dt>
+                        <dd>
+                            <label for="fc_rdo01" class="rdo_idt">
+                                <input type="radio" name="fc" id="fc_rdo01" />
+                                <span>수학</span>
+                            </label>
+                            <label for="fc_rdo02" class="rdo_idt">
+                                <input type="radio" name="fc" id="fc_rdo02" />
+                                <span>영어</span>
+                            </label>
+                            <label for="fc_rdo03" class="rdo_idt">
+                                <input type="radio" name="fc" id="fc_rdo03" />
+                                <span>전과목</span>
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>가맹점</dt>
+                        <dd><input type="text" class="txt_search"><a href="" class="btn_s search">검색</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <!-- 초기화,검색 버튼 -->
+            <div class="btn_wrap box_in">
+                <a href="" class="btn_search big">검색</a>
+            </div>
+            <!-- //초기화,검색 버튼 -->
+        </div>
+        <h4 class="tit_h4 mt_15">인계가맹점 정보</h4>
+        <div class="table_input">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:10%">
+                    <col style="width:40%">
+                    <col style="width:10%">
+                    <col style="width:40%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>원장명</th>
+                        <td>홍길순</td>
+                        <th>개설일</th>
+                        <td><span class="font_gmarket13">2010.10.10</span></td>
+                    </tr>
+                    <tr>
+                        <th>연락처</th>
+                        <td><span class="font_gmarket13">010-3325-5656</span></td>
+                        <th>인계수강생수</th>
+                        <td><span class="font_gmarket13">0</span><a href="javascript:openPop('../jisa/jisa/pop_stu_info.html','940','670');" class="btn_table gray ml_2">보기</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </dd>
+</dl>
+<dl class="step_box mt_20">
+    <dt><span class="title">STEP <em>02</em></span> <span class="text">빠진 부분이 있는지 확인해주세요</span></dt>
+    <dd>
+        <h4 class="tit_h4">인수인계 체크리스트</h4>
+        <div class="table_list">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:10%">
+                    <col style="width:70%">
+                    <col style="width:20%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>NO</th>
+                        <th>인수인계 세부 체크항목</th>
+                        <th>점검여부</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="font_gmarket13">01</span></td>
+                        <td class="tl">인계할 가맹점의 사전자료를 점검하였습니까? (회원명부, 회비납부 등)</td>
+                        <td>
+                            <label for="check_chk01" class="chk_idt">
+                                <input type="checkbox" name="check" id="check_chk01" />
+                                <span>YES</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="font_gmarket13">02</span></td>
+                        <td class="tl">전출 및 휴회처리 등 인계하지 않을 회원을 모두 처리하였습니까?</td>
+                        <td>
+                            <label for="check_chk01" class="chk_idt">
+                                <input type="checkbox" name="check" id="check_chk01" />
+                                <span>YES</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="font_gmarket13">03</span></td>
+                        <td class="tl">최종 면담을 진행하고 인수인계 가맹점에게 모두 고지하였습니까?</td>
+                        <td>
+                            <label for="check_chk01" class="chk_idt">
+                                <input type="checkbox" name="check" id="check_chk01" />
+                                <span>YES</span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </dd>
+</dl>
+
+<dl class="step_box mt_30">
+    <dt><span class="title">STEP <em>03</em></span><span class="text">인수할 가맹점을 선택해주세요.</span></dt>
+    <dd>
+        <div class="search_wrap">
+            <ul class="info_group">
+                <li>
+                    <dl>
+                        <dt>가맹점</dt>
+                        <dd><input type="text" class="txt_search"><a href="" class="btn_s search">검색</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <!-- 초기화,검색 버튼 -->
+            <div class="btn_wrap box_in">
+                <a href="" class="btn_search big">검색</a>
+            </div>
+            <!-- //초기화,검색 버튼 -->
+        </div>
+        <h4 class="tit_h4 mt_15">인수가맹점 정보</h4>
+        <div class="table_input">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:10%">
+                    <col style="width:40%">
+                    <col style="width:10%">
+                    <col style="width:40%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>가맹점명</th>
+                        <td>해법 숲속수학</td>
+                        <th>원장명</th>
+                        <td>이유리</td>
+                    </tr>
+                    <tr>
+                        <th>가입일</th>
+                        <td><span class="font_gmarket13">2010.10.10</span></td>
+                        <th>연락처</th>
+                        <td><span class="font_gmarket13">010-5685-5695</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </dd>
+</dl>
+<div class="btn_bottom_wrap between mt_40">
+    <p>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+    <p>
+        <a href="" class="btn_basic">신청</a>
+    </p>
+</div>

@@ -1,0 +1,88 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("팝업 관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_2depth">
+    <li class="on"><a href="index.html?page=etc/popup_list01">게시중</a></li>
+    <li><a href="index.html?page=etc/popup_list02">등록리스트</a></li>
+</ul>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>대상</dt>
+                <dd>
+                    <label for="target_rdo02" class="rdo_idt">
+                        <input type="radio" name="target" id="target_rdo02" />
+                        <span>지사</span>
+                    </label>
+                    <label for="target_rdo03" class="rdo_idt">
+                        <input type="radio" name="target" id="target_rdo03" />
+                        <span>가맹</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>키워드검색</dt>
+                <dd><input type="text" placeholder="팝업명 키워드를 입력해주세요" class="input_500"></dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p></p>
+    <p>
+        <a href="" class="btn_top gray">노출순서 저장</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+<div class="btn_bottom_wrap right">
+    <p><a href="javascript:openPop('../admin/Etc/pop_popup.html','940','670');" class="btn_basic line">미리보기</a>
+        <a href="index.html?page=etc/popup_add" class="btn_basic">등록</a>
+    </p>
+</div>

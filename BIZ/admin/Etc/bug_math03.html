@@ -1,0 +1,170 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("버그 레포트");
+        $(".align_right h2").text("버그 레포트 상세보기");
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h4 class="tit_h4">신고내용</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분</th>
+                <td>수학</td>
+                <th>작성자</th>
+                <td>구로금천1호점(HJISA)</td>
+            </tr>
+            <tr>
+                <th>신고방법</th>
+                <td>교사용앱</td>
+                <th>유형</th>
+                <td>워크북</td>
+            </tr>
+            <tr>
+                <th>교재구분</th>
+                <td>초등계산력</td>
+                <th>년판</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td colspan="3">초3-1 원리쏙쏙 1호 (4. 피타고라스의 정리)</td>
+            </tr>
+            <tr>
+                <th>신고일</th>
+                <td>2020.10.10</td>
+                <th>페이지/문항번호</th>
+                <td>232p/5번</td>
+            </tr>
+            <tr>
+                <th>파일선택</th>
+                <td colspan="3"><a href="">수학-버그레포트01.jpg</a></td>
+            </tr>
+            <tr>
+                <th>오류내용</th>
+                <td colspan="3">정답이 3번이 아니라 2번이 맞는 것 같습니다.</td>
+            </tr>
+            <tr>
+                <th>중복오류신고현황</th>
+                <td class="in_table" colspan="3">
+                    <span class="point_guide ml_10">동일 교재&동일 페이지&동일 문항의 신고 현황입니다. 중복 오류 신고인지 확인 후 처리해 주세요.</span>
+                    <table class="table_sub_list">
+                        <caption></caption>
+                        <colgroup></colgroup>
+                        <thead>
+                            <tr>
+                                <th>신고일</th>
+                                <th>작성자</th>
+                                <th>상품권</th>
+                                <th>처리유무</th>
+                                <th>오류내용</th>
+                                <th>게시여부</th>
+                                <th>상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2020.02.06</td>
+                                <td>영등포레미안점(HJJ)</td>
+                                <td>대상자</td>
+                                <td>처리완료</td>
+                                <td>문제오류</td>
+                                <td>교사용앱</td>
+                                <td><a href="" class="btn_table line">보기</a></td>
+                            </tr>
+                            <tr>
+                                <td>2020.02.06</td>
+                                <td>안양평촌1호점(HSSS)</td>
+                                <td>대상자</td>
+                                <td>처리완료</td>
+                                <td>문제오류</td>
+                                <td>답안입력</td>
+                                <td><a href="" class="btn_table line">보기</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="tbl_flex">
+    <h4 class="tit_h4">관리자 답변</h4>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>상품권대상<span class="required"></span></th>
+                <td><select>
+                        <option>상품권 대상 선택</option>
+                    </select></td>
+                <th>오류구분<span class="required"></span></th>
+                <td><select>
+                        <option>오류구분 선택</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <th>답변 작성<span class="required"></span></th>
+                <td colspan="3"><textarea placeholder="내용을 입력하세요."></textarea></td>
+            </tr>
+            <tr>
+                <th>파일선택</th>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <th>처리유무<span class="required"></span></th>
+                <td>
+                    <label for="treat_rdo01" class="rdo_idt table">
+                        <input type="radio" name="treat" id="treat_rdo01" checked />
+                        <span>미처리</span>
+                    </label>
+                    <label for="treat_rdo02" class="rdo_idt table">
+                        <input type="radio" name="treat" id="treat_rdo02" />
+                        <span>처리완료</span>
+                    </label>
+                </td>
+                <th>공개여부<span class="required"></span></th>
+                <td>
+                    <label for="open_rdo01" class="rdo_idt table">
+                        <input type="radio" name="open" id="open_rdo01" checked />
+                        <span>공개</span>
+                    </label>
+                    <label for="open_rdo02" class="rdo_idt table">
+                        <input type="radio" name="open" id="open_rdo02" />
+                        <span>비공개</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">저장</a>
+    </p>
+</div>

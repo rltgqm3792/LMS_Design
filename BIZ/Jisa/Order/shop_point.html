@@ -1,0 +1,178 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("쇼핑현황");
+        $(".align_right h2").text("쇼핑몰 웰컴 포인트 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>주문일</option>
+                        <option>발송일</option>
+                        <option>승인일</option>
+                        <option>전표발행일</option>
+                    </select>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>가입여부</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="join" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="join_chk02" class="chk_idt">
+                        <input type="checkbox" name="join" id="join_chk02" />
+                        <span>가입</span>
+                    </label>
+                    <label for="join_chk03" class="chk_idt">
+                        <input type="checkbox" name="join" id="join_chk03" />
+                        <span>미가입</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>사용여부</dt>
+                <dd>
+                    <label for="all_chk03" class="chk_idt all">
+                        <input type="checkbox" name="use" id="all_chk03" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="use_chk02" class="chk_idt">
+                        <input type="checkbox" name="use" id="use_chk02" />
+                        <span>완료</span>
+                    </label>
+                    <label for="use_chk03" class="chk_idt">
+                        <input type="checkbox" name="use" id="use_chk03" />
+                        <span>미완료</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문대상</dt>
+                <dd>
+                    <label for="all_chk02" class="chk_idt all">
+                        <input type="checkbox" name="target" id="all_chk02" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="target_chk02" class="chk_idt">
+                        <input type="checkbox" name="target" id="target_chk02" />
+                        <span>지사</span>
+                    </label>
+                    <label for="target_chk03" class="chk_idt">
+                        <input type="checkbox" name="target" id="target_chk03" />
+                        <span>가맹점</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                        <option>ERP코드</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>250</strong>개</span>
+    </p>
+    <p><a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a></p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>

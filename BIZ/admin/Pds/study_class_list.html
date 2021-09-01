@@ -1,0 +1,195 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("학습자료실");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- //타이틀 -->
+<!-- // 1Depth Tab -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_01" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_01" onclick="movepage('index.html?page=pds/study_book_list');">
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_02" onclick="movepage('index.html?page=pds/study_english_list');">
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_03" checked>
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>공개설정</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>초등전과목</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>중학수학</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>논술</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>한국사</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset">초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+    </p>
+    <p><a class="btn_top black">삭제</a></p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:60px;" />
+            <col style="width:100px;" />
+            <col />
+            <col style="width:80px;" />
+            <col style="width:80px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:130px;" />
+            <col style="width:100px;" />
+            <col style="width:80px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>제목</th>
+                <th>공개설정</th>
+                <th>수업안</th>
+                <th>정답</th>
+                <th>Work Sheet</th>
+                <th>기타</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="table_bullet red_bullet">공지</span></td>
+                <td class="tl"><a href="index.html?page=pds/study_class_view">전과목 중간고사 대비 모의평가 문제지</a><span class="ico_img new">새 글</span></td>
+                <td>지사/가맹</td>
+                <td><a href="" class="ico_img file">파일</a></td>
+                <td><a href="" class="ico_img file">파일</a></td>
+                <td><a href="" class="ico_img file">파일</a></td>
+                <td><a href="" class="ico_img file">파일</a></td>
+                <td>전과목 관리자</td>
+                <td><span class="font_gmarket13">2021.06.30</span></td>
+                <td><a href="javascript:openPop('../admin/community/pop_search_branch01.html','800','650');"><span class="font_gmarket13">28900</span></a></td>
+                <!-- </tr>
+            <tr>
+                <td colspan="11" class="no_data">해당 검색 결과가 없습니다.</td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<div class="btn_bottom_wrap right">
+    <a href="index.html?page=pds/study_class_write" class="btn_basic confirm">등록</a>
+</div>

@@ -1,0 +1,159 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("수학 학습 통계");
+        $(".align_right h2").text("보충학습 현황");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>연도선택</option>
+                    </select>
+                    <select>
+                        <option>월 선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점</dt>
+                <dd>
+                    <select>
+                        <option>지사선택</option>
+                    </select>
+                    <select>
+                        <option>하위가맹점선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지역</dt>
+                <dd>
+                    <select>
+                        <option>시도선택</option>
+                    </select>
+                    <select>
+                        <option>구군선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="year" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="year_chk02" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk02" />
+                        <span>초등</span>
+                    </label>
+                    <label for="year_chk03" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk03" />
+                        <span>중등</span>
+                    </label>
+                    <label for="year_chk04" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk04" />
+                        <span>고등</span>
+                    </label>
+                    <select>
+                        <option>전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학기</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="term" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="term_chk02" class="chk_idt">
+                        <input type="checkbox" name="term" id="term_chk02" />
+                        <span>1학기</span>
+                    </label>
+                    <label for="term_chk03" class="chk_idt">
+                        <input type="checkbox" name="term" id="term_chk03" />
+                        <span>2학기</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>단원명</dt>
+                <dd>
+                    <select>
+                        <option>단원명선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학습유형</dt>
+                <dd>
+                    <select>
+                        <option>학습유형선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_right mt_20">
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">
+            조회연월은 <strong class="mt_1">2020-07</strong>, 총 <strong class="mt_1">7,000</strong>명 수강생의 학습 통계입니다.</span>
+    </p>
+    <p>
+        <label for="sort_rdo01" class="rdo_idt table">
+            <input type="radio" name="sort" id="sort_rdo01" checked />
+            <span>내림차순</span>
+        </label>
+        <label for="sort_rdo02" class="rdo_idt table">
+            <input type="radio" name="sort" id="sort_rdo02" />
+            <span>오름차순</span>
+        </label>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid">

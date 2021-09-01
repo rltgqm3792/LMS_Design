@@ -1,0 +1,285 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("노하우공유");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!--//타이틀-->
+
+<!--검색-->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all check">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" checked>
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk01">
+                        <span>공통</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk02">
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk03">
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk04">
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" checked>
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02">
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03">
+                        <span>6개월</span>
+                    </label>
+                    <label for="month_04" class="rdo_idt">
+                        <input type="radio" name="month" id="month_04">
+                        <span>전체</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>공개설정</dt>
+                <dd>
+                    <label for="open_rdoall" class="rdo_idt">
+                        <input type="radio" name="open" id="open_rdoall">
+                        <span>전체</span>
+                    </label>
+                    <label for="open_rdo01" class="rdo_idt">
+                        <input type="radio" name="open" id="open_rdo01" checked>
+                        <span>전국가맹</span>
+                    </label>
+                    <label for="open_rdo02" class="rdo_idt">
+                        <input type="radio" name="open" id="open_rdo02">
+                        <span>소속가맹</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <label for="all_type" class="chk_idt all">
+                        <input type="checkbox" name="type" id="all_type" onchange="all_check(this);" checked>
+                        <span>전체</span>
+                    </label>
+                    <label for="type_chk01" class="chk_idt">
+                        <input type="checkbox" name="type" id="type_chk01">
+                        <span>수업</span>
+                    </label>
+                    <label for="type_chk02" class="chk_idt">
+                        <input type="checkbox" name="type" id="type_chk02">
+                        <span>운영</span>
+                    </label>
+                    <label for="type_chk03" class="chk_idt">
+                        <input type="checkbox" name="type" id="type_chk03">
+                        <span>이벤트</span>
+                    </label>
+                    <label for="type_chk04" class="chk_idt">
+                        <input type="checkbox" name="type" id="type_chk04">
+                        <span>홍보/판촉</span>
+                    </label>
+                    <label for="type_chk05" class="chk_idt">
+                        <input type="checkbox" name="type" id="type_chk05">
+                        <span>우수원장님</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요.">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!--//조건검색 -->
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+
+</div>
+<!--//검색-->
+
+<!--상단버튼-->
+<div class="btn_top_wrap between">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong class="mt_1">25</strong>개</span>
+    </p>
+</div>
+<!--//상단버튼-->
+<!--테이블-->
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:6%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col>
+            <col style="width:5%">
+            <col style="width:7%">
+            <col style="width:10%">
+            <col style="width:8%">
+            <col style="width:7%">
+            <col style="width:7%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>FC 구분</th>
+                <th>카테고리</th>
+                <th>제목</th>
+                <th>파일</th>
+                <th>공개설정</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>
+                    <div class="btn_sort">
+                        좋아요
+                        <a class="sort_up">오름차순 정렬</a>
+                        <a class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td colspan="11">
+                    <div class="no_data">해당 검색 결과가 없습니다.</div>
+                </td>
+            </tr> -->
+            <tr class="tr_notice">
+                <td><span class="table_bullet red_bullet">필독</span></td>
+                <td>수학</td>
+                <td>홍보</td>
+                <td class="subject"><a href="index.html?page=community/knowhow_view"">노하우 공유합니다~</a><span class=" ico_img new">new</span></td>
+                <td><a href="" class="ico_img file">파일</a></td>
+                <td>전국가맹</td>
+                <td>관리자</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td><span class="font_gmarket13">10</span></td>
+                <td><a href="javascript:openPop('community/pop_search_branch01.html','800','650');" class="font_gmarket13">28900</a></td>
+            </tr>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>수학</td>
+                <td>우수원장님</td>
+                <td class="subject"><a href="index.html?page=community/knowhow_view"">노하우 공유합니다~</a><span class=" ico_img new">new</span></td>
+                <td><a href="" class="ico_img file">파일</a></td>
+                <td>지사</td>
+                <td>충북지사</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td><span class="font_gmarket13">10</span></td>
+                <td><a href="javascript:openPop('community/pop_search_branch01.html','800','650');" class="font_gmarket13">28900</a></td>
+            </tr>
+            <tr>
+                <td><span class="font_gmarket13">2</span></td>
+                <td>수학</td>
+                <td>우수원장님</td>
+                <td class="subject"><a href="index.html?page=community/knowhow_view"">노하우 공유합니다~</a><span class=" ico_img new">new</span></td>
+                <td><a href="" class="ico_img file">파일</a></td>
+                <td>지사</td>
+                <td>노원 상계주공 15단지점</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td><span class="font_gmarket13">10</span></td>
+                <td><a href="javascript:openPop('community/pop_search_branch01.html','800','650');" class="font_gmarket13">28900</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<!--//테이블-->
+<!--페이징-->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!--//페이징-->
+<!--등록-->
+<div class="btn_bottom_wrap right">
+    <a href="index.html?page=community/knowhow_write" class="btn_basic confirm">등록</a>
+</div>
+<!--//등록-->

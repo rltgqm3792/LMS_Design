@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <article class="ly_popup_wrap">
+        <div class="ly_popup_group">
+            <header class="ly_header">
+                <h1>지사 다중 선택</h1>
+            </header>
+            <section class="ly_content">
+                <!-- 검색조건영역 -->
+                <div class="search_wrap">
+                    <ul class="info_group">
+                        <li>
+                            <dl>
+                                <dt>FC구분</dt>
+                                <dd>
+                                    <label for="all_chk" class="chk_idt all check">
+                                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);">
+                                        <span>전체</span>
+                                    </label>
+                                    <label for="fc_chk01" class="chk_idt check">
+                                        <input type="checkbox" name="fc" id="fc_chk01">
+                                        <span>수학</span>
+                                    </label>
+                                    <label for="fc_chk02" class="chk_idt check">
+                                        <input type="checkbox" name="fc" id="fc_chk02">
+                                        <span>영어</span>
+                                    </label>
+                                    <label for="fc_chk03" class="chk_idt check">
+                                        <input type="checkbox" name="fc" id="fc_chk03">
+                                        <span>전과목</span>
+                                    </label>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>직접입력</dt>
+                                <dd>
+                                   <select>
+                                       <option value="">지사명</option>
+                                   </select>
+                                   <input type="text" class="txt_search" placeholder="지사명을 입력하세요.">
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <!--//조건검색 -->
+                    <!-- 초기화,검색 버튼 -->
+                    <div class="btn_wrap box_in">
+                        <a href="" class="btn_search big">검색</a>
+                    </div>
+                    <!-- //초기화,검색 버튼 -->
+                </div>
+                <!-- // 검색조건영역 -->
+
+                <div class="btn_top_wrap">
+                    <div class="list_num">전체 <strong>86</strong>개</div>
+                </div>
+                <div class="table_list">
+                    <table class="thead">
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:15%">
+                            <col style="width:15%">
+                            <col style="width:60%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label for="all_chk2" class="chk_idt all">
+                                        <input type="checkbox" name="board" id="all_chk2" onchange="all_check(this);">
+                                        <span>전체</span>
+                                    </label>
+                                </th>
+                                <th>
+                                    <div class="btn_sort">
+                                        FC구분
+                                        <a class="sort_up">오름차순 정렬</a>
+                                        <a class="sort_down">내림차순 정렬</a>
+                                    </div>
+                                </th>
+                                <th>코드</th>
+                                <th>
+                                    <div class="btn_sort">
+                                        지사명
+                                        <a class="sort_up">오름차순 정렬</a>
+                                        <a class="sort_down">내림차순 정렬</a>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scroll" style="height:250px;">
+                        <table class="tbody">
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:15%">
+                                <col style="width:15%">
+                                <col style="width:60%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="board11" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board11">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td class="subject">은평서대문지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board12" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board12">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">노원중량남양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="board13" class="chk_idt">
+                                            <input type="checkbox" name="board" id="board13">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>수학</td>
+                                    <td><span class="font_gmarket13">J0001</span></td>
+                                    <td  class="subject">강북도봉의정부양주지사</td>                         
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [D] 버튼3개일때 class : btn_three 추가-->
+            <section class="ly_btn_group">
+                <a href="javascript:ly_close();" class="btn cancel">취소</a>
+                <a href="javascript:ly_close();" class="btn">확인</a>
+                <!--
+                <a href="javascript:ly_close();" class="btn green">인쇄</a>
+                -->
+            </section>
+            
+        </div>
+        <!-- 닫기버튼 -->
+        <a href="javascript:ly_close();" class="btn_ly_close">창닫기</a>
+        <!-- //닫기버튼 -->
+    </article>
+    
+    <!-- 마스크 -->
+    <article class="mask"></article>
+    <!-- //마스크 -->
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("신규신청서작성");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="step">
+    <li class="on"><a href="index.html?page=jisa/jisa_request01">01. 기본정보 작성</a></li>
+    <li><a href="index.html?page=jisa/jisa_request02">02. 인근 가맹 선택</a></li>
+    <li><a href="index.html?page=jisa/jisa_request03">03. 매출산정 가맹 선택</a></li>
+</ul>
+<div class="tbl_flex">
+    <h4 class="tit_h4">기본정보</h4>
+    <a href="javascript:ly_open('../jisa/jisa/ly_jisa_import.html');" class="btn_top gray">기본 신청서 불러오기</a>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분</th>
+                <td>
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo01" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td><a href="" class="btn_table">우편검색</a>
+                    <input type="text">
+                    <input type="text"><br />
+                    <input type="text" class="mt_5" style="width:600px;">
+                </td>
+            </tr>
+            <tr>
+                <th>휴대폰번호</th>
+                <td><input type="text" class="input_300" placeholder="'-'없이 숫자만 입력해주세요"></td>
+            </tr>
+            <tr>
+                <th>형태</th>
+                <td>
+                    <label for="shape_rdo01" class="rdo_idt table">
+                        <input type="radio" name="shape" id="shape_rdo01" checked />
+                        <span>일반재택</span>
+                    </label>
+                    <label for="shape_rdo02" class="rdo_idt table">
+                        <input type="radio" name="shape" id="shape_rdo02" />
+                        <span>전용재택</span>
+                    </label>
+                    <label for="shape_rdo03" class="rdo_idt table">
+                        <input type="radio" name="shape" id="shape_rdo03" />
+                        <span>교습소</span>
+                    </label>
+                    <label for="shape_rdo04" class="rdo_idt table">
+                        <input type="radio" name="shape" id="shape_rdo04" />
+                        <span>학원</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>면적</th>
+                <td><input type="text">㎡&nbsp;* 소수점 이하는 입력하지 마세요&nbsp;(<input type="text">평)</td>
+            </tr>
+            <tr>
+                <th>비고</th>
+                <td><textarea placeholder="내용을 입력해주세요"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <p>
+        <a href="" class="btn_basic line">목록</a>
+        <a href="" class="btn_basic gray">초기화</a>
+    </p>
+    <p>
+        <a href="index.html?page=jisa/jisa_request02" class="btn_basic line next"><span>다음</span></a>
+    </p>
+</div>

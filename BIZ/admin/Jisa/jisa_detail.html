@@ -1,0 +1,435 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("지사 상세/수정");
+
+        //달력
+        // calendar();
+        datepicker(); // 추가 :chan
+        datePickerByClass(); // 추가 2021.8.18 :chan
+
+
+
+    });
+    function fileChange() {
+        var cur = $(".fileUpload").val().split("\\");
+        $(".fileNm").val(cur[cur.length - 1]);
+    }
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<h4 class="tit_h4">기본정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:30%;" />
+            <col style="width:10%;" />
+            <col style="width:30%;" />
+            <col style="width:20%" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>아이디</th>
+                <td><span class="font_gmarket13">1234</span></td>
+                <th>비밀번호</th>
+                <td><a href="" class="btn_table gray">비밀번호 초기화</a></td>
+                <td rowspan="4" class="td_line">(직인 미 등록)
+                    <p class="mt_20">
+                        <input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                        <label for="fileUpload" class="btn_table gray">직인 등록/수정</label>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>지사장명<span class="required"></span></th>
+                <td><input type="text" readonly="readonly" value="김해법">
+                    <label for="gender_01" class="rdo_idt table">
+                        <input type="radio" name="gender" id="gender_01" checked readonly="readonly" />
+                        <span>남</span>
+                    </label>
+                    <label for="gender_02" class="rdo_idt table">
+                        <input type="radio" name="gender" id="gender_02" disabled="disabled" />
+                        <span>여</span>
+                    </label>
+                </td>
+                <th>원격연수원</th>
+                <td><span class="font_gmarket13">J0009</span></td>
+            </tr>
+            <tr>
+                <th>휴대폰번호<span class="required"></span></th>
+                <td><input type="text" class="input_300" value="01011111111"></td>
+                <th>생년월일<span class="required"></span></th>
+                <td>
+                    <!-- <input type="text" class="btn_date" value="2021-07-09"> -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span id="wrapper" style="margin-top: -1px;"></span>
+
+                    <label for="sun_01" class="rdo_idt table">
+                        <input type="radio" name="sun" id="sun_01" checked readonly="readonly" />
+                        <span>양력</span>
+                    </label>
+                    <label for="sun_02" class="rdo_idt table">
+                        <input type="radio" name="sun" id="sun_02" disabled="disabled" />
+                        <span>음력</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="align_right">
+    <ul class="tab_2depth">
+        <!-- [D] 활성화 : on-->
+        <li class="on"><a href="">수학</a></li>
+        <li><a href="">영어</a></li>
+    </ul>
+    <p>
+        <a href="index.html?page=jisa/jisa_add" class="btn_top"><span>FC 추가계약</span></a>
+    </p>
+</div>
+<h4 class="tit_h4">FC정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>지사명<span class="required"></span></th>
+                <td><input type="text" value="은평서대문지사" class="input_300"></td>
+                <th>지사코드</th>
+                <td><input type="text" value="" class="input_300"></td>
+            </tr>
+            <tr>
+                <th>ERP코드<span class="required"></span></th>
+                <td><input type="text" class="input_300" value="J00001"></td>
+                <th>영림원 ERP코드<span class="required"></span></th>
+                <td><input type="text" class="input_300" value="J00001"></td>
+
+            </tr>
+            <tr>
+                <th>이메일<span class="required"></span></th>
+                <td><input type="text" value="123"><span class="email"></span>
+                    <select>
+                        <option>naver.com</option>
+                    </select>
+                    <input type="text">
+                </td>
+                <th>등록일</th>
+                <td><span class="font_gmarket13">01011112222</span></td>
+
+            </tr>
+            <tr>
+                <th>SNS 주소</th>
+                <td><input type="text" class="input_300"></td>
+                <th>전화번호</th>
+                <td><input type="text" class="input_300" value="01011111111"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="tit_h4">사업장정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>사업장 상호명<span class="required"></span></th>
+                <td><input type="text" value="가산해법"></td>
+                <th>사업자번호<span class="required"></span></th>
+                <td><input type="text" class="input_300" value="1234567890">&nbsp;<a href="javascript:alert_open('스마트영어에<br/>등록된 사업자번호가 있습니다.');" class="btn_table gray">중복확인</a></td>
+            </tr>
+            <tr>
+                <th>업태</th>
+                <td><input type="text"></td>
+                <th>업종</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>영업담당자</th>
+                <td><select>
+                        <option>김해법</option>
+                    </select></td>
+                <th>주문등급</th>
+                <td><input type="text" readonly disabled="disabled"><a href="" class="btn_table gray ml_2">새로고침</a></td>
+            </tr>
+            <tr>
+                <th>사업장 주소<span class="required"></span></th>
+                <td colspan="3">
+                    <a href="" class="btn_table">우편번호검색</a>
+                    <input type="text">
+                    <input type="text"><br>
+                    <input type="text" class="mt_5" style="width:600px;">
+                </td>
+            </tr>
+            <tr>
+                <th>배송지 주소<span class="required"></span></th>
+                <td colspan="3">
+                    <a href="" class="btn_table">우편번호검색</a>
+                    <input type="text">
+                    <input type="text">
+                    <label for="add" class="chk_idt">
+                        <input type="checkbox" name="add" id="add" />
+                        <span>사업장 주소와 동일</span>
+                    </label><br>
+                    <input type="text" class="mt_5" style="width:600px;">
+                </td>
+            </tr>
+            <tr>
+                <th>관할구역 A<span class="required"></span></th>
+                <td colspan="3">
+                    <div class="region_add">
+                        <a href="javascript:openPop('../admin/jisa/pop_region.html','940','670');" class="btn_table gray">관할구역 추가</a>
+                        <div>서울시 구로구<span class="delete_File">삭제</span></div>
+                        <div>전라북도 남양시<span class="delete_File">삭제</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>관할구역 B</th>
+                <td colspan="3">
+                    <div class="region_add">
+                        <a href="javascript:openPop('../admin/jisa/pop_region.html','940','670');" class="btn_table gray">관할구역 추가</a>
+                        <div>서울시 구로구<span class="delete_File">삭제</span></div>
+                        <div>전라북도 남양시<span class="delete_File">삭제</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>관할구역 C</th>
+                <td colspan="3">
+                    <div class="region_add">
+                        <a href="javascript:openPop('../admin/jisa/pop_region.html','940','670');" class="btn_table gray">관할구역 추가</a>
+                        <div>서울시 구로구<span class="delete_File">삭제</span></div>
+                        <div>전라북도 남양시<span class="delete_File">삭제</span></div>
+                    </div>
+                </td>
+            </tr>
+            <!-- 가맹비 구조 추가 시작 2021.8.18 :chan -->
+            <tr>
+                <th>가맹비 구조</th>
+                <td colspan="3">
+                    <p>
+                        <span>가맹비</span>
+                        <input type="text">
+                        <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" class="datepicker-input" aria-label="Date-Time">
+                            <span class="tui-ico-date"></span>
+                        </span>
+                        <span class="dateWrapper" style="margin-top: -1px;"></span>
+                        <span>교육비</span>
+                        <input type="text">
+                        <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" class="datepicker-input" aria-label="Date-Time">
+                            <span class="tui-ico-date"></span>
+                        </span>
+                        <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    </p>
+                    <p style="margin-top: 5px;">
+                        <span>보증금</span>
+                        <input type="text">
+                        <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" class="datepicker-input" aria-label="Date-Time">
+                            <span class="tui-ico-date"></span>
+                        </span>
+                        <span class="dateWrapper" style="margin-top: -1px;"></span>
+                        <span>초도비</span>
+                        <input type="text">
+                        <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" class="datepicker-input" aria-label="Date-Time">
+                            <span class="tui-ico-date"></span>
+                        </span>
+                        <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    </p>
+                </td>
+            </tr>
+            <!-- 가맹비 구조 추가 끝 2021.8.18 :chan -->
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">계좌정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:90%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>수수료 지급 계좌 정보</th>
+                <td>은행&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;/&nbsp;&nbsp;계좌번호&nbsp;<input type="text">&nbsp;&nbsp;/&nbsp;&nbsp;
+                    <a href="javascript:void(0)" class="btn_table gray">계좌인증</a> &nbsp;&nbsp;&nbsp;예금주&nbsp;&nbsp;<input type="text">
+                </td>
+            </tr>
+            <tr>
+                <th>가상 계좌</th>
+                <td>은행&nbsp;우리은행&nbsp;&nbsp;/&nbsp;&nbsp;계좌번호&nbsp;00000-000000-000000&nbsp;&nbsp;/&nbsp;&nbsp;예금주&nbsp;김해법</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">부가정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:90%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>지사계약서</th>
+                <td><a href="" class="ico_img data"></a>전자문서를 통해 PDF파일로 받아야 함</td>
+            </tr>
+            <tr>
+                <th>사업자 등록</th>
+                <td><input type="file" name="files" id="fileUpload1" class="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm1" class="fileNm" readonly="readonly" />
+                    <label for="fileUpload1" class="btn_table gray">파일선택</label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">사업자등록증.pdf</a>
+                </td>
+            </tr>
+            <tr>
+                <th>개인정보동의서</th>
+                <td><input type="file" name="files" id="fileUpload2" class="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm2" class="fileNm" readonly="readonly" />
+                    <label for="fileUpload2" class="btn_table gray">파일선택</label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">개인정보동의서.pdf</a>
+                </td>
+            </tr>
+            <tr>
+                <th>통장사본</th>
+                <td><input type="file" name="files" id="fileUpload3" class="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm3" class="fileNm" readonly="readonly" />
+                    <label for="fileUpload3" class="btn_table gray">파일선택</label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">통장사본.pdf</a>
+                </td>
+            </tr>
+            <tr>
+                <th>기타</th>
+                <td>기타 문의 내용입니다.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">학력사항</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:10%;" />
+            <col style="width:80%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="3">최종학력</th>
+                <th>고등학교<span class="required"></span></th>
+                <td>가산 고등학교&nbsp;&nbsp;/&nbsp;&nbsp;졸업년도&nbsp;2000년&nbsp;3월</td>
+            </tr>
+            <tr>
+                <th>대학교</th>
+                <td>가산&nbsp;대학&nbsp;&nbsp;국문&nbsp;전공
+                    <label for="grad_01" class="rdo_idt table">
+                        <input type="radio" name="grad" id="grad_01" checked />
+                        <span>졸업</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>대학원</th>
+                <td>가산&nbsp;대학원&nbsp;&nbsp;국문&nbsp;전공
+                    <label for="grad01_01" class="rdo_idt table">
+                        <input type="radio" name="grad01" id="grad01_01" checked />
+                        <span>졸업</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">경력사항</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+            <col style="width:10%;" />
+            <col style="width:40%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>근무처명</th>
+                <td colspan="3">수학
+                    <label for="company01_02" class="rdo_idt table">
+                        <input type="radio" name="company" id="company01_02" checked readonly="readonly" />
+                        <span>학원장</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>근무기간</th>
+                <td><span class="font_gmarket13">2021-11-11 ~ 2021-11-11</span></td>
+                <th>직위</th>
+                <td>팀장</td>
+            </tr>
+            <tr>
+                <th>근무처명</th>
+                <td colspan="3">수학
+                    <label for="company02_02" class="rdo_idt table">
+                        <input type="radio" name="company02" id="company02_02" checked readonly="readonly" />
+                        <span>학원장</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>근무기간</th>
+                <td><span class="font_gmarket13">2021-11-11 ~ 2021-11-11</span></td>
+                <th>직위</th>
+                <td>팀장</td>
+            </tr>
+            <tr>
+                <th>근무처명</th>
+                <td colspan="3">수학
+                    <label for="company03_02" class="rdo_idt table">
+                        <input type="radio" name="company03" id="company03_02" checked readonly="readonly" />
+                        <span>학원장</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>근무기간</th>
+                <td><span class="font_gmarket13">2021-11-11 ~ 2021-11-11</span></td>
+                <th>직위</th>
+                <td>팀장</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <a href="index.html?page=jisa/jisa_search" class="btn_basic line">목록</a>
+    <p>
+        <a href="javascript:alert_confirm('지사의 수정한 가맹점 정보를<br/>원복하시겠습니까?','','확인','취소');" class="btn_basic black">초기화</a>
+        <a href="javascript:alert_confirm('지사의 정보를 저장하시겠습니까?','','확인','취소');" class="btn_basic">저장</a>
+    </p>
+</div>

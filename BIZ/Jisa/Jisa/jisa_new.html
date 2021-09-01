@@ -1,0 +1,178 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("신규개설신청");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%">
+            <col style="width:80%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>가맹</th>
+                <td>정보 공개서 및 인근 가맹점 현황문서 제공 확인서</td>
+            </tr>
+            <tr>
+                <th>매출</th>
+                <td>예상 매출액 산정서 및 가맹계약서 제공확인서</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="jisa_download">
+    <span class="jisa_new_title">정보공개서 다운로드</span>
+    <div class="download">
+        <a href="" class="math">수학</a>
+        <a href="" class="eng">영어</a>
+        <a href="" class="all">전과목</a>
+    </div>
+    <span class="jisa_new_title mt_15">가맹계약서 샘플 다운로드</span>
+    <div class="download">
+        <a href="" class="math_paper">수학 계약서</a>
+        <a href="" class="eng_paper">영어 계약서</a>
+        <a href="" class="all_paper">전과목 계약서</a>
+    </div>
+</div>
+<div class="search_wrap mt_20">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all check">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk01" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk01" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt check">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="state" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="state_chk01" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk01" />
+                        <span>승인</span>
+                    </label>
+                    <label for="state_chk02" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk02" />
+                        <span>대기</span>
+                    </label>
+                    <label for="state_chk03" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk03" />
+                        <span>작성중</span>
+                    </label>
+                    <label for="state_chk04" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk04" />
+                        <span>기각</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                        <option>원장명</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>250</strong>개</span>
+    </p>
+    <p>
+        <a href="index.html?page=jisa/jisa_request01" class="btn_top">신규 신청서 작성</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+<a href="javascript:openPop('../jisa/jisa/pop_re_info.html','940','670');">상세보기</a>
+<a href="index.html?page=jisa/jisa_input">개설신청서</a>

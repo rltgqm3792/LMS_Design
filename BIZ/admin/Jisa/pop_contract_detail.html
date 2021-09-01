@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>계약정보 등록</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <h2 class="tit_pop">기본정보</h2>
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:15%">
+                            <col style="width:85%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>FC구분<span class="required"></span></th>
+                                <td>
+                                    <label for="fc_01" class="rdo_idt table">
+                                        <input type="radio" name="fc" id="fc_01" checked />
+                                        <span>수학</span>
+                                    </label>
+                                    <label for="fc_02" class="rdo_idt table">
+                                        <input type="radio" name="fc" id="fc_02" disabled />
+                                        <span>영어</span>
+                                    </label>
+                                    <label for="fc_03" class="rdo_idt table">
+                                        <input type="radio" name="fc" id="fc_03" disabled />
+                                        <span>전과목</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>가맹지원비명<span class="required"></span></th>
+                                <td><input type="text" class="input_full"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="align_right">
+                    <h2 class="tit_pop">브랜드별 계약정보 등록</h2>
+                    <p>
+                        <label for="new_chk" class="chk_idt">
+                            <input type="checkbox" name="new" id="new_chk" />
+                            <span>신규 프로모션 페이지 가져가기</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="table_list">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:30%">
+                            <col style="width:30%">
+                            <col style="width:30%">
+                        </colgroup>
+                        <thead>
+                            <th>구분</th>
+                            <th>수학</th>
+                            <th>영어</th>
+                            <th>전과목</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>보증금<span class="required"></span></th>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>교육비<span class="required"></span></th>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>초도물품<span class="required"></span></th>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>개원홍보비<span class="required"></span></th>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>홍보1<span class="required"></span></th>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>홍보2<span class="required"></span></th>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>홍보3<span class="required"></span></th>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>사용여부<span class="required"></span></th>
+                                <td> <label for="use_01" class="rdo_idt table">
+                                        <input type="radio" name="use" id="use_01" checked />
+                                        <span>사용</span>
+                                    </label>
+                                    <label for="use_02" class="rdo_idt table">
+                                        <input type="radio" name="use" id="use_02" disabled />
+                                        <span>미사용</span>
+                                    </label>
+                                </td>
+                                <td> <label for="use_01" class="rdo_idt table">
+                                        <input type="radio" name="use" id="use_01" checked />
+                                        <span>사용</span>
+                                    </label>
+                                    <label for="use_02" class="rdo_idt table">
+                                        <input type="radio" name="use" id="use_02" disabled />
+                                        <span>미사용</span>
+                                    </label>
+                                </td>
+                                <td> <label for="use_01" class="rdo_idt table">
+                                        <input type="radio" name="use" id="use_01" checked />
+                                        <span>사용</span>
+                                    </label>
+                                    <label for="use_02" class="rdo_idt table">
+                                        <input type="radio" name="use" id="use_02" disabled />
+                                        <span>미사용</span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+        </article>
+    </body>
+
+</html>

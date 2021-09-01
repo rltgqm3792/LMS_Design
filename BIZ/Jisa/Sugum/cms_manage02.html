@@ -1,0 +1,171 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("CMS 신청관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+
+        $('.ly_info01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'block');
+        });
+        $('.ly_info_close01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'none');
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- tab_2depth -->
+<ul class="tab_2depth">
+    <li><a href="index.html?page=sugum/cms_manage01">지사 CMS 신규/변경/해지</a></li>
+    <li class="on"><a href="index.html?page=sugum/cms_manage02">가맹점 CMS 현황</a></li>
+</ul>
+<!-- tab_2depth -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" checked />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd><select>
+                        <option>전체</option>
+                    </select></dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" checked />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>변경</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>해지</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>신규</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>가맹점 선택</dt>
+                <dd><select>
+                        <option>전체</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <a href="" class="btn_table gray ml_2">상세검색</a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<div class="table_list mt_20">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:7%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col>
+            <col style="width:7%">
+            <col style="width:7%">
+            <col style="width:15%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col style="width:7%">
+            <col style="width:7%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>FC구분</th>
+                <th>신청일</th>
+                <th>가맹점코드</th>
+                <th>가맹점명</th>
+                <th>원장명</th>
+                <th>은행명</th>
+                <th>계좌번호</th>
+                <th>예금주</th>
+                <th>구분</th>
+                <th>처리일</th>
+                <th>처리현황</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>수학</td>
+                <td><span class="font_gmarket13">2021.10.31</span></td>
+                <td><span class="font_gmarket13">HJISA</span></td>
+                <td class="tl">구미김천지사</td>
+                <td><a href="javascript:openPop('../jisa/sugum/pop_bank_career.html','940','670');">하태용</a></td>
+                <td>새마을금고</td>
+                <td><span class="font_gmarket13">2021-21543254-6544</span></td>
+                <td>김천재</td>
+                <td>변경</td>
+                <td><span class="font_gmarket13">2020.10.30</span></td>
+                <td>완료</td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td><span class="font_gmarket13">2021.10.31</span></td>
+                <td><span class="font_gmarket13">HJISA</span></td>
+                <td class="tl">구미김천지사</td>
+                <td><a href="javascript:openPop('../jisa/sugum/pop_bank_career.html','940','670');">하태용</a></td>
+                <td>새마을금고</td>
+                <td><span class="font_gmarket13">2021-21543254-6544</span></td>
+                <td>김천재</td>
+                <td>변경</td>
+                <td><span class="font_gmarket13">2020.10.30</span></td>
+                <td><a href="javascript:openPop('../jisa/sugum/pop_reject.html','640','570');">기각</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

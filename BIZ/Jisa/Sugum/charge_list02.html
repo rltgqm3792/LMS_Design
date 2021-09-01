@@ -1,0 +1,243 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("수수료 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+
+        $('.ly_info01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'block');
+        });
+        $('.ly_info_close01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'none');
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- tab_2depth -->
+<div class="align_right">
+    <ul class="tab_2depth">
+        <li><a href="index.html?page=sugum/charge_list01">수수료 지급내역</a></li>
+        <li class="on"><a href="index.html?page=sugum/charge_list02">물품대행내역</a></li>
+        <li><a href="index.html?page=sugum/charge_list03">월 별 수수료</a></li>
+        <li><a href="index.html?page=sugum/charge_list04">수금마감 입금액</a></li>
+    </ul>
+    <p><a href="javascript:openPop('../jisa/sugum/pop_charge.html','940','670');" class="btn_top">수수료율</a></p>
+</div>
+<!-- tab_2depth -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" checked />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>연월선택</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="state" id="all_chk01" onchange="all_check(this);" checked />
+                        <span>전체</span>
+                    </label>
+                    <label for="state_chk02" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk02" />
+                        <span>활동</span>
+                    </label>
+                    <label for="state_chk03" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk03" />
+                        <span>정지</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<h4 class="tit_h4 mt_20">물품대행내역 기본정보</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+            <col style="width:11.11%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>FC구분</th>
+                <th>기본 인센티브</th>
+                <th>지사 인센티브</th>
+                <th>지사 수수료 합계</th>
+                <th>지사 총 회원수</th>
+                <th>교재매출 총 청구액</th>
+                <th>교재비 총 입금액</th>
+                <th>교재비 총 미입금액</th>
+                <th>지사 교재비 수금율</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>수학</td>
+                <td><span class="font_gmarket13">5.5%</span></td>
+                <td><span class="font_gmarket13">5.5%</span></td>
+                <td><span class="font_gmarket13">98,430</span></td>
+                <td><span class="font_gmarket13">98,430</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">277,777</span></td>
+                <td><span class="font_gmarket13">277,777</span></td>
+                <td><span class="font_gmarket13">65%</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="tooltip mt_20">
+    <h4 class="tit_h4 mt_20">물품대행내역 목록</h4>
+    <p>
+        <a href="javascript:void(0);" class="ly_info01"></a>
+    <div class="ly_info_pop01" style="left:180px;">
+        <div><a href="javascript:void(0);" class="ly_info_close01"></a>
+            <ul>
+                <li>- 청구액과 수금액은 판촉비를 미 적용한 순수 교재비 금액입니다.</li>
+                <li>- 수금율: 청구액에 대한 당월 수금액이 적용 됨</li>
+                <li>- 지사 수수료 합계</li>
+                <li>- 지사 교재비 수금율은 전체 수금액에 대한 수금율이며 지사수수료와는 연관되지 않습니다.</li>
+            </ul>
+        </div>
+    </div>
+    </p>
+</div>
+<div class="table_list culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%" />
+            <col style="width:5%" />
+            <col style="width:5%" />
+            <col />
+            <col style="width:5%" />
+            <col style="width:5%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+            <col style="width:7%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">FC구분</th>
+                <th rowspan="2">가맹점코드</th>
+                <th rowspan="2">가맹점명</th>
+                <th rowspan="2">상태</th>
+                <th rowspan="2">결제수단</th>
+                <th rowspan="2">실 회원수</th>
+                <th colspan="2">교재매출(청구액)</th>
+                <th colspan="3">수금액</th>
+                <th rowspan="2" class="td_line">지사 수수료</th>
+                <th rowspan="2">수금율</th>
+                <th rowspan="2">교재 미입금액</th>
+            </tr>
+            <tr>
+                <th>당월 매출</th>
+                <th>전 월 교재 미수금</th>
+                <th>당월</th>
+                <th>전월</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><span class="font_gmarket13">H2123</span></td>
+                <td class="tl"></td>
+                <td>활동</td>
+                <td>가상계좌</td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+                <td><span class="font_gmarket13">300,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

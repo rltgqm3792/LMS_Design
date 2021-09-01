@@ -1,0 +1,113 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("사진갤러리");
+        $(".align_right h2").text("사진갤러리 등록");
+
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="fc_01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_01" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>카테고리<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="type_01" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_01" />
+                        <span>행사</span>
+                    </label>
+                    <label for="type_02" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_02" />
+                        <span>포터</span>
+                    </label>
+                    <label for="type_03" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_03" />
+                        <span>사례</span>
+                    </label>
+                    <label for="type_04" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_04" />
+                        <span>성공사례 인터뷰</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>타이틀<span class="required"></span></th>
+                <td colspan="3"><input type="text" placeholder="타이틀을 30자 이내로 입력해주세요" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td colspan="3">에디터</td>
+            </tr>
+            <tr>
+                <th>사진첨부<span class="required"></span></th>
+                <td colspan="3">파일 드래그</td>
+            </tr>
+            <tr>
+                <th>공개설정<span class="required"></span></th>
+                <td colspan="3">
+                    <label for="all_chk" class="chk_idt all table">
+                        <input type="checkbox" name="open" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="open_chk02" class="chk_idt table">
+                        <input type="checkbox" name="open" id="open_chk02" />
+                        <span>본사</span>
+                    </label>
+                    <label for="open_chk03" class="chk_idt table">
+                        <input type="checkbox" name="open" id="open_chk03" />
+                        <span>지사</span>
+                    </label>
+                    <label for="open_chk03" class="chk_idt table">
+                        <input type="checkbox" name="open" id="open_chk03" />
+                        <span>가맹점</span>
+                    </label>
+                    <a href="javascript:openPop('../admin/Education/pop_subject01.html','940','650');" class="btn_table gray">대상자 추가하기</a>&nbsp;<a href="javascript:openPop('../admin/Education/pop_subject_submit.html','940','650');">구로지사 > 구룡엘리트 외 32건</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap between">
+    <p><a href="index.html?page=education/edu_photo" class="btn_basic line">목록</a></p>
+    <p>
+        <a href="" class="btn_basic">저장</a>
+    </p>
+</div>

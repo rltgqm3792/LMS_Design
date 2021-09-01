@@ -1,0 +1,426 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수금통보서관리");
+
+        //달력
+        datepicker();
+
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="btn_right">
+    <a href="javascript:openPop('../admin/sugum/pop_date03.html','980','670');" class="btn_top">통보서 날짜관리</a>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점 선택</dt>
+                <dd>
+                    <select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹점전체</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+    </p>
+    <p> <label for="all_rdo01" class="rdo_idt">
+            <input type="radio" name="join" id="all_rdo01" checked />
+            <span>검색결과</span>
+        </label>
+        <label for="all_rdo02" class="rdo_idt">
+            <input type="radio" name="join" id="all_rdo02" />
+            <span>전체</span>
+        </label>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드 2</span></a>
+        <a href="javascript:openPop('../admin/sugum/pop_paid_upload.html','800','570');" class="btn_top line excel"><span>미입금(판촉) 업로드</span></a>
+        <a href="javascript:openPop('../admin/sugum/pop_etc_upload.html','800','570');" class="btn_top line excel"><span>기타 대금 업로드</span></a>
+        <a href="javascript:openPop('../admin/sugum/pop_bundle.html','800','570');" class="btn_top">대금 일괄 처리</a>
+</div>
+<!--//테이블 상단-->
+<div class="table_list culumn">
+    <table class="thead">
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%">
+            <col style="width:4%">
+            <col style="width:6%">
+            <col style="width:7%">
+            <col />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:6%" />
+            <col style="width:8%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+            <col style="width:5%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th rowspan="2">No</th>
+                <th rowspan="2">
+                    <div class="btn_sort">
+                        FC구분
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th rowspan="2">
+                    <div class="btn_sort">
+                        가맹점코드
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th rowspan="2">가맹점명</th>
+                <th rowspan="2">본사입금액(원)</th>
+                <th colspan="2">판촉물대금(원)</th>
+                <th rowspan="2">교재 미입금(원)</th>
+                <th colspan="2">판촉 미입금(원)</th>
+                <th colspan="3">기타 대금(원)</th>
+                <th rowspan="2">연체료</th>
+                <th rowspan="2">총 합계(원)</th>
+            </tr>
+            <tr>
+                <th>면세</th>
+                <th>과세</th>
+                <th>면세</th>
+                <th>과세</th>
+                <th>면세</th>
+                <th>과세</th>
+                <th class="td_right">사유</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="height:250px;">
+        <table class="tbody">
+            <caption></caption>
+            <colgroup>
+                <col style="width:4%">
+                <col style="width:4%">
+                <col style="width:6%">
+                <col style="width:7%">
+                <col />
+                <col style="width:7%" />
+                <col style="width:7%" />
+                <col style="width:6%" />
+                <col style="width:8%" />
+                <col style="width:6%" />
+                <col style="width:6%" />
+                <col style="width:6%" />
+                <col style="width:6%" />
+                <col style="width:5%" />
+                <col style="width:6%" />
+                <col style="width:6%" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">M0987</span></td>
+                    <td class="tl">가산 푸르지오점</td>
+                    <td><span class="font_gmarket13">198,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><span class="font_gmarket13">15,000</span></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><input type="text" class="input_full font_gmarket13" readonly disabled></td>
+                    <td><a href="javascript:openPop('../admin/sugum/pop_reason.html','800','570');" class="btn_table line">보기</a></td>
+                    <td><input type="text" class="input_full font_gmarket13"></td>
+                    <td><span class="font_gmarket13 main_color">15,000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="" class="btn_basic confirm">통보서 저장</a>
+    </p>
+</div>

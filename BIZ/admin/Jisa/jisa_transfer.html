@@ -1,0 +1,208 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("가맹점 인수인계");
+
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>처리일</option>
+                        <option>가입일</option>
+                    </select>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>브랜드</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                        <option>인계가맹점코드</option>
+                        <option>인계가맹점명</option>
+                        <option>원장명</option>
+                        <option>인수가맹점코드</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해주세요" class="input_300">
+                </dd>
+            </dl>
+        </li>
+
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <span class="list_num">
+            전체 :
+            <strong class="mt_1">1,256</strong>
+            건</span>
+    </p>
+    <p><a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%;" />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col style="width:5%;" />
+            <col />
+            <col style="width:6%;" />
+            <col />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">FC구분</th>
+                <th rowspan="2">처리일</th>
+                <th rowspan="2">지사코드</th>
+                <th rowspan="2">지사명</th>
+                <th colspan="5">인계가맹점</th>
+                <th colspan="5">인수가맹점</th>
+            </tr>
+            <tr>
+                <th>가맹점코드</th>
+                <th>가맹점명</th>
+                <th>브랜드</th>
+                <th>가입일</th>
+                <th>상세보기</th>
+                <th>가맹점코드</th>
+                <th>가맹점명</th>
+                <th>브랜드</th>
+                <th>가입일</th>
+                <th>상세보기</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">456</span></td>
+                <td>전과목</td>
+                <td><span class="font_gmarket13">2021.10.22</span></td>
+                <td><span class="font_gmarket13">0101</span></td>
+                <td class="tl">은평지사</td>
+                <td><span class="font_gmarket13">H7309</span></td>
+                <td class="tl">프라임교실</td>
+                <td>수학</td>
+                <td><span class="font_gmarket13">2021.10.22</span></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_trans_detail.html','940','670');" class="btn_table line">보기</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_trans_detail.html','940','670');"><span class="font_gmarket13">H7309</span></a></td>
+                <td class="tl"><a href="javascript:openPop('../admin/jisa/pop_trans_detail.html','940','670');">프라임교실</a></td>
+                <td>수학</td>
+                <td><span class="font_gmarket13">2021.10.22</span></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_trans_detail.html','940','670');" class="btn_table line">보기</a></td>
+            </tr>
+            <!-- <tr>
+                <td colspan="15">
+                    <div class="no_data">조회된 데이터가 없습니다.</div>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<!-- <div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div> -->
+<!-- <div class="btn_bottom_wrap right">
+    <a href="index.html?page=jisa/jisa_add" class="btn_basic confirm">등록</a>
+</div> -->

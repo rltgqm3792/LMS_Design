@@ -1,0 +1,247 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+         $(".nav_two .two_tit,.align_right h2").text("교육일정");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo01" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo01" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>교육과정</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset">초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+    </p>
+    <p><a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a class="btn_top black">삭제</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:5%;" />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+            <col />
+            <col style="width:8%;" />
+            <col style="width:8%;" />
+            <col style="width:6%;" />
+            <col style="width:8%;" />
+            <col style="width:8%;" />
+            <col style="width:8%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>FC</th>
+                <th>제목</th>
+                <th>상태</th>
+                <th>접수현황</th>
+                <th>교육신청</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">21</span></td>
+                <td>전과목</td>
+                <td class="tl"><a href="index.html?page=education/edu_plan_notice_view01"">2020년 8월 신입입문교육</a></td>
+                <td>공지사항</td>
+                <td></td>
+                <td><a href="" class=" btn_table line">신청</a></td>
+                <td>수학사업부</td>
+                <td><span class="date">2020.07.14</span></td>
+                <td><span class="date">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">21</span></td>
+                <td>전과목</td>
+                <td class="tl"><a href="index.html?page=education/edu_plan_notice_view02"">2020년 8월 신입입문교육</a></td>
+                <td><span class=" accept_notice"></span>공지사항</td>
+                <td><a href="" class="btn_table line">보기</a>&nbsp;&nbsp;(<span class="main_color">3</span>/20)</td>
+                <td><a href="" class="btn_table line">신청</a></td>
+                <td>수학사업부</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">21</span></td>
+                <td>전과목</td>
+                <td class="tl">2020년 8월 신입입문교육</td>
+                <td><span class="accept_ing"></span>접수중</td>
+                <td></td>
+                <td><a href="" class="btn_table line">신청</a></td>
+                <td>수학사업부</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">21</span></td>
+                <td>전과목</td>
+                <td class="tl">2020년 8월 신입입문교육</td>
+                <td>공지사항</td>
+                <td></td>
+                <td><a href="" class="btn_table line">신청</a></td>
+                <td>수학사업부</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">21</span></td>
+                <td>전과목</td>
+                <td class="tl">2020년 8월 신입입문교육</td>
+                <td><span class="accept_end"></span>마감</td>
+                <td></td>
+                <td><a href="" class="btn_table line">신청</a></td>
+                <td>수학사업부</td>
+                <td><span class="font_gmarket13">2020.07.14</span></td>
+                <td><span class="font_gmarket13">28900</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="index.html?page=education/edu_plan_notice_write01" class="btn_basic cancel">교육 + 공지 등록</a>
+        <a href="index.html?page=education/edu_plan_notice_write03" class="btn_basic">공지 등록</a>
+    </p>
+</div>

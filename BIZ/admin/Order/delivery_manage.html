@@ -1,0 +1,188 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("배송료 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>연도선택</dt>
+                <dd>
+                    <select>
+                        <option>2021년</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<div class="table_list mt_30 culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%;" />
+            <col style="width:20%;" />
+            <col style="width:10%;" />
+            <col style="width:20%;" />
+            <col style="width:10%;" />
+            <col style="width:20%;" />
+            <col style="width:10%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">구분</th>
+                <th colspan="2">수학</th>
+                <th colspan="2">지사ERP코드</th>
+                <th colspan="2">지사명</th>
+            </tr>
+            <tr>
+                <th>배송료 오픈</th>
+                <th>오픈 상태</th>
+                <th>배송료 오픈</th>
+                <th>오픈 상태</th>
+                <th>배송료 오픈</th>
+                <th>오픈 상태</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1월</td>
+                <td>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" checked />
+                        <span>열기</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>닫기</span>
+                    </label>
+                </td>
+                <td>열기</td>
+                <td>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" checked />
+                        <span>열기</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>닫기</span>
+                    </label>
+                </td>
+                <td>열기</td>
+                <td>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" checked />
+                        <span>열기</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>닫기</span>
+                    </label>
+                </td>
+                <td>열기</td>
+            </tr>
+            <tr>
+                <td>2월</td>
+                <td>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" checked />
+                        <span>열기</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" disabled />
+                        <span>닫기</span>
+                    </label>
+                </td>
+                <td>열기</td>
+                <td>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" checked />
+                        <span>열기</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>닫기</span>
+                    </label>
+                </td>
+                <td>열기</td>
+                <td>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" checked />
+                        <span>열기</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>닫기</span>
+                    </label>
+                </td>
+                <td>열기</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

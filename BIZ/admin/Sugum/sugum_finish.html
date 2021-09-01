@@ -1,0 +1,475 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("수금마감관리");
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <select>
+                        <option>2021년</option>
+                    </select>
+                    <select>
+                        <option>1월</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <a href="javascript:openPop('../admin/sugum/pop_period_result.html','940','670');" class="btn_top gray">동기대비 실적</a>
+        <a href="javascript:openPop('../admin/sugum/pop_month_result.html','940','670');" class="btn_top gray">전월대비 실적</a>
+        <a href="javascript:openPop('../admin/sugum/pop_year_result.html','940','670');" class="btn_top gray">연도별 목표실적 업로드</a>
+    </p>
+    <p>
+        <a class="btn_top line excel"><span>수강생 별 다운로드</span></a>
+        <a class="btn_top line excel"><span>가맹점 별 다운로드</span></a>
+        <a class="btn_top line excel"><span>현재화면 다운로드</span></a>
+        <a class="btn_top line excel"><span>영림원 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+
+<div class="table_list culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+            <col style="width:6.66%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">구분</th>
+                <th>월</th>
+                <th>1월</th>
+                <th>2월</th>
+                <th>3월</th>
+                <th>4월</th>
+                <th>5월</th>
+                <th>6월</th>
+                <th>7월</th>
+                <th>8월</th>
+                <th>9월</th>
+                <th>10월</th>
+                <th>11월</th>
+                <th>12월</th>
+                <th>합계</th>
+            </tr>
+            <tr>
+                <th>목표</th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+                <th class="total"><span class="font_gmarket13">1,395,500</span></th>
+            </tr>
+        <tbody>
+            <tr>
+                <th rowspan="16">매출액</th>
+                <th>교재매출1</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th>교재매출2</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">-</span></td>
+            </tr>
+            <tr>
+                <th>교재매출 계</th>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+            </tr>
+            <tr>
+                <th>상품 외 매출</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">190,052</span></td>
+            </tr>
+            <tr>
+                <th>MRO</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">190,052</span></td>
+            </tr>
+            <tr>
+                <th>태블릿 PC</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">190,052</span></td>
+            </tr>
+            <tr>
+                <th>상품계</th>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+                <td class="total"></td>
+            </tr>
+            <tr>
+                <th>가맹비</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">177,410</span></td>
+            </tr>
+            <tr>
+                <th>신입교육</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">177,410</span></td>
+            </tr>
+            <tr>
+                <th>추가교육비</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">177,410</span></td>
+            </tr>
+            <tr>
+                <th>초도비</th>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><span class="font_gmarket13">177,410</span></td>
+            </tr>
+            <tr>
+                <th>가맹비 계</th>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,277,180</span></td>
+            </tr>
+            <tr>
+                <th>회원실적</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th>출고실적</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th>신규수강생(명)</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th>휴회수강생(명)</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th rowspan="4">가맹</th>
+                <th>총 가맹실적</th>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th>신규 가맹실적</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th>가맹해지실적</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th>매출합계</th>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+                <td class="total"><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+            <tr>
+                <th colspan="2">매출목표달성(%)</th>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+                <td><span class="font_gmarket13">1,227,180</span></td>
+            </tr>
+        </tbody>
+        </thead>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="index.html?page=jisa/jisa_add" class="btn_basic confirm">저장</a>
+    </p>
+</div>

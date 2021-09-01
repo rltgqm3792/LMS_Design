@@ -1,0 +1,156 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("SMS 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>SMS 잔여 포인트</th>
+                <td>
+                    <div class="tbl_flex">
+                        <p><span class="point">500,000</span>포인트</p>
+                        <p><a href="javascript:openPop('../jisa/Etc/pop_charge.html','940','670');" class="btn_table gray">SMS 포인트 충전하기</a></p>
+                    </div>
+                </td>
+                <th>전송가능건수</th>
+                <td>단문 : 11,329(장문 : 6419)</td>
+            </tr>
+            <tr>
+                <th>충전식 요금</th>
+                <td colspan="3">(문자 1건당) 단문 : 17원, 장문 : 30원</td>
+            </tr>
+        </tbody>
+    </table>
+    <span class="point_guide mb_10">단문 SMS 작성 시, 패키지, 장문으로 Byte 변경 시, 충전식 요금이 부과됩니다.</span>
+</div>
+
+<ul class="tab_1depth">
+    <li><a href="index.html?page=etc/sms_manage01">SMS 발송</a></li>
+    <li><a href="index.html?page=etc/sms_manage02">SMS 발송내역</a></li>
+    <li><a href="index.html?page=etc/sms_manage03">SMS 설정</a></li>
+    <li class="on"><a href="index.html?page=etc/sms_manage04">포인트 충전</a></li>
+    <li><a href="index.html?page=etc/sms_manage05">SMS 포인트 사용내역</a></li>
+</ul>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>충전기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" type="text" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                        <div class="dateWrapper" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>결제수단</dt>
+                <td>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="money" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="money_chk02" class="chk_idt">
+                        <input type="checkbox" name="money" id="money_chk02" />
+                        <span>카드</span>
+                    </label>
+                    <label for="money_chk03" class="chk_idt">
+                        <input type="checkbox" name="money" id="money_chk03" />
+                        <span>계좌이체</span>
+                    </label>
+                </td>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!-- //초기화,검색 버튼 -->
+<h4 class="tit_h4 mt_20">SMS 충전내역</h4>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">
+            전체 : <strong class="mt_1">25</strong>건</span>
+    </p>
+    <p>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

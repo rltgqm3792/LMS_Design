@@ -1,0 +1,327 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("지사주문관리");
+        $(".align_right h2").text("지사주문신청");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+
+<!-- <ul class="step">
+    <li class="on"><a href="index.html?page=order/order_math01_step01">01. 주문정보</a></li>
+    <li><a href="index.html?page=order/order_step02">02. 장바구니(주문정보)확인</a></li>
+    <li><a href="index.html?page=order/order_step03">03. 주문완료</a></li>
+</ul> -->
+<!-- // 1Depth Tab -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC별 정보 확인</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" / checked>
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="align_right mt_20">
+    <h4 class="tit_h4">주문정보확인</h4>
+    <p>
+        <a href="" class="btn_top black">삭제</a>
+    </p>
+</div>
+<div class="table_list mt_20">
+    <table class="thead">
+        <colgroup>
+            <col style="width:4%;">
+            <col style="width:6%;">
+            <col style="width:10%" />
+            <col style="width:10%" />
+            <col />
+            <col style="width:10%;">
+            <col style="width:10%;">
+            <col style="width:10%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>구분</th>
+                <th>교재명</th>
+                <th>가격(원)</th>
+                <th>수량</th>
+                <th>합계</th>
+            </tr>
+
+        </thead>
+    </table>
+    <div class="scroll" style="height:200px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width:4%;">
+                <col style="width:6%;">
+                <col style="width:10%" />
+                <col style="width:10%" />
+                <col />
+                <col style="width:10%;">
+                <col style="width:10%;">
+                <col style="width:10%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board01" class="chk_idt">
+                            <input type="checkbox" name="board" id="board01" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td><span class="font_gmarket13">1</span></td>
+                    <td>수학</td>
+                    <td>중등교사용</td>
+                    <td class="tl">[중등계산력](15)해법계산 중등 3학년 15권</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                    <td>1</td>
+                    <td class="tr"><span class="font_gmarket13">4,000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<h4 class="tit_h4 mt_20">주문정보요약</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:50%">
+            <col style="width:50%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>전체 주문건수(건)</th>
+                <th>전체 주문금액(원)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td><span class="main_color">1,685</span></td>
+            <td><span class="main_color">1,685</span></td>
+        </tbody>
+    </table>
+</div>
+<div class="table_list mt_20 culumn">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+            <col style="width:16.66%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="6" class="bt">FC별 주문정보</th>
+            </tr>
+            <tr>
+                <th colspan="2">수학</th>
+                <th colspan="2" class="bt">영어</th>
+                <th colspan="2" class="bt">전과목</th>
+            </tr>
+            <tr>
+                <th>주문수량</th>
+                <th>주문금액</th>
+                <th>주문수량</th>
+                <th>주문금액</th>
+                <th>주문수량</th>
+                <th>주문금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>1,685</td>
+            <td>2,345,000</td>
+            <td>1,685</td>
+            <td>2,345,000</td>
+            <td>1,685</td>
+            <td>2,345,000</td>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">전체주문</a>
+    </p>
+</div>

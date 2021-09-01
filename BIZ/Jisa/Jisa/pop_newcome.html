@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-date-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-date-picker.js" type="text/javascript"></script><!-- calendar -->
+
+        <!-- 페이지에 관련된 스크립트 -->
+        <script type="text/javascript">
+            $(function () {
+                //달력
+                calendar();
+            });
+        </script>
+        <!-- //페이지에 관련된 스크립트 -->
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>신입교육 확인서</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <div class="newcome_title">신입교육확인서</div>
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:15%">
+                            <col style="width:15%">
+                            <col style="width:70%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th rowspan="5">신입교육대상자</th>
+                                <th>가맹점 코드</th>
+                                <td colspan="3"><input type="text" class="txt_search"><a href="" class="btn_s search">검색</a></td>
+                            </tr>
+                            <tr>
+                                <th>가맹점명</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>가맹점 사업자명</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>주소</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>연락처</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:15%">
+                            <col style="width:15%">
+                            <col style="width:70%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th rowspan="3">교육</th>
+                                <th>교육과정<span class="required"></span></th>
+                                <td>
+                                    <label for="edu_rdo01" class="rdo_idt">
+                                        <input type="radio" name="edu" id="edu_rdo01" />
+                                        <span>해법</span>
+                                    </label>
+                                    <label for="edu_rdo01" class="rdo_idt">
+                                        <input type="radio" name="edu" id="edu_rdo01" />
+                                        <span>셀파</span>
+                                    </label>
+                                    <label for="edu_rdo01" class="rdo_idt">
+                                        <input type="radio" name="edu" id="edu_rdo01" />
+                                        <span>해법+셀파</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>교육일시<span class="required"></span></th>
+                                <td>
+                                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input id="startpicker-input" type="text" aria-label="Date">
+                                        <span class="tui-ico-date"></span>
+                                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                                    </div>
+                                    <span class="line">~</span>
+                                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input id="endpicker-input" type="text" aria-label="Date">
+                                        <span class="tui-ico-date"></span>
+                                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>시행지사</th>
+                                <td>관리자</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="tit_pop">신입교육 수료 항목</h2>
+                <div class="table_list">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:60%">
+                            <col style="width:15%">
+                            <col style="width:15%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label for="all_chk2" class="chk_idt all">
+                                        <input type="checkbox" name="board" id="all_chk2" onchange="all_check(this);">
+                                        <span>전체</span>
+                                    </label>
+                                </th>
+                                <th>내용</th>
+                                <th>기준시간</th>
+                                <th>교육시간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="board10" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board10">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td class="tl">1. 온라인 교재</td>
+                                <td>60분</td>
+                                <td>60분/시간</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="board10" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board10">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td class="tl">2. 오프라인 교재</td>
+                                <td>60분</td>
+                                <td>60분/시간</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="board10" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board10">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td class="tl">3. 표준수업 모델</td>
+                                <td>60분</td>
+                                <td>60분/시간</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="board10" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board10">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td class="tl">4. 홈페이지 둘러보기</td>
+                                <td>60분</td>
+                                <td>60분/시간</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="board10" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board10">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td class="tl">5. 마케팅 및 영업활동 방법</td>
+                                <td>60분</td>
+                                <td>60분/시간</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="board10" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board10">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td class="tl">6. 세무규정 교육</td>
+                                <td>60분</td>
+                                <td>60분/시간</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <span class="trans_text mt_10">상기 신입교육 대상자 <input type="text">(은)는 「수학ㆍ셀파수학교실 가맹계약서」, 제 20조 「수학 정보공개서」제 8호에 의거하여 수학 기원전 교육을 수료하였음을 확인합니다.</span>
+                <dl class="trans_docu">
+                    <dt>제반 서류 첨부</dt>
+                    <dd class="trans_text">가족관계증명서(필수) / 사업자등록증 사본 / 보증금 100만원(신청인이 보증보험인 경우) 아래 버튼을 선택하여 해당 서류를 첨부해주세요.</dd>
+                    <dd>
+                        <div class="docu_title">
+                            <span>가족관계증명서(필수)</span>
+                            <p><a href="" class="btn_top gray">파일선택</a></p>
+                        </div>
+                        <ul class="docu_file">
+                            <li><a href="" class="add_file">가족관계증명서</a><span class="delete_File">삭제</span></li>
+                        </ul>
+                    </dd>
+                    <dd>
+                        <div class="docu_title">
+                            <span>사업자등록증(사본)</span>
+                            <p><a href="" class="btn_top gray">파일선택</a></p>
+                        </div>
+                        <ul class="docu_file">
+                            <li class="no_file">선택한 파일이 없습니다.</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="trans_date">
+                    <dt>2021년 1월 23일</dt>
+                    <dd>신청서 성명 : <span>이해법점</span></dd>
+                    <dd>신청서 성명 : <span>이해법</span></dd>
+                    <dd>신청서 성명 : <span>이해법</span></dd>
+                </dl>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn">신청</a>
+            </section>
+        </article>
+    </body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+        <!-- 페이지에 관련된 스크립트 -->
+        <script type="text/javascript">
+            $(function () {
+                $('.check a').on('click', function () {
+                    $('.tab01').css('display', 'none');
+                    $('.tab02').css('display', 'block');
+                });
+                $('.submit a').click(function () {
+                    $('.tab01').css('display', 'block');
+                    $('.tab02').css('display', 'none');
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="contest_tab">
+            <div class="tab01" style="display:none;">
+                <ul class="contest_menu">
+                    <li class="submit on"><a href="javascript:void(0);">참가등록</a></li>
+                    <li class="check"><a href="javascript:void(0);">등록확인</a></li>
+                </ul>
+                <div class="contest_con">
+                    <h4 class="tit_h4">참가정보</h4>
+                    <div class="table_input">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:20%;">
+                                <col style="width:80%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>가맹점명</th>
+                                    <td>가맹점 이름</td>
+                                </tr>
+                                <tr>
+                                    <th>이름</th>
+                                    <td>해법 신보람</td>
+                                </tr>
+                                <tr>
+                                    <th>학년</th>
+                                    <td>초등3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4 class="tit_h4">영상등록</h4>
+                    <div class="table_input">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:20%;">
+                                <col style="width:80%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>부분선택</th>
+                                    <td><select>
+                                            <option>부분선택</option>
+                                        </select></td>
+                                </tr>
+                                <tr>
+                                    <th>학년선택</th>
+                                    <td><select>
+                                            <option>학년선택</option>
+                                        </select></td>
+                                </tr>
+                                <tr>
+                                    <th>단원선택</th>
+                                    <td><select>
+                                            <option>단원선택</option>
+                                        </select></td>
+                                </tr>
+                                <tr>
+                                    <th>참가인원수</th>
+                                    <td><select>
+                                            <option>참가인원수선택</option>
+                                        </select></td>
+                                </tr>
+                                <tr>
+                                    <th>유투브링크</th>
+                                    <td><input type="text" class="input_full"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4 class="tit_h4">개인정보 수집 및 이용동의(필수)<span class="required"></span></h4>
+                    <textarea></textarea>
+                    <div class="btn_bottom_wrap right mt_40">
+                        <p>
+                            <a href="" class="btn_basic">참가하기</a>
+                            <a href="" class="btn_basic gray">닫기</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab02" style="display:block;">
+                <ul class="contest_menu">
+                    <li class="submit"><a href="javascript:void(0);">참가등록</a></li>
+                    <li class="check on"><a href="javascript:void(0);">등록확인</a></li>
+                </ul>
+                <div class="contest_con">
+                    <h4 class="tit_h4">상세참가정보</h4>
+                    <div class="table_input">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:20%;">
+                                <col style="width:30%">
+                                <col style="width:20%;">
+                                <col style="width:30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>가맹점명</th>
+                                    <td colspan="3">가맹점 이름</td>
+                                </tr>
+                                <tr>
+                                    <th>회차</th>
+                                    <td>1회</td>
+                                    <th>부문</th>
+                                    <td>프리젠터</td>
+                                </tr>
+                                <tr>
+                                    <th>이름</th>
+                                    <td>해법신보람</td>
+                                    <th>참가인원</th>
+                                    <td>1명</td>
+                                </tr>
+                                <tr>
+                                    <th>학년</th>
+                                    <td colspan="3">초등3</td>
+                                </tr>
+                                <tr>
+                                    <th>개념</th>
+                                    <td colspan="3">[초3-1] 5. 시간과 길이</td>
+                                </tr>
+                                <tr>
+                                    <th>상태</th>
+                                    <td colspan="3">승인대기중</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span class="bottom_guide">접수가 완료되지 않을 경우 원장님꼐 문의해주세요</span>
+                    </div>
+                    <h4 class="tit_h4">등록내역</h4>
+                    <div class="submit_list">
+                        <dl>
+                            <dt><a href=""><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="type">프리젠터</span></dt>
+                            <dd class="title"><a href="">[초3-1] 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이</a></dd>
+                            <dd class="text">
+                                <div>초등4학년<span class="bar"></span><span class="inning">1회차</span></div>
+                                <div class="date">2021.03.31</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><a href=""><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="type">프리젠터</span></dt>
+                            <dd class="title"><a href="">[초3-1] 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이</a></dd>
+                            <dd class="text">
+                                <div>초등4학년<span class="bar"></span><span class="inning">1회차</span></div>
+                                <div class="date">2021.03.31</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><a href=""><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="type">프리젠터</span></dt>
+                            <dd class="title"><a href="">[초3-1] 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이</a></dd>
+                            <dd class="text">
+                                <div>초등4학년<span class="bar"></span><span class="inning">1회차</span></div>
+                                <div class="date">2021.03.31</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><a href=""><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a><span class="type">프리젠터</span></dt>
+                            <dd class="title"><a href="">[초3-1] 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이 5. 시간과 길이</a></dd>
+                            <dd class="text">
+                                <div>초등4학년<span class="bar"></span><span class="inning">1회차</span></div>
+                                <div class="date">2021.03.31</div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="btn_bottom_wrap right mt_40">
+                        <p>
+                            <a href="" class="btn_basic">확인</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

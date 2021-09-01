@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>카테고리 수정</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <!--테이블 상단-->
+                <h2 class="tit_pop">카테고리 1 수정</h2>
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:20%">
+                            <col style="width:80%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>FC구분</th>
+                                <td>
+                                    <label for="all_chk" class="chk_idt all table">
+                                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                                        <span>전체</span>
+                                    </label>
+                                    <label for="fc_chk02" class="chk_idt table">
+                                        <input type="checkbox" name="fc" id="fc_chk02" />
+                                        <span>수학</span>
+                                    </label>
+                                    <label for="fc_chk03" class="chk_idt table">
+                                        <input type="checkbox" name="fc" id="fc_chk03" />
+                                        <span>영어</span>
+                                    </label>
+                                    <label for="fc_chk04" class="chk_idt table">
+                                        <input type="checkbox" name="fc" id="fc_chk04" />
+                                        <span>전과목</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>카테고리 명</th>
+                                <td><input type="text" class="input_full"></td>
+                            </tr>
+                            <tr>
+                                <th>판매노출</th>
+                                <td>
+                                    <label for="open_rdo02" class="rdo_idt table">
+                                        <input type="radio" name="open" id="open_rdo02" checked />
+                                        <span>지사</span>
+                                    </label>
+                                    <label for="open_rdo03" class="rdo_idt table">
+                                        <input type="radio" name="open" id="open_rdo03" />
+                                        <span>가맹</span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="tit_pop">카테고리 2 수정</h2>
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:20%">
+                            <col style="width:80%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>카테고리1 선택</th>
+                                <td>
+                                    <select>
+                                        <option>카테고리 1</option>
+                                        <option>카테고리 2</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>판매상태</th>
+                                <td>
+                                    <label for="sel_rdo02" class="rdo_idt table">
+                                        <input type="radio" name="sel" id="sel_rdo02" checked />
+                                        <span>사용</span>
+                                    </label>
+                                    <label for="sel_rdo03" class="rdo_idt table">
+                                        <input type="radio" name="sel" id="sel_rdo03" />
+                                        <span>중지</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>카테고리 명</th>
+                                <td><input type="text" class="input_full"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn">저장</a>
+            </section>
+        </article>
+    </body>
+
+</html>

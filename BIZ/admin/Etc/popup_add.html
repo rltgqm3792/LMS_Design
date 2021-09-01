@@ -1,0 +1,106 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("팝업 관리");
+        $(".align_right h2").text("팝업 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+        timepicker();
+        timePickerByClass(); // :chan
+
+
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+</script>
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo01" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+                <th>대상<span class="required"></span></th>
+                <td>
+                    <label for="type_rdo01" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_rdo01" checked />
+                        <span>지사</span>
+                    </label>
+                    <label for="type_rdo02" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_rdo02" />
+                        <span>가맹</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>팝업명<span class="required"></span></th>
+                <td colspan="3"><input type="text" class="input_full" placeholder="제목을 30자 이내로 입력해주세요"></td>
+            </tr>
+            <tr>
+                <th>링크URL<span class="required"></span></th>
+                <td colspan="3"><input type="text" class="input_full" placeholder="팝업 클릭시 연결할 URL을 입력해주세요"></td>
+            </tr>
+            <tr>
+                <th>이미지첨부</th>
+                <td colspan="3"><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+            </tr>
+            <tr>
+                <th>게시기간<span class="required"></span></th>
+                <td colspan="3">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <div class="timepicker-selectbox"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="javascript:openPop('../admin/Etc/pop_popup.html','399','468');" class="btn_basic line">미리보기</a>
+        <a href="" class="btn_basic">저장</a>
+        <a href="" class="btn_basic black">취소</a>
+    </p>
+</div>

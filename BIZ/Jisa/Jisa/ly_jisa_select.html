@@ -1,0 +1,67 @@
+
+    <article class="ly_popup_wrap">
+        <div class="ly_popup_group">
+            <header class="ly_header">
+                <h1>인근 가맹점 선택</h1>
+            </header>
+            <section class="ly_content">
+                <!-- tit_sub_txt -->                
+                <ul class="tip_box">
+                    <li><span class="tip">Tip 1.</span>매출신청이 가능한 가맹점 5개를 포함하여, <span class="main_color">총 10개의 가맹점을 선택</span>해주세요</li>
+                    <li><span class="tip">Tip 2.</span>매출신청 가능 가맹점이 5개 미만인 경우, 인근지사 가맹점 검색을 통해 가맹점을 선택해주세요<br/><span style="margin-left:50px;">(인근 지사 가맹점 리스트에는 해당 지사의 교실이 포함되어 있습니다.)</span></li>
+                </ul>
+                <div class="search_wrap mt_10">
+                    <ul class="info_group">
+                        <li>
+                            <dl>
+                                <dt>FC구분</dt>
+                                <dd>
+                                    <label for="fc_rdo01" class="rdo_idt">
+                                        <input type="radio" name="fc" id="fc_rdo01" checked />
+                                        <span>수학</span>
+                                    </label>
+                                </dd>
+                            </dl>
+                        </li> 
+                        <li>
+                            <dl>
+                                <dt>지사</dt>
+                                <dd><select><option>지사명 선택</option></select></dd>
+                            </dl>
+                        </li> 
+                    </ul>
+                    <!-- 초기화,검색 버튼 -->
+                    <div class="btn_wrap box_in">    
+                        <a href="" class="btn_search big">검색</a>
+                    </div>
+                    <!-- //초기화,검색 버튼 -->    
+                </div> 
+                 <!--테이블 상단-->
+                <div class="btn_top_wrap">
+                    <p>
+                        <span class="list_num">
+                            전체 :
+                            <strong>1,256</strong>
+                            명
+                        </span>
+                    </p> 
+                </div>
+                <div id="grid"></div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <!-- [D] 버튼3개일때 class : btn_three 추가-->
+            <section class="ly_btn_group">
+                <a href="javascript:ly_close();" class="btn cancel">닫기</a>
+                <!--
+                <a href="javascript:ly_close();" class="btn green">인쇄</a>
+                -->
+            </section>            
+        </div>
+        <!-- 닫기버튼 -->
+        <a href="javascript:ly_close();" class="btn_ly_close">창닫기</a>
+        <!-- //닫기버튼 -->
+    </article>
+    
+    <!-- 마스크 -->
+    <article class="mask"></article>
+    <!-- //마스크 -->

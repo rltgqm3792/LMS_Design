@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>가맹상담신청 상세보기</h1>
+            </header>
+            <section class="pop_content">
+                <!-- tit_sub_txt -->
+                <h2 class="tit_pop">신청서 상세정보</h2>
+                <div class="table_input">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:15%">
+                            <col style="width:35%">
+                            <col style="width:15%">
+                            <col style="width:35%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>FC구분</th>
+                                <td colspan="3">
+                                    <label for="fc_01" class="rdo_idt table">
+                                        <input type="radio" name="fc" id="fc_01" checked />
+                                        <span>수학</span>
+                                    </label>
+                                    <label for="fc_02" class="rdo_idt table">
+                                        <input type="radio" name="fc" id="fc_02" disabled />
+                                        <span>영어</span>
+                                    </label>
+                                    <label for="fc_03" class="rdo_idt table">
+                                        <input type="radio" name="fc" id="fc_03" disabled />
+                                        <span>전과목</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상담지역</th>
+                                <td colspan="3">원주시, 횡성군, 영월군, 홍천군, 평창군, 정선군, 춘천시, 화천군, 양구군, 인제군, 충주시, 제천시, 음성군, 단양군</td>
+                            </tr>
+                            <tr>
+                                <th>가맹희망지역<span class="required"></span></th>
+                                <td colspan="3">Ex)동네명 혹은 학교명</td>
+                            </tr>
+                            <tr>
+                                <th>이름<span class="required"></span></th>
+                                <td colspan="3">김한강</td>
+                            </tr>
+                            <tr>
+                                <th>전화번호<span class="required"></span></th>
+                                <td colspan="3"><span class="font_gmarket13">010-1245-6565</span></td>
+                            </tr>
+                            <tr>
+                                <th>이메일<span class="required"></span></th>
+                                <td colspan="3">aa@aaa.co.kr</td>
+                            </tr>
+                            <tr>
+                                <th>가맹형태<span class="required"></span></th>
+                                <td colspan="3">
+                                    <label for="state_01" class="rdo_idt table">
+                                        <input type="radio" name="state" id="state_01" disabled />
+                                        <span>일반재택</span>
+                                    </label>
+                                    <label for="state_02" class="rdo_idt table">
+                                        <input type="radio" name="state" id="state_02" checked />
+                                        <span>전용재택</span>
+                                    </label>
+                                    <label for="state_03" class="rdo_idt table">
+                                        <input type="radio" name="state" id="state_03" disabled />
+                                        <span>교습소</span>
+                                    </label>
+                                    <label for="state_04" class="rdo_idt table">
+                                        <input type="radio" name="state" id="state_04" disabled />
+                                        <span>학원</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>면적<span class="required"></span></th>
+                                <td colspan="3">82㎡(18.76평)</td>
+                            </tr>
+                            <tr>
+                                <th>경력<span class="required"></span></th>
+                                <td colspan="3">가맹점 상담을 진행하고 싶습니다.</td>
+                            </tr>
+                            <tr>
+                                <th>문의사항<span class="required"></span></th>
+                                <td colspan="3">문의내용을 남겼습니다.</td>
+                            </tr>
+                            <tr>
+                                <th>상담내용</th>
+                                <td colspan="3">상담내용을 남겼습니다.</td>
+                            </tr>
+                            <tr>
+                                <th>상담상태<span class="required"></span></th>
+                                <td>상담중</td>
+                                <th>가입여부</th>
+                                <td><span class="font_gmarket13">N</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //tit_sub_txt -->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+        </article>
+    </body>
+
+</html>

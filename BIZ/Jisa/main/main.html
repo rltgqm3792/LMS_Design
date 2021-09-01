@@ -1,0 +1,743 @@
+<script type="text/javascript">
+    $(function(){  
+        var page = "main";     
+  
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+
+        $('.tooltip').on('click',function() {
+            $('.main_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.main_info_pop').css('display','none');
+        });
+
+        $('.tooltip02').on('click',function() {
+            $('.main_info_pop02').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.main_info_pop02').css('display','none');
+        });         
+
+    } );      
+
+    $(function () {
+        /* 교실반품/주문신청안내 */
+        // $('.ly_popup')
+        //     .load('main/ly_order.html')
+        //     .show();
+
+        /* 생산필요알림 */
+        // $('.ly_popup')
+        //     .load('main/ly_pro.html')
+        //     .show();
+    });          
+</script>
+<div class="jisa_main_con">
+    <div class="div_left">
+
+        <!-- 과목선택 -->
+        <ul class="fc">
+            <li class="on"><a href="">수학</a></li>
+            <li><a href="">영어</a></li>
+            <li><a href="">전과목</a></li>
+        </ul>
+
+        <!-- 즐겨찾는 메뉴 -->
+        <div class="favorite">
+            <div>
+                <span class="title">자주 찾는 메뉴</span>
+                <a href="javascript:ly_open('../jisa/main/ly_setting.html');" class="set">셋팅</a>
+            </div>
+            <ul id="sortable">
+                <li><a href="">추가01</a></li>
+                <li><a href="">추가02</a></li>
+                <li><a href="">추가03</a></li>
+                <li><a href="">추가04</a></li>
+                <li><a href="">추가05</a></li>
+                <li><a href="">추가06</a></li>
+            </ul>
+        </div>
+
+        <!-- 달력 -->
+        <div class="main_cal"><a href="javascript:openPop('../admin/main/pop_calendar.html','450','670');">일정보기</a></div>
+        
+
+        <!-- Q&A -->
+        <div class="main_qna">
+            <dl>
+                <dt>Q&A</dt>
+                <dd>
+                    <ul>
+                        <li><span class="main_bullet red">미답변</span><a href="">중3 개념 4권 동영상 다시보기</a></li>
+                        <li><span class="main_bullet red">답변완료</span><a href="">중3 개념 4권 동영상 다시보기</a></li>
+                        <li><span class="main_bullet red">미답변</span><a href="">중3 개념 4권 동영상 다시보기</a></li>
+                    </ul>
+                </dd>                    
+                <a href="" class="more">더보기</a>
+            </dl>
+        </div>        
+    </div>
+
+
+
+
+    <div class="div_right">
+
+        <!-- 가맹점/수강생/미수액 -->
+        <div class="main_con01">
+
+            <!-- 가맹점 -->
+            <div class="jisa">
+                <a href="javascript:void(0);" class="tooltip">툴팁</a>    
+                <div class="main_info_pop">
+                    <div><a href="javascript:void(0);" class="ly_info_close"></a>
+                        <span>에듀 지사주문 내용 설명입니다.<br>                    
+                        에듀 지사주문 내용 설명입니다. <br>                    
+                        에듀 지사주문 내용 설명입니다. <br> 
+                    </span>                  
+                    </div>
+                </div>        
+                <dl class="jisa_num">
+                    <dt>가맹점</dt>
+                    <dd><a href="" class="new">23</a><br/>신규</dd>
+                    <dd><a href="" class="cancel">15</a><br/>해지</dd>
+                </dl>
+                <dl class="jisa_total">
+                    <dt>총 가맹점 수</dt>
+                    <dd>2,345</dd>
+                </dl>
+            </div>
+
+            <!-- 수강생 -->
+            <div class="stu">
+                <a href="javascript:void(0);" class="tooltip02">툴팁</a>    
+                <div class="main_info_pop02">
+                    <div><a href="javascript:void(0);" class="ly_info_close"></a>
+                        <span>에듀 지사주문 내용 설명입니다.<br>                    
+                        에듀 지사주문 내용 설명입니다. <br>                    
+                        에듀 지사주문 내용 설명입니다. <br> 
+                    </span>                  
+                    </div>
+                </div>        
+                <dl class="stu_num">
+                    <dt>수강생</dt>
+                    <dd><a href="" class="new">358</a><br/>실수강생</dd>
+                    <dd><a href="" class="cancel">120</a><br/>과금수강생</dd>
+                </dl>
+                <div class="stu_total">
+                    <dl>
+                        <dt>신규</dt>
+                        <dd><a href="">999</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>복회</dt>
+                        <dd><a href="">999</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>휴회대기</dt>
+                        <dd><a href="">999</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>입회대기</dt>
+                        <dd><a href="">999</a></dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- 미수액 -->
+            <div class="money">
+                <dl class="money_num">
+                    <dt>현 미수액</dt>
+                    <dd><a href="">17,350,000</a><span>원</span></dd>
+                </dl>
+                <div class="money_text">지사에 속한 가맹점 미수금 총액</div>
+            </div>
+        </div>
+
+        <!-- 사업설명회/공지사항 -->
+        <div class="main_con02">
+            <!-- 사업설명회 -->
+            <div>
+                <dl class="busi">
+                    <dt>사업설명회</dt>
+                    <dd>
+                        <ul>
+                            <li><span class="main_bullet blue">2021.06.20</span><a href="">[13:00~14:30] 인천 부평 지사</a><span class="new_text">새 글</span></li>
+                            <li><span class="main_bullet blue">2021.06.20</span><a href="">[13:00~14:30] 인천 부평 지사</a></li>
+                            <li><span class="main_bullet blue">2021.06.20</span><a href="">[13:00~14:30] 인천 부평 지사</a></li>
+                            <li><span class="main_bullet blue">2021.06.20</span><a href="">[13:00~14:30] 인천 부평 지사</a></li>
+                            <li><span class="main_bullet blue">2021.06.20</span><a href="">[13:00~14:30] 인천 부평 지사</a></li>
+                        </ul>
+                    </dd>
+                    <a href="" class="more">더보기</a>
+                </dl>
+            </div>
+
+            <!-- 공지사항 -->
+            <div>
+                <dl class="noti">
+                    <dt>공지사항</dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                <div><span class="main_bullet green">가맹점/수강생</span><a href="">대표 번호 변경 안내 및 휴강 공지</a><span class="new_text">새 글</span></div>
+                                <p>2021.06.08</p>
+                            </li>                            
+                            <li>
+                                <div><span class="main_bullet green">지사/가맹점</span><a href="">대표 번호 변경 안내 및 휴강 공지</a></div>
+                                <p>2021.06.08</p>
+                            </li>
+                            <li>
+                                <div><span class="main_bullet green">수강생</span><a href="">대표 번호 변경 안내 및 휴강 공지</a></div>
+                                <p>2021.06.08</p>
+                            </li>
+                            <li>
+                                <div><span class="main_bullet green">가맹점</span><a href="">대표 번호 변경 안내 및 휴강 공지</a></div>
+                                <p>2021.06.08</p>
+                            </li>
+                            <li>
+                                <div><span class="main_bullet green">지사</span><a href="">대표 번호 변경 안내 및 휴강 공지</a></div>
+                                <p>2021.06.08</p>
+                            </li>
+                        </ul>
+                    </dd>
+                    <a href="" class="more">더보기</a>
+                </dl>
+            </div>
+        </div>
+
+        <!-- 동기대비실적 -->
+        <div class="main_con03">
+            <div class="chart_title">
+                <div id="title01">
+                    <span>동기대비 실적</span>
+                    <p class="pre_year"><span></span>2020</p>
+                    <p class="now_year"><span></span>2021</p>
+                </div>
+                
+                
+                <div id="title02">
+                    <span>동기대비 실적</span>
+                    <p class="pre_year01"><span></span>2020</p>
+                    <p class="now_year01"><span></span>2021</p>
+                </div>
+
+                <div>
+                    <select>
+                        <option>2021</option>
+                        <option>2020</option>
+                    </select>
+                    <select id="select">
+                        <option id="01">실수강생</option>
+                        <option id="02">가맹</option>
+                    </select>
+                </div>
+            </div>
+            <!-- 실수강생일때 -->
+            <div id="chartdiv01" style="height:270px;"></div>
+
+            <!-- 가맹일때 -->
+            <div id="chartdiv02" style="height:270px;"></div>
+        </div>
+        <div class="main_con04">
+            <div class="sales">
+                <div class="title">수강생/가맹 실적</div>
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:16.66%">
+                        <col style="width:16.66%">
+                        <col style="width:16.66%">
+                        <col style="width:16.66%">
+                        <col style="width:16.66%">
+                        <col style="width:16.66%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>전월</th>
+                            <th>월입회</th>
+                            <th>월복회</th>
+                            <th>월휴회</th>
+                            <th>순증</th>
+                            <th>현수강생</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>41,713</td>
+                            <td>41,713</td>
+                            <td>41,713</td>
+                            <td>41,713</td>
+                            <td>41,713</td>
+                            <td>41,713</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:20%">
+                        <col style="width:20%">
+                        <col style="width:20%">
+                        <col style="width:20%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>형태</th>
+                            <th>가맹점</th>
+                            <th>수강생</th>
+                            <th>이달신규가맹</th>
+                            <th>이달해지가맹</th>
+                        </tr>
+                    </thead>
+                    <tbody class="month">
+                        <tr>
+                            <td>재택</td>
+                            <td>983</td>
+                            <td>17,415</td>
+                            <td class="blue_color">14</td>
+                            <td class="point">10</td>
+                        </tr>
+                        <tr>
+                            <td>교습소</td>
+                            <td>766</td>
+                            <td>12,076</td>
+                            <td class="blue_color">7</td>
+                            <td class="point">4</td>
+                        </tr>
+                        <tr>
+                            <td>학원</td>
+                            <td>639</td>
+                            <td>15,078</td>
+                            <td class="blue_color">10</td>
+                            <td class="point">3</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>총합계</td>
+                            <td>2,388</td>
+                            <td>44,569</td>
+                            <td class="blue_color">31</td>
+                            <td class="point">17</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="condition">
+                <div class="title">
+                    <span>지사 미수채권 현황</span>
+                    <a href="" class="more">더 보기</a>
+                </div>
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:30%">
+                        <col style="width:50%">
+                        <col style="width:20%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>지사코드</th>
+                            <th class="tl">지사명</th>
+                            <th>미수율</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>J007</td>
+                            <td>서울 은평 서대문</td>
+                            <td>48%</td>
+                        </tr>
+                        <tr>
+                            <td>J007</td>
+                            <td>서울 은평 서대문</td>
+                            <td>48%</td>
+                        </tr>
+                        <tr>
+                            <td>J007</td>
+                            <td>서울 은평 서대문</td>
+                            <td>48%</td>
+                        </tr>
+                        <tr>
+                            <td>J007</td>
+                            <td>서울 은평 서대문</td>
+                            <td>48%</td>
+                        </tr>
+                        <tr>
+                            <td>J007</td>
+                            <td>서울 은평 서대문</td>
+                            <td>48%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>   
+</div>
+<script>
+    $("#chartdiv02").hide();
+    $("#title02").hide();
+    $("#select").change(function() {
+        $("#chartdiv01, #chartdiv02").hide();
+        $("#title01, #title02").hide();
+        $("#chartdiv" + $(this).find('option:selected').attr('id')).show();
+        $("#title" + $(this).find('option:selected').attr('id')).show();
+    });
+</script>
+<script>
+    am4core.ready(function() {
+    am4core.addLicense("CH230677325");
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    
+    
+    var chart01 = am4core.create('chartdiv01', am4charts.XYChart)
+    // chart.colors.step = 2;
+    chart01.colors.list = [
+        am4core.color("#5a90ee"),
+        am4core.color("#ff7da5"),
+    ];
+    chart01.fontSize = "13px"
+    chart01.height = 200
+    chart01.marginBottom = 0
+    chart01.paddingBottom = 0
+
+    
+    // chart.legend = new am4charts.Legend()
+    // chart.legend.position = 'top'
+    // chart.legend.paddingBottom = 20
+    // chart.legend.labels.template.maxWidth = 95
+    
+    var xAxis = chart01.xAxes.push(new am4charts.CategoryAxis())
+    xAxis.dataFields.category = 'category'    
+    xAxis.renderer.cellStartLocation = 0.1
+    xAxis.renderer.cellEndLocation = 0.9
+    xAxis.renderer.grid.template.location = 0;
+    xAxis.renderer.minGridDistance = 30;
+    xAxis.renderer.grid.template.stroke = am4core.color("#717171");
+    xAxis.renderer.grid.template.opacity = 1;
+    
+    
+    
+    var yAxis = chart01.yAxes.push(new am4charts.ValueAxis());
+    yAxis.min = 0;    
+    yAxis.max = 100; 
+    yAxis.renderer.minGridDistance = 20;   
+    yAxis.renderer.grid.template.stroke = am4core.color("#717171");
+    yAxis.renderer.grid.template.opacity = 1;
+    
+    function createSeries(value, name) {
+        var series = chart01.series.push(new am4charts.ColumnSeries())
+        series.dataFields.valueY = value
+        series.dataFields.categoryX = 'category'
+        series.name = name        
+        series.columns.template.column.cornerRadiusTopLeft = "100%";
+        series.columns.template.column.cornerRadiusTopRight = "100%";
+        series.columns.template.width = am4core.percent(50);
+        
+    
+        series.events.on("hidden", arrangeColumns);
+        series.events.on("shown", arrangeColumns);
+    
+        // var bullet = series.bullets.push(new am4charts.LabelBullet())
+        // bullet.interactionsEnabled = false
+        // bullet.dy = 15;
+        // bullet.label.text = '{valueY}'
+        // bullet.label.fill = am4core.color('#ffffff')
+        // bullet.label.fontSize = "12px"
+    
+        return series;
+    }
+    
+    chart01.data = [
+        {
+            category: '1월',
+            first: 40,
+            second: 95
+        },
+        {
+            category: '2월',
+            first: 30,
+            second: 78
+        },
+        {
+            category: '3월',
+            first: 27,
+            second: 40
+        },
+        {
+            category: '4월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '5월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '6월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '7월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '8월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '9월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '10월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '11월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '12월',
+            first: 50,
+            second: 33
+        }
+    ]
+    
+    
+    createSeries('first', 'The First');
+    createSeries('second', 'The Second');
+    
+    function arrangeColumns() {
+    
+        var series = chart01.series.getIndex(0);
+    
+        var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+        if (series.dataItems.length > 1) {
+            var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+            var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+            var delta = ((x1 - x0) / chart01.series.length) * w;
+            if (am4core.isNumber(delta)) {
+                var middle = chart01.series.length / 2;
+    
+                var newIndex = 0;
+                chart01.series.each(function(series) {
+                    if (!series.isHidden && !series.isHiding) {
+                        series.dummyData = newIndex;
+                        newIndex++;
+                    }
+                    else {
+                        series.dummyData = chart01.series.indexOf(series);
+                    }
+                })
+                var visibleCount = newIndex;
+                var newMiddle = visibleCount / 2;
+    
+                chart01.series.each(function(series) {
+                    var trueIndex = chart01.series.indexOf(series);
+                    var newIndex = series.dummyData;
+    
+                    var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+    
+                    series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                    series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                })
+            }
+        }
+    }
+
+    
+    }); // end am4core.ready()
+</script>
+
+
+<script>
+    am4core.ready(function() {
+    am4core.addLicense("CH230677325");
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+
+    var chart02 = am4core.create('chartdiv02', am4charts.XYChart)
+    // chart.colors.step = 2;
+    chart02.colors.list = [
+        am4core.color("#49C7C7"),
+        am4core.color("#A081F5"),
+    ];
+    chart02.fontSize = "13px"
+    chart02.height = 200
+    chart02.marginBottom = 0
+    chart02.paddingBottom = 0
+    
+    
+    // chart.legend = new am4charts.Legend()
+    // chart.legend.position = 'top'
+    // chart.legend.paddingBottom = 20
+    // chart.legend.labels.template.maxWidth = 95
+    
+    var xAxis = chart02.xAxes.push(new am4charts.CategoryAxis())
+    xAxis.dataFields.category = 'category'    
+    xAxis.renderer.cellStartLocation = 0.1
+    xAxis.renderer.cellEndLocation = 0.9
+    xAxis.renderer.grid.template.location = 0;
+    xAxis.renderer.minGridDistance = 30;
+    xAxis.renderer.grid.template.stroke = am4core.color("#717171");
+    xAxis.renderer.grid.template.opacity = 1;
+    
+    
+    
+    var yAxis = chart02.yAxes.push(new am4charts.ValueAxis());
+    yAxis.min = 0;    
+    yAxis.max = 100; 
+    yAxis.renderer.minGridDistance = 20;   
+    yAxis.renderer.grid.template.stroke = am4core.color("#717171");
+    yAxis.renderer.grid.template.opacity = 1;
+
+
+    function createSeries(value, name) {
+        var series = chart02.series.push(new am4charts.ColumnSeries())
+        series.dataFields.valueY = value
+        series.dataFields.categoryX = 'category'
+        series.name = name        
+        series.columns.template.column.cornerRadiusTopLeft = "100%";
+        series.columns.template.column.cornerRadiusTopRight = "100%";
+        series.columns.template.width = am4core.percent(50);
+        
+    
+        series.events.on("hidden", arrangeColumns);
+        series.events.on("shown", arrangeColumns);
+    
+        // var bullet = series.bullets.push(new am4charts.LabelBullet())
+        // bullet.interactionsEnabled = true
+        // bullet.dy = 15;
+        // bullet.label.text = '{valueY}'
+        // bullet.label.fill = am4core.color('#ffffff')
+        // bullet.label.fontSize = "12px"
+    
+        return series;
+    }
+
+
+    chart02.data = [
+        {
+            category: '1월',
+            first: 40,
+            second: 95
+        },
+        {
+            category: '2월',
+            first: 30,
+            second: 78
+        },
+        {
+            category: '3월',
+            first: 27,
+            second: 40
+        },
+        {
+            category: '4월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '5월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '6월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '7월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '8월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '9월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '10월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '11월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '12월',
+            first: 50,
+            second: 33
+        }
+    ]
+    
+    
+    createSeries('first', 'The First');
+    createSeries('second', 'The Second');
+  
+    function arrangeColumns() {
+    
+        var series = chart02.series.getIndex(0);
+    
+        var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+        if (series.dataItems.length > 1) {
+            var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+            var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+            var delta = ((x1 - x0) / chart02.series.length) * w;
+            if (am4core.isNumber(delta)) {
+                var middle = chart02.series.length / 2;
+    
+                var newIndex = 0;
+                chart02.series.each(function(series) {
+                    if (!series.isHidden && !series.isHiding) {
+                        series.dummyData = newIndex;
+                        newIndex++;
+                    }
+                    else {
+                        series.dummyData = chart02.series.indexOf(series);
+                    }
+                })
+                var visibleCount = newIndex;
+                var newMiddle = visibleCount / 2;
+    
+                chart02.series.each(function(series) {
+                    var trueIndex = chart02.series.indexOf(series);
+                    var newIndex = series.dummyData;
+    
+                    var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+    
+                    series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                    series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                })
+            }
+        }
+    }
+    
+    }); // end am4core.ready()
+</script>

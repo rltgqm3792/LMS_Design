@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 스크립트 -->
+    <script src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-ui.js"></script>    
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/plugin/slick.js"></script> 
+        
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+    
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/LMS_w_tch_main.css" rel="stylesheet" type="text/css" />    
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/slick.css" rel="stylesheet" type="text/css"/>  
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider').slick({
+                row:1,
+                Infinity:true,
+                slideToshow:2,
+                autoplay:true,
+                autoplaySpeed:2000,
+                slidesToScroll:1,
+                slidesToShow:1,
+                dots:true,
+                useTransform: false
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- main_left_wrap -->
+    <div class="main_left_wrap">
+
+        <!-- 과목 -->
+        <ul class="fc">
+            <li class="on"><a href="">전체</a></li>
+            <li><a href="">수학</a></li>
+            <li><a href="">영어</a></li>
+            <li><a href="">전과목</a></li>
+        </ul>
+        <!-- //과목 -->
+
+        <!-- 월 수강생 -->
+        <div class="std_month">
+            <span class="title">7월 수강생</span>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>3,809</dt>
+                        <dd>현재 수강생</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>264</dt>
+                        <dd>과금 수강생</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <!-- //월 수강생 -->
+
+        <!-- 자주 찾는 메뉴 -->
+        <div class="favorite">
+            <span class="title">자주 찾는 메뉴</span>
+            <ul id="sortable" class="ui-sortable">
+                <li class="ui-sortable-handle"><a href="">추가01</a></li>
+                <li class="ui-sortable-handle"><a href="">추가02</a></li>
+                <li class="ui-sortable-handle"><a href="">추가03</a></li>
+                <li class="ui-sortable-handle"><a href="">추가04</a></li>
+                <li class="ui-sortable-handle"><a href="">추가05</a></li>
+                <li class="ui-sortable-handle"><a href="">추가06</a></li>
+            </ul>
+        </div>
+        <!-- //자주 찾는 메뉴 -->
+      
+        <!-- 이 달의 리더스 -->
+        <ul class="slider">
+            <li>
+                <div class="banner">
+                    <em>이 달의 리더스</em>
+                    <p><strong>정유리</strong> 원장님</p>
+                    <span>강남대치점</span>
+                </div>
+            </li>
+            <li>
+                <div class="banner">
+                    <em>이 달의 리더스</em>
+                    <p><strong>박찬호</strong> 원장님</p>
+                    <span>가산디지털단지점</span>
+                </div>
+            </li>
+        </ul> 
+        <!-- //이 달의 리더스 -->
+    </div>
+</body>
+</html>

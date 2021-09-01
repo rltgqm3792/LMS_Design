@@ -1,0 +1,276 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("SMS 관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<span class="point_guide mb_10">단문 SMS 작성 시, 패키지, 장문으로 Byte 변경 시, 충전식 요금이 부과됩니다.</span>
+<ul class="tab_1depth">
+    <li class="on"><a href="index.html?page=etc/sms_manage01">SMS 발송</a></li>
+    <li><a href="index.html?page=etc/sms_manage02">SMS 발송내역</a></li>
+    <li><a href="index.html?page=etc/sms_manage03">SMS 설정</a></li>
+    <li><a href="index.html?page=etc/sms_manage04">포인트 충전</a></li>
+    <li><a href="index.html?page=etc/sms_manage05">SMS 포인트 사용내역</a></li>
+</ul>
+<div class="sms_table">
+    <div class="div01">
+        <!-- sms 발송내용 -->
+        <ul class="sms_send">
+            <li>
+                <input type="text" placeholder="제목을 입력해 주세요." class="sms_send_tit" />
+                <div class="sms_byte">
+                    <span>59</span><span class="blue_color">80byte</span>
+                </div>
+            </li>
+            <li>
+                <textarea placeholder="보내실 내용을 입력해 주세요.
+80byte 초과시 장문으로 자동 전환됩니다"></textarea>
+                <div class="sms_bottom_wrap">
+                    <span>
+                        <a href="javascript:openPop('Hakwon/emoticonPop.html','459','593');" class="btn_emoji">특수문자</a>
+                        <a href="" class="btn_sms_refresh">초기화</a>
+                    </span>
+                    <div class="sms_byte">
+                        <span>500</span><span class="blue_color">2,000byte (장문)</span>
+                    </div>
+                </div>
+                <div class="sms_btn_wrap">
+                    <a href="javascript:openPop('Hakwon/smsSavePop.html','400','270');" class="btn_table">문자저장</a>
+                    <a href="javascript:openPop('Hakwon/smsLoadPop.html','800','670');" class="btn_table">문자 불러오기</a>
+                    <a href="javascript:openPop('Hakwon/smsCtgPop.html','850','593');" class="btn_table">문자 카테고리</a>
+                </div>
+            </li>
+            <li>
+                <span>발신번호</span>
+                <input type="text" value="02-0000-0000" />
+            </li>
+        </ul>
+        <!-- //sms 발송내용 -->
+    </div>
+    <div class="div02">
+        <ul class="tab_2depth">
+            <li><a href="index.html?page=etc/sms_manage01">지사전체</a></li>
+            <li class="on"><a href="index.html?page=etc/sms_manage01_08">주소록</a></li>
+        </ul>
+        <select>
+            <option>즐겨찾기 선택</option>
+        </select>
+        <a href="javascript:openPop('../jisa/Etc/pop_add.html','940','670');" class="btn_top gray">주소록 관리</a>
+        <div class="two_table mt_10">
+            <div>
+                <div class="add_list list01">
+                    <div id="grid"></div>
+                </div>
+                <div class="btn_right mt_10">
+                    <a href="" class="btn_top line">선택</a>
+                </div>
+            </div>
+            <div>
+                <div class="add_list list02">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>정동원</dt>
+                                <dd>지사전체</dd>
+                                <dd>01042521344</dd>
+                                <dd><span class="delete_File"></span></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="table_input mt_10" style="margin-bottom:20px;">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:20%">
+                            <col style="width:80%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>이름</th>
+                                <td><input type="text" placeholder="이름입력"></td>
+                            </tr>
+                            <tr>
+                                <th>휴대폰번호</th>
+                                <td><input type="text" placeholder="'-'없이 입력'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tbl_flex">
+                    <p>선택발송수 : <span class="point">N</span>건</p>
+                    <p><a href="" class="btn_top">추가</a>&nbsp;<a href="" class="btn_top black">전체삭제</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <a href="" class="btn_basic">SMS 발송</a>
+</div>

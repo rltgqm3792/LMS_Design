@@ -1,0 +1,283 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("휴회신청괸리");
+        $(".align_right h2").text("가맹점 수강생 휴회처리");
+
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<ul class="tab_2depth">
+    <li><a href="index.html?page=Stdmng/join_recess_list">휴회 신청리스트</a></li>
+    <li class="on"><a href="index.html?page=Stdmng/join_recess_finish">처리완료</a></li>
+</ul>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>신청일</option>
+                        <option>완료일</option>
+                    </select>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <label for="month_01" class="rdo_idt">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생유형</dt>
+                <dd>
+                    <select>
+                        <option>지사선택</option>
+                    </select>
+                    <select>
+                        <option>하위가맹점선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년구분</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="year" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="year_chk02" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk02" />
+                        <span>초등</span>
+                    </label>
+                    <label for="year_chk03" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk03" />
+                        <span>중등</span>
+                    </label>
+                    <label for="year_chk04" class="chk_idt">
+                        <input type="checkbox" name="year" id="year_chk04" />
+                        <span>고등</span>
+                    </label>
+                    <select>
+                        <option>전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>처리상태</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>승인</option>
+                        <option>기각</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>지사명</option>
+                        <option>지사코드</option>
+                        <option>가맹점명</option>
+                        <option>가맹점코드</option>
+                        <option selected>수강생명</option>
+                        <option>수강생번호</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해주세요" class="input_300">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+
+    <div class="btn_more">
+        <a href="">화살표</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">
+            Total :
+            <strong class="mt_1">1,256</strong>
+            건
+        </span>
+    </p>
+    <p> </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list scroll_x">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:70px;" />
+            <col style="width:80px;" />
+            <col style="width:80px;" />
+            <col style="width:250px;" />
+            <col style="width:130px;" />
+            <col style="width:100px" />
+            <col style="width:80px;" />
+            <col style="width:130px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:100px" />
+            <col style="width:250px" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+            <col style="width:100px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>가맹점코드</th>
+                <th>가맹점명</th>
+                <th>수강생번호 </th>
+                <th>수강생명</th>
+                <th>학년</th>
+                <th>휴대전화</th>
+                <th>입회일</th>
+                <th>재원기간</th>
+                <th>휴회신청일</th>
+                <th>처리상태</th>
+                <th>처리일자</th>
+                <th>휴회사유</th>
+                <th>복회가능성</th>
+                <th>복회예정일</th>
+                <th>자동복회여부</th>
+                <th>수동휴회</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>전과목</td>
+                <td><a class="font_gmarket13">H1003</a></td>
+                <td class="tl">충북동성점</td>
+                <td><span class="font_gmarket13">M0000279758</span></td>
+                <td>아이린</td>
+                <td>예비초등</td>
+                <td><span class="font_gmarket13">010-1111-9999</span></td>
+                <td><span class="font_gmarket13">2021.10.22</span></td>
+                <td>5년 2개월</td>
+                <td><span class="font_gmarket13">2021.10.22</span></td>
+                <td>승인</td>
+                <td><span class="font_gmarket13">2021.10.22</span></td>
+                <td class="tl">코로나 19 단기 휴회</td>
+                <td>없음</td>
+                <td><span class="font_gmarket13">2021.10.22</span></td>
+                <td><span class="font_gmarket13">Y</span>&nbsp;&nbsp;<a href="" class="btn_table line">취소</a></td>
+                <td>지사수동휴회</td>
+            </tr>
+            <!-- <tr>
+                <td colspan="17">
+                    <div class="no_data">조회된 데이터가 없습니다.</div>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

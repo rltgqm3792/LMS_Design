@@ -1,0 +1,457 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("지사관리");
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="align_right">
+    <ul class="tab_2depth">
+        <!-- [D] 활성화 : on-->
+        <li class="on"><a href="index.html?page=jisa/jisa_search">지사검색</a></li>
+        <li><a href="index.html?page=jisa/renewal_search">재계약검색</a></li>
+    </ul>
+    <p>
+        <a href="javascript:openPop('../admin/jisa/pop_renewal_add.html','640','670');" class="btn_top"><span>재계약</span></a>
+    </p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지역/권역</dt>
+                <dd>
+                    <select>
+                        <option>시도</option>
+                        <option></option>
+                    </select>
+                    <select>
+                        <option>군</option>
+                        <option></option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사상태</dt>
+                <dd>
+                    <label for="all_chk01" class="chk_idt all">
+                        <input type="checkbox" name="state" id="all_chk01" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="state_chk01" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk01" />
+                        <span>활동</span>
+                    </label>
+                    <label for="state_chk02" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk02" />
+                        <span>정지</span>
+                    </label>
+                    <label for="state_chk03" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk03" />
+                        <span>해지</span>
+                    </label>
+                    <label for="state_chk04" class="chk_idt">
+                        <input type="checkbox" name="state" id="state_chk04" />
+                        <span>개설중</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>지사명</option>
+                        <option>지사코드</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <select class="h34">
+            <option value="">10</option>
+            <option value="" selected>20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">
+            Total :
+            <strong>1,256</strong>
+            건
+        </span>
+    </p>
+    <p><a class="btn_top gray">영업담당자 추가</a>
+        <a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <select class="h34">
+            <option>지사상태</option>
+            <option>활동</option>
+            <option>해지</option>
+            <option>정지</option>
+        </select><a href="javascript:alert_open('변경되었습니다.');" class="btn_top del">변경</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:3%" />
+            <col style="width:3%" />
+            <col style="width:5%" />
+            <col style="width:4%" />
+            <col />
+            <col style="width:5%" />
+            <col style="width:9%" />
+            <col style="width:9%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:4%" />
+            <col style="width:4%" />
+            <col style="width:5%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:5%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>지사코드</th>
+                <th>지사명</th>
+                <th>지사장명</th>
+                <th>전화번호</th>
+                <th>휴대폰번호</th>
+                <th>가입일</th>
+                <th>해지일</th>
+                <th>정지일</th>
+                <th>지역</th>
+                <th>권역</th>
+                <th>지사상태</th>
+                <th>통합ERP코드</th>
+                <th>영림원ERP코드</th>
+                <th>영업담당자</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td><span class="font_gmarket13">1</span></td>
+                <td>전과목</td>
+                <td><a href="" target="_blank"><span class="font_gmarket13">0101</span></a></td>
+                <td class="tl"><a href="index.html?page=jisa/jisa_detail">은평지사</a></td>
+                <td><a href="javascript:openPop('../admin/jisa/pop_career_info.html','940','670');">홍길동</a></td>
+                <td><span class="font_gmarket13">010-2566-6666</span></td>
+                <td><span class="font_gmarket13">010-6878-2322</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td><span class="font_gmarket13">2010.10.22</span></td>
+                <td>서울</td>
+                <td>서울</td>
+                <td>정지</td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><span class="font_gmarket13">H0212</span></td>
+                <td><a href="javascript:ly_open('../admin/jisa/pop_person_change.html');">백성호</a></td>
+            </tr>
+            <!-- <tr>
+                <td colspan="17">
+                    <div class="no_data">조회된 데이터가 없습니다.</div>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <!-- <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <li><a href="">6</a></li>
+      <li><a href="">7</a></li>
+      <li><a href="">8</a></li>
+      <li><a href="">9</a></li>
+      <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a> -->
+</div>
+<div class="btn_bottom_wrap right">
+    <a href="index.html?page=jisa/jisa_add" class="btn_basic confirm">등록</a>
+</div>

@@ -1,0 +1,390 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit").text("지사주문관리");
+        $(".align_right h2").text("지사주문신청");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+
+    function movepage(page) {
+        window.document.location.href = page;
+        return;
+    }
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+
+<!-- <ul class="step">
+    <li class="on"><a href="index.html?page=order/order_math01_step01">01. 주문정보</a></li>
+    <li><a href="index.html?page=order/order_step02">02. 장바구니(주문정보)확인</a></li>
+    <li><a href="index.html?page=order/order_step03">03. 주문완료</a></li>
+</ul> -->
+<!-- // 1Depth Tab -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_01" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_01" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_02" onclick="movepage('index.html?page=order/order_english');">
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_03">
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품구분</dt>
+                <dd>
+                    <label for="goods_01" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_01" onclick="movepage('index.html?page=order/order_math01');" />
+                        <span>학생용</span>
+                    </label>
+                    <label for="goods_02" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_02" onclick="movepage('index.html?page=order/order_math02');">
+                        <span>교사용</span>
+                    </label>
+                    <label for="goods_03" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_03" checked>
+                        <span>부록지</span>
+                    </label>
+                    <label for="goods_04" class="rdo_idt">
+                        <input type="radio" name="goods" id="goods_04">
+                        <span>홍보판촉물</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품 카테고리</dt>
+                <dd><select>
+                        <option>카테고리1</option>
+                    </select>
+                    <select>
+                        <option>카테고리2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품명</dt>
+                <dd><input type="text" placeholder="상품명을 입력하세요"></dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상품명</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>초등</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>중등</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>고등</span>
+                    </label><span class="select_year">학년선택</span><select>
+                        <option>전체</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+    <!-- //초기화,검색 버튼 -->
+</div>
+<div class="box_guide mt_20">
+    <div>
+        <ul>
+            <li>주문교재 합계 : 3월 부록지 선주문</li>
+            <li>주문접수기간 : <span class="font_gmarket13">2021.10.30 ~ 2021.12.30</span></li>
+            <li>발송예정일 : 2021.12.30</li>
+        </ul>
+    </div>
+</div>
+<div class="table_list mt_20">
+    <table>
+        <colgroup>
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+            <col style="width:9.09%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>초1</th>
+                <th>초2</th>
+                <th>초3</th>
+                <th>초4</th>
+                <th>초5</th>
+                <th>초6</th>
+                <th>중1</th>
+                <th>중2</th>
+                <th>중3</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>주문수량</td>
+                <td><span class="font_gmarket13">14</span< /td>
+                <td><span class="font_gmarket13">33</span< /td>
+                <td><span class="font_gmarket13">91</span< /td>
+                <td><span class="font_gmarket13">81</span< /td>
+                <td><span class="font_gmarket13">111</span< /td>
+                <td><span class="font_gmarket13">84</span< /td>
+                <td><span class="font_gmarket13">>91</span< /td>
+                <td><span class="font_gmarket13">59</span< /td>
+                <td><span class="font_gmarket13">39</span< /td>
+                <td><span class="font_gmarket13">603</span< /td>
+            </tr>
+            <tr>
+                <td>최종수량</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><span class="font_gmarket13">840</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <a href="" class="btn_basic confirm">주문 완료</a>
+</div>
+<div class="box_guide mt_20">
+    <div>
+        <ul>
+            <li>가맹점 주문교재 : 12월 부록지 선주문</li>
+        </ul>
+    </div>
+</div>
+<div class="table_list mt_20">
+    <table class="thead">
+        <colgroup>
+            <col style="width:20%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+            <col style="width:8%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>교실명</th>
+                <th>초1</th>
+                <th>초2</th>
+                <th>초3</th>
+                <th>초4</th>
+                <th>초5</th>
+                <th>초6</th>
+                <th>중1</th>
+                <th>중2</th>
+                <th>중3</th>
+                <th>합계</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="height:300px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width:20%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+                <col style="width:8%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+                <tr>
+                    <td class="tl">서대문 북가좌1호점</td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                    <td><span class="font_gmarket13">0</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

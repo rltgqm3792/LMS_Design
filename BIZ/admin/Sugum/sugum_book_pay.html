@@ -1,0 +1,281 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit, .align_right h2").text("교재비입금내역");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>입금기간</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                    <span class="line">~</span>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>가맹점명</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <a href="" class="btn_top gray">교재비 입금설정</a>
+    </p>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="" class="btn_top line excel"><span>교재비 입금 업로드</span></a>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table class="thead">
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%">
+            <col style="width:8%">
+            <col style="width:10%">
+            <col style="width:7%">
+            <col style="width:7%" />
+            <col />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:10%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>
+                    <div class="btn_sort">
+                        FC구분
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>사이트 아이디</th>
+                <th>마감월</th>
+                <th>
+                    <div class="btn_sort">
+                        가맹점코드
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>가맹점명</th>
+                <th>과목</th>
+                <th>ERP코드</th>
+                <th>입금액(원)</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="height:300px;">
+        <table class="tbody">
+            <caption></caption>
+            <colgroup>
+
+                <col style="width:4%">
+                <col style="width:8%">
+                <col style="width:10%">
+                <col style="width:7%">
+                <col style="width:7%" />
+                <col />
+                <col style="width:8%" />
+                <col style="width:8%" />
+                <col style="width:10%" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+                <tr>
+                    <td><span class="font_gmarket13">698</span></td>
+                    <td>전과목</td>
+                    <td><span class="font_gmarket13">jisa69</span></td>
+                    <td><span class="font_gmarket13">10</span></td>
+                    <td><span class="font_gmarket13">H0987</span></td>
+                    <td class="tl">동탄 푸르지오점</td>
+                    <td>수학</td>
+                    <td><span class="font_gmarket13">ERP098765</span></td>
+                    <td><span class="font_gmarket13">38,000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="table_list no_line">
+        <table>
+            <caption></caption>
+            <colgroup></colgroup>
+            <tfoot>
+                <tr>
+                    <td class="tr"><span class="strong">총 입금액(원)</span>&nbsp;:&nbsp;<span class="strong_G">1,080,796,276</span></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

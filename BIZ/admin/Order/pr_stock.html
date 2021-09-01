@@ -1,0 +1,113 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("재고관리");
+
+        /*$('.ly_info').on('click',function() {
+            $('.ly_info_pop').css('display','block');
+        });
+        $('.ly_info_close').on('click',function() {
+            $('.ly_info_pop').css('display','none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="fc_rdo02" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo02" checked />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo04" class="rdo_idt">
+                        <input type="radio" name="fc" id="fc_rdo04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>2021년</option>
+                    </select>
+                    <select>
+                        <option>02월</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>알림사항</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="alert" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="alert_chk02" class="chk_idt">
+                        <input type="checkbox" name="alert" id="alert_chk02" />
+                        <span>생산필요</span>
+                    </label>
+                    <label for="alert_chk03" class="chk_idt">
+                        <input type="checkbox" name="alert" id="alert_chk03" />
+                        <span>입고체크</span>
+                    </label>
+                    <label for="alert_chk04" class="chk_idt">
+                        <input type="checkbox" name="alert" id="alert_chk04" />
+                        <span>입고지연</span>
+                    </label>
+                    <label for="alert_chk05" class="chk_idt">
+                        <input type="checkbox" name="alert" id="alert_chk05" />
+                        <span>품절임박</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>도서명</option>
+                        <option>도서코드</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요" class="input_300">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <span class="list_num">전체 <strong>25</strong>개</span>
+    </p>
+    <p>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="index.html?page=order/pr_stock_add" class="btn_top">재고등록</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>
+<a href="javascript:openPop('../admin/order/pop_entering.html','940','670');">입고체크</a>

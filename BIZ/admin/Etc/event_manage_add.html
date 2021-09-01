@@ -1,0 +1,230 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("이벤트 관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+        datepicker();
+
+
+    });
+    function fileChange() {
+        var cur = $("#fileUpload").val().split("\\");
+        $("#fileNm").val(cur[cur.length - 1]);
+    }
+</script>
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p><span class="required mr_10"></span>은 필수 입력 항목입니다.</p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>구분<span class="required"></span></th>
+                <td>
+                    <label for="fc_rdo01" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo01" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_rdo02" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo02" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_rdo03" class="rdo_idt table">
+                        <input type="radio" name="fc" id="fc_rdo03" />
+                        <span>전과목</span>
+                    </label>
+                </td>
+                <th>이벤트 유형<span class="required"></span></th>
+                <td>
+                    <label for="type_rdo01" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_rdo01" />
+                        <span>정기</span>
+                    </label>
+                    <label for="type_rdo02" class="rdo_idt table">
+                        <input type="radio" name="type" id="type_rdo02" disabled />
+                        <span>선착순</span>
+                    </label><input type="text" class="input_100">명
+                </td>
+            </tr>
+            <tr>
+                <th>이벤트 기간<span class="required"></span></th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <label for="month_01" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_01" />
+                        <span>1개월</span>
+                    </label>
+                    <label for="month_02" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_02" />
+                        <span>3개월</span>
+                    </label>
+                    <label for="month_03" class="rdo_idt table">
+                        <input type="radio" name="month" id="month_03" />
+                        <span>6개월</span>
+                    </label>
+                </td>
+                <th>당첨자 발표<span class="required"></span></th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <th>이벤트명<span class="required"></span></th>
+                <td colspan="3"><input type="text" class="input_full" placeholder="제목을 30자 이내로 입력해주세요."></td>
+            </tr>
+            <tr>
+                <th>이벤트 배너<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+                <th>배너 높이<span class="required"></span></th>
+                <td><input type="text">px</td>
+            </tr>
+            <tr>
+                <th>썸네일<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+                <th>당첨자 이미지<span class="required"></span></th>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">상품등록</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%">
+            <col />
+            <col />
+            <col />
+            <col style="width:25%" />
+            <col style="width:10%" />
+            <col style="width:6%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>상품명<span class="required"></span></th>
+                <th>사용 스마일 포인트<span class="required"></span></th>
+                <th>당첨자 수<span class="required"></span></th>
+                <th>이미지<span class="required"></span></th>
+                <th>지급방법<span class="required"></span></th>
+                <th>응모인원</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+                <td><select>
+                        <option>기프트콘</option>
+                    </select></td>
+                <td>0명</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+                <td><select>
+                        <option>기프트콘</option>
+                    </select></td>
+                <td>0명</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+                <td><select>
+                        <option>기프트콘</option>
+                    </select></td>
+                <td>0명</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+                <td><select>
+                        <option>기프트콘</option>
+                    </select></td>
+                <td>0명</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="text" class="input_full"></td>
+                <td><input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly" />
+                    <label for="fileUpload" class="btn_table gray">파일선택</label>
+                </td>
+                <td><select>
+                        <option>기프트콘</option>
+                    </select></td>
+                <td>0명</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="javascript:openPop('../admin/Etc/pop_event_winner.html','940','670');" class="btn_basic line">당첨자보기</a>
+        <a href="javascript:openPop('../admin/Etc/pop_event.html','840','670');" class="btn_basic line">미리보기</a>
+        <a href="" class="btn_basic">저장</a>
+        <a href="" class="btn_basic black">취소</a>
+    </p>
+</div>

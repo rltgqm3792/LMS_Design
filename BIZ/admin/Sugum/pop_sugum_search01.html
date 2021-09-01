@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/Biz/css/lms_w_adm.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>상세검색</h1>
+        </header>        
+        <section class="pop_content">
+             <!-- tit_sub_txt -->
+               <!-- 2Depth Tab -->
+            <ul class="tab_1depth">
+                <!-- [D] 활성화 : select-->
+                <li class="on"><a href="">전체</a></li>
+                <li><a href="">수학</a></li>
+                <li><a href="">영어</a></li>
+                <li><a href="">전과목</a></li>
+            </ul>
+            <!-- // 2Depth Tab -->
+             <!-- 2Depth Tab -->
+            <ul class="tab_2depth">
+                <!-- [D] 활성화 : select-->
+                <li class="on"><a href="pop_sugum_search01.html">지사검색</a></li>
+                <li><a href="pop_sugum_search02.html">가맹점검색</a></li>
+            </ul>
+            <!-- // 2Depth Tab -->
+             <div class="search_wrap">
+                <ul class="info_group">
+                    <li>
+                        <dl>
+                            <dt>지사검색</dt>
+                            <dd><select>
+                                <option>지역 전체</option>
+                            </select>
+                            <select>
+                                <option>지사명</option>
+                            </select>
+                        <input type="text" class="input_200" placeholder="검색어를 입력하세요"></dd>
+                        </dl>
+                    </li> 
+                </ul>
+                    <!-- 초기화,검색 버튼 -->
+                <div class="btn_wrap box_in">        
+                    <a href="" class="btn_search big">검색</a>
+                </div>
+            </div>
+            <h2 class="tit_pop mt_20">지사목록</h2>
+            <!--테이블 상단-->
+            <div class="btn_top_wrap between">
+                <p>
+                    <span class="list_num">전체 <strong>250</strong>개</span>
+                </p> 
+                <a href="" class="btn_top black">선택해제</a>
+            </div>
+            <!--//테이블 상단-->
+            <div class="table_list">
+                <table class="thead">
+                    <colgroup>                        
+                        <col style="width:50px;" />
+                        <col style="width:70px;" />
+                        <col style="width:80px;" />
+                        <col style="width:80px;" />
+                        <col >
+                        <col style="width:80px;" />
+                        <col style="width:150px;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="all_chk04" class="chk_idt all">
+                                    <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);"/>
+                                    <span>전체</span>
+                                </label>
+                            </th>
+                            <th>No</th>
+                            <th>FC구분</th>
+                            <th>지사코드</th>
+                            <th>지사명</th>
+                            <th>가맹점수</th>
+                            <th>대표연락처</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="scroll" style="height:120px;">
+                    <table class="tbody">
+                        <colgroup>
+                            <col style="width:50px;" />
+                            <col style="width:70px;" />
+                            <col style="width:80px;" />
+                            <col style="width:80px;" />
+                            <col >
+                            <col style="width:80px;" />
+                            <col style="width:150px;" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="board01" class="chk_idt">
+                                        <input type="checkbox" name="board" id="board01"/>
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td><span class="font_gmarket13">91</span></td>
+                                <td>수학</td>
+                                <td><span class="font_gmarket13">0505</span></td>
+                                <td class="tl">대구수성경산지사</td>
+                                <td><span class="font_gmarket13">38</span</td>
+                                <td><span class="font_gmarket13">053-1254-5632</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>      
+            </div>
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            <a href="javascript:window.close();" class="btn confirm">확인</a>
+        </section>
+    </article>
+</body>
+</html>

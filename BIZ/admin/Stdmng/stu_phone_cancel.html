@@ -1,0 +1,135 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("학부모 연락처 제한 해지");
+        $(".group_nav.one_depth .tit").text("수강생관리"); // navigator 1차 menu error 때문에 추가 (2021.8.19) :chan
+
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="btn_top_wrap between" style="margin-bottom:0px;">
+    <h4 class="tit_h4">연락처 추가</h4>
+    <p class="mb_5">
+        <a href="" class="btn_top">저장</a>
+    </p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>휴대폰번호</th>
+                <td><input type="text" class="input_300"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">제한해지 휴대폰 목록</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>휴대폰번호</dt>
+                <dd><input type="text" class="input_500" placeholder="검색어를 입력하세요"></dd>
+            </dl>
+        </li>
+    </ul>
+
+    <div class="btn_wrap box_in">
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p>
+        <span class="list_num">
+            Total :
+            <strong class="mt_1">1,256</strong>
+            건
+        </span>
+    </p>
+    <p>
+
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%">
+            <col style="width:30%">
+            <col style="width:30%">
+            <col style="width:30%">
+            <col style="width:6%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <label for="all_chk04" class="chk_idt all">
+                        <input type="checkbox" name="board" id="all_chk04" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                </th>
+                <th>FC구분</th>
+                <th>휴대폰번호</th>
+                <th>등록일</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="board01" class="chk_idt">
+                        <input type="checkbox" name="board" id="board01" />
+                        <span></span>
+                    </label>
+                </td>
+                <td>수학</td>
+                <td><a href="javascript:openPop('../admin/Stdmng/pop_phone_info.html','840','670');"><span class="font_gmarket13">010-1234-1234</span></a></td>
+                <td><span class="font_gmarket13">2021.03.22</span></td>
+                <td><a href="" class="btn_table black">삭제</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

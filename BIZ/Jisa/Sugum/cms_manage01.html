@@ -1,0 +1,143 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("CMS 신청관리");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+        /*$('.ly_info').on('click', function () {
+            $('.ly_info_pop').css('display', 'block');
+        });
+        $('.ly_info_close').on('click', function () {
+            $('.ly_info_pop').css('display', 'none');
+        });*/
+
+        $('.ly_info01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'block');
+        });
+        $('.ly_info_close01').on('click', function () {
+            $('.ly_info_pop01').css('display', 'none');
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<!-- tab_2depth -->
+<div class="align_right">
+    <ul class="tab_2depth">
+        <li class="on"><a href="index.html?page=sugum/cms_manage01">지사 CMS 신규/변경/해지</a></li>
+        <li><a href="index.html?page=sugum/cms_manage02">가맹점 CMS 현황</a></li>
+    </ul>
+    <p>
+        <a href="javascript:openPop('../jisa/sugum/pop_cms_career.html','940','670');" class="btn_top">이력보기</a>
+    </p>
+</div>
+<!-- tab_2depth -->
+<div class="tooltip">
+    <h4 class="tit_h4 mt_20">CMS 신규/변경/해지</h4>
+    <p>
+        <a href="javascript:void(0);" class="ly_info01"></a>
+    <div class="ly_info_pop01" style="left:200px;">
+        <div><a href="javascript:void(0);" class="ly_info_close01"></a>
+            <ul>
+                <li>- 지사에서 신청한 CMS 신규/변경/해지 내용이 제시됩니다.</li>
+                <li>신규일 경우 “신청” 수정일 경우 “변경/해진”로 표기되됩니다.</li>
+            </ul>
+        </div>
+    </div>
+    </p>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>지사코드</th>
+                <td>자동입력</td>
+                <th>지사장명</th>
+                <td>자동입력</td>
+            </tr>
+            <tr>
+                <th>원장명</th>
+                <td>자동입력</td>
+                <th>생년월일</th>
+                <td><span class="font_gmarket13">2018.10.30</span></td>
+            </tr>
+            <tr>
+                <th>사업자번호</th>
+                <td><span class="font_gmarket13">1132-54135243-541</span></td>
+                <th>구분</th>
+                <td>신규</td>
+            </tr>
+            <tr>
+                <th>통장정보</th>
+                <td class="in_table" colspan="3">
+                    <table class="table_sub">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:40%">
+                            <col style="width:10%">
+                            <col style="width:40%">
+                        </colgroup>
+                        <tr>
+                            <th colspan="4" style="border-right:none;">
+                                <label for="month_01" class="rdo_idt">
+                                    <input type="radio" name="month" id="month_01" checked />
+                                    <span>사업자 통장</span>
+                                </label>
+                                <label for="month_02" class="rdo_idt">
+                                    <input type="radio" name="month" id="month_02" />
+                                    <span>개인통장</span>
+                                </label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>은행선택</th>
+                            <td><select>
+                                    <option>선택</option>
+                                </select></td>
+                            <th>계좌번호</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>예금주</th>
+                            <td colspan="3"><input type="text"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>출금방식</th>
+                <td>CMS</td>
+                <th>청구시작일</th>
+                <td>신청일 다음달부터</td>
+            </tr>
+            <tr>
+                <th>청구주기</th>
+                <td>매월</td>
+                <th>약정일</th>
+                <td>매달 5일</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic">신청</a>
+        <!--<a href="" class="btn_basic line">변경</a>
+        <a href="" class="btn_basic black">해지</a>-->
+    </p>
+</div>

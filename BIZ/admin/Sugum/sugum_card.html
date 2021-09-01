@@ -1,0 +1,195 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".nav_two .two_tit,.align_right h2").text("카드수수료내역");
+
+        //달력
+        //calendar();
+        datePickerByClass();
+
+
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+    <p></p>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <label for="all_chk" class="chk_idt all">
+                        <input type="checkbox" name="fc" id="all_chk" onchange="all_check(this);" />
+                        <span>전체</span>
+                    </label>
+                    <label for="fc_chk02" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk02" />
+                        <span>수학</span>
+                    </label>
+                    <label for="fc_chk03" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk03" />
+                        <span>영어</span>
+                    </label>
+                    <label for="fc_chk04" class="chk_idt">
+                        <input type="checkbox" name="fc" id="fc_chk04" />
+                        <span>전과목</span>
+                    </label>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>년월선택</dt>
+                <dd>
+                    <!-- 달력 추가 시작 2021.8.18 :chan -->
+                    <span class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" class="datepicker-input" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </span>
+                    <span class="dateWrapper" style="margin-top: -1px;"></span>
+                    <!-- 달력 추가 끝 2021.8.18 :chan -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>지사/가맹점 선택</dt>
+                <dd>
+                    <select>
+                        <option>지사전체</option>
+                    </select>
+                    <select>
+                        <option>가맹점전체</option>
+                    </select>
+                    <input type="text" class="txt_search" placeholder="검색어를 입력하세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br />초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div>
+</div>
+<h4 class="tit_h4 mt_20">카드수수료 요약정보</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:25%">
+            <col style="width:25%">
+            <col style="width:25%">
+            <col style="width:25%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>지사 수</th>
+                <th>가맹점 수</th>
+                <th>총 결제금액합계(원)</th>
+                <th>카드수수료 전체 금액 합계(원)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">1</span></td>
+                <td><span class="font_gmarket13">55</span></td>
+                <td><span class="font_gmarket13">987,600</span></td>
+                <td><span class="font_gmarket13">987,600</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- //초기화,검색 버튼 -->
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <p></p>
+    <p>
+        <a class="btn_top line excel"><span>엑셀 다운로드</span></a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:6%;" />
+            <col style="width:7%;" />
+            <col style="width:6%;" />
+            <col />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+            <col />
+            <col style="width:10%;" />
+            <col style="width:10%;" />
+            <col style="width:10%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>마감월</th>
+                <th>지사코드</th>
+                <th>지사명</th>
+                <th>
+                    <div class="btn_sort">
+                        FC구분
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        가맹점코드
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>가맹점명</th>
+                <th>결제금액(원)</th>
+                <th>카드 수수료율(%)</th>
+                <th>카드수수료 전체 금액(원)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="font_gmarket13">698</span></td>
+                <td><span class="font_gmarket13">2021.10</span></td>
+                <td><span class="font_gmarket13">M0987</span></td>
+                <td class="tl">금천점</td>
+                <td>수학</td>
+                <td><span class="font_gmarket13">H1234</span></td>
+                <td class="tl">가산푸르지오점</td>
+                <td><span class="font_gmarket13">36,000</span></td>
+                <td><span class="font_gmarket13">5.50%</span></td>
+                <td><span class="font_gmarket13">36,000</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+        <li><a href="">10</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

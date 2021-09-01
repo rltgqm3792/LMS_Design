@@ -1,0 +1,334 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<h4 class="tit_h4">포인트/요금 정보</h4>
+
+<!-- 포인트/요금 정보 -->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 15%"/>
+            <col style="width: 35%"/>
+            <col style="width: 15%"/>
+            <col style="width: 35%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>SMS 잔여 포인트</th>
+                <td colspan="3">
+                    <div class="pos_wrap">
+                        <strong class="gm_font col_blue">500,000 P</strong>
+                        <a
+                            href="javascript:openPop('hakwon/smsPointPop.html','800','620');"
+                            class="btn_table right">SMS 포인트 충전</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>요금</th>
+                <td>
+                    [문자1건당] 단문 : 17(P), 장문 : 30(P)
+                </td>
+                <th>전송 가능 건수</th>
+                <td>
+                    단문 : 11,329 건 (장문 : 6419건)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //포인트/요금 정보 -->
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS발송</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSendHist">SMS발송내역</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/smsSet">SMS설정</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/pointRecharge">포인트 충전내역</a>
+    </li>
+</ul>
+
+<!-- SMS발송 설정 -->
+<h4 class="tit_h4">SMS발송 설정</h4>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%"/>
+            <col style="width:80%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>발신자 번호</th>
+                <td class="left">
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="call_num01" name="call_num" checked="checked"/>
+                            <label for="call_num01">전화번호(사업자)</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="call_num02" name="call_num"/>
+                            <label for="call_num02">휴대폰 번호</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>출결 SMS</th>
+                <td class="left">
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="attd01" name="attd" checked="checked"/>
+                            <label for="attd01">사용 (출결 체크 시 SMS전송)</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="attd02" name="attd"/>
+                            <label for="attd02">미사용 (출결 체크 시 시간만 입력)</label>
+                        </span>
+                    </span>
+                    <a
+                        href="javascript:openPop('hakwon/smsAttdPop.html','800','670');"
+                        class="btn_table">발송대상자 설정</a>
+                    <span>(선택된 발송대상자 : 128명)</span>
+                </td>
+            </tr>
+            <tr>
+                <th>수강료납부 수동<br/>
+                    SMS</th>
+                <td class="left">
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="sms_manual01" name="sms_manual"/>
+                            <label for="sms_manual01">사용</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="sms_manual02" name="sms_manual"/>
+                            <label for="sms_manual02">미사용</label>
+                        </span>
+                    </span>
+                    <span class="dot">수강료 납부관리에서 보낼 수강생에게 수동으로 체크해서 보내는 기능</span>
+                </td>
+            </tr>
+            <tr>
+                <th>수강료 납부 SMS<br/>
+                    자동 예약 발송</th>
+                <td class="left">
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="reserve01" name="reserve"/>
+                            <label for="reserve01">사용</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="reserve02" name="reserve"/>
+                            <label for="reserve02">미사용</label>
+                        </span>
+                    </span>
+                    <a
+                        href="javascript:openPop('hakwon/smsReservePop.html','800','670');"
+                        class="btn_table">발송대상자 설정</a>
+                    <span>(선택된 발송대상자 : 128명)</span>
+                    <span class="dot left_spc">납부예정일 3일 전 오후 1시에 자동 발송</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //SMS발송 설정 -->
+
+<!-- 출결 SMS -->
+<h4 class="tit_h4">출결 SMS
+    <div class="tooltip_area">
+        <button class="btn_tooltip small">tooltip</button>
+        <div class="tooltip_cont right w650">
+            <ul class="bu_type">
+                <li>출결 SMS을 [사용]으로 설정된 경우에만 당일출석부에서 회원 선택 시 해당 문구가 자동으로 전송됩니다.</li>
+                <li>[NAME]에는 SMS 발송 시 선택된 수강생의 이름이 보여집니다.
+                </li>
+            </ul>
+            <button class="close">툴팁닫기</button>
+        </div>
+    </div>
+</h4>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%"/>
+            <col style="width:80%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>입실</th>
+                <td class="left">
+                    <input type="text" class="input_w75" value="[NAME] 수강생이 학원에 도착했습니다."/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>퇴실</th>
+                <td class="left">
+                    <input type="text" class="input_w75" value="[NAME] 수강생이 수업이 끝나고 집으로 출발합니다."/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>지각</th>
+                <td class="left">
+                    <input type="text" class="input_w75" value="[NAME] 수강생이 아직 학원에 오지 않았습니다."/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>결석</th>
+                <td class="left">
+                    <input type="text" class="input_w75" value="[NAME] 수강생이 오늘 공부방에 오지 않았습니다."/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>결과</th>
+                <td class="left">
+                    <input type="text" class="input_w75" value="[NAME] 금일 25문제 중 25개를 맞췄습니다."/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //출결 SMS -->
+
+<!-- 수강료 납부 SMS -->
+<h4 class="tit_h4">수강료 납부 SMS
+    <div class="tooltip_area">
+        <button class="btn_tooltip small">tooltip</button>
+        <div class="tooltip_cont right w650">
+            <ul class="bu_type">
+                <li>수강료납부 예약 발송 SMS는 권한 설정이 사용으로 체크 되어야 하며, 납부예정일 3일 전 오후 1시에 자동으로 예약문자가 발송됩니다.</li>
+                <li>[NAME],[날짜]는 수강생명과 수강료납부일로 대체됩니다.</li>
+                <li>납부예정일 3일 전 오후 1시에 자동으로 예약문자가 발송됩니다.</li>
+                <li>SMS 포인트가 예약 발송에 필요한 SMS 포인트보다 부족할 경우 예약 설정된 SMS 문자는 발송되지 않습니다.</li>
+                <li>SMS 예약 발송할 대상자를 [대상자선정] 설정하셔야 하며, 공부방 활동중인 일반수강생을 대상으로 합니다.(자녀 수강생, 생보자 제외)</li>
+                <li>수동SMS는 수강료 납부관리에서 보낼 수강생에게 수동으로 체크하여 보내는 기능입니다.</li>
+            </ul>
+            <button class="close">툴팁닫기</button>
+        </div>
+    </div>
+</h4>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%"/>
+            <col style="width:80%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>납부예약</th>
+                <td class="left">
+                    <input
+                        type="text"
+                        class="input_w75"
+                        value="[NAME] 회원님의 수강료납부 기일이 [날짜] 입니다. 확인 부탁드립니다"/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>납부완료</th>
+                <td class="left">
+                    <input
+                        type="text"
+                        class="input_w75"
+                        value="감사합니다.[NAME]수강생님의 회비 납부가 확인되었습니다. "/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>미납</th>
+                <td class="left">
+                    <input
+                        type="text"
+                        class="input_w75"
+                        value="[NAME] 수강생님의 회비일은 [날짜] 입니다. 확인 부탁드립니다"/>
+                    <span class="gm_font left_spc">59 /
+                        <span class="col_blue">80byte</span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //수강료 납부 SMS -->
+
+<div class="btn_bottom_wrap right">
+    <a href="" class="btn_basic">저장</a>
+</div>

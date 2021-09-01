@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+                  
+    <!--plugin -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css"  rel="stylesheet" type="text/css"/>
+    <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css"  rel="stylesheet" type="text/css"/>
+    <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+   
+    <style>
+        /* scrollbar-width: thin; */
+    </style>    
+
+   <script type="text/javascript">
+        $(function(){
+            //top nav 활성화
+            //[D] 개발에서 폴더명 바꾸시면 여기에서 바꾸면 됩니다. 
+            if(folder == 'stdmng'){
+                $('.one_depth .tit').text('수강생관리');
+            }
+            else if(folder == 'mathlearning'){
+                $('.one_depth .tit').text('학습관리(수학)');
+            }
+            else if(folder == 'englearning'){
+                $('.one_depth .tit').text('학습관리(영어)');
+            }
+            else if(folder == 'tclasslearning'){
+                $('.one_depth .tit').text('학습관리(전과목)');
+            }
+            else if(folder == 'order'){
+                $('.one_depth .tit').text('주문관리');
+            }
+            else if(folder == 'education'){
+                $('.one_depth .tit').text('교육관리');
+            }
+            else if(folder == 'community'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'pds'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'hakwon'){
+                $('.one_depth .tit').text('가맹점관리');
+            }
+
+            // 학습 두개일 경우
+            if($('.multi', '.std_list_wrap .type.card').length > 0) {
+                var _multiCard = $('.multi', '.std_list_wrap .type.card');
+                _multiCard.hover(function(){
+                    $(this).addClass('over');
+                }, function() {
+                    $(this).removeClass('over');
+                });
+                _multiCard.click(function() {
+                    var _multiCardCls = $(this).removeClass('over').attr('class').replace('multi ', '');
+                    var _showObj = $(this).find('.' + _multiCardCls);
+                    var _changeObj = $(this).find('.card').not(_showObj);
+                    var _changeCardCls = _changeObj.attr('class').replace('card ', '');
+                    $(this).removeClass(_multiCardCls).addClass(_changeCardCls);
+                    _showObj.hide();
+                    _changeObj.show();
+                });
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <!--전체레이아웃-->
+    <article id="wrap" class="contain">
+        <section class="header">
+            <!-- info -->
+            <div class="group_info">
+                <div><a href="#" class="btn_class">수업모드</a></div>
+                <div class="login_off">
+                    <p class="txt1">이용시간(세션)만료  55분 00초 전</p>
+                    <a href="#" class="btn_time">시간연장</a>
+                    <div class="info">
+                        <dl>
+                            <dt><img src="http://image.test.hbedu.co.kr/LMS/FC/img/master/img07.png" src="선생님이미지"></dt>
+                            <dd><a href="#" class="btn_adm_name"><strong>관리자</strong>님 환영합니다.</a></dd>
+                        </dl>
+                        <div class="ly_info">
+                            <ul>
+                                <li><a href="#">비밀번호 변경</a></li>
+                                <li><a href="#">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="btn_alarm">알림<span>9</span></a>
+                </div>
+            </div>
+            <!-- //info -->
+
+            <!-- top 네비 -->
+            <div id="top_nav" class="top_nav" >
+                <ul>
+                    <li class="home"><a href="#">홈</a></li>
+                
+                </ul>
+            </div>
+        </section>
+        <!-- lnb  -->
+        <section id="gnb" class="gnb_wrap">
+            <!--원뎁스-->
+            <menu class="gnb_1depth">
+                <!--로고-->
+                <h1><a href="index.html">SMART</a></h1>
+                <!--//로고-->
+                <a href="#" class="btn_all_menu">전체메뉴</a>
+                <ul>
+                    <li><a href="javascript:void(0);" class="stdmng" data-tab="gnb_std">수강생 관리</a></li>
+                    <li><a href="javascript:void(0);" class="mathlearning" data-tab="gnb_math">학습관리(수학)</a></li>
+                    <li><a href="javascript:void(0);" class="englearning" data-tab="gnb_eng">학습관리(영어)</a></li>
+                    <li><a href="javascript:void(0);" class="tclasslearning" data-tab="gnb_tclass">학습관리(전과목)</a></li>
+                    <li><a href="javascript:void(0);" class="order" data-tab="gnb_order">주문관리</a></li>
+                    <li><a href="javascript:void(0);" class="education" data-tab="gnb_edu">가맹점교육관리</a></li>
+                    <li><a href="javascript:void(0);" class="community" data-tab="gnb_cmn">커뮤니티</a></li>
+                    <li><a href="javascript:void(0);" class="pds" data-tab="gnb_pds">자료실</a></li>
+                    <li><a href="javascript:void(0);" class="hakwon" data-tab="gnb_hakwon">가맹점관리</a></li>
+                </ul>
+            </menu>
+            <!--//원뎁스-->
+        </section>
+        <section id="container" class="content">
+            
+            <!-- [D]컨텐츠 정보가 들어갑니다. -->
+            <div class="wrap_sub">
+
+                <!--tit_main-->
+                <div class="group_title">
+                    <h2 class="tit_main">지사/관리자 디자인 가이드</h2>
+                </div>
+                <!--//tit_main-->
+                
+                <ul class="tab_1depth">
+                    <!-- [D] 활성화 : on-->
+                    <li><a href="tab.html">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                    <li><a href="search.html">검색</a></li>
+                    <li><a href="table.html">테이블</a></li>
+                    <li><a href="table_regis.html">가입테이블</a></li>
+                    <li class="on"><a href="std_list01.html">진행중 학습 리스트</a></li>
+                </ul>
+    
+                <!-- 2Depth Tab -->
+                <ul class="tab_2depth">
+                    <!-- [D] 활성화 : on-->
+                    <li class="on"><a href="std_list01.html">전과목</a></li>
+                    <li><a href="std_list02.html">수학</a></li>
+                </ul>
+
+                <h3 class="tit_h3">-- 진행중 학습 리스트(전과목) --</h3>
+                <!-- 조회 -->
+                <div class="search_wrap type03">
+                    <span class="txt_area">
+                        <span class="date">2020-10-22 목요일</span>
+                        <span class="study">진행중인 학습 10<em>/66</em></span>
+                    </span>
+                    <span class="frm_wrap">
+                        <select>
+                            <option value="">수강생 전체</option>
+                            <option value="">학습전</option>
+                            <option value="">학습중(대면)</option>
+                            <option value="">학습중(비대면)</option>
+                            <option value="">특별학습</option>
+                            <option value="">학습완료</option>
+                        </select>
+                        <select>
+                            <option value="">교사전체</option>
+                        </select>
+                    </span>
+                </div>
+                <!--//조회-->
+                <div class="btn_top_wrap right">
+                    <span>
+                        <label for="thum_01" class="rd_list card">
+                            <input type="radio" name="thum" value="1" id="thum_01" checked="checked"/>
+                            <span>리스트형</span>
+                        </label>
+                        <label for="thum_02" class="rd_list">
+                            <input type="radio" name="thum" value="2" id="thum_02"/>
+                            <span>썸네일형</span>
+                        </label>
+                    </span>
+                    <a href="javascript:void(0);" class="btn_refresh"><span>새로고침</span></a>
+                </div>
+                <div class="btn_top_wrap top_sort_wrap between">
+                    <ul class="sort">
+                        <li><a href="javascript:void(0);" class="on">입실순</a></li>
+                        <li><a href="javascript:void(0);">이름순</a></li>
+                        <li><a href="javascript:void(0);">학년순</a></li>
+                        <li><a href="javascript:void(0);">학습진행순</a></li>
+                    </ul>
+                    <p class="std_state">
+                        <span class="before">학습 전</span>
+                        <span class="ing">학습 중</span>
+                        <span class="ing_untact">학습 중(비대면)</span>
+                        <span class="complete">학습 완료</span>
+                        <span class="special">특별 학습</span>
+                        <span class="self">자율학습</span>
+                    </p>
+                </div>
+                <h4 class="tit_h4">[목록형]</h4>
+                <div class="std_list_wrap">
+                    <ul class="type list">
+                        <li class="disable">
+                            <div class="std_state">
+                                <span class="state">학습전</span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">김병현<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar"></span>
+                                    <em class="txt"></em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearning/pop_ongoingStdCard01.html', '900', '800');" disabled><span>커뮤니티</span></button>
+                                <button type="button" onclick="openPop('../Tclasslearning/pop_ongoingStdCard02.html', '900', '800');" disabled><span>질문</span></button>
+                                <button type="button" onclick="openPop('../Tclasslearning/pop_ongoingStdCard03.html', '1000', '800');" disabled><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="ing">
+                            <div class="std_state">
+                                <span class="state">학습중</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:59%"></span>
+                                    <em class="txt">59%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearning/pop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearning/pop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearning/pop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="complete">
+                            <div class="std_state">
+                                <span class="state">학습 완료</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:100%"></span>
+                                    <em class="txt">100%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="ing_untact">
+                            <div class="std_state">
+                                <span class="state">학습중(비)</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:65%"></span>
+                                    <em class="txt">65%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="special">
+                            <div class="std_state">
+                                <span class="state">특별 학습</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:65%"></span>
+                                    <em class="txt">65%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="self">
+                            <div class="std_state">
+                                <span class="state">자율학습</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                                <button type="button" class="timer"><span>80%</span></button>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:70%"></span>
+                                    <em class="txt">70%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <h4 class="tit_h4">[카드형]</h4>
+                <div class="std_list_wrap">
+                    <ul class="type card col4">
+                        <li class="disable">
+                            <div class="std_state">
+                                <span class="state">학습전</span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">김병현<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar"></span>
+                                    <em class="txt"></em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');" disabled><span>커뮤니티</span></button>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');" disabled><span>질문</span></button>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');" disabled><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="ing">
+                            <div class="std_state">
+                                <span class="state">학습중</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:59%"></span>
+                                    <em class="txt">59%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="complete">
+                            <div class="std_state">
+                                <span class="state">학습 완료</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:100%"></span>
+                                    <em class="txt">100%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="ing_untact">
+                            <div class="std_state">
+                                <span class="state">학습중(비)</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:65%"></span>
+                                    <em class="txt">65%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="special">
+                            <div class="std_state">
+                                <span class="state">특별 학습</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:65%"></span>
+                                    <em class="txt">65%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="self">
+                            <div class="std_state">
+                                <span class="state">자율학습</span>
+                                <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                                <button type="button" class="timer"><span>80%</span></button>
+                            </div>
+                            <div class="std_info">
+                                <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                <span class="gm_font">M098765432</span>
+                            </div>
+                            <div class="book_info">
+                                <dl>
+                                    <dt><span>수학단원1-1</span></dt>
+                                    <dd><span>완료</span></dd>
+                                </dl>
+                                <dl>
+                                    <dt><span>국어단원2-1</span></dt>
+                                    <dd><span>핵심정리</span></dd>
+                                </dl>
+                            </div>
+                            <div class="sched_info">
+                                <div class="bar_graph">
+                                    <span class="bar" style="width:70%"></span>
+                                    <em class="txt">70%</em>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                        <li class="multi ing">
+                            <div class="card ing">
+                                <div class="std_state">
+                                    <span class="state">학습중</span>
+                                    <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                                </div>
+                                <div class="std_info">
+                                    <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                    <span class="gm_font">M098765432</span>
+                                </div>
+                                <div class="book_info">
+                                    <dl>
+                                        <dt><span>수학단원1-1</span></dt>
+                                        <dd><span>완료</span></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt><span>국어단원2-1</span></dt>
+                                        <dd><span>핵심정리</span></dd>
+                                    </dl>
+                                </div>
+                                <div class="sched_info">
+                                    <div class="bar_graph">
+                                        <span class="bar" style="width:59%"></span>
+                                        <em class="txt">59%</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card special">
+                                <div class="std_state">
+                                    <span class="state">특별 학습</span>
+                                    <span class="time">학습시간<em>13:09 ~ 15:00</em></span>
+                                </div>
+                                <div class="std_info">
+                                    <span class="name">박찬호<em class="grade">(예비초)</em></span>
+                                    <span class="gm_font">M098765432</span>
+                                </div>
+                                <div class="book_info">
+                                    <dl>
+                                        <dt><span>이야기한국사</span></dt>
+                                    </dl>
+                                </div>
+                                <div class="sched_info">
+                                    <div class="bar_graph">
+                                        <span class="bar" style="width:59%"></span>
+                                        <em class="txt">59%</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button type="button" class="ico chat" onclick="openPop('../Tclasslearningpop_ongoingStdCard01.html', '900', '800');"><span>커뮤니티</span></button>
+                                <span class="ico_alarm"><button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard02.html', '900', '800');"><span>질문</span></button><em class="new">N</em></span>
+                                <button type="button" onclick="openPop('../Tclasslearningpop_ongoingStdCard03.html', '1000', '800');"><span>상세</span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- // [D]컨텐츠 정보가 들어갑니다. -->
+
+         </section>
+     </article>
+ </body>
+ </html>

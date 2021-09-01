@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+
+        <!--plugin -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>학교 검색</h1>
+            </header>
+            <section class="pop_content">
+
+                <h2 class="tit_h2">학교 검색</h2>
+                <!-- 조건검색 01 -->
+                <div class="search_wrap">
+                    <ul class="info_group">
+                        <li>
+                            <dl>
+                                <dt>구분<span class="required"></span></dt>
+                                <dd>
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm">
+                                            <input type="radio" id="class_rdo01" name="class" />
+                                            <label for="class_rdo01">초등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="class_rdo02" name="class" />
+                                            <label for="class_rdo02">중등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="class_rdo03" name="class" />
+                                            <label for="class_rdo03">고등</label>
+                                        </span>
+                                    </span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>지역<span class="required"></span></dt>
+                                <dd>
+                                    <select>
+                                        <option value="">지역선택</option>
+                                    </select>
+                                    <select>
+                                        <option value="">구군선택</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>학교명<span class="required"></span></dt>
+                                <dd>
+                                    <input type="text" placeholder="학교명을 입력하세요" />
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_bottom_wrap right">
+                    <button class="btn_search">검색</button>
+                </div>
+                <!--//조건검색 -->
+
+                <!-- 조회결과 -->
+                <div class="btn_top_wrap">
+                    <p class="txt_guide">
+                        지역을 잘 확인해서 검색해주세요. 학교 검색이 안되면 관리자에게 연락해주세요.
+                    </p>
+                </div>
+
+                <div class="table_list table_select">
+                    <table class="thead">
+                        <colgroup>
+                            <col style="width:61%;" />
+                            <col style="width:13%;" />
+                            <col style="width:13%;" />
+                            <col style="width:13%;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>학교명</th>
+                                <th>구분</th>
+                                <th>시도</th>
+                                <th>구군</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scroll" style="max-height:170px;">
+                        <table class="tbody">
+                            <colgroup>
+                                <col style="width:61%;" />
+                                <col style="width:13%;" />
+                                <col style="width:13%;" />
+                                <col style="width:13%;" />
+                            </colgroup>
+                            <tbody>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                                <tr onclick="">
+                                    <td>서울강동2동초등학교</td>
+                                    <td>초등</td>
+                                    <td>서울</td>
+                                    <td>강동구</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //조회결과 -->
+
+                    <!-- 학교 추가요청 -->
+                    <!-- <div class="btn_top_wrap">
+                        <p class="txt_guide">
+                            수강생의 학교가 없나요? 학교 추가 요청으로 학교를 등록할 수 있습니다.
+                        </p>
+                    </div>
+
+                    <div class="table_input table_th_txtcenter">
+                        <table>
+                            <colgroup>
+                                <col style="width:25%;"/>
+                                <col/>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>구분</th>
+                                    <td>초등</td>
+                                </tr>
+                                <tr>
+                                    <th>지역</th>
+                                    <td>서울/강동구</td>
+                                </tr>
+                                <tr>
+                                    <th>학교명</th>
+                                    <td>
+                                        <input type="text" value="서울강동구3동초등학교"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="btn_bottom_wrap right">
+                    <a href="javascript:alert_open(' 학교 추가요청 완료하였습니다.');" class="btn_basic">학교 추가요청</a>
+                </div> -->
+                    <!-- //학교 추가요청 -->
+
+                    <!-- alert 팝업 -->
+                    <section class="alert_wrap">
+                        <div class="alert_container">
+                            <div class="alert_content">
+                                <div class="alert_desc">
+                                    <strong></strong>
+                                    <span></span>
+                                </div>
+                                <div class="alert_btn">
+                                    <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                                    <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //alert 팝업 -->
+
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+        </article>
+    </body>
+
+</html>

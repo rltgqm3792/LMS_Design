@@ -1,0 +1,256 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청서</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/reception">접수내역</a>
+    </li>
+</ul>
+
+<!-- 구비서류 신청 -->
+<h4 class="tit_h4">구비서류 신청</h4>
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>FC가 2개 이상일 경우 FC별로 각각 접수해 주세요.</li>
+            <li>구비서류 제출 후 본사 확인 후에 신청 값이 적용됩니다. 본사 승인 전까지는 신청을 취소할 수 있습니다.</li>
+            <li>주소수정은 지사로 연락 주시기 바랍니다.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 20%"/>
+            <col style="width: 80%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신청유형</th>
+                <td>
+                    구비서류신청
+                </td>
+            </tr>
+            <tr>
+                <th>FC구분</th>
+                <td>
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="class01" name="class" checked="checked"/>
+                            <label for="class01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="class02" name="class"/>
+                            <label for="class02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="class03" name="class"/>
+                            <label for="class03">전과목</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>분류
+                </th>
+                <td>
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="checkbox" id="classification01" name="classification"/>
+                            <label for="classification01">사업자등록증</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="classification02" name="classification"/>
+                            <label for="classification02">교육청인가 서류</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="classification03" name="classification"/>
+                            <label for="classification03">개인과외 교습자료</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_top_wrap">
+    <span class="frm_wrap">
+        <!-- <span class="frm"> <input type="checkbox" id="class_same01"
+        name="class_same"/> <label for="class_same01">스마트수학과 동일하게 적용</label> </span> -->
+        <span class="frm">
+            <input type="checkbox" id="class_same02" name="class_same"/>
+            <label for="class_same02">스마트영어와 동일하게 적용</label>
+        </span>
+        <span class="frm">
+            <input type="checkbox" id="class_same03" name="class_same"/>
+            <label for="class_same03">전과목과 동일하게 적용</label>
+        </span>
+    </span>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 20%"/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="6">사업자등록증</th>
+                <th>상호명</th>
+                <td>
+                    <input type="text"/>
+                </td>
+                <th>사업자번호<span class="required"></span>
+                </th>
+                <td>
+                    <input type="text"/>
+                </td>
+            </tr>
+            <tr>
+                <th>업태</th>
+                <td>
+                    <input type="text"/>
+                </td>
+                <th>업종</th>
+                <td>
+                    <input type="text"/>
+                </td>
+            </tr>
+            <tr>
+                <th>사업자명</th>
+                <td colspan="3">
+                    박찬호
+                </td>
+            </tr>
+            <tr>
+                <th>사업장 주소</th>
+                <td colspan="3">
+                    08591) 서울시 마포구 월드컵대로 968번길 35
+                </td>
+            </tr>
+            <tr>
+                <th>첨부파일</th>
+                <td colspan="3">
+                    <input
+                        type="file"
+                        name="files"
+                        id="fileUpload"
+                        style="display: none"
+                        onChange="fileChange()"/>
+                    <label for="fileUpload" class="btn_table btn_gray">파일첨부</label>
+                    <span class="file_img">
+                        <a href="" target="_blank">사업자등록증.jpg</a>
+                        <a href="javascript:alert_confirm('‘파일을 삭제하시겠습니까?');"  class="del"></a>      
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>상태</th>
+                <td colspan="3">
+                    <span class="col_red">기각 : 본사가 입력한 기각 사유가 노출됩니다.</span>
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2">교육청인가서류</th>
+                <th>첨부파일</th>
+                <td colspan="3">
+                    <input
+                        type="file"
+                        name="files"
+                        id="fileUpload"
+                        style="display: none"
+                        onChange="fileChange()"/>
+                    <label for="fileUpload" class="btn_table btn_gray">파일첨부</label>
+                    <span class="file_img">
+                        <a href="" target="_blank">교육청인가서류.jpg</a>
+                        <a href="javascript:alert_confirm('‘파일을 삭제하시겠습니까?');"  class="del"></a>                        
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>상태</th>
+                <td colspan="3">
+                    <span class="col_red">승인대기</span>
+                </td>
+            </tr>
+            <tr>
+                <th>개인과외 교습자료</th>
+                <th>첨부파일</th>
+                <td colspan="3">
+                    <input
+                        type="file"
+                        name="files"
+                        id="fileUpload"
+                        style="display: none"
+                        onChange="fileChange()"/>
+                    <label for="fileUpload" class="btn_table btn_gray">파일첨부</label>                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <spn>
+        <a href="index.html?page=hakwon/regist" class="btn_basic btn_line">목록</a>
+        <a href="javascript:alert_confirm('구비서류제출을 하시겠습니까?');" class="btn_basic">신청완료</a>
+    </spn>
+</div>
+<!-- //구비서류 신청 -->

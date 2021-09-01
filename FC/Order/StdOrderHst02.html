@@ -1,0 +1,391 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('교재주문이력');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+
+<!-- 컨텐츠 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>
+                    FC구분
+                </dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="search_all1" name="class_srch" onclick="movepage('index.html?page=order/StdOrderHst01');" />
+                            <label for="search_all1">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search11" name="class_srch" onclick="movepage('index.html?page=order/StdOrderHst02');" checked />
+                            <label for="search11">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search12" name="class_srch" onclick="movepage('index.html?page=order/StdOrderHst03');" />
+                            <label for="search12">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search13" name="class_srch" onclick="movepage('index.html?page=order/StdOrderHst04');" />
+                            <label for="search13">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학습형태</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="learn_form_all" name="learn_form" onchange="all_check(this);" checked="checked" />
+                            <label for="learn_form_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="learn_form01" name="learn_form" />
+                            <label for="learn_form01">표준</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="learn_form02" name="learn_form" />
+                            <label for="learn_form02">자율</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_all" name="class" onchange="all_check(this);" checked="checked" />
+                            <label for="class_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk01" name="class" />
+                            <label for="class_chk01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk02" name="class" />
+                            <label for="class_chk02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk03" name="class" />
+                            <label for="class_chk03">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectstd" onChange="sel_std(this.form)">
+                            <option selected="selected" value="0">수강생 이름</option>
+                            <option value="1">수강생 번호</option>
+                        </select>
+                        <input type="text" name="inputname_std" class="input_std" placeholder="수강생이름을 입력하세요." />
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="selected">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+</div>
+
+<div class="table_scroll" style="max-height:100%;">
+    <div class="table_list column" style="min-width:2500px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col style="width:8%;" />
+                <col style="width:8%;" />
+                <col style="width:8%;" />
+                <col style="width:8%;" />
+                <col style="width:8%;" />
+                <col style="width:8%;" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2">No</th>
+                    <th rowspan="2">FC구분</th>
+                    <th rowspan="2">수강생번호</th>
+                    <th rowspan="2">수강생이름</th>
+                    <th rowspan="2">실제학년</th>
+                    <th rowspan="2">학습학년/<br />레벨</th>
+                    <th rowspan="2">형태</th>
+                    <th rowspan="2">학습월</th>
+                    <th rowspan="2">주문가능일</th>
+                    <th rowspan="2">주문가능일</th>
+                    <th rowspan="2">주문현황</th>
+                    <th rowspan="2">주문여부</th>
+                    <th colspan="6">주문이력</th>
+                </tr>
+                <tr>
+                    <th>4월</th>
+                    <th>3월</th>
+                    <th>2월</th>
+                    <th>1월</th>
+                    <th>12월</th>
+                    <th>11월</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="gm_font">126</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>박찬호</td>
+                    <td>중등1</td>
+                    <td>초등1</td>
+                    <td>자율</td>
+                    <td>5월</td>
+                    <td>2021.03.03</td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문처리 중(2권)</td>
+                    <td>
+                        주문가능(2권)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">126</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>박찬호</td>
+                    <td>중등1</td>
+                    <td>초등1</td>
+                    <td>자율</td>
+                    <td>5월</td>
+                    <td>2021.03.03</td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문처리 중(2권)</td>
+                    <td>
+                        <span class="col_red">주문불가</span>
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">126</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>박찬호</td>
+                    <td>중등1</td>
+                    <td>초등1</td>
+                    <td>자율</td>
+                    <td>5월</td>
+                    <td>2021.03.03</td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문처리 중(2권)</td>
+                    <td>
+                        <span class="col_red">주문불가</span>
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">126</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>박찬호</td>
+                    <td>중등1</td>
+                    <td>초등1</td>
+                    <td>자율</td>
+                    <td>5월</td>
+                    <td>2021.03.03</td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문처리 중(2권)</td>
+                    <td>
+                        <span class="col_red">주문불가</span>
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                    <td>
+                        초4 1월(1~3)<br>초3 5월(4~5)<br>(4,000)
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="18">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

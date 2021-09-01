@@ -1,0 +1,252 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_tilefte h2').text('학습자료실');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_tilefte pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 텝 -->
+<ul class="tab_2depth_search">
+    <!-- [D] 활성화 : on-->
+    <li class="on">
+        <a href="index.html?page=pds/study_book_list">수학</a>
+    </li>
+    <li>
+        <a href="index.html?page=pds/study_english_list">영어</a>
+    </li>
+    <li>
+        <a href="index.html?page=pds/study_class_list">전과목</a>
+    </li>
+</ul>
+<!-- //텝 -->
+
+<!-- 검색 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="category_01" name="category" checked="checked" />
+                            <label for="category_01">교재</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="category_02" name="category" onclick="movepage('index.html?page=pds/study_play_list');" />
+                            <label for="category_02">놀이수학 자료실</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>도서조회</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="year_01" name="year" />
+                            <label for="year_01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_02" name="year" />
+                            <label for="year_02">예비중</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_03" name="year" />
+                            <label for="year_03">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_04" name="year" />
+                            <label for="year_04">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>학년선택</option>
+                    </select>
+                    <select>
+                        <option>도서선택</option>
+                    </select>
+                    <select>
+                        <option>구분선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색 -->
+
+<!-- 테이블상단 -->
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="selected">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <span class="list_num">전체
+        <strong class="col_blue">25</strong>개</span>
+</div>
+<!-- //테이블상단 -->
+
+<div class="table_scroll" style="max-height:100%;">
+    <div class="table_list column" style="min-width:1400px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2">No</th>
+                    <th rowspan="2">과정</th>
+                    <th rowspan="2">교재명</th>
+                    <th rowspan="2">구분</th>
+                    <th colspan="2">E-book</th>
+                    <th rowspan="2">해답지</th>
+                    <th rowspan="2">정오표</th>
+                    <th rowspan="2">빠른정답</th>
+                    <th rowspan="2">년판</th>
+                    <th rowspan="2">조회수</th>
+                </tr>
+                <tr>
+                    <th>학생용</th>
+                    <th style="border-right: solid 1px #dbdbdb">교사용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr_notice">
+                    <td>
+                        <span class="table_bullet red_bullet">공지</span>
+                    </td>
+                    <td>예비중3</td>
+                    <td class="left">
+                        <div class="ellipsis">
+                            <a href="index.html?page=pds/study_book_view">해법 중학 수학 계산 G1권</a>
+                            <span class="ico_img new">새 글</span>
+                        </div>
+                    </td>
+                    <td>2호</td>
+                    <td>
+                        <a href="javascript:openPop('pds/pop_ebook_view.html','940','670');" class="ico_img ebook">책</a>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('pds/pop_ebook_view.html','940','670');" class="ico_img ebook">책</a>
+                    </td>
+                    <td>
+                        <a href="" class="ico_img ebook">책</a>
+                        <a href="" class="ico_img download">다운로드</a>
+                    </td>
+                    <td>
+                        <a href="" class="ico_img ebook">책</a>
+                        <a href="" class="ico_img download">다운로드</a>
+                    </td>
+                    <td>
+                        <a href="" class="ico_img ebook">책</a>
+                        <a href="" class="ico_img download">다운로드</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021</span>
+                    </td>
+                    <td class="gm_font">28900</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>예비중3</td>
+                    <td class="left">
+                        <div class="ellipsis">
+                            <a href="index.html?page=pds/study_book_view">해법 중학 수학 계산 G1권</a>
+                            <span class="ico_img new">새 글</span>
+                        </div>
+                    </td>
+                    <td>2호</td>
+                    <td>
+                        <a href="javascript:openPop('pds/pop_ebook_view.html','940','670');" class="ico_img ebook">책</a>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('pds/pop_ebook_view.html','940','670');" class="ico_img ebook">책</a>
+                    </td>
+                    <td>
+                        <a href="" class="ico_img ebook">책</a>
+                        <a href="" class="ico_img download">다운로드</a>
+                    </td>
+                    <td>
+                        <a href="" class="ico_img ebook">책</a>
+                        <a href="" class="ico_img download">다운로드</a>
+                    </td>
+                    <td>
+                        <a href="" class="ico_img ebook">책</a>
+                        <a href="" class="ico_img download">다운로드</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021</span>
+                    </td>
+                    <td class="gm_font">28900</td>
+                </tr>
+                <!-- <tr> <td colspan="13" class="no_data">해당 검색 결과가 없습니다.</td> </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">1</li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+        <li>
+            <a href="">10</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

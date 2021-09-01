@@ -1,0 +1,337 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('휴회생 관리');
+        $('.group_title h2').text('휴회신청');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<h4 class="tit_h4">조회조건 설정</h4>
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_all" name="class" onchange="all_check(this);" checked="checked" />
+                            <label for="class_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk01" name="class" />
+                            <label for="class_chk01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk02" name="class" />
+                            <label for="class_chk02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk03" name="class" />
+                            <label for="class_chk03">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>직접입력</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectstd" onChange="sel_std(this.form)">
+                            <option selected="selected" value="0">수강생명</option>
+                            <option value="1">수강생 번호</option>
+                        </select>
+                        <input type="text" name="inputname_std" class="input_address" placeholder="수강생명 or 수강생번호 or 수강생 ID을 입력하세요.">
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회 -->
+
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="selected">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <span class="list_num">전체<strong class="col_blue">200</strong>명</span>
+</div>
+
+<!--테이블-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col />
+            <col style="width:14%;" />
+            <col style="width:11%;" />
+            <col />
+            <col style="width:8%;" />
+            <col />
+            <col />
+            <col />
+            <col />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>FC구분</th>
+                <th>
+                    <div class="btn_sort">
+                        수강생번호
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        수강생명
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>학교</th>
+                <th>
+
+                    <div class="btn_sort">
+                        학년
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>휴대폰<br />(학부모)</th>
+                <th>최근 교재주문일</th>
+                <th>휴회신청 가능일</th>
+                <th>휴회신청</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>수학</td>
+                <td>
+                    <span class="gm_font">M00002652</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    중앙초
+                </td>
+                <td>초등3</td>
+                <td>
+                    <span class="gm_font">010-0000-0001<br />010-0000-0001</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <a href="javascript:openPop('Stdmng/regListPop.html','800','600');" class="btn_table">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td>
+                    <span class="gm_font">M00002652</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    중앙초
+                </td>
+                <td>초등3</td>
+                <td>
+                    <span class="gm_font">010-0000-0001<br />010-0000-0001</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <a href="javascript:openPop('Stdmng/regListPop.html','800','600');" class="btn_table">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td>
+                    <span class="gm_font">M00002652</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    중앙초
+                </td>
+                <td>초등3</td>
+                <td>
+                    <span class="gm_font">010-0000-0001<br />010-0000-0001</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <a href="javascript:openPop('Stdmng/regListPop.html','800','600');" class="btn_table">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td>
+                    <span class="gm_font">M00002652</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    중앙초
+                </td>
+                <td>초등3</td>
+                <td>
+                    <span class="gm_font">010-0000-0001<br />010-0000-0001</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <a href="javascript:openPop('Stdmng/regListPop.html','800','600');" class="btn_table">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td>
+                    <span class="gm_font">M00002652</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    중앙초
+                </td>
+                <td>초등3</td>
+                <td>
+                    <span class="gm_font">010-0000-0001<br />010-0000-0001</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.02.01</span>
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <!-- <tr>
+                <td colspan="9">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<!--//테이블-->
+
+<!--페이징-->
+<div class="paging">
+    <a href="javascript:openPop('.html','800','650');" class="btn_paging back"></a>
+    <a href="javascript:openPop('.html','800','650');" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="javascript:openPop('.html','800','650');" class="btn_paging next"></a>
+    <a href="javascript:openPop('.html','800','650');" class="btn_paging forward"></a>
+</div>
+<!--//페이징-->

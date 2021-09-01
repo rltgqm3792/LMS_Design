@@ -1,0 +1,129 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('사진 갤러리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 해당FC노출 -->
+<div class="fc_area">
+    <a href="">수학</a><span>행사</span>
+</div>
+<!-- //해당FC노출 -->
+
+<!--내용-->
+<dl class="board_view">
+    <dt>
+        <div class="tit">
+            2020 새출발 워크샵
+        </div>
+        <div class="info">
+            <div>
+                <span>수학사업부</span>
+                <span class="date">2019.08.14 17:59</span>
+                <span class="date">조회수 <em>28900</em></span>
+            </div>
+        </div>
+    </dt>
+    <dd>
+        <div class="cont">
+
+            <div class="rolling_wrap">
+                <div id="rolling" class="rolling">
+                    <ul>
+                        <li class="panel">
+                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png" alt="사진겔러리">
+                        </li>
+                        <li class="panel">
+                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png" alt="사진겔러리">
+                        </li>
+                        <li class="panel">
+                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png" alt="사진겔러리">
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-group" id="control1">
+                    <button class="btn_rolling prev"></button>
+                    <button class="btn_rolling next"></button>
+                </div>
+            </div>
+            <script class="code-js">
+
+                var rolling1 = new tui.Rolling({
+                    element: document.getElementById('rolling'),
+                    direction: 'horizontal',
+                    isVariable: false,
+                    isAuto: false,
+                    duration: 250,
+                    isCircular: true,
+                    isDrawn: true,
+                    initNum: 1,
+                    motion: 'linear',
+                    unit: 'item'
+                });
+
+                var control = document.getElementById('control1');
+
+                control.onclick = function (e) {
+                    var e = e || window.event;
+                    var target = e.target || e.srcElement;
+                    var className;
+
+                    if (target.tagName.toLowerCase() !== 'button') {
+                        return;
+                    }
+
+                    className = target.className;
+
+                    if (className.indexOf('prev') > -1) {
+                        rolling1.roll(null, 'prev');
+                    } else if (className.indexOf('next') > -1) {
+                        rolling1.roll(null, 'next');
+                    }
+                };
+            </script>
+
+            2020 새출발 워크샵 현장 사진 입니다.
+        </div>
+    </dd>
+</dl>
+<!--//내용-->
+
+<!-- 하단버튼 -->
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="index.html?page=Education/EduPhoto" class="btn_basic btn_line">목록</a>
+        <a href="javascript:alert_confirm('정말로 삭제하시겠습니까?','','');" class="btn_basic btn_gray02">삭제</a>
+        <a href="index.html?page=Education/EduPhoto_write" class="btn_basic btn_line">수정</a>
+    </p>
+</div>
+<!-- //하단버튼 -->
+
+<!--다음글 이전글-->
+<!-- <div class="table_preview">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>이전 글<span class="pre_view"></span></th>
+                <td><a href="">[안내] 영역별 정밀진단평가 일부학년 및 단원업데이트 안내</a></td>
+            </tr>
+            <tr>
+                <th>다음 글<span class="next_view"></span></th>
+                <td><a href="">개인정보보호법 시행에 따른 정보제공 동의 절차 안내(첨부수정)</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<!--//다음글 이전글-->

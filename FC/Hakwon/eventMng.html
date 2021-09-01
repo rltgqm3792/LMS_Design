@@ -1,0 +1,76 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('마일리지 관리');
+    });
+    monthpicker(); // 월 선택 datepicker 추가 2021.8.2 :chan
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=hakwon/pointMng">수강생 마일리지</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/fcMng">가맹점 마일리지</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/eventMng">마일리지 소진이벤트 현황</a>
+    </li>
+</ul>
+<!-- 기본정보 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:15%" />
+            <col />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>월 선택<span class="required"></span>
+                </th>
+                <td class="left">
+                    <!-- 월 선택 datepicker 추가 2021.8.2 :chan -->
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input-ko" aria-label="Year-Month">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div class="datepicker-cell" id="datepicker-month-ko" style="margin-top: -1px;"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //기본정보 -->
+<div class="box_guide">
+    <div>
+        <p class="tit">기본정보</p>
+        <ul>
+            <li>당첨자명단 또는 응모현황은 가맹점에 응모자 또는 당첨자가 있는 경우에 보여집니다.</li>
+        </ul>
+    </div>
+</div>
+<!-- 기본정보 테이블 -->
+<div class="btn_top_wrap left">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+    </span>
+</div>
+<!-- 응모현황 -->
+<a href="javascript:openPop('hakwon/eventMngPop.html','800','650');" class="btn_table btn_line">현황</a>
+<!-- 당첨자 명단 -->
+<a href="javascript:openPop('hakwon/eventWinnerPop.html','800','650');" class="btn_table btn_line">명단</a>
+<div id="grid"></div>
+<!-- //기본정보 테이블 -->

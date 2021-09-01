@@ -1,0 +1,474 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+		$('.nav_two .two_tit').text('HB Talk');
+        $('.group_title h2').text('HB Talk 신청');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!--가이드-->
+<div class="box_guide">
+    <div>
+        <p class="tit">HB TALK 신청안내</p>
+        <ul>
+            <li>HB TALK 학습을 신청할 수 있는 페이지로 회원 별 [신청]버튼을 클릭 하면 신청이 가능합니다.</li>
+            <li>
+                아래 회원 리스트는 HB TALK 신청이 가능한 회원이며, 신청조건은 아래와 같습니다.
+                <ul>
+                    <li>주문 시스템을 이용하여 주문한 최근 6개월 교재에 대한 수업만 신청가능</li>
+                    <li>당월 주문한 교재의 경우, 교재주문 지사/본사 승인 후 신청가능</li>
+                </ul>
+            </li>
+            <li>신청이 완료되면 신청내역에서 현황을 볼 수 있으며, 수정, 취소가 가능합니다.</li>
+            <li>ID 발급을 하지 않은 학생은 HB Talk 신청이 불가능합니다. 회원ID 발급 후 신청해주세요.</li>
+            <li>매월 1일 ~ 10일 : 전 달 HB TALK 수강신청 회원만 신청가능</li>
+            <li>매월 11일 ~ 31일 : 모든 회원 HB TALK 수강 신청가능(2015.01부터 시행)</li>
+            <li>HB TALK은 해법영어교실 회원에게만 주어지는 학습 서비스이며, 회원 휴/탈회시에는 해당서비스를 이용하실 수 없습니다.<br/>
+                회원 휴/탈회로 인해 발생하는 미수업분은 환불 처리되지 않으니, 수업신청에 각별히 유의해주시기 바랍니다.</li>
+            <li>익월 과금 교재 주문 시 HB Talk 서비스를 이용하실 수 있으므로, 수업신청 전에 교재주문내역을 확인해주시기 바랍니다.</li>
+        </ul>
+    </div>
+</div>
+<!--가이드-->
+
+<!-- HB talk guide -->
+<div class="table_list table_bd_none">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col/>
+            <col style="width: 18%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    <span class="dot">대상교재1</span>
+                </th>
+                <td class="left">
+                    ABC Phonics, Little Top Storybook, Topstory book, Tell Me, Top Readers, Top Plus
+                    Reading
+                </td>
+                <td rowspan="5" class="center">
+                    <a href="javascript:void(0);" onclick="javascript:openPop('http://sale.hbenglish.co.kr/HBTalk/popHBTalkGuide.aspx','800','670');" class="btn_hbtalk_guide">HB Talk Guide</a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="dot">대상교재2</span>
+                </th>
+                <td class="left">
+                    Speak Up, Survival English, Storytelling Readers, Global Readers, Speech Contest
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="dot">대상교재3</span>
+                </th>
+                <td class="left">
+                    Reading Secret, My Firlst Diary, Reading Pro
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="dot">신청기간</span>
+                </th>
+                <td class="left">
+                    <strong>YYYY.MM.DD ~ YYYY.MM.DD</strong>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <span class="dot">신청방법</span>
+                </th>
+                <td class="left">
+                    HB TALK 쿠폰 구매 후 회원 별 신청 → 월 2회/4회/8회 선택하여 신청 (1회당 6,000원 공제)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //HB talk guide -->
+
+<!-- 쿠폰구매-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 50%"/>
+            <col style="width: 50%"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    충전가능 횟수
+                </th>
+                <th>
+                    사용가능금액 (원)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    17회
+                </td>
+                <td>
+                    102,000
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <button href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_pay.html','800','670');" class="btn_basic">HB Talk 쿠폰 구매</button>
+</div>
+<!-- //쿠폰구매-->
+
+<!--조회 -->
+<div class="search_wrap type02">
+    <span class="frm_wrap">
+        <form name="form">
+            <select name="selectstd" onChange="sel_std02(this.form)">
+                <option selected="selected" value="0">수강생 이름</option>
+                <option value="1">수강생 번호</option>
+                <option value="2">Dabooks 레벨</option>
+            </select>
+            <input
+                type="text"
+                name="inputname_std"
+                class="input_std"
+                placeholder="수강생이름을 입력하세요."/>
+            <button class="btn_search small">조회</button>
+        </form>
+    </span>
+</div>
+<!--//조회 -->
+
+<div class="table_list">
+    <table class="thead">
+        <caption></caption>
+        <colgroup>
+            <col style="width:5%"/>
+            <col style="width:12%"/>
+            <col style="width:11%"/>
+            <col style="width:12%"/>
+            <col style="width:7.5%"/>
+            <col style="width:15%"/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std_all" onchange="all_check(this);"/>
+                        <label for="std_all">전체선택</label>
+                    </span>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        수강생번호
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        수강생이름
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        수강생ID
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="btn_sort">
+                        학년
+                        <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                    </div>
+                </th>
+                <th>Dabooks레벨</th>
+                <th>선택</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="max-height:250px;">
+        <table class="tbody">
+            <caption></caption>
+            <colgroup>
+                <col style="width:5%"/>
+                <col style="width:12%"/>
+                <col style="width:11%"/>
+                <col style="width:12%"/>
+                <col style="width:7.5%"/>
+                <col style="width:15%"/>
+                <col/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">changho61</span>
+                    </td>
+                    <td>
+                        초등6
+                    </td>
+                    <td>
+                        <span class="gm_font">little Top Storybook3</span>
+                    </td>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm round">
+                                <input type="radio" id="month_pay02" name="month_pay"/>
+                                <label for="month_pay02">월2회<br/>(12,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay04" name="month_pay"/>
+                                <label for="month_pay04">월4회<br/>(24,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay08" name="month_pay"/>
+                                <label for="month_pay08">월8회<br/>(48,000원)</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">changho61</span>
+                    </td>
+                    <td>
+                        초등6
+                    </td>
+                    <td>
+                        <span class="gm_font">little Top Storybook3</span>
+                    </td>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm round">
+                                <input type="radio" id="month_pay02" name="month_pay"/>
+                                <label for="month_pay02">월2회<br/>(12,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay04" name="month_pay"/>
+                                <label for="month_pay04">월4회<br/>(24,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay08" name="month_pay"/>
+                                <label for="month_pay08">월8회<br/>(48,000원)</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">changho61</span>
+                    </td>
+                    <td>
+                        초등6
+                    </td>
+                    <td>
+                        <span class="gm_font">little Top Storybook3</span>
+                    </td>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm round">
+                                <input type="radio" id="month_pay02" name="month_pay"/>
+                                <label for="month_pay02">월2회<br/>(12,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay04" name="month_pay"/>
+                                <label for="month_pay04">월4회<br/>(24,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay08" name="month_pay"/>
+                                <label for="month_pay08">월8회<br/>(48,000원)</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">changho61</span>
+                    </td>
+                    <td>
+                        초등6
+                    </td>
+                    <td>
+                        <span class="gm_font">little Top Storybook3</span>
+                    </td>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm round">
+                                <input type="radio" id="month_pay02" name="month_pay"/>
+                                <label for="month_pay02">월2회<br/>(12,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay04" name="month_pay"/>
+                                <label for="month_pay04">월4회<br/>(24,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay08" name="month_pay"/>
+                                <label for="month_pay08">월8회<br/>(48,000원)</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">changho61</span>
+                    </td>
+                    <td>
+                        초등6
+                    </td>
+                    <td>
+                        <span class="gm_font">little Top Storybook3</span>
+                    </td>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm round">
+                                <input type="radio" id="month_pay02" name="month_pay"/>
+                                <label for="month_pay02">월2회<br/>(12,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay04" name="month_pay"/>
+                                <label for="month_pay04">월4회<br/>(24,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay08" name="month_pay"/>
+                                <label for="month_pay08">월8회<br/>(48,000원)</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">M00001236</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">changho61</span>
+                    </td>
+                    <td>
+                        초등6
+                    </td>
+                    <td>
+                        <span class="gm_font">little Top Storybook3</span>
+                    </td>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm round">
+                                <input type="radio" id="month_pay02" name="month_pay"/>
+                                <label for="month_pay02">월2회<br/>(12,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay04" name="month_pay"/>
+                                <label for="month_pay04">월4회<br/>(24,000원)</label>
+                            </span>
+                            <span class="frm round">
+                                <input type="radio" id="month_pay08" name="month_pay"/>
+                                <label for="month_pay08">월8회<br/>(48,000원)</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="7">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="index.html?page=Order/hbtalk" class="btn_basic btn_line">목록</a>
+        <a
+            href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalkOrder.html','800','670');"
+            class="btn_basic">신청</a>
+    </p>
+</div>

@@ -1,0 +1,109 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("분석표 상세정보");
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<h4 class="tit_h4">분석표 정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>분석표 ID</th>
+                <td colspan="3"><span class="font_gmarket13">HB_RE_0001</span></td>
+            </tr>
+            <tr>
+                <th>분석표명<span class="required"></span></th>
+                <td><input type="text"></td>
+                <th>서비스여부<span class="required"></span></th>
+                <td>                    
+                    <select>
+                        <option>선택</option>
+                        <option>Y</option>
+                        <option>N</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="tbl_flex">
+    <h4 class="tit_h4">점수 구간별 총평</h4>
+    <span class="warning">점수 등록 시 점수가 겹치지 않고, 비는 점수대가 없도록 등록해주세요.</span>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:35%">
+            <col style="width:10%">
+            <col style="width:35%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th rowspan="3">구간 1</th>
+                <th>시작점수<span class="required"></span></th>
+                <td><input type="text">점 (초과)</td>
+                <th>종료점수<span class="required"></span></th>
+                <td><input type="text">점 (이상)</td>
+            </tr>
+            <tr>
+                <th>총평<span class="required"></span><br/>(기본문구)</th>
+                <td colspan="3"><textarea></textarea></td>
+            </tr>
+            <tr>
+                <th>총평<br/>(선택문구)</th>
+                <td colspan="3"><input type="text" class="input_90">
+                    <a href="" class="input_plus">추가</a>
+                    <a href="" class="input_minus">삭제</a><br/></td>
+            </tr>
+            <tr>
+                <th rowspan="4">구간 2<br/><a href="" class="btn_table gray">삭제</a></th>
+                <th>시작점수<span class="required"></span></th>
+                <td><input type="text">점 (초과)</td>
+                <th>종료점수<span class="required"></span></th>
+                <td><input type="text">점 (이상)</td>
+            </tr>
+            <tr>
+                <th>총평<span class="required"></span><br/>(기본문구)</th>
+                <td colspan="3"><textarea></textarea></td>
+            </tr>
+            <tr>
+                <th>총평<br/>(선택문구)</th>
+                <td colspan="3"><input type="text" class="input_90">
+                    <a href="" class="input_minus">삭제</a><br/></td>
+            </tr>
+            <tr>
+                <th>총평<br/>(선택문구)</th>
+                <td colspan="3"><input type="text" class="input_90">
+                    <a href="" class="input_plus">추가</a>
+                    <a href="" class="input_minus">삭제</a><br/></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="right_flex mt_10">
+        <a href="" class="btn_top">점수 구간 추가</a>
+    </div>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">저장</a>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>

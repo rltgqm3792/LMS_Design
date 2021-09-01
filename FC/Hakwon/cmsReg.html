@@ -1,0 +1,236 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청서</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/reception">접수내역</a>
+    </li>
+</ul>
+
+<!-- CMS 신청 변경 해지하기-->
+<h4 class="tit_h4">CMS 신청/변경/해지하기</h4>
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>예금주는 가맹점 원장님 성함과 동일해야 합니다.</li>
+            <li>FC가 2개 이상일 경우 FC별로 각각 접수해 주세요.</li>
+            <li>신규 및 변경 접수 시 신청완료 또는 변경완료를 선택하신 후 전자문서 s-form을 접속하시어 서명 후 최종완료버튼을 처리하여 주시기 바랍니다.</li>
+            <li>신규 및 변경 해지의 경우 매월 접수 마감일은 매월25일이며 접수 마감 후 이상 없을 시 익월부터 적용 됩니다.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신청유형</th>
+                <td colspan="3">
+                    CMS신청/변경/해지
+                </td>
+            </tr>
+            <tr>
+                <th>FC구분
+                </th>
+                <td colspan="3">
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="class01" name="class" checked="checked"/>
+                            <label for="class01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="class02" name="class"/>
+                            <label for="class02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="class03" name="class"/>
+                            <label for="class03">전과목</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>분류
+                </th>
+                <td colspan="3">
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input
+                                type="radio"
+                                id="classification01"
+                                name="classification"
+                                checked="checked"/>
+                            <label for="classification01">신규</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="classification02" name="classification"/>
+                            <label for="classification02">변경</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="classification03" name="classification"/>
+                            <label for="classification03">해지</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>가맹점명</th>
+                <td>신도림테크노수학교실</td>
+                <th>아이디</th>
+                <td><span class="gm_font">M098765543</span></td>
+            </tr>
+            <tr>
+                <th>원장이름</th>
+                <td>김병헌</td>
+                <th>생년월일</th>
+                <td><span class="gm_font">2021.05.01</span></td>
+            </tr>
+            <tr>
+                <th>사업장 전화번호</th>
+                <td><span class="gm_font">02-963-8520</span></td>
+                <th>휴대전화번호</th>
+                <td><span class="gm_font">010-0987-0987</span>
+                </td>
+            </tr>
+            <tr>
+                <th>사업자번호</th>
+                <td colspan="3"><span class="gm_font">110-092-253648</span>
+                </td>
+            </tr>
+            <tr>
+                <th>은행/계좌정보
+                </th>
+                <td colspan="3">
+                    <!-- 은행계좌정보 테이블-->
+                    <table class="table_sub">
+                        <colgroup>
+                            <col style="width:20%"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>통장 구분</th>
+                                <td>
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm">
+                                            <input type="radio" id="bank01" name="bank" checked="checked"/>
+                                            <label for="bank01">개인통장</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="bank02" name="bank"/>
+                                            <label for="bank02">사업자통장</label>
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>예금주</th>
+                                <td>
+                                    김병헌
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>은행</th>
+                                <td>
+                                    <select>
+                                        <option>선택</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>계좌번호</th>
+                                <td>
+                                    <input type="text" placeholder="'-' 제외하고 입력"/>
+                                    <a href="javascript:alert_open('계좌정보가 확인 되었습니다.');" class="btn_table btn_gray">계좌 확인</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //은행계좌정보 테이블-->
+                </td>
+            </tr>
+            <tr>
+                <th>청구시작일</th>
+                <td>
+                    <span>2020년 10월</span>
+                    <span class="col_red">(신청일 다음 달부터)</span>
+                </td>
+                <th>청구주기
+                </th>
+                <td>매월</td>
+            </tr>
+            <tr>
+                <th>출금방식</th>
+                <td>CMS</td>
+                <th>약정일
+                </th>
+                <td>매월 5일</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <spn>
+        <a href="index.html?page=hakwon/regist" class="btn_basic btn_line">목록</a>
+        <a
+            href="javascript:alert_confirm('CMS신청(변경/해지)이 완료 되었습니다.','본사 승인 후 서비스가 제공됩니다.');"
+            class="btn_basic">신청완료</a>
+    </spn>
+</div>
+<!-- //CMS 신청 변경 해지하기 -->

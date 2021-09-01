@@ -1,0 +1,149 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('평가관리');
+		$('.group_title h2').text('평가관리');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li class="on"><a href="index.html?page=tclasslearning/lessonCompl">단원 마무리 학습</a></li>
+	<li><a href="index.html?page=tclasslearning/examEval">중간*기말성취도평가</a></li>
+	<li><a href="index.html?page=tclasslearning/fundamentalEval">기초학력 진단평가</a></li>
+	<li><a href="index.html?page=tclasslearning/testNotice">전국학력 평가 </a></li>
+	<li><a href="index.html?page=tclasslearning/wrongAnsrNoteCreate">오답노트</a></li>
+	<li><a href="index.html?page=tclasslearning/testDiag">진단평가</a></li>
+</ul>
+
+
+<!--검색-->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>년도/학기</dt>
+				<dd>
+					<select>
+						<option>2021년</option>
+					</select>
+					<span class="frm_wrap frm_btn">
+						<span class="frm">
+							<input type="checkbox" id="term01" name="term" checked>
+							<label for="term01">1학기</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="term02" name="term">
+							<label for="term02">2학기</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>과목</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm all">
+							<input type="checkbox" id="subject_all" name="subject" onclick="all_check(this)" checked>
+							<label for="subject_all">전체</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="subject01" name="subject">
+							<label for="subject01">국어</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="subject02" name="subject">
+							<label for="subject02">수학</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="subject03" name="subject">
+							<label for="subject03">사회</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="subject04" name="subject">
+							<label for="subject04">과학</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="subject05" name="subject">
+							<label for="subject05">봄여름가을겨울</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>학년</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm">
+							<input type="checkbox" id="class01" name="class" checked>
+							<label for="class01">초등</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="class02" name="class">
+							<label for="class02">중등</label>
+						</span>
+					</span>
+					<select>
+						<option>예비초</option>
+						<option>초1</option>
+						<option>초2</option>
+						<option>초3</option>
+						<option>초4</option>
+						<option>초5</option>
+						<option>초6</option>
+						<option>중1</option>
+						<option>중2</option>
+						<option>중3</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>수강생</dt>
+				<dd>
+					<form name="form">
+						<select name="selectstd" onchange="sel_std(this.form)">
+							<option selected="selected" value="0">수강생 이름</option>
+							<option value="1">수강생 번호</option>
+							<option value="2">수강생 ID</option>
+						</select>
+						<input type="text" name="inputname_std" class="input_std" placeholder="수강생이름을 입력하세요.">
+					</form>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!--//검색-->
+
+<div class="btn_top_wrap right">
+	<a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+	<a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+	<a href="javascript:alert_open('OOO의 학부모 휴대폰으로 SMS전송이 완료되었습니다.');" class="btn_top btn_ico sms"><span>SMS전송</span></a>
+	<a href="javascript:alert_open('OOO의 학부모 알림장 전송이 완료되었습니다.');" class="btn_top btn_ico palram"><span>학부모알림장</span></a>
+</div>
+
+<!--테이블-->
+<!-- 점수 -->
+<a href="" class="btn_table result">17/20</a>
+
+<!-- 분석표 -->
+<a href="javascript:openPop('Tclasslearning/lessonComplPop.html','1020','670');" class="btn_table btn_blue">생성</a>
+<a href="javascript:openPop('Tclasslearning/lessonComplPop.html','1020','670');" class="btn_table">확인</a>
+
+<div id="grid"></div>
+<!--//테이블-->

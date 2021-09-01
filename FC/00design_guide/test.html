@@ -1,0 +1,242 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit,.group_title h2').text('수강생별 학습관리');
+         // 달력
+         calendar();         
+    });
+    
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+    }
+
+    #chartdiv02 {
+      width: 100%;
+      height: 500px;
+      margin-top:50px;
+    }
+    .scroll::-webkit-scrollbar {
+    width: 17px;
+    height: 2em
+}
+.scroll::-webkit-scrollbar-button {
+    background: #ccc
+}
+.scroll::-webkit-scrollbar-track-piece {
+    background: #888
+}
+.scroll::-webkit-scrollbar-thumb {
+    background: #eee
+}​
+    
+</style>
+
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<div class="table_list">
+  <table class="thead" >
+      <colgroup>
+          <col style="width:20%;" />
+          <col style="width:20%;" />
+          <col style="width:20%;" />
+          <col style="width:20%;" />
+          <col style="width:80px" />
+      </colgroup>
+      <thead>
+          <tr>
+              <th>1Depth</th>
+              <th>1월</th>
+              <th>2월</th>
+              <th>3월</th>
+              <th>4월</th>
+          </tr>
+      </thead>
+  </table>
+  <div class="scroll" style="height:150px;">
+      <table class="tbody">
+          <colgroup>
+              <col style="width:20%;" />
+              <col style="width:20%;" />
+              <col style="width:20%;" />
+              <col style="width:20%;" />
+              <col style="width:80px" />
+          </colgroup>
+          <tbody>
+              <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>4</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>4</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>4</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>4</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>4</td>
+                  <td>5</td>
+              </tr>
+              
+              <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>4</td>
+                  <td>5</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+  <!-- Chart code -->
+  <script>
+    am4core.ready(function() {
+    //license
+    am4core.addLicense("CH230677325");
+        
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+
+    // Create chart instance
+    var chart = am4core.create("chartdiv", am4charts.PieChart);   
+    // Add and configure Series
+    var pieSeries = chart.series.push(new am4charts.PieSeries());
+    pieSeries.dataFields.value = "litres";
+    pieSeries.dataFields.category = "level";
+
+    // Let's cut a hole in our Pie chart the size of 30% the radius
+    chart.innerRadius = am4core.percent(40);
+
+    // Put a thick white border around each Slice
+    pieSeries.slices.template.stroke = am4core.color("#fff");
+    pieSeries.slices.template.strokeWidth = 3;
+    pieSeries.slices.template.strokeOpacity = 1;
+    pieSeries.slices.template
+        // change the cursor on hover to make it apparent the object can be interacted with
+        .cursorOverStyle = [
+        {
+            "property": "cursor",
+            "value": "pointer"
+        }
+        ];
+
+    pieSeries.labels.template.disabled = true;
+    pieSeries.slices.template.tooltipText = "";
+    pieSeries.ticks.template.disabled = true;
+
+    // Create a base filter effect (as if it's not there) for the hover to return to
+    var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+    shadow.opacity = 0;
+
+    // Create hover state
+    var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+
+    // Slightly shift the shadow and make it more prominent on hover
+    var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+    hoverShadow.opacity = 0.7;
+    hoverShadow.blur = 5;
+
+    // Add a legend
+    chart.legend = new am4charts.Legend();
+
+    chart.data = [{
+        "level": "상",
+        "litres": 15
+    },{
+        "level": "중",
+        "litres": 15
+    }, {
+        "level": "하",
+        "litres": 15
+    }];
+
+    }); // end am4core.ready()
+    </script>
+
+    <!-- HTML -->
+    <div id="chartdiv"></div>
+    <script>
+        am4core.ready(function() {
+        
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+        
+        /* Create chart instance */
+        var chart = am4core.create("chartdiv02", am4charts.RadarChart);
+        
+        /* Add data */
+        chart.data = [{
+          "country": "계산력",
+          "litres": 50
+        }, {
+          "country": "이해력",
+          "litres": 100
+        }, {
+          "country": "문제해결",
+          "litres": 60
+        }, {
+          "country": "추론력",
+          "litres": 50
+        } ];
+        
+        /* Create axes */
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "country";
+        
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.axisFills.template.fill = chart.colors.getIndex(2);
+        valueAxis.renderer.axisFills.template.fillOpacity = 0.05;
+        valueAxis.min = 0;
+        valueAxis.max = 100; 
+        
+        
+        /* Create and configure series */
+        var series = chart.series.push(new am4charts.RadarSeries());
+        series.dataFields.valueY = "litres";
+        series.dataFields.categoryX = "country";
+        series.name = "Sales";
+        series.strokeWidth = 3;
+        
+        }); // end am4core.ready()
+        </script>
+        
+        <!-- HTML -->
+        <div id="chartdiv02"></div>
+

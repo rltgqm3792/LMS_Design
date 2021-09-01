@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/LCMS/js/jquery-2.0.2.min.js"></script>
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/LCMS/css/lms_w_LCMS_login.css" rel="stylesheet" type="text/css" />
+
+     <!-- 로그인 스크립트 -->
+     <script type="text/javascript">
+
+        function login() {
+            var user_id = $('#tx_id').val();
+            var user_pass = $('#tx_pass').val();
+    
+            if (user_id == 'd0000' && user_pass == '1111') {
+                location.href = 'certify.html';
+            }
+            else {
+                $(".txt_miss").addClass('on');
+            }
+        }
+        </script>
+        <!-- //로그인 스크립트 -->
+
+</head>
+<body>
+    <!-- 로그인 -->
+    <article class="Login">
+        <section class="login_wrap">
+            <a href="" class="logo">스마트해법</a>
+            <div class="login_box">
+                <h1 class="tit">LOGIN</h1>
+                <h2 class="tit_desc">안녕하세요! 환영합니다.</h2>
+                <!-- 잘못 입력시 'txt_miss'에 클래스 'on' 추가 -->
+                <label for="tx_id" class="txt_miss">
+                    <input type="text" id="tx_id" placeholder="아이디" />
+                    <span>아이디를 다시 확인해 주세요!</span>
+                </label>
+                <label for="tx_pass" class="txt_miss">
+                    <input type="password" id="tx_pass" placeholder="비밀번호"  autocomplete="on"/>
+                    <span>비밀번호를 다시 확인해 주세요!</span>
+                </label>
+                <a href="javascript:login();" class="btn_login">로그인</a>
+                <!-- 아이디저장 -->
+                <label for="id_save" class="check_idt">
+                    <input type="checkbox" id="id_save" />
+                    <span>아이디 저장</span>
+                </label>
+                <!-- //아이디저장 -->
+            </div>
+            <!-- 푸터 -->
+            <footer>Copyright 2021 by haebubedu. All Rights Reserved.</footer>
+        </section>
+        <!-- 배경이미지 -->
+        <section class="login_bg">
+            <div class="bg_01"></div>
+            <div class="bg_02"></div>
+        </section>
+        <!-- //배경이미지 -->
+    </article>
+    <!-- //로그인 -->
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- 페이지 스크립트 -->   
+        <script type="text/javascript">
+        </script>
+
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>자주 찾는 메뉴</h1>
+            </header>
+            <section class="pop_content">
+                
+                <div class="frm_fav_wrap">
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk1" name="checkbox" checked>
+                            <label for="chk1">교재주문</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk2" name="checkbox" checked>
+                            <label for="chk2">수금관리</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk3" name="checkbox" checked>
+                            <label for="chk3">강사관리</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk4" name="checkbox">
+                            <label for="chk4">진단평가</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk5" name="checkbox">
+                            <label for="chk5">수업모드</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk6" name="checkbox">
+                            <label for="chk6">주문하기</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk7" name="checkbox">
+                            <label for="chk7">출결키패드</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk8" name="checkbox">
+                            <label for="chk8">SMS결제</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk9" name="checkbox">
+                            <label for="chk9">SMS보내기</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk10" name="checkbox">
+                            <label for="chk10">학습관리</label>
+                        </span>
+                        <span class="frm_fav">
+                            <input type="checkbox" id="chk11" name="checkbox">
+                            <label for="chk11">즐겨찾기<br/>추가</label>
+                        </span>
+                </div>
+
+                 <!-- 즐겨찾기 추가 미선택시 비활성 -->
+                 <div class="title_fav disable">
+                    <div class="fav_group">
+                        <div class="fav_group_tit">
+                            <span>즐겨찾기 1</span>
+                        </div>
+                        <dl>
+                            <dt>타이틀</dt>
+                            <dd><input type="text" placeholder="타이틀 최대 6자 입력" disabled /></dd>
+                            <dt>URL</dt>
+                            <dd><input type="text" placeholder="URL 입력" disabled /></dd>
+                        </dl>
+                    </div>      
+                </div>   
+                <!-- //즐겨찾기 추가 미선택시 비활성 -->
+
+                <!-- 즐겨찾기 추가 -->                
+                <div class="title_fav">
+                    <div class="fav_group">
+                        <div class="fav_group_tit">
+                            <span>즐겨찾기 1</span>
+                        </div>
+                        <dl>
+                            <dt>타이틀</dt>
+                            <dd><input type="text" placeholder="타이틀 최대 6자 입력" /></dd>
+                            <dt>URL</dt>
+                            <dd><input type="text" placeholder="URL 입력" /></dd>
+                        </dl>
+                    </div>                        
+                    <div class="bottom_wrap">
+                        <a href="" class="btn_top btn_line">취소</a>
+                        <a href="" class="btn_top">확인</a>
+                     </div>                  
+                </div>    
+                <!-- //즐겨찾기 추가 -->   
+
+                <div class="title_fav">
+                    <div class="fav_group">
+                        <div class="fav_group_tit">
+                            <span>즐겨찾기 1</span>
+                            <a href="">삭제</a>
+                        </div>
+                        <dl>
+                            <dt>타이틀</dt>
+                            <dd><input type="text" value="NAVER" /></dd>
+                            <dt>URL</dt>
+                            <dd><input type="text" value="http://www.naver.com" /></dd>
+                        </dl>
+                    </div>                    
+                    <div class="fav_group">
+                        <div class="fav_group_tit">
+                            <span>즐겨찾기 2</span>
+                            <a href="">삭제</a>
+                        </div>
+                        <dl>
+                            <dt>타이틀</dt>
+                            <dd><input type="text" value="NAVER" /></dd>
+                            <dt>URL</dt>
+                            <dd><input type="text" value="http://www.naver.com" /></dd>
+                        </dl>
+                    </div>                    
+                    <div class="fav_group">
+                        <div class="fav_group_tit">
+                            <span>즐겨찾기 3</span>
+                            <a href="">삭제</a>
+                        </div>
+                        <dl>
+                            <dt>타이틀</dt>
+                            <dd><input type="text" value="NAVER" /></dd>
+                            <dt>URL</dt>
+                            <dd><input type="text" value="http://www.naver.com" /></dd>
+                        </dl>
+                    </div>
+                    <div class="bottom_wrap">
+                       <a href="" class="add">추가</a>
+                    </div>                    
+                </div>
+
+            </section>
+
+            <section class="pop_btn_group"> 
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+
+        </article>
+    </body>
+</html>

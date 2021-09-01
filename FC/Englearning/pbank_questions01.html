@@ -1,0 +1,263 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('문제은행');
+		$('.group_title h2').text('출제마법사');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li class="on"><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions01">단원평가(고정)</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions02">단원평가(맞춤)</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions03">영역평가</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions04">어휘평가</a></li>
+</ul>
+<h3 class="tit_h4">문제지 정보</h3>
+<!-- 검색 -->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>과정</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm">
+							<input type="radio" name="std" id="std1">
+							<label for="std1">중1</label>
+						</span>
+						<span class="frm">
+							<input type="radio" name="std" id="std2">
+							<label for="std2">중2</label>
+						</span>
+						<span class="frm">
+							<input type="radio" name="std" id="std3">
+							<label for="std3">중3</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>관련도서</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>금성</option>
+						<option>능률(김)</option>
+						<option>능률(양)</option>
+						<option>다락원</option>
+						<option>동아(윤)</option>
+						<option>동아(이)</option>
+						<option>미래엔</option>
+						<option>비상</option>
+						<option>와이비엠(박)</option>
+						<option>와이비엠(송)</option>
+						<option>지학사</option>
+						<option>천재(이)</option>
+						<option>천재(정)</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>Lesson</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm all">
+							<input type="checkbox" name="lesson" id="all" onclick="all_check(this)">
+							<label for="all">전체</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson1">
+							<label for="lesson1">lesson1</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson2">
+							<label for="lesson2">lesson2</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson3">
+							<label for="lesson3">lesson3</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson4">
+							<label for="lesson4">lesson4</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson5">
+							<label for="lesson5">lesson5</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson6">
+							<label for="lesson6">lesson6</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson7">
+							<label for="lesson7">lesson7</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson8">
+							<label for="lesson8">lesson8</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="lesson" id="lesson9">
+							<label for="lesson9">lesson9</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>난이도</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm all">
+							<input type="checkbox" name="difficulty" id="difall" onclick="all_check(this)">
+							<label for="difall">전체</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="difficulty" id="difficulty1">
+							<label for="difficulty1">하(Ⅰ)</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="difficulty" id="difficulty2">
+							<label for="difficulty2">중(Ⅱ)</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="difficulty" id="difficulty3">
+							<label for="difficulty3">상(Ⅲ)</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>회차</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm all">
+							<input type="checkbox" name="round" id="roundall" onclick="all_check(this)">
+							<label for="roundall">전체</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="round" id="round1">
+							<label for="round1">하(Ⅰ)</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="round" id="round2">
+							<label for="round2">중(Ⅱ)</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!-- // 검색 -->
+
+<div class="btn_top_wrap between">
+	<span>
+		<select>
+			<option value="">10</option>
+			<option value="" selected="selected">20</option>
+			<option value="">50</option>
+			<option value="">100</option>
+		</select>
+		<span class="list_num">전체 <strong class="col_blue">1,256</strong></span>
+	</span>
+	<span>
+		<a href="#" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+		<a href="javascript:openPop('Englearning/pop_pbank_tagetSelectAll.html','910','670');" class="btn_top btn_check"><span>대상자 일괄선택</span></a>
+	</span>
+</div>
+<!--테이블-->
+!--[D] 데이터 테이블 적용 후 제거--
+<div class="table_list">
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<span class="frm only all">
+						<input type="checkbox" name="chk" id="chkall" onclick="all_check(this);">
+						<label for="chkall">전체 선택</label>
+					</span>
+				</th>
+				<th>과정</th>
+				<th>도서</th>
+				<th>문제지명</th>
+				<th>회차</th>
+				<th>문항수</th>
+				<th>대상자 일괄 인쇄</th>
+				<th>대상자 선택</th>
+				<th>대상자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<span class="frm only">
+						<input type="checkbox" name="chk" id="chk1">
+						<label for="chk1">선택</label>
+					</span>
+				</td>
+				<td></td>
+				<td></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_problempaper.html','1000','670');">문제지명</a></td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">20</td>
+				<td><a href="javascript:openPop('Englearning/popup_programTest.html','1000','670');" class="btn_table bluish">문제</a> <a href="#" class="btn_table orange">정답/해설</a></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_tagetSelect.html','910','670');" class="btn_table man_chk">대상자선정</a></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_tagetView.html','910','670');" class="btn_table man">대상자보기</a> <a href="#" class="btn_table man disabled">대상자미지정</a></td>
+			</tr>
+			<!--[D] 다운로드 실시 이력이 있을 시 버튼 클래스 disabled-->
+			<tr>
+				<td>
+					<span class="frm only">
+						<input type="checkbox" name="chk" id="chk2">
+						<label for="chk2">선택</label>
+					</span>
+				</td>
+				<td></td>
+				<td></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_problempaper.html','800','670');">문제지명</a></td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">20</td>
+				<td><a href="javascript:openPop('Englearning/popup_programTest.html','1000','670');" class="btn_table disabled">문제</a> <a href="#" class="btn_table disabled">정답/해설</a></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_tagetSelect.html','910','670');" class="btn_table man_chk">대상자선정</a></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_tagetView.html','910','670');" class="btn_table man">대상자보기</a> <a href="#" class="btn_table man disabled">대상자미지정</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="paging">
+	<a href="" class="btn_paging back"></a>
+	<a href="" class="btn_paging pre"></a>
+	<ul>
+		<li><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">4</a></li>
+		<li><a href="">5</a></li>
+		<li><a href="">6</a></li>
+		<li><a href="">7</a></li>
+		<li><a href="">8</a></li>
+		<li><a href="">9</a></li>
+	</ul>
+	<a href="" class="btn_paging next"></a>
+	<a href="" class="btn_paging forward"></a>
+</div>

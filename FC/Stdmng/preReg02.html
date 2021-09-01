@@ -1,0 +1,150 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('nav_two .two_tit, .group_title h2').text('예비수강생 등록');
+    });
+    //[D]등록버튼 활성화_개발팀에서 수정가능합니다.
+    $('#std_name').change(function () {
+        if ($('#std_name').val().length > 0) {
+            $('.btn_basic').removeClass('disabled');
+        }
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- [D]컨텐츠 정보가 들어갑니다. -->
+<!--가이드-->
+<dl class="box_reg_guide">
+    <dt>예비수강생 등록 안내
+        <a class="btn_slide">열기/닫기</a>
+    </dt>
+    <dd>
+        <ul class="ul_box_reg">
+            <li>입회동의서가 전송되지 않고 등록됩니다.</li>
+            <li>진단평가/학력평가의 경우 해당평가에만 사용할 수 있습니다.</li>
+            <li>예비수강생(학력평가, 진단평가)이 체험/정규수강생 전환시 평가내역이 그대로 저장</li>
+            <li>예비수강생(체험)이 정규수강생 전환시 평가/학습내역이 그대로 저장</li>
+            <li>전환은 수강생현황(예비수강생) 화면에서 가능합니다.</li>
+        </ul>
+    </dd>
+</dl>
+<!--//가이드-->
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>수강생 유형</th>
+                <td>예비 수강생</td>
+                <th>수강생명<span class="required"></span>
+                </th>
+                <td><input type="text" placeholder="수강생명 입력" id="std_name"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="tit_h4">기본 정보</h4>
+
+<!--[D]학력평가 테이블 -->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    예비수강생 유형<span class="required"></span>
+                </th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input
+                                type="radio"
+                                id="diag"
+                                name="test"
+                                onclick="movepage('index.html?page=stdmng/preReg01');"/>
+                            <label for="diag">진단평가</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="edu" name="test" checked="checked"/>
+                            <label for="edu">학력평가</label>
+                        </span>
+                        <span class="frm">
+                            <input
+                                type="radio"
+                                id="exp"
+                                name="test"
+                                onclick="movepage('index.html?page=stdmng/preReg03');"/>
+                            <label for="exp">체험학습</label>
+                        </span>
+                    </span>
+                </td>
+                <th>FC</th>
+                <td>
+                    전과목
+                </td>
+            </tr>
+            <tr>
+                <th>학년<span class="required"></span>
+                </th>
+                <td colspan="3">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="elementary" name="grade" checked="checked"/>
+                            <label for="elementary">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="middle" name="grade"/>
+                            <label for="middle">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="high" name="grade"/>
+                            <label for="high">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>학년선택</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <a
+        href="javascript:alert_confirm('예비수강생 등록완료','예비수강생 등록이 완료 되었습니다','index.html?page=stdmng/list02');"
+        class="btn_basic">등록</a>
+</div>
+<!-- //[D]학력평가 테이블-->
+
+<!-- //[D]컨텐츠 정보가 들어갑니다. -->

@@ -1,0 +1,101 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('AI맞춤학습');
+        $('.group_title h2').text('주차별 맞춤 일괄기능');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/smartCustStd">스마트맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStd">주차별맞춤학습</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc01_01">주차별맞춤일괄기능</a></li>
+    <li><a href="javascript:openPop('Mathlearning/onlineGrad.html',screen.width,screen.height);">온라인간편채점</a></li>
+    <li><a href="index.html?page=mathlearning/wrongAnsrNote">오답노트</a></li>
+    <li><a href="index.html?page=mathlearning/signalLightType">신호등유형학습</a></li>
+</ul>
+
+<!-- 탭메뉴 -->
+<ul class="tab_2depth s_group">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc01_01">그룹출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc02">일괄출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc03">날짜별 진도출력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc04">날짜별기타출력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc05">답안입력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc06">학습정보수정</a></li>
+</ul>
+<!-- // 탭메뉴 -->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--그룹리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <a href="index.html?page=mathlearning/weeklyCustStdFunc01_01_01" class="btn_basic btn_manage_group"><span>그룹관리</span></a>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);" checked>
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year3" name="year">
+                        <label for="chk_year3">고등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>전체</option>
+                </select>
+            </p>
+        </div>
+        <!--//검색-->
+    </div>
+    <!--//그룹리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <div class="table_list">
+            <table>
+                <caption>그룹정보</caption>
+                <colgroup>
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="tit_group_none">그룹을 생성해주세요.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="no_data">
+                                그룹관리에서 첫 번째 그룹을 생성해주세요.
+                            </div>
+                        </td>                  
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

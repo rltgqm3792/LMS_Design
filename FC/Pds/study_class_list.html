@@ -1,0 +1,218 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_tilefte h2').text('학습자료실');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_tilefte pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 텝 -->
+<ul class="tab_2depth_search">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=pds/study_book_list">수학</a>
+    </li>
+    <li>
+        <a href="index.html?page=pds/study_english_list">영어</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=pds/study_class_list">전과목</a>
+    </li>
+</ul>
+<!-- //텝 -->
+
+<!-- 검색 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="all_chk" name="fc" onchange="all_check(this);" checked="checked" />
+                            <label for="all_chk">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="fc_chk01" name="fc" />
+                            <label for="fc_chk01">초등전과목</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="fc_chk02" name="fc" />
+                            <label for="fc_chk02">중학수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="fc_chk03" name="fc" />
+                            <label for="fc_chk03">논술</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="fc_chk04" name="fc" />
+                            <label for="fc_chk04">한국사</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                        <option>작성자</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색 -->
+
+<!-- 테이블상단 -->
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="selected">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <span class="list_num">전체
+        <strong class="col_blue">25</strong>개</span>
+</div>
+<!-- //테이블상단 -->
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%;" />
+            <col />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col style="width:6%;" />
+            <col style="width:8%;" />
+            <col style="width:10%;" />
+            <col style="width:7%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>제목</th>
+                <th>수업안</th>
+                <th>정답</th>
+                <th>Work Sheet</th>
+                <th>기타</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tr_notice">
+                <td>
+                    <span class="table_bullet red_bullet">필독</span>
+                </td>
+                <td class="left">
+                    <a href="index.html?page=pds/study_class_view">중간고사 대비 모의평가 문제지</a>
+                    <span class="ico_img new">새 글</span>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>관리자</td>
+                <td>
+                    <span class="font_gmarket13">2021.06.30</span>
+                </td>
+                <td class="gm_font">28900</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="font_gmarket13">1</span>
+                </td>
+                <td class="left">
+                    <a href="index.html?page=pds/study_class_view">중간고사 대비 모의평가 문제지</a>
+                    <span class="ico_img new">새 글</span>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>관리자</td>
+                <td>
+                    <span class="font_gmarket13">2021.06.30</span>
+                </td>
+                <td class="gm_font">28900</td>
+            </tr>
+            <!-- </tr> <tr> <td colspan="11" class="no_data">해당 검색 결과가 없습니다.</td> </tr> -->
+        </tbody>
+    </table>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+        <li>
+            <a href="">10</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

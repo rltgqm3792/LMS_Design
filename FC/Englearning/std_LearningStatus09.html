@@ -1,0 +1,263 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('수강생별 학습현황');
+        $('.group_title h2').text('수강생별 학습현황');
+		calendar(); 
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>클래스전체</option>
+                </select>
+            </p>
+            <p class="select_group between">
+                <select>
+                    <option>Group</option>
+					<option>Starter</option>
+                </select>
+                <select>
+                    <option>Sub</option>
+                </select>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>Level</option>
+					<option>0</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+                </select>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 조회하세요"><a href="" class="btn_s search">조회</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!--수강생-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+						<!--//[D]기본 std_grade 뒤 중등 mid, 고등 high 추가-->
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="std_grade">초3</span>
+                        <span class="std_level">Lv.1</span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//수강생-->
+		<!-- 2depth영역 -->
+		<ul class="tab_2depth">
+			<li><a href="index.html?page=englearning/std_LearningStatus01">학습 관리현황</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus02">출석</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus03">완료학습</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus04">녹음음원</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus05">음성인식</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus06">녹화영상</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus07">미션</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus08">보상</a></li>
+			<li class="on"><a href="index.html?page=englearning/std_LearningStatus09">메시지</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus10">숙제</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus11">질문</a></li>
+		</ul>
+        <!-- //2depth영역 -->
+		<!--메시지-->
+		<div class="pop_talk page_talk">
+			<div class="talk_wrap">
+				<div class="top_area">
+					<div class="top_std_info">
+						<span class="name">박찬호</span>
+						<span class="std_num">SM21000000</span>
+						<span class="std_grade">초3</span>
+						<span class="std_level">Lv.1</span>
+					</div>
+					<a href="javascript:void(0);" class="btn_refresh"><span>새로고침</span></a>
+				</div>
+				<div class="msg_area">
+					<div class="info_date">
+						<span><em class="gm_font">2021.03.31</em>수요일</span>
+					</div>
+					<!-- message start -->
+					<div class="bx_message my">
+						<p>
+							<span class="name">김병현</span>
+							<span>선생님 , 함수 관련해서 문의 드려요<em>11:42 AM</em></span>
+						</p>
+						<p>
+							<span>감사합니다<em>11:43 AM</em></span>
+						</p>
+					</div>
+					<div class="bx_message">
+						<p>
+							<span>학습이 벌써 80% 진행 중입니다.<em>11:52 AM</em></span>
+						</p>
+						<p>
+							<span>파이팅!<em>11:53 AM</em></span>
+						</p>
+					</div>
+					<div class="bx_message my">
+						<p>
+							<span class="name">김병현</span>
+							<span>공부 잘하는 방법 알려주세요? 공부 잘하는 방법 알려주세요? 공부 잘하는 방법 알려주세요? 공부 잘하는 방법 알려주세요? 공부 잘하는 방법 알려주세요? 공부 잘하는 방법 알려주세요?<em>12:02 AM</em></span></p>
+					</div>
+					<div class="bx_message my">
+						<p>
+							<span class="name">김병현</span>
+							<span>선생님 , 함수 관련해서 문의 드려요<em>11:42 AM</em></span>
+						</p>
+						<p>
+							<span>감사합니다<em>11:43 AM</em></span>
+						</p>
+					</div>
+					<div class="bx_message">
+						<p>
+							<span>학습이 벌써 80% 진행 중입니다.<em>11:52 AM</em></span>
+						</p>
+						<p>
+							<span><a href="javascript:void(0);" class="pdf">5월 계획 일정표.pdf</a><em>11:53 AM</em></span>
+						</p>
+					</div>
+					<div class="bx_message my">
+						<p>
+							<span class="name">김병현</span>
+							<span>공부 잘하는 방법 알려주세요?<em>12:02 AM</em></span>
+						</p>
+					</div>
+					<!-- // message end -->
+				</div>
+				<div class="btm_area">
+					<span class="frm_wrap">
+						<input type="text" />
+						<button class="btn_basic btn_talk">전송</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--//메시지-->
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

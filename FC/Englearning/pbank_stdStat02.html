@@ -1,0 +1,323 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('문제은행');
+		$('.group_title h2').text('학습진행현황');
+		calendar(); //달력
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li class="on"><a href="index.html?page=englearning/pbank_stdStat01">학습진행현황</a></li>
+	<li><a href="index.html?page=englearning/pbank_wronganswer">오답문제지</a></li>
+</ul>
+<!-- 검색 -->
+<!-- std_wrap -->
+<div class="std_wrap">
+	<!--step01-->
+	<div class="std_group">
+		<!--검색-->
+		<div class="search_group">
+			<p class="year_group">
+				<span class="frm_wrap frm_btn">
+					<span class="frm">
+						<input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+						<label for="chk_all">전체</label>
+					</span>
+					<span class="frm">
+						<input type="checkbox" id="chk_year1" name="year">
+						<label for="chk_year1">중1</label>
+					</span>
+					<span class="frm">
+						<input type="checkbox" id="chk_year2" name="year">
+						<label for="chk_year2">중2</label>
+					</span>
+					<span class="frm">
+						<input type="checkbox" id="chk_year3" name="year">
+						<label for="chk_year3">중3</label>
+					</span>
+				</span>
+			</p>
+			<p class="select_group">
+				<select>
+					<option>클래스명 선택</option>
+				</select>
+			</p>
+			<p class="input_group">
+				<input type="text" class="txt_search" required="required" placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+			</p>
+			<p class="list_align right">
+				<a href="">학년별</a>
+				<a href="">이름순</a>
+			</p>
+		</div>
+		<!--//검색-->
+		<!--리스트-->
+		<ul class="std_list">
+			<li>
+				<a href="" class="on">
+					<!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+					<span class="label">예비</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+					<span class="label">예비</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<span class="std_grade mid">중1</span>
+					<span class="name">오승환</span>
+					<span class="std_num">M098765432</span>
+				</a>
+			</li>
+		</ul>
+		<!--//리스트-->
+	</div>
+	<!--//step01-->
+	<!--step02-->
+	<div class="view_group">
+		<!--수강생 정보-->
+		<div class="search_wrap">
+			<div class="top_area">
+				<div class="student">
+					<div class="info">
+						<span class="name">박찬호</span>
+						<span class="gm_font">M098765432</span>
+						<span class="std_grade mid">중1</span>
+						<span class="study bar">수강생의 최근 학습진행 현황입니다.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--//수강생 정보-->
+		<!--[D]수강생 정보 미선택시 노출--
+		<div class="search_wrap type02">
+			<span class="name">수강생을 선택해 주세요.</span>
+		</div>
+		<!--//수강생 정보 미선택시 노출-->
+		<ul class="tab_2depth">
+			<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_stdStat01">영역&단원평가</a></li>
+			<li class="on"><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_stdStat02">어휘평가</a></li>
+		</ul>
+		<!--검색-->
+		<div class="search_wrap">
+			<ul class="info_group">
+				<li>
+					<dl>
+						<dt>과정</dt>
+						<dd>
+							<select>
+								<option>전체</option>
+								<option>중1</option>
+								<option>중2</option>
+								<option>중3</option>
+							</select>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>채점</dt>
+						<dd>
+							<select>
+								<option>전체</option>
+								<option>완료</option>
+								<option>미완료</option>
+							</select>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>기간</dt>
+						<dd>
+							<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+								<input id="startpicker-input" type="text" aria-label="Date">
+								<label for="startpicker-input" class="tui-ico-date"></label>
+								<div id="startpicker-container" style="margin-left: -1px;"></div>
+							</div>
+							<span class="line">~</span>
+							<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+								<input id="endpicker-input" type="text" aria-label="Date">
+								<label for="endpicker-input" class="tui-ico-date"></label>
+								<div id="endpicker-container" style="margin-left: -1px;"></div>
+							</div>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+		<div class="btn_bottom_wrap right">
+			<button class="btn_search">검색</button>
+		</div>
+		<!--//검색-->
+		<div class="btn_top_wrap between">
+			<span>
+				<select>
+					<option value="">10</option>
+					<option value="" selected="selected">20</option>
+					<option value="">50</option>
+					<option value="">100</option>
+				</select>
+				<span class="list_num">전체 <strong class="col_blue">1,256</strong></span>
+			</span>
+			<span>
+				<a href="javascript:alert_confirm('해당 문제정보를 삭제하시겠습니까?','','');" class="btn_top btn_gray02"><span>삭제</span></a>
+				<a href="javascript:alert_confirm('일괄인쇄를 진행하시겠습니까?','','');" class="btn_top btn_ico print"><span>문제 인쇄</span></a>
+				<a href="javascript:alert_confirm('일괄인쇄를 진행하시겠습니까?','','');" class="btn_top btn_ico print"><span>정답/해설 인쇄</span></a>
+			</span>
+		</div>
+		<!--테이블-->
+		!--[D] 데이터 테이블 적용 후 제거--
+		<div class="table_list">
+			<table>
+				<thead>
+					<tr>
+						<th>
+							<span class="frm only all">
+								<input type="checkbox" name="chk" id="chkall" onclick="all_check(this);">
+								<label for="chkall">전체 선택</label>
+							</span>
+						</th>
+						<th>구분</th>
+						<th>과정</th>
+						<th>출제일</th>
+						<th>문제지명</th>
+						<th>회차</th>
+						<th>대상자 일괄 인쇄</th>
+						<th>채점</th>
+						<th>점수</th>
+						<th>오답</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<span class="frm only">
+								<input type="checkbox" name="chk" id="chk1">
+								<label for="chk1">선택</label>
+							</span>
+						</td>
+						<td></td>
+						<td></td>
+						<td class="gm_font">2021.03.19</td>
+						<td><a href="javascript:openPop('Englearning/pop_pbank_problempaper.html','800','670');">문제지명</a></td>
+						<td class="gm_font">1</td>
+						<td><a href="javascript:openPop('Englearning/popup_programTest.html','1000','670');" class="btn_table bluish">문제</a> <a href="#" class="btn_table orange">정답/해설</a></td>
+						<td><a href="javascript:openPop('Englearning/pop_pbank_scoring01.html','1000','670');" class="btn_table">채점</a></td>
+						<td><span class="btn_table result">80/100</span></td>
+						<td><a href="#" class="btn_table">보기</a></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="frm only">
+								<input type="checkbox" name="chk" id="chk2">
+								<label for="chk2">선택</label>
+							</span>
+						</td>
+						<td></td>
+						<td></td>
+						<td class="gm_font">2021.03.19</td>
+						<td><a href="javascript:openPop('Englearning/pop_pbank_problempaper.html','800','670');">문제지명</a></td>
+						<td class="gm_font">1</td>
+						<td><a href="javascript:openPop('Englearning/popup_programTest.html','1000','670');" class="btn_table bluish">문제</a> <a href="#" class="btn_table orange">정답/해설</a></td>
+						<td><a href="javascript:openPop('Englearning/pop_pbank_scoring02.html','1000','670');" class="btn_table">완료</a></td>
+						<td><span class="btn_table result">80/100</span></td>
+						<td><a href="#" class="btn_table">보기</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--//테이블-->
+
+		<div class="paging">
+			<a href="" class="btn_paging back"></a>
+			<a href="" class="btn_paging pre"></a>
+			<ul>
+				<li><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li><a href="">5</a></li>
+				<li><a href="">6</a></li>
+				<li><a href="">7</a></li>
+				<li><a href="">8</a></li>
+				<li><a href="">9</a></li>
+			</ul>
+			<a href="" class="btn_paging next"></a>
+			<a href="" class="btn_paging forward"></a>
+		</div>
+	</div>
+	<!--//step02-->
+</div>

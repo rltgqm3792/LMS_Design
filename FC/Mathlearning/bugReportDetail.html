@@ -1,0 +1,107 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('버그레포트');
+        $('.group_title h2').text('오류신고현황');
+
+        calendar(); //달력
+    });
+</script>
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/bugReportStts">오류신고현황</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/bugReportDetail">오류처리현황</a></li>
+</ul>
+
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>전체 가맹점에서 신고한 스마트교재 및 워크북 버그신고 현황입니다.</li>
+            <li>이미 신고된 내용이 있는지 확인하시고 버그 신고를 해주세요.</li>
+            <li>동일한 문항의 동일한 오류의 경우, 스마트교재, 워크북을 구분하지 않고 최초로 등록한 가맹점에 상품권이 지급됩니다.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 조회 -->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:12%" />
+            <col />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>유형</th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="type_all" name="type" onchange="all_check(this);" />
+                            <label for="type_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type1" name="type" checked />
+                            <label for="type1">스마트교재</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type2" name="type" />
+                            <label for="type2">교재</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>학년</th>
+                <td colspan="3">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="std_all" name="std" onchange="all_check(this);" />
+                            <label for="std_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std1" name="std" checked />
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std2" name="std" />
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std3" name="std" />
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--//조회-->
+<div id="grid"></div>
+
+<!-- 그리드 테이블 내 링크 -->
+<a href="javascript:openPop('Mathlearning/pop_bugReportStts03.html','900', '650');">초3-1 원리쏙쏙 1호 (4. 피타고라스의 정리) </a><br>
+<a href="javascript:openPop('Mathlearning/pop_bugReportStts04.html','900', '650');">초3-1 원리쏙쏙 1호 (4. 피타고라스의 정리) </a>
+<!-- // 그리드 테이블 내 링크 -->

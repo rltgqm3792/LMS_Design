@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/lcms/Biz/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/lcms/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/lcms/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/lcms/css/LMS_w_lcms.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>교재코드선택</h1>
+        </header>
+        <section class="pop_content">
+            <!-- tit_sub_txt -->
+            <div class="search_wrap">
+                <ul class="info_group">
+                    <li>
+                        <dl>
+                            <dt>구분</dt>
+                            <dd>
+                                <label for="dv_rdo02" class="rdo_idt">
+                                    <input type="radio" name="dv" id="dv_rdo02" checked />
+                                    <span>초등</span>
+                                </label>
+                                <label for="dv_rdo03" class="rdo_idt">
+                                    <input type="radio" name="dv" id="dv_rdo03" />
+                                    <span>중등</span>
+                                </label>
+                                <label for="dv_rdo04" class="rdo_idt">
+                                    <input type="radio" name="dv" id="dv_rdo04" />
+                                    <span>고등</span>
+                                </label>
+                            </dd>
+                        </dl>
+                    </li> 
+                    <li>
+                        <dl>
+                            <dt>학년</dt>
+                            <dd>
+                                <label for="year_rdo01" class="rdo_idt">
+                                    <input type="radio" name="year" id="year_rdo01" checked />
+                                    <span>1학년</span>
+                                </label>
+                                <label for="year_rdo02" class="rdo_idt">
+                                    <input type="radio" name="year" id="year_rdo02" />
+                                    <span>1학년</span>
+                                </label>
+                                <label for="year_rdo03" class="rdo_idt">
+                                    <input type="radio" name="year" id="year_rdo03" />
+                                    <span>3학년</span>
+                                </label>
+                                <label for="year_rdo04" class="rdo_idt">
+                                    <input type="radio" name="year" id="year_rdo04" />
+                                    <span>4학년</span>
+                                </label>
+                                <label for="year_rdo05" class="rdo_idt">
+                                    <input type="radio" name="year" id="year_rdo05" />
+                                    <span>5학년</span>
+                                </label>
+                                <label for="year_rdo06" class="rdo_idt">
+                                    <input type="radio" name="year" id="year_rdo06" />
+                                    <span>6학년</span>
+                                </label>
+                            </dd>
+                        </dl>
+                    </li> 
+                    <li>
+                        <dl>
+                            <dt>학기</dt>
+                            <dd>
+                                <label for="term_rdo01" class="rdo_idt">
+                                    <input type="radio" name="term" id="term_rdo01" checked />
+                                    <span>1학기</span>
+                                </label>
+                                <label for="term_rdo02" class="rdo_idt">
+                                    <input type="radio" name="term" id="term_rdo02" />
+                                    <span>2학기</span>
+                                </label>
+                            </dd>
+                        </dl>
+                    </li> 
+                    <li>
+                        <dl>
+                            <dt>유형</dt>
+                            <dd>
+                                <label for="type_rdo01" class="rdo_idt">
+                                    <input type="radio" name="type" id="type_rdo01" checked />
+                                    <span>원리쏙쏙</span>
+                                </label>
+                                <label for="type_rdo02" class="rdo_idt">
+                                    <input type="radio" name="type" id="type_rdo02" />
+                                    <span>실력점프</span>
+                                </label>
+                                <label for="type_rdo03" class="rdo_idt">
+                                    <input type="radio" name="type" id="type_rdo03" />
+                                    <span>유형완성</span>
+                                </label>
+                                <label for="type_rdo04" class="rdo_idt">
+                                    <input type="radio" name="type" id="type_rdo04" />
+                                    <span>해법계산</span>
+                                </label>
+                            </dd>
+                        </dl>
+                    </li> 
+                    <li>
+                        <dl>
+                            <dt>직접입력</dt>
+                            <dd><input type="text" placeholder="검색어를 입력하세요"></dd>
+                        </dl>
+                    </li>
+                </ul>
+                 <!-- 초기화,검색 버튼 -->
+                <div class="btn_wrap box_in">
+                    <a href="#" class="btn_reset"><br/>초기화</a>
+                    <a href="" class="btn_search big">검색</a>
+                </div> 
+                <!-- //초기화,검색 버튼 -->
+            </div>
+            <div id="grid"></div>
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">            
+            <a href="javascript:window.close();" class="btn">등록</a>
+        </section>
+    </article>
+</body>
+</html>

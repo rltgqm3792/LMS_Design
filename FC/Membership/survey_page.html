@@ -1,0 +1,304 @@
+﻿<!-- <%@ Page Title="" Language="C#"
+MasterPageFile="Ucontrol/MemberRegis.master" AutoEventWireup="true"
+CodeFile="survey_page.aspx.cs" Inherits="survey_page" %> <%@ Register
+Src="UControl/head.ascx" TagName="head" TagPrefix="uc" %> <asp:Content
+ID="Content1" ContentPlaceHolderID="head" Runat="Server"> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+            <title>::해법에듀::</title>
+            <script
+                type="text/javascript"
+                src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/jquery-2.0.2.min.js"></script>
+            <script
+                type="text/javascript"
+                src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/hbedu_m_prt.js"></script>
+            <!-- font css -->
+            <link
+                href="/HBEDU/MemberRegis/Mobile/font/font.css"
+                rel="stylesheet"
+                type="text/css"/>
+
+            <!-- css -->
+            <link
+                href="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/css/hbedu_m_prt.css"
+                rel="stylesheet"
+                type="text/css"/>
+            <link href="http://image.test.hbedu.co.kr/LMS/FC/css/hbedu_m_prt02.css" rel="stylesheet" type="text/css" />
+
+            <script type="text/javascript">
+
+                //alert
+                function alert_open(tit, content) {
+                    $('.alert').addClass('on');
+                    $('.ly_alert h1').text(tit);
+                    $('.ly_alert p.content').html(content);
+                }
+                function alert_close() {
+                    $('.ly_wrap').removeClass('on');
+                }
+            </script>
+
+            <script type="text/javascript">
+                $(function () {
+                    //백그라운드 css
+                    $("body").css('background', '#fafafa');
+
+                    //서브 타이틀 변경
+                    $('.head_sub strong').text('입회설문');
+                    $('.head_sub span').text('에 참여해주세요.');
+
+                    //선택했을경우 다음 질문 넘어감
+                    $('#page01 .ty_rdo input').change(function () {
+                        if ($(this).prop("checked", true)) {
+                            $('#page01').hide();
+                            $('#page02').show();
+                        }
+                    });
+                });
+            </script>
+            <!-- </asp:Content> <asp:Content ID="Content2"
+            ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> <uc:head ID="head"
+            runat="server" /> -->
+
+        </head>
+        <body>
+
+            <article class="regis_wrap">
+
+                <header class="head_sub">
+                    <h2>설문참여</h2>
+                    <ul>
+                        <li>1</li>
+                        <li class="on">2</li>
+                        <li>3</li>
+                    </ul>
+                </header>
+
+                <!-- 설문폼 01-->
+                <section class="survey page01" id="page01">
+                    <!-- 질문 -->
+                    <h1>
+                        <span class="qustion">
+                            <strong>1.</strong>
+                            귀하께서는 본 학원을 어떻게 처음 알게되었습니까?
+                        </span>
+                        <span class="page">
+                            <em class="on"></em>
+                            <em></em>
+                        </span>
+                    </h1>
+                    <!-- //질문 -->
+
+                    <!-- 답변리스트 -->
+                    <ul class="list">
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer1"/>
+                                <label for="answer1">
+                                    <strong>인터넷</strong>
+                                    <span>(SNS/카페/검색/광고 등)</span>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2"/>
+                                <label for="answer2">
+                                    <strong>아파트 게시판, 전단지/홍보물</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer3"/>
+                                <label for="answer3">
+                                    <strong>신문/잡지/기타 출판 매체</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer4"/>
+                                <label for="answer4">
+                                    <strong>각종 설명회 또는 교육 전시회</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer5"/>
+                                <label for="answer5">
+                                    <strong>TV 또는 라디오 광고</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer6"/>
+                                <label for="answer6">
+                                    <strong>버스/택시 또는 길거리 광고</strong>
+                                </label>
+
+                            </p>
+                        </li>
+
+                    </ul>
+                    <!-- //답변리스트 -->
+                </section>
+                <!-- //설문폼 01-->
+                <!-- 설문폼 02-->
+                <section class="survey page02" id="page02" style="display:none">
+                    <!-- 질문 -->
+                    <h1>
+                        <span class="qustion">
+                            <strong>2.</strong>
+                            귀하께서 본 학원을 선택하게 된 결정적 이유는 무엇입니까?
+                        </span>
+                        <span class="page">
+                            <em></em>
+                            <em class="on"></em>
+                        </span>
+                    </h1>
+                    <!-- //질문 -->
+
+                    <!-- 답변리스트 -->
+                    <ul class="list">
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_1"/>
+                                <label for="answer2_1">
+
+                                    <strong>방문 위치의 편의성</strong>
+                                </label>
+
+                            </p>
+                        </li>
+
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_2"/>
+                                <label for="answer2_2">
+                                    <strong>알찬 컨텐츠 및 체계적 프로그램</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_3"/>
+                                <label for="answer2_3">
+                                    <strong>학원 브랜드에 대한 신뢰</strong>
+                                    <span>(인지도)</span>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_4"/>
+                                <label for="answer2_4">
+                                    <strong>상담 후 선생님에 대한 신뢰</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_5"/>
+                                <label for="answer2_5">
+                                    <strong>합리적인 수업료</strong>
+                                    <span>
+                                        (회비)</span>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_6"/>
+                                <label for="answer2_6">
+                                    <strong>지인 또는 교우 관계</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_7"/>
+                                <label for="answer2_7">
+                                    <strong>내신 향상 효과에 대한 기대</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_8"/>
+                                <label for="answer2_8">
+                                    <strong>자격증 등 자기 계발에 도움 기대</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p class="ty_rdo">
+                                <input type="radio" name="answer" id="answer2_9"/>
+                                <label for="answer2_9">
+                                    <strong>기타</strong>
+                                </label>
+
+                            </p>
+                        </li>
+                    </ul>
+                    <!-- //답변리스트 -->
+
+                    <!-- 버튼 -->
+                    <div class="btn two">
+                        <a href="#" class="btn_prev">이전</a>
+                        <a href="Regis_end.html" class="btn_end">입력완료</a>
+                    </div>
+                    <!-- //버튼 -->
+                </section>
+                <!-- //설문폼 02-->
+
+                <!-- </asp:Content> -->
+
+            </article>
+
+            <!-- 레이어 alert -->
+            <article class="ly_wrap alert">
+                <!-- alert -->
+                <section class="ly_alert">
+                    <!-- 타이틀 -->
+                    <h1>타이틀이 어쩌고 저쩌고</h1>
+                    <!-- //타이틀 -->
+
+                    <p class="content">
+                        컨텐츠가 들어갑니다.
+                    </p>
+                    <div class="btn">
+                        <a href="javascript:alert_close();" class="btn_cancel">취소</a>
+                        <a href="Regis_form.html" class="btn_submit">입력완료</a>
+                    </div>
+                </section>
+                <!-- //alert -->
+                <div class="mask"></div>
+            </article>
+            <!-- //레이어 alert -->
+
+        </body>
+    </html>

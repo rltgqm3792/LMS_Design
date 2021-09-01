@@ -1,0 +1,79 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('진행중학습');
+        $('.group_title h2').text('진행중학습');
+
+        // 화면 확인용
+        $('#thum_01, #thum_02').click(function() {
+            if($(this).is(':checked')) {
+                location.href = "http://design.hbedu.co.kr/lms/FC/index.html?page=tclasslearning/ongoingStdCard02";
+            }
+        })
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조회 -->
+<div class="search_wrap type03">
+    <span class="txt_area">
+        <span class="date">2020-10-22 목요일</span>
+        <span class="study">진행중인 학습 10<em>/66</em></span>
+    </span>
+    <span class="frm_wrap">
+        <select>
+            <option value="">수강생 전체</option>
+            <option value="">학습전</option>
+            <option value="">학습중(대면)</option>
+            <option value="">학습중(비대면)</option>
+            <option value="">특별학습</option>
+            <option value="">학습완료</option>
+        </select>
+        <select>
+            <option value="">교사전체</option>
+        </select>
+    </span>
+ </div>
+<!--//조회-->
+<div class="btn_top_wrap right">
+    <span>
+        <label for="thum_01" class="rd_list card">
+            <input type="radio" name="thum" value="1" id="thum_01" checked="checked"/>
+            <span>리스트형</span>
+        </label>
+        <label for="thum_02" class="rd_list">
+            <input type="radio" name="thum" value="2" id="thum_02"/>
+            <span>썸네일형</span>
+        </label>
+    </span>
+    <a href="javascript:void(0);" class="btn_refresh"><span>새로고침</span></a>
+</div>
+<div class="btn_top_wrap top_sort_wrap between">
+    <ul class="sort">
+        <li><a href="javascript:void(0);" class="on">입실순</a></li>
+        <li><a href="javascript:void(0);">이름순</a></li>
+        <li><a href="javascript:void(0);">학년순</a></li>
+        <li><a href="javascript:void(0);">학습진행순</a></li>
+    </ul>
+    <p class="std_state">
+        <span class="before">학습 전</span>
+        <span class="ing">학습 중</span>
+        <span class="ing_untact">학습 중(비대면)</span>
+        <span class="complete">학습 완료</span>
+        <span class="special">특별 학습</span>
+        <span class="self">자율학습</span>
+    </p>
+</div>
+<!-- 리스트 - 진행중인 수강생이 없음 -->
+<div class="std_list_wrap">
+    <div class="no_data">
+        현재 학습을 진행중인 수강생이 없습니다
+   </div>
+</div>
+<!-- // 리스트 - 진행중인 수강생이 없음 -->

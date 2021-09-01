@@ -1,0 +1,342 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('교실운영');
+        $('.group_title h2').text('교실운영');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <li><a href="index.html?page=tclasslearning/weeklyReport">학부모리포트</a></li>
+    <li><a href="index.html?page=tclasslearning/compensation">보상관리</a></li>
+    <li class="on"><a href="index.html?page=tclasslearning/eBook">교사용e-북보기</a></li>
+    <li><a href="index.html?page=tclasslearning/questionSet">질문하기관리</a></li>
+    <li><a href="index.html?page=tclasslearning/communitySet">커뮤니티관리</a></li>
+    <li><a href="index.html?page=tclasslearning/mathSet">수학난이도관리</a></li>
+    <li><a href="index.html?page=tclasslearning/reportSet">분석표관리</a></li>
+</ul>
+
+<!--검색-->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>년도</dt>
+                <dd>
+                    <select>
+                        <option>2021년</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학기</dt>
+                <dd>
+                    <select>
+                        <option>1학기</option>
+                        <option>여름방학</option>
+                        <option>2학기</option>
+                        <option>겨울방학</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>예비초</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색-->
+
+<div class="btn_top_wrap right">
+    <a href="" class="btn_top btn_blue">
+        <span>e-북보기</span>
+    </a>
+</div>
+
+<!--테이블-->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%" />
+            <col />
+            <col style="width:10%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>과목</th>
+                <th>단원</th>
+                <th>정답 및 해설</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="subject01" name="subject" checked="checked" />
+                            <label for="subject01">국어</label>
+                        </span>
+                    </span>
+                </td>
+                <td class="left">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="unit01_all" name="unit_num01" onclick="all_check(this)" checked="checked" />
+                            <label for="unit01_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit01_1" name="unit_num01" />
+                            <label for="unit01_1">1단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit01_2" name="unit_num01" />
+                            <label for="unit01_2">2단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit01_3" name="unit_num01" />
+                            <label for="unit01_3">3단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit01_4" name="unit_num01" />
+                            <label for="unit01_4">4단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit01_5" name="unit_num01" />
+                            <label for="unit01_5">5단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit01_6" name="unit_num01" />
+                            <label for="unit01_6">6단원</label>
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="answer01" name="answer01" />
+                        <label for="answer01">선택</label>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="subject02" name="subject" />
+                            <label for="subject02">수학</label>
+                        </span>
+                    </span>
+                </td>
+                <td class="left">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="unit02_all" name="unit_num02" onclick="all_check(this)" disabled />
+                            <label for="unit02_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_1" name="unit_num02" disabled />
+                            <label for="unit02_1">1단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_2" name="unit_num02" disabled />
+                            <label for="unit02_2">2단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_3" name="unit_num02" disabled />
+                            <label for="unit02_3">3단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_4" name="unit_num02" disabled />
+                            <label for="unit02_4">4단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_5" name="unit_num02" disabled />
+                            <label for="unit02_5">5단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_6" name="unit_num02" disabled />
+                            <label for="unit02_6">6단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_7" name="unit_num02" disabled />
+                            <label for="unit02_7">7단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_8" name="unit_num02" disabled />
+                            <label for="unit02_8">8단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit02_9" name="unit_num02" disabled />
+                            <label for="unit02_9">9단원</label>
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="answer02" name="answer02" disabled />
+                        <label for="answer02">선택</label>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="subject03" name="subject" />
+                            <label for="subject03">사회</label>
+                        </span>
+                    </span>
+                </td>
+                <td class="left">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="unit03_all" name="unit_num03" onclick="all_check(this)" disabled />
+                            <label for="unit03_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit03_1" name="unit_num03" disabled />
+                            <label for="unit03_1">1단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit03_2" name="unit_num03" disabled />
+                            <label for="unit03_2">2단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit03_3" name="unit_num03" disabled />
+                            <label for="unit03_3">3단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit03_4" name="unit_num03" disabled />
+                            <label for="unit03_4">4단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit03_5" name="unit_num03" disabled />
+                            <label for="unit03_5">5단원</label>
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="answer02" name="answer03" disabled />
+                        <label for="answer03">선택</label>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="subject04" name="subject" />
+                            <label for="subject04">과학</label>
+                        </span>
+                    </span>
+                </td>
+                <td class="left">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="unit04_all" name="unit_num04" onclick="all_check(this)" checked="checked" />
+                            <label for="unit04_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit04_1" name="unit_num04" />
+                            <label for="unit04_1">1단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit04_2" name="unit_num04" />
+                            <label for="unit04_2">2단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit04_3" name="unit_num04" />
+                            <label for="unit04_3">3단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit04_4" name="unit_num04" />
+                            <label for="unit04_4">4단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit04_5" name="unit_num04" />
+                            <label for="unit04_5">5단원</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit04_6" name="unit_num04" />
+                            <label for="unit04_6">6단원</label>
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="answer04" name="answer04" />
+                        <label for="answer04">선택</label>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="subject05" name="subject" />
+                            <label for="subject05">서술형 교재</label>
+                        </span>
+                    </span>
+                </td>
+                <td class="left">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="unit05_all" name="unit_num05" onclick="all_check(this)" checked="checked" />
+                            <label for="unit05_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit05_1" name="unit_num05" />
+                            <label for="unit05_1">국어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit05_2" name="unit_num05" />
+                            <label for="unit05_2">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit05_3" name="unit_num05" />
+                            <label for="unit05_3">사회</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="unit05_4" name="unit_num05" />
+                            <label for="unit05_4">과학</label>
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="answer04" name="answer04" />
+                        <label for="answer04">선택</label>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--//테이블-->

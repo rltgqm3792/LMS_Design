@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+        <!--plugin -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function () {
+                datepicker(); //달력 1개시
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                //top nav 활성화
+                //[D] 개발에서 폴더명 바꾸시면 여기에서 바꾸면 됩니다. 
+                if (folder == 'stdmng') {
+                    $('.one_depth .tit').text('수강생관리');
+                }
+                else if (folder == 'mathlearning') {
+                    $('.one_depth .tit').text('학습관리(수학)');
+                }
+                else if (folder == 'englearning') {
+                    $('.one_depth .tit').text('학습관리(영어)');
+                }
+                else if (folder == 'tclasslearning') {
+                    $('.one_depth .tit').text('학습관리(전과목)');
+                }
+                else if (folder == 'order') {
+                    $('.one_depth .tit').text('주문관리');
+                }
+                else if (folder == 'education') {
+                    $('.one_depth .tit').text('교육관리');
+                }
+                else if (folder == 'community') {
+                    $('.one_depth .tit').text('커뮤니티');
+                }
+                else if (folder == 'pds') {
+                    $('.one_depth .tit').text('커뮤니티');
+                }
+                else if (folder == 'hakwon') {
+                    $('.one_depth .tit').text('가맹점관리');
+                }
+            });
+        </script>
+    </head>
+
+    <body>
+        <!--전체레이아웃-->
+        <article id="wrap" class="contain">
+            <section class="header">
+                <!-- info -->
+                <div class="group_info">
+                    <div><a href="#" class="btn_class">수업모드</a></div>
+                    <div class="login_off">
+                        <p class="txt1">이용시간(세션)만료 55분 00초 전</p>
+                        <a href="#" class="btn_time">시간연장</a>
+                        <div class="info">
+                            <dl>
+                                <dt><img src="http://image.test.hbedu.co.kr/LMS/FC/img/master/img07.png" src="선생님이미지"></dt>
+                                <dd><a href="#" class="btn_adm_name"><strong>관리자</strong>님 환영합니다.</a></dd>
+                            </dl>
+                            <div class="ly_info">
+                                <ul>
+                                    <li><a href="#">비밀번호 변경</a></li>
+                                    <li><a href="#">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="btn_alarm">알림<span>9</span></a>
+                    </div>
+                </div>
+                <!-- //info -->
+                <!-- top 네비 -->
+                <div id="top_nav" class="top_nav">
+                    <ul>
+                        <li class="home"><a href="#">홈</a></li>
+                    </ul>
+                </div>
+            </section>
+            <!-- lnb  -->
+            <section id="gnb" class="gnb_wrap">
+                <!--원뎁스-->
+                <menu class="gnb_1depth">
+                    <!--로고-->
+                    <h1><a href="index.html">SMART</a></h1>
+                    <!--//로고-->
+                    <a href="#" class="btn_all_menu">전체메뉴</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" class="stdmng" data-tab="gnb_std">수강생 관리</a></li>
+                        <li><a href="javascript:void(0);" class="mathlearning" data-tab="gnb_math">학습관리(수학)</a></li>
+                        <li><a href="javascript:void(0);" class="englearning" data-tab="gnb_eng">학습관리(영어)</a></li>
+                        <li><a href="javascript:void(0);" class="tclasslearning" data-tab="gnb_tclass">학습관리(전과목)</a></li>
+                        <li><a href="javascript:void(0);" class="order" data-tab="gnb_order">주문관리</a></li>
+                        <li><a href="javascript:void(0);" class="education" data-tab="gnb_edu">가맹점교육관리</a></li>
+                        <li><a href="javascript:void(0);" class="community" data-tab="gnb_cmn">커뮤니티</a></li>
+                        <li><a href="javascript:void(0);" class="pds" data-tab="gnb_pds">자료실</a></li>
+                        <li><a href="javascript:void(0);" class="hakwon" data-tab="gnb_hakwon">가맹점관리</a></li>
+                    </ul>
+                </menu>
+                <!--//원뎁스-->
+            </section>
+            <section id="container" class="content">
+                <!-- [D]컨텐츠 정보가 들어갑니다. -->
+                <div class="wrap_sub">
+                    <!--tit_main-->
+                    <div class="group_title">
+                        <h2 class="tit_main">가맹점 디자인 가이드</h2>
+                        <div class="tooltip_area">
+                            <button class="btn_tooltip">tooltip</button>
+                            <div class="tooltip_cont">
+                                <p class="tit">보상안내</p>
+                                <ul class="bu_type">
+                                    <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                                    <li>4개 : 미션 완료 추가보상 500골드</li>
+                                    <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                                </ul>
+                                <button class="close">툴팁닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="tab_1depth">
+                        <!-- [D] 활성화 : on-->
+                        <li class="on"><a href="tab.html">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                        <li><a href="search.html">검색</a></li>
+                        <li><a href="table.html">테이블</a></li>
+                        <li><a href="table_regis.html">가입테이블</a></li>
+                        <li><a href="std_list01.html">진행중 학습 리스트</a></li>
+                    </ul>
+                    <div class="pos_wrap">
+                        <h2 class="tit_main">1depth 타이틀</h2>
+                        <span class="right"><a href="" class="btn_top btn_gray02"><span>지사정보 불러오기</span></a></span>
+                    </div>
+                    <div class="pos_wrap">
+                        <h2 class="tit_main">1depth 타이틀</h2>
+                        <span class="right">
+                            <div class="tooltip_area">
+                                <button class="btn_tooltip">tooltip</button>
+                                <div class="tooltip_cont">
+                                    <p class="tit">보상안내</p>
+                                    <ul class="bu_type">
+                                        <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                                        <li>4개 : 미션 완료 추가보상 500골드</li>
+                                        <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                                    </ul>
+                                    <button class="close">툴팁닫기</button>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="pos_wrap">
+                        <h3 class="tit_h3">2depth 타이틀</h3>
+                        <span class="right">
+                            <div class="tooltip_area">
+                                <button class="btn_tooltip">tooltip</button>
+                                <div class="tooltip_cont">
+                                    <p class="tit">보상안내</p>
+                                    <ul class="bu_type">
+                                        <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                                        <li>4개 : 미션 완료 추가보상 500골드</li>
+                                        <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                                    </ul>
+                                    <button class="close">툴팁닫기</button>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <h4 class="tit_h4">3depth 타이틀<span class="tit_sub">서브타이틀 텍스트입니다.</span></h4>
+                    <h5 class="tit_h5">4depth 타이틀<span class="tit_sub">서브타이틀 텍스트입니다.</span></h5>
+                    <!--//tit_main-->
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3" style="margin-top:80px">-- 1depth tab --</h3>
+                    <!-- //tit_sub  -->
+                    <!-- 1Depth Tab -->
+                    <ul class="tab_1depth">
+                        <!-- [D] 활성화 : on-->
+                        <li class="on"><a href="tab.html">타이틀 / 탭메뉴 / 팝업 / 레이어팝업</a></li>
+                        <li><a href="search.html">검색</a></li>
+                        <li><a href="table.html">테이블</a></li>
+                        <li><a href="table_regis.html">가입 테이블</a></li>
+                        <li><a href="">탭 텍스트 오버시 탭 텍스트 오버시 탭텍스트 오버시</a></li>
+                    </ul>
+                    <!-- // 1Depth Tab -->
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3">-- 2depth tab --</h3>
+                    <!-- //tit_sub  -->
+                    <!-- 2Depth Tab -->
+                    <ul class="tab_2depth">
+                        <!-- [D] 활성화 : on-->
+                        <li><a href="javascript:ly_open('.html');">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                        <li class="on"><a href="javascript:ly_open('.html');">검색</a></li>
+                        <li><a href="javascript:ly_open('.html');">테이블</a></li>
+                    </ul>
+                    <div class="pos_wrap">
+                        <ul class="tab_2depth">
+                            <!-- [D] 활성화 : on-->
+                            <li><a href="javascript:ly_open('.html');">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                            <li class="on"><a href="javascript:ly_open('.html');">검색</a></li>
+                            <li><a href="javascript:ly_open('.html');">테이블</a></li>
+                        </ul>
+                        <span class="right"><a class="btn_top btn_ico excel"><span>엑셀다운로드</span></a></span>
+                    </div>
+                    <!-- // 2Depth Tab -->
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3">-- 2depth 조회조건내 FC구분 "전체"없을시 탭으로 --</h3>
+                    <!-- //tit_sub  -->
+                    <!-- 2Depth Tab search -->
+                    <ul class="tab_2depth_search">
+                        <!-- [D] 활성화 : on-->
+                        <li><a href="javascript:ly_open('.html');">수학</a></li>
+                        <li class="on"><a href="javascript:ly_open('.html');">영어</a></li>
+                        <li><a href="javascript:ly_open('.html');">전과목</a></li>
+                    </ul>
+                    <!-- 2Depth Tab search -->
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3">-- 3depth tab --</h3>
+                    <!-- //tit_sub  -->
+                    <!-- 3Depth Tab -->
+                    <ul class="tab_3depth">
+                        <!-- [D] 활성화 : on-->
+                        <li class="on"><a href="index.html">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                        <li><a href="search.html">검색</a></li>
+                        <li><a href="table.html">테이블</a></li>
+                    </ul>
+                    <!-- // 3Depth Tab -->
+                    <!-- //tit_sub  -->
+                    <!-- box guide -->
+                    <div class="box_guide">
+                        <div>
+                            <p class="tit">등록불가능한 경우</p>
+                            <ul>
+                                <li>빈 공란으로 둔 경우 <ul>
+                                        <li>이런경우</li>
+                                        <li>저런경우</li>
+                                    </ul>
+                                </li>
+                                <li>엑셀 내 제공된 형식에 맞지 않게 입력한 경우</li>
+                                <li>학부모 휴대폰 번호에 '-'를 포함하지 않은 경우</li>
+                                <li>ex) 010-1234-5678(O), 01012345678(X)</li>
+                            </ul>
+                            <p class="txt_guide">텍스트입니다</p>
+                        </div>
+                    </div>
+                    <!-- //box guide -->
+                    <br />
+                    <!-- box guide blue -->
+                    <div class="box_guide blue">
+                        <div>
+                            <span class="guide03">샘플 파일 양식을 다운받아 입력한 후 업로드가 가능합니다.</span>
+                        </div>
+                        <div>
+                            <input type="file" name="files" id="fileUpload" style="display: none" onChange="fileChange()" />
+                            <label for="fileUpload" class="btn_top">샘플파일 다운로드</label>
+                        </div>
+                    </div>
+                    <!-- //box guide blue -->
+                    <p class="txt_guide">텍스트입니다</p>
+                    <p class="txt_guide right">우측정렬 텍스트입니다.</p>
+                    <div class="search_calendar">
+                        <button class="prev" disabled>전날</button>
+                        <span class="txt">
+                            <input type="text" class="btn_cal" readonly value="2021. 1월. 15일" />
+                        </span>
+                        <button class="next">다음날</button>
+                    </div>
+                    <div class="search_calendar">
+                        <button class="prev" disabled>전주</button>
+                        <a href="javascript:openPop('../Mathlearning/pop_week_search.html','500','450');" class="btn_cal pop_open"><span class="txt">주차선택 팝업 호출</span></a>
+                        <button class="next">다음주</button>
+                    </div>
+                    <div class="search_calendar">
+                        <button class="prev" disabled>이전달</button>
+                        <span class="txt">2021. 1월. 3주차</span>
+                        <button class="next">다음달</button>
+                    </div>
+                    <div class="search_calendar">
+                        <button class="prev">이전달</button>
+                        <span class="txt">2021. 1월</span>
+                        <button class="next">다음달</button>
+                    </div>
+                    <div class="search_calendar">
+                        <button class="prev" disabled>이전</button>
+                        <span class="txt">[05]. 좌표 평면과 그래프 [05]. 좌표 평면과 그래프 단원명 두줄일경우 단원명</span>
+                        <button class="next">다음</button>
+                    </div>
+                    <!-- 달력 선택 스타일 -->
+                    <div class="calendar_type02">
+                        <button class="btn_ico prev">전날</button>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" id="datepicker-input" aria-label="Date-Time" />
+                            <label for="datepicker-input" class="btn_calender"></label>
+                        </div>
+                        <div id="wrapper" class="cal_wrap"></div>
+                        <button class="btn_ico next">다음날</button>
+                    </div>
+                    <!-- //달력 선택 스타일 -->
+                    <!-- box toggle open -->
+                    <dl class="box_reg_guide">
+                        <dt>수강생 등록 안내 <a class="btn_slide">열기/닫기</a>
+                        </dt>
+                        <dd>
+                            <ul class="ul_box_reg">
+                                <li> 정보를 입력하신 후 입회 동의서 전송 버튼을 누르시면 학부모 휴대폰으로 SMS가 전송됩니다.<br /> (단, 22:00~7:59 수강생 등록시에는 8:00에 SMS가 전송됩니다.) </li>
+                                <li> 입회동의서가 2일 후 AM.12:00까지 제출되어야 수강생으로 정식 등록됩니다. </li>
+                                <li> 학부모의 입회 동의서 제출일 기준으로 과금이 청구됩니다. </li>
+                                <li> 입회 동의서 전송 후에는 학년 변경이 되지 않습니다. 정확한 실제 학년을 선택해 주세요. </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <!-- box toggle open -->
+                    <!-- 가이드01 -->
+                    <dl class="box_reg_guide">
+                        <dt>수강생 주문 안내 <a class="btn_slide">열기/닫기</a>
+                        </dt>
+                        <dd>
+                            <!-- 가이드내 탭-->
+                            <ul class="tab_guide">
+                                <li class="on">
+                                    <a href="javascript:void(0);">주문 처리 프로세스 안내</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">주문 상세 구분 안내</a>
+                                </li>
+                            </ul>
+                            <div class="tab_guide_cont">
+                                <!-- tab01-->
+                                <div class="tab_cont">
+                                    <ul class="process_flow">
+                                        <li>장바구니<span>01</span>
+                                        </li>
+                                        <li>주문완료<span>02</span>
+                                            <p>가맹점에서 주문을 완료 취소 가능</p>
+                                        </li>
+                                        <li>준비중<span>03</span>
+                                            <p>본사 승인 전표생성 중 주문 수정 불가능</p>
+                                        </li>
+                                        <li>발송준비<span>04</span>
+                                            <p>물류 작업중</p>
+                                        </li>
+                                        <li>배송중<span>05</span>
+                                            <p>택배사 배송 중 주문 완료 리스트 송장 조회 가능</p>
+                                        </li>
+                                        <li>배송완료<span>06</span>
+                                            <p>택배사 배송 완료<br />주문서와 도착 물품 확인 필수</p>
+                                        </li>
+                                        <li>검수<span>07</span>
+                                            <p>오발송, 또는 배송 중 파본은 도착 후 4일 이내 반품메뉴의 오발송에 접수</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //tab01-->
+                                <!-- tab02-->
+                                <div class="tab_cont">
+                                    <div class="table_list column">
+                                        <table>
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col style="width:15%;" />
+                                                <col style="width:15%;" />
+                                                <col style="width:70%;" />
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>주문구분</th>
+                                                    <th>상세구분</th>
+                                                    <th>정의</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="9">수강생</td>
+                                                    <td>신규</td>
+                                                    <td>신규수강생 등록 후 첫 자동주문</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>복회</td>
+                                                    <td>복회수강생 등록 후 첫 자동주문</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>당월 </td>
+                                                    <td>상시 주문하는 당월 교재</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>익월</td>
+                                                    <td>주문집중기간에 주문하는 익월 교재</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>당월추가</td>
+                                                    <td>당월 첫 주문 이후 전체</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>익월추가</td>
+                                                    <td>익월 첫 주문 이후 전체</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>당월재</td>
+                                                    <td>당월 교재 학습 재설정으로 재주문 시(수정할 때 안나간 책 삭제되고 재주문되서 한번 나가는 책 말고 이미 책이 본사 발송 된 후 학습 재설정으로 자동 반품 접수되면서 자동 재주문된 책) </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>익월재</td>
+                                                    <td>익월 교재 학습 재설정으로 재주문 시(수정할 때 안나간 책 삭제되고 재주문되서 한번 나가는 책 말고 이미 책이 본사 발송 된 후 학습 재설정으로 자동 반품 접수되면서 자동 재주문된 책) </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>다북스</td>
+                                                    <td>(영어) 다북스 주문을 선택한 경우</td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="4">자동</td>
+                                                    <td>오배송(주) </td>
+                                                    <td>반품 접수된 오배송 교재의 재출고를 위한 자동 주문서</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>불량(주)</td>
+                                                    <td>반품 접수된 파본 교재의 재출고를 위한 자동 주문서</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>미반품(주)</td>
+                                                    <td>반품 기한이 지나 유가처리를 위한 주문서</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>교환(주)</td>
+                                                    <td>교환 접수된 주문</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- //tab02-->
+                            </div>
+                            <!-- //가이드내 탭-->
+                        </dd>
+                    </dl>
+                    <!-- //가이드01 -->
+                    <!-- 가이드02 -->
+                    <dl class="box_reg_guide">
+                        <dt>수강생 주문 안내 <a class="btn_slide">열기/닫기</a>
+                        </dt>
+                        <dd>
+                            <!-- 가이드내 탭-->
+                            <ul class="tab_guide">
+                                <li class="on">
+                                    <a href="javascript:void(0);">학습 및 주문 연동 프로세스 안내</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">주문 운영 프로세스 안내</a>
+                                </li>
+                            </ul>
+                            <div class="tab_guide_cont">
+                                <!-- tab01-->
+                                <div class="tab_cont">
+                                    <ul class="ul_box_reg">
+                                        <li>학생의 학습에 대한 연계 워크북 주문.</li>
+                                        <li>학습커리큘럼은 표준(본사제시)과 자율(원장님 설정)로 운영. <a href="javascript:openPop('Mathlearning/learningInfoPop.html','800','650');">[커리큘럼 보기]</a>
+                                        </li>
+                                        <li>학습 연계 주문하기(연계 워크북 세팅_선택불가능)/안받기(워크북셋팅없음_선택가능)로 운영. <a href="javascript:openPop('/.html','800','650');">[설정하기]</a>
+                                        </li>
+                                        <li>연계 주문하기 설정 시 커리큘럼에 맞는 책으로 자동 설정.</li>
+                                        <li>연계 주문 안하기 설정 시 선택 가능.</li>
+                                        <li class="line_l">◈ 매월 익월 주문 기간에 표준(연계 주문 하기)은 자동 셋팅되어 장바구니에 담깁니다. 확인 후 주문하시면 됩니다.</li>
+                                        <li class="line_l col_red">* 학생이 학습 활동을 계속 할 경우 전월 미제공 워크북을 쇼핑몰 포인트로 일부 적립. 휴회생, 익월 반품 제외. (쇼핑몰 가입 가맹점만 해당, 미가입 시 소멸 됨. 이월 없음.)</li>
+                                    </ul>
+                                </div>
+                                <!-- //tab01-->
+                                <!-- tab02-->
+                                <div class="tab_cont">
+                                    <ul class="ul_box_reg half">
+                                        <li>당월 교재 주문 : <strong class="col_blue">매월 1일 ~ 말일</strong>
+                                        </li>
+                                        <li>
+                                            <span class="reg_tit green">신규 / 복회</span> 학생 등록 시 학습 셋팅 + 주문
+                                        </li>
+                                        <li>
+                                            <span class="reg_tit gray">누락 수강생</span> 전월 미셋팅, 누락 or 추가 주문
+                                        </li>
+                                    </ul>
+                                    <ul class="ul_box_reg half">
+                                        <li>주문 집중 기간 운영 익월 교재 주문 : <strong class="col_blue">매월 셋째주 금요일 ~ 넷째주 목요일</strong>
+                                        </li>
+                                        <li>
+                                            <span class="reg_tit red">누락 수강생</span> 익월 학습 셋팅 + 주문
+                                        </li>
+                                        <li>
+                                            <span class="col_red">* 가맹점 별 해당 기간에 최종 제출 1회로 주문 제한<br /> * 신규, 복회 주문은 예외로 추가 주문 가능.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //tab02-->
+                            </div>
+                            <!-- //가이드내 탭-->
+                        </dd>
+                    </dl>
+                    <!-- //가이드02 -->
+                    <!-- Process -->
+                    <h4 class="tit_h4">/// 프로세스 디자인 ///</h4>
+                    <ul class="process_flow">
+                        <!-- [D] 활성화 : on -->
+                        <li class="on">부가 정보<span>01</span></li>
+                        <li>Placement test<span>02</span></li>
+                        <li>학습/주문 정보<span>03</span></li>
+                    </ul>
+                    <!-- // Process -->
+                    <br>
+                    <div class="process_std">
+                        <dl class="bx_step">
+                            <dt>이전 학습</dt>
+                            <dd>
+                                <ul>
+                                    <li>1. 곱셈과 나눗셈 (4-2)</li>
+                                    <li>2. 나눗셈 (3-2)</li>
+                                    <li>3. 큰 수 (4-1)</li>
+                                    <li>4. 분수와 소수(3-2)</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl class="bx_step focus">
+                            <dt>본 학습</dt>
+                            <dd>
+                                <ul>
+                                    <li>1. 자연수의 혼합 계산</li>
+                                    <li>2. 약수와 배수</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl class="bx_step">
+                            <dt>후속 학습</dt>
+                            <dd>
+                                <ul>
+                                    <li>1. 분수의 덧셈과 뺄셈 (5-1)</li>
+                                    <li>2. 분수의 곱셈 (5-2)</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- 월말표지주문 영역 -->
+                    <h4 class="tit_h4">/// 하단 박스(체크박스) ///</h4>
+                    <div class="box_order">
+                        <span class="frm_wrap">
+                            <span class="frm">
+                                <input type="checkbox" id="frm2" name="frm1" />
+                                <label for="frm2">주문안함</label>
+                            </span>
+                            <span class="frm">
+                                <input type="checkbox" id="frm3" name="frm1" />
+                                <label for="frm3">[해법수학] 월말표지주문 [ <strong class="col_blue">20</strong> ]개</label>
+                            </span>
+                            <span class="frm">
+                                <input type="checkbox" id="frm4" name="frm1" disabled="disabled" />
+                                <label for="frm4">[해법영어] 수강생용 교재케이스 [ <strong class="col_blue">4</strong> ]개</label>
+                            </span>
+                        </span>
+                    </div>
+                    <!-- 월말표지주문 영역 -->
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3">/// 로딩 ///</h3>
+                    <!-- //tit_sub  -->
+                    <div class="loader">
+                        <div class="loader-inner ball-clip-rotate">
+                            <div></div>
+                        </div>
+                    </div>
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3">/// 버튼 가이드 ///</h3>
+                    <!-- //tit_sub  -->
+                    <!-- 버튼 -->
+                    <div class="btn_bottom_wrap">
+                        <a href="" class="btn_basic">저장</a>
+                        <a href="" class="btn_basic btn_check"><span>저장</span></a>
+                        <a href="" class="btn_basic btn_line">취소</a>
+                        <a href="" class="btn_basic btn_gray">중립</a>
+                        <a href="" class="btn_basic btn_gray02">삭제</a>
+                        <a href="" class="btn_basic btn_disabled">비활성화</a>
+                        <a href="" class="btn_basic btn_prev"><span>이전</span></a>
+                        <a href="" class="btn_basic btn_next"><span>다음</span></a>
+                        <button class="btn_search">검색</button>
+                        <button class="btn_search small">조회</button>
+                    </div>
+                    <div class="btn_bottom_wrap">
+                        <a href="" class="btn_top">저장</a>
+                        <a href="" class="btn_top btn_check"><span>저장</span></a>
+                        <a href="" class="btn_top btn_line">취소</a>
+                        <a href="" class="btn_top btn_gray">중립</a>
+                        <a href="" class="btn_top btn_gray02">삭제</a>
+                    </div>
+                    <div class="btn_bottom_wrap">
+                        <a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+                        <a href="" class="btn_top btn_ico video"><span>수업녹화영상</span></a>
+                        <a href="" class="btn_top btn_ico comment"><span>원어민 코멘트</span></a>
+                        <a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+                        <a href="javascript:void(0);" class="btn_top btn_ico preview"><span>문항미리보기</span></a>
+                        <a href="javascript:void(0);" class="btn_top btn_ico retest"><span>현재회차 재출제</span></a>
+                    </div>
+                    <div class="btn_bottom_wrap">
+                        <a href="" class="btn_top btn_ico down"><span>다운로드</span></a>
+                        <a href="" class="btn_top btn_ico sms"><span>SMS전송</span></a>
+                        <a href="" class="btn_top btn_ico play"><span>재생</span></a>
+                        <a href="" class="btn_top btn_ico talk"><span>알림톡</span></a>
+                        <a href="" class="btn_top btn_ico app"><span>학부모앱</span></a>
+                        <a href="" class="btn_top btn_ico chart"><span>분석표</span></a>
+                        <a href="" class="btn_top btn_ico palram"><span>학부모알림장</span></a>
+                        <a href="" class="btn_top btn_ico medal"><span>상장 일괄발급</span></a>
+                        <a href="" class="btn_top btn_ico send"><span>전송</span></a>
+                    </div>
+                    <!-- <div class="btn_bottom_wrap">
+                    <span>
+                        <a href="" class="btn_basic">저장</a>
+                        <a href="" class="btn_basic line">라인</a>
+                        <a href="" class="btn_basic gray">중립</a>
+                        <a href="" class="btn_basic del">삭제</a>
+                        <a href="" class="btn_basic cancel">취소</a>
+                        <a href="" class="btn_basic disabled">비활성화</a>
+                        <button class="btn_search">검색</button>
+                        <button class="btn_search small">검색</button>
+                    </span>
+                </div> -->
+                    <!--//본문하단버튼-->
+                    <h4 class="tit_h4">
+                        <strong>테이블 하단 버튼 양쪽정렬</strong>
+                    </h4>
+                    <!--본문하단버튼-->
+                    <div class="btn_bottom_wrap between">
+                        <a href="" class="btn_basic">등록</a>
+                        <span>
+                            <a href="" class="btn_basic btn_line">취소</a>
+                            <a href="" class="btn_basic btn_disabled">등록</a>
+                        </span>
+                    </div>
+                    <!--//본문하단버튼-->
+                    <h4 class="tit_h4">
+                        <strong>테이블 하단 버튼 우측정렬</strong>
+                    </h4>
+                    <!--본문하단버튼-->
+                    <div class="btn_bottom_wrap right">
+                        <span>
+                            <!--취소-->
+                            <a href="" class="btn_basic">저장</a>
+                            <!--취소-->
+                            <a href="" class="btn_basic btn_disabled">등록</a>
+                            <a href="" class="btn_basic btn_line">목록</a>
+                            <a href="" class="btn_basic btn_gray02">삭제</a>
+                            <a href="" class="btn_basic btn_gray">중립</a>
+                        </span>
+                    </div>
+                    <!--//본문하단버튼-->
+                    <!--본문 상단 버튼-->
+                    <h4 class="tit_h4">
+                        <strong>테이블 상단 버튼 양쪽정렬</strong>
+                    </h4>
+                    <div class="btn_top_wrap between">
+                        <!--좌측정렬-->
+                        <span><a href="" class="btn_top">다섯글자임</a></span>
+                        <span>
+                            <a href="" class="btn_top btn_gray02">삭제</a>
+                            <a href="" class="btn_top btn_gray">두자</a>
+                            <a href="" class="btn_top btn_line">라인버튼</a>
+                            <a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+                            <a href="" class="btn_top btn_check"><span>네글자임</span></a>
+                            <!-- <button class="btn_reset">초기화</button> -->
+                        </span>
+                    </div>
+                    <!--//본문 상단 버튼-->
+                    <!--본문 상단 버튼-->
+                    <h4 class="tit_h4">테이블 상단 버튼 우측정렬</h4>
+                    <div class="btn_top_wrap right">
+                        <!--우측정렬-->
+                        <span>
+                            <a href="" class="btn_top btn_gray">두자</a>
+                            <!-- <a href="" class="btn_top btn_black">검은버튼</a> -->
+                            <a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+                            <a href="" class="btn_top btn_check"><span>네글자임</span></a>
+                            <!-- <button class="btn_reset">초기화</button> -->
+                        </span>
+                    </div>
+                    <!--본문 상단 버튼-->
+                    <h4 class="tit_h4">
+                        <strong>테이블 상단 버튼 좌측정렬</strong>
+                    </h4>
+                    <div class="btn_top_wrap">
+                        <!--좌측정렬-->
+                        <span>
+                            <a class="btn_top btn_gray">두자</a>
+                            <a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+                            <a class="btn_top btn_check"><span>네글자임</span></a>
+                            <!-- <button class="btn_reset">초기화</button> -->
+                        </span>
+                    </div>
+                    <!--//본문 상단 버튼-->
+                    <!--본문 상단 버튼-->
+                    <h4 class="tit_h4">
+                        <strong>테이블 내 버튼스타일</strong>
+                    </h4>
+                    <!--테이블 버튼-->
+                    <div>
+                        <a href="" class="btn_table">스마트해법</a>
+                        <a href="" class="btn_table btn_line">초기화</a>
+                        <a href="" class="btn_table btn_line">보기</a>
+                        <a href="" class="btn_table btn_line">변경</a>
+                        <a href="" class="btn_table blue">등록</a>
+                        <a href="" class="btn_table blue">입실</a>
+                        <a href="" class="btn_table gray">퇴실</a>
+                        <a href="" class="btn_table bluish">문제</a>
+                        <a href="" class="btn_table green">풀이</a>
+                        <a href="" class="btn_table orange">해답</a>
+                        <a href="" class="btn_table red">결석</a>
+                        <a href="" class="btn_table orange">지각</a>
+                        <a href="" class="btn_table ico"><span class="search">검색</span></a>
+                        <a href="" class="btn_table ico_score"><span class="circle">맞음</span></a>
+                        <a href="" class="btn_table ico_score"><span class="wrong">틀림</span></a>
+                        <a href="" class="btn_table ico_score"><span class="triangle">부분</span></a>
+                        <a href="" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                        <a href="" class="btn_table man_chk">대상자선정</a>
+                        <a href="" class="btn_table man">대상자보기</a>
+                    </div>
+                    <!--//테이블 버튼-->
+                    <!--아이콘모음-->
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3">// 아이콘 //</h3>
+                    <!-- //tit_sub  -->
+                    <div>
+                        <a href="" class="ico_img file">파일</a>
+                        <a href="" class="ico_img album">앨범</a>
+                        <a href="" class="ico_img image">이미지</a>
+                        <a href="" class="ico_img printer">프린트</a>
+                        <a href="" class="ico_img download">다운로드</a>
+                        <a href="" class="ico_img readme">리드미</a>
+                        <a href="" class="ico_img new">New</a>
+                        <a href="" class="ico_img data">데이터</a>
+                        <a href="" class="ico_img play02">데이터</a>
+                        <a href="" class="ico_img down02">데이터</a>
+                        <a href="" class="ico_img02 modify">수정</a>
+                        <a href="" class="ico_img02 delet">삭제</a>
+                    </div>
+                    <h3 class="tit_h3">// 유형별 버튼 + 정렬 //</h3>
+                    <div class="btn_top_wrap">
+                        <span>
+                            <label for="thum_01" class="rdo_list">
+                                <input type="radio" name="thum" value="1" id="thum_01" checked="checked" />
+                                <span>리스트형</span>
+                            </label>
+                            <label for="thum_02" class="rdo_cal">
+                                <input type="radio" name="thum" value="2" id="thum_02" />
+                                <span>썸네일형</span>
+                            </label>
+                        </span>
+                        <span>
+                            <label for="graph_01" class="rdo_graph">
+                                <input type="radio" name="graph" value="1" id="graph_01" checked="checked" />
+                                <span>그래프1</span>
+                            </label>
+                            <label for="graph_02" class="rdo_graph_line">
+                                <input type="radio" name="graph" value="2" id="graph_02" />
+                                <span>그래프2</span>
+                            </label>
+                        </span>
+                        <span>
+                            <a href="javascript:void(0);" class="btn_refresh"><span>새로고침</span></a>
+                        </span>
+                    </div>
+                    <div class="btn_top_wrap top_sort_wrap between">
+                        <ul class="sort">
+                            <li><a href="javascript:void(0);" class="on">입실순</a></li>
+                            <li><a href="javascript:void(0);">이름순</a></li>
+                            <li><a href="javascript:void(0);">학년순</a></li>
+                            <li><a href="javascript:void(0);">학습진행순</a></li>
+                        </ul>
+                        <p class="std_state">
+                            <span class="before">학습 전</span>
+                            <span class="ing">학습 중</span>
+                            <span class="ing_untact">학습 중(비대면)</span>
+                            <span class="self">자율학습</span>
+                        </p>
+                    </div>
+                    <h3 class="tit_h3">// 롤링배너 //</h3>
+                    <!-- 롤링배너 -->
+                    <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-rolling.js" type="text/javascript"></script>
+                    <div class="rolling_wrap">
+                        <div id="rolling" class="rolling">
+                            <ul>
+                                <li class="panel">
+                                    <span>템플릿 A</span>
+                                    <div>
+                                        <input type="radio" id="roll_img01" name="roll_rdo">
+                                        <label for="roll_img01">
+                                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_roll_dummy.jpg">
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="panel">
+                                    <span>템플릿 B</span>
+                                    <div>
+                                        <input type="radio" id="roll_img02" name="roll_rdo">
+                                        <label for="roll_img02">
+                                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_roll_dummy.jpg">
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="panel">
+                                    <span>템플릿 C</span>
+                                    <div>
+                                        <input type="radio" id="roll_img03" name="roll_rdo">
+                                        <label for="roll_img03">
+                                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_roll_dummy.jpg">
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="panel">
+                                    <span>템플릿 D</span>
+                                    <div>
+                                        <input type="radio" id="roll_img04" name="roll_rdo">
+                                        <label for="roll_img04">
+                                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_roll_dummy.jpg">
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="panel">
+                                    <span>템플릿 E</span>
+                                    <div>
+                                        <input type="radio" id="roll_img05" name="roll_rdo">
+                                        <label for="roll_img05">
+                                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_roll_dummy.jpg">
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="panel">
+                                    <span>템플릿 F</span>
+                                    <div>
+                                        <input type="radio" id="roll_img06" name="roll_rdo">
+                                        <label for="roll_img06">
+                                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_roll_dummy.jpg">
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="panel">
+                                    <span>템플릿 G</span>
+                                    <div>
+                                        <input type="radio" id="roll_img07" name="roll_rdo">
+                                        <label for="roll_img07">
+                                            <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_roll_dummy.jpg">
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" id="control1">
+                            <button class="btn_rolling prev"></button>
+                            <button class="btn_rolling next"></button>
+                        </div>
+                    </div>
+                    <script class="code-js">
+
+                        var rolling1 = new tui.Rolling({
+                            element: document.getElementById('rolling'),
+                            direction: 'horizontal',
+                            isVariable: false,
+                            isAuto: false,
+                            duration: 250,
+                            isCircular: true,
+                            isDrawn: true,
+                            initNum: 0, //3개시 1, 3개 이상시 0
+                            motion: 'linear',
+                            unit: 'item'
+                        });
+
+                        var control = document.getElementById('control1');
+
+                        control.onclick = function (e) {
+                            var e = e || window.event;
+                            var target = e.target || e.srcElement;
+                            var className;
+
+                            if (target.tagName.toLowerCase() !== 'button') {
+                                return;
+                            }
+
+                            className = target.className;
+
+                            if (className.indexOf('prev') > -1) {
+                                rolling1.roll(null, 'prev');
+                            } else if (className.indexOf('next') > -1) {
+                                rolling1.roll(null, 'next');
+                            }
+                        };
+                    </script>
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3" style="margin-top:80px">// progress bar //</h3>
+                    <!-- //tit_sub  -->
+                    <div class="graph progress_bar"><progress value="59" max="100"></progress></div>
+                    <!-- tit_sub -->
+                    <h3 class="tit_h3" style="margin-top:80px">// 팝업 //</h3>
+                    <!-- //tit_sub  -->
+                    <div class="btn_bottom_wrap">
+                        <p>
+                            <a href="javascript:openPop('pop_sample.html','1020','650');" class="btn_basic confirm">팝업</a>
+                            <a href="javascript:openPop('paymentInfoPop.html','800','670');" class="btn_basic">영수증 팝업</a>
+                            <a href="javascript:openPop('pay.html','800','670');" class="btn_basic">결제안내 팝업</a>
+                            <a href="javascript:openPop('pop_survey.html','600','670');" class="btn_basic">설문조사 팝업</a>
+                            <a href="javascript:openPop('pop_report.html','1020','795');" class="btn_basic">분석표 팝업</a><br /><br />
+                            <a href="javascript:ly_open('ly_pop_sample.html');" class="btn_basic cancel">레이어팝업</a>
+                            <a href="javascript:ly_open('ly_pop_sms.html');" class="btn_basic cancel">레이어팝업small</a><br /><br />
+                            <a href="javascript:alert_open('기본 경고창입니다.');" class="btn_basic">알럿 기본</a>
+                            <a href="javascript:alert_open('두줄바꿈 경고창입니다 <br> 정말 바꿀건가요?');" class="btn_basic">알럿 줄바꿈</a>
+                            <a href="javascript:alert_confirm('결제 대기 중입니다.','정말 결제 하신건가요','http://www.naver.com');" class="btn_basic">알럿 확인/취소</a>
+                            <a href="javascript:alert_move('결제 대기 중입니다.','','바로가기','이동','');" class="btn_basic">알럿 확인/취소 버튼명 변경</a>
+                            <a href="javascript:alert_move('결제 대기 중입니다.','결제안한게 많이 남아 있습니다 </br> 그래도 결제 하시겠습니까?','바로가기','이동','http://www.naver.com');" class="btn_basic">알럿 총 다 들어가 있어</a>
+                        </p>
+                    </div>
+                    <!--비디오 , 오디오 플러그인-->
+                    <h3 class="tit_h3">비디오 , 오디오 플러그인</h3>
+                    <a href="javascript:openPop('pop_video.html','900','650');" class="btn_basic">비디오팝업</a>
+                    <a href="javascript:openPop('pop_audio.html','900','650');" class="btn_basic">오디오팝업</a>
+                    <a href="javascript:openPop('pop_swiper.html','900','650');" class="btn_basic">swiper팝업</a>
+                    <a href="amchart.html" class="btn_basic">amchart</a>
+                </div>
+                <!-- //[D]컨텐츠 정보가 들어갑니다. -->
+                <!-- 레이어팝업 -->
+                <section class="ly_popup"></section>
+                <!-- //레이어팝업 -->
+                <!-- alert 팝업 -->
+                <section class="alert_wrap">
+                    <div class="alert_container">
+                        <div class="alert_content">
+                            <div class="alert_desc">
+                                <strong></strong>
+                                <span></span>
+                            </div>
+                            <div class="alert_btn">
+                                <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                                <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //alert 팝업 -->
+            </section>
+        </article>
+    </body>
+
+</html>

@@ -1,0 +1,220 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('문제은행');
+		$('.group_title h2').text('출제마법사');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<ul class="tab_1depth">
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions01">단원평가(고정)</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions02">단원평가(맞춤)</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions03">영역평가</a></li>
+	<li class="on"><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions04">어휘평가</a></li>
+</ul>
+<!-- 검색 -->
+<div class="unit_step_wrap">
+	<li class="step01"><span class="step_tx01">step1.</span>관련도서</li>
+	<li class="step02"><span class="step_next">next</span><span class="step_tx02">step2.</span>문항 수 및 난이도 선택</li>
+</div>
+<!-- std_wrap -->
+<div class="std_wrap">
+	<!--step01-->
+	<div class="std_group mg_top_30">
+		<!--검색-->
+		<div class="search_group">
+			<h4 class="searchSubtitle">1. 과정 선택</h4>
+			<p class="year_group">
+				<span class="frm_wrap frm_btn">
+					<span class="frm frm_three">
+						<input type="checkbox" id="chk_year1" name="year">
+						<label for="chk_year1">중1</label>
+					</span>
+					<span class="frm frm_three">
+						<input type="checkbox" id="chk_year2" name="year">
+						<label for="chk_year2">중2</label>
+					</span>
+					<span class="frm frm_three">
+						<input type="checkbox" id="chk_year3" name="year">
+						<label for="chk_year3">중3</label>
+					</span>
+				</span>
+			</p>
+			<h4 class="searchSubtitle">2. 관련 도서 선택</h4>
+			<p class="select_group">
+				<select>
+					<option>전체</option>
+					<option>금성</option>
+					<option>능률(김)</option>
+					<option>능률(양)</option>
+					<option>다락원</option>
+					<option>동아(윤)</option>
+					<option>동아(이)</option>
+					<option>미래엔</option>
+					<option>비상</option>
+					<option>와이비엠(박)</option>
+					<option>와이비엠(송)</option>
+					<option>지학사</option>
+					<option>천재(이)</option>
+					<option>천재(정)</option>
+				</select>
+			</p>
+		</div>
+		<!--//검색-->
+		<!--단원 리스트-->
+		<h4 class="searchSubtitle">3. 단원 선택</h4>
+		<ul class="unit_list">
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson1" name="lesson">
+					<label for="lesson1">Lesson1</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson2" name="lesson">
+					<label for="lesson2">Lesson2</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson3" name="lesson">
+					<label for="lesson3">Lesson3</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson4" name="lesson">
+					<label for="lesson4">Lesson4</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson5" name="lesson">
+					<label for="lesson5">Lesson5</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson6" name="lesson">
+					<label for="lesson6">Lesson6</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson7" name="lesson">
+					<label for="lesson7">Lesson7</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson8" name="lesson">
+					<label for="lesson8">Lesson8</label>
+				</span>
+			</li>
+			<li>
+				<span class="frm">
+					<input type="checkbox" id="lesson9" name="lesson">
+					<label for="lesson9">Lesson9</label>
+				</span>
+			</li>
+		</ul>
+		<!--//단원 리스트-->
+	</div>
+	<!--//step01-->
+	<!--step02-->
+	<div class="view_group mg_top_30">
+		<div class="table_input">
+			<table style="width: 100%;">
+				<caption></caption>
+				<colgroup>
+					<col style="width: 12%" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>관련도서</th>
+						<td colspan="2">
+							<span class="unit_box_wrap">
+								<span class="unit_box03">능률(김)<span class="del"></span></span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<th>선택단원</th>
+						<td>
+							<!-- class="scroll" -> "unit100P" 교체 :chan -->
+							<div class="unit100P">
+								<span class="unit_box_wrap">
+									<span class="unit_box03">Lisson2<span class="del"></span></span>
+									<span class="unit_box03">Lisson3<span class="del"></span></span>
+								</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>총 단어 수</th>
+						<td class="total_wrap">
+							<span>
+								<select>
+									<option>A</option>
+									<option>B</option>
+									<option>C</option>
+								</select>
+							</span>
+							<span><span class="ico_total_word"></span>
+								<p>총 단어 수</p><input type="text" value="100">
+								<p>개</p>
+							</span>
+							<span><span class="ico_total_auestion"></span>
+								<p>총 문항 수</p><input type="text" value="100">
+								<p>개</p>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<th rowspan="2">어휘 출제</th>
+						<td>
+							<span class="dot">워드 시트</span>
+							<span class="frm_wrap frm_btn">
+								<span class="frm"><input type="radio" name="word" id="word"><label for="word">Word List</label></span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="dot">유형</span>
+							<span class="frm_wrap frm_btn">
+								<span class="frm"><input type="radio" name="type" id="type1"><label for="type1">단어 읽고 뜻 쓰기</label></span>
+								<span class="frm"><input type="radio" name="type" id="type2"><label for="type2">뜻 읽고 단어 쓰기</label></span>
+								<span class="frm"><input type="radio" name="type" id="type3"><label for="type3">예문 빈칸 채우기</label></span>
+								<span class="frm"><input type="radio" name="type" id="type4"><label for="type4">영영 풀이 읽고 단어쓰기</label></span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<th>문제지 명</th>
+						<td colspan="2">
+							<div class="deletable_wrap">
+								<input type="text" class="deletable" value="의도표현하기 ~ 제안 권유하기">
+								<button type="button" class="deleteBtn" title="내용 지우기"></button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="btn_bottom_wrap right">
+			<span>
+				<a href="javascript:openPop('Englearning/pop_pbank_tagetSelect.html','910','670');" class="btn_basic btn_line">대상자 선택</a>
+				<a href="javascript:alert_move('문제지가 출제되었습니다.\n우리 교실 문제지 목록에서 출제 대상자를 선택해 주세요..','','계속 출제','목록 이동','');" class="btn_basic">저장</a>
+			</span>
+		</div>
+	</div>
+	<!--//step02-->
+</div>

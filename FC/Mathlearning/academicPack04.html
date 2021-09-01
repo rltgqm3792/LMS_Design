@@ -1,0 +1,112 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('보충학습');
+        $('.group_title h2').text('내신대비패키지');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/calculationPack01">연산 패키지</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/academicPack01">내신대비 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/descriptivePack01">서술형 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/advancedPack01">최상위 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/allSubjPack01">전과목 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/smartTestMagician01">스마트 출제마법사</a></li>
+    <li><a href="index.html?page=mathlearning/lowGradePack">초등저학년 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/individualHist">수강생별 출제이력</a></li>
+</ul>
+
+<!-- 탭메뉴 -->
+<ul class="tab_2depth s_group">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/academicPack01">Final 내신대비</a></li>
+    <li><a href="index.html?page=mathlearning/academicPack02">단원평가</a></li>
+    <li><a href="index.html?page=mathlearning/academicPack03">학교시험대비</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/academicPack04">핵심개념정리</a></li>
+</ul>
+<!-- // 탭메뉴 -->
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn pd_indent_none">
+                        <span class="frm">
+                            <input type="radio" id="std1" name="std" checked />
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="std2" name="std" checked />
+                            <label for="std2">중등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>초1</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="rd1" name="rd" checked />
+                            <label for="rd1">개념</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="rd2" name="rd" />
+                            <label for="rd2">문제</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학기</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="semester1" name="semester" checked />
+                            <label for="semester1">1학기</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="semester2" name="semester" />
+                            <label for="semester2">2학기</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--//조회-->
+<div class="btn_top_wrap between">
+    <span class="txt_guide">문제지 출력 방법 : '학습범위' 선택 후 '대상자 선정' 진행 후 일괄출력 버튼을 클릭해 주세요.</span>
+    <span>
+        <a href="javascript:openPop('Mathlearning/recipientSet01.html','850','730');" class="btn_top btn_gray">일괄 대상자 선정</a>
+    </span>
+</div>
+<div id="grid"></div>
+
+<!-- 그리드 테이블 내 버튼 -->
+<a href="javascript:void(0);" class="btn_table btn_line">개념</a>
+<a href="javascript:openPop('Mathlearning/programTest.html','850', '657');" class="btn_table bluish">문제</a>
+<a href="javascript:openPop('Mathlearning/programTest.html','850', '657');" class="btn_table green">풀이</a>
+<a href="javascript:openPop('Mathlearning/recipientSet01.html','850','730');" class="btn_table man_chk">대상자선정</a>
+<a href="javascript:openPop('Mathlearning/recipientSet02.html','850','730');" class="btn_table man">대상자보기</a>
+<!-- // 그리드 테이블 내 버튼 -->

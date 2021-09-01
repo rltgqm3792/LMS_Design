@@ -1,0 +1,174 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('학습통계');
+        $('.group_title h2').text('스마트교재 학습현황');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <span class="frm_wrap">
+                        <select>
+                            <option>2021년</option>
+                        </select>
+                        <select>
+                            <option>10월</option>
+                        </select>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="std_all" name="std" onchange="all_check(this);" />
+                            <label for="std_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std1" name="std" checked />
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std2" name="std" />
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std3" name="std" />
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학기</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="semester_all" name="semester" onchange="all_check(this);" />
+                            <label for="semester_all">전체</label>
+                        </span>
+                        <!-- 초/중등 -->
+                        <span class="frm">
+                            <input type="checkbox" id="semester1" name="semester" checked />
+                            <label for="std1">1학기</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="semester2" name="semester" />
+                            <label for="semester2">2학기</label>
+                        </span>
+                        <!-- // 초/중등 -->
+                        <!-- 고등1
+                        <span class="frm">
+                            <input type="checkbox" id="semester1" name="semester" checked />
+                            <label for="semester1">수학 상</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="semester2" name="semester" />
+                            <label for="semester2">수학 하</label>
+                        </span>
+                        // 고등1 -->
+                        <!-- 고등2
+                        <span class="frm">
+                            <input type="checkbox" id="semester1" name="semester" checked />
+                            <label for="semester1">수1</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="semester2" name="semester" />
+                            <label for="semester2">수2</label>
+                        </span>
+                        // 고등2 -->
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>단원</dt>
+                <dd>
+                    <select>
+                        <option>선택</option>
+                        <!-- 초등 -->
+                        <option>대단원</option>
+                        <!-- // 초등 -->
+                        <!-- 중/고등
+                        <option>중단원</option>
+                        // 중/고등 -->
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>교재유형</dt>
+                <dd>
+                    <select>
+                        <option>선택</option>
+                        <!-- 초등 -->
+                        <option>원리쏙쏙</option>
+                        <option>유형완성</option>
+                        <option>유형특강</option>
+                        <option>실력점프</option>
+                        <option>계산</option>
+                        <option>예비중</option>
+                        <!-- // 초등 -->
+                        <!-- 중등
+                        <option>개념</option>
+                        <option>유형</option>
+                        <option>유형플러스</option>
+                        <option>계산</option>
+                        <option>내신대비</option>
+                        // 중등 -->
+                        <!-- 고등
+                        <option>개념</option>
+                        <option>유형</option>
+                        <option>내신</option>
+                        <option>계산</option>
+                        // 중등 -->
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회-->
+<div class="btn_top_wrap right">
+    <span>
+        <a href="javascript:void(0);" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+    </span>
+</div>
+<div id="grid"></div>

@@ -1,0 +1,193 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('콘테스트 관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 검색 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>부문</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="radio" id="all_chk01" name="sector" checked="checked" />
+                            <label for="all_chk01">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="sector_chk02" name="sector" />
+                            <label for="sector_chk02">프리젠트</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="sector_chk03" name="sector" />
+                            <label for="sector_chk03">퍼포먼스</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="sector_chk04" name="sector" />
+                            <label for="sector_chk04">광고</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="radio" id="all_chk02" name="year" checked="checked" />
+                            <label for="all_chk02">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk01" name="year" />
+                            <label for="year_chk01">예비초</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk02" name="year" />
+                            <label for="year_chk02">초등1</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk03" name="year" />
+                            <label for="year_chk03">초등2</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk04" name="year" />
+                            <label for="year_chk04">초등3</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk05" name="year" />
+                            <label for="year_chk05">초등4</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk06" name="year" />
+                            <label for="year_chk06">초등5</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk07" name="year" />
+                            <label for="year_chk07">초등6</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk08" name="year" />
+                            <label for="year_chk08">중등1</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk09" name="year" />
+                            <label for="year_chk09">중등2</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk10" name="year" />
+                            <label for="year_chk10">중등3</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk11" name="year" />
+                            <label for="year_chk11">고등1</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk12" name="year" />
+                            <label for="year_chk12">고등2</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="year_chk13" name="year" />
+                            <label for="year_chk13">고등3</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>참가자명</dt>
+                <dd>
+                    <input type="text" placeholder="이름을 입력하세요.">
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색 -->
+
+<!-- 콘테스트 현황 -->
+<div class="contest_tit">제 2회 수학 말하기 콘테스트</div>
+<div class="contest_type">
+    <a href="" class="con_all on">
+        <dl>
+            <dt>전체</dt>
+            <dd><span>162</span>건</dd>
+        </dl>
+    </a>
+    <a href="" class="con_stand">
+        <dl>
+            <dt>대기</dt>
+            <dd><span>162</span>명</dd>
+        </dl>
+    </a>
+    <a href="" class="con_app">
+        <dl>
+            <dt>승인</dt>
+            <dd><span>162</span>건</dd>
+        </dl>
+    </a>
+    <a href="" class="con_reject">
+        <dl>
+            <dt>기각</dt>
+            <dd><span>162</span>건</dd>
+        </dl>
+    </a>
+</div>
+<!-- 콘테스트 현황-->
+
+<!-- 테이블상단 -->
+<div class="btn_top_wrap between">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="selected">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <select>
+            <option value="">학년순</option>
+            <option value="">좋아요순</option>
+            <option value="">상태순</option>
+            <option value="">등록일순</option>
+        </select>
+        <span class="list_num">전체
+            <strong class="col_blue">25</strong>개</span>
+    </span>
+    <span>
+        <a class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+    </span>
+</div>
+<!-- //테이블상단 -->
+
+<!-- 테이블 -->
+<!-- 유튜브 -->
+<a href="" target="_blank" class="btn_table">보기</a>
+<br />
+
+<!-- 상태 -->
+<a href="javascript:alert_confirm('승인하시겠습니까?','','');" class="btn_table btn_blue">승인</a>
+<a href="javascript:openPop('community/contest_dis.html','500','270');" class="btn_table btn_gray02">기각</a>
+승인완료
+
+<div id="grid"></div>
+<!-- //테이블 -->
+
+<div class="btn_bottom_wrap">
+    <a href="index.html?page=community/contest_list" class="btn_basic btn_line">목록</a>
+</div>

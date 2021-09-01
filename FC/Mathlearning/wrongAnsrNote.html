@@ -1,0 +1,334 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('AI맞춤학습');
+        $('.group_title h2').text('오답노트');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/smartCustStd">스마트맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStd">주차별맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc01_01">주차별맞춤일괄기능</a></li>
+    <li><a href="javascript:openPop('Mathlearning/onlineGrad.html',screen.width,screen.height);">온라인간편채점</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/wrongAnsrNote">오답노트</a></li>
+    <li><a href="index.html?page=mathlearning/signalLightType">신호등유형학습</a></li>
+</ul>
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year3" name="year">
+                        <label for="chk_year3">고등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년별</option>
+                    <option>입실별</option>
+                    <option>시간대별</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!--검색영역-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="flag_wrap">
+                            <span class="std_grade">초3</span>
+                        </span>
+                    </div>
+                    <div class="right_area">
+                        <span>채점권한 : 교사</span>
+                        <a href="index.html?page=mathlearning/std_progress" class="btn_table btn_gray02">진도관리</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 탭메뉴 -->
+        <ul class="tab_2depth s_group">
+            <!-- [D] 활성화 : on-->
+            <li class="on"><a href="index.html?page=mathlearning/wrongAnsrNote">스마트교재 오답</a></li>
+            <li><a href="index.html?page=mathlearning/wrongAnsrNote02">AI맞춤학습 오답</a></li>
+            <li><a href="index.html?page=mathlearning/wrongAnsrNote03">오답시험지</a></li>
+        </ul>
+        <!-- // 탭메뉴 -->
+
+        <!-- 검색  -->
+        <div class="btn_top_wrap between">
+            <div class="wrong_ansr">
+                <strong>오답처리율</strong>
+                <div class="bar_graph">
+                    <span class="bar" style="width:59%"></span>
+                    <em class="txt">65%</em>
+                </div>
+            </div>
+            <span>
+                <select>
+                    <option value="">학년</option>
+                </select>
+                <select>
+                    <option value="">학기</option>
+                </select>
+            </span>
+        </div>
+        <!-- //검색 -->
+        
+        <div class="table_list">
+            <table>
+                <caption>스마트교재 오답 리스트</caption>
+                <colgroup>
+                    <col style="width:14%" />
+                    <col />
+                    <col style="width:12%"/>
+                    <col style="width:10%"/>
+                    <col style="width:10%"/>
+                    <col style="width:10%"/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>과정</th>
+                        <th>교재명</th>
+                        <th>전체오답문항</th>
+                        <th>처리 완료</th>
+                        <th>처리 미완료</th>
+                        <th>오답노트</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td> 
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>             
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>              
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>              
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>              
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>             
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td>100</td>
+                        <td><span class="col_blue">80</span></td>
+                        <td><span class="col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>              
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>              
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>             
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>              
+                    </tr>
+                    <tr>
+                        <td>초1-1</td>    
+                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        <td><span class="gm_font">100</span></td>
+                        <td><span class="gm_font col_blue">80</span></td>
+                        <td><span class="gm_font col_red">20</span></td>
+                        <td><a href="javascript:openPop('Mathlearning/pop_wrongAnsrNote01.html','850', '657');" class="btn_table blue">생성</a></td>             
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="paging">
+            <a href="" class="btn_paging back"></a>
+            <a href="" class="btn_paging pre"></a>
+            <ul>
+              <li><a href="">1</a></li>
+              <li><a href="">2</a></li>
+              <li class="on">3</li>
+              <li><a href="">4</a></li>
+              <li><a href="">5</a></li>
+              <li><a href="">6</a></li>
+              <li><a href="">7</a></li>
+              <li><a href="">8</a></li>
+              <li><a href="">9</a></li>
+            </ul>
+            <a href="" class="btn_paging next"></a>
+            <a href="" class="btn_paging forward"></a>
+        </div>
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

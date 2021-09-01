@@ -1,0 +1,1225 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('학습관리현황');
+        $('.group_title h2').text('수강생별 학습관리');
+         // 달력
+         calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm frm_three">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm frm_three">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm frm_three">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년</option>
+                    <option>예비초</option>
+                    <option>초1</option>
+                    <option>초2</option>
+                    <option>초3</option>
+                    <option>초4</option>
+                    <option>초5</option>
+                    <option>초6</option>
+                    <option>중1</option>
+                    <option>중2</option>
+                    <option>중3</option>
+                    <option>고1</option>
+                    <option>고2</option>
+                    <option>고3</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+<!--상세보기-->
+    <div class="view_group">
+        <!--검색-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="flag_wrap">
+                            <span class="std_grade">초3</span>
+                        </span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="info_group full">
+                <li>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+							<input id="startpicker-input" type="text" aria-label="Date"/>
+							<label for="startpicker-input" class="tui-ico-date"></label>
+							<div id="startpicker-container" style="margin-left: -1px;"></div>
+						</div>
+						<span class="line">~</span>
+						<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+							<input id="endpicker-input" type="text" aria-label="Date"/>
+							<label for="endpicker-input" class="tui-ico-date"></label>
+							<div id="endpicker-container" style="margin-left: -1px;"></div>
+						</div>
+                    </span>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="period1" name="period" checked="">
+                            <label for="period1">전일</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="period2" name="period">
+                            <label for="period2">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="period3" name="period">
+                            <label for="period3">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="period4" name="period">
+                            <label for="period4">6개월</label>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <!--//검색-->
+        <!-- 텝 -->
+        <ul class="tab_2depth">
+            <!-- [D] 활성화 : on-->
+            <li class="on"><a href="index.html?page=tclasslearning/overallAnalysis">종합분석</a></li>
+            <li><a href="index.html?page=tclasslearning/dailyLearnStts">일별 학습현황</a></li>
+            <li><a href="index.html?page=tclasslearning/descriptiveStd">서술형 학습특강</a></li>
+            <li><a href="index.html?page=tclasslearning/lessonTest">단원평가</a></li>
+            <li><a href="index.html?page=tclasslearning/examStts">중간*기말 성취도평가</a></li>
+            <li><a href="index.html?page=tclasslearning/fundamentalStts">기초학력 진단평가</a></li>
+            <li><a href="index.html?page=tclasslearning/nationwideStts">전국학력평가</a></li>
+        </ul>
+        <!-- /텝 -->
+        <!-- 학습정보 -->
+        <h4 class="tit_h4">
+            <strong>과목 별 최근 학습 정보</strong>
+        </h4>
+        <div class="table_list">
+            <table>
+                <colgroup>
+                    <col style="width:12%">
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>과목</th>
+                        <th>단원명</th>
+                        <th>차시명</th>
+                        <th>학습일</th>
+                        <th>상세</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>국어</td>
+                        <td>1단원. 내용을 말하기</td>
+                        <td>① 시를 읽고 생각이나 느낌 나누기</td>
+                        <td><span class="gm_font">2020.12.01</span></td>
+                        <td><a href="javascript:openPop('tclasslearning/overallAnalysisDetailPop.html','800','670');" class="btn_table">상세보기</a></td>
+                    </tr>
+					<tr>
+                        <td>수학</td>
+                        <td>1단원. 내용을 말하기</td>
+                        <td>① 시를 읽고 생각이나 느낌 나누기</td>
+                        <td><span class="gm_font">2020.12.01</span></td>
+                        <td><a href="javascript:openPop('tclasslearning/overallAnalysisDetailPop.html','800','670');" class="btn_table">상세보기</a></td>
+                    </tr>
+					<tr>
+                        <td>사회</td>
+                        <td>1단원. 내용을 말하기</td>
+                        <td>① 시를 읽고 생각이나 느낌 나누기</td>
+                        <td><span class="gm_font">2020.12.01</span></td>
+                        <td><a href="javascript:openPop('tclasslearning/overallAnalysisDetailPop.html','800','670');" class="btn_table">상세보기</a></td>
+                    </tr>
+					<tr>
+                        <td>과학</td>
+                        <td>1단원. 내용을 말하기</td>
+                        <td>① 시를 읽고 생각이나 느낌 나누기</td>
+                        <td><span class="gm_font">2020.12.01</span></td>
+                        <td><a href="javascript:openPop('tclasslearning/overallAnalysisDetailPop.html','800','670');" class="btn_table">상세보기</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- //학습정보 -->
+        <!-- 차트 등-->        
+        <div class="graph_group">
+            <li>
+				<!--과목별 평균점수-->
+				<div class="graph_box">
+					<div class="btn_top_wrap between">
+						<h4 class="tit_h4">과목별 평균점수</h4>
+					</div>
+					<!--그래프-->
+					<div id="column_chart02" style="height:300px"></div>
+					<script>
+					am4core.ready(function() {
+						am4core.addLicense("CH230677325");
+						am4core.useTheme(am4themes_animated);
+
+						var chart = am4core.create("column_chart02", am4charts.XYChart);
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+
+						chart.data = [{
+						  "subject": "국어",
+						  "per": 90,
+						  "color": am4core.color("#5a90ee")
+						}, {
+						  "subject": "수학",
+						  "per": 54,
+						  "color": am4core.color("#49c7c7")
+						}, {
+						  "subject": "사회",
+						  "per": 29,
+						  "color": am4core.color("#ff7da5")
+						}, {
+						  "subject": "과학",
+						  "per": 64,
+						  "color": am4core.color("#869eec")
+						}, {
+						  "subject": "봄여름가을겨울",
+						  "per": 84,
+						  "color": am4core.color("#a081f5")
+						}];
+
+						var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+						categoryAxis.dataFields.category = "subject";
+						categoryAxis.renderer.grid.template.location = 0;
+						categoryAxis.renderer.minGridDistance = 30;
+						categoryAxis.renderer.grid.template.opacity = 0;
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						var series = chart.series.push(new am4charts.ColumnSeries());
+						series.dataFields.valueY = "per";
+						series.dataFields.categoryX = "subject";
+						series.name = "Visits";
+						series.columns.template.width = am4core.percent(50);
+						series.columns.template.fillOpacity = 1;
+						series.columns.template.adapter.add("fill", function(fill, target) {
+							return target.dataItem ? target.dataItem.dataContext.color : fill;
+						});
+
+						var columnTemplate = series.columns.template;
+						columnTemplate.strokeWidth = 0;
+						columnTemplate.strokeOpacity = 1;
+
+						var bullet = series.bullets.push(new am4charts.LabelBullet());
+						bullet.label.verticalCenter = "top";
+						bullet.dy = -20;
+						bullet.label.text = '{valueY} 점';
+						bullet.label.fill = am4core.color('#222');
+						bullet.label.truncate = false;
+						bullet.label.hideOversized = false;
+
+						var label = categoryAxis.renderer.labels.template;
+						label.truncate = false;
+						label.wrap = true;
+
+						categoryAxis.events.on("sizechanged", function(ev) {
+							var axis = ev.target;
+							var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+							axis.renderer.labels.template.maxWidth = cellWidth;
+						});
+					});
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//과목별 평균점수-->
+            </li>
+            <li>
+				<!--요일별 학습 평균 시간-->
+				<div class="graph_box">
+					<div class="btn_top_wrap between">
+						<h4 class="tit_h4">요일별 학습 평균 시간</h4>
+						<span class="time_sel">
+							<select>
+								<option>과목별 선택</option>
+								<option>전체</option>
+								<option>국어</option>
+								<option>수학</option>
+								<option>사회</option>
+								<option>과학</option>
+								<option>봄여름가을겨울</option>
+							</select>
+						</span>
+					</div>
+					<!--그래프-->
+					<div id="column_chart01" style="height:300px"></div>
+					<script>
+					am4core.ready(function() {
+						am4core.addLicense("CH230677325");
+						am4core.useTheme(am4themes_animated);
+
+						var chart = am4core.create("column_chart01", am4charts.XYChart);
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+
+						chart.data = [{
+						  "week": "월",
+						  "time": 50,
+						  "color": am4core.color("#8697af")
+						}, {
+						  "week": "화",
+						  "time": 54,
+						  "color": am4core.color("#8697af")
+						}, {
+						  "week": "수",
+						  "time": 29,
+						  "color": am4core.color("#8697af")
+						}, {
+						  "week": "목",
+						  "time": 30,
+						  "color": am4core.color("#8697af")
+						}, {
+						  "week": "금",
+						  "time": 25,
+						  "color": am4core.color("#8697af")
+						}, {
+						  "week": "토",
+						  "time": 10,
+						  "color": am4core.color("#00a2ff")
+						}, {
+						  "week": "일",
+						  "time": 15,
+						  "color": am4core.color("#ff5858"),
+						}];
+
+
+						var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+						categoryAxis.dataFields.category = "week";
+						categoryAxis.renderer.grid.template.location = 0;
+						categoryAxis.renderer.minGridDistance = 30;
+						categoryAxis.renderer.grid.template.opacity = 0;
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						var series = chart.series.push(new am4charts.ColumnSeries());
+						series.dataFields.valueY = "time";
+						series.dataFields.categoryX = "week";
+						series.name = "Visits";
+						series.columns.template.width = am4core.percent(50);
+						series.columns.template.fillOpacity = 1;
+						series.columns.template.adapter.add("fill", function(fill, target) {
+							return target.dataItem ? target.dataItem.dataContext.color : fill;
+						});
+
+						var columnTemplate = series.columns.template;
+						columnTemplate.strokeWidth = 0;
+						columnTemplate.strokeOpacity = 1;
+
+						var bullet = series.bullets.push(new am4charts.LabelBullet());
+						bullet.label.verticalCenter = "top";
+						bullet.dy = -20;
+						bullet.label.text = '{valueY} 분';
+						bullet.label.fill = am4core.color('#222');
+						bullet.label.truncate = false;
+						bullet.label.hideOversized = false;
+
+						var label = categoryAxis.renderer.labels.template;
+						label.truncate = false;
+						label.wrap = true;
+
+						categoryAxis.events.on("sizechanged", function(ev) {
+							var axis = ev.target;
+							var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+							axis.renderer.labels.template.maxWidth = cellWidth;
+						});
+					});
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//요일별 학습 평균 시간-->
+			</li>
+			<li>
+				<!--과목별 평균 진도율-->
+				<div class="graph_box">
+					<div class="btn_top_wrap between">
+						<h4 class="tit_h4">과목별 평균 진도율</h4>
+					</div>
+					<!--그래프-->
+					<div id="column_chart03" style="height:300px"></div>
+					<script>
+						am4core.ready(function() {
+						am4core.addLicense("CH230677325");
+						am4core.useTheme(am4themes_animated);
+
+						var chart = am4core.create("column_chart03", am4charts.XYChart);
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+
+						chart.data = [{
+						  "subject": "국어",
+						  "per": 90,
+						  "color": am4core.color("#5a90ee")
+						}, {
+						  "subject": "수학",
+						  "per": 54,
+						  "color": am4core.color("#49c7c7")
+						}, {
+						  "subject": "사회",
+						  "per": 29,
+						  "color": am4core.color("#ff7da5")
+						}, {
+						  "subject": "과학",
+						  "per": 64,
+						  "color": am4core.color("#869eec")
+						}, {
+						  "subject": "봄여름가을겨울",
+						  "per": 84,
+						  "color": am4core.color("#a081f5")
+						}];
+
+						var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+						categoryAxis.dataFields.category = "subject";
+						categoryAxis.renderer.grid.template.location = 0;
+						categoryAxis.renderer.minGridDistance = 30;
+						categoryAxis.renderer.grid.template.opacity = 0;
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						var series = chart.series.push(new am4charts.ColumnSeries());
+						series.dataFields.valueY = "per";
+						series.dataFields.categoryX = "subject";
+						series.name = "Visits";
+						series.columns.template.width = am4core.percent(50);
+						series.columns.template.fillOpacity = 1;
+						series.columns.template.adapter.add("fill", function(fill, target) {
+							return target.dataItem ? target.dataItem.dataContext.color : fill;
+						});
+
+						var columnTemplate = series.columns.template;
+						columnTemplate.strokeWidth = 0;
+						columnTemplate.strokeOpacity = 1;
+
+						var bullet = series.bullets.push(new am4charts.LabelBullet());
+						bullet.label.verticalCenter = "top";
+						bullet.dy = -20;
+						bullet.label.text = '{valueY} %';
+						bullet.label.fill = am4core.color('#222');
+						bullet.label.truncate = false;
+						bullet.label.hideOversized = false;
+
+						var label = categoryAxis.renderer.labels.template;
+						label.truncate = false;
+						label.wrap = true;
+
+						categoryAxis.events.on("sizechanged", function(ev) {
+							var axis = ev.target;
+							var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+							axis.renderer.labels.template.maxWidth = cellWidth;
+						});
+					});
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//과목별 평균 진도율-->
+			</li>
+			<li>
+				<div class="graph_box">
+					<div class="btn_top_wrap between">
+						<h4 class="tit_h4">학습성취 정보</h4>
+						<a href="javascript:openPop('tclasslearning/overallAnalysisAchievePop.html','800','670');" class="btn_top btn_gray">상세보기</a>
+					</div>
+					<!--그래프-->
+					<div class="small">
+						<div>
+							<span>학습 정답율(%)</span>
+							<div id="chart1" style="width:100%;height:274px" ></div>
+						</div>
+						<div>
+							<span>오답 처리율(%)</span>
+							<div id="chart2" style="width:100%;height:274px" ></div>
+						</div>
+						<div>
+							<span>성취도 분포도(%)</span>
+							<div id="chart3" style="width:100%;height:274px" ></div>
+						</div>
+					</div>
+					<script>
+							am4core.ready(function() {
+							am4core.addLicense("CH230677325");
+							am4core.useTheme(am4themes_animated);
+
+							/*** PIE CHART1 ***/
+							var chart = am4core.create("chart1", am4charts.PieChart);   
+							var pieSeries = chart.series.push(new am4charts.PieSeries());
+							chart.fontSize= 13; 
+							chart.fontFamily = "NotoSans";
+							pieSeries.dataFields.value = "litres";
+							pieSeries.dataFields.category = "level";
+
+							chart.innerRadius = am4core.percent(30);
+							chart.radius = am4core.percent(80);        
+
+							pieSeries.slices.template.stroke = am4core.color("#fff");
+							pieSeries.slices.template.strokeWidth = 1;
+							pieSeries.slices.template.strokeOpacity = 1;
+							pieSeries.slices.template
+							.cursorOverStyle = [
+								{
+									"property": "cursor",
+									"value": "pointer"
+								}
+							];
+
+							pieSeries.labels.template.disabled = true;
+							pieSeries.slices.template.tooltipText = "";
+							pieSeries.ticks.template.disabled = true;
+
+							var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+							shadow.opacity = 0;
+
+							var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+							var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+							hoverShadow.opacity = 0.7;
+							hoverShadow.blur = 5;
+
+							chart.legend = new am4charts.Legend();
+
+							chart.data = [{
+								"level": "상",
+								"litres": 40
+							},{
+								"level": "중",
+								"litres": 36
+							}, {
+								"level": "하",
+								"litres": 24
+							}];
+
+							/***  PIE CHART2 ***/
+							var chart = am4core.create("chart2", am4charts.PieChart);  
+							var pieSeries = chart.series.push(new am4charts.PieSeries());
+							chart.fontSize= 13; 
+							chart.fontFamily = "NotoSans";
+							pieSeries.dataFields.value = "litres";
+							pieSeries.dataFields.category = "level";
+
+							chart.innerRadius = am4core.percent(30);
+							chart.radius = am4core.percent(80);
+
+							pieSeries.slices.template.stroke = am4core.color("#fff");
+							pieSeries.slices.template.strokeWidth = 1;
+							pieSeries.slices.template.strokeOpacity = 1;
+							pieSeries.slices.template
+							.cursorOverStyle = [
+								{
+									"property": "cursor",
+									"value": "pointer"
+								}
+							];
+
+							pieSeries.labels.template.disabled = true;
+							pieSeries.slices.template.tooltipText = "";
+							pieSeries.ticks.template.disabled = true;
+
+							var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+							shadow.opacity = 0;
+
+							var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+							var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+							hoverShadow.opacity = 0.7;
+							hoverShadow.blur = 5;
+
+							chart.legend = new am4charts.Legend();
+
+							chart.data = [{
+								"level": "상",
+								"litres": 10
+							},{
+								"level": "중",
+								"litres": 30
+							}, {
+								"level": "하",
+								"litres": 60
+							}];
+
+
+							/*** RADAR CHART1 ***/
+							var chart = am4core.create("chart3", am4charts.XYChart);
+							chart.fontSize= 13; 
+							chart.fontFamily = "NotoSans";
+
+							chart.data = [{
+							  "subject": "상",
+							  "per": 90,
+							  "color": am4core.color("#5a90ee")
+							}, {
+							  "subject": "중",
+							  "per": 54,
+							  "color": am4core.color("#49c7c7")
+							}, {
+							  "subject": "하",
+							  "per": 29,
+							  "color": am4core.color("#ff7da5")
+							}];
+
+							var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+							categoryAxis.dataFields.category = "subject";
+							categoryAxis.renderer.grid.template.location = 0;
+							categoryAxis.renderer.minGridDistance = 30;
+							categoryAxis.renderer.grid.template.opacity = 0;
+
+							var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+							yAxis.renderer.grid.template.opacity = 0;
+							yAxis.renderer.baseGrid.disabled = true;
+							yAxis.renderer.labels.template.disabled = true;
+
+							var series = chart.series.push(new am4charts.ColumnSeries());
+							series.dataFields.valueY = "per";
+							series.dataFields.categoryX = "subject";
+							series.name = "Visits";
+							series.columns.template.width = am4core.percent(50);
+							series.columns.template.fillOpacity = 1;
+							series.columns.template.stroke = am4core.color("#fff");
+							series.columns.template.adapter.add("fill", function(fill, target) {
+								return target.dataItem ? target.dataItem.dataContext.color : fill;
+							});
+
+
+							var bullet = series.bullets.push(new am4charts.LabelBullet());
+							bullet.propertyFields.dy = "vertical";
+							bullet.propertyFields.dx = "horizon";
+							bullet.label.horizontalCenter = "middle";
+							bullet.label.verticalCenter = "top";
+							bullet.label.fontSize = 12;
+							bullet.label.verticalCenter = "top";
+							bullet.dy = -20;
+							bullet.label.text = '{valueY} %';
+							bullet.label.fill = am4core.color('#222');
+							bullet.dy = "vertical";
+							bullet.dx = "horizon";
+							bullet.label.truncate = false;
+							bullet.label.hideOversized = false;
+						});
+					</script>
+				</div>
+			</li>
+			<li class="full">
+				<!--일별 평균 점수-->
+				<div class="graph_box">
+					<div class="btn_top_wrap between">
+						<h4 class="tit_h4">일별 평균 점수</h4>
+						<span class="frm_wrap">
+                        <span class="frm all">
+                            <input type="checkbox" id="frm1" name="frm1" onclick="all_check(this)" checked/>
+                            <label for="frm1">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="frm2" name="frm1"/>
+                            <label for="frm2">국어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="frm3" name="frm1"/>
+                            <label for="frm3">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="frm4" name="frm1"/>
+                            <label for="frm4">사회</label>
+                        </span>
+						<span class="frm">
+                            <input type="checkbox" id="frm5" name="frm5"/>
+                            <label for="frm5">과학</label>
+						</span>
+						<span class="frm">
+                            <input type="checkbox" id="frm6" name="frm6"/>
+                            <label for="frm4">사회</label>
+						</span>
+                    </span>
+					</div>
+					<!--그래프-->
+					<div id="chartdiv" style="height:400px;"></div>
+					<script>
+						am4core.ready(function () {
+							am4core.addLicense("CH230677325");
+							am4core.useTheme(am4themes_animated);
+
+							var chart = am4core.create("chartdiv", am4charts.XYChart);
+							chart.fontSize = 14;
+
+							chart.data = [
+								{
+									"year": "1",
+									"all": 1,
+									"ko": 5,
+									"math": 3,
+									"social": 3,
+									"science": 2,
+									"etc":3
+								}, {
+									"year": "2",
+									"all": 1,
+									"ko": 2,
+									"math": 6,
+									"social": 2,
+									"science": 3,
+									"etc":2
+								}, {
+									"year": "3",
+									"all": 2,
+									"ko": 3,
+									"math": 1,
+									"social": 6,
+									"science": 5,
+									"etc":5
+								}, {
+									"year": "4",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								 }, {
+									"year": "5",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								 }, {
+									"year": "6",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								 }, {
+									"year": "7",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								 }, {
+									"year": "8",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								 }, {
+									"year": "9",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								 }, {
+									"year": "10",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "11",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "12",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "13",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "14",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "15",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "16",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "17",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "18",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "19",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "20",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "21",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "22",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "23",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "24",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+
+									"etc":6
+								}, {
+									"year": "25",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "26",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "28",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "29",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}, {
+									"year": "30",
+									"all": 3,
+									"ko": 4,
+									"math": 1,
+									"social": 15,
+									"science": 1,
+									"etc":6
+								}
+							];
+
+							var categoryAxis = chart
+								.xAxes
+								.push(new am4charts.CategoryAxis());
+							categoryAxis.dataFields.category = "year";
+							categoryAxis.renderer.opposite = false;
+							categoryAxis.renderer.minGridDistance = 10;
+
+							var valueAxis = chart
+								.yAxes
+								.push(new am4charts.ValueAxis());
+							valueAxis.renderer.inversed = false;
+							valueAxis.title.text = "";
+							valueAxis.renderer.minLabelPosition = 0.01;
+
+							var series1 = chart
+								.series
+								.push(new am4charts.LineSeries());
+							series1.dataFields.valueY = "all";
+							series1.dataFields.categoryX = "year";
+							series1.name = "전체";
+							series1
+								.bullets
+								.push(new am4charts.CircleBullet());
+							series1.tooltipText = " {name}  : {valueY}";
+							series1.legendSettings.valueText = "{valueY}";
+							//series1.visible = false;
+							series1.smoothing = "monotoneX";
+							series1.fill = am4core.color("#a5a5a5");
+							series1.stroke = am4core.color("#a5a5a5"); 
+
+							var series2 = chart
+								.series
+								.push(new am4charts.LineSeries());
+							series2.dataFields.valueY = "ko";
+							series2.dataFields.categoryX = "year";
+							series2.name = '국어';
+							series2
+								.bullets
+								.push(new am4charts.CircleBullet());
+							series2.tooltipText = " {name}  : {valueY}";
+							series2.legendSettings.valueText = "{valueY}";
+							series2.smoothing = "monotoneX";
+							series2.fill = am4core.color("#f67fd3");
+							series2.stroke = am4core.color("#f67fd3"); 
+
+							var series3 = chart
+								.series
+								.push(new am4charts.LineSeries());
+							series3.dataFields.valueY = "math";
+							series3.dataFields.categoryX = "year";
+							series3.name = '수학';
+							series3
+								.bullets
+								.push(new am4charts.CircleBullet());
+							series3.tooltipText = " {name} : {valueY}";
+							series3.legendSettings.valueText = "{valueY}";
+							series3.smoothing = "monotoneX";
+							series3.fill = am4core.color("#00a2ff");
+							series3.stroke = am4core.color("#00a2ff"); 
+
+							var series4 = chart
+								.series
+								.push(new am4charts.LineSeries());
+							series4.dataFields.valueY = "social";
+							series4.dataFields.categoryX = "year";
+							series4.name = '사회';
+							series4
+								.bullets
+								.push(new am4charts.CircleBullet());
+							series4.tooltipText = " {name}  : {valueY}";
+							series4.legendSettings.valueText = "{valueY}";
+							series4.smoothing = "monotoneX";
+							series4.fill = am4core.color("#90c724");
+							series4.stroke = am4core.color("#90c724");
+
+							var series5 = chart
+								.series
+								.push(new am4charts.LineSeries());
+							series5.dataFields.valueY = "science";
+							series5.dataFields.categoryX = "year";
+							series5.name = '과학';
+							series5
+								.bullets
+								.push(new am4charts.CircleBullet());
+							series5.tooltipText = " {name}  : {valueY}";
+							series5.legendSettings.valueText = "{valueY}";
+							series5.smoothing = "monotoneX";
+							series5.fill = am4core.color("#788ad4")
+							series5.stroke = am4core.color("#788ad4");
+
+							var series6 = chart
+								.series
+								.push(new am4charts.LineSeries());
+							series6.dataFields.valueY = "etc";
+							series6.dataFields.categoryX = "year";
+							series6.name = '봄여름가을겨울';
+							series6
+								.bullets
+								.push(new am4charts.CircleBullet());
+							series6.tooltipText = " {name}  : {valueY}";
+							series6.legendSettings.valueText = "{valueY}";
+							series6.smoothing = "monotoneX";
+							series6.fill = am4core.color("#f7941d")
+							series6.stroke = am4core.color("#f7941d");
+
+							chart.cursor = new am4charts.XYCursor();
+							chart.cursor.behavior = "zoomY";
+
+							let hs1 = series1
+								.segments
+								.template
+								.states
+								.create("hover")
+							hs1.properties.strokeWidth = 5;
+							series1.segments.template.strokeWidth = 2;
+							series1.lineColor = "#a5a5a5";
+							series1.bulletBorderColor = "#a5a5a5";
+							series1.bulletColor = "#a5a5a5";
+
+							let hs2 = series2
+								.segments
+								.template
+								.states
+								.create("hover")
+							hs2.properties.strokeWidth = 5;
+							series2.segments.template.strokeWidth = 2;
+
+							let hs3 = series3
+								.segments
+								.template
+								.states
+								.create("hover")
+							hs3.properties.strokeWidth = 5;
+							series3.segments.template.strokeWidth = 2;
+
+							let hs4 = series4
+								.segments
+								.template
+								.states
+								.create("hover")
+							hs4.properties.strokeWidth = 5;
+							series4.segments.template.strokeWidth = 2;
+
+							let hs5 = series5
+								.segments
+								.template
+								.states
+								.create("hover")
+							hs5.properties.strokeWidth = 5;
+							series5.segments.template.strokeWidth = 2;
+
+							let hs6 = series6
+								.segments
+								.template
+								.states
+								.create("hover")
+							hs6.properties.strokeWidth = 5;
+							series6.segments.template.strokeWidth = 2;
+
+							chart.legend = new am4charts.Legend();
+							chart
+								.legend
+								.itemContainers
+								.template
+								.events
+								.on("over", function (event) {
+									var segments = event.target.dataItem.dataContext.segments;
+									segments.each(function (segment) {
+										segment.isHover = true;
+									})
+								})
+
+							chart
+								.legend
+								.itemContainers
+								.template
+								.events
+								.on("out", function (event) {
+									var segments = event.target.dataItem.dataContext.segments;
+									segments.each(function (segment) {
+										segment.isHover = false;
+									})
+								})
+
+						});
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//일별 평균 점수-->
+			</li>
+        </div>
+        <!-- // 차트 등-->        
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

@@ -1,0 +1,91 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('Q&A');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%">
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>구분<span class="required"></span></th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>유형<span class="required"></span></th>
+                <td>
+                    <select>
+                        <option value="">사업운영</option>
+                        <option value="">교재내용</option>
+                        <option value="">시스템</option>
+                        <option value="">기타</option>
+                    </select>
+                    <select>
+                        <option value="">2depth 선택</option>
+                        <option value="">111</option>
+                        <option value="">222</option>
+                        <option value="">333</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" class="input_full" placeholder="제목을 30자 이내로 입력해주세요" /></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터영역</td>
+            </tr>
+            <tr>
+                <th>파일첨부<span class="required"></span></th>
+                <td>
+                    <div class="attach_file_lst">
+                        <ul>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <span class="delete_File"></span></li>
+                            <li><span class="add_file">파일명.확장자</span> <span>(0.0 byte)</span> <span class="delete_File"></span></li>
+                        </ul>
+                        <!-- [D] 파일첨부전 드래그/드롭 시 on클래스 추가 -->
+                        <p class="guide_tx"><span>첨부할 파일을 직접 드래그 앤 드롭 해주세요</span></p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_bottom_wrap justify">
+    <p>
+        <a href="index.html?page=community/qna_list" class="btn_basic btn_line">목록</a>
+    </p>
+    <p>
+        <a href="" class="btn_basic">저장</a>
+    </p>
+</div>

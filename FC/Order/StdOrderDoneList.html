@@ -1,0 +1,667 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('주문완료리스트');
+        $('.group_title h2').text('주문완료리스트');
+        // 달력
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+    <!-- 툴팁 -->
+    <div class="tooltip_area">
+        <button class="btn_tooltip">tooltip</button>
+        <div class="tooltip_cont">
+            <p class="tit">보상안내</p>
+            <ul class="bu_type">
+                <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                <li>4개 : 미션 완료 추가보상 500골드</li>
+                <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+            </ul>
+            <button class="close">툴팁닫기</button>
+        </div>
+    </div>
+    <!-- // 툴팁 -->
+</div>
+<!-- //타이틀-->
+<!-- 가이드 -->
+<dl class="box_reg_guide">
+    <dt>주문완료 리스트 안내 <a class="btn_slide">열기/닫기</a>
+    </dt>
+    <dd>
+        <!-- 가이드내 탭-->
+        <ul class="tab_guide">
+            <li class="on">
+                <a href="javascript:void(0);">주문 처리 프로세스 안내</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">주문 상세 구분 안내</a>
+            </li>
+        </ul>
+        <div class="tab_guide_cont">
+            <!-- tab01-->
+            <div class="tab_cont">
+                <ul class="process_flow">
+                    <li>장바구니<span>01</span>
+                    </li>
+                    <li>주문완료<span>02</span>
+                        <p>가맹점에서 주문을 완료 취소 가능</p>
+                    </li>
+                    <li>준비중<span>03</span>
+                        <p>본사 승인 전표생성 중 주문 수정 불가능</p>
+                    </li>
+                    <li>발송준비<span>04</span>
+                        <p>물류 작업중</p>
+                    </li>
+                    <li>배송중<span>05</span>
+                        <p>택배사 배송 중 주문 완료 리스트 송장 조회 가능</p>
+                    </li>
+                    <li>배송완료<span>06</span>
+                        <p>택배사 배송 완료<br />주문서와 도착 물품 확인 필수</p>
+                    </li>
+                    <li>검수<span>07</span>
+                        <p>오발송, 또는 배송 중 파본은 도착 후 4일 이내 반품메뉴의 오발송에 접수</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- //tab01-->
+            <!-- tab02-->
+            <div class="tab_cont">
+                <div class="table_list column">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:15%;" />
+                            <col style="width:15%;" />
+                            <col style="width:70%;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>주문구분</th>
+                                <th>상세구분</th>
+                                <th>정의</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="9">수강생</td>
+                                <td>신규</td>
+                                <td>신규수강생 등록 후 첫 자동주문</td>
+                            </tr>
+                            <tr>
+                                <td>복회</td>
+                                <td>복회수강생 등록 후 첫 자동주문</td>
+                            </tr>
+                            <tr>
+                                <td>당월 </td>
+                                <td>상시 주문하는 당월 교재</td>
+                            </tr>
+                            <tr>
+                                <td>익월</td>
+                                <td>주문집중기간에 주문하는 익월 교재</td>
+                            </tr>
+                            <tr>
+                                <td>당월추가</td>
+                                <td>당월 첫 주문 이후 전체</td>
+                            </tr>
+                            <tr>
+                                <td>익월추가</td>
+                                <td>익월 첫 주문 이후 전체</td>
+                            </tr>
+                            <tr>
+                                <td>당월재</td>
+                                <td>당월 교재 학습 재설정으로 재주문 시(수정할 때 안나간 책 삭제되고 재주문되서 한번 나가는 책 말고 이미 책이 본사 발송 된 후 학습 재설정으로 자동 반품 접수되면서 자동 재주문된 책) </td>
+                            </tr>
+                            <tr>
+                                <td>익월재</td>
+                                <td>익월 교재 학습 재설정으로 재주문 시(수정할 때 안나간 책 삭제되고 재주문되서 한번 나가는 책 말고 이미 책이 본사 발송 된 후 학습 재설정으로 자동 반품 접수되면서 자동 재주문된 책) </td>
+                            </tr>
+                            <tr>
+                                <td>다북스</td>
+                                <td>(영어) 다북스 주문을 선택한 경우</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">일반</td>
+                                <td>학생용</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>교사용</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>홍보 판촉물</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>부록지</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">자동</td>
+                                <td>오배송(주)</td>
+                                <td>반품 접수된 오배송 교재의 재출고를 위한 자동 주문서</td>
+                            </tr>
+                            <tr>
+                                <td>불량(주)</td>
+                                <td>반품 접수된 파본 교재의 재출고를 위한 자동 주문서</td>
+                            </tr>
+                            <tr>
+                                <td>미반품(주)</td>
+                                <td>반품 기한이 지나 유가처리를 위한 주문서</td>
+                            </tr>
+                            <tr>
+                                <td>교환(주)</td>
+                                <td>교환 접수된 주문</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //tab02-->
+        </div>
+        <!-- //가이드내 탭-->
+    </dd>
+</dl>
+<!-- //가이드 -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=order/StdOrderDoneList">전체 리스트</a>
+    </li>
+    <li>
+        <a href="index.html?page=order/StdOrderDone01">수강생 주문</a>
+    </li>
+    <li>
+        <a href="index.html?page=order/StdOrderDoneNml01">일반 주문</a>
+    </li>
+</ul>
+<!-- 컨텐츠 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date" />
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date" />
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month_today" name="month" checked="checked" />
+                            <label for="month_today">당일</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month_01" name="month" />
+                            <label for="month_01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month_03" name="month" />
+                            <label for="month_03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month_06" name="month" />
+                            <label for="month_06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="smartclass_all" name="smartclass" onchange="all_check(this);" checked="checked" />
+                            <label for="smartclass_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk01" name="smartclass" />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>주문구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="order_all" name="order_div" onchange="all_check(this);" checked="checked" />
+                            <label for="order_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="order01" name="order_div" />
+                            <label for="order01">수강생</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="order02" name="order_div" />
+                            <label for="order02">일반</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="order03" name="order_div" />
+                            <label for="order03">자동</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectorder" onChange="sel_order(this.form)">
+                            <option selected="selected" value="0">주문번호</option>
+                            <option value="1">전표번호</option>
+                        </select>
+                        <input type="text" name="input_order" placeholder="주문번호를 입력하세요" />
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- 주문요약정보 -->
+<h4 class="tit_h4">주문요약정보</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:33%" />
+            <col style="width:33%" />
+            <col style="width:33%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>주문 일</th>
+                <th>주문수량 (건)</th>
+                <th>주문금액 (원)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="gm_font col_red">2021.03.21 ~ 2021.03.31</span>
+                </td>
+                <td>
+                    <span class="gm_font col_red">258</span>
+                </td>
+                <td>
+                    <span class="gm_font col_red">345,000</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- // 주문요약정보 -->
+<!-- 주문완료리스트 -->
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">주문완료 리스트</h4>
+    <div>
+        <a href="javascript:alert_open('주문집중기간에는 가맹점 주문이 1회만 가능합니다. <br>다른 주문이 더 있는지 확인해 주세요.');" class="btn_top">최종제출</a>
+        <!--a href="" class="btn_top btn_gray02">최종제출 취소</a-->
+    </div>
+</div>
+<div class="table_scroll" style="max-height:300px;">
+    <div class="table_list" style="min-width:1500px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:4%" />
+                <col />
+                <col />
+                <col style="width:9%" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col style="width:9%" />
+                <col />
+                <col style="width:9%" />
+                <col style="width:9%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>FC구분</th>
+                    <th>주문구분</th>
+                    <th>주문번호</th>
+                    <th>주문수량</th>
+                    <th>주문금액</th>
+                    <th>상세구분</th>
+                    <th>주문일</th>
+                    <th>처리일</th>
+                    <th>상태</th>
+                    <th>전표번호</th>
+                    <th>박스수</th>
+                    <th>송장번호</th>
+                    <th>주문취소</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>영어</td>
+                    <td>수강생</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>당월추가</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>배송중<br /><span class="col_red">(품절제외)</span></td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                        <br />합배
+                    </td>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_inv.html','800','670');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn_table btn_gray02">주문취소</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>영어</td>
+                    <td>수강생</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>당월추가</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문완료</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                        <br />합배
+                    </td>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_inv.html','800','670');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn_table btn_gray02">주문취소</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>영어</td>
+                    <td>수강생</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>당월추가</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문완료</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                        <br />합배
+                    </td>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_inv.html','800','670');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn_table btn_gray02">주문취소</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>영어</td>
+                    <td>수강생</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>당월추가</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문완료</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('ㄹrder/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                        <br />합배
+                    </td>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_inv.html','800','670');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn_table btn_gray02">주문취소</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>영어</td>
+                    <td>수강생</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>당월추가</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문완료</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                        <br />합배
+                    </td>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_inv.html','800','670');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn_table btn_gray02">주문취소</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>영어</td>
+                    <td>수강생</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>당월추가</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>주문완료</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                        <br />합배
+                    </td>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_inv.html','800','670');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <a href="" class="btn_table btn_gray02">주문취소</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>수학</td>
+                    <td>일반</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>익월추가</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>준비중</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">2</span>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_inv.html','800','670');">더보기</a>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">3</span>
+                    </td>
+                    <td>수학</td>
+                    <td>오배송<br />주문(자동)</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_Num.html','900','650');" class="link gm_font">20201020039</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">10</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                    <td>신규</td>
+                    <td>
+                        <span class="gm_font">2021.03.21</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.22</span>
+                    </td>
+                    <td>미발송<br />(반품승인)</td>
+                    <td>
+                        <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_StdOrderDone_DocNum.html','900','650');" class="link gm_font">20201015H005</a>
+                    </td>
+                    <td> - </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="14">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>                  
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- // 주문완료리스트 -->

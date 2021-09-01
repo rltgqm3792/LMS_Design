@@ -1,0 +1,194 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("분석표 등록/수정");
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>분석표ID</th>
+                <td>분석표ID</td>
+                <th>서비스여부</th>
+                <td><span class="font_gmarket13">Y</span></td>
+            </tr>
+            <tr>
+                <th>분석표명</th>
+                <td>단원 마무리 학습</td>
+                <th>영역 수 </th>
+                <td><span class="font_gmarket13">2</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">영역A - 구간 1</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>과목</th>
+                <td>
+                    <label for="sub_rdo01" class="rdo_idt table">
+                        <input type="radio" name="sub" id="sub_rdo01" checked />
+                        <span>공통</span>
+                    </label>
+                    <label for="sub_rdo02" class="rdo_idt table">
+                        <input type="radio" name="sub" id="sub_rdok02" />
+                        <span>과목별</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>점수</th>
+                <td class="in_table">
+                    <table class="table_sub">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:4%">
+                            <col style="width:10%">
+                            <col />
+                            <col style="width:10%">
+                            <col />
+                            <col style="width:7%">
+                            <col style="width:7%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <th>시작점수</th>
+                                <td><input type="text">점 (초과)</td>
+                                <th>종료점수</th>
+                                <td><input type="text">점 (이상)</td>
+                                <td><a href="javascript:openPop('../lcms/file/pop_text01.html','800','670');" class="btn_table line">문구정보</a></td>
+                                <td><a href="" class="btn_table black">삭제</a></td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th>시작점수</th>
+                                <td><input type="text">점 (초과)</td>
+                                <th>종료점수</th>
+                                <td><input type="text">점 (이상)</td>
+                                <td><a href="javascript:openPop('../lcms/file/pop_text02.html','800','670');" class="btn_table line">문구정보</a></td>
+                                <td><a href="" class="btn_table black">삭제</a></td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <th>시작점수</th>
+                                <td><input type="text">점 (초과)</td>
+                                <th>종료점수</th>
+                                <td><input type="text">점 (이상)</td>
+                                <td><a href="" class="btn_table line">문구정보</a></td>
+                                <td><a href="" class="btn_table black">삭제</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="right_flex mt_10">
+                        <a href="" class="btn_top">+ 점수추가</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="tit_h4">영역A - 구간 2</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:90%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>과목</th>
+                <td>
+                    <label for="sub_rdo01" class="rdo_idt table">
+                        <input type="radio" name="sub" id="sub_rdo01" checked />
+                        <span>공통</span>
+                    </label>
+                    <label for="sub_rdo02" class="rdo_idt table">
+                        <input type="radio" name="sub" id="sub_rdok02" />
+                        <span>과목별</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>점수</th>
+                <td class="in_table">
+                    <table class="table_sub">
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:4%">
+                            <col style="width:10%">
+                            <col />
+                            <col style="width:10%">
+                            <col />
+                            <col style="width:7%">
+                            <col style="width:7%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <th>시작점수</th>
+                                <td><input type="text">점 (초과)</td>
+                                <th>종료점수</th>
+                                <td><input type="text">점 (이상)</td>
+                                <td><a href="" class="btn_table line">문구정보</a></td>
+                                <td><a href="" class="btn_table black">삭제</a></td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th>시작점수</th>
+                                <td><input type="text">점 (초과)</td>
+                                <th>종료점수</th>
+                                <td><input type="text">점 (이상)</td>
+                                <td><a href="" class="btn_table line">문구정보</a></td>
+                                <td><a href="" class="btn_table black">삭제</a></td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <th>시작점수</th>
+                                <td><input type="text">점 (초과)</td>
+                                <th>종료점수</th>
+                                <td><input type="text">점 (이상)</td>
+                                <td><a href="" class="btn_table line">문구정보</a></td>
+                                <td><a href="" class="btn_table black">삭제</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="right_flex mt_10">
+                        <a href="" class="btn_top">+ 점수추가</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">저장</a>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>

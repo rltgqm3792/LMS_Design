@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+        
+        <!-- chart -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+        $(function(){
+            am4core.ready(function() {
+                am4core.addLicense("CH230677325");
+                
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+
+                /*** PIE CHART 1 ***/
+                var chart = am4core.create("attendeesChart02", am4charts.PieChart);
+                chart.padding(0, 20, 0, 10);
+                chart.tooltip.label.fill = am4core.color("#fff");
+
+                chart.data = [{
+                    "title": "80~100",
+                    "percent": 75,
+                    "color": am4core.color("#0fb17a")
+                },{
+                    "title": "50~79",
+                    "percent": 15,
+                    "color": am4core.color("#ffaa00")
+                }, {
+                    "title": "0~49",
+                    "percent": 10,
+                    "color": am4core.color("#ff5858")
+                }, {
+                    "title": "분석 불가",
+                    "percent": 0,
+                    "color": am4core.color("#8697af")
+                }];
+
+                var pieSeries = chart.series.push(new am4charts.PieSeries());
+                pieSeries.dataFields.value = "percent";
+                pieSeries.dataFields.category = "title";
+
+                chart.innerRadius = am4core.percent(70);
+                chart.radius = am4core.percent(100);
+                chart.autoMargins= false;
+
+                pieSeries.slices.template.stroke = am4core.color("#fff");
+                pieSeries.slices.template.strokeWidth = 0;
+                
+                pieSeries.slices.template.adapter.add("fill", function(fill, target) {
+                    return target.dataItem ? target.dataItem.dataContext.color : fill;
+                });
+
+                pieSeries.labels.template.disabled = false;
+                pieSeries.slices.template.tooltipText = "{category}:{value.percent.formatNumber('#')}%";
+                pieSeries.ticks.template.disabled = true;
+                pieSeries.labels.template.text = "{value.percent.formatNumber('#')}%";
+                pieSeries.labels.template.fontFamily = "Gmarket Sans";
+                pieSeries.labels.template.fontSize = 0;
+
+                var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+                shadow.opacity = 0;
+
+                var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+                var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+                hoverShadow.opacity = 0.7;
+                hoverShadow.blur = 5;
+
+                var label = chart.createChild(am4core.Label);
+                label.text = "학습현황 별 분포";
+                label.fontFamily = "NotoSansM";
+                label.fontSize = 15;
+                label.align = "center";
+                label.fill = am4core.color("#222");
+
+                /*** PIE CHART 2 ***/
+                var chart2 = am4core.create("attendeesChart03", am4charts.PieChart);
+                chart2.padding(0, 20, 0, 10);
+                chart2.tooltip.label.fill = am4core.color("#fff");
+
+                chart2.data = [{
+                    "title": "80~100",
+                    "percent": 75,
+                    "color": am4core.color("#0fb17a")
+                },{
+                    "title": "50~79",
+                    "percent": 15,
+                    "color": am4core.color("#ffaa00")
+                }, {
+                    "title": "0~49",
+                    "percent": 10,
+                    "color": am4core.color("#ff5858")
+                }, {
+                    "title": "분석 불가",
+                    "percent": 0,
+                    "color": am4core.color("#8697af")
+                }];
+
+                var pieSeries = chart2.series.push(new am4charts.PieSeries());
+                pieSeries.dataFields.value = "percent";
+                pieSeries.dataFields.category = "title";
+
+                chart2.innerRadius = am4core.percent(70);
+                chart2.radius = am4core.percent(100);
+                chart2.autoMargins= false;
+
+                pieSeries.slices.template.stroke = am4core.color("#fff");
+                pieSeries.slices.template.strokeWidth = 0;
+                
+                pieSeries.slices.template.adapter.add("fill", function(fill, target) {
+                    return target.dataItem ? target.dataItem.dataContext.color : fill;
+                });
+
+                pieSeries.labels.template.disabled = false;
+                pieSeries.slices.template.tooltipText = "{category}:{value.percent.formatNumber('#')}%";
+                pieSeries.ticks.template.disabled = true;
+                pieSeries.labels.template.text = "{value.percent.formatNumber('#')}%";
+                pieSeries.labels.template.fontFamily = "Gmarket Sans";
+                pieSeries.labels.template.fontSize = 0;
+
+                var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+                shadow.opacity = 0;
+
+                var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+                var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+                hoverShadow.opacity = 0.7;
+                hoverShadow.blur = 5;
+
+                var label = chart2.createChild(am4core.Label);
+                label.text = "학습현황 별 분포";
+                label.fontFamily = "NotoSansM";
+                label.fontSize = 15;
+                label.align = "center";
+                label.fill = am4core.color("#222");
+
+                /*** PIE CHART 3 ***/
+                var chart3 = am4core.create("attendeesChart04", am4charts.PieChart);
+                chart3.padding(0, 20, 0, 10);
+                chart3.tooltip.label.fill = am4core.color("#fff");
+
+                chart3.data = [{
+                    "title": "80~100",
+                    "percent": 75,
+                    "color": am4core.color("#0fb17a")
+                },{
+                    "title": "50~79",
+                    "percent": 15,
+                    "color": am4core.color("#ffaa00")
+                }, {
+                    "title": "0~49",
+                    "percent": 10,
+                    "color": am4core.color("#ff5858")
+                }, {
+                    "title": "분석 불가",
+                    "percent": 0,
+                    "color": am4core.color("#8697af")
+                }];
+
+                var pieSeries = chart3.series.push(new am4charts.PieSeries());
+                pieSeries.dataFields.value = "percent";
+                pieSeries.dataFields.category = "title";
+
+                chart3.innerRadius = am4core.percent(70);
+                chart3.radius = am4core.percent(100);
+                chart3.autoMargins= false;
+
+                pieSeries.slices.template.stroke = am4core.color("#fff");
+                pieSeries.slices.template.strokeWidth = 0;
+                
+                pieSeries.slices.template.adapter.add("fill", function(fill, target) {
+                    return target.dataItem ? target.dataItem.dataContext.color : fill;
+                });
+
+                pieSeries.labels.template.disabled = false;
+                pieSeries.slices.template.tooltipText = "{category}:{value.percent.formatNumber('#')}%";
+                pieSeries.ticks.template.disabled = true;
+                pieSeries.labels.template.text = "{value.percent.formatNumber('#')}%";
+                pieSeries.labels.template.fontFamily = "Gmarket Sans";
+                pieSeries.labels.template.fontSize = 0;
+
+                var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+                shadow.opacity = 0;
+
+                var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+                var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+                hoverShadow.opacity = 0.7;
+                hoverShadow.blur = 5;
+
+                var label = chart3.createChild(am4core.Label);
+                label.text = "학습현황 별 분포";
+                label.fontFamily = "NotoSansM";
+                label.fontSize = 15;
+                label.align = "center";
+                label.fill = am4core.color("#222");
+                
+            });
+            
+        });
+        </script>
+    </head>
+    <body class="print_pop_report07 multiPage"><!-- class="print_pop_report07 multiPage" 추가 :chan -->
+        <!-- 첫번 째 학생 시작 -->
+        <article class="Popup analysis_table">
+            <header class="pop_header">
+                <h1 class="logo math"><span>스마트 해법수학</span></h1>
+                <h2>신호등유형학습<span>분석표</span></h2>
+            </header>
+            <section class="pop_content">
+                <div class="box_info">
+                    <div class="student">
+                        <span class="name">김찬호</span>
+                        <span class="std_grade">초3</span>
+                    </div>
+                    <div class="learn">
+                        <span>1. 자연수의 혼합계산</span>
+                    </div>
+                    <div class="date">
+                        <span>2022.10.28</span>
+                    </div>
+                </div>
+                <div class="btn_top_wrap signal_light between">
+                    <h3 class="tit_h3">성취도별 구간</h3>
+                    <p class="colr-icons">
+                        <span class="tit">정답률</span>
+                        <span class="green"><em>80~100%</em></span>
+                        <span class="yellow"><em>50~79%</em></span>
+                        <span class="red"><em>0~49%</em></span>
+                        <span class="gray"><em>분석 불가</em></span>
+                    </p>
+                </div>
+                <div class="col_group lv_achieve">
+                    <div class="avg_achieve">
+                        <!-- 성취도별 클래스 적용
+                            80~100% : green
+                            50~79% : yellow
+                            0~49% :red
+                        -->
+                        <p class="green">평균 성취도<span>80~100%</span></p>
+                    </div>
+                    <div class="std_info">
+                        <div id="attendeesChart02" class="chart"></div>
+                        <div class="type_info">
+                            <dl class="type_total">
+                                <dt>학습한 유형<span>총 수</span></dt>
+                                <dd><span class="gm_font">100</span></dd>
+                            </dl>
+                            <dl class="type_count">
+                                <dt>성취도 별 맞춤 유형 수</dt>
+                                <dd>
+                                    <span class="green">75</span>
+                                    <span class="yellow">15</span>
+                                    <span class="red">10</span>
+                                    <span class="gray">0</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="tit_h3">성취도별 주요 유형</h3>
+                <div class="table_list tbl_signal_light">
+                    <table>
+                        <caption>단원별 성취도 분석표</caption>
+                        <colgroup>
+                            <col style="width:20%" />
+                            <col style="width:8%"/>
+                            <col />
+                            <col style="width:12%"/>
+                            <col style="width:12%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>최초 학습 성취도</th>
+                                <th>순위</th>
+                                <th>유형별</th>
+                                <th>최종 학습성취도</th>
+                                <th>정답/출제문항</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr green"><em>80~100%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/15</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/17</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr yellow"><em>50~79%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">50~79%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">50~79%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/30</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr red"><em>0~49%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="tit_h3">취약단원분석</h3>
+                <div class="process_std">
+                    <dl class="bx_step">
+                        <dt>이전 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 곱셈과 나눗셈 (4-2)</li>
+                                <li>2. 나눗셈 (3-2)</li>
+                                <li>3. 큰 수 (4-1)</li>
+                                <li>4. 분수와 소수(3-2)</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="bx_step focus">
+                        <dt>본 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 자연수의 혼합 계산</li>
+                                <li>2. 약수와 배수</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="bx_step">
+                        <dt>후속 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 분수의 덧셈과 뺄셈 (5-1)</li>
+                                <li>2. 분수의 곱셈 (5-2)</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <address class="math">
+                    <span class="branch">신도림테크노타운교실</span> 서울시 금천구 가산동 디지털단지 12로 12-30 
+                    <span class="tel">01-1234-1234</span>
+                </address>
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn print">저장 및 출력</a>
+                <a href="javascript:window.close();" class="btn">저장</a>
+            </section>
+        </article>
+        <!-- 첫번 째 학생 끝 -->
+        <!-- 두번 째 학생 시작 -->
+        <article class="Popup analysis_table">
+            <header class="pop_header">
+                <h1 class="logo math"><span>스마트 해법수학</span></h1>
+                <h2>신호등유형학습<span>분석표</span></h2>
+            </header>
+            <section class="pop_content">
+                <div class="box_info">
+                    <div class="student">
+                        <span class="name">김찬호</span>
+                        <span class="std_grade">초3</span>
+                    </div>
+                    <div class="learn">
+                        <span>1. 자연수의 혼합계산</span>
+                    </div>
+                    <div class="date">
+                        <span>2022.10.28</span>
+                    </div>
+                </div>
+                <div class="btn_top_wrap signal_light between">
+                    <h3 class="tit_h3">성취도별 구간</h3>
+                    <p class="colr-icons">
+                        <span class="tit">정답률</span>
+                        <span class="green"><em>80~100%</em></span>
+                        <span class="yellow"><em>50~79%</em></span>
+                        <span class="red"><em>0~49%</em></span>
+                        <span class="gray"><em>분석 불가</em></span>
+                    </p>
+                </div>
+                <div class="col_group lv_achieve">
+                    <div class="avg_achieve">
+                        <!-- 성취도별 클래스 적용
+                            80~100% : green
+                            50~79% : yellow
+                            0~49% :red
+                        -->
+                        <p class="green">평균 성취도<span>80~100%</span></p>
+                    </div>
+                    <div class="std_info">
+                        <div id="attendeesChart03" class="chart"></div>
+                        <div class="type_info">
+                            <dl class="type_total">
+                                <dt>학습한 유형<span>총 수</span></dt>
+                                <dd><span class="gm_font">100</span></dd>
+                            </dl>
+                            <dl class="type_count">
+                                <dt>성취도 별 맞춤 유형 수</dt>
+                                <dd>
+                                    <span class="green">75</span>
+                                    <span class="yellow">15</span>
+                                    <span class="red">10</span>
+                                    <span class="gray">0</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="tit_h3">성취도별 주요 유형</h3>
+                <div class="table_list tbl_signal_light">
+                    <table>
+                        <caption>단원별 성취도 분석표</caption>
+                        <colgroup>
+                            <col style="width:20%" />
+                            <col style="width:8%"/>
+                            <col />
+                            <col style="width:12%"/>
+                            <col style="width:12%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>최초 학습 성취도</th>
+                                <th>순위</th>
+                                <th>유형별</th>
+                                <th>최종 학습성취도</th>
+                                <th>정답/출제문항</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr green"><em>80~100%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/15</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/17</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr yellow"><em>50~79%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">50~79%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">50~79%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/30</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr red"><em>0~49%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="tit_h3">취약단원분석</h3>
+                <div class="process_std">
+                    <dl class="bx_step">
+                        <dt>이전 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 곱셈과 나눗셈 (4-2)</li>
+                                <li>2. 나눗셈 (3-2)</li>
+                                <li>3. 큰 수 (4-1)</li>
+                                <li>4. 분수와 소수(3-2)</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="bx_step focus">
+                        <dt>본 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 자연수의 혼합 계산</li>
+                                <li>2. 약수와 배수</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="bx_step">
+                        <dt>후속 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 분수의 덧셈과 뺄셈 (5-1)</li>
+                                <li>2. 분수의 곱셈 (5-2)</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <address class="math">
+                    <span class="branch">신도림테크노타운교실</span> 서울시 금천구 가산동 디지털단지 12로 12-30 
+                    <span class="tel">01-1234-1234</span>
+                </address>
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn print">저장 및 출력</a>
+                <a href="javascript:window.close();" class="btn">저장</a>
+            </section>
+        </article>
+        <!-- 두번 째 학생 끝 -->
+        <!-- 세번 째 학생 시작 -->
+        <article class="Popup analysis_table">
+            <header class="pop_header">
+                <h1 class="logo math"><span>스마트 해법수학</span></h1>
+                <h2>신호등유형학습<span>분석표</span></h2>
+            </header>
+            <section class="pop_content">
+                <div class="box_info">
+                    <div class="student">
+                        <span class="name">김찬호</span>
+                        <span class="std_grade">초3</span>
+                    </div>
+                    <div class="learn">
+                        <span>1. 자연수의 혼합계산</span>
+                    </div>
+                    <div class="date">
+                        <span>2022.10.28</span>
+                    </div>
+                </div>
+                <div class="btn_top_wrap signal_light between">
+                    <h3 class="tit_h3">성취도별 구간</h3>
+                    <p class="colr-icons">
+                        <span class="tit">정답률</span>
+                        <span class="green"><em>80~100%</em></span>
+                        <span class="yellow"><em>50~79%</em></span>
+                        <span class="red"><em>0~49%</em></span>
+                        <span class="gray"><em>분석 불가</em></span>
+                    </p>
+                </div>
+                <div class="col_group lv_achieve">
+                    <div class="avg_achieve">
+                        <!-- 성취도별 클래스 적용
+                            80~100% : green
+                            50~79% : yellow
+                            0~49% :red
+                        -->
+                        <p class="green">평균 성취도<span>80~100%</span></p>
+                    </div>
+                    <div class="std_info">
+                        <div id="attendeesChart04" class="chart"></div>
+                        <div class="type_info">
+                            <dl class="type_total">
+                                <dt>학습한 유형<span>총 수</span></dt>
+                                <dd><span class="gm_font">100</span></dd>
+                            </dl>
+                            <dl class="type_count">
+                                <dt>성취도 별 맞춤 유형 수</dt>
+                                <dd>
+                                    <span class="green">75</span>
+                                    <span class="yellow">15</span>
+                                    <span class="red">10</span>
+                                    <span class="gray">0</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="tit_h3">성취도별 주요 유형</h3>
+                <div class="table_list tbl_signal_light">
+                    <table>
+                        <caption>단원별 성취도 분석표</caption>
+                        <colgroup>
+                            <col style="width:20%" />
+                            <col style="width:8%"/>
+                            <col />
+                            <col style="width:12%"/>
+                            <col style="width:12%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>최초 학습 성취도</th>
+                                <th>순위</th>
+                                <th>유형별</th>
+                                <th>최종 학습성취도</th>
+                                <th>정답/출제문항</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr green"><em>80~100%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/15</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기</td>
+                                <td>
+                                    <span class="ico_colr ico_only green"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/17</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr yellow"><em>50~79%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">50~79%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">50~79%</em></span>
+                                </td>
+                                <td><span class="col_blue02">20</span>/20</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기 (2)</td>
+                                <td>
+                                    <span class="ico_colr ico_only yellow"><em class="t_hide">80~100%</em></span>
+                                </td>
+                                <td><span class="col_blue02">15</span>/30</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                            <!-- 1set -->
+                            <tr>
+                                <td rowspan="3">
+                                    <span class="ico_colr red"><em>0~49%</em></span>
+                                </td>
+                                <td>1</td>
+                                <td class="left">덧셈하기 – 분모가 같은 진분수의 덧셈 합이 진분수 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="left">뺄셈하기 – 분모가 같은 진분수의 뺄셈 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="left">나누기 – 분모가 같은 진분수의 나누기 (3)</td>
+                                <td>
+                                    <span class="ico_colr ico_only red"><em class="t_hide">0~49%</em></span>
+                                </td>
+                                <td><span class="col_blue02">1</span>/30</td>                 
+                            </tr>
+                            <!-- // 1set -->
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="tit_h3">취약단원분석</h3>
+                <div class="process_std">
+                    <dl class="bx_step">
+                        <dt>이전 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 곱셈과 나눗셈 (4-2)</li>
+                                <li>2. 나눗셈 (3-2)</li>
+                                <li>3. 큰 수 (4-1)</li>
+                                <li>4. 분수와 소수(3-2)</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="bx_step focus">
+                        <dt>본 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 자연수의 혼합 계산</li>
+                                <li>2. 약수와 배수</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="bx_step">
+                        <dt>후속 학습</dt>
+                        <dd>
+                            <ul>
+                                <li>1. 분수의 덧셈과 뺄셈 (5-1)</li>
+                                <li>2. 분수의 곱셈 (5-2)</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <address class="math">
+                    <span class="branch">신도림테크노타운교실</span> 서울시 금천구 가산동 디지털단지 12로 12-30 
+                    <span class="tel">01-1234-1234</span>
+                </address>
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn print">저장 및 출력</a>
+                <a href="javascript:window.close();" class="btn">저장</a>
+            </section>
+        </article>
+        <!-- 세번 째 학생 끝 -->
+    </body>
+</html>

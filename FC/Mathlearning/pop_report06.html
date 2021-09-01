@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+        
+        <!-- chart -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+        $(function(){
+            am4core.ready(function() {
+                am4core.addLicense("CH230677325");
+                
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+
+                //월별 성취도 분석                  
+                var chart = am4core.create("monthAchievement01", am4charts.XYChart);
+                    chart.padding(0, 20, 0, 0);
+                    chart.fontSize = 13;
+
+                    chart.data = [
+                        {
+                            "subject": "3월",
+                            "regular": 42
+                        }, {
+                            "subject": "4월",
+                            "regular": 63
+                        }, {
+                            "subject": "5월",
+                            "regular": 80
+                        }, {
+                            "subject": "6월",
+                            "regular": 60
+                        }, {
+                            "subject": "7월",
+                            "regular": 90
+                        }, {
+                            "subject": "8월",
+                            "regular": 30
+                        }
+                    ];
+
+                    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                    categoryAxis.dataFields.category = "subject";
+                    categoryAxis.renderer.opposite = false;
+                    categoryAxis.renderer.minGridDistance = 10;
+                    categoryAxis.renderer.grid.template.stroke = am4core.color("#ffffff");
+                    categoryAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+                    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                    valueAxis.renderer.inversed = false;
+                    valueAxis.title.text = "";
+                    valueAxis.renderer.minLabelPosition = 0.01;
+                    valueAxis.renderer.labels.template.fill = am4core.color("#767676");
+                    valueAxis.renderer.labels.template.fontSize = 0;
+                    valueAxis.strokeWidth = 0;
+                    valueAxis.renderer.grid.template.stroke = am4core.color("#848484");
+
+                    var series1 = chart.series.push(new am4charts.LineSeries());
+                    series1.dataFields.valueY = "regular";
+                    series1.dataFields.categoryX = "subject";
+                    // series1.name = "단원";
+                    series1.bullets.push(new am4charts.CircleBullet());
+                    series1.tooltipText = " {name}  {valueY}";
+                    series1.legendSettings.valueText = "{valueY}";
+                    series1.visible = false;
+                    series1.stroke = am4core.color("#0093ff");
+                    series1.strokeWidth = 1;
+                    series1.fill = am4core.color("#0093ff");
+
+                    chart.cursor = new am4charts.XYCursor();
+                    chart.cursor.behavior = "zoomY";
+
+                    let hs1 = series1.segments.template.states.create("hover")
+                    hs1.properties.strokeWidth = 2;
+                    series1.segments.template.strokeWidth = 2;
+                    
+                var chart = am4core.create("monthAchievement02", am4charts.XYChart);
+                    chart.padding(0, 20, 0, 0);
+                    chart.fontSize = 13;
+
+                    chart.data = [
+                        {
+                            "subject": "3월",
+                            "regular": 7
+                        }, {
+                            "subject": "4월",
+                            "regular": 5
+                        }, {
+                            "subject": "5월",
+                            "regular": 8
+                        }, {
+                            "subject": "6월",
+                            "regular": 9
+                        }, {
+                            "subject": "7월",
+                            "regular": 8
+                        }, {
+                            "subject": "8월",
+                            "regular": 10
+                        }
+                    ];
+
+                    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                    categoryAxis.dataFields.category = "subject";
+                    categoryAxis.renderer.opposite = false;
+                    categoryAxis.renderer.minGridDistance = 10;
+                    categoryAxis.renderer.grid.template.stroke = am4core.color("#ffffff");
+                    categoryAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+                    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                    valueAxis.renderer.inversed = false;
+                    valueAxis.title.text = "";
+                    valueAxis.renderer.minLabelPosition = 0.01;
+                    valueAxis.renderer.labels.template.fill = am4core.color("#767676");
+                    valueAxis.renderer.labels.template.fontSize = 0;
+                    valueAxis.strokeWidth = 0;
+                    valueAxis.renderer.grid.template.stroke = am4core.color("#848484");
+
+                    var series1 = chart.series.push(new am4charts.LineSeries());
+                    series1.dataFields.valueY = "regular";
+                    series1.dataFields.categoryX = "subject";
+                    // series1.name = "단원";
+                    series1.bullets.push(new am4charts.CircleBullet());
+                    series1.tooltipText = " {name}  {valueY}";
+                    series1.legendSettings.valueText = "{valueY}";
+                    series1.visible = false;
+                    series1.stroke = am4core.color("#a163ff");
+                    series1.strokeWidth = 1;
+                    series1.fill = am4core.color("#a163ff");
+
+                    chart.cursor = new am4charts.XYCursor();
+                    chart.cursor.behavior = "zoomY";
+
+                    let hs2 = series1.segments.template.states.create("hover")
+                    hs2.properties.strokeWidth = 2;
+                    series1.segments.template.strokeWidth = 2;
+
+                // Create chart instance
+                var chart = am4core.create("detailAchieve", am4charts.XYChart);
+
+                // Add data
+                chart.data = [{
+                    "title": "1단원(개념)",
+                    "percent": 1, 
+                    "labelColor": am4core.color("#222"),
+                    "color": am4core.color("#0093ff")
+                }, {
+                    "title": "2단원(개념)",
+                    "percent": 100,
+                    "labelColor": am4core.color("#222"),
+                    "color": am4core.color("#0093ff")
+                }, {
+                    "title": "3단원(개념)",
+                    "percent": 78,
+                    "labelColor": am4core.color("#222"),
+                    "color": am4core.color("#0093ff")
+                }, {
+                    "title": "4단원(개념)",
+                    "percent": 76,
+                    "labelColor": am4core.color("#222"),
+                    "color": am4core.color("#0093ff")
+                }, {
+                    "title": "5원(개념)",
+                    "percent": 80,
+                    "labelColor": am4core.color("#222"),
+                    "color": am4core.color("#0093ff")
+                }];
+
+                chart.fontSize= 13; 
+                chart.fontFamily = "NotoSans";
+                chart.autoMargins = false;
+
+                var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                categoryAxis.dataFields.category = "title";
+                categoryAxis.renderer.grid.template.location = 0;
+                categoryAxis.renderer.minGridDistance = 30;
+                categoryAxis.renderer.labels.template.fontSize = 14;
+                categoryAxis.renderer.labels.template.fill = am4core.color("#222");
+                categoryAxis.renderer.grid.template.stroke = am4core.color("#fff");
+                categoryAxis.events.on("sizechanged", function(ev) {
+                    var axis = ev.target;
+                    var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+                    axis.renderer.labels.template.maxWidth = cellWidth;
+                });
+                
+                var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                valueAxis.min = 0;
+                valueAxis.max = 120;
+                valueAxis.renderer.grid.template.stroke = am4core.color("#dbdbdb");
+                valueAxis.renderer.line.strokeWidth = 0;
+                valueAxis.renderer.line.stroke = am4core.color("#eaeaea");
+                valueAxis.renderer.labels.template.fill = am4core.color("#a5a5a5");
+                valueAxis.renderer.labels.template.fontSize = 0;
+                
+                var series = chart.series.push(new am4charts.ColumnSeries());
+                series.dataFields.valueY = "percent";
+                series.dataFields.categoryX = "title";
+                series.columns.template.width = am4core.percent(20);
+                series.columns.template.fillOpacity = 1;
+                series.columns.template.adapter.add("fill", function(fill, target) {
+                    return target.dataItem ? target.dataItem.dataContext.color : fill;
+                });
+                
+                var columnTemplate = series.columns.template;
+                columnTemplate.strokeWidth = 0;
+
+                var bullet = series.bullets.push(new am4charts.LabelBullet());
+                bullet.label.verticalCenter = "top";
+                bullet.dy = -30;
+                bullet.label.text = '{valueY}';
+                bullet.label.marginBottom = 10;
+                bullet.label.fontFamily = "Gmarket Sans";
+                bullet.label.fontSize = 13;
+                bullet.label.adapter.add("fill", function(fill, target) {
+                    return target.dataItem ? target.dataItem.dataContext.labelColor : fill;
+                });
+
+                var title = chart.titles.create();
+                title.text = "스마트교재(App Book) 학습 분석 및 성취도";
+                title.fontSize = 14;
+                title.marginBottom = 20;
+                title.align = "center";
+                title.fill = am4core.color("#ff5858");
+            });
+            
+            /* pie graph */
+            $.each($('.pie_chart .pie_single'), function() {
+                var pieChart = $(this),
+                    half = pieChart.find('.half'),
+                    slices = pieChart.find('.bar'),
+                    spinner = pieChart.find('.spinner'),
+                    percent = spinner.data('percent');
+                    divide = 360; // pie
+
+                if(half.length > 0) {
+                    divide = 180; // half pie
+                } 
+                setPercent = parseInt((percent/100)*divide);
+
+                if(setPercent > 180) {
+                    slices.addClass('full');
+                }
+                else {
+                    slices.removeClass('full');
+                }
+
+                spinner.css({
+                    'webkitTransform': 'rotate('+setPercent+'deg)',
+                    'oTransform': 'rotate('+setPercent+'deg)',
+                    'mozTransform': 'rotate('+setPercent+'deg)',
+                    'msTransform': 'rotate('+setPercent+'deg)',
+                    'transform': 'rotate('+setPercent+'deg)'
+                });
+            });
+
+            /* print textarea text */  
+            $(".Popup.analysis_table textarea.print").each(function () {
+                var Contents = $(this).val();
+                $(this).after("<div class='print_textarea'>" + Contents + "</div>");
+                $(this).bind('keydown keyup keypress cut copy past blur change', function(){
+                    copy_to_print_helper($(this));
+                });
+            });
+
+            function copy_to_print_helper(textarea){
+                textarea.next('.print_textarea').text(textarea.val());
+            }
+        });
+        </script>
+    </head>
+    <body class="print_pop_report06"><!-- class="print_pop_report06" 추가 :chan -->
+        <article class="Popup analysis_table">
+            <header class="pop_header">
+                <h1 class="logo math"><span>스마트 해법수학</span></h1>
+                <h2>기간별<span>분석표</span></h2>
+            </header>
+            <section class="pop_content">
+                <div class="box_info">
+                    <div class="student">
+                        <span class="name">김찬호</span>
+                        <span class="std_grade">초3</span>
+                    </div>
+                    <div class="learn">
+                        <span>2020.01.01 ~ 2020.07.30 (학습일<strong>15일</strong>)</span>
+                        <span>출석일수<strong>15일</strong></span>
+                    </div>
+                    <div class="date">
+                        <span>2022.10.28</span>
+                    </div>
+                </div>
+                <div class="col_group info_summary">
+                    <div>
+                        <h3 class="tit_h3">요약정보</h3>
+                        <div class="summary type02">
+                            <dl>
+                                <dt>총 학습 문항</dt>
+                                <dd><span class="gm_font">1,500</span></dd>
+                            </dl>
+                            <dl>
+                                <dt>정답수(정답률)</dt>
+                                <dd><span class="gm_font">1,035<em class="percent">(69%)</em></span></dd>
+                            </dl>
+                            <dl>
+                                <dt>총 학습 시간</dt>
+                                <dd><span class="gm_font a_time"><em>1</em>시간<em>20</em>분</span></dd>
+                            </dl>
+                            <dl>
+                                <dt>문항별 풀이 시간</dt>
+                                <dd><span class="gm_font a_time"><em>3</em>분<em>57</em>초</span></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="tit_h3">학습태도</h3>
+                        <div class="table_list tbl_bx_round">
+                            <table>
+                                <caption>학습단원별 성취도</caption>
+                                <colgroup>
+                                    <col />
+                                    <col style="width:15%" />
+                                    <col style="width:15%" />
+                                    <col style="width:15%" />
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>우수</th>
+                                        <th>보통</th>
+                                        <th>부족</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">수업 준비를 잘합니다.</td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only11" name="rdo_only1" checked />
+                                                <label for="rdo_only11">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only12" name="rdo_only1" />
+                                                <label for="rdo_only12">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only13" name="rdo_only1" />
+                                                <label for="rdo_only13">선택</label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">수업 시간에 집중을 잘합니다.</td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only21" name="rdo_only2" checked />
+                                                <label for="rdo_only21">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only22" name="rdo_only2" />
+                                                <label for="rdo_only22">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only23" name="rdo_only2" />
+                                                <label for="rdo_only23">선택</label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left">자기주도학습 능력이 뛰어납니다.</td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only31" name="rdo_only3" checked />
+                                                <label for="rdo_only31">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only32" name="rdo_only3" />
+                                                <label for="rdo_only32">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="radio" id="rdo_only33" name="rdo_only3" />
+                                                <label for="rdo_only33">선택</label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="tit_h3">월별 성취도 분석</h3>
+                <div class="group_chart">
+                    <div class="bx_chart">
+                        <p class="tit blue">정답률</p>
+                        <div id="monthAchievement01" class="chart" style="height:250px;"></div>
+                    </div>
+                    <div class="bx_chart">
+                        <p class="tit purple">학습레벨</p>
+                        <div id="monthAchievement02" class="chart" style="height:250px;"></div>
+                    </div>
+                </div>
+                <h3 class="tit_h3 printNoBreak">단원별 성취도 분석</h3> <!-- 2021.7.9 class='printNoBreak' 추가 :chan-->
+                <div class="table_list tbl_achievement">
+                    <table>
+                        <caption>단원별 성취도 분석표</caption>
+                        <colgroup>
+                            <col style="width:10%" />
+                            <col style="width:20%"/>
+                            <col style="width:16%"/>
+                            <col />
+                            <col style="width: 16%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>과정</th>
+                                <th>단원</th>
+                                <th>내용 영역</th>
+                                <th>성취도</th>
+                                <th>정답/총문항</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="green">
+                                <td>초5-1</td>
+                                <td class="left">1. 자연수의 혼합 계산</td>
+                                <td class="left">
+                                    수와연산<br>
+                                    확율과통계<br>
+                                </td>
+                                <td>
+                                    <div class="graph_step">
+                                        <div class="bar_graph">
+                                            <span class="bar" style="width:78%"></span>
+                                        </div>
+                                        <div class="label">
+                                            <span>부족</span>
+                                            <span>보통</span>
+                                            <span>우수</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="gm_font">222/268<em>(78%)</em></span></td>                 
+                            </tr>
+                            <tr class="green">
+                                <td>초5-1</td>
+                                <td class="left">2. 약수와 배수</td>
+                                <td class="left">
+                                    수와연산<br>
+                                    확율과통계<br>
+                                </td>
+                                <td>
+                                    <div class="graph_step">
+                                        <div class="bar_graph">
+                                            <span class="bar" style="width:30%"></span>
+                                        </div>
+                                        <div class="label">
+                                            <span>부족</span>
+                                            <span>보통</span>
+                                            <span>우수</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="gm_font">222/268<em>(30%)</em></span></td>                 
+                            </tr>
+                            <tr class="yellow">
+                                <td>초5-1</td>
+                                <td class="left">3. 규칙과 대응</td>
+                                <td class="left">
+                                    수와연산<br>
+                                    확율과통계<br>
+                                </td>
+                                <td>
+                                    <div class="graph_step">
+                                        <div class="bar_graph">
+                                            <span class="bar" style="width:58%"></span>
+                                        </div>
+                                        <div class="label">
+                                            <span>부족</span>
+                                            <span>보통</span>
+                                            <span>우수</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="gm_font">222/268<em>(58%)</em></span></td>                 
+                            </tr>
+                            <tr class="red">
+                                <td>초5-1</td>
+                                <td class="left">4. 약분과 통분</td>
+                                <td class="left">
+                                    수와연산<br>
+                                    확율과통계<br>
+                                </td>
+                                <td>
+                                    <div class="graph_step">
+                                        <div class="bar_graph">
+                                            <span class="bar" style="width:20%"></span>
+                                        </div>
+                                        <div class="label">
+                                            <span>부족</span>
+                                            <span>보통</span>
+                                            <span>우수</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="gm_font">222/268<em>(20%)</em></span></td>                 
+                            </tr>
+                            <tr class="green">
+                                <td>초5-1</td>
+                                <td class="left">5. 분수의 덧셈과 뺄셈 </td>
+                                <td class="left">
+                                    수와연산<br>
+                                    확율과통계<br>
+                                </td>
+                                <td>
+                                    <div class="graph_step">
+                                        <div class="bar_graph">
+                                            <span class="bar" style="width:98%"></span>
+                                        </div>
+                                        <div class="label">
+                                            <span>부족</span>
+                                            <span>보통</span>
+                                            <span>우수</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="gm_font">222/268<em>(98%)</em></span></td>                 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="tit_h3">내용영역 별 분석 및 평가</h3>
+                <div class="group_pie_chart pie_chart">
+                    <div class="row">
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="65"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">65%</span>
+                            <span class="txt_label">수와연산</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="35"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">35%</span>
+                            <span class="txt_label">도형</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="100"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">100%</span>
+                            <span class="txt_label">속성</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="85"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">85%</span>
+                            <span class="txt_label">차트</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="1"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">1%</span>
+                            <span class="txt_label">규칙</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="10"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">10%</span>
+                            <span class="txt_label">수와연산</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="72"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">72%</span>
+                            <span class="txt_label">도형</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="5"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">5%</span>
+                            <span class="txt_label">속성</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="55"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">55%</span>
+                            <span class="txt_label">차트</span>
+                        </div>
+                        <div class="pie_single chart06">
+                            <div class="track"></div>
+                            <div class="bar">
+                                <div class="spinner slice" data-percent="99"></div>
+                                <div class="filler slice"></div>
+                            </div>
+                            <span class="gm_font">99%</span>
+                            <span class="txt_label">규칙</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="table_list">
+                    <table>
+                        <caption>단원별 성취도 분석표</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>수와 연산</th>
+                                <th>규칙성</th>
+                                <th>도형</th>
+                                <th>속성</th>
+                                <th>자료와 가능성</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>문항</th>
+                                <td>250</td>
+                                <td>140</td>
+                                <td>100</td>
+                                <td>80</td>
+                                <td>0</td>                 
+                            </tr>
+                            <tr>
+                                <th>정답</th>
+                                <td>240</td>
+                                <td>130</td>
+                                <td>52</td>
+                                <td>56</td>
+                                <td>0</td>                 
+                            </tr>
+                            <tr>
+                                <th>정답률</th>
+                                <td>96%</td>
+                                <td>93%</td>
+                                <td>52%</td>
+                                <td>70%</td>
+                                <td>0%</td>                 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="tit_h3">평가영역 별 분석 및 평가</h3>
+                <div class="group_pie_chart pie_chart">
+                    <div class="pie_single chart01">
+                        <div class="track"></div>
+                        <div class="bar">
+                            <div class="spinner slice" data-percent="75"></div>
+                            <div class="filler slice"></div>
+                        </div>
+                        <span class="gm_font">75%</span>
+                        <span class="txt_label">이해력</span>
+                    </div>
+                    <div class="pie_single chart02">
+                        <div class="track"></div>
+                        <div class="bar">
+                            <div class="spinner slice" data-percent="35"></div>
+                            <div class="filler slice"></div>
+                        </div>
+                        <span class="gm_font">35%</span>
+                        <span class="txt_label">계산력</span>
+                    </div>
+                    <div class="pie_single chart03">
+                        <div class="track"></div>
+                        <div class="bar">
+                            <div class="spinner slice" data-percent="100"></div>
+                            <div class="filler slice"></div>
+                        </div>
+                        <span class="gm_font">100%</span>
+                        <span class="txt_label">추론력</span>
+                    </div>
+                    <div class="pie_single chart04">
+                        <div class="track"></div>
+                        <div class="bar">
+                            <div class="spinner slice" data-percent="85"></div>
+                            <div class="filler slice"></div>
+                        </div>
+                        <span class="gm_font">85%</span>
+                        <span class="txt_label">문제해결력</span>
+                    </div>
+                </div>
+                <div class="table_list">
+                    <table>
+                        <caption>단원별 성취도 분석표</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>이해력</th>
+                                <th>계산력</th>
+                                <th>추론력</th>
+                                <th>문제해결력</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>문항 수</th>
+                                <td>250</td>
+                                <td>140</td>
+                                <td>100</td>
+                                <td>80</td>           
+                            </tr>
+                            <tr>
+                                <th>정답 수</th>
+                                <td>240</td>
+                                <td>130</td>
+                                <td>52</td>
+                                <td>56</td>           
+                            </tr>
+                            <tr>
+                                <th>정답률</th>
+                                <td>96%</td>
+                                <td>93%</td>
+                                <td>52%</td>
+                                <td>70%</td>           
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 class="tit_h3 print_next">상세 성취도 분석</h3> <!-- 2021.7.9 class='print_next' 추가 :chan-->
+                <div class="bx_chart detail_achieve">
+                    <div id="detailAchieve" class="chart"></div>
+                </div>
+                <h5 class="col_red">[스마트교재 학습 분석 및 성취도]</h5>
+                <div class="table_list">
+                    <table>
+                        <caption>스마트교재 학습 분석 및 성취도 분석표</caption>
+                        <colgroup>
+                            <col />
+                            <col style="width:11%" />
+                            <col style="width:9%" />
+                            <col style="width:9%" />
+                            <col style="width:9%" />
+                            <col style="width:12%" />
+                            <col style="width:12%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">스마트교재명</th>
+                                <th rowspan="2">개념영상</th>
+                                <th rowspan="2">점수</th>
+                                <th rowspan="2">문항</th>
+                                <th rowspan="2">정답률</th>
+                                <th colspan="2">풀이 시간</th>
+                            </tr>
+                            <tr>
+                                <th>나의 풀이 시간</th>
+                                <th>평균 풀이 시간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="left">초3-1 원리쏙쏙 1호 (4. 분수의 덧셈)</td>
+                                <td>12/12</td>
+                                <td>95점</td>
+                                <td>120</td>
+                                <td>94%</td>
+                                <td>1분 28초</td>
+                                <td>1분 15초</td>             
+                            </tr>
+                            <tr>
+                                <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                <td>12/12</td>
+                                <td>85점</td>
+                                <td>120</td>
+                                <td>86%</td>
+                                <td>1분 45초</td>
+                                <td>1분 35초</td>             
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h5 class="col_red">[AI맞춤학습 분석 및 성취도]</h5> <!-- 2021.7.9 class='print_next' 삭제 :chan-->
+                <div class="table_list">
+                    <table>
+                        <caption>AI맞춤학습 분석 및 성취도 분석표</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>주차</th>
+                                <th>학습일자</th>
+                                <th>학습유형</th>
+                                <th>레벨</th>
+                                <th>단원</th>
+                                <th>문항</th>
+                                <th>정답 수</th>
+                                <th>평균 성취도</th>
+                                <th>평균 풀이시간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>03월 1주</td>
+                                <td>2일~6일</td>
+                                <td>스마트</td>
+                                <td>3</td>
+                                <td class="left">4. 약분과 통분</td>
+                                <td>30</td>
+                                <td>24</td>
+                                <td>81.7</td>
+                                <td>1분 15초</td>           
+                            </tr>
+                            <tr>
+                                <td>03월 2주</td>
+                                <td>14일 ~17일</td>
+                                <td>진도</td>
+                                <td>3</td>
+                                <td class="left">5. 분수의 덧셈과 뺄셈</td>
+                                <td>30</td>
+                                <td>23</td>
+                                <td>80</td>
+                                <td>1분 35초</td>           
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h5 class="col_red">[보충학습 분석 및 성취도]</h5>
+                <div class="table_list">
+                    <table>
+                        <caption>보충학습 분석 및 성취도 분석표</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>학습일</th>
+                                <th>문제지 타입</th>
+                                <th>문제지 명</th>
+                                <th>문항</th>
+                                <th>정답률</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2020-02-22</td>
+                                <td>교과</td>
+                                <td class="left">1주차 보충학습 문제지 입니다.</td>
+                                <td>25</td>
+                                <td>55%</td>             
+                            </tr>
+                            <tr>
+                                <td>2020-02-22</td>
+                                <td>오답</td>
+                                <td class="left">2주차 보충학습 문제지 입니다.</td>
+                                <td>30</td>
+                                <td>38%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col_group general_review">
+                    <div>
+                        <h3 class="tit_h3">총평 및 전달사항</h3>
+                        <div class="bx_comment">
+                            <textarea class="print">우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다.우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다. 우선 이전 학습 복습이 선행 되어야 합니다.</textarea>
+                        </div>
+                    </div>
+                </div>
+                <address class="math">
+                    <span class="branch">신도림테크노타운교실</span> 서울시 금천구 가산동 디지털단지 12로 12-30 
+                    <span class="tel">01-1234-1234</span>
+                </address>
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn print">저장 및 출력</a>
+                <a href="javascript:window.close();" class="btn">저장</a>
+            </section>
+        </article>
+    </body>
+</html>

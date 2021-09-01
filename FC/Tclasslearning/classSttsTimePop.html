@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!--plugin -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <script
+            src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.js"
+            type="text/javascript"></script>
+
+        <!-- calendar -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js"></script>
+
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>우리 교실 시간표</h1>
+            </header>
+
+            <section class="pop_content">
+
+                <div class="btn_top_wrap right">
+                    <!-- 가맹점관리 > 클래스관리 링크예정 -->
+                    <a href="../index.html?page=hakwon/classMng" target="_blank" class="btn_top right">신규 클래스 등록</a>
+                </div>
+                <!-- 2Depth Tab -->
+                <ul class="tab_2depth">
+                    <li class="on">
+                        <a href="#">월</a>
+                    </li>
+                    <li>
+                        <a href="#">화</a>
+                    </li>
+                    <li>
+                        <a href="#">수</a>
+                    </li>
+                    <li>
+                        <a href="#">목</a>
+                    </li>
+                    <li>
+                        <a href="#">금</a>
+                    </li>
+                    <li>
+                        <a href="#">토</a>
+                    </li>
+                    <li>
+                        <a href="#">일</a>
+                    </li>
+                </ul>
+                <!-- // 2Depth Tab -->
+
+                <div class="tab_2depth_cont">
+
+                    <div class="tab_cont">
+
+                        <!-- 수강생 시간표 테이블 -->
+                        <div class="table_list">
+                            <div class="scroll" style="max-height:300px;">
+                                <table>
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col width="27%"/>
+                                        <col width="15%"/>
+                                        <col/>
+                                    </colgroup>
+									<thead>
+										<tr>
+											<th>시간</th>
+											<th>인원</th>
+											<th>수강생 정보</th>
+										</tr>
+									</thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                <!-- 수강생정보 버튼 -->
+                                                <div class="ico_face_wrap">
+                                                    <a href="javascript:void(0);" class="ico_face">
+                                                        <i>초등 1A</i>
+                                                        <span>121</span>
+                                                    </a>
+                                                    <div class="ly_face_pop">
+                                                        <p>
+                                                            <a href="javascript:void(0);" class="ly_face_close"></a>
+                                                            <span>김해법<br/>김해법<br/>김해법</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <!-- // 수강생정보 버튼 -->
+
+                                                <!-- 수강생정보 버튼 -->
+                                                <div class="ico_face_wrap">
+                                                    <a href="javascript:void(0);" class="ico_face">
+                                                        <i>초등초등초등초 1A</i>
+                                                        <span>121</span></a>
+                                                    <div class="ly_face_pop">
+                                                        <p>
+                                                            <a href="javascript:void(0);" class="ly_face_close"></a>
+                                                            <span>김해법<br/>김해법<br/>김해법</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <!-- // 수강생정보 버튼 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+
+                                                <!-- 수강생정보 버튼 -->
+                                                <div class="ico_face_wrap">
+                                                    <a href="javascript:void(0);" class="ico_face">
+                                                        <i>초등 1A</i>
+                                                        <span>121</span></a>
+                                                    <div class="ly_face_pop">
+                                                        <p>
+                                                            <a href="javascript:void(0);" class="ly_face_close"></a>
+                                                            <span>김해법<br/>김해법<br/>김해법</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <!-- // 수강생정보 버튼 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                수강생이 없습니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                수강생이 없습니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                수강생이 없습니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                수강생이 없습니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                수강생이 없습니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                수강생이 없습니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">11:00 ~ 12:00</span></td>
+                                            <td>
+                                                <span class="gm_font">8</span>
+                                            </td>
+                                            <td class="left">
+                                                수강생이 없습니다.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- //수강생 시간표 테이블 -->
+                    </div>
+                </div>
+
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn">확인</a>
+            </section>
+        </article>
+    </body>
+</html>

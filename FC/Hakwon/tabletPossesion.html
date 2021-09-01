@@ -1,0 +1,82 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<div class="box_guide">
+    <div>
+        <p class="tit">Tablet PC 등록 방법</p>
+        <ul>
+            <li>가맹점 Tablet PC 등록 : 가맹점에서 자체적으로 등록을 완료한 Tablet PC 수량을 입력/수정 가능</li>
+            <li>전용몰 Tablet PC 등록 : 전용몰에서 구매한 Tablet PC 수량을 입력 가능</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Tablet PC 보유현황 테이블-->
+<div class="btn_top_wrap between">
+    <span>
+        <h4 class="tit_h4">Tablet PC 현황
+            <span class="tit_sub">
+                총 보유수 <strong class="col_blue">2,500</strong>
+            </span>
+        </h4>
+    </span>
+    
+    <span>
+        <a href="javascript:openPop('hakwon/tabletPossesionPop01.html','800','350');" class="btn_top">가맹점 Tablet PC 등록</a>
+        <a href="javascript:openPop('hakwon/tabletPossesionPop02.html','800','350');" class="btn_top">전용몰 Tablet PC 등록</a>
+    </span>
+</div>
+
+<!-- 전용몰 구매수량 클릭시 팝업-->
+<a href="javascript:openPop('hakwon/tabletPossesionPop03.html','800','650');">4</a>
+<br />
+<!-- 삭제 -->
+<a href="javascript:alert_confirm('해당 Tablet을 항목에서 제외하시겠습니까?','','');" class="btn_table btn_gray02">삭제</a>
+
+<div id="grid"></div>
+<!-- //Tablet PC 보유현황 테이블-->

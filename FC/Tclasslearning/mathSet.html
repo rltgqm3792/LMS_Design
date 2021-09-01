@@ -1,0 +1,84 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('교실운영');
+		$('.group_title h2').text('교실운영');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li><a href="index.html?page=tclasslearning/weeklyReport">학부모리포트</a></li>
+	<li><a href="index.html?page=tclasslearning/compensation">보상관리</a></li>
+	<li><a href="index.html?page=tclasslearning/eBook">교사용e-북보기</a></li>
+	<li><a href="index.html?page=tclasslearning/questionSet">질문하기관리</a></li>
+	<li><a href="index.html?page=tclasslearning/communitySet">커뮤니티관리</a></li>
+	<li class="on"><a href="index.html?page=tclasslearning/mathSet">수학난이도관리</a></li>
+	<li><a href="index.html?page=tclasslearning/reportSet">분석표관리</a></li>
+</ul>
+
+<!--검색-->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>학년</dt>
+				<dd>
+					<select>
+						<option>초1</option>
+						<option>초2</option>
+						<option>초3</option>
+						<option>초4</option>
+						<option>초5</option>
+						<option>초6</option>
+						<option>중1</option>
+						<option>중2</option>
+						<option>중3</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>수강생</dt>
+				<dd>
+					<form name="form">
+						<select name="selectstd" onchange="sel_std(this.form)">
+							<option selected="selected" value="0">수강생 이름</option>
+							<option value="1">수강생 번호</option>
+						</select>
+						<input type="text" name="inputname_std" class="input_std" placeholder="수강생이름을 입력하세요.">
+					</form>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!--//검색-->
+
+<div class="btn_top_wrap between">
+	<p class="txt_guide">난이도 변경은 단원 당 1회만 가능합니다.</p>
+	<a href="" class="btn_top btn_blue"><span>저장</span></a>
+</div>
+
+<!--테이블-->
+<!-- 변경 난이도-->
+<select>
+	<option>기본</option>
+	<option>실력</option>
+	<option>심화</option>
+</select>
+<!-- 상세보기 -->
+<a href="javascript:openPop('Tclasslearning/classroomDifficultPop.html','800','350');" class="btn_table"><span>상세보기</span></a>
+
+<div id="grid"></div>
+<!--//테이블-->

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/swiper.css" rel="stylesheet" type="text/css">
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+
+    <!-- swiper 플러그인 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/plugin/swiper.js"></script>
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>첨삭이력</h1>
+        </header>
+        <section class="pop_content">
+            <!--CONTENTS-->
+            <div class="top_std_info">
+                <span class="name">박찬호</span>
+                <span class="std_num">M098765432</span>
+                <span class="std_grade">초6</span>
+            </div>
+            <div class="table_input">
+                <table>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>스마트교재</th>
+                            <td>초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col_group group">
+                <div>
+                    <div class="btn_top_wrap between">
+                        <h2 class="tit_h2">문항정보</h2>
+                        <span>
+                            <a href="#" class="btn_top">다운로드</a>
+                            <a href="javascript:alert_open('문항을 선택해주세요');" class="btn_top">선택보기</a>
+                        </span>
+                    </div>
+                    <div class="table_list">
+                        <table class="thead">
+                            <colgroup>
+                                <col style="width:15%">
+                                <col>
+                                <col style="width:18%">
+                                <col style="width:18%">
+                                <col style="width:18%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only" name="chk_only" onchange="all_check(this);">
+                                            <label for="chk_only">전체선택</label>
+                                        </span>
+                                    </th>
+                                    <th>첨삭일</th>
+                                    <th>페이지</th>
+                                    <th>문항<br>번호</th>
+                                    <th>첨삭<br>필기</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="scroll" style="max-height:289px">
+                            <table class="tbody">
+                                <colgroup>
+                                    <col style="width:15%">
+                                    <col>
+                                    <col style="width:18%">
+                                    <col style="width:18%">
+                                    <col style="width:18%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only1" name="chk_only">
+                                                <label for="chk_only1">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only2" name="chk_only">
+                                                <label for="chk_only2">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only3" name="chk_only">
+                                                <label for="chk_only3">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only4" name="chk_only">
+                                                <label for="chk_only4">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only5" name="chk_only">
+                                                <label for="chk_only5">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only5" name="chk_only">
+                                                <label for="chk_only5">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only5" name="chk_only">
+                                                <label for="chk_only5">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only5" name="chk_only">
+                                                <label for="chk_only5">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only5" name="chk_only">
+                                                <label for="chk_only5">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk_only5" name="chk_only">
+                                                <label for="chk_only5">선택</label>
+                                            </span>
+                                        </td>
+                                        <td><span class="gm_font">2020.10.29</span></td>
+                                        <td><span class="gm_font">1p</span></td>
+                                        <td><span class="gm_font">2</span></td>
+                                        <td><a href="#" class="link">보기</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="btn_top_wrap">
+                        <h2 class="tit_h2">첨삭필기 데이터</h2>
+                    </div>
+                    <div class="correct_data">
+                        <div class="swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">111</li>
+                                <li class="swiper-slide">222</li>
+                                <li class="swiper-slide">333</li>
+                                <li class="swiper-slide">444</li>
+                                <li class="swiper-slide">555</li>
+                            </ul>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- alert 팝업 -->
+            <section class="alert_wrap">
+                <div class="alert_container">
+                    <div class="alert_content">
+                        <div class="alert_desc">
+                            <strong></strong>
+                            <span></span>
+                        </div>
+                        <div class="alert_btn">
+                            <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                            <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //alert 팝업 -->
+            <!--//CONTENTS-->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            <!-- <a href="javascript:window.close();" class="btn">확인</a> -->
+        </section>
+    </article>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>

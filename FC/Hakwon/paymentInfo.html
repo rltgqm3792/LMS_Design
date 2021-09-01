@@ -1,0 +1,188 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<!-- 안내 -->
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>입금마감일까지 입금되지 않으면 가맹점 사이트 사용이 일시적으로 제한될 수 있습니다.</li>
+            <li>"해법에듀"에서는 매월 10일 경 전월 내용에 대한
+                <span class="col_red">“거래증빙”(계산서 및 세금계산서)이 가맹점 정보의 이 메일로 발송됩니다.</span>
+            </li>
+            <li>
+                <span class="col_red">신용카드 결제 영수증은 별도로 사용이 불가능하며, 소득공제 및 증빙용으로 사용시 중복처리로 인해 불이익이
+                    발생할 수 있으니, 유의하시기 바랍니다.</span>
+            </li>
+            <li>수금통보서 클릭 시 수강생 별 상세 내역을 확인 하실 수 있습니다.</li>
+            <li>납입액 클릭 시 분할 납부 하신 내역을 확인 하실 수 있습니다.</li>
+            <li>결제 방식 : 분할 결제 시 마지막 결제 수단이 표기 됩니다.</li>
+            <li>
+                <span class="col_red">자동이체 신청 가맹점에서는 출금 일정 전일까지 자동이체 통장으로 납입액을 입금하여 주시기 바랍니다.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- //안내 -->
+
+<h4 class="tit_h4">가맹점 납입정보</h4>
+<!-- 계좌 테이블01 -->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>자동이체 계좌정보</th>
+                <td>
+                    <span class="col_red">우리은행 xxx-xxx-xxx1100</span>
+                </td>
+                <th>09월 자동이체 일정</th>
+                <td>
+                    <span class="col_red">9월 3일, 9월 7일</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //계좌 테이블01 -->
+
+<!-- 계좌 테이블02 -->
+<!-- <div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>자동이체 계좌정보</th>
+                <td>
+                    <span class="col_red">우리은행 xxx-xxx-xxx1100</span>
+                </td>
+                <th>09월 자동이체 일정</th>
+                <td>
+                    <span class="col_red">9월 3일, 9월 7일</span>
+                </td>
+            </tr>
+            <tr>
+                <th>입금 가상계좌</th>
+                <td>
+                    <span class="col_red">우리은행 26482132-545-2324532</span>
+                </td>
+                <th>입금 마감일</th>
+                <td>
+                    <span class="col_red">매월 마감일</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="txt_guide col_red">당일 자동이체출금이 미출금되어 해당 가상계좌로 입금해 주시기 바랍니다. </p>    
+</div> -->
+<!-- //계좌 테이블02 -->
+
+<!-- 계좌 테이블02 -->
+<!-- <div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>입금가상계좌</th>
+                <td>
+                    <span class="col_red">우리은행 26482132-545-2324532</span>
+                </td>
+                <th>입금 마감일</th>
+                <td>
+                    <span class="col_red">매월 5일</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<!-- //계좌 테이블01 -->
+
+
+<!-- 납입정보 테이블-->
+<div class="btn_top_wrap left">
+    <span>
+        <select>
+            <option value="">2020년</option>
+        </select>
+    </span>
+</div>
+
+    <!-- 납입액 상세정보 팝업-->
+    <a href="javascript:openPop('hakwon/paymentInfoPop.html','800','650');" class="gm_font">123,000</a>
+    <!-- 수금통보서-->
+    <a href="index.html?page=hakwon/collectInfo" class="btn_table btn_blue">확인</a>
+
+    <div id="grid"></div>
+
+    <!-- 수금마감 TR -->
+    <!-- <tr> <td colspan="11"> <div class="no_data"> 12월 수금 마감 중입니다 </div> </td>
+    </tr> -->
+    <!-- //수금마감 TR -->
+
+<!-- //납입정보 테이블-->
+
+<div class="btn_bottom_wrap right">
+    <a href="index.html?page=hakwon/depositInfo" class="btn_basic btn_gray">보증금 분납현황</a>
+</div>

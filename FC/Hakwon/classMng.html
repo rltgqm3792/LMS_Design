@@ -1,0 +1,134 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('클래스 관리');
+    });
+    calendar(); //달력
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조건설정 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk01" name="smartclass" checked="checked" />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_all" name="class" onchange="all_check(this);" checked="checked" />
+                            <label for="class_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk01" name="class" />
+                            <label for="class_chk01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk02" name="class" />
+                            <label for="class_chk02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk03" name="class" />
+                            <label for="class_chk03">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>클래스</dt>
+                <dd>
+                    <select>
+                        <option>클래스 선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>담당 강사</dt>
+                <dd>
+                    <select>
+                        <option>담당 강사 선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조건설정 -->
+
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">클래스 목록<span class="tit_sub">전체
+            <strong class="col_red">4</strong>개</span>
+    </h4>
+    <span>
+        <a href="javascript:alert_confirm('선택된 클래스를 삭제하시겠습니까?','','');" class="btn_top btn_gray02">삭제</a>
+        <a href="javascript:openPop('hakwon/classMngRegPop.html','1000','620');" class="btn_top">등록</a>
+    </span>
+</div>
+
+<!-- 클래스 목록 테이블 -->
+<!-- 클래스명 -->
+<a href="javascript:openPop('hakwon/classMngRegPop.html','1000','620');">고1 심화반</a>
+<br />
+<!-- 수업 요일 -->
+<span>월</span>
+<span>화</span>
+<span>수</span>
+<span class="col_blue">목</span>
+<span>금</span>
+<span class="col_blue">토</span>
+<span>일</span>
+<br />
+<!-- 학생수 -->
+<a href="javascript:openPop('hakwon/classMngPop.html','800','650');">30</a>
+
+<div id="calendar"></div>
+<!-- //클래스 목록 테이블 -->

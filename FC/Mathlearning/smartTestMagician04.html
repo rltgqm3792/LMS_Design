@@ -1,0 +1,151 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('보충학습');
+        $('.group_title h2').text('스마트출제마법사');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/calculationPack01">연산 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/academicPack01">내신대비 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/descriptivePack01">서술형 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/advancedPack01">최상위 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/allSubjPack01">전과목 패키지</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/smartTestMagician01">스마트 출제마법사</a></li>
+    <li><a href="index.html?page=mathlearning/lowGradePack">초등저학년 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/individualHist">수강생별 출제이력</a></li>
+</ul>
+
+<h4 class="tit_h4">스마트출제마법사 출제하기</h4>
+<div class="pos_wrap">
+    <ul class="tab_3depth">
+        <!-- [D] 활성화 : on-->
+        <li><a href="javascript:void(0);">1회차</a></li>
+        <li><a href="javascript:void(0);">2회차</a></li>
+        <li class="on"><a href="javascript:void(0);">3회차</a></li>
+        <li><a href="javascript:void(0);">4회차</a></li>
+        <li><a href="javascript:void(0);">5회차</a></li>
+    </ul>
+    <span class="right"><a href="index.html?page=mathlearning/smartTestMagician04" class="btn_top btn_gray">문항 교체</a></span>
+</div>
+<div class="q_wrap">
+    <div class="left">
+        <div class="top_area">
+            <p class="q_count"><span class="ico">총<em>20</em>문항</span></p>
+            <div class="btn_top_wrap between">
+                <span><a href="javascript:void(0);" class="btn_top btn_ico preview"><span>문항미리보기</span></a></span>
+                <span><a href="javascript:void(0);" class="btn_top btn_ico retest"><span>현재회차 재출제</span></a></span>
+            </div>
+        </div>
+        <div class="q_list">
+            <a href="javascript:void(0);" class="active">
+                <dl>
+                    <dt>
+                        <span>01</span>
+                        <button type="button" class="btn_del"><span>삭제</span></button>
+                    </dt>
+                    <dd>
+                        <div class="q_img">
+                            <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                        </div>
+                        <ul class="q_info">
+                            <li>난이도<span class="t_lv high">상</span></li>
+                            <li>주관식</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </a>
+            <a href="javascript:void(0);">
+                <dl>
+                    <dt>
+                        <span>02</span>
+                        <button type="button" class="btn_del"><span>삭제</span></button>
+                    </dt>
+                    <dd>
+                        <div class="q_img">
+                            <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                        </div>
+                        <ul class="q_info">
+                            <li>난이도<span class="t_lv medium">중</span></li>
+                            <li>주관식</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </a>
+            <a href="javascript:void(0);">
+                <dl>
+                    <dt>
+                        <span>03</span>
+                        <button type="button" class="btn_del"><span>삭제</span></button>
+                    </dt>
+                    <dd>
+                        <div class="q_img">
+                            <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                        </div>
+                        <ul class="q_info">
+                            <li>난이도<span class="t_lv low">하</span></li>
+                            <li>주관식</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="top_area">
+            <p>교체하실 문항을 선택해주세요.</p>
+        </div>
+        <div class="q_list">
+            <dl>
+                <dt>
+                    <span class="frm only">
+                        <input type="checkbox" id="chk_only1" name="chk_only"/>
+                        <label for="chk_only1">선택</label>
+                    </span>
+                </dt>
+                <dd>
+                    <div class="q_img">
+                        <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                    </div>
+                    <ul class="q_info">
+                        <li>난이도<span class="t_lv high">상</span></li>
+                        <li>주관식</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="active">
+                <dt>
+                    <span class="frm only">
+                        <input type="checkbox" id="chk_only2" name="chk_only" checked />
+                        <label for="chk_only2">선택</label>
+                    </span>
+                </dt>
+                <dd>
+                    <div class="q_img">
+                        <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                    </div>
+                    <ul class="q_info">
+                        <li>난이도<span class="t_lv high">상</span></li>
+                        <li>주관식</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="btn_bottom_wrap right">
+    <span>
+        <a href="javascript:void(0);" class="btn_basic btn_line"><span>취소</span></a>
+        <a href="javascript:void(0);" class="btn_basic"><span>저장</span></a>
+    </span>
+</div>

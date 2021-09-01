@@ -1,0 +1,105 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('사진 갤러리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!--테이블-->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%"/>
+            <col style="width:80%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분<span class="required"></span></th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="subject01" name="subject" checked/>
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="subject02" name="subject"/>
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="subject03" name="subject"/>
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>카테고리<span class="required"></span></th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="category01" name="category" checked/>
+                            <label for="category01">특별교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="category02" name="category"/>
+                            <label for="category02">행사</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="category03" name="category"/>
+                            <label for="category03">포터</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>제목<span class="required"></span></th>
+                <td><input type="text" placeholder="타이틀을 30자 이내로 입력해주세요" class="input_w100" /></td>
+            </tr>
+            <tr>
+                <th>내용<span class="required"></span></th>
+                <td>에디터</td>
+            </tr>
+            <tr>
+                <th>사진첨부<span class="required"></span></th>
+                <td>
+                    <div class="attach_file_lst">
+                        <ul>
+                            <li>
+                                <span class="add_file">파일명.확장자</span>
+                                <span>(0.0 byte)</span>
+                                <a class="delete_File"></a>
+                            </li>
+                            <li>
+                                <span class="add_file">파일명.확장자</span>
+                                <span>(0.0 byte)</span>
+                                <a class="delete_File"></a>
+                            </li>
+                        </ul>
+                        <!-- [D] 파일첨부전 드래그/드롭 시 on클래스 추가 -->
+                        <p class="guide_tx">
+                            <span>첨부할 파일을 직접 드래그 앤 드롭 해주세요</span>
+                        </p>
+                    </div>                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--//테이블-->
+
+<!-- 버튼 -->
+<div class="btn_bottom_wrap right">
+    <span>
+        <a href="index.html?page=education/EduPhoto" class="btn_basic btn_line">목록</a>
+        <a href="javascript:alert_open('사진이 등록되었습니다.');" class="btn_basic">등록</a>
+    </span>
+</div>
+<!-- //버튼 -->

@@ -1,0 +1,70 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('교육이수현황');
+        /* 달력 */
+        datepicker();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조회 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time" />
+                        <label for="datepicker-input" class="tui-ico-date"></label>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회 -->
+
+<div class="btn_top_wrap right">
+    <a class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+</div>
+
+<!-- 이수현황 테이블 -->
+<div id="grid"></div>

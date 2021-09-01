@@ -1,0 +1,344 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('공지사항');
+        // 달력
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 텝 -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on">
+        <a href="">전체</a>
+    </li>
+    <li>
+        <a href="">필독보기</a>
+    </li>
+</ul>
+<!-- //텝 -->
+
+<!-- 검색 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date" />
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date" />
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn mg_left_5">
+                        <span class="frm">
+                            <input type="checkbox" id="month01" name="month" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="month03" name="month" checked="checked" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="month_all" name="month" onchange="all_check(this);" />
+                            <label for="month_all">전체</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="division_all" name="division" onchange="all_check(this);" checked="checked" />
+                            <label for="division_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="division01" name="division" />
+                            <label for="division01">본사</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="division02" name="division" />
+                            <label for="division02">지사</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>유형</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="all_type" name="type" onchange="all_check(this);" checked="checked" />
+                            <label for="all_type">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type_chk01" name="type" />
+                            <label for="type_chk01">영업</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type_chk02" name="type" />
+                            <label for="type_chk02">교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type_chk03" name="type" />
+                            <label for="type_chk03">시스템</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type_chk03" name="type" />
+                            <label for="type_chk03">홍보</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type_chk03" name="type" />
+                            <label for="type_chk03">기타</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                        <option>작성자</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색 -->
+
+<!-- 테이블상단 -->
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="selected">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <span class="list_num">전체
+        <strong class="col_blue">25</strong>개</span>
+</div>
+<!-- //테이블상단 -->
+
+<!-- 테이블 -->
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:5%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:6%" />
+            <col style="width:6%" />
+            <col />
+            <col style="width:5%" />
+            <col style="width:8%" />
+            <col style="width:10%" />
+            <col style="width:8%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std_all" onchange="all_check(this);" />
+                        <label for="std_all">전체선택</label>
+                    </span>
+                </th>
+                <th></th>
+                <th>FC구분</th>
+                <th>구분</th>
+                <th>유형</th>
+                <th>제목</th>
+                <th>파일</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tr_notice">
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std1" />
+                        <label for="std1">선택</label>
+                    </span>
+                </td>
+                <td>
+                    <span class="table_bullet green_bullet">설문</span>
+                </td>
+                <td>수학</td>
+                <td>본사</td>
+                <td>설문</td>
+                <td class="left">
+                    <div class="ellipsis">
+                        <a href="index.html?page=community/board_view">[설문조사] 신규 오픈 서비스 만족도 조사</a>
+                        <span class="ico_img new">new</span>
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">첨부파일</a>
+                </td>
+                <td>수학사업부</td>
+                <td>
+                    <span class="gm_font">2020.07.14</span>
+                </td>
+                <td class="gm_font">28900</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std1" />
+                        <label for="std1">선택</label>
+                    </span>
+                </td>
+                <td>
+                    <span class="table_bullet red_bullet">필독</span>
+                </td>
+                <td>수학</td>
+                <td>본사</td>
+                <td>홍보</td>
+                <td class="left">
+                    <div class="ellipsis">
+                        <a href="index.html?page=community/board_view">스마트러닝 서비스 확대 개편 당첨자를 발표합니다</a>
+                        <span class="ico_img new">new</span>
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">첨부파일</a>
+                </td>
+                <td>수학사업부</td>
+                <td>
+                    <span class="gm_font">2020.07.14</span>
+                </td>
+                <td class="gm_font">28900</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std1" />
+                        <label for="std1">선택</label>
+                    </span>
+                </td>
+                <td></td>
+                <td>영어</td>
+                <td>본사</td>
+                <td>교육</td>
+                <td class="left">
+                    <div class="ellipsis">
+                        <a href="index.html?page=community/board_view">2020년 8월 신입입문교육 안내</a>
+                        <span class="ico_img new">new</span>
+                    </div>
+                </td>
+                <td></td>
+                <td>영어사업부</td>
+                <td>
+                    <span class="gm_font">2020.07.14</span>
+                </td>
+                <td class="gm_font">28900</td>
+            </tr>
+            <!-- <tr> <td colspan="11"><div class="no_data">해당 검색 결과가 없습니다.</div></td> </tr>
+            -->
+        </tbody>
+    </table>
+</div>
+<!-- //테이블-->
+
+<!-- 페이징 -->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+        <li>
+            <a href="">10</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!-- //페이징 -->

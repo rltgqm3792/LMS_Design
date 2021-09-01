@@ -1,0 +1,347 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('AI맞춤학습');
+        $('.group_title h2').text('신호등유형학습');
+
+        $('input:checkbox', '.list_type dd > p').click(function() {
+            var subUnit = $(this).closest('dd').find('> ul');
+            if(subUnit.length > 0) {
+                if($(this).is(":checked")) {
+                    subUnit.slideDown(500);
+                } else {
+                    subUnit.slideUp(500);
+                }
+            }
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/smartCustStd">스마트맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStd">주차별맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc01_01">주차별맞춤일괄기능</a></li>
+    <li><a href="javascript:openPop('Mathlearning/onlineGrad.html',screen.width,screen.height);">온라인간편채점</a></li>
+    <li><a href="index.html?page=mathlearning/wrongAnsrNote">오답노트</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/signalLightType">신호등유형학습</a></li>
+</ul>
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year3" name="year">
+                        <label for="chk_year3">고등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년별</option>
+                    <option>입실별</option>
+                    <option>시간대별</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!--검색영역-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="flag_wrap">
+                            <span class="std_grade">초3</span>
+                        </span>
+                    </div>
+                    <div class="right_area">
+                        <span>채점권한 : 교사</span>
+                        <a href="index.html?page=mathlearning/std_progress" class="btn_table btn_gray02">진도관리</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal_light col_group">
+            <div>
+                <h4 class="tit_h4">단원선택</h4>
+                <ul class="tab_2depth">
+                    <!-- [D] 활성화 : on-->
+                    <li class="on"><a href="javascript:void(0);">초2-1</a></li>
+                    <li><a href="javascript:void(0);">초2-2</a></li>
+                    <li><a href="javascript:void(0);">초3-1</a></li>
+                    <li><a href="javascript:void(0);">초3-2</a></li>
+                </ul>
+                <!-- radio list -->
+                <ul class="list_unit">
+                    <li>
+                        <span class="frm">
+                            <input type="radio" id="radio01" name="radio" checked />
+                            <label for="radio01">자연수의 성질</label>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="frm">
+                            <input type="radio" id="radio02" name="radio"/>
+                            <label for="radio02">정수와 유리수</label>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="frm">
+                            <input type="radio" id="radio03" name="radio"/>
+                            <label for="radio03">문자와 식</label>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="frm">
+                            <input type="radio" id="radio04" name="radio" />
+                            <label for="radio04">일차방정식</label>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="frm">
+                            <input type="radio" id="radio05" name="radio"/>
+                            <label for="radio05">좌표 평면과 그래프</label>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="frm">
+                            <input type="radio" id="radio06" name="radio"/>
+                            <label for="radio06">도형의 기초</label>
+                        </span>
+                    </li>
+                </ul>
+                <!-- // radio list -->
+            </div>
+            <div>
+                <h4 class="tit_h4">유형선택</h4>
+                <div class="pos_wrap">
+                    <ul class="tab_2depth">
+                        <!-- [D] 활성화 : on-->
+                        <li><a href="index.html?page=mathlearning/signalLightType02">취약유형</a></li>
+                        <li class="on"><a href="index.html?page=mathlearning/signalLightType03">대표유형</a></li>
+                    </ul>
+                    <div class="right">
+                        <span class="list_num">
+                            총 유형 <strong class="col_blue">20</strong>
+                            <span class="bar">
+                            취약유형 <strong class="col_red">20</strong>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <!-- checkbox list -->
+                <dl class="list_type">
+                    <dt>
+                        <span class="frm">
+                            <input type="checkbox" id="frm1" name="frm1" onclick="all_check(this)" />
+                            <label for="frm1">전체</label>
+                        </span>
+                    </dt>
+                    <dd>
+                        <p>
+                            <span class="frm">
+                                <input type="checkbox" id="frm2" name="frm2" checked />
+                                <label for="frm2">1. 거듭제곱</label>
+                            </span>
+                        </p>
+                        <ul>
+                            <li>
+                                <span class="frm">
+                                    <input type="checkbox" id="frm3" name="frm3" />
+                                    <label for="frm3">1. 거듭제곱으로 표현</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="frm">
+                                    <input type="checkbox" id="frm4" name="frm4"/>
+                                    <label for="frm4">1. 거듭제곱으로 표현</label>
+                                </span>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd>
+                        <p>
+                            <span class="frm">
+                                <input type="checkbox" id="frm5" name="frm5" checked />
+                                <label for="frm5">2. 소수와 합성수</label>
+                            </span>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <span class="frm">
+                                <input type="checkbox" id="frm6" name="frm6"/>
+                                <label for="frm6">3. 소인수분해</label>
+                            </span>
+                        </p>
+                    </dd>
+                    <dd>
+                        <p>
+                            <span class="frm">
+                                <input type="checkbox" id="frm7" name="frm7"/>
+                                <label for="frm7">4. 소인수분해를 이용하여 약수 구하기</label>
+                            </span>
+                        </p>
+                        <ul style="display:none;">
+                            <li>
+                                <span class="frm">
+                                    <input type="checkbox" id="frm9" name="frm9" />
+                                    <label for="frm9">1. 거듭제곱으로 표현</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="frm">
+                                    <input type="checkbox" id="frm10" name="frm10"/>
+                                    <label for="frm10">1. 거듭제곱으로 표현</label>
+                                </span>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd>
+                        <p>
+                            <span class="frm">
+                                <input type="checkbox" id="frm8" name="frm8"/>
+                                <label for="frm8">1. 최대공약수</label>
+                            </span>
+                        </p>
+                    </dd>
+                </dl>
+                <div class="btn_bottom_wrap right">
+                    <span>
+                        <a href="" class="btn_basic btn_line">목록</a>
+                       <a href="" class="btn_basic">선택완료</a>
+                   </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

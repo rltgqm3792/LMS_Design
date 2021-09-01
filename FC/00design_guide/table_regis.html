@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+   
+     <!--plugin.old -->
+     <!-- <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/datepicker.css"  rel="stylesheet" type="text/css"/>
+     <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/datepicker.js" type="text/javascript"></script>
+     <script>
+           $(function () {
+             // 달력
+             calendar();
+         });
+     </script> -->
+     
+    <!--plugin -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css"  rel="stylesheet" type="text/css"/>
+    <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+    
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css"  rel="stylesheet" type="text/css"/>
+    <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+ 
+    <script type="text/javascript">
+        $(function () {
+            calendar(); //달력 2개
+            datepicker(); //달력 1개시
+            timepicker(); //시간
+            timepicker02(); //시간 2개
+        });
+    </script>
+
+   <script type="text/javascript">
+        $(function(){
+            //top nav 활성화
+            //[D] 개발에서 폴더명 바꾸시면 여기에서 바꾸면 됩니다. 
+            if(folder == 'stdmng'){
+                $('.one_depth .tit').text('수강생관리');
+            }
+            else if(folder == 'mathlearning'){
+                $('.one_depth .tit').text('학습관리(수학)');
+            }
+            else if(folder == 'englearning'){
+                $('.one_depth .tit').text('학습관리(영어)');
+            }
+            else if(folder == 'tclasslearning'){
+                $('.one_depth .tit').text('학습관리(전과목)');
+            }
+            else if(folder == 'order'){
+                $('.one_depth .tit').text('주문관리');
+            }
+            else if(folder == 'education'){
+                $('.one_depth .tit').text('교육관리');
+            }
+            else if(folder == 'community'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'pds'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'hakwon'){
+                $('.one_depth .tit').text('가맹점관리');
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <!--전체레이아웃-->
+    <article id="wrap" class="contain">
+        <section class="header">
+            <!-- info -->
+            <div class="group_info">
+              <div><a href="#" class="btn_class">수업모드</a></div>
+              <div class="login_off">
+                  <p class="txt1">이용시간(세션)만료  55분 00초 전</p>
+                  <a href="#" class="btn_time">시간연장</a>
+                  <div class="info">
+                      <dl>
+                          <dt><img src="http://image.test.hbedu.co.kr/LMS/FC/img/master/img07.png" src="선생님이미지"></dt>
+                          <dd><a href="#" class="btn_adm_name"><strong>관리자</strong>님 환영합니다.</a></dd>
+                      </dl>
+                      <div class="ly_info">
+                          <ul>
+                              <li><a href="#">비밀번호 변경</a></li>
+                              <li><a href="#">로그아웃</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <a href="#" class="btn_alarm">알림<span>9</span></a>
+              </div>
+          </div>
+          <!-- //info -->
+
+          <!-- top 네비 -->
+          <div id="top_nav" class="top_nav" >
+              <ul>
+                  <li class="home"><a href="#">홈</a></li>
+              
+              </ul>
+          </div>
+      </section>
+        <!-- lnb  -->
+        <section id="gnb" class="gnb_wrap">
+            <!--원뎁스-->
+            <menu class="gnb_1depth">
+                <!--로고-->
+                <h1><a href="index.html">SMART</a></h1>
+                <!--//로고-->
+                <a href="#" class="btn_all_menu">전체메뉴</a>
+                <ul>
+                    <li><a href="javascript:void(0);" class="stdmng" data-tab="gnb_std">수강생 관리</a></li>
+                    <li><a href="javascript:void(0);" class="mathlearning" data-tab="gnb_math">학습관리(수학)</a></li>
+                    <li><a href="javascript:void(0);" class="englearning" data-tab="gnb_eng">학습관리(영어)</a></li>
+                    <li><a href="javascript:void(0);" class="tclasslearning" data-tab="gnb_tclass">학습관리(전과목)</a></li>
+                    <li><a href="javascript:void(0);" class="order" data-tab="gnb_order">주문관리</a></li>
+                    <li><a href="javascript:void(0);" class="education" data-tab="gnb_edu">가맹점교육관리</a></li>
+                    <li><a href="javascript:void(0);" class="community" data-tab="gnb_cmn">커뮤니티</a></li>
+                    <li><a href="javascript:void(0);" class="pds" data-tab="gnb_pds">자료실</a></li>
+                    <li><a href="javascript:void(0);" class="hakwon" data-tab="gnb_hakwon">가맹점관리</a></li>
+                </ul>
+            </menu>
+            <!--//원뎁스-->
+        </section>
+        <section id="container" class="content">
+            
+
+            <!-- [D]컨텐츠 정보가 들어갑니다. -->
+            <div class="wrap_sub">
+                
+                <!--tit_main-->
+                <div class="group_title">
+                    <h2 class="tit_main">지사/관리자 디자인 가이드</h2>
+                </div>
+                <!--//tit_main-->
+                
+                <!-- 1Depth Tab -->
+                <ul class="tab_1depth">
+                    <!-- [D] 활성화 : select-->
+                    <li><a href="tab.html">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                    <li><a href="search.html">검색</a></li>
+                    <li><a href="table.html">테이블</a></li>
+                    <li class="on"><a href="table_regis.html">가입테이블</a></li>
+                    <li><a href="std_list01.html">진행중 학습 리스트</a></li>
+                </ul>
+                <!-- // 1Depth Tab -->
+
+                <!-- tit_sub -->
+                <h3 class="tit_h3">--가입테이블--</h3>
+                <!-- //tit_sub  -->
+
+                <p><span class="required"></span>필수값입니다.</p>
+                <!--가입폼-->
+                <div class="table_input">
+                    <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width: 12%" />
+                        <col style="width: 38%"/>
+                        <col style="width: 12%" />
+                        <col style="width: 38%"/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>버튼식 checkbox<span class="required"></span></th>
+                            <td colspan="3">
+                                <span class="frm_wrap frm_btn">
+                                    <span class="frm all">
+                                        <input type="checkbox" id="chk1" name="checkbox" onclick="all_check(this)" checked/>
+                                        <label for="chk1">전체</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="chk2" name="checkbox"/>
+                                        <label for="chk2">체크박스</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="chk3" name="checkbox"/>
+                                        <label for="chk3">체크박스</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="chk4" name="checkbox"/>
+                                        <label for="chk4">체크박스</label>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>버튼식 Radio<span class="required"></span></th>
+                            <td colspan="3">
+                                <span class="frm_wrap frm_btn">
+                                    <span class="frm all">
+                                        <input type="radio" id="radio11" name="radio2" checked/>
+                                        <label for="radio11">전체</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="radio12" name="radio2"/>
+                                        <label for="radio12">라디오버튼</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="radio13" name="radio2"/>
+                                        <label for="radio13">라디오버튼</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="radio14" name="radio2"/>
+                                        <label for="radio14">라디오버튼</label>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>자동입력시<span class="required"></span></th>
+                            <td colspan="3">오나라 신규 가맹점</td>
+                        </tr>
+                        <tr>
+                            <th>라디오버튼<span class="required"></span></th>
+                            <td colspan="3">
+                                <span class="frm_wrap">
+                                    <span class="frm">
+                                        <input type="radio" id="radio1" name="radio" checked/>
+                                        <label for="radio1">전체</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="radio2" name="radio"/>
+                                        <label for="radio2">라디오버튼</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="radio3" name="radio"/>
+                                        <label for="radio3">라디오버튼</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="radio4" name="radio"/>
+                                        <label for="radio4">라디오버튼</label>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>체크박스<span class="required"></span></th>
+                            <td colspan="3">
+                                <span class="frm_wrap">
+                                    <span class="frm">
+                                        <input type="checkbox" id="frm1" name="frm1" onclick="all_check(this)" checked/>
+                                        <label for="frm1">전체</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="frm2" name="frm1"/>
+                                        <label for="frm2">체크박스</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="frm3" name="frm1"/>
+                                        <label for="frm3">체크박스</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="frm4" name="frm1"/>
+                                        <label for="frm4">체크박스</label>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>인풋<span class="required"></span></th>
+                            <td><input type="text" /></td>
+                            <th>인풋 콜투액션<span class="required"></span></th>
+                            <td><input type="text" value="입력중" /></td>
+                        </tr>
+                        <tr>
+                            <th>인풋+라디오버튼<span class="required"></span></th>
+                            <td>
+                                <input type="text" />
+                                <span class="frm_wrap">
+                                    <span class="frm">
+                                        <input type="radio" id="radio1" name="radio" checked/>
+                                        <label for="radio1">1개월</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="radio2" name="radio"/>
+                                        <label for="radio2">3개월</label>
+                                    </span>
+                                </span>
+                            </td>
+                            <th>인풋 입력완료<span class="required"></span></th>
+                            <td><input type="text" value="입력완료" disabled readonly /></td>
+                        </tr>
+                        <tr>
+                            <th>셀렉트+인풋</th>
+                            <td>
+                              <select>
+                                  <option>어떤내용일까?</option>
+                              </select>
+                              <input type="text"/>
+                            </td>
+                            <th>입력완료</th>
+                            <td>
+                                <select disabled>
+                                  <option>가맹점</option>
+                                  <option>Option</option>
+                                  <option>Option</option>
+                                </select>
+                                <input type="text"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>시간설정<span class="required"></span></th>
+                            <td colspan="3">
+                                <!-- <div class="time_sel">
+                                    <select>
+                                        <option value="">10</option>
+                                    </select>
+                                    <span>:</span>
+                                    <select>
+                                        <option value="">00</option>
+                                    </select>
+                                    <span>~</span>
+                                    <select>
+                                        <option value="">10</option>
+                                    </select>
+                                    <span>:</span>
+                                    <select>
+                                        <option value="">30</option>
+                                    </select>
+                                </div>
+                                 -->
+                                 <div id="timepicker-selectbox" class="timepicker_select"></div>
+                                 <span>~</span>   
+                                 <div id="timepicker-selectbox2" class="timepicker_select"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>캘린더 <span class="required"></span></th>
+                            <td>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input id="startpicker-input" type="text" aria-label="Date"/>
+                                    <label for="startpicker-input" class="tui-ico-date"></label>
+                                    <div id="startpicker-container" style="margin-left: -1px;"></div>
+                                </div>
+                                <span class="line">~</span>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input id="endpicker-input" type="text" aria-label="Date"/>
+                                    <label for="endpicker-input" class="tui-ico-date"></label>
+                                    <div id="endpicker-container" style="margin-left: -1px;"></div>
+                                </div>
+                                <!-- <span class="frm_wrap frm_date">
+                                    <input type="text" class="btn_date"/>
+                                    <span class="frm_txt">~</span>
+                                    <input type="text" class="btn_date"/>
+                                </span> -->
+                            </td>
+                            <th>재입력시<span class="required"></span></th>
+                            <td>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input id="startpicker-input" type="text" aria-label="Date"/>
+                                    <label for="startpicker-input" class="tui-ico-date"></label>
+                                    <div id="startpicker-container" style="margin-left: -1px;"></div>
+                                </div>
+                                <span class="line">~</span>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input id="endpicker-input" type="text" aria-label="Date" disabled/>
+                                    <label for="endpicker-input" class="tui-ico-date"></label>
+                                    <div id="endpicker-container" style="margin-left: -1px;"></div>
+                                </div>
+                                <!-- <span class="frm_wrap frm_date">
+                                    <input type="text" class="btn_date"/>
+                                    <span class="frm_txt">~</span>
+                                    <input type="text" class="btn_date" disabled />
+                                </span> -->
+                            </td>
+                        </tr>    
+                        <tr>
+                            <th>
+                                달력 1개일 경우
+                            </th>
+                            <td>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                    <input type="text" id="datepicker-input" aria-label="Date-Time"/>
+                                    <label for="datepicker-input" class="tui-ico-date"></label>
+                                </div>
+                                <div id="wrapper" style="margin-top: -1px;"></div>
+                            </td>
+                            <th>날짜가 긴 경우<span class="required"></span></th>
+                            <td>
+                                <span class="frm_wrap frm_date wide">
+                                    <input type="text" class="btn_date" value="2020. 10월. 1주 1회차" />
+                                    <span class="frm_txt">~</span>
+                                    <input type="text" class="btn_date" value="2020. 10월. 1주 1회차" />
+                                </span>
+                                <div class="tooltip_area">
+                                    <button class="btn_tooltip small">tooltip</button>
+                                    <div class="tooltip_cont right">
+                                        <p class="tit">보상안내</p>
+                                        <ul class="bu_type">
+                                            <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                                            <li>4개 : 미션 완료 추가보상 500골드</li>
+                                            <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                                        </ul>
+                                        <button class="close">툴팁닫기</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>직접입력</th>
+                            <td colspan="3">
+                                <input type="text"/>
+                                <input type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>버튼만 있는 경우</th>
+                            <td colspan="3">
+                                <a href="" class="btn_table btn_blue">임시 비밀번호 발송</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>인풋+버튼</th>
+                            <td colspan="3">
+                              <input type="file" name="files"  id="fileUpload" style="display: none" onChange="fileChange()"/>
+                              <input type="text" class="input_file" id="fileNm" readonly="readonly"/>
+                              <label for="fileUpload" class="btn_table btn_gray">첨부파일</label>                            
+                            </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>버튼+파일명</th>
+                            <td colspan="3">
+                              <input type="file" name="files"  id="fileUpload" style="display: none" onChange="fileChange()"/>                             
+                              <label for="fileUpload" class="btn_table btn_gray">첨부파일</label>
+                              <span class="file_img">
+                                <a href="" target="_blank">사업자등록증.jpg</a>
+                                <a href="javascript:alert_confirm('‘파일을 삭제하시겠습니까?');"  class="del"></a>     
+                              </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소입력<span class="required"></span></th>
+                            <td colspan="3">
+                                <a href="" class="btn_table btn_blue">우편검색</a>
+                                <input type="text" class="input_zip" value="35162" readonly />
+                                <span class="frm_wrap frm_search">
+                                    <input type="text" class="input_address" value="서울특별시 금천구 가산로9길 109" readonly />
+                                    <button class="btn_s_search">검색</button>
+                                </span>
+                                <p class="row"><input type="text" class="input_address02" value="해법에듀 2층"/></p>
+                                <!-- <a href="" class="btn_table">우편검색</a>
+                                <input type="text" disabled readonly />
+                                <input type="text" disabled readonly />
+                                <p><input type="text" class="mt_5" style="width:600px;" disabled readonly /></p> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>학교검색<span class="required"></span></th>
+                            <td colspan="3">
+                                <a href="" class="btn_table btn_blue">학교검색</a>
+                                <input type="text" disabled readonly />
+                               
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>1Depth/2Depth/ 3Depth 있는 경우</th>
+                            <td colspan="3" class="in_table">
+                                <!-- 안에 테이블 있는경우 -->
+                                <table class="table_sub">
+                                    <colgroup>
+                                      <col style="width: 20%" />
+                                      <col />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>라디오버튼</th>
+                                            <td>
+                                                <p class="guide">안내문구 안내문구 안내문구 안내문구 안내문구 안내문구 안내문구 안내문구 안내문구 안내문구</p>
+                                                <p class="guide02">안내문구 안내문구 안내문구 안내문구</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>라디오버튼</th>
+                                            <td>
+                                                <p class="warning">중요한 문구 및 경고 문구 일때 레드 컬러 사용</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- //안에 테이블 있는경우 -->
+                                 <!-- 안에 테이블 있는경우 리스트 -->
+                                 <table class="table_sub_list">
+                                    <colgroup>
+                                      <col style="width:10%" />
+                                      <col style="width:15%" />
+                                      <col style="width:30%" />
+                                      <col />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>선택</th>
+                                            <th>수업일</th>
+                                            <th>수업형태</th>
+                                            <th>시간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                           <td>테스트</td>
+                                           <td>테스트</td>
+                                           <td>테스트</td>
+                                           <td>테스트</td>
+                                       </tr>
+                                       <tr>
+                                        <td>테스트</td>
+                                        <td>테스트</td>
+                                        <td>테스트</td>
+                                        <td>테스트</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <!-- //안에 테이블 있는경우 -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>텍스트 입력</th>
+                            <td colspan="3"><textarea></textarea></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">전화번호<span class="required"></span></th>
+                            <td colspan="3">
+                                <span class="dot">휴대폰 번호</span><span>010-6562-2496</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                              <span class="dot">자택번호</span><span>010-6562-2496</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td colspan="3">
+                                <input type="text" placeholder="이메일을 입력해 주세요" class="input_email_w"/>
+                                @
+                                <select>
+                                    <option value="">메일선택</option>
+                                </select>
+                                <input type="text" class="input_email_w"/>
+                            </td>                        
+                        </tr>
+                        <tr>
+                            <th>frm_wrap 우측 input 간격 없애기</th>
+                            <td colspan="3"> 
+                                <span class="frm_wrap frm_btn pd_indent_none">
+                                    <span class="frm">
+                                        <input type="radio" id="class_rdo01" name="class" checked="checked"/>
+                                        <label for="class_rdo01">초등</label>
+                                    </span>
+                                </span>
+                                <input type="text" value="ch3" disabled/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>테이블내 좌측 툴팁</th>
+                            <td colspan="3">   
+                                <!-- 툴팁 -->
+                                <div class="tooltip_area">
+                                    <button class="btn_tooltip02">툴팁</button>
+                                    <div class="tooltip_cont">
+                                        <table class="table_return">
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col/>
+                                                <col/>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>상태</th>
+                                                    <td>기각</td>
+                                                    <th>처리일</th>
+                                                    <td>21.05.05</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>상태</th>
+                                                    <td colspan="3">abde<br/>
+                                                        efg<br/>
+                                                        hr
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <button class="close">툴팁닫기</button>
+                                    </div>
+                                </div>
+                                <!-- //툴팁 --></td>
+                        </tr>
+                        <tr>
+                            <th>단원unit</th>
+                            <td colspan="3">
+                                <span class="unit_box_wrap">
+                                    <span class="unit_box">
+                                        박찬호(M9876352)
+                                    </span>
+                                    <span class="unit_box">
+                                        박찬호(M9876352)
+                                        <span class="del"></span>
+                                    </span>
+                                    <span class="unit_box">
+                                        박찬호(M9876352)
+                                        <span class="del"></span>
+                                    </span>
+                                    <span class="unit_box">
+                                        박찬호(M9876352)
+                                        <span class="del"></span>
+                                    </span>
+                                    <span class="unit_box">
+                                        박찬호(M9876352)
+                                    </span>
+                                    <span class="unit_box">
+                                        박찬호(M9876352)
+                                    </span>
+                                    <span class="unit_box">
+                                        김찬호(M9876353)
+                                        <span class="del"></span>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>단원unit flexible</th>
+                            <td colspan="3">                              
+                                <span class="unit_box_wrap02">
+                                    <span class="unit_box02">
+                                        박찬호 M098765655
+                                        <em>초2</em>
+                                        <span class="del"></span>
+                                    </span>
+                                    <span class="unit_box02">
+                                        박찬호 M098765655
+                                        <em class="middle">중2</em>
+                                        <span class="del"></span>
+                                    </span>
+                                    <span class="unit_box02">
+                                        박찬호 M098765655
+                                        <em class="high">고1</em>
+                                        <span class="del"></span>
+                                    </span>
+                                    <span class="unit_box02">
+                                        박찬호 M098765655
+                                        <em>초2</em>
+                                        <span class="del"></span>
+                                    </span>
+                                    <span class="unit_box02">
+                                        박찬호 M098765655
+                                        <em>초2</em>
+                                        <span class="del"></span>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                서브텍스트 추가
+                            </th>
+                            <td colspan="3">                                
+                                <input type="text" /><span class="left_spc">마일리지</span><span class="tit_sub">현재 추가 가능한 가맹점 마일리지 : 113</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </article>
+</body>
+</html>

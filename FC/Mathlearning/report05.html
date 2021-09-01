@@ -1,0 +1,142 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('분석표');
+        $('.group_title h2').text('신호등유형학습 분석표');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/report01">입학진단평가 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report02">일일리포트</a></li>
+    <li><a href="index.html?page=mathlearning/report03">단원평가 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report04">기간별 분석표</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/report05">신호등유형학습 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report06">영역별 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report07">HME학습 컨설팅평가 분석표</a></li>
+</ul>
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>년도</dt>
+                <dd>
+                    <select>
+                        <option>2021년</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="std_all" name="std" onchange="all_check(this);" />
+                            <label for="std_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std1" name="std" checked />
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std2" name="std" />
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std3" name="std" />
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>단원</dt>
+                <dd>
+                    <select>
+                        <option>1. 9까지의 수</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학기</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="class1" name="class" checked>
+                            <label for="class1">1학기</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="class2" name="class">
+                            <label for="class2">2학기</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생</dt>
+                <dd>
+                    <input type="text">
+                    <a href="" class="btn_table btn_blue">검색</a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--//조회-->
+<div class="btn_top_wrap between group">
+    <span>
+        <select>
+            <option value="">수강생명순</option>
+        </select>
+    </span>
+    <span class="mix_link_btn">
+        <a href="javascript:void(0);" class="link">일괄전송</a>
+        <a href="javascript:void(0);" class="btn_top btn_ico app"><span>학부모앱</span></a>
+        <a href="javascript:void(0);" class="btn_top btn_ico talk"><span>알림톡</span></a>
+        <a href="javascript:void(0);" class="btn_top btn_ico sms"><span>SMS</span></a>
+        <a href="javascript:void(0);" class="btn_top btn_gray">분석표 일괄출력</a>
+        <a href="javascript:openPop('mathlearning/pop_report04.html','1020','795');" class="btn_top">분석표 생성</a>
+    </span>
+</div>
+<div id="grid"></div>
+
+<!-- 그리드 테이블 내 버튼 -->
+<a href="javascript:openPop('mathlearning/pop_report07.html','1020','795');" class="btn_top btn_line">2020-10-21</a>
+<a href="javascript:openPop('mathlearning/pop_report07.html','1020','795');" class="btn_top btn_line">2020-10-20</a>
+<a href="javascript:openPop('mathlearning/pop_report04.html','1020','795');" class="btn_table blue">생성</a>
+<a href="javascript:openPop('mathlearning/pop_report04.html','1020','795');" class="btn_table blue">재생성</a>
+<a href="javascript:void(0);" class="btn_table btn_blue">전송</a>
+<a href="javascript:void(0);" class="btn_table btn_blue">재전송</a>
+<!-- // 그리드 테이블 내 버튼 -->

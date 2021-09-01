@@ -1,0 +1,330 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('문제은행');
+		$('.group_title h2').text('출제마법사')
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<ul class="tab_1depth">
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions01">단원평가(고정)</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions02">단원평가(맞춤)</a></li>
+	<li class="on"><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions03">영역평가</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions04">어휘평가</a></li>
+</ul>
+<!-- 검색 -->
+<div class="unit_step_wrap">
+	<li class="step01"><span class="step_tx01">step1.</span>관련도서</li>
+	<li class="step02"><span class="step_next">next</span><span class="step_tx02">step2.</span>문항 수 및 난이도 선택</li>
+</div>
+<!-- std_wrap -->
+<div class="std_wrap">
+	<!--step01-->
+	<div class="std_group mg_top_30">
+		<!--검색-->
+		<div class="search_group">
+			<h4 class="searchSubtitle">1. 과정 선택</h4>
+			<p class="year_group">
+				<span class="frm_wrap frm_btn">
+					<span class="frm frm_three">
+						<input type="checkbox" id="chk_year1" name="year">
+						<label for="chk_year1">중1</label>
+					</span>
+					<span class="frm frm_three">
+						<input type="checkbox" id="chk_year2" name="year">
+						<label for="chk_year2">중2</label>
+					</span>
+					<span class="frm frm_three">
+						<input type="checkbox" id="chk_year3" name="year">
+						<label for="chk_year3">중3</label>
+					</span>
+				</span>
+			</p>
+			<h4 class="searchSubtitle">2. 영역 선택</h4>
+			<p class="year_group">
+				<span class="frm_wrap frm_btn">
+					<span class="frm frm_half">
+						<input type="radio" id="domain1" class="on" name="domain" value="1" checked>
+						<label for="domain1">의사소통</label>
+					</span>
+					<span class="frm frm_half">
+						<input type="radio" id="domain2" name="domain" value="2">
+						<label for="domain2">문법</label>
+					</span>
+				</span>
+			</p>
+		</div>
+		<!--//검색-->
+		<!--의사소통 리스트-->
+		<h4 class="searchSubtitle">3. 단원 선택</h4>
+		<div class="unit_wrap">
+			<ul class="unit_list on">
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson1" name="lesson">
+						<label for="lesson1">능력 표현하기와 <br>능력 부인하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson2" name="lesson">
+						<label for="lesson2">의도 표현하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson3" name="lesson">
+						<label for="lesson3">감정 표현하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson4" name="lesson">
+						<label for="lesson4">유감이나 동정 표현하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson5" name="lesson">
+						<label for="lesson5">만족 표현하기와 불만족 <br>표현하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson6" name="lesson">
+						<label for="lesson6">놀람 표현하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson7" name="lesson">
+						<label for="lesson7">느낀 점 말하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson8" name="lesson">
+						<label for="lesson8">제안, 권유하기</label>
+					</span>
+				</li>
+				<li>
+					<span class="frm">
+						<input type="checkbox" id="lesson9" name="lesson">
+						<label for="lesson9">요청하기</label>
+					</span>
+				</li>
+			</ul>
+			<!--//의사 리스트-->
+			<!--문법 선택시 보여지는 선택 리스트 -->
+			<div id="unit_chk" class="unit_chk">
+				<!-- 리스트 추가 시 복제 영역 -->
+				<li>
+					<div class="unit_head">
+						<span class="frm">
+							<input type="checkbox" id="lesson2-1" name="lesson" class="">
+							<label for="lesson2-1">be동사</label>
+						</span>
+						<span class="btn_down">down</span>
+					</div>
+					<div class="unit_body">
+						<a href="javascript:void(0);">be동사와 종류</a>
+						<a href="javascript:void(0);">be동사의 부정문</a>
+						<a href="javascript:void(0);">be동사의 의문문</a>
+					</div>
+				</li>
+				<!-- //리스트 추가 시 복제 영역 -->
+			</div>
+			<!--//문법 리스트-->
+		</div>
+	</div>
+	<!--//step01-->
+	<!--step02-->
+	<div class="view_group mg_top_30">
+		<div class="table_input">
+			<!--[D]의사소통 선택한 경우-->
+			<table class="tb_domain1">
+				<caption></caption>
+				<colgroup>
+					<col style="width: 12%" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>선택단원</th>
+						<td>
+							<!-- class="scroll" -> "unit100P" 교체 :chan -->
+							<div class="unit100P">
+								<span class="unit_box_wrap">
+									<span class="unit_box03">의도 표현하기<span class="del"></span></span>
+									<span class="unit_box03">유감이나 동정 표현하기<span class="del"></span></span>
+									<span class="unit_box03">놀람 표현하기<span class="del"></span></span>
+									<span class="unit_box03">유감이나 동정 표현하기<span class="del"></span></span>
+									<span class="unit_box03">제안,권유하기<span class="del"></span></span>
+									<span class="unit_box03">의도 표현하기<span class="del"></span></span>
+									<span class="unit_box03">유감이나 동정 표현하기<span class="del"></span></span>
+									<span class="unit_box03">놀람 표현하기<span class="del"></span></span>
+									<span class="unit_box03">유감이나 동정 표현하기<span class="del"></span></span>
+									<span class="unit_box03">제안,권유하기<span class="del"></span></span>
+								</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>난이도 및 문항 수</th>
+						<td class="in_table">
+							<table class="table_sub">
+								<colgroup>
+									<col style="width: 20%" />
+									<col style="width: 40%" />
+									<col style="width: 20%" />
+									<col style="width: 20%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>총 문항 수</th>
+										<td colspan="3">
+											<span class="frm_wrap frm_btn">
+												<span class="frm">
+													<input type="radio" name="std" id="std1">
+													<label for="std1">10</label>
+												</span>
+												<span class="frm">
+													<input type="radio" name="std" id="std2">
+													<label for="std2">15</label>
+												</span>
+												<span class="frm">
+													<input type="radio" name="std" id="std3" checked>
+													<label for="std3">20</label>
+												</span>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<th>난이도</th>
+										<td>
+											<p class="guide">의사소통은 난이도 선택이 없습니다.</p>
+										</td>
+										<th>합계</th>
+										<td class="col_red">25</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="warning mg_top_10">총 문항 수를 선택해 주세요.</p>
+						</td>
+					</tr>
+					<tr>
+						<th>문제지 명</th>
+						<td>
+							<div class="deletable_wrap">
+								<input type="text" class="deletable" value="의도표현하기 ~ 제안 권유하기">
+								<button type="button" class="deleteBtn" title="내용 지우기"></button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!--//의사소통 선택한 경우-->
+			<!--[D] 문법 선택한 경우 활성화-->
+			<table class="tb_domain2" style="display: none;">
+				<caption></caption>
+				<colgroup>
+					<col style="width: 12%" />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>선택단원</th>
+						<td>
+							<div class="scroll">
+								<span class="unit_box03">Be동사<span class="del"></span></span>
+								<span class="unit_box03">인칭대명사 <span class="del"></span></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>난이도 및 문항 수</th>
+						<td class="in_table">
+							<table class="table_sub">
+								<colgroup>
+									<col style="width: 20%" />
+									<col style="width: 40%" />
+									<col style="width: 20%" />
+									<col style="width: 20%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>총 문항 수</th>
+										<td colspan="3">
+											<span class="frm_wrap frm_btn">
+												<span class="frm">
+													<input type="radio" name="std" id="std2">
+													<label for="std2">15</label>
+												</span>
+												<span class="frm">
+													<input type="radio" name="std" id="std3" checked>
+													<label for="std3">20</label>
+												</span>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<th>난이도</th>
+										<td>
+											<select>
+												<option>하1</option>
+												<option>하2</option>
+												<option>하3</option>
+												<option>하4</option>
+												<option>하5</option>
+												<option>하6</option>
+											</select>
+											<select>
+												<option>중1</option>
+												<option>중2</option>
+												<option>중3</option>
+												<option>중4</option>
+												<option>중5</option>
+												<option>중6</option>
+											</select>
+											<select>
+												<option>상1</option>
+												<option>상2</option>
+												<option>상3</option>
+												<option>상4</option>
+												<option>상5</option>
+												<option>상6</option>
+											</select>
+										</td>
+										<th>합계</th>
+										<td class="col_red">25</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="warning mg_top_10">원하는 난이도별 문항 수를 선택해 주세요.</p>
+						</td>
+					</tr>
+					<tr>
+						<th>문제지 명</th>
+						<td>
+							<div class="deletble_wrap">
+								<input type="text" class="deletable" value="의도표현하기 ~ 제안 권유하기">
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!--//문법 선택한 경우-->
+		</div>
+		<div class="btn_bottom_wrap right">
+			<span>
+				<a href="javascript:openPop('Englearning/pop_pbank_tagetSelect.html','910','670');" class="btn_basic btn_line">대상자 선택</a>
+				<a href="javascript:alert_move('문제지가 출제되었습니다.\n우리 교실 문제지 목록에서 출제 대상자를 선택해 주세요..','','계속 출제','목록 이동','');" class="btn_basic">저장</a>
+			</span>
+		</div>
+	</div>
+</div>

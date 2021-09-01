@@ -1,0 +1,636 @@
+<script type="text/javascript">
+    $(function(){  
+        var page = "main";      
+                
+        //사업자 정보
+        $('.btn_business').on('click', function () {
+            $('.btn_business').toggleClass('off');
+            $('.business_info_list').toggle();
+        });
+    });
+
+    //drag 
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();    
+    
+    // 그래프,테이블
+        $('input[type=radio][name=graph]').on('click', function () {
+        var chkValue = $('input[type=radio][name=graph]:checked').val();
+        if (chkValue == '1') {
+            $('.graph1').css('display', 'block');
+            $('.item1').css('display', 'inline-block');
+            $('.table2').css('display', 'none');
+        } else if (chkValue == '2') {
+            $('.graph1').css('display', 'none');
+            $('.item1').css('display', 'none');
+            $('.table2').css('display', 'block');
+        }
+    }); 
+
+    // 슬라이드 배너
+    $(document).ready(function () {
+        $('.slider').slick({
+            Infinity:true,
+            slideToshow:2,
+            autoplay:true,
+            dots:true,
+            useTransform: false
+        });
+    });
+    
+    // 그래프
+    am4core.ready(function() {
+    am4core.addLicense("CH230677325");        
+    am4core.useTheme(am4themes_animated);
+        
+    var chart01 = am4core.create('chartdiv01', am4charts.XYChart)
+    // chart.colors.step = 2;
+    chart01.colors.list = [
+        am4core.color("#5a90ee"),
+        am4core.color("#ff7da5"),
+    ];
+    chart01.fontSize = "13px"
+    chart01.height = 200
+    chart01.marginBottom = 0
+    chart01.paddingBottom = 0
+    
+    // chart.legend = new am4charts.Legend()
+    // chart.legend.position = 'top'
+    // chart.legend.paddingBottom = 20
+    // chart.legend.labels.template.maxWidth = 95
+    
+    var xAxis = chart01.xAxes.push(new am4charts.CategoryAxis())
+    xAxis.dataFields.category = 'category'    
+    xAxis.renderer.cellStartLocation = 0.1
+    xAxis.renderer.cellEndLocation = 0.9
+    xAxis.renderer.grid.template.location = 0;
+    xAxis.renderer.minGridDistance = 30;
+    xAxis.renderer.labels.template.fill = am4core.color("#999999");
+    xAxis.renderer.grid.template.strokeWidth = 0;
+    
+    var yAxis = chart01.yAxes.push(new am4charts.ValueAxis());
+    yAxis.min = 0;    
+    yAxis.max = 100; 
+    yAxis.renderer.minGridDistance = 20;   
+    yAxis.renderer.labels.template.fill = am4core.color("#999999");
+    yAxis.renderer.grid.template.stroke = am4core.color("#979797");
+    
+    function createSeries(value, name) {
+        var series = chart01.series.push(new am4charts.ColumnSeries())
+        series.dataFields.valueY = value
+        series.dataFields.categoryX = 'category'
+        series.name = name        
+        series.columns.template.column.cornerRadiusTopLeft = "100%";
+        series.columns.template.column.cornerRadiusTopRight = "100%";
+        series.columns.template.width = am4core.percent(40);
+            
+        series.events.on("hidden", arrangeColumns);
+        series.events.on("shown", arrangeColumns);
+    
+        return series;
+    }
+    
+    chart01.data = [
+        {
+            category: '1월',
+            first: 40,
+            second: 95
+        },
+        {
+            category: '2월',
+            first: 30,
+            second: 78
+        },
+        {
+            category: '3월',
+            first: 27,
+            second: 40
+        },
+        {
+            category: '4월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '5월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '6월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '7월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '8월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '9월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '10월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '11월',
+            first: 50,
+            second: 33
+        },
+        {
+            category: '12월',
+            first: 50,
+            second: 33
+        }
+    ]
+    
+    
+    createSeries('first', 'The First');
+    createSeries('second', 'The Second');
+    
+    function arrangeColumns() {
+    
+        var series = chart01.series.getIndex(0);
+    
+        var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+        if (series.dataItems.length > 1) {
+            var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+            var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+            var delta = ((x1 - x0) / chart01.series.length) * w;
+            if (am4core.isNumber(delta)) {
+                var middle = chart01.series.length / 2;
+    
+                var newIndex = 0;
+                chart01.series.each(function(series) {
+                    if (!series.isHidden && !series.isHiding) {
+                        series.dummyData = newIndex;
+                        newIndex++;
+                    }
+                    else {
+                        series.dummyData = chart01.series.indexOf(series);
+                    }
+                })
+                var visibleCount = newIndex;
+                var newMiddle = visibleCount / 2;
+    
+                chart01.series.each(function(series) {
+                    var trueIndex = chart01.series.indexOf(series);
+                    var newIndex = series.dummyData;
+    
+                    var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+    
+                    series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                    series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                })
+            }
+        }
+    }    
+    
+    }); // end am4core.ready()
+</script>
+    <!-- main_left_wrap -->
+    <div class="main_left_wrap">
+
+        <!-- 과목 -->
+        <ul class="fc">
+            <li class="on"><a href="">전체</a></li>
+            <li><a href="">수학</a></li>
+            <li><a href="">영어</a></li>
+            <li><a href="">전과목</a></li>
+        </ul>
+        <!-- //과목 -->
+
+        <!-- 월 수강생 -->
+        <div class="std_month">
+            <h2>7월 수강생</h2>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>3,809</dt>
+                        <dd>현재 수강생</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>264</dt>
+                        <dd>과금 수강생</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <!-- //월 수강생 -->
+
+        <!-- 자주 찾는 메뉴 -->
+        <div class="favorite">
+            <div class="title">
+                <h2>자주 찾는 메뉴</h2>
+                <a href="javascript:openPop('Main/pop_fav.html','520','670');" class="btn_sest">추가</a>
+            </div>
+            <ul id="sortable" class="ui-sortable">
+                <li class="ui-sortable-handle"><a href="javascript:openPop('Main/pop_fav.html','520','670');">추가01</a></li>
+                <li class="ui-sortable-handle"><a href="javascript:openPop('Main/pop_fav.html','520','670');">추가02</a></li>
+                <li class="ui-sortable-handle"><a href="javascript:openPop('Main/pop_fav.html','520','670');">추가03</a></li>
+                <li class="ui-sortable-handle"><a href="javascript:openPop('Main/pop_fav.html','520','670');">추가04</a></li>
+                <li class="ui-sortable-handle"><a href="javascript:openPop('Main/pop_fav.html','520','670');">추가05</a></li>
+                <li class="ui-sortable-handle"><a href="javascript:openPop('Main/pop_fav.html','520','670');">추가06</a></li>
+            </ul>
+        </div>
+        <!-- //자주 찾는 메뉴 -->
+        
+        <!-- 이 달의 리더스 -->
+        <ul class="slider">
+            <li>
+                <div class="banner">
+                    <em>이 달의 리더스</em>
+                    <p><strong>정유리</strong> 원장님</p>
+                    <span>강남대치점</span>
+                </div>
+            </li>
+            <li>
+                <div class="banner">
+                    <em>이 달의 리더스</em>
+                    <p><strong>박찬호</strong> 원장님</p>
+                    <span>가산디지털단지점</span>
+                </div>
+            </li>
+        </ul> 
+        <!-- //이 달의 리더스 -->
+
+        <!-- 최근 로그인 정보 -->
+        <div class="login_info">
+            <div class="title">
+                <h2>최근 로그인 정보</h2>
+            </div>
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:40%"/>
+                    <col/>
+                    <col style="width:20%"/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>일시</th>
+                        <th>IP</th>
+                        <th>접속</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico pc">PC</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico mobile">모바일</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico pc">PC</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico mobile">모바일</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico pc">PC</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico mobile">모바일</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico pc">PC</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico mobile">모바일</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico pc">PC</span></td>
+                    </tr>
+                    <tr>
+                        <td>2021.05.25</td>
+                        <td>110.70.54.123</td>
+                        <td><span class="login_ico mobile">모바일</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- 최근 로그인 정보 -->
+
+        
+        <!-- 사업자 정보 -->
+        <div class="business_info">
+            <div class="title">
+                <h2>사업자 정보</h2>
+                <a href="javascript:void(0);" class="btn_business">닫기</a>
+            </div> 
+            <div class="business_info_list">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:40%"/>
+                        <col/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>수학</td>
+                            <td>123-42-67888</td>
+                        </tr>
+                        <tr>
+                            <td>영어</td>
+                            <td>123-42-67888</td>
+                        </tr>
+                        <tr>
+                            <td>전과목</td>
+                            <td>미등록</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>                       
+        </div>
+        <!-- 사업자 정보 -->
+
+
+    </div>
+    <!-- //main_left_wrap -->
+
+    <!-- main_view_wrap -->
+    <div class="main_view_wrap">
+
+        <!-- 현황 -->
+        <div class="main_std_stat">
+            <div class="new" onclick="location.href='index.html?page=stdmng/list01'">
+                <dl>
+                    <dt>298</dt>
+                    <dd>신규</dd>
+                </dl>
+            </div>
+            <div class="rest" onclick="location.href='index.html?page=stdmng/list04'">
+                <dl>
+                    <dt>19</dt>
+                    <dd>휴회</dd>
+                </dl>
+            </div>
+            <div class="back" onclick="location.href='index.html?page=stdmng/list04'">
+                <dl>
+                    <dt>65</dt>
+                    <dd>복회</dd>
+                </dl>
+            </div>
+            <div class="wait" onclick="location.href='index.html?page=stdmng/list03'">
+                <dl>
+                    <dt>112</dt>
+                    <dd>동의대기</dd>
+                </dl>
+            </div>
+        </div>
+        <!-- //현황 -->
+
+        <!-- 일정 달력 -->
+        <div class="main_calendar">
+            <div class="search_calendar">
+                <button class="prev">이전달</button>
+                <span class="txt">2021. 06</span>
+                <button class="next">다음달</button>
+            </div>
+            
+            <div class="cal_birth_wrap">
+                <a href="javascript:openPop('Main/pop_birthday.html','800','670');" class="btn_main">생일자 보기</a>
+            </div>
+            
+            <!-- 캘린더 -->
+            <div id="calendar">
+
+                <!-- 캘린더내 아이콘 -->
+                <!-- 생일 -->
+                <span class="ico_calendar birth"></span>
+                <!-- 수강료 납부일 -->
+                <span class="ico_calendar pay_day"></span>
+                <!-- 가맹점 교육 -->
+                <span class="ico_calendar fc_edu"></span>
+                <!-- 일정 -->
+                <span class="ico_calendar date inner"><span>사업설명회</span></span>
+                <span class="ico_calendar date inner"><span>제목제목제목제목제목제목제목제목</span></span>
+
+                <a href="javascript:openPop('Main/pop_calendar.html','450','670');">날짜 클릭시 일정 팝업</a>
+                <p>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                    contents test <br>
+                </p>
+
+            </div>
+
+            <div class="cal_bottom_wrap">
+                <ul>
+                    <li>
+                        <span class="ico_calendar date"><span>일정</span></span>
+                        <span class="ico_calendar birth"><span>생일</span></span>
+                        <span class="ico_calendar pay_day"><span>수강료 납부일</span></span>
+                        <span class="ico_calendar fc_edu"><span>가맹점 교육</span></span>
+                    </li>
+                    <li>
+                        <span class="ico_calendar delevery"><span>직배송</span></span>
+                        <span class="ico_calendar contest"><span>콘테스트</span></span>
+                    </li>
+                </ul>
+                <a href="javascript:openPop('Main/pop_calendar_reg.html','750','420');" class="btn_cal_reg">일정등록</a>
+            </div>
+        </div>
+        <!-- //일정 달력 -->
+
+        <!-- 게시판 -->
+        <div class="main_board">
+
+            <!-- 공지사항 -->
+            <div>
+                <dl class="notice">
+                    <dt><h2>공지사항</h2></dt>
+                    <dd>
+                        <ul>
+                            <li><span class="main_bullet green">본사</span><a href="">스마트러닝 서비스 확대 개편  확대 개편 확대 개편 확대 개편 확대 개편</a><span class="new_text">새 글</span></li>                            
+                            <li><span class="main_bullet green">지사</span><a href="">신학기 수강생 모집 활성화 방안 활성화 방안활성화 방안활성화 방안</a></li>
+                            <li><span class="main_bullet green">모바일</span><a href="">2021.06.01(화) 서버 점검 안내</a></li>
+                            <li><span class="main_bullet green">본사</span><a href="">2021년 모바일 학습 안내</a><span class="new_text">새 글</span></li>
+                        </ul>
+                    </dd>
+                    <a href="" class="more">더보기</a>
+                </dl>
+            </div>
+            <!-- //공지사항 -->
+            
+            <!-- 자료실 -->
+            <div>
+                <dl class="room">
+                    <dt><h2>자료실</h2></dt>
+                    <dd>
+                        <ul>
+                            <li><span class="main_bullet blue">교사용</span><a href="">2021년 중1~중3 2학기 중간고사 중간고사중간고사중간고사중간고사</a><span class="new_text">새 글</span></li>
+                            <li><span class="main_bullet blue">판촉물</span><a href="">5학년 해법 계산 E06 (2021년)</a><span class="new_text">새 글</span></li>
+                            <li><span class="main_bullet blue">교사용</span><a href="">해법 학습 1학기 호별 단원구성표 단원구성표단원구성표단원구성표단원구성표</a></li>
+                            <li><span class="main_bullet blue">판촉물</span><a href="">6학년 해법 계산 E06 (2021년)</a></li>
+                        </ul>
+                    </dd>
+                    <a href="" class="more">더보기</a>
+                </dl>
+            </div>
+            <!-- //자료실 -->
+        </div>
+        <!-- //게시판 -->
+
+        <!-- 수강생 현황 -->
+        <div class="std_stat_wrap">
+            <div class="title">
+                <span>
+                    <h2>수강생 현황</h2>
+                    <span class="item1">
+                        <p class="now_year">올해</p>
+                        <p class="pre_year">작년</p>
+                    </span>
+                    </span>
+                
+                <span>
+                    <label for="graph_01" class="rdo_graph">
+                        <input type="radio" name="graph" value="1" id="graph_01" checked="checked"/>
+                        <span>그래프</span>
+                    </label>
+                    <label for="graph_02" class="rdo_table">
+                        <input type="radio" name="graph" value="2" id="graph_02"/>
+                        <span>테이블</span>
+                    </label>
+                </span>
+            </div>        
+
+            <!-- Graph -->
+            <div class="graph1">
+                <div id="chartdiv01" style="height:200px"></div>
+            </div>
+            <!-- //Graph -->
+
+            <!-- table -->
+            <div class="table2" style="display: none;">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:10%"/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>1월</th>
+                            <th>2월</th>
+                            <th>3월</th>
+                            <th>4월</th>
+                            <th>5월</th>
+                            <th>6월</th>
+                            <th>7월</th>
+                            <th>8월</th>
+                            <th>9월</th>
+                            <th>10월</th>
+                            <th>11월</th>
+                            <th>12월</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>2020</th>
+                            <td>800</td>
+                            <td>1,500</td>
+                            <td>60</td>
+                            <td>1,500</td>
+                            <td>800</td>
+                            <td>1,500</td>
+                            <td>800</td>
+                            <td>1,500</td>
+                            <td>800</td>
+                            <td>100</td>
+                            <td>800</td>
+                            <td>1,500</td>
+                        </tr>
+                        <tr>
+                            <th>2021</th>
+                            <td>800</td>
+                            <td>300</td>
+                            <td>800</td>
+                            <td>1,500</td>
+                            <td>800</td>
+                            <td>400</td>
+                            <td>800</td>
+                            <td>1,500</td>
+                            <td>800</td>
+                            <td>100</td>
+                            <td>800</td>
+                            <td>1,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //table -->
+        </div>
+        <!-- //수강생 현황 -->
+
+    </div>
+    <!-- //main_view_wrap -->
+<!-- 팝업 -->            
+<!-- 학부모 휴대폰 번호 동일번호 수정 안내 -->
+<!--<a href="javascript:openPop('Main/pop_phone_mod.html','580','390');">학부모 휴대폰 번호 동일번호 수정 안내</a>-->
+
+<!-- 학부모 동의 완료 안내 -->
+<!--<a href="javascript:openPop('Main/pop_agree.html','450','460');">학부모 동의 완료 안내</a>-->
+
+<!-- 상시이벤트 -->
+<!--<a href="javascript:openPop('Main/pop_event.html','580','573');">상시이벤트</a>-->
+
+<!-- 정보수정(입회동의) SMS전송 팝업 -->
+<!--<a href="javascript:ly_open('StdMng/listSmsPop.html','600','273');">정보수정(입회동의) SMS전송</a>-->

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/lcms/Biz/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/lcms/Biz/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/lcms/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/lcms/css/LMS_w_lcms.css" rel="stylesheet" type="text/css" />
+    <script>
+         function fileChange() {
+            var cur = $("#fileUpload").val().split("\\");
+            $("#fileNm").val(cur[cur.length - 1]);
+        }
+    </script>   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>차시 일괄등록</h1>
+        </header>
+        <section class="pop_content">
+            <!-- tit_sub_txt -->
+            <div class="right_flex"><a href="" class="btn_top line excel"><span>엑셀양식 다운로드</span></a></div>
+            <div class="box_guide">
+                <div>
+                    <span class="tit">등록 전 확인 사항</span>
+                    <ul>
+                        <li>제공된 엑셀양식을 다운로드 받아 작성 후 해당 파일을 업로드 해주세요</li>
+                        <li>이미 등록된 데이터를 재등록하실 경우 이전 등록된 데이터는 삭제됩니다.</li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="table_input mt_20">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:80%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>첨부파일</th>
+                            <td><input type="file" name="files"  id="fileUpload" style="display: none" onChange="fileChange()"/>
+                                <input type="text" class="input_file" id="fileNm" readonly="readonly"/>
+                                <label for="fileUpload" class="btn_table gray">첨부파일</label></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="loader">
+                <div class="loader-inner ball-clip-rotate">
+                  <div></div>
+                </div>
+            </div>
+            <div class="box_guide">
+                <div>
+                    <span class="tit">등록결과</span>
+                    <ul>
+                        <li>등록 가능한 정상등록 건 수만 먼저 업로드되며, 입력오류로 인한 등록 불가능 건 수는 다운로드 받아 수정 후 재등록해주세요.</li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="table_input mt_20">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:80%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>등록요청건수</th>
+                            <td>50건</td>
+                        </tr>
+                        <tr>
+                            <th>정상등록</th>
+                            <td>23건</td>
+                        </tr>
+                        <tr>
+                            <th>등록불가능</th>
+                            <td><div class="tbl_flex">
+                                    <p>50건</p>
+                                    <p><a href="" class="btn_table line excel"><span>불가능 건수 다운로드</span></a>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //tit_sub_txt -->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">취소</a>
+            <a href="javascript:window.close();" class="btn">등록</a>
+            <!-- <a href="javascript:window.close();" class="btn">확인</a> -->
+        </section>
+    </article>
+</body>
+</html>

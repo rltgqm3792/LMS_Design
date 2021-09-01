@@ -1,0 +1,246 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('AI맞춤학습');
+        $('.group_title h2').text('주차별 맞춤 일괄기능');
+
+        datepicker();
+        $('.datepicker-input').focus(function() { // 달력 클릭 시 태블릿 키패드 처리
+            var _input = $(this);
+            _input.attr("readonly", true);
+            setTimeout(function(){ 
+                _input.attr("readonly",false);
+            }, 50);
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/smartCustStd">스마트맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStd">주차별맞춤학습</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc01_02">주차별맞춤일괄기능</a></li>
+    <li><a href="javascript:openPop('Mathlearning/onlineGrad.html',screen.width,screen.height);">온라인간편채점</a></li>
+    <li><a href="index.html?page=mathlearning/wrongAnsrNote">오답노트</a></li>
+    <li><a href="index.html?page=mathlearning/signalLightType">신호등유형학습</a></li>
+</ul>
+
+<!-- 탭메뉴 -->
+<ul class="tab_2depth s_group">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc01_02">그룹출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc02">일괄출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc03">날짜별 진도출력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc04">날짜별기타출력</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc05">답안입력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc06">학습정보수정</a></li>
+</ul>
+<!-- // 탭메뉴 -->
+<!-- box guide -->
+<div class="box_guide">
+    <div>
+        <p class="tit">필독</p>
+        <ul>
+            <li>날짜별로 일괄 답안입력이 가능합니다.</li>
+        </ul>
+    </div>
+</div>
+<!-- //box guide -->
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>날짜</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" id="datepicker-input" class="datepicker-input" aria-label="Date-Time"/>
+                            <label for="datepicker-input" class="tui-ico-date"></label>
+                        </div>
+                        <div class="datepicker-wrapper" id="wrapper" style="margin-top: -1px;"></div>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="std_all" name="std" onchange="all_check(this);" checked/>
+                            <label for="std_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std1" name="std"/>
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std2" name="std"/>
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std3" name="std"/>
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>1학년</option>
+                        <option>2학년</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--//조회-->
+<!-- // 정렬 -->
+<div class="btn_top_wrap between group">
+    <span>
+        <select>
+            <option value="">수강생명순</option>
+            <option value="">학년순</option>
+            <option value="">수강생번호순</option>
+        </select>
+    </span>
+    <span>
+        <a href="javascript:openPop('Mathlearning/pop_weeklyCustStd.html','850', '657');" class="btn_top btn_gray">일괄답안입력</a>
+        <!-- 대상자 미선택 시 알림
+        <a href="javascript:alert_open('답안입력 대상자를 선택해주세요.');" class="btn_top btn_gray">일괄답안입력</a>
+        //대상자 미선택 시 알림 -->
+    </span>
+</div>
+<!-- // 정렬 -->
+<!-- 테이블스크롤_세로 -->
+<div class="table_list">
+    <table class="thead">
+        <colgroup>
+            <col style="width:5%" />
+            <col style="width:6%" />
+            <col style="width:8%" />
+            <col style="width:16%" />
+            <col style="width:17%" />
+            <col style="width:10%" />
+            <col style="width:8%" />
+            <col />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std_all" onchange="all_check(this);">
+                        <label for="std_all">전체선택</label>
+                    </span>
+                </th>
+                <th>No</th>
+                <th>학년</th>
+                <th>수강생명</th>
+                <th>주차</th>
+                <th>유형</th>
+                <th>점수</th>
+                <th>단원명</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="max-height:220px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width:5%" />
+                <col style="width:6%" />
+                <col style="width:8%" />
+                <col style="width:16%" />
+                <col style="width:17%" />
+                <col style="width:10%" />
+                <col style="width:8%" />
+                <col />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">1</span></td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>2020년 10월 1주 1회차</td>
+                    <td>평가</td>
+                    <td>90점</td>
+                    <td class="left">[01]. 분수의 덧셈과 뺄셈</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std2">
+                            <label for="std2">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">2</span></td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>2020년 10월 1주 1회차</td>
+                    <td>오답</td>
+                    <td>90점</td>
+                    <td class="left">[06] 덧셈과 뺄셈</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std3">
+                            <label for="std3">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">3</span></td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>2020년 10월 1주 1회차</td>
+                    <td>서/논술형</td>
+                    <td>90점</td>
+                    <td class="left">[01]. 분수의 덧셈과 뺄셈</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std4">
+                            <label for="std4">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">4</span></td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>2020년 10월 1주 1회차</td>
+                    <td>평가</td>
+                    <td>90점</td>
+                    <td class="left">[01]. 분수의 덧셈과 뺄셈</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std5">
+                            <label for="std5">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">5</span></td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>2020년 10월 1주 1회차</td>
+                    <td>오답</td>
+                    <td>90점</td>
+                    <td class="left">[01]. 분수의 덧셈과 뺄셈</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

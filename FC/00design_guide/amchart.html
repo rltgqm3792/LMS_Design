@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+   
+    <style>
+        #chartdiv {
+          width: 100%;
+          height: 500px;
+        }
+
+        #chartdiv02 {
+          width: 100%;
+          height: 500px;
+          margin-top:50px;
+        }
+        
+        
+        </style>
+        
+        <!-- Resources -->
+        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+   <script type="text/javascript">
+        $(function(){
+            //top nav 활성화
+            //[D] 개발에서 폴더명 바꾸시면 여기에서 바꾸면 됩니다. 
+            if(folder == 'stdmng'){
+                $('.one_depth .tit').text('수강생관리');
+            }
+            else if(folder == 'mathlearning'){
+                $('.one_depth .tit').text('학습관리(수학)');
+            }
+            else if(folder == 'englearning'){
+                $('.one_depth .tit').text('학습관리(영어)');
+            }
+            else if(folder == 'tclasslearning'){
+                $('.one_depth .tit').text('학습관리(전과목)');
+            }
+            else if(folder == 'order'){
+                $('.one_depth .tit').text('주문관리');
+            }
+            else if(folder == 'education'){
+                $('.one_depth .tit').text('교육관리');
+            }
+            else if(folder == 'community'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'pds'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'hakwon'){
+                $('.one_depth .tit').text('가맹점관리');
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <!--전체레이아웃-->
+    <article id="wrap" class="contain">
+        <section class="header">
+            <!-- info -->
+            <div class="group_info">
+              <div><a href="#" class="btn_class">수업모드</a></div>
+              <div class="login_off">
+                  <p class="txt1">이용시간(세션)만료  55분 00초 전</p>
+                  <a href="#" class="btn_time">시간연장</a>
+                  <div class="info">
+                      <dl>
+                          <dt><img src="http://image.test.hbedu.co.kr/LMS/FC/img/master/img07.png" src="선생님이미지"></dt>
+                          <dd><a href="#" class="btn_adm_name"><strong>관리자</strong>님 환영합니다.</a></dd>
+                      </dl>
+                      <div class="ly_info">
+                          <ul>
+                              <li><a href="#">비밀번호 변경</a></li>
+                              <li><a href="#">로그아웃</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <a href="#" class="btn_alarm">알림<span>9</span></a>
+              </div>
+          </div>
+          <!-- //info -->
+          <!-- top 네비 -->
+          <div id="top_nav" class="top_nav" >
+              <ul>
+                  <li class="home"><a href="#">홈</a></li>
+              </ul>
+          </div>
+      </section>
+        <!-- lnb  -->
+        <section id="gnb" class="gnb_wrap">
+            <!--원뎁스-->
+            <menu class="gnb_1depth">
+                <!--로고-->
+                <h1><a href="index.html">SMART</a></h1>
+                <!--//로고-->
+                <a href="#" class="btn_all_menu">전체메뉴</a>
+                <ul>
+                    <li><a href="javascript:void(0);" class="stdmng" data-tab="gnb_std">수강생 관리</a></li>
+                    <li><a href="javascript:void(0);" class="mathlearning" data-tab="gnb_math">학습관리(수학)</a></li>
+                    <li><a href="javascript:void(0);" class="englearning" data-tab="gnb_eng">학습관리(영어)</a></li>
+                    <li><a href="javascript:void(0);" class="tclasslearning" data-tab="gnb_tclass">학습관리(전과목)</a></li>
+                    <li><a href="javascript:void(0);" class="order" data-tab="gnb_order">주문관리</a></li>
+                    <li><a href="javascript:void(0);" class="education" data-tab="gnb_edu">가맹점교육관리</a></li>
+                    <li><a href="javascript:void(0);" class="community" data-tab="gnb_cmn">커뮤니티</a></li>
+                    <li><a href="javascript:void(0);" class="pds" data-tab="gnb_pds">자료실</a></li>
+                    <li><a href="javascript:void(0);" class="hakwon" data-tab="gnb_hakwon">가맹점관리</a></li>
+                </ul>
+            </menu>
+            <!--//원뎁스-->
+        </section>
+        <section id="container" class="content">
+             <!-- [D]컨텐츠 정보가 들어갑니다. -->
+             <div class="wrap_sub">
+                
+                <!--tit_main-->
+                <h2 class="tit_main">가맹점 디자인 가이드</h2>
+                <!--//tit_main-->
+                <!-- Styles -->
+
+    
+                <!-- Chart code -->
+                <script>
+                am4core.ready(function() {
+                //license
+                am4core.addLicense("CH230677325");
+                    
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+                // Themes end
+
+                // Create chart instance
+                var chart = am4core.create("chartdiv", am4charts.PieChart);   
+                // Add and configure Series
+                var pieSeries = chart.series.push(new am4charts.PieSeries());
+                pieSeries.dataFields.value = "litres";
+                pieSeries.dataFields.category = "level";
+
+                // Let's cut a hole in our Pie chart the size of 30% the radius
+                chart.innerRadius = am4core.percent(40);
+
+                // Put a thick white border around each Slice
+                pieSeries.slices.template.stroke = am4core.color("#fff");
+                pieSeries.slices.template.strokeWidth = 3;
+                pieSeries.slices.template.strokeOpacity = 1;
+                pieSeries.slices.template
+                    // change the cursor on hover to make it apparent the object can be interacted with
+                    .cursorOverStyle = [
+                    {
+                        "property": "cursor",
+                        "value": "pointer"
+                    }
+                    ];
+
+                pieSeries.labels.template.disabled = true;
+                pieSeries.slices.template.tooltipText = "";
+                pieSeries.ticks.template.disabled = true;
+
+                // Create a base filter effect (as if it's not there) for the hover to return to
+                var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+                shadow.opacity = 0;
+
+                // Create hover state
+                var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+
+                // Slightly shift the shadow and make it more prominent on hover
+                var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+                hoverShadow.opacity = 0.7;
+                hoverShadow.blur = 5;
+
+                // Add a legend
+                chart.legend = new am4charts.Legend();
+
+                chart.data = [{
+                    "level": "상",
+                    "litres": 15
+                },{
+                    "level": "중",
+                    "litres": 15
+                }, {
+                    "level": "하",
+                    "litres": 15
+                }];
+
+                }); // end am4core.ready()
+                </script>
+
+                <!-- HTML -->
+                <div id="chartdiv"></div>
+                <script>
+                    am4core.ready(function() {
+                    
+                    // Themes begin
+                    am4core.useTheme(am4themes_animated);
+                    // Themes end
+                    
+                    /* Create chart instance */
+                    var chart = am4core.create("chartdiv02", am4charts.RadarChart);
+                    
+                    /* Add data */
+                    chart.data = [{
+                      "country": "계산력",
+                      "litres": 50
+                    }, {
+                      "country": "이해력",
+                      "litres": 100
+                    }, {
+                      "country": "문제해결",
+                      "litres": 60
+                    }, {
+                      "country": "추론력",
+                      "litres": 50
+                    } ];
+                    
+                    /* Create axes */
+                    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+                    categoryAxis.dataFields.category = "country";
+                    
+                    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                    valueAxis.renderer.axisFills.template.fill = chart.colors.getIndex(2);
+                    valueAxis.renderer.axisFills.template.fillOpacity = 0.05;
+                    valueAxis.min = 0;
+                    valueAxis.max = 100; 
+                    
+                    
+                    /* Create and configure series */
+                    var series = chart.series.push(new am4charts.RadarSeries());
+                    series.dataFields.valueY = "litres";
+                    series.dataFields.categoryX = "country";
+                    series.name = "Sales";
+                    series.strokeWidth = 3;
+                    
+                    }); // end am4core.ready()
+                    </script>
+                    
+                    <!-- HTML -->
+                    <div id="chartdiv02"></div>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("코스 등록/수정");
+
+        //달력
+        calendar();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:10%">
+            <col style="width:35%">
+            <col style="width:10%">
+            <col style="width:35%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th colspan="2">코스명</th>
+                <td><input type="text"></td>
+                <th>코스 ID</th>
+                <td><span class="font_gmarket13">SE_C_0001</span></td>
+            </tr>
+            <tr>
+                <th colspan="2">서비스 여부</th>
+                <td>                                                          
+                    <select>
+                        <option>선택</option>
+                        <option>Y</option>
+                        <option>N</option>
+                    </select>
+                </td>
+                <th>Month</th>
+                <td>                                                          
+                    <select>
+                        <option>선택</option>
+                        <option>1month</option>
+                        <option>2month</option>
+                        <option>3month</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">Cognitive Level</th>
+                <td colspan="3">
+                    <label for="level_rdo01" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo01" />
+                        <span>Being Ready</span>
+                    </label>
+                    <label for="level_rdo02" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo02" />
+                        <span>Recognizing</span>
+                    </label>
+                    <label for="level_rdo03" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo03" />
+                        <span>Understanding</span>
+                    </label>
+                    <label for="level_rdo04" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo04" />
+                        <span>Applying</span>
+                    </label>
+                    <label for="level_rdo05" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo05" />
+                        <span>Analyzing</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">Group</th>
+                <td><select><option>선택</option></select></td>
+                <th>Sub Group</th>
+                <td><select><option>선택</option></select></td>
+            </tr>
+            <tr>
+                <th rowspan="4">코스구성</th>
+                <th>Main Program(1)</th>
+                <td><select><option>선택</option></select></td>
+                <th>워크북</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Main Program(2)</th>
+                <td><select><option>선택</option></select></td>
+                <th>워크북</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Sub Program(1)</th>
+                <td><select><option>선택</option></select></td>
+                <th>워크북</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Sub Program(2)</th>
+                <td><select><option>선택</option></select></td>
+                <th>워크북</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="2">등록일</th>
+                <td><span class="font_gmarket13">2021.03.02</span></td>
+                <th>등록자</th>
+                <td>hbedu / 이CP</td>
+            </tr>
+            <tr>
+                <th colspan="2">마지막 수정일</th>
+                <td><span class="font_gmarket13">2021.03.02</span></td>
+                <th>마지막 수정자</th>
+                <td>hbedu / 이CP</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">저장</a>
+        <!-- <a href="" class="btn_basic line">수정</a> -->
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>

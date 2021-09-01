@@ -1,0 +1,241 @@
+﻿<!-- <%@ Page Title="" Language="C#" MasterPageFile="Ucontrol/MemberRegis.master" AutoEventWireup="true" CodeFile="Pop_search.aspx.cs" Inherits="Pop_search" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server"> -->
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <title>::해법에듀::</title>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/hbedu_m_prt.js"></script>
+        <!-- font css -->
+        <link href="/HBEDU/MemberRegis/Mobile/font/font.css" rel="stylesheet" type="text/css" />
+    
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/css/hbedu_m_prt.css" rel="stylesheet" type="text/css" />
+    
+        <script type="text/javascript">
+            
+            //alert
+            function alert_open(tit, content) {
+                $('.alert').addClass('on');
+                $('.ly_alert h1').text(tit);
+                $('.ly_alert p.content').html(content);
+            }
+            function alert_close() {
+                $('.ly_wrap').removeClass('on');
+            }
+        </script>
+    
+
+<script type="text/javascript">
+    $(function () {
+        //백그라운드 css
+        $("body").css('background', '#fafafa');
+
+        //학교검색에 체크했을경우 버튼 컬러 변경
+        $('.school .ty_rdo input').change(function () {
+            if ($(this).prop("checked", true)) {
+                $('#true .btn_area a.btn_submit').addClass('on');
+            }
+        });
+
+
+        //학교검색이 없을경우 입력완료 버튼 컬러변경
+        $('.list_no input').change(function () {
+            var school = $('.list_no input[name=school]').val().length;
+            var area = $('.list_no input[name=area]').val().length;
+            if (school > 0 && area > 0) {
+                $('#false .btn_area a.btn_submit').addClass('on');
+            }
+
+
+
+        });
+    });
+</script>
+<!-- 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> -->
+
+
+</head>
+<body>
+
+    <article class="regis_wrap">
+        
+
+<!-- 팝업감싸기 -->
+<article class="popup">
+    <!-- 타이틀 -->
+    <section class="pop_tit">
+        <!-- 창닫기 -->
+        <a href="javascript:history.back();" class="btn_close">닫기</a>
+
+        <h1>
+            <span><strong>학교</strong>를</span>
+            <span>검색해 주세요.</span>
+        </h1>
+    </section>
+    <!-- //타이틀 -->
+    
+    <!-- 입력 -->
+    <section class="form_wrap">
+        <!-- 입력폼 -->
+        <ul>
+            <li>
+			    <div class="desc grade">
+                    <p class="ty_rdo">
+                        <input type="radio" name="grade"  id="gradeEle" />
+                        <label for="gradeEle">초등</label>
+                    </p>
+                     <p class="ty_rdo">
+                         <input type="radio" name="grade"  id="gradeMid" />
+                        <label for="gradeMid">중등</label>
+                    </p>
+                    <p class="ty_rdo">
+                         <input type="radio" name="grade"  id="gradeHigh" />
+                        <label for="gradeHigh">고등</label>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="tit">지역선택</div>
+			    <div class="desc area select">
+                    <p class="select">
+				        <select name="">
+					        <option value="">시/도</option>
+                            <option value="">서울</option>
+				        </select>
+                    </p>
+                    <p class="select">
+				        <select name="">
+					        <option value="">구/군</option>
+                            <option value="">서울</option>
+				        </select>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="tit">학교이름</div>
+			    <div class="desc">
+				    <input type="text" class="w100" placeholder="학교이름을 입력해주세요." />
+                </div>
+            </li>
+        </ul>
+        <!-- //입력폼 -->
+
+        <!-- 버튼 -->
+        <div class="btn_area">
+            <a href="javascript:ly_open('true');">검색</a>
+        </div>
+        <!-- //버튼 -->
+    </section>
+    <!-- //입력 -->
+
+</article>
+
+
+<!--레이어팝업 학교리스트 있는 경우-->
+<section class="ly_wrap" id="true">
+    <!-- 레이어 -->
+    <div class="ly_group school">
+        <!-- 타이틀 -->
+        <h1>학교리스트</h1>
+
+        <!-- 리스트 영역 -->
+        <div class="list_wrap">
+            
+            <!-- 스크롤영역 -->
+            <div class="scroll">
+                
+                <!-- 리스트 -->
+                <ul class="list">
+                    <% for (int i = 1; i < 15; i++)
+                           { %>
+                    <li>
+               
+                        <p class="ty_rdo">
+                            <input type="radio" name="school" id="school<%=i %>"/>
+                            <label for="school<%=i %>">
+                                <span>초등/강원/원주시</span>
+                                <strong>남원주초등학교</strong>
+                            </label>
+                        
+                        </p>
+                
+                    </li>
+                    <%} %>
+                </ul>
+                <!-- //리스트 -->
+            </div>
+            <!-- // 스크롤영역 -->
+            
+            <!-- 없을경우 클릭 -->
+            <div class="guide">
+                <p class="txt">
+                    원하는 학교가 검색이 안될경우
+                </p>
+                <p class="btn">
+                    <a href="javascript:ly_open('false');">요청하기</a>
+                </p>
+            </div>
+            <!-- //없을경우 클릭 -->
+        </div>
+        <!-- //리스트 영역 -->
+
+        <!-- 버튼영역 -->
+        <div class="btn_area two">
+            <a href="javascript:ly_close();" class="btn_cancel">취소</a>
+            <a href="Regis_form.aspx" class="btn_submit">선택완료</a>
+        </div>
+       <!-- //버튼영역 -->
+    </div>
+    <!-- //레이어-->
+    <div class="mask"></div>
+</section>
+<!-- //레이어팝업 학교리스트 있는 경우-->
+
+<!--레이어팝업 학교리스트 없는 경우-->
+<section class="ly_wrap" id="false">
+    <!--레이어-->
+    <div class="ly_group">
+        <!--타이틀-->
+        <h1 class="school_none">
+            <strong>학교가 존재하지 않습니다.</strong>
+            <span>학교추가요청으로 학교를 등록해주세요.</span>
+        </h1>
+        <!--//타이틀-->
+
+        <!-- 리스트 영역 -->
+        <div class="list_wrap">
+            <ul class="list_no">
+                <li><p>초등 / 서울 / 강남구</p></li>
+                <li>
+                    <input type="text" name="school" placeholder="학교명을 입력해주세요."/>
+                </li>
+            </ul>
+        </div>
+        <!-- //리스트 영역 -->
+
+        <!-- 버튼 -->
+        <div class="btn_area two">
+            <a href="javascript:ly_close();" class="btn_cancel">취소</a>
+            <a href="Regis_form.aspx" class="btn_submit">입력완료</a>
+        </div>
+        <!-- //버튼 -->
+    </div>
+    <!-- //레이어-->
+    <div class="mask"></div>
+</section>
+<!-- //레이어팝업 학교리스트 없는 경우-->
+</asp:Content>
+

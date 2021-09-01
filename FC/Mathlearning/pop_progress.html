@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>학년 일괄진도 적용</h1>
+        </header>
+        <section class="pop_content">
+            <!--CONTENTS-->
+            <div class="top_std_info">
+                <span class="name">박찬호</span>
+                <span class="std_num">M098765432</span>
+                <span class="std_grade">초6</span>
+                <span class="txt">수강생의 학습설정을 공유할 수강생을 선택해주세요</span>
+            </div>
+
+            <div class="table_input">
+                <table>
+                    <colgroup>
+                        <col style="width:20%">
+                        <col>
+                    </colgroup>
+                    <tr>
+                        <th>적용컨텐츠</th>
+                        <td>
+                            <span class="frm_wrap col_group col3">
+                                <span class="frm">
+                                    <input type="checkbox" id="search11" name="class_srch">
+                                    <label for="search11">스마트커리큘럼1</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="search12" name="class_srch">
+                                    <label for="search12">스마트교재커리큘럼2</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="search13" name="class_srch">
+                                    <label for="search13">학습스케줄</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="search14" name="class_srch">
+                                    <label for="search14">워크북 주문여부</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="search15" name="class_srch">
+                                    <label for="search15">전과목 교재 주문여부</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="search16" name="class_srch">
+                                    <label for="search16">주차별 맞춤학습</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="search17" name="class_srch">
+                                    <label for="search17">권한</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="search18" name="class_srch">
+                                    <label for="search18">시간표</label>
+                                </span>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p class="txt_guide">동일 학년의 수강생에게만 진도를 일괄 적용할 수 있습니다.</p>
+
+            <div class="table_input s_group">
+                <table>
+                <caption>수강생 조회</caption>
+                <colgroup>
+                    <col style="width:20%" />
+                    <col/>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>수강생</th>
+                        <td>
+                            <span class="frm_wrap">
+                                <input type="text" class="txt_search" required="required"  placeholder="">
+                                <button class="btn_table btn_blue">검색</button>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+
+            <div class="group col_group">
+                <div>
+                    <h2 class="tit_h2">대상자 목록</h2>
+                    <div class="table_list">
+                        <table class="thead">
+                            <colgroup>
+                                <col style="width:15%">
+                                <col style="width:20%">
+                                <col style="width:25%">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_all" name="chk" onchange="all_check(this);">
+                                            <label for="chk_all">전체선택</label>
+                                        </span>
+                                    </th>
+                                    <th>학년</th>
+                                    <th>수강생명</th>
+                                    <th>수강생번호</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="scroll" style="max-height:176px">
+                            <table class="tbody">
+                                <colgroup>
+                                    <col style="width:15%">
+                                    <col style="width:20%">
+                                    <col style="width:25%">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr class="disabled">
+                                        <td>-</td>
+                                        <td>초1</td>
+                                        <td>홍길동</td>
+                                        <td class="gm_font">100001101</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk1" name="chk">
+                                                <label for="chk1">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>초1</td>
+                                        <td>홍길동</td>
+                                        <td class="gm_font">100001101</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk2" name="chk">
+                                                <label for="chk2">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>초1</td>
+                                        <td>홍길동</td>
+                                        <td class="gm_font">100001101</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk3" name="chk">
+                                                <label for="chk3">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>초1</td>
+                                        <td>홍길동</td>
+                                        <td class="gm_font">100001101</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk4" name="chk">
+                                                <label for="chk4">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>초1</td>
+                                        <td>홍길동</td>
+                                        <td class="gm_font">100001101</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="frm only">
+                                                <input type="checkbox" id="chk4" name="chk">
+                                                <label for="chk4">선택</label>
+                                            </span>
+                                        </td>
+                                        <td>초1</td>
+                                        <td>홍길동</td>
+                                        <td class="gm_font">100001101</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="tit_h2">선택한 대상자</h2>
+                    <div class="scroll_area" style="max-height:209px">
+                        <ul class="line_list std_select_list">
+                            <li>
+                                <span>홍길동<em class="gm_font">100001101</em><em class="std_grade">초1</em></span>
+                                <button class="btn_s_del">삭제</button>
+                            </li>
+                            <li>
+                                <span>홍길동<em class="gm_font">100001101</em><em class="std_grade">초1</em></span>
+                                <button class="btn_s_del">삭제</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--//CONTENTS-->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            <a href="javascript:window.close();" class="btn">선택완료</a>
+        </section>
+    </article>
+</body>
+</html>

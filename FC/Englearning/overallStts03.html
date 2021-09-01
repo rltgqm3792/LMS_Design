@@ -1,0 +1,194 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('학습관리현황');
+		$('.group_title h2').text('학습관리현황');
+		datepicker();
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<!-- [D] 활성화 : on-->
+	<li class="on"><a href="index.html?page=englearning/overallStts01">학습진행 현황</a></li>
+	<li><a href="index.html?page=englearning/overallSttsResult01">산출물</a></li>
+</ul>
+
+<!--요약정보-->
+<div class="status_info">
+	<div class="info_wrap">
+		<div class="inner">
+			<li>총 재원생</li>
+			<li class="between">
+				<span class="ico_status01">재원생</span>
+				<span class="col_gray03"><em class="num">68</em><em>명</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>당일<br> 출석현황</li>
+			<li class="between">
+				<span class="ico_status02">출석</span>
+				<span class="col_gray03"><em class="num">68</em><em>명</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>출석현황<br>(70/75)</li>
+			<li class="between">
+				<span class="ico_status03">출석현황</span>
+				<span class="col_gray03"><em class="num">68</em><em>%</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap division">
+		<div class="inner">
+			<li>평균<br>학습진도율</li>
+			<li class="between">
+				<span class="ico_status04">진도율</span>
+				<span class="col_blue"><em class="num">68</em><em>%</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>총 학습시간</li>
+			<li class="between">
+				<span class="ico_status05">시간</span>
+				<span class="col_blue"><em class="num">68</em><em>분</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap division">
+		<div class="inner">
+			<li>미션평균<br>진행율</li>
+			<li class="between">
+				<span class="ico_status06">미션진행</span>
+				<span class="col_green"><em class="num">68</em><em>%</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>숙제평균<br>진행율</li>
+			<li class="between">
+				<span class="ico_status07">숙제진행</span>
+				<span class="col_green"><em class="num">68</em><em>%</em></span>
+			</li>
+		</div>
+	</div>
+</div>
+<!--//요약정보-->
+<ul class="tab_2depth">
+	<!-- [D] 활성화 : on-->
+	<li><a href="index.html?page=englearning/overallStts01">출석현황</a></li>
+	<li><a href="index.html?page=englearning/overallStts02">전체 학습현황 및 성취율</a></li>
+	<li class="on"><a href="index.html?page=englearning/overallStts03">전체 학습시간 평균</a></li>
+	<li><a href="index.html?page=englearning/overallStts04">미션 / 숙제 진행율</a></li>
+</ul>
+<!-- 조회 -->
+<div class="search_wrap type02">
+	<select>
+		<option value="">교사 전체</option>
+	</select>
+	<select>
+		<option value="">클래스 전체</option>
+	</select>
+	<select>
+		<option>수강생명</option>
+		<option>수강생 번호</option>
+	</select>
+	<input type="text" class="input_w20" required="required" placeholder="검색어를 입력하세요" />
+	<span class="frm_date">
+		<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+			<input type="text" id="datepicker-input" aria-label="Date-Time" />
+			<label for="datepicker-input" class="tui-ico-date"></label>
+		</div>
+		<div id="wrapper" style="margin-top:-1px;"></div>
+	</span>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!-- // 조회 -->
+!--[D] 데이터 테이블 적용 후 제거--
+<div class="table_list">
+	<table>
+		<caption></caption>
+		<colgroup>
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>수강생명</th>
+				<th>학년</th>
+				<th>클래스</th>
+				<th>레벨</th>
+				<th>구분</th>
+				<th>프로그램명</th>
+				<th>총 접속시간</th>
+				<th>완료차시</th>
+				<th>스마터<br>총학습시간</th>
+				<th>다북스</th>
+				<th>다북스<br>총학습시간</th>
+				<th>중등문제은행</th>
+				<th>중등문제은행<br>총학습시간</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>홍길동<p class="gm_font">M0000091</p>
+				</td>
+				<td>초등1</td>
+				<td>A반</td>
+				<td class="gm_font">S1_2</td>
+				<td class="gm_font">Maim</td>
+				<td class="gm_font">S1_00_Letters</td>
+				<td>360분</td>
+				<td>15차시</td>
+				<td class="gm_font">280</td>
+				<td>8권</td>
+				<td class="gm_font">80 h</td>
+				<td class="gm_font">8 sets</td>
+				<td class="gm_font">60분</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="paging">
+	<a href="" class="btn_paging back"></a>
+	<a href="" class="btn_paging pre"></a>
+	<ul>
+		<li><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li class="on">4</li>
+		<li><a href="">5</a></li>
+		<li><a href="">6</a></li>
+		<li><a href="">7</a></li>
+		<li><a href="">8</a></li>
+		<li><a href="">9</a></li>
+	</ul>
+	<a href="" class="btn_paging next"></a>
+	<a href="" class="btn_paging forward"></a>
+</div>

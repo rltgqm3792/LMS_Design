@@ -1,0 +1,210 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+
+        calendar();
+        $('.datepicker-input').focus(function () { // 달력 클릭 시 태블릿 키패드 처리
+            var _input = $(this);
+            _input.attr("readonly", true);
+            setTimeout(function () { _input.attr("readonly", false); }, 50);
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<h4 class="tit_h4">포인트/요금 정보</h4>
+
+<!-- 포인트/요금 정보 -->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 15%" />
+            <col style="width: 35%" />
+            <col style="width: 15%" />
+            <col style="width: 35%" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>SMS 잔여 포인트</th>
+                <td colspan="3">
+                    <div class="pos_wrap">
+                        <strong class="gm_font col_blue">500,000 P</strong>
+                        <a href="javascript:openPop('hakwon/smsPointPop.html','800','620');" class="btn_table right">SMS 포인트 충전</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>요금</th>
+                <td>
+                    [문자1건당] 단문 : 17(P), 장문 : 30(P)
+                </td>
+                <th>전송 가능 건수</th>
+                <td>
+                    단문 : 11,329 건 (장문 : 6419건)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //포인트/요금 정보 -->
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS발송</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSendHist">SMS발송내역</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSet">SMS설정</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/pointRecharge">포인트 충전내역</a>
+    </li>
+</ul>
+
+<!-- 조회조건 설정-->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>발송기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" id="startpicker-input" type="text" aria-label="Date" />
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" id="endpicker-input" type="text" aria-label="Date" />
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month01" name="month" checked />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>결제수단</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="pay_all" name="pay" onclick="all_check(this)" checked>
+                            <label for="pay_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="pay_card" name="pay">
+                            <label for="pay_card">카드결제</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="pay_bank" name="pay">
+                            <label for="pay_bank">계좌이체</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>결제정보</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="admission_all" name="admission" onclick="all_check(this)" checked>
+                            <label for="admission_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="admission_y" name="admission">
+                            <label for="admission_y">승인</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="admission_n" name="admission">
+                            <label for="admission_n">미승인</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조회조건 설정-->
+
+<!-- 결제내역 테이블 -->
+<div class="btn_top_wrap left">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+    </span>
+</div>
+
+<!-- 영수증 -->
+<a href="javascript:openPop('hakwon/pointRechargePop.html','500','650');">보기</a>
+
+<div id="grid"></div>
+<!-- //결제내역 테이블 -->

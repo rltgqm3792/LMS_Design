@@ -1,0 +1,68 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<div class="btn_bottom_wrap right">
+    <button class="btn_top">카드등록</button>
+</div>
+
+<!-- 카드목록 테이블-->
+<h4 class="tit_h4">카드목록</h4>
+<span class="frm_wrap">
+    <span class="frm">
+        <input type="radio" id="use01" name="use">
+        <label for="use01">사용</label>
+    </span>
+    <span class="frm">
+        <input type="radio" id="use02" name="use">
+        <label for="use02">미사용</label>
+    </span>
+</span>
+<br />
+<a href="javascript:alert_confirm('카드를 삭제하시겠습니까?','','');" class="btn_table btn_gray02">삭제</a>
+<div id="grid"></div>
+<!-- //카드목록 테이블-->

@@ -1,0 +1,420 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('교재주문');
+        $('.group_title h2').text('일반 주문');
+    });
+
+    /* 주문관리 체크박스 홍보판촉물 */
+    $(".order_prm").on('change', function () {
+        if ($(this).prop('checked')) {
+            $('.box_guide').show();
+        } else {
+            $('.box_guide').hide();
+        }
+    });
+
+    /* 신청/취소 버튼 */
+    $('.btn_apply').click(function () {
+        if ($(this).text() == '신청') {
+            $(this)
+                .toggleClass("btn_apply btn_del")
+                .text('취소');
+        } else {
+            $(this)
+                .toggleClass("btn_del btn_apply ")
+                .text('신청');
+        }
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <div class="pos_wrap">
+        <h2 class="tit_main"></h2>
+        <span class="right">
+            <!-- 툴팁 -->
+            <div class="tooltip_area">
+                <button class="btn_tooltip">tooltip</button>
+                <div class="tooltip_cont">
+                    <p class="tit">보상안내</p>
+                    <ul class="bu_type">
+                        <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                        <li>4개 : 미션 완료 추가보상 500골드</li>
+                        <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                    </ul>
+                    <button class="close">툴팁닫기</button>
+                </div>
+            </div>
+            <!-- // 툴팁 -->
+        </span>
+    </div>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_2depth_search">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=order/StdOrderNml">수학</a>
+    </li>
+    <li>
+        <a href="index.html?page=order/StdOrderNmlEng">영어</a>
+    </li>
+    <li>
+        <a href="">전과목</a>
+    </li>
+</ul>
+
+<!-- 컨텐츠 -->
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>일반주문 선택</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="order_nml01" name="order_nml" />
+                            <label for="order_nml01">학생용</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="order_nml02" name="order_nml" />
+                            <label for="order_nml02">교사용</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="order_nml03" class="order_prm" name="order_nml" />
+                            <label for="order_nml03">홍보판촉물</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>부록지 선택</dt>
+                <dd>
+                    <a href="index.html?page=order/StdOrderNmlPre" class="btn_top">서술형/시험대비 선주문</a>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_ctg_all" name="class_ctg" onclick="all_check(this)" checked="checked" />
+                            <label for="class_ctg_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_ctg01" name="class_ctg" />
+                            <label for="class_ctg01">계산력</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_ctg02" name="class_ctg" />
+                            <label for="class_ctg02">실력편</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_ctg03" name="class_ctg" />
+                            <label for="class_ctg03">개념서</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_srch_all" name="class_srch" onclick="all_check(this)" checked="checked" />
+                            <label for="class_srch_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch01" name="class_srch" />
+                            <label for="class_srch01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch02" name="class_srch" />
+                            <label for="class_srch02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch03" name="class_srch" />
+                            <label for="class_srch03">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>교재명</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>개념서</option>
+                        <option>계산력</option>
+                        <option>월교재</option>
+                        <option>실력편/유형</option>
+                        <option>유형+</option>
+                        <option>내신특강</option>
+                    </select>
+                    <input type="text" placeholder="교재명을 입력하세요" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- 조회 -->
+
+<!-- 주문접수기간 -->
+<div class="box_guide dpnone">
+    <div>
+        <ul>
+            <li>주문접수기간 : YYYY.MM.DD ~ YYYY.MM.DD</li>
+            <li>발송 예정일 :YYYY.MM.DD</li>
+        </ul>
+    </div>
+</div>
+<!-- //주문접수기간 -->
+
+<!-- 신청가능 주문 테이블 -->
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">신청가능 선주문</h4>
+    <a href="javascript:openPop('Order/pop_StdOrder_info.html','800','300');" class="btn_top">수강생 정보확인</a>
+</div>
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%" />
+            <col style="width:30%" />
+            <col style="width:30%" />
+            <col style="width:20%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>신청기간</th>
+                <th>발송예정일</th>
+                <th>신청/취소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue btn_apply">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue btn_apply">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue btn_apply">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue btn_apply">신청</a>
+                </td>
+            </tr>
+            <!-- <tr>
+                <td colspan="4">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li>
+            <a href="">1</a>
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!-- // 신청가능 주문 테이블 -->
+
+<!-- 신청마감 주문 테이블 -->
+<h4 class="tit_h4">신청마감 선주문</h4>
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:30%" />
+            <col style="width:30%" />
+            <col style="width:30%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>신청기간</th>
+                <th>발송예정일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+            </tr>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+            </tr>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+            </tr>
+            <tr>
+                <td>8월 부록지</td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.03.01 ~ 2021.03.18</span>
+                </td>
+            </tr>
+            <!-- <tr>
+                <td colspan="3">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!-- // 신청마감 주문 테이블 -->

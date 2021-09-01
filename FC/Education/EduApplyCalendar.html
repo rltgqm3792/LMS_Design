@@ -1,0 +1,170 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('교육일정');
+        /* 썸네일, 리스트 형 */
+        $('input[type=radio][name=thum]').on('click', function () {
+            var chkValue = $('input[type=radio][name=thum]:checked').val();
+            if (chkValue == '1') {
+                $('.list1').css('display', 'block');
+                $('.list2').css('display', 'none');
+            } else if (chkValue == '2') {
+                $('.list1').css('display', 'none');
+                $('.list2').css('display', 'block');
+            }
+        });
+        /* 달력 */
+        datepicker();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=education/EduApplyCalendar">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=education/EduComplete">수료현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=education/EduMaterial">교육자료</a>
+    </li>
+</ul>
+
+<!-- 조회 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="category_all" name="category" onchange="all_check(this);" checked="checked" />
+                            <label for="category_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category01" name="category" />
+                            <label for="category01">사전교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category02" name="category" />
+                            <label for="category02">신입입문교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category03" name="category" />
+                            <label for="category03">The 큰 도전</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category04" name="category" />
+                            <label for="category04">리더스클럽콘서트</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category05" name="category" />
+                            <label for="category05">전문가 과정</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category06" name="category" />
+                            <label for="category06">지사월교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category07" name="category" />
+                            <label for="category07">기타</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회 -->
+
+<div class="calendar_type02">
+    <button class="btn_ico prev">전날</button>
+    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+        <input type="text" id="datepicker-input" aria-label="Date-Time" />
+        <label for="datepicker-input" class="btn_calender"></label>
+    </div>
+    <div id="wrapper" class="cal_wrap"></div>
+    <button class="btn_ico next">다음날</button>
+</div>
+
+<div class="btn_top_wrap right">
+    <span>
+        <label for="thum_01" class="rd_list card">
+            <input type="radio" name="thum" value="1" id="thum_01" checked="checked" />
+            <span>리스트형</span>
+        </label>
+        <label for="thum_02" class="rd_list">
+            <input type="radio" name="thum" value="2" id="thum_02" />
+            <span>썸네일형</span>
+        </label>
+    </span>
+</div>
+
+<!-- 캘린더 -->
+<div class="list1">
+    <!-- 캘린더내 내용-->
+    <ul>
+        <li>신입입문교육</li>
+        <li>The큰도전</li>
+        <li>등등등</li>
+    </ul>
+    <!-- 신청버튼-->
+    <a href="index.html?page=education/EduApply">신청</a>
+
+    <div id="calendar"></div>
+</div>
+<!-- // 캘린더 -->
+
+<!-- 목록형 -->
+<div class="list2" style="display: none;">
+    <!-- 참가신청 -->
+    <a href="index.html?page=education/EduApply" class="btn_table btn_blue">신청</a>
+    <!-- 접수현황 -->
+    <a href="index.html?page=education/EduApplyStatus" class="btn_table">보기</a>
+    <!-- 만족도 조사 -->
+    <a href="javascript:void(0);" onclick="javascript:openPop('education/pop_EduApply_survey.html','600','670');" class="btn_table">작성</a>
+    <a href="javascript:void(0);" onclick="javascript:openPop('education/pop_EduApply_survey.html','600','670');" class="btn_table">작성완료</a>
+    <!-- 만족도 조사 미출석 가맹점 클릭시 -->
+    <a href="javascript:alert_open('만족도조사 참여대상자가 아닙니다.<br />지사로 문의하시기 바랍니다.');" class="btn_table">작성</a>
+
+    <div id="grid"></div>
+</div>
+<!-- //목록형 -->

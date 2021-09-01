@@ -1,0 +1,241 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('콘테스트 관리');
+        // 달력
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 검색 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date" />
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date" />
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn mg_left_5">
+                        <span class="frm">
+                            <input type="checkbox" id="month01" name="month" checked="checked" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="month_all" name="month" onchange="all_check(this);" />
+                            <label for="month_all">전체</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>진행상태</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="ing_chk01" name="ing" onchange="all_check(this);" checked="checked" />
+                            <label for="ing_chk01">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="ing_chk02" name="ing" />
+                            <label for="ing_chk02">진행중</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="ing_chk03" name="ing" />
+                            <label for="ing_chk03">진행종료</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색 -->
+
+<!-- 테이블상단 -->
+<div class="btn_top_wrap">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="selected">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체
+            <strong class="col_blue">25</strong>개</span>
+    </span>
+</div>
+<!-- //테이블상단 -->
+
+<!-- table 시작 :chan -->
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:5%;" />
+            <col style="width:7%;" />
+            <col style="width:5%;" />
+            <col />
+            <col />
+            <col style="width:10%;" />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+            <col style="width:7%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>회차</th>
+                <th>제목</th>
+                <th>진행기간</th>
+                <th>수상자 발표</th>
+                <th>진행상태</th>
+                <th>참여현황</th>
+                <th>수상자</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tr_notice">
+                <td>
+                    <span class="table_bullet red_bullet">공지</span>
+                </td>
+                <td>수학</td>
+                <td>2</td>
+                <td class="left">
+                    <div class="ellipsis">
+                        <a href="index.html?page=community/contest_ing">"한국, 핀란드 교육 도입보다 입시 문제부터 먼저 해결을"</a>
+                    </div>
+                </td>
+                <td><span class="gm_font">2021.08.01 ~ 2021.11.30</span></td>
+                <td><span class="gm_font">2021.07.14</span></td>
+                <td>진행 중</td>
+                <td><a href="javascript:void(0)" class="btn_table line">보기</a></td>
+                <td><a href="javascript:void(0)" class="btn_table line">보기</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>수학</td>
+                <td>2</td>
+                <td class="left">
+                    <div class="ellipsis">
+                        <a href="index.html?page=community/contest_ing">"한국, 핀란드 교육 도입보다 입시 문제부터 먼저 해결을"</a>
+                    </div>
+                </td>
+                <td><span class="gm_font">2021.08.01 ~ 2021.11.30</span></td>
+                <td><span class="gm_font">2021.07.14</span></td>
+                <td>진행 중</td>
+                <td><a href="javascript:void(0)" class="btn_table line">보기</a></td>
+                <td><a href="javascript:void(0)" class="btn_table line">보기</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- table 끝 :chan -->
+
+<!-- page 시작 :chan -->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li>
+            <a href="">1</a>
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+        <li>
+            <a href="">10</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!-- page 끝 :chan -->
+
+<!-- 참여현황 -->
+<a href="index.html?page=community/contest_ing" class="btn_table">보기</a>
+
+<!-- 수상자 -->
+<a href="" class="btn_table">보기</a>
+
+<div id="grid"></div>

@@ -1,0 +1,278 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('보충학습');
+        $('.group_title h2').text('스마트출제마법사');
+    });
+
+    am4core.ready(function() {
+        am4core.addLicense("CH230677325");
+        
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+
+        // Create chart instance
+        var chart = am4core.create("smartTestMagicChart01", am4charts.XYChart);
+
+        // Add data
+        chart.data = [{
+            "title": "상",
+            "percent": 25, 
+            "labelColor": am4core.color("#2949b3"),
+            "color": am4core.color("#2949b3")
+        }, {
+            "title": "중",
+            "percent": 60,
+            "labelColor": am4core.color("#00a2ff"),
+            "color": am4core.color("#00a2ff")
+        }, {
+            "title": "하",
+            "percent": 15,
+            "labelColor": am4core.color("#dcedf2"),
+            "color": am4core.color("#dcedf2")
+        }];
+
+        chart.fontSize= 14; 
+        chart.fontFamily = "NotoSans";
+        chart.autoMargins = false;
+
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "title";
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.minGridDistance = 30;
+        categoryAxis.events.on("sizechanged", function(ev) {
+            var axis = ev.target;
+            var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+            axis.renderer.labels.template.maxWidth = cellWidth;
+        });
+        
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+	    valueAxis.min = 0;
+        valueAxis.max = 100;
+        
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueY = "percent";
+        series.dataFields.categoryX = "title";
+        series.columns.template.width = am4core.percent(50);
+        series.columns.template.fillOpacity = 1;
+        series.columns.template.adapter.add("fill", function(fill, target) {
+            return target.dataItem ? target.dataItem.dataContext.color : fill;
+        });
+        
+        var columnTemplate = series.columns.template;
+        columnTemplate.strokeWidth = 0;
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.label.verticalCenter = "top";
+        bullet.dy = -30;
+        bullet.label.text = '{valueY} %';
+        bullet.label.marginBottom = 10;
+        bullet.label.fontFamily = "Gmarket Sans";
+        bullet.label.fontSize = 18;
+        bullet.label.adapter.add("fill", function(fill, target) {
+            return target.dataItem ? target.dataItem.dataContext.labelColor : fill;
+        });
+
+        var topContainer = chart.chartContainer.createChild(am4core.Container);
+        topContainer.layout = "absolute";
+        topContainer.toBack();
+        topContainer.paddingBottom = 12;
+        topContainer.width = am4core.percent(100);
+
+        var dateTitle = topContainer.createChild(am4core.Label);
+        dateTitle.text = "난이도별 출제비율";
+        dateTitle.fontSize = 14;
+        dateTitle.align = "right";
+        dateTitle.fill = am4core.color("#666");
+
+        /*** PIE CHART ***/
+        var chart = am4core.create("smartTestMagicChart02", am4charts.PieChart);
+
+        chart.data = [{
+            "title": "객관식",
+            "percent": 25,
+            "labelColor": am4core.color("#6958ff"),
+            "color": am4core.color("#6958ff")
+        },{
+            "title": "주관식",
+            "percent": 60,
+            "labelColor": am4core.color("#00bbf0"),
+            "color": am4core.color("#00bbf0")
+        }, {
+            "title": "서술형",
+            "percent": 15,
+            "labelColor": am4core.color("#ffb300"),
+            "color": am4core.color("#ffb300")
+        }];
+
+        var pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "percent";
+        pieSeries.dataFields.category = "title";
+
+        chart.innerRadius = am4core.percent(50);
+        chart.radius = am4core.percent(75);
+        chart.autoMargins= false;
+
+        pieSeries.slices.template.stroke = am4core.color("#fff");
+        pieSeries.slices.template.strokeWidth = 0;
+
+        pieSeries.slices.template.adapter.add("fill", function(fill, target) {
+            return target.dataItem ? target.dataItem.dataContext.color : fill;
+        });
+
+        pieSeries.labels.template.disabled = false;
+        pieSeries.slices.template.tooltipText = "";
+        pieSeries.ticks.template.disabled = true;
+        pieSeries.labels.template.text = "{value.percent.formatNumber('#')}%";
+        pieSeries.labels.template.fontFamily = "Gmarket Sans";
+        pieSeries.labels.template.fontSize = 18;
+        pieSeries.labels.template.adapter.add("fill", function(fill, target) {
+            return target.dataItem ? target.dataItem.dataContext.labelColor : fill;
+        });
+
+        var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+        shadow.opacity = 0;
+
+        var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+        var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+        hoverShadow.opacity = 0.7;
+        hoverShadow.blur = 5;
+
+        var title = chart.titles.create();
+        title.text = "문항유형 출제비율";
+        title.fontSize = 14;
+        title.marginTop = 12;
+        title.marginRight = 10;
+        title.align = "right";
+        title.fill = am4core.color("#666");
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/calculationPack01">연산 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/academicPack01">내신대비 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/descriptivePack01">서술형 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/advancedPack01">최상위 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/allSubjPack01">전과목 패키지</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/smartTestMagician01">스마트 출제마법사</a></li>
+    <li><a href="index.html?page=mathlearning/lowGradePack">초등저학년 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/individualHist">수강생별 출제이력</a></li>
+</ul>
+
+<h4 class="tit_h4">스마트출제마법사 출제하기</h4>
+<div class="pos_wrap">
+    <ul class="tab_3depth">
+        <!-- [D] 활성화 : on-->
+        <li class="on"><a href="javascript:void(0);">1회차</a></li>
+        <li><a href="javascript:void(0);">2회차</a></li>
+        <li><a href="javascript:void(0);">3회차</a></li>
+        <li><a href="javascript:void(0);">4회차</a></li>
+        <li><a href="javascript:void(0);">5회차</a></li>
+    </ul>
+    <span class="right">
+        <a href="index.html?page=mathlearning/smartTestMagician04" class="btn_top btn_gray">문항 교체</a>
+        <!-- 교체할 문항이 있을 경우 알림
+        <a href="javascript:alert_move('','※지문 있는 문항을 교체하기 전<br><b>연관되는 문항</b>인지 확인하시기 바랍니다','교체','취소','');" class="btn_top btn_gray">문항 교체</a>
+        // 교체할 문항이 있을 경우 알림 -->
+    </span>
+</div>
+<div class="q_wrap">
+    <div class="left">
+        <div class="top_area">
+            <p class="q_count"><span>총<em>20</em>문항</span></p>
+            <div class="btn_top_wrap between">
+                <span><a href="javascript:void(0);" class="btn_top btn_ico preview"><span>문항미리보기</span></a></span>
+                <span><a href="javascript:alert_move('1회차','문항을 다시 재출제하겠습니까? <br><br> 이미 출제된 회차의 문제와 중복된 문제가 <br>출제될 수 있습니다.','재출제','취소','');" class="btn_top btn_ico retest"><span>현재회차 재출제</span></a></span>
+            </div>
+        </div>
+        <div class="q_list">
+            <dl>
+                <dt>
+                    <span>01</span>
+                    <button type="button" class="btn_del" onclick="alert_move('해당 문항을 삭제하시겠습니까?','※지문 있는 문항을 삭제하기 전 <br><b>연관되는 문항</b>인지 확인하시기 바랍니다.','삭제','취소','');"><span>삭제</span></button>
+                </dt>
+                <dd>
+                    <div class="q_img">
+                        <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                    </div>
+                    <ul class="q_info">
+                        <li>난이도<span class="t_lv high">상</span></li>
+                        <li>주관식</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>02</span>
+                    <button type="button" class="btn_del" onclick="alert_move('해당 문항을 삭제하시겠습니까?','※지문 있는 문항을 삭제하기 전 <br><b>연관되는 문항</b>인지 확인하시기 바랍니다.','삭제','취소','');"><span>삭제</span></button>
+                </dt>
+                <dd>
+                    <div class="q_img">
+                        <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                    </div>
+                    <ul class="q_info">
+                        <li>난이도<span class="t_lv medium">중</span></li>
+                        <li>주관식</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span>03</span>
+                    <button type="button" class="btn_del" onclick="alert_move('해당 문항을 삭제하시겠습니까?','※지문 있는 문항을 삭제하기 전 <br><b>연관되는 문항</b>인지 확인하시기 바랍니다.','삭제','취소','');"><span>삭제</span></button>
+                </dt>
+                <dd>
+                    <div class="q_img">
+                        <img src="http://image.test.hbedu.co.kr/lms/fc/img/sub/temp/img_sample03.png" alt="문제이미지">
+                    </div>
+                    <ul class="q_info">
+                        <li>난이도<span class="t_lv low">하</span></li>
+                        <li>주관식</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="right">
+        <dl class="chart_area">
+            <dt>출제문항 요약</dt>
+            <dd>
+                <div class="chart">
+                    <div id="smartTestMagicChart01"></div>
+                    <p class="label_info">
+                        <span class="high">상</span>
+                        <span class="medium">중</span>
+                        <span class="low">하</span>
+                    </p>
+                </div>
+                <div class="chart">
+                    <div id="smartTestMagicChart02"></div>
+                    <p class="label_info">
+                        <span class="objective">객관식</span>
+                        <span class="subjective">주관식</span>
+                        <span class="descriptive">서술형</span>
+                    </p>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="btn_bottom_wrap right">
+    <span>
+        <a href="javascript:void(0);" class="btn_basic btn_prev"><span>이전</span></a>
+        <a href="index.html?page=mathlearning/smartTestMagician03" class="btn_basic"><span>출제완료</span></a>
+        <!-- 출제 문항이 완료될 경우 알림
+        <a href="javascript:alert_move('출제하시겠습니까?','','출제','취소','');" class="btn_basic"><span>출제완료</span></a>
+        // 출제 문항이 완료될 경우 알림 -->
+    </span>
+</div>

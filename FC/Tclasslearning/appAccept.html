@@ -1,0 +1,121 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('평가관리');
+		$('.group_title h2').text('평가관리');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li>
+		<a href="index.html?page=tclasslearning/lessonCompl">단원마무리 학습</a>
+	</li>
+	<li>
+		<a href="index.html?page=tclasslearning/examEval">중간*기말성취도평가</a>
+	</li>
+	<li>
+		<a href="index.html?page=tclasslearning/fundamentalEval">기초학력 진단평가</a>
+	</li>
+	<li class="on">
+		<a href="index.html?page=tclasslearning/testNotice">전국학력 평가</a>
+	</li>
+	<li>
+		<a href="index.html?page=tclasslearning/wrongAnsrNoteCreate">오답노트</a>
+	</li>
+	<li>
+		<a href="index.html?page=tclasslearning/testDiag">진단평가</a>
+	</li>
+</ul>
+
+<ul class="tab_2depth">
+	<li>
+		<a href="index.html?page=tclasslearning/testNotice">시험요강</a>
+	</li>
+	<li class="on">
+		<a href="index.html?page=tclasslearning/appAccept">응시접수</a>
+	</li>
+	<li>
+		<a href="index.html?page=tclasslearning/reportMng">분석표 관리</a>
+	</li>
+</ul>
+
+
+<!--검색-->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>학년</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>예비초</option>
+						<option>초1</option>
+						<option>초2</option>
+						<option>초3</option>
+						<option>초4</option>
+						<option>초5</option>
+						<option>초6</option>
+						<option>중1</option>
+						<option>중2</option>
+						<option>중3</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>회원구분</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>정회원</option>
+						<option>휴회원</option>
+						<option>예비회원</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>접수구분</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>미접수</option>
+						<option>접수완료</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!--//검색-->
+
+<div class="btn_top_wrap right">
+	<a href="javascript:openPop('Tclasslearning/spareMemberPop.html','600','300');" class="btn_top btn_blue">예비회원 등록</a>
+	<a href="javascript:alert_open('먼저 수강생을 선택해주세요');" class="btn_top btn_blue">일괄신청</a>
+</div>
+
+<!--테이블-->
+<!-- 디바이스/오프라인 -->
+<a href="" class="btn_table">디바이스</a>
+<a href="" class="btn_table btn_gray02">오프라인</a>
+<br />
+
+<!-- 접수신청 -->
+<a href="javascript:alert_open('접수되었습니다.');" class="btn_table btn_blue">신청</a>
+<a href="javascript:alert_confirm('정말 취소하시겠습니까?','','');" class="btn_table btn_gray02">취소</a>
+
+<div id="grid"></div>
+<!--//테이블-->

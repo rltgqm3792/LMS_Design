@@ -1,0 +1,479 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('수강생 현황');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=stdmng/list01">정규수강생</a>
+    </li>
+    <li>
+        <a href="index.html?page=stdmng/list02">예비수강생</a>
+    </li>
+    <li>
+        <a href="index.html?page=stdmng/list03">동의대기수강생</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=stdmng/list04">휴회생</a>
+    </li>
+    <li>
+        <a href="index.html?page=stdmng/list05">이벤트수강생</a>
+    </li>
+</ul>
+<!-- 컨텐츠 -->
+<h4 class="tit_h4">조회조건설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li class="w100">
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="search_all1" name="class_srch" onclick="all_check(this)" checked="checked" />
+                            <label for="search_all1">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search11" name="class_srch" />
+                            <label for="search11">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search12" name="class_srch" />
+                            <label for="search12">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search13" name="class_srch" />
+                            <label for="search13">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_all" name="grade" onclick="all_check(this)" checked="checked" />
+                            <label for="class_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="elementary" name="grade" />
+                            <label for="elementary">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="middle" name="grade" />
+                            <label for="middle">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="high" name="grade" />
+                            <label for="high">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초등1</option>
+                        <option>초등2</option>
+                        <option>초등3</option>
+                        <option>초등4</option>
+                        <option>초등5</option>
+                        <option>초등6</option>
+                        <option>중등1</option>
+                        <option>중등2</option>
+                        <option>중등3</option>
+                        <option>고등1</option>
+                        <option>고등2</option>
+                        <option>고등3</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>직접입력</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectstd" onChange="sel_std(this.form)">
+                            <option selected="selected" value="0">수강생명</option>
+                            <option value="1">수강생 번호</option>
+                            <option value="1">수강생 ID</option>
+                        </select>
+                        <input type="text" name="inputname_std" class="input_address" placeholder="수강생명 or 수강생번호 or 수강생 ID을 입력하세요." />
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--테이블탑-->
+<div class="btn_top_wrap between">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="selected">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong class="col_blue">1,256</strong>명 (수학 00명, 영어 00명, 전과목 00명)</span>
+    </span>
+    <div>
+        <div class="tooltip_area">
+            <button class="btn_tooltip small">tooltip</button>
+            <div class="tooltip_cont">
+                <ul class="bu_type">
+                    <li>선택한 수강생들의 복회신청 시, <br>진도관리는 신청한 수강생 별로 수정해 주셔야 합니다</li>
+                </ul>
+                <button class="close">툴팁닫기</button>
+            </div>
+        </div>
+        <a href="javascript:alert_open('복회신청이 완료되었습니다.');" class="btn_top">복회신청</a>
+        <a href="javascript:openPop('/LMS/fc/Stdmng/listReturnPop.html','800','670');" class="btn_top btn_gray02">복회시 발송문자확인</a>
+        <a class="btn_top btn_ico excel">
+            <span>엑셀다운로드</span>
+        </a>
+    </div>
+</div>
+<!--//테이블탑-->
+<div class="table_scroll">
+    <div class="table_list" style="min-width:1300px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width: 4%" />
+                <col style="width: 7%" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std_all" onchange="all_check(this);">
+                            <label for="std_all">전체선택</label>
+                        </span>
+                    </th>
+                    <th>
+                        <div class="btn_sort"> FC구분 <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="btn_sort"> 수강생번호 <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th>수강생명</th>
+                    <th>ID</th>
+                    <th>학교명</th>
+                    <th>
+                        <div class="btn_sort"> 학년 <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="btn_sort"> 입회일 <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="btn_sort"> 휴회일 <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                            <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                        </div>
+                    </th>
+                    <th>휴회횟수</th>
+                    <th>정보동의일시</th>
+                    <th>재원기간</th>
+                    <th>복회신청</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">HB01</span>
+                    </td>
+                    <td>중앙초</td>
+                    <td>초등3</td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('/LMS/fc/Stdmng/listRestPop.html','800','650');">2</a>
+                    </td>
+                    <td> 2021.03.18 </td>
+                    <td> 1년2개월 </td>
+                    <td>
+                        <a href="javascript:alert_confirm('선택한수강생을복회하시겠습니까?','','index.html?page=mathlearning/std_progress');" class="btn_table btn_blue">복회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">HB01</span>
+                    </td>
+                    <td>중앙초</td>
+                    <td>초등3</td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('/LMS/fc/Stdmng/listRestPop.html','800','650');">2</a>
+                    </td>
+                    <td> 2021.03.18 </td>
+                    <td> 1년2개월 </td>
+                    <td>
+                        <a href="javascript:alert_confirm('선택한수강생을복회하시겠습니까?','','index.html?page=mathlearning/std_progress');" class="btn_table btn_blue">복회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">HB01</span>
+                    </td>
+                    <td>중앙초</td>
+                    <td>초등3</td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('/LMS/fc/Stdmng/listRestPop.html','800','650');">2</a>
+                    </td>
+                    <td> 2021.03.18 </td>
+                    <td> 1년2개월 </td>
+                    <td>
+                        <a href="javascript:alert_confirm('선택한수강생을복회하시겠습니까?','','index.html?page=mathlearning/std_progress');" class="btn_table btn_blue">복회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">HB01</span>
+                    </td>
+                    <td>중앙초</td>
+                    <td>초등3</td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('/LMS/fc/Stdmng/listRestPop.html','800','650');">2</a>
+                    </td>
+                    <td> 2021.03.18 </td>
+                    <td> 1년2개월 </td>
+                    <td>
+                        <a href="javascript:alert_confirm('선택한수강생을복회하시겠습니까?','','index.html?page=mathlearning/std_progress');" class="btn_table btn_blue">복회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">HB01</span>
+                    </td>
+                    <td>중앙초</td>
+                    <td>초등3</td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('/LMS/fc/Stdmng/listRestPop.html','800','650');">2</a>
+                    </td>
+                    <td> 2021.03.18 </td>
+                    <td> 1년2개월 </td>
+                    <td>
+                        <a href="javascript:alert_confirm('선택한수강생을복회하시겠습니까?','','index.html?page=mathlearning/std_progress');" class="btn_table btn_blue">복회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">HB01</span>
+                    </td>
+                    <td>중앙초</td>
+                    <td>초등3</td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('/LMS/fc/Stdmng/listRestPop.html','800','650');">2</a>
+                    </td>
+                    <td> 2021.03.18 </td>
+                    <td> 1년2개월 </td>
+                    <td>
+                        <a href="javascript:alert_confirm('선택한수강생을복회하시겠습니까?','','index.html?page=mathlearning/std_progress');" class="btn_table btn_blue">복회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">HB01</span>
+                    </td>
+                    <td>중앙초</td>
+                    <td>초등3</td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.18</span>
+                    </td>
+                    <td>
+                        <a href="javascript:openPop('/LMS/fc/Stdmng/listRestPop.html','800','650');">2</a>
+                    </td>
+                    <td> 2021.03.18 </td>
+                    <td> 1년2개월 </td>
+                    <td>
+                        <a href="javascript:alert_confirm('선택한수강생을복회하시겠습니까?','','index.html?page=mathlearning/std_progress');" class="btn_table btn_blue">복회</a>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="13">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>                  
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--페이징-->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">1</li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+        <li><a href="">7</a></li>
+        <li><a href="">8</a></li>
+        <li><a href="">9</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!--//페이징-->
+<!-- // 컨텐츠 -->

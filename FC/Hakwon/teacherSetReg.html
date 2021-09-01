@@ -1,0 +1,312 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+
+        calendar();
+        datepicker();
+        datepicker02();
+        $('.datepicker-input').focus(function() { // 달력 클릭 시 태블릿 키패드 처리
+            var _input = $(this);
+            _input.attr("readonly", true);
+            setTimeout(function(){ _input.attr("readonly",false); }, 50);
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<!-- 강사등록 테이블-->
+<h4 class="tit_h4">강사 등록</h4>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 15%"/>
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    담당과목 선택<span class="required"></span>
+                </th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input
+                                type="checkbox"
+                                id="smartclass_chk01"
+                                name="smartclass"
+                                checked="checked"/>
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass"/>
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass"/>
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    강사명<span class="required"></span>
+                </th>
+                <td>
+                    <input type="text" class="input_w25" placeholder="강사명을 입력하세요"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    영문 이름
+                </th>
+                <td>
+                    <input type="text" class="input_w25" placeholder="강사의 영문명을 입력하세요."/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    아이디<span class="required"></span>
+                </th>
+                <td>
+                    <input type="text" class="input_w20" placeholder="영문, 숫자 8~20 입력 가능"/>
+
+                    <a href="" class="btn_table">중복체크</a>
+                    <p class="row">
+                        <span class="col_blue">사용가능한 아이디입니다.</span>
+                        <!-- <span class="col_red">이미 사용중인 아이디입니다. 다시 입력해주세요</span> -->
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    입사일
+                </th>
+                <td>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" id="datepicker-input" class="datepicker-input" aria-label="Date-Time"/>
+                            <label for="datepicker-input" class="tui-ico-date"></label>
+                        </div>
+                        <div class="datepicker-wrapper" id="wrapper" style="margin-top: -1px;"></div>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    전화번호
+                </th>
+                <td>
+                    <input type="text" placeholder="-없이 숫자만 입력"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    휴대폰번호<span class="required"></span>
+                </th>
+                <td>
+                    <input type="text" placeholder="-없이 숫자만 입력"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    성별<span class="required"></span>
+                </th>
+                <td>
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="man" name="gender" checked="checked"/>
+                            <label for="man">남자</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="woman" name="gender"/>
+                            <label for="woman">여자</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>이메일<span class="required"></span>
+                </th>
+                <td>
+                    <input type="text" placeholder="이메일을 입력해 주세요" class="input_email_w"/>
+                    @
+                    <select>
+                        <option value="">메일선택</option>
+                    </select>
+                    <input type="text" class="input_email_w"/>
+                </td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td>
+                    <a href="" class="btn_table btn_blue">우편검색</a>
+                    <input type="text" class="input_zip" value="35162" readonly="readonly"/>
+                    <span class="frm_wrap frm_search">
+                        <input
+                            type="text"
+                            class="input_address"
+                            value="서울특별시 금천구 가산로9길 109"
+                            readonly="readonly"/>
+                        <button class="btn_s_search">검색</button>
+                    </span>
+                    <p class="row"><input type="text" class="input_address02" value="해법에듀 2층"/></p>
+                </td>
+            </tr>
+            <tr>
+                <th>강사학력사항</th>
+                <td>
+                    졸업일
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input type="text" id="datepicker-input2" class="datepicker-input" aria-label="Date-Time"/>
+                            <label for="datepicker-input2" class="tui-ico-date"></label>
+                        </div>
+                        <div class="datepicker-wrapper" id="wrapper2" style="margin-top: -1px;"></div>
+                    </span>
+                    <input type="text" placeholder="최종 학교명"/>
+                    <input type="text" placeholder="전공"/>
+                    <span>전공</span>
+                </td>
+            </tr>
+            <tr>
+                <th>비고</th>
+                <td>
+                    <textarea placeholder="메모 기능입니다."></textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //강사목록 테이블-->
+
+<!-- 강사경력사항 테이블-->
+<h4 class="tit_h4">강사경력사항</h4>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 9%"/>
+            <col style="width: 30%"/>
+            <col style="width: 9%"/>
+            <col style="width: 18%"/>
+            <col style="width: 9%"/>
+            <col style="width: 18%"/>
+            <col style="width: 7%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    근무기간
+                </th>
+                <td>
+                    <span class="gm_font">2020.10.12 ~ 2021.01.10</span>
+                </td>
+                <th>
+                    회사(업체)명
+                </th>
+                <td>
+                    천재교육
+                </td>
+                <th>
+                    직위
+                </th>
+                <td>
+                    강사
+                </td>
+                <td class="right">
+                    <a href="" class="btn_table btn_minus02"></a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    근무기간<span class="required"></span>
+                </th>
+                <td>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input class="datepicker-input" id="startpicker-input" type="text" aria-label="Date"/>
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input class="datepicker-input" id="endpicker-input" type="text" aria-label="Date"/>
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                </td>
+                <th>
+                    회사(업체)명
+                </th>
+                <td>
+                    <input type="text" placeholder="Ex) (주)천재교육"/>
+                </td>
+                <th>
+                    직위
+                </th>
+                <td>
+                    <input type="text" placeholder="Ex) 교육컨설팅 담당"/>
+                </td>
+                <td class="right">
+                    <a href="" class="btn_table btn_plus02"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //강사경력사항 테이블-->
+
+<div class="btn_bottom_wrap right">
+    <spn>
+        <a href="index.html?page=hakwon/teacherSet" class="btn_basic btn_gray02">취소</a>
+        <a
+            href="javascript:alert_open('등록되었습니다. <br />입력된 강사의 휴대폰번호로 <br />개인정보 이용동의서가 전송되었습니다.');"
+            class="btn_basic">등록</a>
+    </spn>
+</div>

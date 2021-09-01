@@ -1,0 +1,128 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('출결관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=hakwon/atendMng">날짜별출석부</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/atendKeySet">수강생 키패드설정</a>
+    </li>
+</ul>
+
+<!-- 조건설정 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk01" name="smartclass" checked />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_all" name="class" onchange="all_check(this);" checked="checked" />
+                            <label for="class_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk01" name="class" />
+                            <label for="class_chk01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk02" name="class" />
+                            <label for="class_chk02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk03" name="class" />
+                            <label for="class_chk03">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectstd" onChange="sel_std(this.form)">
+                            <option selected="selected" value="0">수강생명</option>
+                            <option value="1">수강생 번호</option>
+                        </select>
+                        <input type="text" name="inputname_std" class="input_address" placeholder="수강생명 or 수강생번호를 입력하세요." />
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조건설정 -->
+
+<div class="btn_top_wrap between">
+    <select>
+        <option value="">20</option>
+    </select>
+    <span>
+        <span class="txt col_red">※ 시간을 입력 후 저장 버튼을 클릭하세요</span>
+        <a href="javascript:alert_open('저장되었습니다');" class="btn_top btn_blue">저장</a>
+    </span>
+</div>
+
+<!-- 출결키패드목록 테이블 -->
+<!-- 출결번호 -->
+<input type="text" />
+<br />
+<!-- 퇴실인식시간 -->
+<input type="text" value="30" />
+
+<div id="grid"></div>
+<!-- //수강생목록 테이블-->

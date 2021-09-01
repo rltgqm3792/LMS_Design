@@ -1,0 +1,170 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('수업연구자료실');
+        $('.group_title h2').text('동영상강의');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="index.html?page=mathlearning/videoLecture01">동영상강의</a></li>
+    <li><a href="index.html?page=mathlearning/videoLecture05">놀이수학동영상</a></li>
+</ul>
+
+<!-- 탭메뉴 -->
+<ul class="tab_2depth s_group">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="index.html?page=mathlearning/videoLecture01">수학</a></li>
+    <li><a href="index.html?page=mathlearning/videoLecture02">국어</a></li>
+    <li><a href="index.html?page=mathlearning/videoLecture03">사회</a></li>
+    <li><a href="index.html?page=mathlearning/videoLecture04">과학</a></li>
+</ul>
+<!-- // 탭메뉴 -->
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn pd_indent_none">
+                        <span class="frm">
+                            <input type="radio" id="std1" name="std" checked />
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="std2" name="std" />
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="std3" name="std" />
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>초1</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>구분</dt>
+                <dd>
+                    <!-- 초등일 경우 -->
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="rd1" name="rd" checked />
+                            <label for="rd1">개념</label>
+                        </span>
+                        <!-- 초2~초6 
+                        <span class="frm">
+                            <input type="radio" id="rd2" name="rd" />
+                            <label for="rd2">유형</label>
+                        </span>
+                        // 초2~초6 -->
+                    </span>
+                    <!-- // 초등일 경우 -->
+                    <!-- 중1~중3일 경우 
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="rd1" name="rd" checked />
+                            <label for="rd1">개념(셀파)</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="rd2" name="rd" />
+                            <label for="rd2">개념(체크)</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="rd3" name="rd" />
+                            <label for="rd3">유형</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="rd4" name="rd" />
+                            <label for="rd4">내신</label>
+                        </span>
+                    </span>
+                    //중1~중3일 경우 -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학기</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="semester1" name="semester" checked />
+                            <label for="semester1">1학기</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="semester2" name="semester" />
+                            <label for="semester2">2학기</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <!-- 고2
+        <li>
+            <dl>
+                <dt>학기</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="semester1" name="semester" checked />
+                            <label for="semester1">수Ⅰ</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="semester2" name="semester" />
+                            <label for="semester2">수Ⅱ</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        // 고2 -->
+        <!-- 유형/내신 선택 시
+        <li>
+            <dl>
+                <dt>교재</dt>
+                <dd>
+                    <select>
+                        <option>초3-1 원리쏙쏙 1호</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        // 유형/내신 선택 시 -->
+        <!-- 고1, 고2
+        <li>
+            <dl>
+                <dt>교재</dt>
+                <dd>
+                    <select>
+                        <option>개념마스터 1권_Ⅰ 다항식</option>
+                    </select>
+                    <select>
+                        <option>1. 다항식의 연산</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        // 고1, 고2 -->
+    </ul>
+</div>
+<!--//조회-->
+<div id="grid"></div>
+
+<!-- 그리드 테이블 내 버튼 -->
+<a href="javascript:openPop('Mathlearning/pop_videoLecture.html','900','685');" class="btn_table">보기</a>
+<!-- // 그리드 테이블 내 버튼 -->

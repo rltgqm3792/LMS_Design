@@ -1,0 +1,288 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청서</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/reception">접수내역</a>
+    </li>
+</ul>
+
+<!-- 자녀/생보회원 신청 -->
+<h4 class="tit_h4">자녀 / 생보회원 신청</h4>
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>1일~말일까지 승인 시 그달 부터 자녀 및 생보가 수금도 적용 됩니다.</li>
+            <li>자녀 및 생보 등록 시 매달 마지막 영업일 오전 11시까지 등록 분이 당월 적용됩니다.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 20%"/>
+            <col style="width: 80%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신청유형</th>
+                <td>
+                    자녀/생보회원 신청
+                </td>
+            </tr>
+            <tr>
+                <th>FC구분
+                </th>
+                <td>
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="class01" name="class" checked="checked"/>
+                            <label for="class01">스마트수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="class02" name="class"/>
+                            <label for="class02">스마트영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="class03" name="class"/>
+                            <label for="class03">T클래스</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>분류
+                </th>
+                <td>
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input
+                                type="radio"
+                                id="classification01"
+                                name="classification"
+                                checked="checked"/>
+                            <label for="classification01">자녀수강생 신청</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="classification02" name="classification"/>
+                            <label for="classification02">생보수강생 신청</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>수강생 선택
+                </th>
+                <td>
+                    <input type="text" class="input_w35" placeholder="수강생번호 or 수강생명 입력해주세요."/>
+                    <a href="" class="btn_table btn_blue">검색</a>
+                    <p class="row">
+                        <!-- 테이블-->
+                        <table class="table_sub_list">
+                            <colgroup>
+                                <col style="width:4%"/>
+                                <col/>
+                                <col/>
+                                <col/>
+                                <col/>
+                                <col/>
+                                <col/>
+                                <col/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="frm only">
+                                            <input type="checkbox" name="std" id="std_all" onchange="all_check(this);"/>
+                                            <label for="std_all">전체선택</label>
+                                        </span>
+                                    </th>
+                                    <th>수강생명</th>
+                                    <th>학년</th>
+                                    <th>학교</th>
+                                    <th>학부모 앱<br/>설치여부</th>
+                                    <th>가입일</th>
+                                    <th>복회일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="select">
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" name="std" id="std1"/>
+                                            <label for="std1">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>박찬호<br/>
+                                        <span class="gm_font">(M0987654)</span>
+                                    </td>
+                                    <td>초등3</td>
+                                    <td>서울마블초등학교
+                                    </td>
+                                    <td>X</td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" name="std" id="std1"/>
+                                            <label for="std1">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>박찬호<br/>
+                                        <span class="gm_font">(M0987654)</span>
+                                    </td>
+                                    <td>초등3</td>
+                                    <td>서울마블초등학교
+                                    </td>
+                                    <td>X</td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" name="std" id="std1"/>
+                                            <label for="std1">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>박찬호<br/>
+                                        <span class="gm_font">(M0987654)</span>
+                                    </td>
+                                    <td>초등3</td>
+                                    <td>서울마블초등학교
+                                    </td>
+                                    <td>X</td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" name="std" id="std1"/>
+                                            <label for="std1">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>박찬호<br/>
+                                        <span class="gm_font">(M0987654)</span>
+                                    </td>
+                                    <td>초등3</td>
+                                    <td>서울마블초등학교
+                                    </td>
+                                    <td>X</td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                    <td>
+                                        <span class="gm_font">2021.05.01</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- //테이블-->
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>선택된 수강생
+                </th>
+                <td>
+                    <span class="unit_box_wrap">
+                        <span class="unit_box">
+                            박찬호(M9876352)
+                        </span>
+                        <span class="unit_box">
+                            김찬호(M9876353)
+                            <span class="del"></span>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>파일첨부</th>
+                <td>
+                    <input
+                        type="file"
+                        name="files"
+                        id="fileUpload"
+                        style="display: none"
+                        onchange="fileChange()"/>
+                    <input type="text" class="input_file" id="fileNm" readonly="readonly"/>
+                    <label for="fileUpload" class="btn_table btn_gray">파일찾기</label>
+                    <span>*가족관계증명서 이미지를 첨부해주세요</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <span>
+        <a href="index.html?page=hakwon/regist" class="btn_basic btn_line">목록</a>
+        <a href="javascript:alert_confirm('자녀/생보수강생을 신청하시겠습니까?');" class="btn_basic">신청완료</a>
+    </span>
+</div>
+<!-- //자녀/생보회원 신청 -->

@@ -1,0 +1,168 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('HB Talk');
+        $('.group_title h2').text('회원별 HB Talk 현황');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<div class="box_guide">
+    <ul>
+        <li>학습 회차별 학습률과 녹화영상 및 원어민 코멘트를 볼 수 있습니다.</li>
+        <li>학습 녹화 영상은 학습일 기준 1개월까지만 보관됩니다.</li>
+    </ul>
+</div>
+<!-- 조회 -->
+<div class="search_wrap type02">
+	<span class="frm_wrap">
+		<select>
+			<option>수강생명</option>
+			<option>수강생 번호</option>
+		</select>
+		<input type="text" class="txt_search" required="required"  placeholder="검색어를 입력하세요"/>
+		<button class="btn_search small">조회</button>
+	</span>
+</div>
+<!-- // 조회 -->
+
+<div class="btn_top_wrap right">
+    <span>
+        <span class="ico_set video"><span>수업녹화영상</span></span>
+        <span class="ico_set comment"><span>원어민 코멘트</span></span>
+        <a href="#" class="btn_top btn_ico print"><span>프린트</span></a>
+    </span>
+</div>
+
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>수강생</th>
+                <th>Dabooks 레벨</th>
+                <th>학습년월</th>
+                <th>횟수(월)</th>
+                <th>진행률</th>
+                <th>1회차<br>5회차
+                    <div class="tooltip_area">
+						<button class="btn_tooltip small">tooltip</button>
+						<div class="tooltip_cont right">
+							<ul>
+								<li><span class="bul_col bul_class02">수업예정날짜</span></li>
+								<li><span class="bul_col bul_class03">수업완료날짜</span></li>
+							</ul>
+							<button class="close">툴팁닫기</button>
+						</div>
+					</div>
+                </th>
+                <th>2회차<br>6회차</th>
+                <th>3회차<br>7회차</th>
+                <th>4회차<br>8회차</th>
+				<th>5회차<br>10회차</th>
+                <th>분석표</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>김해법<br>(H000123)</td>
+                <td>Tell Me 1-3 (스마터 2.0)</td>
+                <td>2021.03</td>
+                <td>8회</td>
+                <td>2/8</td>
+                <td class="gm_font">
+                    <ul class="td_hb_list">
+                        <li class="col_blue">2021.03.01
+                            <span>
+                                <a href="" class="ico_set ico_btn video"><span>수업녹화영상</span></a>
+                                <a href="javascript:openPop('englearning/pop_hb_comment.html','700','650')" class="ico_set ico_btn comment"><span>원어민 코멘트</span></a>
+                            </span>
+                        </li>
+                        <li class="col_red">2021.03.01<br>(14:40)</li>
+                    </ul>
+                </td>
+                <td class="gm_font">
+                    <ul class="td_hb_list">
+                        <li class="col_blue">2021.03.01
+                            <span>
+                                <a href="" class="ico_set ico_btn video"><span>수업녹화영상</span></a>
+                                <a href="javascript:openPop('englearning/pop_hb_comment.html','700','650')" class="ico_set ico_btn comment"><span>원어민 코멘트</span></a>
+                            </span>
+                        </li>
+                        <li class="col_red">2021.03.01<br>(14:40)</li>
+                    </ul>
+                </td>
+                <td class="gm_font">
+                    <ul class="td_hb_list">
+                        <li class="col_blue">2021.03.01
+                            <span>
+                                <a href="" class="ico_set ico_btn video"><span>수업녹화영상</span></a>
+                                <a href="javascript:openPop('englearning/pop_hb_comment.html','700','650')" class="ico_set ico_btn comment"><span>원어민 코멘트</span></a>
+                            </span>
+                        </li>
+                        <li class="col_red">2021.03.01<br>(14:40)</li>
+                    </ul>
+                </td>
+                <td class="gm_font">
+                    <ul class="td_hb_list">
+                        <li class="col_blue">2021.03.01
+                            <span>
+                                <a href="" class="ico_set ico_btn video"><span>수업녹화영상</span></a>
+                                <a href="javascript:openPop('englearning/pop_hb_comment.html','700','650')" class="ico_set ico_btn comment"><span>원어민 코멘트</span></a>
+                            </span>
+                        </li>
+                        <li class="col_red">2021.03.01<br>(14:40)</li>
+                    </ul>
+                </td>
+				<td class="gm_font">
+                    <ul class="td_hb_list">
+                        <li class="col_blue">2021.03.01
+                            <span>
+                                <a href="" class="ico_set ico_btn video"><span>수업녹화영상</span></a>
+                                <a href="javascript:openPop('englearning/pop_hb_comment.html','700','650')" class="ico_set ico_btn comment"><span>원어민 코멘트</span></a>
+                            </span>
+                        </li>
+                        <li class="col_red">2021.03.01<br>(14:40)</li>
+                    </ul>
+                </td>
+                <td><a href="javascript:openPop02('englearning/pop_hbTalk_report.html','1020','650')" class="btn_table line">보기</a></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <li><a href="">6</a></li>
+      <li><a href="">7</a></li>
+      <li><a href="">8</a></li>
+      <li><a href="">9</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

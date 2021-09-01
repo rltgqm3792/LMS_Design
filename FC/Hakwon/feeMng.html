@@ -1,0 +1,197 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('수강료 납부관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조건설정 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk01" name="smartclass" />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="state_all" name="state" onchange="all_check(this);" checked="checked" />
+                            <label for="state_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="state01" name="state" />
+                            <label for="state01">완납</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="state02" name="state" />
+                            <label for="state02">미납</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>날짜</dt>
+                <dd>
+                    <select>
+                        <option>2021년</option>
+                    </select>
+                    <select>
+                        <option>1월</option>
+                        <option>2월</option>
+                        <option>3월</option>
+                        <option>4월</option>
+                        <option>5월</option>
+                        <option>6월</option>
+                        <option>7월</option>
+                        <option>8월</option>
+                        <option>9월</option>
+                        <option>10월</option>
+                        <option>11월</option>
+                        <option>12월</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>납부예정일</dt>
+                <dd>
+                    <select>
+                        <option>납부예정일</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>직접 입력</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectstd" onChange="sel_std(this.form)">
+                            <option selected="selected" value="0">수강생명</option>
+                            <option value="1">수강생 번호</option>
+                        </select>
+                        <input type="text" name="inputname_std" class="input_address" placeholder="수강생명 or 수강생번호를 입력하세요." />
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조건설정 -->
+
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">
+        <select>
+            <option value="">20</option>
+        </select>
+        <span class="tit_sub">
+            전체
+            <strong class="col_blue">1,256</strong>명
+        </span>
+    </h4>
+    <span>
+        <a href="" class="btn_top btn_ico excel">
+            <span>엑셀다운로드</span>
+        </a>
+    </span>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 9%" />
+            <col />
+            <col style="width: 8%" />
+            <col />
+            <col style="width: 8%" />
+            <col />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    수강료 알림
+                </th>
+                <td>
+                    <a href="javascript:alert_confirm('수강료 납부 상태를 학부모님께 전송하시겠습니까?','','');" class="btn_top btn_ico sms">
+                        <span>SMS</span>
+                    </a>
+                </td>
+                <th>변경</th>
+                <td>
+                    <input type="text" class="input_w25" placeholder="수강료 입력" />
+                    <a href="javascript:alert_confirm('수강료를 일괄 변경하시겠습니까?','','');" class="btn_table">변경</a>
+                    <select class="left_spc_s">
+                        <option>납부예정일</option>
+                    </select>
+                    <a href="javascript:alert_confirm('납부예정일을 일괄 변경하시겠습니까?','','');" class="btn_table">변경</a>
+                </td>
+                <th>상태 변경</th>
+                <td>
+                    <a href="javascript:alert_confirm('납부상태를 완납으로 일괄 변경하시겠습니까?','','');" class="btn_table btn_blue">
+                        <span>완납</span>
+                    </a>
+                    <a href="javascript:alert_confirm('납부상태를 미납으로 일괄 변경하시겠습니까?','','');" class="btn_table btn_gray02">
+                        <span>미납</span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 수강생목록 테이블-->
+<!-- 수강생명 -->
+<a href="index.html?page=Stdmng/paymentInfo">정범기 (100001234)</a>
+<br />
+<!-- 수강료 -->
+<input type="text" class="center" name="" value="100,000" />
+<br />
+<!-- 납부일 -->
+<select>
+    <option>1</option>
+</select>
+<br />
+<!-- 납부여부 -->
+<a href="javascript:alert_open('수납 완료되었습니다');" class="btn_table btn_blue">수납완료</a>
+<a href="" class="btn_table btn_gray02">납부취소</a>
+<br />
+<!-- 영수증 -->
+<a href="javascript:openPop('Stdmng/paymentInfoPop.html','800','750');" class="btn_table btn_line">영수증</a>
+
+<div id="grid"></div>
+<!-- //수강생목록 테이블-->

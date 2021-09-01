@@ -1,0 +1,1510 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('수강생 등록');
+        $('.group_title h2').text('정규수강생 일괄등록');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 1Depth Tab -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=Stdmng/enbReg01">수학</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=Stdmng/enbReg02">영어</a>
+    </li>
+    <li>
+        <a href="index.html?page=Stdmng/enbReg03">전과목</a>
+    </li>
+</ul>
+<!-- // 1Depth Tab -->
+
+<!-- 수강생일괄업로드 -->
+<!-- Process -->
+<ul class="process_flow">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a>수강생 일괄업로드</a>
+    </li>
+    <li>
+        <a>학습/주문정보</a>
+    </li>
+</ul>
+<!-- //Process -->
+
+<div class="box_guide">
+    <div>
+        <strong>등록 불가능한 경우</strong>
+        <ul>
+            <li>빈 공란으로 둔 경우</li>
+            <li>엑셀내 제공된 형식에 맞지 않게 입력한 경우</li>
+            <li>학부모 휴대폰 번호에 ‘–’를 포함하지 않은 경우<br/>
+                ex) 010-1234-5678 (O) , 01012345678(X)</li>
+            <li>학부모 휴대폰 번호가 이미 3개 이상 등록된 경우</li>
+            <li>
+                <span class="col_blue">등록가능 수강생만 업로드 할 경우 [업로드 완료] 버튼을 클릭해 주세요.</span>
+            </li>
+            <li>
+                <span class="col_blue">등록불가 수강생의 정보수정이 필요한 경우 엑셀파일 수정 후 엑셀을 다시 업로드해주세요.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="box_guide blue">
+    <div>
+        <span class="guide03">샘플 파일 양식을 다운받아 입력한 후 업로드가 가능합니다.</span>
+    </div>
+    <div>
+        <a href="" class="btn_top btn_blue">샘플파일 다운로드</a>
+    </div>
+</div>
+
+<div class="search_wrap">
+    <ul class="info_group">         
+        <li>
+            <dl>
+                <dt>파일 선택</dt>
+                <dd>
+                    <span class="frm_wrap">
+                        <label for="fileUpload" class="btn_table btn_gray">찾아보기</label>
+                        <input
+                            type="file"
+                            name="files"
+                            id="fileUpload"
+                            style="display: none"
+                            onChange="fileChange()"/>
+                        <input type="text" class="input_file" id="fileNm" readonly="readonly"/>
+                        <a href="" class="btn_table btn_blue">업로드 완료</a>
+                    </span>
+                </dd>                  
+            </dl>
+        </li> 
+    </ul>
+</div>
+
+<p class="txt_guide">파일 확인 결과,
+    <strong class="col_blue">256명</strong>의 수강생 정보를 업로드가 가능합니다.</p>
+<!-- <p class="txt_guide">파일 확인 결과, 업로드 불가능한 정보가 <strong
+class="col_red">3건</strong>이 있습니다.</p> -->
+
+<h4 class="tit_h4">수강생 등록 불가 목록</h4>
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 5%"/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>수강생명</th>
+                <th>수강생 생년월일</th>
+                <th>성별</th>
+                <th>학년</th>
+                <th>학부모 전화번호</th>
+                <th>수강생과 관계</th>
+                <th>사유</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                   부 
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    이미 등록된 수강생
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    학부모 휴대폰 번호가 동일한 FC 에 이미 3개 이상 등록
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <!-- <tr>
+                <td colspan="8">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+
+<!--페이징-->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">1</li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!--//페이징-->
+
+<!-- 수강생 등록가능 목록-->
+<!-- <h4 class="tit_h4">수강생 등록 가능 목록</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>수강생명</th>
+                <th>수강생 생년월일</th>
+                <th>성별</th>
+                <th>학년</th>
+                <th>학부모 전화번호</th>
+                <th>수강생과 관계</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">1</li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div> -->
+<!-- //수강생 등록가능 목록-->
+
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="javascript:void(0);" class="btn_basic btn_next"><span>다음</span></a>
+    </p>
+</div>
+<!-- //수강생일괄업로드 -->
+
+<!-- Process -->
+<ul class="process_flow">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a>수강생 일괄업로드</a>
+    </li>
+    <li class="on">
+        <a>학습/주문정보</a>
+    </li>
+</ul>
+<!-- //Process -->
+
+<h4 class="tit_h4">수강생 목록<span class="tit_sub">
+        (총 10명)</span>
+</h4>
+<div class="table_list">
+    <table class="thead">
+        <colgroup>
+            <col style="width: 5%"/>
+            <col style="width: 15%"/>
+            <col style="width: 20%"/>
+            <col style="width: 10%"/>
+            <col style="width: 10%"/>
+            <col style="width: 20%"/>
+            <col style="width: 20%"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std_all" onchange="all_check(this);"/>
+                        <label for="std_all">전체선택</label>
+                    </span>
+                </th>
+                <th>수강생명</th>
+                <th>수강생 생년월일</th>
+                <th>성별</th>
+                <th>학년</th>
+                <th>학부모 휴대폰번호</th>
+                <th>수강생과의 관계</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="max-height:150px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width: 5%"/>
+                <col style="width: 15%"/>
+                <col style="width: 20%"/>
+                <col style="width: 10%"/>
+                <col style="width: 10%"/>
+                <col style="width: 20%"/>
+                <col style="width: 20%"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std2"/>
+                            <label for="std2">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std3"/>
+                            <label for="std3">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std4"/>
+                            <label for="std4">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std5"/>
+                            <label for="std5">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std6"/>
+                            <label for="std6">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std7"/>
+                            <label for="std7">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std8"/>
+                            <label for="std8">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std9"/>
+                            <label for="std9">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std10"/>
+                            <label for="std10">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        <span class="gm_font">2013.09.05</span>
+                    </td>
+                    <td>남</td>
+                    <td>초등2</td>
+                    <td>
+                        <span class="gm_font">010-0000-0000</span>
+                    </td>
+                    <td>
+                        부
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="7">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>                  
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h4 class="tit_h4">부가 정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>강사<span class="required"></span>
+                </th>
+                <td>
+                    <select>
+                        <option>강사 선택</option>
+                    </select>
+                </td>
+                <th>클래스</th>
+                <td>
+                    <select>
+                        <option>클래스 선택</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    납부일
+                </th>
+                <td>
+                    <select>
+                        <option>납부일 선택</option>
+                    </select>
+                </td>
+                <th>수강료</th>
+                <td>
+                    <input type="text" maxlength="7" placeholder="수강료 입력(숫자)"/>
+                    원(월)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 영어: 학습/주문정보 표준진도 -->
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">학습정보</h4>
+    <span class="frm_wrap frm_btn">
+        <span class="frm">
+            <input type="radio" id="standard" name="magnitude" checked="checked"/>
+            <label for="standard">표준진도</label>
+        </span>
+        <span class="frm">
+            <input type="radio" id="self" name="magnitude"/>
+            <label for="self">자율진도</label>
+        </span>
+    </span>
+</div>
+
+<div class="table_input table_th_txtcenter">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%"/>
+            <col style="width: 12%"/>
+            <col />
+            <col style="width: 12%"/>
+            <col />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>학습레벨
+                </th>
+                <td colspan="4">
+                    <input type="text" value="Applying" readonly="readonly"/>
+                    <select>
+                        <option>Level. 39</option>
+                    </select>
+                    <select>
+                        <option>코스 1</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Program</th>
+                <td colspan="5">
+
+                    <!-- Program 리스트 -->
+                    <ul class="program_list">
+                        <li>
+                            <input type="text" value="Main" readonly="readonly"/>
+                            <input type="text" value="Applying" readonly="readonly"/>
+                            <input type="text" value="Level. 39" readonly="readonly"/>
+                            <input type="text" value="LA1_39_1_School English" readonly="readonly"/>
+                        </li>
+                        <li>
+                            <input type="text" value="Sub" readonly="readonly"/>
+                            <input type="text" value="Applying" readonly="readonly"/>
+                            <input type="text" value="Level. 39" readonly="readonly"/>
+                            <input type="text" value="LA1_39_1_School English" readonly="readonly"/>
+                        </li>
+                        <li>
+                            <input type="text" value="Special" readonly="readonly"/>
+                            <select>
+                                <option>Cognitive Level
+                                </option>
+                            </select>
+                            <select>
+                                <option>Level 선택</option>
+                            </select>
+                            <select>
+                                <option>스마트 교재 선택</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" value="Special" readonly="readonly"/>
+                            <select>
+                                <option>Cognitive Level
+                                </option>
+                            </select>
+                            <select>
+                                <option>Level 선택</option>
+                            </select>
+                            <select>
+                                <option>스마트 교재 선택</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <!-- //Program 리스트 -->
+
+                </td>
+            </tr>
+            <tr>
+                <th>커리큘럼 연계<br/>
+                    교재 주문여부
+                </th>
+                <td colspan="5" class="table_td_result">
+                    <div class="btn_top_wrap between">
+                        <span class="frm_wrap">
+                            <span class="frm">
+                                <input type="radio" id="curri_q_y" name="curri_q_yn" checked="checked"/>
+                                <label for="curri_q_y">Y</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="curri_q_n" name="curri_q_yn"/>
+                                <label for="curri_q_n">N</label>
+                            </span>
+                        </span>
+                        <p class="table_td_resultnum">
+                            1인당 추가금액 :
+                            <strong class="col_blue">0</strong>
+                            원
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>DaBooks
+                </th>
+                <th>레벨 설정</th>
+                <td>
+                    <select>
+                        <option>선택</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </td>
+                <th>DabooksBook<br/>
+                    Report 선택</th>
+                <td>
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="choice_n" name="choice_yn" checked="checked"/>
+                            <label for="choice_n">미선택</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="choice_y" name="choice_yn"/>
+                            <label for="choice_y">선택</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>선택</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>학습일</th>
+                <td colspan="5">
+                    <!-- 학습일 테이블 -->
+                    <table class="table_sub_list">
+                        <colgroup>
+                            <col style="width:10%;"/>
+                            <col/>
+                            <col/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>선택</th>
+                                <th>수업일</th>
+                                <th>수업형태</th>
+                                <th>시간</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std1"/>
+                                        <label for="std1">선택</label>
+                                    </span>
+                                </td>
+                                <td>
+                                    월
+                                </td>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input type="radio" id="face01_y" name="face01_yn" checked="checked"/>
+                                            <label for="face01_y">대면</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="face01_n" name="face01_yn"/>
+                                            <label for="face01_n">비대면</label>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time_sel">
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">00</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std2"/>
+                                        <label for="std2">선택</label>
+                                    </span>
+                                </td>
+                                <td>
+                                    화
+                                </td>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input type="radio" id="face02_y" name="face02_yn" checked="checked"/>
+                                            <label for="face02_y">대면</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="face02_n" name="face02_yn"/>
+                                            <label for="face02_n">비대면</label>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time_sel">
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">00</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std3"/>
+                                        <label for="std3">선택</label>
+                                    </span>
+                                </td>
+                                <td>
+                                    수
+                                </td>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input type="radio" id="face03_y" name="face03_yn" checked="checked"/>
+                                            <label for="face03_y">대면</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="face03_n" name="face03_yn"/>
+                                            <label for="face03_n">비대면</label>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time_sel">
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">00</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std4"/>
+                                        <label for="std4">선택</label>
+                                    </span>
+                                </td>
+                                <td>
+                                    목
+                                </td>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input type="radio" id="face04_y" name="face04_yn" checked="checked"/>
+                                            <label for="face04_y">대면</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="face04_n" name="face04_yn"/>
+                                            <label for="face04_n">비대면</label>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time_sel">
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">00</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std5"/>
+                                        <label for="std5">선택</label>
+                                    </span>
+                                </td>
+                                <td>
+                                    금
+                                </td>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input type="radio" id="face05_y" name="face05_yn" checked="checked"/>
+                                            <label for="face05_y">대면</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="face05_n" name="face05_yn"/>
+                                            <label for="face05_n">비대면</label>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time_sel">
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">00</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std6"/>
+                                        <label for="std6">선택</label>
+                                    </span>
+                                </td>
+                                <td>
+                                    토
+                                </td>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input type="radio" id="face06_y" name="face06_yn" checked="checked"/>
+                                            <label for="face06_y">대면</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="face06_n" name="face06_yn"/>
+                                            <label for="face06_n">비대면</label>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time_sel">
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">00</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std7"/>
+                                        <label for="std7">선택</label>
+                                    </span>
+                                </td>
+                                <td>
+                                    일
+                                </td>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input type="radio" id="face07_y" name="face07_yn" checked="checked"/>
+                                            <label for="face07_y">대면</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="face07_n" name="face07_yn"/>
+                                            <label for="face07_n">비대면</label>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="time_sel">
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">00</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select>
+                                            <option value="">10</option>
+                                        </select>
+                                        <span>:</span>
+                                        <select>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //학습일 테이블 -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //영어: 학습/주문정보 표준진도 -->
+
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="javascript:alert_confirm('작성한 내용이 초기화될 수 있습니다.','그래도 이전 페이지로 이동하시겠습니까?','');" class="btn_basic btn_prev"><span>이전</span></a>
+        <!-- 등록되지 않은 [1b] 수강생 목록 有 알림-->
+        <a
+            href="javascript:alert_confirm('작성된 내용으로 학습정보 세팅, 주문이 진행되며, <br>학부모 휴대폰으로 입회 동의 문자가 발송됩니다.<br>완료 하시겠습니까?','','');"
+            class="btn_basic">입회동의서 전송</a>
+        <!-- // 등록되지 않은 [1b] 수강생 목록 有 알림-->
+        <!-- 등록되지 않은 [1b] 수강생 목록 無 알림
+        <a
+            href="javascript:alert_confirm('작성된 내용으로 학습정보 세팅, 주문이 진행되며, <br>학부모 휴대폰으로 입회 동의 문자가 발송됩니다.','','');"
+            class="btn_basic">입회동의서 전송</a>
+        // 등록되지 않은 [1b] 수강생 목록 無 알림-->      
+    </p>
+</div>
+<!-- //영어: 학습/주문정보 자율진도 -->

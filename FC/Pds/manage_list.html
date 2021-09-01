@@ -1,0 +1,231 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_tilefte h2').text('운영자료실');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_tilefte pos_wrap">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 텝 -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on">
+        <a href="">전체</a>
+    </li>
+    <li>
+        <a href="">필독보기</a>
+    </li>
+</ul>
+<!-- //텝 -->
+
+<!-- 검색 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="all_chk01" name="category" onchange="all_check(this);" checked="checked" />
+                            <label for="all_chk01">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category_chk01" name="category" />
+                            <label for="category_chk01">가맹자료실</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category_chk02" name="category" />
+                            <label for="category_chk02">문서양식</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category_chk03" name="category" />
+                            <label for="category_chk03">안내문</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category_chk04" name="category" />
+                            <label for="category_chk04">뉴스레터</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category_chk05" name="category" />
+                            <label for="category_chk05">블로그</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>유형</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="type_all" name="type" onchange="all_check(this);" checked="checked" />
+                            <label for="type_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type_chk01" name="type" />
+                            <label for="type_chk01">서식</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type_chk02" name="type" />
+                            <label for="type_chk02">운영양식</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>검색어</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //검색 -->
+
+<!-- 테이블상단 -->
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="selected">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <span class="list_num">전체
+        <strong class="col_blue">25</strong>개</span>
+</div>
+<!-- //테이블상단 -->
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:5%;" />
+            <col style="width:8%;" />
+            <col style="width:10%;" />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col style="width:8%;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>FC</th>
+                <th>카테고리</th>
+                <th>유형</th>
+                <th>제목</th>
+                <th>파일</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="table_bullet red_bullet">필독</span>
+                </td>
+                <td>전과목</td>
+                <td>가맹자료실</td>
+                <td>서식</td>
+                <td class="left">
+                    <div class="ellipsis">
+                        <a href="index.html?page=pds/manage_view">[자료]브랜드전환 학부모안내문</a>
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="ico_img file">파일</a>
+                </td>
+                <td>관리자</td>
+                <td>
+                    <span class="gm_font">2021.06.30</span>
+                </td>
+                <td class="gm_font">28900</td>
+            </tr>
+            <!-- </tr> <tr> <td colspan="9" class="no_data">해당 검색 결과가 없습니다.</td> </tr> -->
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li>
+            <a href="">1</a>
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+        <li>
+            <a href="">10</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

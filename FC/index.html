@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!--plugin -->
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-tree.js" defer></script>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-rolling.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/slick.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/jquery.collapse.js" type="text/javascript"></script>
+
+        <!--scroll-->
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/jquery.tinyscrollbar.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/website.js" type="text/javascript"></script>
+
+        <!-- chart -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js" type="text/javascript"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js" type="text/javascript"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/scrollbar.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-tree.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/slick.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/LMS_w_tch_main.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            $(function () {
+                //top nav 활성화
+                //[D] 개발에서 폴더명 바꾸시면 여기에서 바꾸면 됩니다. 
+                if (folder == 'stdmng') {
+                    $('.one_depth .tit').text('수강생관리');
+                }
+                else if (folder == 'mathlearning') {
+                    $('.one_depth .tit').text('학습관리(수학)');
+                }
+                else if (folder == 'englearning') {
+                    $('.one_depth .tit').text('학습관리(영어)');
+                }
+                else if (folder == 'tclasslearning') {
+                    $('.one_depth .tit').text('학습관리(전과목)');
+                }
+                else if (folder == 'order') {
+                    $('.one_depth .tit').text('주문관리');
+                }
+                else if (folder == 'education') {
+                    $('.one_depth .tit').text('가맹점교육관리');
+                }
+                else if (folder == 'community') {
+                    $('.one_depth .tit').text('커뮤니티');
+                }
+                else if (folder == 'pds') {
+                    $('.one_depth .tit').text('자료실');
+                }
+                else if (folder == 'hakwon') {
+                    $('.one_depth .tit').text('가맹점관리');
+                }
+
+                //메인
+                if (page == "main") {
+                    $("#wrap").addClass("main");
+                    $(".wrap_sub").attr("class", "wrap_main");
+                    $("#top_nav").css("display", "none");
+                    $(".quickBox").css("top", "80px");
+                    $(".btn_quick_unfold").css("top", "138px");
+                    $(".quick_scroll").css("min-height", "398px");
+                } else {
+                    $(".quickBox").css("top", "170px");
+                    $(".btn_quick_unfold").css("top", "228px");
+                }
+
+                //스크롤바
+                $(window).on("load", function () {
+                    $(".gnb_2depth > ul").mCustomScrollbar({
+                        theme: "dark-3"
+                    });
+                });
+
+                //알람
+                $(".btn_alarm").on("click", function () {
+                    $(".alarm_pop").css("display", "block");
+                    $(".btn_alarm").addClass("on");
+                });
+                $(".alarm_close").on("click", function () {
+                    $(".alarm_pop").css("display", "none");
+                    $(".btn_alarm").removeClass("on");
+                });
+
+                //퀵메뉴
+                $(".classmode > a").on('click', function () {
+                    $(".fc00").show("slide", { direction: "right" }, 300);
+                })
+                $(".fc00 .close").on('click', function () {
+                    $(".fc00").hide("slide", { direction: "right" }, 300);
+                })
+                $(".mall > a").on('click', function () {
+                    $('.fc01').toggle();
+                })
+                $(".home > a").on('click', function () {
+                    $('.fc02').toggle();
+                })
+                $(".blog > a").on('click', function () {
+                    $('.fc03').toggle();
+                })
+                $(".youtube > a").on('click', function () {
+                    $('.fc04').toggle();
+                })
+                $(".next_arrow").on('click', function () {
+                    $('.quick01').css('display', 'none');
+                    $('.quick02').css('display', 'block');
+                })
+                $(".pre_arrow").on('click', function () {
+                    $('.quick01').css('display', 'block');
+                    $('.quick02').css('display', 'none');
+                })
+                $(".btn_quick_fold").on('click', function () {
+                    $(".quickBox").animate({
+                        right: '-80px'
+                    }, 400);
+                    $(".btn_quick_unfold").animate({
+                        right: '-60px'
+                    }, 400);
+                    $(".wrap_main").css('width', 'calc(100% - 70px)');
+                    $(".wrap_main").css('transition', 'all ease-in-out 0.05s 0.1s');
+                    $(".wrap_sub").css('width', 'calc(100% - 60px)');
+                    $(".wrap_sub").css('transition', 'all ease-in-out 0.05s 0.1s');
+                    $(".fc00").hide();
+                });
+                $(".btn_quick_unfold").on('click', function () {
+                    $(".quickBox").animate({
+                        right: '20px'
+                    }, 400);
+                    $(".btn_quick_unfold").animate({
+                        right: '-140px'
+                    }, 400);
+                    $(".wrap_main").css('width', 'calc(100% - 100px)');
+                    $(".wrap_main").css('transition', 'all ease-in-out  0.1s 0.25s');
+                    $(".wrap_sub").css('width', 'calc(100% - 100px)');
+                    $(".wrap_sub").css('transition', 'all ease-in-out  0.1s 0.25s');
+                });
+
+                //GNB close
+                $('.btn_all_menu').on('click', function () {
+                    $('.btn_all_menu').toggleClass('close');
+                    $('h1').toggleClass('close');
+                    $('.gnb_1depth').toggleClass('close');
+                    $('.gnb_2depth').toggleClass('close');
+                    $('.header').toggleClass('close');
+                    $(".wrap_sub").toggleClass('close');
+                    $(".wrap_main").toggleClass('close');
+                });
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <!--전체레이아웃-->
+        <article id="wrap" class="contain">
+            <!--헤드-->
+            <section class="header">
+                <!-- info -->
+                <div class="group_info">
+                    <div class="login_off">
+                        <p class="txt1">이용시간(세션)만료 55분 00초 전</p>
+
+                        <a href="javascript:void(0)" class="btn_time">시간연장</a>
+
+                        <div class="info">
+                            <a href="javascript:void(0)" class="btn_adm_name"><strong>관리자</strong>님 환영합니다.</a>
+                            <div class="ly_info">
+                                <ul>
+                                    <li><a href="javascript:void(0)">비밀번호 변경</a></li>
+                                    <li><a href="javascript:void(0)">로그아웃</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="javascript:void(0);" class="btn_alarm">알림<span>3</span></a> <!-- 알림팝업시 on -->
+
+                        <!-- 알람 팝업 -->
+                        <div class="alarm_pop">
+                            <div>
+                                <a href="javascript:void(0);" class="alarm_close">닫기</a>
+                                <!-- 알람이 없을때
+                            <div class="no_alarm">새로운 알람이 없습니다.</div>                             
+                        -->
+                                <span class="company admin">본사</span>
+                                <dl>
+                                    <dt class="alarm_date">06.02</dt>
+                                    <dd class="alarm_text"><a href="javascript:void(0);"><span>[공지] 대표 번호 변경 안내 및 휴강 변경 안내 및 휴강</span>블라블라블라블라블라블라블라블라블라블라블라블라</a></dd>
+                                    <dd class="trash"><a href="javascript:void(0);">삭제</a></dd>
+                                </dl>
+                                <dl>
+                                    <dt class="alarm_date">06.02</dt>
+                                    <dd class="alarm_text"><a href="javascript:void(0);"><span>[공지] 대표 번호 변경 안내 및 휴강 변경 안내 및 휴강</span>블라블라블라블라블라블라블라블라블라블라블라블라</a></dd>
+                                    <dd class="trash"><a href="javascript:void(0);">삭제</a></dd>
+                                </dl>
+
+                                <span class="company jisa">지사</span>
+                                <dl>
+                                    <dt class="alarm_date">06.02</dt>
+                                    <dd class="alarm_text"><a href="javascript:void(0);"><span>[공지] 대표 번호 변경 안내 및 휴강 변경 안내 및 휴강</span>블라블라블라블라블라블라블라블라블라블라블라블라</a></dd>
+                                    <dd class="trash"><a href="javascript:void(0);">삭제</a></dd>
+                                </dl>
+                                <dl>
+                                    <dt class="alarm_date">06.02</dt>
+                                    <dd class="alarm_text"><a href="javascript:void(0);"><span>[공지] 대표 번호 변경 안내 및 휴강 변경 안내 및 휴강</span>블라블라블라블라블라블라블라블라블라블라블라블라</a></dd>
+                                    <dd class="trash"><a href="javascript:void(0);">삭제</a></dd>
+                                </dl>
+                                <a href="javascript:void(0);" class="all_delete">알림전체삭제</a>
+                            </div>
+                        </div>
+                        <!-- //알람 팝업 -->
+
+                    </div>
+                </div>
+                <!-- //info -->
+
+                <!-- top 네비 -->
+                <div id="top_nav" class="top_nav">
+                    <ul>
+                        <li class="home"><a href="index.html?page=main/main">홈</a></li>
+                        <!-- 원뎁스 -->
+                        <li class="group_nav one_depth">
+                            <a href="javascript:void(0)" class="tit">수강생관리</a>
+                            <ul class="group_depth">
+                                <li><a href="javascript:void(0);" data-tab="stdmng">수강생관리</a></li>
+                                <li><a href="javascript:void(0);" data-tab="mathlearning">학습관리(수학)</a></li>
+                                <li><a href="javascript:void(0);" data-tab="englearning">학습관리(영어)</a></li>
+                                <li><a href="javascript:void(0);" data-tab="tclasslearning">학습관리(전과목)</a></li>
+                                <li><a href="javascript:void(0);" data-tab="order">주문관리</a></li>
+                                <li><a href="javascript:void(0);" data-tab="education">가맹점교육관리</a></li>
+                                <li><a href="javascript:void(0);" data-tab="community">커뮤니티</a></li>
+                                <li><a href="javascript:void(0);" data-tab="pds">자료실</a></li>
+                                <li><a href="javascript:void(0);" data-tab="hakwon">가맹점관리</a></li>
+                            </ul>
+                        </li>
+                        <!-- //원뎁스 -->
+
+                        <!-- 투뎁스 -->
+                        <li class="group_nav two_depth">
+                            <div id="stdmng" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">수강생 등록</a>
+                                <ul class="group_depth">
+                                    <li><a href="index.html?page=stdmng/regType">수강생 등록</a></li>
+                                    <li><a href="index.html?page=stdmng/enbReg01">수강생 일괄등록</a></li>
+                                    <li><a href="index.html?page=stdmng/list01">수강생 현황</a></li>
+                                    <li><a href="index.html?page=stdmng/info">수강생 상세정보</a></li>
+                                    <li><a href="index.html?page=stdmng/view01">수강생 통계</a></li>
+                                    <li><a href="index.html?page=stdmng/regList">휴회생 관리</a></li>
+                                </ul>
+                            </div>
+                            <div id="mathlearning" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">진행중학습</a>
+                                <ul class="group_depth">
+                                    <li><a href="index.html?page=mathlearning/ongoingStdCard01">진행중학습</a></li>
+                                    <li><a href="index.html?page=mathlearning/attendees01">학습관리현황</a></li>
+                                    <li><a href="index.html?page=mathlearning/smartStd">교재학습</a></li>
+                                    <li><a href="index.html?page=mathlearning/smartCustStd">AI맞춤학습</a></li>
+                                    <li><a href="index.html?page=mathlearning/placementTest01">평가학습</a></li>
+                                    <li><a href="index.html?page=mathlearning/calculationPack01">보충학습</a></li>
+                                    <li><a href="index.html?page=mathlearning/videoLecture01">수업연구자료실</a></li>
+                                    <li><a href="index.html?page=mathlearning/report01">분석표</a></li>
+                                    <li><a href="index.html?page=mathlearning/bugReportStts">버그레포트</a></li>
+                                    <li><a href="index.html?page=mathlearning/stdAnalysis01">학습통계</a></li>
+                                </ul>
+                            </div>
+                            <div id="englearning" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">진행중학습</a>
+                                <ul>
+                                    <li><a href="index.html?page=englearning/ongoingStdCard01">진행중학습</a></li>
+                                    <li><a href="index.html?page=englearning/overallStts01">학습관리현황</a></li>
+                                    <li><a href="index.html?page=englearning/std_LearningStatus01">수강생별 학습현황</a></li>
+                                    <li><a href="index.html?page=englearning/placement_test">수강생별 학습설정</a></li>
+                                    <li><a href="index.html?page=englearning/hb_month_talk">HB Talk</a></li>
+                                    <li><a href="index.html?page=englearning/dabooks_level_setting">다북스</a></li>
+                                    <!-- 2021-06-23 단어학습현황 폐기
+                               <li><a href="index.html?page=englearning/wordLearning">단어학습현황</a></li>
+								-->
+                                    <li><a href="index.html?page=englearning/pbank_Questions01">문제은행</a></li>
+                                    <li><a href="index.html?page=englearning/stdStats">학습통계</a></li>
+                                    <li><a href="index.html?page=englearning/placementTestReport01">분석표</a></li>
+                                    <li><a href="index.html?page=englearning/bugReport01">버그레포트</a></li>
+                                </ul>
+                            </div>
+                            <div id="tclasslearning" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">진행중학습</a>
+                                <ul>
+                                    <li><a href="index.html?page=tclasslearning/ongoingStdCard01">진행중학습</a></li>
+                                    <li><a href="index.html?page=tclasslearning/classStts">학습관리현황</a></li>
+                                    <li><a href="index.html?page=tclasslearning/lessonCompl">평가관리</a></li>
+                                    <li><a href="index.html?page=tclasslearning/specal_nonsul">특별학습관리</a></li>
+                                    <li><a href="index.html?page=tclasslearning/suple_testMagician01">보충심화문제</a></li>
+                                    <li><a href="index.html?page=tclasslearning/weeklyReport">교실운영</a></li>
+                                </ul>
+                            </div>
+                            <div id="order" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">교재주문</a>
+                                <ul>
+                                    <li><a href="index.html?page=order/StdOrder">교재주문</a></li>
+                                    <li><a href="index.html?page=order/StdOrderDoneList">주문완료리스트</a></li>
+                                    <li><a href="index.html?page=order/StdOrderHst01">교재주문이력</a></li>
+                                    <li><a href="index.html?page=order/hbtalk">HB Talk</a></li>
+                                    <li><a href="index.html?page=order/bookPoint">교재 미주문 포인트 전환</a></li>
+                                    <li><a href="index.html?page=order/return01">반품/오배송 신청</a></li>
+                                </ul>
+                            </div>
+                            <div id="education" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">공지사항</a>
+                                <ul>
+                                    <li><a href="index.html?page=education/Notice_list">공지사항</a></li>
+                                    <li><a href="index.html?page=education/EduApplyCalendar">교육일정</a></li>
+                                    <li><a href="index.html?page=education/EduMovie">교육동영상</a></li>
+                                    <li><a href="index.html?page=education/EduPhoto">사진갤러리</a></li>
+                                    <li><a href="index.html?page=education/EduFinish">교육이수현황</a></li>
+                                </ul>
+                            </div>
+                            <div id="community" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">공지사항</a>
+                                <ul>
+                                    <li><a href="index.html?page=community/board_list">공지사항</a></li>
+                                    <li><a href="index.html?page=community/knowhow_list">노하우 공유</a></li>
+                                    <li><a href="index.html?page=community/pr_list">홍보시안&amp;판촉물어워드</a></li>
+                                    <li><a href="index.html?page=community/best_list">우수가맹점소개</a></li>
+                                    <li><a href="index.html?page=community/contest_list">콘테스트 관리</a></li>
+                                    <li><a href="index.html?page=community/faq_list">고객센터</a></li>
+                                </ul>
+                            </div>
+                            <div id="pds" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">학습자료실</a>
+                                <ul>
+                                    <li><a href="index.html?page=pds/study_book_list">학습자료실</a></li>
+                                    <li><a href="index.html?page=pds/manage_list">운영자료실</a></li>
+                                    <li><a href="index.html?page=pds/pr_list">홍보자료실</a></li>
+                                    <li><a href="index.html?page=pds/program_list">필수프로그램</a></li>
+                                    <li><a href="index.html?page=pds/movie_list">동영상</a></li>
+                                    <li><a href="index.html?page=pds/news_list">교육기사</a></li>
+                                </ul>
+                            </div>
+                            <div id="hakwon" class="nav_two">
+                                <a href="javascript:void(0)" class="two_tit">가맹점 정보</a>
+                                <ul>
+                                    <li><a href="index.html?page=hakwon/basicInfo">가맹점 정보</a></li>
+                                    <li><a href="index.html?page=hakwon/feeMng">수강료납부관리</a></li>
+                                    <li><a href="index.html?page=hakwon/atendMng">출결관리</a></li>
+                                    <li><a href="index.html?page=hakwon/teacherChange">강사변경관리</a></li>
+                                    <li><a href="index.html?page=hakwon/schdulMng">시간표관리</a></li>
+                                    <li><a href="index.html?page=hakwon/classMng">클래스관리</a></li>
+                                    <li><a href="index.html?page=hakwon/pointMng">마일리지관리</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- //투뎁스 -->
+
+                        <!-- 쓰리뎁스 -->
+                        <!-- <li id="" class="group_nav three_depth">
+                       <div class="nav_three">
+                       <a href="index.html?page=stdmng/regList">휴회신청</a>
+                       <ul >
+                           <li><a href="index.html?page=stdmng/regList">휴회신청</a></li>
+                           <li><a href="index.html?page=stdmng/regView">휴회현황</a></li>
+                       </ul>
+                       </div>
+                   </li> -->
+                        <!-- //쓰리뎁스 -->
+
+                    </ul>
+                </div>
+            </section>
+            <!--//헤드-->
+
+            <!-- lnb  -->
+            <section id="gnb" class="gnb_wrap">
+                <!--원뎁스-->
+                <!--로고-->
+                <h1><a href="index.html?page=Main/main">SMART HB</a></h1>
+                <!--//로고-->
+                <menu class="gnb_1depth">
+                    <a href="javascript:void(0);" class="btn_all_menu">메뉴접기</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" class="stdmng" data-tab="gnb_std">수강생 관리</a></li>
+                        <li><a href="javascript:void(0);" class="mathlearning" data-tab="gnb_math">학습관리(수학)</a></li>
+                        <li><a href="javascript:void(0);" class="englearning" data-tab="gnb_eng">학습관리(영어)</a></li>
+                        <li><a href="javascript:void(0);" class="tclasslearning" data-tab="gnb_tclass">학습관리(전과목)</a></li>
+                        <li><a href="javascript:void(0);" class="order" data-tab="gnb_order">주문관리</a></li>
+                        <li><a href="javascript:void(0);" class="education" data-tab="gnb_edu">가맹점교육관리</a></li>
+                        <li><a href="javascript:void(0);" class="community" data-tab="gnb_cmn">커뮤니티</a></li>
+                        <li><a href="javascript:void(0);" class="pds" data-tab="gnb_pds">자료실</a></li>
+                        <li><a href="javascript:void(0);" class="hakwon" data-tab="gnb_hakwon">가맹점관리</a></li>
+                    </ul>
+                </menu>
+                <!--//원뎁스-->
+
+                <!--투뎁스 : 수강생관리-->
+                <menu id="gnb_std" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=stdmng/regType">수강생 등록</a></li>
+                        <li><a href="index.html?page=stdmng/enbReg01">수강생 일괄등록</a></li>
+                        <li><a href="index.html?page=stdmng/list01">수강생 현황</a></li>
+                        <li><a href="index.html?page=stdmng/info">수강생 상세정보</a></li>
+                        <li><a href="index.html?page=stdmng/view01">수강생 통계</a></li>
+                        <li><a href="javascript:void(0);" class="depth">휴회생 관리</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=stdmng/regList">휴회신청</a></li>
+                                <li><a href="index.html?page=stdmng/regView">휴회현황</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 수강생관리-->
+
+                <!--투7뎁스 : 학습관리(수학)-->
+                <menu id="gnb_math" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=mathlearning/ongoingStdCard01">진행중학습</a></li>
+                        <li><a href="javascript:void(0);" class="depth">학습관리현황</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/attendees01">가맹점 학습관리</a></li>
+                                <li><a href="index.html?page=mathlearning/std_studymng">수강생별 학습관리</a></li>
+                                <li><a href="index.html?page=mathlearning/std_progress">수강생별 진도관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="depth">교재학습</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/smartStd">스마트 교재학습</a></li>
+                                <li><a href="javascript:openPop('Mathlearning/offSmpGrad.html',screen.width,screen.height);">오프라인 간편채점</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="depth">AI맞춤학습</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/smartCustStd">스마트 맞춤학습</a></li>
+                                <li><a href="index.html?page=mathlearning/weeklyCustStd">주차별 맞춤학습</a></li>
+                                <li><a href="index.html?page=mathlearning/weeklyCustStdFunc01_01">주차별 맞춤 일괄기능</a></li>
+                                <li><a href="javascript:openPop('Mathlearning/onlineGrad.html',screen.width,screen.height);">온라인간편채점</a></li>
+                                <li><a href="index.html?page=mathlearning/wrongAnsrNote">오답노트</a></li>
+                                <li><a href="index.html?page=mathlearning/signalLightType">신호등유형학습</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="depth">평가학습</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/placementTest01">입학진단평가</a></li>
+                                <li><a href="index.html?page=mathlearning/domainPlacementTest01">영역별진단평가</a></li>
+                                <li><a href="index.html?page=mathlearning/hmeConsulTest01">HME 학습컨설팅평가</a></li>
+                                <li><a href="index.html?page=mathlearning/lessonTest01">단원평가</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">보충학습</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/calculationPack01">연산업 패키지</a></li>
+                                <li><a href="index.html?page=mathlearning/academicPack01">내신패키지</a></li>
+                                <li><a href="index.html?page=mathlearning/descriptivePack01">서술형패키지</a></li>
+                                <li><a href="index.html?page=mathlearning/advancedPack01">최상위패키지</a></li>
+                                <li><a href="index.html?page=mathlearning/allSubjPack01">전과목패키지</a></li>
+                                <li><a href="index.html?page=mathlearning/smartTestMagician01">스마트출제마법사</a></li>
+                                <li><a href="index.html?page=mathlearning/lowGradePack">초등저학년패키지</a></li>
+                                <li><a href="javascript:void(0)">수강생별 출제이력</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">분석표</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/report01">입학 진단평가 분석표</a></li>
+                                <li><a href="index.html?page=mathlearning/report02">일일리포트</a></li>
+                                <li><a href="index.html?page=mathlearning/report03">단원평가분석표</a></li>
+                                <li><a href="index.html?page=mathlearning/report04">기간별 분석표</a></li>
+                                <li><a href="index.html?page=mathlearning/report05">신호등유형학습 분석표</a></li>
+                                <li><a href="index.html?page=mathlearning/report06">영역별 분석표</a></li>
+                                <li><a href="index.html?page=mathlearning/report07">HME학습 평가 분석표</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">수업연구자료실</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/videoLecture01">동영상강의</a></li>
+                                <li><a href="index.html?page=mathlearning/videoLecture05">놀이수학 동영상</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html?page=mathlearning/bugReportStts">버그레포트</a></li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">학습통계</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=mathlearning/stdAnalysis01">학습 메뉴별 이용현황</a></li>
+                                <li><a href="index.html?page=mathlearning/stdAnalysis02">스마트교재 학습현황</a></li>
+                                <li><a href="index.html?page=mathlearning/stdAnalysis03">AI 맞춤학습 현황</a></li>
+                                <li><a href="index.html?page=mathlearning/stdAnalysis04">평가학습 현황</a></li>
+                                <li><a href="index.html?page=mathlearning/stdAnalysis05">보충학습 현황</a></li>
+                                <li><a href="index.html?page=mathlearning/stdAnalysis06">학습단계별 현황</a></li>
+                                <li><a href="index.html?page=mathlearning/stdAnalysis07">예비수강생 학습현황</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 학습관리(수학)-->
+                <!--투뎁스 : 학습관리(영어)-->
+                <menu id="gnb_eng" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=englearning/ongoingStdCard01">진행중학습</a></li>
+                        <li><a href="index.html?page=englearning/overallStts01">학습관리현황</a></li>
+                        <li><a href="index.html?page=englearning/std_LearningStatus01">수강생별 학습현황</a></li>
+                        <li><a href="javascript:void(0)" class="depth">수강생별 학습설정</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=englearning/placement_test">Placement Test</a></li>
+                                <li><a href="index.html?page=englearning/std_progress">학습진도관리</a></li>
+                                <li><a href="index.html?page=englearning/std_step">학습스텝관리</a></li>
+                                <li><a href="index.html?page=englearning/std_mission">미션관리</a></li>
+                                <li><a href="index.html?page=englearning/std_homework">숙제관리</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0)" class="depth">HB Talk</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=englearning/hb_month_talk">월별 HB Talk 현황</a></li>
+                                <li><a href="index.html?page=englearning/hb_member_talk">회원별 HB Talk 현황</a></li>
+                                <li><a href="index.html?page=englearning/hb_engDiary_talk">영어일기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">다북스</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=englearning/dabooks_level_setting">도서레벨설정</a></li>
+                                <li><a href="index.html?page=englearning/dabooks_history">도서이력관리</a></li>
+                                <li><a href="index.html?page=englearning/dabooks_history_report">도서연구교재</a></li>
+                            </ul>
+                        </li>
+                        <!-- 2021-06-23 단어학습현황 폐기
+                    <li><a href="index.html?page=englearning/wordLearning">단어학습현황</a></li>
+					-->
+                        <li><a href="javascript:void(0)" class="depth">문제은행</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=englearning/pbank_Questions01">출제마법사</a></li>
+                                <li><a href="index.html?page=englearning/pbank_problemPaper01">우리교실 문제지 목록</a></li>
+                                <li><a href="index.html?page=englearning/pbank_stdStat01">학습진행현황</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0)" class="depth">학습통계</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=englearning/stdStats">학습통계</a></li>
+                                <li><a href="index.html?page=englearning/placementTestStats">Placement Test 통계</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html?page=englearning/placementTestReport01">분석표</a></li>
+                        <li><a href="index.html?page=englearning/bugReport01">버그레포트</a></li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 학습관리(영어)-->
+                <!--투뎁스 : 학습관리(전과목)-->
+                <menu id="gnb_tclass" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=tclasslearning/ongoingStdCard01">진행중학습</a></li>
+                        <li>
+                            <a href="javascript:void(0);" class="depth">학습관리현황</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=tclasslearning/classStts">우리교실 학습관리</a></li>
+                                <li><a href="index.html?page=tclasslearning/overallAnalysis">수강생별 학습관리</a></li>
+                                <li><a href="index.html?page=tclasslearning/programSet">수강생별 진도관리</a></li>
+                                <li><a href="index.html?page=tclasslearning/scheduleSet">학습 시간표관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">평가관리</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=tclasslearning/lessonCompl">단원 마무리학습</a></li>
+                                <li><a href="index.html?page=tclasslearning/examEval">중기말 성취도 평가</a></li>
+                                <li><a href="index.html?page=tclasslearning/fundamentalEval">기초 학력 진단 평가</a></li>
+                                <li><a href="index.html?page=tclasslearning/testNotice">전국 학력 평가</a></li>
+                                <li><a href="index.html?page=tclasslearning/wrongAnsrNoteCreate">오답노트</a></li>
+                                <li><a href="index.html?page=tclasslearning/testDiag">진단평가</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">특별학습관리</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=tclasslearning/specal_nonsul">생각이 열리는 논술</a></li>
+                                <li><a href="index.html?page=tclasslearning/specal_krHistory01">이야기 한국사</a></li>
+                                <li><a href="index.html?page=tclasslearning/specal_spareMid">예비중</a></li>
+                                <li><a href="index.html?page=tclasslearning/specal_midMath01">중학수학</a></li>
+                                <li><a href="index.html?page=tclasslearning/specal_vod">실험동영상</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">보충심화문제</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=tclasslearning/suple_testMagician01">출제마법사</a></li>
+                                <li><a href="index.html?page=tclasslearning/suple_testMagician02">영역/단원별 집중체크</a></li>
+                                <li><a href="index.html?page=tclasslearning/suple_testMagician03">단원보충문제</a></li>
+                                <li><a href="index.html?page=tclasslearning/suple_testMagician04">서술형문제</a></li>
+                                <li><a href="index.html?page=tclasslearning/suple_testMagician05">계산력문제</a></li>
+                                <li><a href="index.html?page=tclasslearning/suple_testMagician06">필수오답문제</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="depth">교실운영</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=tclasslearning/weeklyReport">학부모리포트</a></li>
+                                <li><a href="index.html?page=tclasslearning/compensation">보상관리</a></li>
+                                <li><a href="index.html?page=tclasslearning/eBook">교사용e-북보기</a></li>
+                                <li><a href="index.html?page=tclasslearning/questionSet">질문하기관리</a></li>
+                                <li><a href="index.html?page=tclasslearning/communitySet">커뮤니티관리</a></li>
+                                <li><a href="index.html?page=tclasslearning/mathSet">수학난이도관리</a></li>
+                                <li><a href="index.html?page=tclasslearning/reportSet">분석표관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 학습관리(전과목)-->
+                <!--투뎁스 : 주문관리-->
+                <menu id="gnb_order" class="gnb_2depth">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);" class="depth">교재주문</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=order/StdOrder">수강생 주문</a></li>
+                                <li><a href="index.html?page=order/StdOrderNml">일반주문</a></li>
+                                <li><a href="index.html?page=order/StdOrderBsk">장바구니</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html?page=order/StdOrderDoneList">주문완료리스트</a></li>
+                        <li><a href="index.html?page=order/StdOrderHst01">교재주문이력</a></li>
+                        <li>
+                            <a href="javascript:void(0);" class="depth">HB Talk</a>
+                            <ul class="gnb_3depth">
+                                <li><a href="index.html?page=order/hbtalk">HB Talk</a></li>
+                                <li><a href="index.html?page=order/hbtalkOrder">HB Talk 신청하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html?page=order/bookPoint">교재 미주문 포인트전환</a></li>
+                        <li><a href="index.html?page=order/return01">반품/오배송 신청</a></li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 주문관리-->
+                <!--투뎁스 : 가맹점교육관리-->
+                <menu id="gnb_edu" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=education/Notice_list">공지사항</a></li>
+                        <li><a href="index.html?page=education/EduApplyCalendar">교육일정</a></li>
+                        <li><a href="index.html?page=education/EduMovie">교육동영상</a></li>
+                        <li><a href="index.html?page=education/EduPhoto">사진갤러리</a></li>
+                        <li><a href="index.html?page=education/EduFinish">교육이수 현황</a></li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 가맹점교육관리-->
+                <!--투뎁스 : 커뮤니티-->
+                <menu id="gnb_cmn" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=community/board_list">공지사항</a></li>
+                        <li><a href="index.html?page=community/knowhow_list">노하우 공유</a></li>
+                        <li><a href="index.html?page=community/pr_list">홍보시안&amp;판촉물어워드</a></li>
+                        <li><a href="index.html?page=community/best_list">우수가맹점소개</a></li>
+                        <li><a href="index.html?page=community/contest_list">콘테스트 관리</a></li>
+                        <li><a href="index.html?page=community/faq_list">고객센터</a></li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 커뮤니티-->
+                <!--투뎁스 : 자료실-->
+                <menu id="gnb_pds" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=pds/study_book_list">학습자료실</a></li>
+                        <li><a href="index.html?page=pds/manage_list">운영자료실</a></li>
+                        <li><a href="index.html?page=pds/pr_list">홍보자료실</a></li>
+                        <li><a href="index.html?page=pds/program_list">필수프로그램</a></li>
+                        <li><a href="index.html?page=pds/movie_list">동영상</a></li>
+                        <li><a href="index.html?page=pds/news_list">교육기사</a></li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 자료실-->
+                <!--투뎁스 : 학원관리-->
+                <menu id="gnb_hakwon" class="gnb_2depth">
+                    <ul>
+                        <li><a href="index.html?page=hakwon/basicInfo">가맹점 정보</a></li>
+                        <li><a href="index.html?page=hakwon/feeMng">수강료납부관리</a></li>
+                        <li><a href="index.html?page=hakwon/atendMng">출결관리</a></li>
+                        <li><a href="index.html?page=hakwon/teacherChange">강사변경관리</a></li>
+                        <li><a href="index.html?page=hakwon/schdulMng">시간표관리</a></li>
+                        <li><a href="index.html?page=hakwon/classMng">클래스관리</a></li>
+                        <li><a href="index.html?page=hakwon/pointMng">마일리지관리</a></li>
+                    </ul>
+                </menu>
+                <!--//투뎁스 : 학원관리-->
+            </section>
+
+            <section id="container" class="content">
+                <!-- [D]컨텐츠 정보가 들어갑니다. -->
+                <div class="wrap_sub"></div>
+                <!-- //[D]컨텐츠 정보가 들어갑니다. -->
+
+                <!-- 레이어팝업 -->
+                <section class="ly_popup"></section>
+                <!-- //레이어팝업 -->
+
+                <!-- alert 팝업 -->
+                <section class="alert_wrap">
+                    <div class="alert_container">
+                        <div class="alert_content">
+                            <div class="alert_desc">
+                                <strong></strong>
+                                <span></span>
+                            </div>
+                            <div class="alert_btn">
+                                <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                                <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //alert 팝업 -->
+
+                <!-- 퀵메뉴 -->
+                <div class="quickBox">
+                    <ul>
+                        <li class="classmode">
+                            <a href="javascript:void(0);">수업모드</a>
+                            <div class="fc00 slide">
+                                <div>
+                                    <a href="javascript:void(0)" class="math">수학</a>
+                                    <a href="javascript:void(0)" class="eng">영어</a>
+                                    <a href="javascript:void(0)" class="tclass">전과목</a>
+                                    <a href="javascript:void(0);" class="close"></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="quick_scroll">
+                        <ul class="quick01">
+                            <li class="mall">
+                                <a href="javascript:void(0);">전용몰</a>
+                                <div class="fc01 slide">
+                                    <div>
+                                        <a href="javascript:void(0)" class="math">수학</a>
+                                        <a href="javascript:void(0)" class="eng">영어</a>
+                                        <a href="javascript:void(0)" class="tclass">전과목</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="remote">
+                                <a href="javascript:void(0)">원격지원</a>
+                            </li>
+                            <li class="bank">
+                                <a href="javascript:void(0);" onclick="javascript:openPop('Main/pop_edubank.html','850','670');">뱅크뷰어</a>
+                            </li>
+                            <li class="attendance">
+                                <a href="javascript:void(0);" onclick="javascript:openPop('Hakwon/atendMngPop.html','1000','670');">당일출석부</a>
+                            </li>
+                            <li class="keypad">
+                                <!-- <a href="javascript:void(0);" onclick="javascript:openPop('Hakwon/atendKeyPop.html','430','497');">출석키패드</a> -->
+                                <!-- 윗줄 수정 2021.8.6 :chan -->
+                                <!-- common.js 맨 아래 줄에 함수 정의 -->
+                                <a href="javascript:void(0);" onclick="openAttendanceKeypadPop('open');">출석키패드</a>
+                            </li>
+                            <li class="training">
+                                <a href="javascript:void(0)">원격연수원</a>
+                            </li>
+                            <li class="HME">
+                                <a href="javascript:void(0)">HME 접수</a>
+                            </li>
+                            <li class="next_arrow">
+                                <a href="javascript:void(0);">다음 메뉴</a>
+                            </li>
+                        </ul>
+                        <ul class="quick02">
+                            <li class="speak">
+                                <a href="javascript:void(0)">말하기<br />콘테스트</a>
+                            </li>
+                            <li class="home">
+                                <a href="javascript:void(0);">공식<br />홈페이지</a>
+                                <div class="fc02 slide">
+                                    <div>
+                                        <a href="javascript:void(0)" class="math">수학</a>
+                                        <a href="javascript:void(0)" class="eng">영어</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="blog">
+                                <a href="javascript:void(0);">공식블로그</a>
+                                <div class="fc03 slide">
+                                    <div>
+                                        <a href="javascript:void(0)" class="math">수학</a>
+                                        <a href="javascript:void(0)" class="eng">영어</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="youtube">
+                                <a href="javascript:void(0);">공식유투브</a>
+                                <div class="fc04 slide">
+                                    <div>
+                                        <a href="javascript:void(0)" class="math">수학</a>
+                                        <a href="javascript:void(0)" class="eng">영어</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="hbtalk">
+                                <a href="javascript:void(0)">오늘의<br />HB Talk<br />수강생</a>
+                            </li>
+                            <li class="mobilepay">
+                                <a href="javascript:void(0)">비대면<br />모바일<br />원비 결제</a>
+                            </li>
+                            <li class="pre_arrow">
+                                <a href="javascript:void(0);">전 메뉴</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0);" class="btn_quick_fold"></a>
+                    <a href="javascript:void(0);" class="btn_quick_unfold">Quick Menu</a>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        var currentPosition = parseInt($(".quickBox").css("top"));
+                        $(window).scroll(function () {
+                            var position = $(window).scrollTop();
+                            if (position == 0) {
+                                $(".quickBox").stop().animate({ "top": position + currentPosition + "px" }, 800);
+                            } else {
+                                $(".quickBox").stop().animate({ "top": position + 20 + "px" }, 500);
+                            }
+                        });
+                    });
+                </script>
+                <!-- //퀵메뉴 -->
+
+
+            </section>
+
+        </article>
+
+        <!-- 출결, 퇴실 확인 번호입력 pop up mobile 전용 추가 2021.8.6 :chan -->
+        <div class="attendanceKeypadLayerPopWrap">
+            <div class="attendanceKeypadLayerPop">
+                <div class="attendanceKeypadCloseWrap">
+                    <label class="switch" title="닫기 보이기">
+                        <input type="checkbox" class="attendanceCloseCheck">
+                        <span class="slider round"></span>
+                    </label>
+                    <div>
+                        <button type="button" class="attendanceKeypadClose" title="닫기"></button>
+                    </div>
+                </div>
+                <p class="attendanceSubject">출결 / 퇴실</p>
+                <p class="attendanceDate"><span class="year">2021</span>년 <span class="month">08</span>월 <span class="date">06</span>일<span class="day">(금)</span></p>
+                <div class="attendanceInputWrap">
+                    <input type="number" pattern="\d" oninput="limitNumberLength(event,1)">
+                    <input type="number" pattern="\d" oninput="limitNumberLength(event,1)">
+                    <input type="number" pattern="\d" oninput="limitNumberLength(event,1)">
+                    <input type="number" pattern="\d" oninput="limitNumberLength(event,1)">
+                </div>
+                <button type="button" class="btn_basic confirmBtn" onclick="attendanceKeypadPopConfirm()">확인</button>
+                <p class="attendanceMsg">출결번호가 설정이 안된 학생은 원장님께 문의하세요.<br>출결번호 셋팅은 가맹점 사이트에서 초기설정이 가능합니다.</p>
+            </div>
+            <!-- 비밀번호 pop up -->
+            <div class="attendanceUnlockLayerPop">
+                <p class="attendanceUnlockSubtitle">키패드 셋팅하기</p>
+                <p class="attendanceUnlockMsg"><strong>교사 비밀번호</strong><span>를 입력해주세요.</span></p>
+                <p class="attendanceUnlockPassWrap"><input type="password" class="attendanceUnlockPass"></p>
+                <p class="attendanceUnlockBtnWrap">
+                    <button type="button" onclick="attendanceUnlockClose()" class="btnCancel">닫기</button>
+                    <button type="button" onclick="" class="btnConfirm">확인</button>
+                </p>
+            </div>
+        </div>
+
+    </body>
+
+</html>

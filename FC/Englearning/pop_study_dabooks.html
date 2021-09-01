@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=high-dpi;">
+    <title>::스마트해법::</title>
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/dabooks/fontDabooks.css" rel="stylesheet" type="text/css">
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/dabooks/hbe_w_tch.css" rel="stylesheet" type="text/css">
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/dabooks/popstyle.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/dabooks/jquery.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/dabooks/common.js"></script>
+</head>
+<body style="margin: 0px; background-color:#F0F7F2">
+    <script type="text/javascript">
+        var theForm = document.forms['aspnetForm'];
+        if (!theForm) {
+            theForm = document.aspnetForm;
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.__EVENTTARGET.value = eventTarget;
+                theForm.__EVENTARGUMENT.value = eventArgument;
+                theForm.submit();
+            }
+        }
+    </script>
+    <div class="titleAreaA">학습결과 보기</div>
+    <div class="popWrap">
+        <div class="popConWrap">
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $(".titleAreaA").text("학습결과 보기");
+                });
+            </script> 
+
+            <ul class="book_infoArea">
+                <li><strong class="book">교재</strong><span>Visiting Grandma and Grandpa</span></li>
+
+            </ul>
+            <!--회원정보 텍스트공간-->
+        
+            <!--결과표 프레임-->
+            <table class="tb_study_result">
+                <thead>
+                    <tr>
+                        <th class="frist">Activity</th>
+                        <th>학습결과</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="act_area">
+                            <ul class="menu">
+                                <li><a href="#" class="on" style="padding-top:28px; font-weight:bolder"><p>Study Map</p></a></li>
+                            </ul>
+                        </td>
+                        <td class="rst_area">				
+                            <div class="scroll" style="height: 280px;">
+                                <ul class="daliytest">
+                                    
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Pre Reading</strong>
+                                        <span class="data">2021.03.29</span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Word Study</strong>
+                                        <span class="data">2021.03.29</span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Story</strong>
+                                        <span class="data">2021.03.29</span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Word Match</strong>
+                                        <span class="data">2021.03.29</span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Word Game</strong>
+                                        <span class="data">2021.03.29</span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Comprehension</strong>
+                                        <span class="data">2021.03.29</span>
+                                    </li>
+                                    <li>
+                                        <span class="check">미완료</span>
+                                        <strong>Book Report</strong>
+                                        <span class="data"></span>
+                                    </li>
+                                    <li>
+                                        <span class="check">미완료</span>
+                                        <strong>Read Aloud</strong>
+                                        <span class="data"></span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Pre Reading</strong>
+                                        <span class="data">2017.01.08</span>
+                                    </li>
+                                    <li>
+                                        <span class="check">미완료</span>
+                                        <strong>Word Study</strong>
+                                        <span class="data"></span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Story</strong>
+                                        <span class="data">2017.01.08</span>
+                                    </li>
+                                    <li>
+                                        <span class="check">미완료</span>
+                                        <strong>Word Match</strong>
+                                        <span class="data"></span>
+                                    </li>
+                                    <li>
+                                        <span class="check">미완료</span>
+                                        <strong>Word Game</strong>
+                                        <span class="data"></span>
+                                    </li>
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Comprehension</strong>
+                                        <span class="data">2017.01.08</span>
+                                    </li>	
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Book Report</strong>
+                                        <span class="data">2017.01.08</span>
+                                    </li>	
+                                    <li class="finish">
+                                        <span class="check">완료</span>
+                                        <strong>Read Aloud</strong>
+                                        <span class="data">2017.01.08</span>
+                                    </li>	
+                                </ul>					
+                            </div>
+                        </td>				
+                    </tr>
+                </tbody>
+            </table>
+            <!--결과표 프레임-->
+        </div>
+    </div>
+    <div class="popClose">
+		<a href="javascript:close()"><img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/dabooks/btn0_close.gif"></a>
+    </div>   
+    <input type="submit" name="ctl00$btnNothing" value="" onclick="return false;" id="ctl00_btnNothing" style="display:none;">
+
+    <!-- alert _ 입회등록 -->
+    <div class="alert_wrap">
+        <div class="alert_group">
+            <div class="content"> 
+                <p>
+                    <strong class="tit"></strong>
+                    <span class="txt"></span>
+                </p>
+            </div>
+            <!-- [D] 버튼이 두개일때 class="two" 추가 -->
+            <div class="btn_area two">
+                <a href="javascript:ly_close();" class="btn_cancel">취소</a>
+                <a href="javascript:ly_close();" class="btn_submit">확인하기</a>
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+</html>

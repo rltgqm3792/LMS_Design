@@ -1,0 +1,501 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('HB Talk');
+        // 달력
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 컨텐츠 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>신청일</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date" />
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date" />
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month01" name="month" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="refund_all" name="refund" checked="checked" />
+                            <label for="refund_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="refund01" name="refund" />
+                            <label for="refund01">환불</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>직접입력</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectstd" onChange="sel_std02(this.form)">
+                            <option selected="selected" value="0">수강생 이름</option>
+                            <option value="1">수강생 번호</option>
+                            <option value="3">Dabooks 레벨</option>
+                            <option value="2">간편ID</option>
+                        </select>
+                        <input type="text" name="inputname_std" class="input_std" placeholder="수강생이름을 입력하세요." />
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+
+<div class="btn_top_wrap between">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="selected">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <p>
+        <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_pay.html','800','670');" class="btn_top">HB Talk 쿠폰 구매</a>
+        <a href="index.html?page=order/hbtalkOrder" class="btn_top">HB Talk 신청</a>
+    </p>
+</div>
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>신청일</th>
+                <th>수강생번호</th>
+                <th>수강생이름</th>
+                <th>Dabooks레벨</th>
+                <th>횟수</th>
+                <th>포인트</th>
+                <th>환불여부</th>
+                <th>환불포인트</th>
+                <th>취소일자</th>
+                <th>상세보기</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2021.05.15</span>
+                </td>
+                <td>
+                    <span class="gm_font">M00001236</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">HBTalk3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">Y</span>
+                </td>
+                <td>
+                    <span class="gm_font">1,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <td>
+                    <a href="javascript:void(0);" onclick="javascript:openPop('Order/pop_hbtalk_detail.html','800','650');" class="btn_table">보기</a>
+                </td>
+            </tr>
+            <!-- <tr>
+                <td colspan="10">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

@@ -1,0 +1,1049 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('학습관리');
+        $('.nav_two .two_tit,.group_title h2').text('수강생별 진도관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year3" name="year">
+                        <label for="chk_year3">고등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년별</option>
+                    <option>입실별</option>
+                    <option>시간대별</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!-- 검색영역 -->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="std_grade">초3</span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 검색영역 -->
+        <!--타이틀-->
+        <h3 class="tit_h3">스마트교재</h3>
+        <!--//타이틀-->
+        <!-- 탭 -->
+        <ul class="tab_1depth">
+            <!-- [D] 활성화 : on-->
+            <li><a href="">전월</a></li>
+            <li class="on"><a href="">당월</a></li>
+            <li><a href="">익월</a></li>
+        </ul>
+        <!-- //탭 -->
+        <!--테이블-->
+        <div class="table_input">
+            <table>
+                <colgroup>
+                    <col style="width:15%">
+                    <col style="width:85%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>커리큘럼1</th>
+                        <td class="in_table">
+                            <span class="frm_wrap frm_btn">
+                                <span class="frm">
+                                    <input type="radio" id="frm1" name="frm0" checked>
+                                    <label for="frm1">표준학습</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="frm2" name="frm0">
+                                    <label for="frm2">개별학습</label>
+                                </span>
+                            </span>
+                            <div class="row btn_top_wrap between">
+                                <span class="frm_wrap">
+                                    <span class="frm_txt">학년</span>
+                                    <select>
+                                        <option value="">초1</option>
+                                    </select>
+                                </span>
+                                <span>
+                                    <a href="javascript:openPop('mathlearning/learningInfoPop.html','800','650');" class="btn_table">연간표준 커리큘럼</a>
+                                </span>
+                            </div>
+                            <table class="table_sub_list">
+                                <colgroup>
+                                    <col width="15%">
+                                    <col width="15%">
+                                    <col width="*">
+                                    <col width="12%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>월</th>
+                                        <th>수준</th>
+                                        <th>스마트교재</th>
+                                        <th>변경</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="select"><!--[D] 현재진행중인 학습 : select-->
+                                        <td>7월</td>
+                                        <td>1~3수준</td>
+                                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                        <td><a href="#url" class="btn_table btn_gray">변경</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <select>
+                                                <option>1월</option>
+                                                <option>2월</option>
+                                                <option>3월</option>
+                                                <option>4월</option>
+                                                <option>5월</option>
+                                                <option>6월</option>
+                                                <option>7월</option>
+                                                <option>8월</option>
+                                                <option>9월</option>
+                                                <option>10월</option>
+                                                <option>11월</option>
+                                                <option>12월</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select>
+                                                <option>1~3수준</option>
+                                            </select>
+                                        </td>
+                                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                        <td><a href="#url" class="btn_table btn_gray">변경</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <select>
+                                                <option>1월</option>
+                                                <option>2월</option>
+                                                <option>3월</option>
+                                                <option>4월</option>
+                                                <option>5월</option>
+                                                <option>6월</option>
+                                                <option>7월</option>
+                                                <option>8월</option>
+                                                <option>9월</option>
+                                                <option>10월</option>
+                                                <option>11월</option>
+                                                <option>12월</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select>
+                                                <option>1~3수준</option>
+                                            </select>
+                                        </td>
+                                        <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                        <td><a href="#url" class="btn_table btn_gray">변경</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table_sub">
+                                <colgroup>
+                                    <col style="width:15%">
+                                    <col>
+                                </colgroup>
+                                <tr>
+                                    <th>스마트맞춤문항</th>
+                                    <td>
+                                        <span class="frm_wrap frm_btn">
+                                            <span class="frm">
+                                                <input type="radio" id="frm11" name="frm1" checked>
+                                                <label for="frm11">5</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm12" name="frm1">
+                                                <label for="frm12">10</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm13" name="frm1">
+                                                <label for="frm13">15</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm14" name="frm1">
+                                                <label for="frm14">20</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>커리큘럼2</th>
+                        <td class="in_table">
+                            <span class="frm_wrap frm_btn">
+                                <span class="frm">
+                                    <input type="radio" id="frm3" name="frm3">
+                                    <label for="frm31">표준학습</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="frm32" name="frm3" checked>
+                                    <label for="frm32">개별학습</label>
+                                </span>
+                            </span>
+                            <div class="row btn_top_wrap"></div>
+                            <table class="table_sub_list">
+                                <colgroup>
+                                    <col style="width:15%">
+                                    <col style="width:15%">
+                                    <col style="width:15%">
+                                    <col>
+                                    <col style="width:15%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>학년</th>
+                                        <th>학기</th>
+                                        <th>유형</th>
+                                        <th>스마트교재</th>
+                                        <th>변경</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="select"><!--[D] 현재진행중인 학습 : select-->
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">초2</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">1학기</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">유형완성</option>
+                                            </select>
+                                        </td>
+                                        <td class="left">
+                                            <select class="w100">
+                                                <option value="">초3-1 원리쏙쏙 1호(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형</option>
+                                            </select>
+                                        </td>
+                                        <td><button class="btn_table btn_gray">변경</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">초2</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">1학기</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">유형완성</option>
+                                            </select>
+                                        </td>
+                                        <td class="left">
+                                            <select class="w100">
+                                                <option value="">초3-1 원리쏙쏙 1호(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형</option>
+                                            </select>
+                                        </td>
+                                        <td><button class="btn_table btn_gray">변경</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">초2</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">1학기</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="w100">
+                                                <option value="">유형완성</option>
+                                            </select>
+                                        </td>
+                                        <td class="left">
+                                            <select class="w100">
+                                                <option value="">초3-1 원리쏙쏙 1호(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형</option>
+                                            </select>
+                                        </td>
+                                        <td><button class="btn_table btn_gray">변경</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table_sub">
+                                <colgroup>
+                                    <col style="width:15%">
+                                    <col>
+                                </colgroup>
+                                <tr>
+                                    <th>스마트맞춤문항</th>
+                                    <td>
+                                        <span class="frm_wrap frm_btn">
+                                            <span class="frm">
+                                                <input type="radio" id="frm21" name="frm2" checked>
+                                                <label for="frm21">5</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm22" name="frm2">
+                                                <label for="frm22">10</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm23" name="frm2">
+                                                <label for="frm23">15</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm24" name="frm2">
+                                                <label for="frm24">20</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>월별학습스케쥴</th>
+                        <td>
+                            <div class="flex_box flex_between">
+                                <span class="frm_wrap">
+                                    <span class="frm">
+                                        <input type="radio" id="frm41" name="frm4">
+                                        <label for="frm41">사용</label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="radio" id="frm42" name="frm4" checked>
+                                        <label for="frm42">사용안함</label>
+                                    </span>
+                                </span>
+                                <a href="javascript:openPop('mathlearning/pop_monthly_schedule.html','1000','670');" class="btn_table btn_gray">스케쥴 확인/수정</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>커리큘럼 연게<br>교재 주문 여부</th>
+                        <td>
+                            <table class="table_sub">
+                                <colgroup>
+                                    <col style="width:20%">
+                                    <col>
+                                </colgroup>
+                                <tr>
+                                    <th>커리큘럼1</th>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="frm51" name="frm5">
+                                                <label for="frm51">Y</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm52" name="frm5" checked>
+                                                <label for="frm52">N</label>
+                                            </span>
+                                        </span>
+                                        <span class="ico_time">최근 수정일 : 2020-10-28</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>커리큘럼2</th>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="frm61" name="frm6">
+                                                <label for="frm61">Y</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="frm62" name="frm6" checked>
+                                                <label for="frm62">N</label>
+                                            </span>
+                                        </span>
+                                        <span class="ico_time">최근 수정일 : 2020-10-28</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="txt_guide">Y체크 시 익월 교재 주문 기간에  자동으로 장바구니에 담깁니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>전과목 교재 주문</th>
+                        <td>
+                            <span class="frm_wrap">
+                                <span class="frm">
+                                    <input type="radio" id="frm71" name="frm7">
+                                    <label for="frm71">Y</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="frm72" name="frm7" checked>
+                                    <label for="frm72">N</label>
+                                </span>
+                            </span>
+                            <span class="ico_time">최근 수정일 : 2020-10-28</span>
+                            <p class="txt_guide">Y체크 시 익월 교재 주문 기간에 월간 우등생학습 교재가 자동으로 장바구니에 담깁니다.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>추가 스마트교재</th>
+                        <td>
+                            <div class="flex_box flex_between">
+                                <span>추가로 학습할 스마트교재를 선택해주세요.</span>
+                                <a href="javascript:openPop('mathlearning/pop_add_book.html','800','650');" class="btn_table btn_gray">추가</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>추가 스마트교재</th>
+                        <td>
+                            <div class="flex_box flex_between">
+                                <span>초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</span>
+                                <span>
+                                    <a href="#" class="btn_table btn_gray02">삭제</a>
+                                    <a href="javascript:openPop('mathlearning/pop_add_book.html','800','650');" class="btn_table btn_gray">추가</a>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--//테이블-->
+
+        <h4 class="tit_h4">주차별맞춤</h4>
+        <div class="table_input">
+            <table>
+                <colgroup>
+                    <col style="width:15%">
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>학습 학년</th>
+                    <td>
+                        <select>
+                            <option>초1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>주기</th>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm">
+                                <input type="radio" id="frm81" name="frm8" checked>
+                                <label for="frm81">3일진도+1일평가</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="frm82" name="frm8">
+                                <label for="frm82">4일진도+1일평가</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr><tr>
+                    <th>단계</th>
+                    <td>
+                        <select>
+                            <option>3단계</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>단원주기</th>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm">
+                                <input type="radio" id="frm91" name="frm9" checked>
+                                <label for="frm91">표준학습</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="frm92" name="frm9">
+                                <label for="frm92">속성학습</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>문항 수</th>
+                    <td>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm">
+                                <input type="radio" id="frm111" name="frm11" checked>
+                                <label for="frm111">10</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="frm112" name="frm11">
+                                <label for="frm112">15</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="frm113" name="frm11">
+                                <label for="frm113">20</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="frm114" name="frm11">
+                                <label for="frm114">25</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="frm115" name="frm11">
+                                <label for="frm115">33</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <h4 class="tit_h4">권한</h4>
+        <div class="table_input">
+            <table>
+                <colgroup>
+                    <col style="width:15%">
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>채점</th>
+                    <td>
+                        <span class="frm_wrap">
+                            <span class="frm">
+                                <input type="checkbox" id="chk1" name="chk1" onclick="all_check(this)" checked>
+                                <label for="chk1">전체</label>
+                            </span>
+                            <span class="frm">
+                                <input type="checkbox" id="chk2" name="chk1">
+                                <label for="chk2">스마트 교재 학습</label>
+                            </span>
+                            <span class="frm">
+                                <input type="checkbox" id="chk3" name="chk1">
+                                <label for="chk3">AI 맞춤학습</label>
+                            </span>
+                            <span class="frm">
+                                <input type="checkbox" id="chk4" name="chk1">
+                                <label for="chk4">평가학습</label>
+                            </span>
+                            <span class="frm">
+                                <input type="checkbox" id="chk5" name="chk1">
+                                <label for="chk5">보충학습</label>
+                            </span>
+                        </span>
+                        <p class="txt_guide">체크 시 해당 수강생에게 채점권한 부여</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>스마트 맞춤문제<br>문항수 변경</th>
+                    <td>
+                        <span class="frm_wrap">
+                            <span class="frm">
+                                <input type="radio" id="rdo21" name="rdo2" checked>
+                                <label for="rdo21">Y</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="rdo22" name="rdo2" checked>
+                                <label for="rdo22">N</label>
+                            </span>
+                        </span>
+                        <p class="txt_guide">N체크 시 해당 수강생이 스마트 맞춤문제 출제 문항 수 변경 불가</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>문제풀이영상</th>
+                    <td>
+                        <span class="frm_wrap">
+                            <span class="frm">
+                                <input type="radio" id="rdo31" name="rdo3" checked>
+                                <label for="rdo31">상시노출</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="rdo32" name="rdo3">
+                                <label for="rdo32">채점완료 후 노출</label>
+                            </span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>일일리포트</th>
+                    <td>
+                        <span class="frm_wrap">
+                            <span class="frm">
+                                <input type="radio" id="rdo41" name="rdo4" checked>
+                                <label for="rdo41">Y</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="rdo42" name="rdo4">
+                                <label for="rdo42">N</label>
+                            </span>
+                        </span>
+                        <p class="txt_guide">Y체크 시 해당 수강생이 퇴실 할 때 학부모앱으로 자동 발송</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="3">당월 주문 교재</th>
+                    <td>교재 1 : (신)해법계산 2학년 B1 SET(01~02)</td>
+                </tr>
+                <tr>
+                    <td>교재 2 : (신)해법계산 2학년 B1 SET(01~02)</td>
+                </tr>
+                <tr>
+                    <td>교재 3 : (신)해법계산 2학년 B1 SET(01~02)</td>
+                </tr>
+                <tr>
+                    <th>학습일</th>
+                    <td>
+                        <table class="table_sub_list">
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:30%">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>수업일</th>
+                                    <th>수업형태</th>
+                                    <th>시간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk61" name="chk6">
+                                            <label for="chk61">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>월</td>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="rdo51" name="rdo5">
+                                                <label for="rdo51">대면</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="rdo52" name="rdo5">
+                                                <label for="rdo52">비대면</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="time_sel">
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">00</option>
+                                            </select>
+                                            <span>~</span>
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">30</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk61" name="chk6">
+                                            <label for="chk61">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>화</td>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="rdo51" name="rdo5">
+                                                <label for="rdo51">대면</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="rdo52" name="rdo5">
+                                                <label for="rdo52">비대면</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="time_sel">
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">00</option>
+                                            </select>
+                                            <span>~</span>
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">30</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk61" name="chk6">
+                                            <label for="chk61">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>수</td>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="rdo51" name="rdo5">
+                                                <label for="rdo51">대면</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="rdo52" name="rdo5">
+                                                <label for="rdo52">비대면</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="time_sel">
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">00</option>
+                                            </select>
+                                            <span>~</span>
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">30</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk61" name="chk6">
+                                            <label for="chk61">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>목</td>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="rdo51" name="rdo5">
+                                                <label for="rdo51">대면</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="rdo52" name="rdo5">
+                                                <label for="rdo52">비대면</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="time_sel">
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">00</option>
+                                            </select>
+                                            <span>~</span>
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">30</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk61" name="chk6">
+                                            <label for="chk61">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>금</td>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="rdo51" name="rdo5">
+                                                <label for="rdo51">대면</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="rdo52" name="rdo5">
+                                                <label for="rdo52">비대면</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="time_sel">
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">00</option>
+                                            </select>
+                                            <span>~</span>
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">30</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk61" name="chk6">
+                                            <label for="chk61">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>토</td>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="rdo51" name="rdo5">
+                                                <label for="rdo51">대면</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="rdo52" name="rdo5">
+                                                <label for="rdo52">비대면</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="time_sel">
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">00</option>
+                                            </select>
+                                            <span>~</span>
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">30</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk61" name="chk6">
+                                            <label for="chk61">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>일</td>
+                                    <td>
+                                        <span class="frm_wrap">
+                                            <span class="frm">
+                                                <input type="radio" id="rdo51" name="rdo5">
+                                                <label for="rdo51">대면</label>
+                                            </span>
+                                            <span class="frm">
+                                                <input type="radio" id="rdo52" name="rdo5">
+                                                <label for="rdo52">비대면</label>
+                                            </span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="time_sel">
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">00</option>
+                                            </select>
+                                            <span>~</span>
+                                            <select>
+                                                <option value="">10</option>
+                                            </select>
+                                            <span>:</span>
+                                            <select>
+                                                <option value="">30</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="btn_bottom_wrap right">
+            <span>
+                <a href="javascript:openPop('mathlearning/pop_progress.html','800','650');" class="btn_basic">학년일괄진도적용</a>
+                <a href="javascript:alert_open('수정되었습니다');" class="btn_basic">진도수정완료</a>
+            </span>
+        </div>
+        <!--//테이블-->
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

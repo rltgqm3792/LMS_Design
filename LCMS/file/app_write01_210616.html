@@ -1,0 +1,82 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("앱북정보");
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>앱북ID</th>
+                <td><span class="font_gmarket13">A_001</span></td>
+                <th>서비스 여부<span class="required"></span></th>
+                <td><select>
+                    <option>선택</option>
+                    <option>Y</option>                    
+                    <option>N</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>앱북명</th>
+                <td colspan="3"><input type="text"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ul class="tab_1depth">
+    <li class="on"><a href="index.html?page=file/app_write01">기본정보</a></li>
+    <li><a href="index.html?page=file/app_write02">단원정보</a></li>
+</ul>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>학년/학기<span class="required"></span></th>
+                <td>
+                    <select>
+                        <option>초등</option>
+                    </select>
+                    <select>
+                        <option>학년</option>
+                    </select>
+                    <select>
+                        <option>학기</option>
+                    </select>
+                </td>                     
+                <th>교재코드<span class="required"></span></th>
+                <td><input type="text"><a href="javascript:openPop('../lcms/file/pop_book.html','940','670');" class="btn_table gray ml_5">교재선택</a></td> 
+            </tr>
+            <tr>
+                <th>교재명 </th>
+                <td colspan="3"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic">저장</a>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>

@@ -1,0 +1,69 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("진단평가 등록/수정");
+
+        //달력
+        calendar();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>구분</th>
+                <td><input type="text" readonly disabled="disabled"></td>
+                <th>진단평가 ID</th>
+                <td><span class="font_gmarket13">pre_survey_A_0001</span></td>
+            </tr>
+            <tr>
+                <th>Group</th>
+                <td><select><option>K</option></select>
+                    <select><option>G2</option></select>
+                </td>
+                <th>서비스 여부</th>
+                <td><select><option>Y</option></select></td>
+            </tr>
+            <tr>
+                <th>진단평가명</th>
+                <td colspan="3"><input type="text"></td>
+            </tr>
+            <tr>
+                <th>URL</th>
+                <td colspan="3"><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>등록일</th>
+                <td><span class="font_gmarket13">2021.03.02</span></td>
+                <th>등록자</th>
+                <td>cching / 김CP</td>
+            </tr>
+            <tr>
+                <th>마지막 수정일</th>
+                <td><span class="font_gmarket13">2021.03.02</span></td>
+                <th>마지막 수정자</th>
+                <td>cching / 김CP</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">저장</a>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>

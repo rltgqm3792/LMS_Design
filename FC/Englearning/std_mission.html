@@ -1,0 +1,208 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('수강생별 학습현황');
+        $('.group_title h2').text('미션관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="http://design.hbedu.co.kr/LMS/FC/index.html?page=englearning/std_mission">기본 미션 설정</a></li>
+    <li><a href="http://design.hbedu.co.kr/LMS/FC/index.html?page=englearning/std_mission02">수강생 미션 설정</a></li>
+</ul>
+
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">레벨 별 미션</h4>
+    <span>
+        <span>보상안내
+            <div class="tooltip_area">
+                <button class="btn_tooltip small">tooltip</button>
+                <div class="tooltip_cont">
+                    <p class="tit">[보상안내]</p>
+                    <ul class="bu_type">
+                        <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                        <li>4개 : 미션 완료 추가보상 500골드</li>
+                        <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                    </ul>
+                    <button class="close">툴팁닫기</button>
+                </div>
+            </div>
+        </span>
+        <span>미션제공 기준
+            <div class="tooltip_area">
+                <button class="btn_tooltip small">tooltip</button>
+                <div class="tooltip_cont">
+                    <p class="tit">[미션배포 기준]</p>
+                    <p>20차시 기준 그룹별 미션<br>(※40차시가 한 레벨일 경우 X2)</p>
+                    <ul class="bu_type">
+                        <li>Starter Group : 5개</li>
+                        <li>Beginner Group : 5개</li>
+                        <li>Intermediate Group : 7개</li>
+                        <li>Advanced Group : 8개</li>
+                    </ul>
+                    <button class="close">툴팁닫기</button>
+                </div>
+            </div>
+        </span>
+        <a href="javascript:openPop('englearning/pop_level_mission.html','850','650')" class="btn_top">레벨별 미션 보기</a>
+    </span>
+</div>
+
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>프로그램 선택</dt>
+                <dd>
+                    <select>
+                        <option value="">Starter</option>
+                        <option value="">Beginner</option>
+                        <option value="">Intermediare</option>
+                        <option value="">Advnced</option>
+                        <option value="">Master</option>
+                    </select>
+                    <select>
+                        <option value="">선택</option>
+                        <option value="">S1_01</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>프로그램</dt>
+                <dd>
+                    <select>
+                        <option value="">선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:15%">
+            <col style="width:8%">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">구분</th>
+                <th rowspan="2">선택</th>
+                <th colspan="4">미션 내용</th>
+            </tr>
+            <tr>
+                <th>프로그램명</th>
+                <th>Step Name</th>
+                <th>성취율(%)</th>
+                <th>미션 성공 횟수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">레벨 공통 미션</th>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="mission_chk1" name="chk">
+                        <label for="mission_chk1">선택</label>
+                    </span>
+                </td>
+                <td>Dabooks</td>
+                <td>Lesson Introduction</td>
+                <td class="gm_font">100</td>
+                <td>1회</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="mission_chk2" name="chk">
+                        <label for="mission_chk2">선택</label>
+                    </span>
+                </td>
+                <td>Dabooks</td>
+                <td>Lesson Introduction</td>
+                <td class="gm_font">100</td>
+                <td>1회</td>
+            </tr>
+            <tr>
+                <th rowspan="5" class="btl">프로그램 미션</th>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="mission_chk3" name="chk">
+                        <label for="mission_chk3">선택</label>
+                    </span>
+                </td>
+                <td>A1_43_1_School English</td>
+                <td>Lesson Introduction</td>
+                <td class="gm_font">100</td>
+                <td>1회</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="mission_chk4" name="chk">
+                        <label for="mission_chk4">선택</label>
+                    </span>
+                </td>
+                <td>A1_43_1_School English</td>
+                <td>Lesson Introduction</td>
+                <td class="gm_font">100</td>
+                <td>1회</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="mission_chk5" name="chk">
+                        <label for="mission_chk5">선택</label>
+                    </span>
+                </td>
+                <td>A1_43_1_School English</td>
+                <td>Lesson Introduction</td>
+                <td class="gm_font">100</td>
+                <td>1회</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="mission_chk6" name="chk">
+                        <label for="mission_chk6">선택</label>
+                    </span>
+                </td>
+                <td>A1_43_1_School English</td>
+                <td>Lesson Introduction</td>
+                <td class="gm_font">100</td>
+                <td>1회</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="frm only">
+                        <input type="checkbox" id="mission_chk7" name="chk">
+                        <label for="mission_chk7">선택</label>
+                    </span>
+                </td>
+                <td>A1_43_1_School English</td>
+                <td>Lesson Introduction</td>
+                <td class="gm_font">100</td>
+                <td>1회</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_bottom_wrap right">
+    <button class="btn_basic">저장</button>
+</div>

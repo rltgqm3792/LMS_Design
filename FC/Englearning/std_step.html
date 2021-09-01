@@ -1,0 +1,372 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('수강생별 학습현황');
+        $('.group_title h2').text('학습스텝 관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="http://design.hbedu.co.kr/LMS/FC/index.html?page=englearning/std_step">학습일괄 설정</a></li>
+    <li><a href="http://design.hbedu.co.kr/LMS/FC/index.html?page=englearning/std_step02">수강생별 설정</a></li>
+</ul>
+
+<div class="box_guide">
+    <div>
+        <p class="tit">학습 스텝 안내</p>
+        <ul>
+            <li>학습스텝은 Smarter 2.0 교재 대상이며, 교재별 필수 스텝의 순서 변경은 가능하지만 삭제는 불가합니다.</li>
+            <li>클래스별 스텝 설정 시 클래스 하위 모든 수강생에게 일괄 변경된 내용이 반영됩니다.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 검색영역 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>스텝</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" name="fc" id="fc_chk01" checked>
+                            <label for="fc_chk01">표준학습 스텝</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" name="fc" id="fc_chk02">
+                            <label for="fc_chk02">우리 가맹점 스텝</label>
+                        </span>
+                    </span>
+                    <select disabled>
+                        <option value="">선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학습메뉴</dt>
+                <dd>
+                    <select>
+                        <option value="">LEVEL</option>
+                    </select>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="checkbox" name="category" id="category_chk01">
+                            <label for="category_chk01">Main</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" name="category" id="category_chk02">
+                            <label for="category_chk02">Sub</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" name="category" id="category_chk03">
+                            <label for="category_chk03">Special</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학습 프로그램</dt>
+                <dd>
+                    <select>
+                        <option value="">선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!--//조건검색 -->
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //검색영역 -->
+
+<div class="group level_step_setting">
+    <div class="btn_top_wrap between">
+        <p class="level_tit">Level 37. Main S1_00_Letters</p>
+        <button class="btn_top btn_gray02">초기화</button>
+    </div>
+    <!-- [D] 우리가맹점 스텝 선택시 노출 -->
+    <div class="btn_top_wrap between">
+        <p class="level_tit">우리 가맹점 스텝 : 5학년 A. Level 37.Main <span class="tit_sub"><span class="ico_time">마지막 저장날짜 : 2020.08.23</span></span></p>
+        <button class="btn_top btn_gray02">초기화</button>
+    </div>
+    <div class="lesson_step">
+        <!-- loop -->
+        <div class="lesson_list">
+            <div class="list_wrap">
+                <p class="tit">LESSON 1</p>
+                <ul>
+                    <li>
+                        <!--[D]case1 고정--><span class="txt">Lesson Introduction</span>
+                    </li>
+                    <li>
+                        <!--[D]case2 필수-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk1" name="lesson1">
+                            <label for="lesson_chk1">Lesson Introduction</label>
+                        </span>
+                    </li>
+                    <li>
+                        <!--[D]case3 일반-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk2" name="lesson1">
+                            <label for="lesson_chk2">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li>
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk3" name="lesson1">
+                            <label for="lesson_chk3">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li>
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk4" name="lesson1">
+                            <label for="lesson_chk4">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btn_area">
+                    <span class="sort">
+                        <button class="end">맨 아래로 이동</button>
+                        <button class="down">한 칸 아래로 이동</button>
+                        <button class="up">한 칸 위로 이동</button>
+                        <button class="top">맨 위로 이동</button>
+                    </span>
+                </div>
+            </div>
+            <button class="btn_top btn_gray">초기화</button>
+        </div>
+        <!-- // loop -->
+        <div class="lesson_list">
+            <div class="list_wrap">
+                <p class="tit">LESSON 2</p>
+                <ul>
+                    <li>
+                        <!--[D]case1 고정--><span class="txt">Lesson Introduction</span>
+                    </li>
+                    <li>
+                        <!--[D]case2 필수-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk1" name="lesson1">
+                            <label for="lesson_chk1">Lesson Introduction</label>
+                        </span>
+                    </li>
+                    <li>
+                        <!--[D]case3 일반-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk2" name="lesson1">
+                            <label for="lesson_chk2">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btn_area">
+                    <span class="sort">
+                        <button class="end">맨 아래로 이동</button>
+                        <button class="down">한 칸 아래로 이동</button>
+                        <button class="up">한 칸 위로 이동</button>
+                        <button class="top">맨 위로 이동</button>
+                    </span>
+                </div>
+            </div>
+            <button class="btn_top btn_gray">초기화</button>
+        </div>
+        <div class="lesson_list">
+            <div class="list_wrap">
+                <p class="tit">LESSON 3</p>
+                <ul>
+                    <li>
+                        <!--[D]case1 고정--><span class="txt">Lesson Introduction</span>
+                    </li>
+                    <li>
+                        <!--[D]case2 필수-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk1" name="lesson1">
+                            <label for="lesson_chk1">Lesson Introduction</label>
+                        </span>
+                    </li>
+                    <li>
+                        <!--[D]case3 일반-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk2" name="lesson1">
+                            <label for="lesson_chk2">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btn_area">
+                    <span class="sort">
+                        <button class="end">맨 아래로 이동</button>
+                        <button class="down">한 칸 아래로 이동</button>
+                        <button class="up">한 칸 위로 이동</button>
+                        <button class="top">맨 위로 이동</button>
+                    </span>
+                </div>
+            </div>
+            <button class="btn_top btn_gray">초기화</button>
+        </div>
+        <div class="lesson_list">
+            <div class="list_wrap">
+                <p class="tit">LESSON 4</p>
+                <ul>
+                    <li>
+                        <!--[D]case1 고정--><span class="txt">Lesson Introduction</span>
+                    </li>
+                    <li>
+                        <!--[D]case2 필수-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk1" name="lesson1">
+                            <label for="lesson_chk1">Lesson Introduction</label>
+                        </span>
+                    </li>
+                    <li>
+                        <!--[D]case3 일반-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk2" name="lesson1">
+                            <label for="lesson_chk2">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btn_area">
+                    <span class="sort">
+                        <button class="end">맨 아래로 이동</button>
+                        <button class="down">한 칸 아래로 이동</button>
+                        <button class="up">한 칸 위로 이동</button>
+                        <button class="top">맨 위로 이동</button>
+                    </span>
+                </div>
+            </div>
+            <button class="btn_top btn_gray">초기화</button>
+        </div>
+        <div class="lesson_list">
+            <div class="list_wrap">
+                <p class="tit">LESSON 5</p>
+                <ul>
+                    <li>
+                        <!--[D]case1 고정--><span class="txt">Lesson Introduction</span>
+                    </li>
+                    <li>
+                        <!--[D]case2 필수-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk1" name="lesson1">
+                            <label for="lesson_chk1">Lesson Introduction</label>
+                        </span>
+                    </li>
+                    <li>
+                        <!--[D]case3 일반-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk2" name="lesson1">
+                            <label for="lesson_chk2">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btn_area">
+                    <span class="sort">
+                        <button class="end">맨 아래로 이동</button>
+                        <button class="down">한 칸 아래로 이동</button>
+                        <button class="up">한 칸 위로 이동</button>
+                        <button class="top">맨 위로 이동</button>
+                    </span>
+                </div>
+            </div>
+            <button class="btn_top btn_gray">초기화</button>
+        </div>
+        <div class="lesson_list">
+            <div class="list_wrap">
+                <p class="tit">LESSON 6</p>
+                <ul>
+                    <li>
+                        <!--[D]case1 고정--><span class="txt">Lesson Introduction</span>
+                    </li>
+                    <li>
+                        <!--[D]case2 필수-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk1" name="lesson1">
+                            <label for="lesson_chk1">Lesson Introduction</label>
+                        </span>
+                    </li>
+                    <li>
+                        <!--[D]case3 일반-->
+                        <span class="frm">
+                            <input type="checkbox" id="lesson_chk2" name="lesson1">
+                            <label for="lesson_chk2">Lesson Introduction</label>
+                        </span>
+                        <button class="btn_s_del">삭제</button>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btn_area">
+                    <span class="sort">
+                        <button class="end">맨 아래로 이동</button>
+                        <button class="down">한 칸 아래로 이동</button>
+                        <button class="up">한 칸 위로 이동</button>
+                        <button class="top">맨 위로 이동</button>
+                    </span>
+                </div>
+            </div>
+            <button class="btn_top btn_gray">초기화</button>
+        </div>
+    </div>
+</div>
+
+<div class="btn_bottom_wrap right">
+    <span>
+        <a href="javascript:alert_move('정말 삭제하시겠습니까?','','네','아니오','');" class="btn_basic btn_gray02">삭제</a>
+        <!--[D]버튼 비활성화시 : btn_disabled 클래스 추가-->
+        <a href="javascript:openPop('englearning/pop_step_modify.html','600','280')" class="btn_basic btn_line">수정</a>
+        <a href="javascript:openPop('englearning/pop_step_save.html','600','280')" class="btn_basic">저장</a>
+    </span>
+</div>

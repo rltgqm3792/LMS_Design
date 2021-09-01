@@ -1,0 +1,114 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('특별학습관리');
+        $('.group_title h2').text('특별학습관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li><a href="index.html?page=tclasslearning/specal_nonsul">생각이 열리는 논술</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_krHistory01">이야기 한국사</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_spareMid">예비중</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_midMath01">중학수학</a></li>
+	<li class="on"><a href="index.html?page=tclasslearning/specal_vod">실험동영상</a></li>
+</ul>
+<!-- 2depth tab -->
+<div class="box_guide">
+	<ul>
+		<li>해당 동영상 콘텐츠는 학생에게 보여지는 동영상과 같은 영상이며 , 수업 연구용으로 제공됩니다.</li>
+		<li>동영상 강의를 원활하게 보기 위해서는 모니터 해상도를 최소 1024 X 768 이상으로 맞춰 주세요.</li>
+	</ul>
+</div>
+<!-- //2depth tab -->
+<div class="btn_top_wrap between">
+    <span>
+        <select>
+            <option value="">학년선택</option>
+			<option value="">3학년</option>
+			<option value="">4학년</option>
+			<option value="">5학년</option>
+			<option value="">6학년</option>
+        </select>
+		<select>
+            <option value="">전체</option>
+			<option value="">1학기</option>
+			<option value="">2학기</option>
+        </select>
+    </span>
+</div>
+<!--테이블-->
+!--[D] 데이터 테이블 적용 후 제거--
+<div class="table_list">
+    <table>
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>학년</th>
+				<th>학기</th>
+				<th>단원</th>
+				<th>단원명</th>
+				<th>실험명</th>
+				<th>동영상</th>
+				<th>중요체크</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="gm_font">1</td>
+				<td class="gm_font">3</td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">2</td>
+				<td>과학자는 어떻게 탐구할까요?</td>
+				<td>땅콩 길이 재기</td>
+				<td><a href="javascript:openPop('Tclasslearning/pop_specal_krHistoryVideo.html','800','630');" class="btn_top btn_ico play"><span>play</span></a></td>
+				<td>
+					<span class="frm only">
+						<input type="checkbox" name="chk" id="chk1">
+						<label for="chk1">선택</label>
+					</span>
+				</td>
+			</tr>
+			<tr class="select">
+				<td class="gm_font">1</td>
+				<td class="gm_font">3</td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">2</td>
+				<td>과학자는 어떻게 탐구할까요?</td>
+				<td>땅콩 길이 재기</td>
+				<td><a href="javascript:openPop('Tclasslearning/pop_specal_krHistoryVideo.html','800','630');" class="btn_top btn_ico play"><span>2021.02.03</span></a></td>
+				<td>
+					<span class="frm only">
+						<input type="checkbox" name="chk" id="chk2" checked>
+						<label for="chk2">선택</label>
+					</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <li><a href="">6</a></li>
+      <li><a href="">7</a></li>
+      <li><a href="">8</a></li>
+      <li><a href="">9</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

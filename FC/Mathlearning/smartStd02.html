@@ -1,0 +1,390 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('교재학습');
+        $('.group_title h2').text('스마트교재학습');
+    });
+
+    am4core.ready(function() {
+        am4core.addLicense("CH230677325");
+        
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+
+        // Create chart instance
+        var chart = am4core.create("smartStdChart", am4charts.XYChart);
+        chart.fontSize= 14; 
+        chart.fontFamily = "NotoSans";
+
+        // Add data
+        chart.data = [{
+            "title": "초3-1 원리쏙쏙 1호(4. 사각형)",
+            "percent": 90, 
+            "color": am4core.color("tomato")
+        }, {
+            "title": "초3-1 원리쏙쏙 1호(1학기 단원별 교과 역량)",
+            "percent": 80,
+            "color": am4core.color("orange")
+        }, {
+            "title": "초3-1 원리쏙쏙 1호6. 다각형의 둘레와 넓이(1)",
+            "percent": 90,
+            "color": am4core.color("skyblue")
+        }, {
+            "title": "초3-1 원리쏙쏙 1호(Ⅵ-3. 사각형의 성질",
+            "percent": 50, 
+            "color": am4core.color("olive")
+        }, {
+            "title": "초3-1 원리쏙쏙 1호(4. 사각형) 2",
+            "percent": 70, 
+            "color": am4core.color("violet")
+        }];
+
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "title";;
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.minGridDistance = 30;
+        
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+	    valueAxis.min = 0;
+        valueAxis.max = 100;
+        
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueY = "percent";
+        series.dataFields.categoryX = "title";
+        series.name = "Visits";
+        series.columns.template.width = am4core.percent(50);
+        series.columns.template.fillOpacity = .5;
+        series.columns.template.adapter.add("fill", function(fill, target) {
+            return target.dataItem ? target.dataItem.dataContext.color : fill;
+        });
+        
+        var columnTemplate = series.columns.template;
+        columnTemplate.strokeWidth = 0;
+        columnTemplate.strokeOpacity = 1;
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.label.verticalCenter = "top";
+        bullet.dy = -20;
+        bullet.label.text = '{valueY} %';
+        bullet.label.fill = am4core.color('#222');     
+
+        var label = categoryAxis.renderer.labels.template;
+        label.truncate = false;
+        label.wrap = true;
+
+        categoryAxis.events.on("sizechanged", function(ev) {
+            var axis = ev.target;
+            var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+            axis.renderer.labels.template.maxWidth = cellWidth;
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year3" name="year">
+                        <label for="chk_year3">고등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년별</option>
+                    <option>입실별</option>
+                    <option>시간대별</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!--검색영역-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="flag_wrap">
+                            <span class="std_grade">초3</span>
+                        </span>
+                    </div>
+                    <div class="right_area">
+                        <span>채점권한 : 교사</span>
+                        <a href="index.html?page=mathlearning/std_progress" class="btn_table btn_gray02">진도관리</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 탭메뉴 -->
+        <ul class="tab_2depth s_group">
+            <!-- [D] 활성화 : on-->
+            <li><a href="index.html?page=mathlearning/smartStd">진행중 학습</a></li>
+            <li class="on"><a href="index.html?page=mathlearning/smartStd02">완료된 학습</a></li>
+        </ul>
+        <!-- // 탭메뉴 -->
+
+        <!--  -->
+        <!-- 검색  -->
+        <div class="btn_top_wrap right">
+            <span>
+                <select>
+                    <option value="">전체학년</option>
+                </select>
+                <select>
+                    <option value="">학기</option>
+                </select>
+            </span>
+        </div>
+         <!-- //검색 -->
+         <div class="btn_top_wrap s_group">
+            <h3 class="tit_h3">스마트교재 정답률 <span class="list_num">(최근 5개까지 노출)</span></h3>
+         </div>
+         <div  id="smartStdChart" style="width:100%;height:350px;"></div>
+        <!-- // -->
+        <!--테이블 상단-->
+        <div class="btn_top_wrap between group">
+            <h3 class="tit_h3">스마트교재 학습분석</h3>
+         </div>
+         <!--//테이블 상단-->
+
+        <!-- 전체 스크롤 테이블 -->
+        <div class="table_scroll" style="max-height:180px;">
+            <div class="table_list" style="min-width:1100px;">
+                <table>
+                    <colgroup>
+                        <col style="width:5%" />
+                        <col />
+                        <col style="width:8%" />
+                        <col style="width:8%" />
+                        <col style="width:7%" />
+                        <col style="width:7%" />
+                        <col style="width:7%" />
+                        <col style="width:7%" />
+                        <col style="width:7%" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>교재명</th>
+                            <th>시작일</th>
+                            <th>종료일</th>
+                            <th>개념영상</th>
+                            <th>학습문항</th>
+                            <th>정답률<br>(최초/최종)</th>
+                            <th>총 학습<br>시간</th>
+                            <th>문항당<br>풀이시간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="gm_font">1</span></td>
+                            <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');" class="gm_font">0/10</a></td>
+                            <td><span class="gm_font">180/180</span></td>
+                            <td><span class="gm_font">56/100</span></td>
+                            <td>145분</td>
+                            <td>134초</td>
+                        </tr>
+                        <tr>
+                            <td><span class="gm_font">2</span></td>
+                            <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');" class="gm_font">0/10</a></td>
+                            <td><span class="gm_font">180/180</span></td>
+                            <td><span class="gm_font">56/100</span></td>
+                            <td>145분</td>
+                            <td>134초</td>
+                        </tr>
+                        <tr>
+                            <td><span class="gm_font">3</span></td>
+                            <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');" class="gm_font">0/10</a></td>
+                            <td><span class="gm_font">180/180</span></td>
+                            <td><span class="gm_font">56/100</span></td>
+                            <td>145분</td>
+                            <td>134초</td>
+                        </tr>
+                        <tr>
+                            <td><span class="gm_font">4</span></td>
+                            <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');" class="gm_font">0/10</a></td>
+                            <td><span class="gm_font">180/180</span></td>
+                            <td><span class="gm_font">56/100</span></td>
+                            <td>145분</td>
+                            <td>134초</td>
+                        </tr>
+                        <tr>
+                            <td><span class="gm_font">5</span></td>
+                            <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');" class="gm_font">0/10</a></td>
+                            <td><span class="gm_font">180/180</span></td>
+                            <td><span class="gm_font">56/100</span></td>
+                            <td>145분</td>
+                            <td>134초</td>
+                        </tr>
+                        <tr>
+                            <td><span class="gm_font">6</span></td>
+                            <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');" class="gm_font">0/10</a></td>
+                            <td><span class="gm_font">180/180</span></td>
+                            <td><span class="gm_font">56/100</span></td>
+                            <td>145분</td>
+                            <td>134초</td>
+                        </tr>
+                        <tr>
+                            <td><span class="gm_font">7</span></td>
+                            <td class="left">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><span class="gm_font">2020.10.19</span></td>
+                            <td><a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');" class="gm_font">0/10</a></td>
+                            <td><span class="gm_font">180/180</span></td>
+                            <td><span class="gm_font">56/100</span></td>
+                            <td>145분</td>
+                            <td>134초</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- // 전체 스크롤 테이블 -->
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

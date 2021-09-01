@@ -1,0 +1,220 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('교육 동영상');
+        // 달력
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조회 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date" />
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date" />
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month01" name="month" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="category_all" name="category" onchange="all_check(this);" checked="checked" />
+                            <label for="category_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category01" name="category" />
+                            <label for="category01">사전교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category02" name="category" />
+                            <label for="category02">신입입문교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category03" name="category" />
+                            <label for="category03">The 큰 도전</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category04" name="category" />
+                            <label for="category04">리더스클럽콘서트</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category05" name="category" />
+                            <label for="category05">전문가 과정</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category06" name="category" />
+                            <label for="category06">지사월교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category07" name="category" />
+                            <label for="category07">기타</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회 -->
+
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <span class="list_num">전체 <strong class="col_blue">4</strong>개 </span>
+</div>
+
+
+<!-- 썸네일형 -->
+<div class="thum_list">
+    <div>
+        <dl>
+            <dt><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a></dt>
+            <dd class="math">수학-사전교육</dd>
+            <dd class="title"><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');">내신 5000제 학교별 챕터스 실편별 챕터스 실편별 챕터스 실편별 챕터스 실편별 챕터스 실편<span class="ico_img new"></span></a></dd>
+            <dd class="num">조회수 : 334</dd>
+        </dl>
+        <dl>
+            <dt><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a></dt>
+            <dd class="eng">영어-The큰 도전</dd>
+            <dd class="title"><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="num">조회수 : 334</dd>
+
+        </dl>
+        <dl>
+            <dt><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a></dt>
+            <dd class="all">전과목-전문과 과정</dd>
+            <dd class="title"><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="num">조회수 : 334</dd>
+        </dl>
+        <dl>
+            <dt><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a></dt>
+            <dd class="all">전과목-The큰 도전</dd>
+            <dd class="title"><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="num">조회수 : 334</dd>
+        </dl>
+        <dl>
+            <dt><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a></dt>
+            <dd class="math">수학-사전교육</dd>
+            <dd class="title"><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="num">조회수 : 334</dd>
+        </dl>
+        <dl>
+            <dt><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');"><img src="http://image.test.hbedu.co.kr/LMS/Biz/img/sub/thum_img.png"></a></dt>
+            <dd class="math">수학-사전교육</dd>
+            <dd class="title"><a href="javascript:openPop('Education/pop_EduMovie.html','800','650');">내신 5000제 학교별 챕터테스 실전편 실전편 실전편 실전편 실전편 실전편</a></dd>
+            <dd class="num">조회수 : 334</dd>
+        </dl>
+    </div>
+</div>
+<!-- //썸네일형 -->
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+        <li>
+            <a href="">10</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

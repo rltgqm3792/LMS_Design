@@ -1,0 +1,287 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('수강생별 학습현황');
+        $('.group_title h2').text('수강생별 학습현황');
+		calendar(); 
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>클래스전체</option>
+                </select>
+            </p>
+            <p class="select_group between">
+                <select>
+                    <option>Group</option>
+					<option>Starter</option>
+                </select>
+                <select>
+                    <option>Sub</option>
+                </select>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>Level</option>
+					<option>0</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+                </select>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 조회하세요"><a href="" class="btn_s search">조회</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!--수강생-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+						<!--//[D]기본 std_grade 뒤 중등 mid, 고등 high 추가-->
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="std_grade">초3</span>
+                        <span class="std_level">Lv.1</span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//수강생-->
+		<!-- 2depth영역 -->
+		<ul class="tab_2depth">
+			<li><a href="index.html?page=englearning/std_LearningStatus01">학습 관리현황</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus02">출석</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus03">완료학습</a></li>
+			<li class="on"><a href="index.html?page=englearning/std_LearningStatus04">녹음음원</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus05">음성인식</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus06">녹화영상</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus07">미션</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus08">보상</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus09">메시지</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus10">숙제</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus11">질문</a></li>
+		</ul>
+        <!-- //2depth영역 -->
+		<!-- 검색 -->
+		<div class="search_wrap type02">
+			<div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+				<input id="startpicker-input" type="text" aria-label="Date"/>
+				<label for="startpicker-input" class="tui-ico-date"></label>
+				<div id="startpicker-container" style="margin-left: -1px;"></div>
+			</div>
+			<span class="line">~</span>
+			<div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+				<input id="endpicker-input" type="text" aria-label="Date"/>
+				<label for="endpicker-input" class="tui-ico-date"></label>
+				<div id="endpicker-container" style="margin-left: -1px;"></div>
+			</div>
+			<span class="frm_wrap frm_btn">
+				<span class="frm">
+					<input type="radio" id="radio22" name="radio2" checked/>
+					<label for="radio22">1개월</label>
+				</span>
+				<span class="frm">
+					<input type="radio" id="radio23" name="radio2"/>
+					<label for="radio23">3개월</label>
+				</span>
+				<span class="frm">
+					<input type="radio" id="radio24" name="radio2"/>
+					<label for="radio24">6개월</label>
+				</span>
+			</span>
+			<span class="mg_left_5"><button class="btn_search small">조회</button></span>
+		</div>
+		<!-- //검색 -->
+        <div class="mg_top_30">
+			<div class="btn_top_wrap right">
+				<a href="" class="btn_top btn_ico play"><span>선택 재생</span></a>
+				<a href="" class="btn_top btn_ico down"><span>선택 다운로드</span></a>
+			</div>
+		</div>
+		!--[D] 데이터 테이블 적용 후 제거--
+		<!--테이블-->
+        <div class="table_list">
+			<table>
+				<colgroup>
+					<col />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>
+							<span class="frm only all">
+								<input type="checkbox" name="chk" id="chkall"  onclick="all_check(this);">
+								<label for="chkall">전체 선택</label>
+							</span>
+						</th>
+						<th>제출일</th>
+						<th>구분</th>
+						<th>프로그램명</th>
+						<th>메뉴얼명</th>
+						<th>시간</th>
+						<th>재생</th>
+						<th>다운로드</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<span class="frm only">
+								<input type="checkbox" name="chk" id="chk1">
+								<label for="chk1">선택</label>
+							</span>
+						</td>
+						<td class="gm_font">2020.1010</td>
+						<td class="gm_font">LI1_21_1_Reading</td>
+						<td class="gm_font">Grammar A_Drill</td>
+						<td class="gm_font">Grammar A_Drill</td>
+						<td class="gm_font">13:00</td>
+						<td><a href="#" class="ico_img play02">플레이</a></td>
+						<td><a href="#" class="ico_img down02">다운로드</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--//테이블-->
+		<div class="paging">
+			<a href="" class="btn_paging back"></a>
+			<a href="" class="btn_paging pre"></a>
+			<ul>
+			  <li><a href="">1</a></li>
+			  <li><a href="">2</a></li>
+			  <li><a href="">3</a></li>
+			  <li><a href="">4</a></li>
+			  <li><a href="">5</a></li>
+			  <li><a href="">6</a></li>
+			  <li><a href="">7</a></li>
+			  <li><a href="">8</a></li>
+			  <li><a href="">9</a></li>
+			</ul>
+			<a href="" class="btn_paging next"></a>
+			<a href="" class="btn_paging forward"></a>
+		</div>
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

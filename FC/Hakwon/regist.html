@@ -1,0 +1,145 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청서</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/reception">접수내역</a>
+    </li>
+</ul>
+
+<!-- 신청서 table 추가 2021.8.4 :chan -->
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:7%" />
+            <col />
+            <col style="width:10%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>신청서 제목</th>
+                <th>신청</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td class="subject">
+                    <a href="index.html?page=Hakwon/regist">CMS신청/변경/해지</a>
+                </td>
+                <td>
+                    <!-- 신청대상자 아닐시 얼럿-->
+                    <a href="javascript:alert_open('신청대상자가 아닙니다.&lt;br&gt;지사로 문의하시기 바랍니다.');" class="btn_table btn_blue">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">2</span>
+                </td>
+                <td class="subject">
+                    <a href="index.html?page=Hakwon/regist">링고신청</a>
+                </td>
+                <td>
+                    <!-- 신청대상자 아닐시 얼럿-->
+                    <a href="javascript:alert_open('신청대상자가 아닙니다.&lt;br&gt;지사로 문의하시기 바랍니다.');" class="btn_table btn_blue">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">3</span>
+                </td>
+                <td class="subject">
+                    <a href="index.html?page=Hakwon/regist">자녀/생보회원신청</a>
+                </td>
+                <td>
+                    <!-- 신청대상자 아닐시 얼럿-->
+                    <a href="javascript:alert_open('신청대상자가 아닙니다.&lt;br&gt;지사로 문의하시기 바랍니다.');" class="btn_table btn_blue">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td class="subject">
+                    <a href="index.html?page=Hakwon/regist">구비서류신청</a>
+                </td>
+                <td>
+                    <!-- 신청대상자 아닐시 얼럿-->
+                    <a href="javascript:alert_open('신청대상자가 아닙니다.&lt;br&gt;지사로 문의하시기 바랍니다.');" class="btn_table btn_blue">신청</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">5</span>
+                </td>
+                <td class="subject">
+                    <a href="index.html?page=Hakwon/regist">사업자영위확인서 신청</a>
+                </td>
+                <td>
+                    <!-- 신청대상자 아닐시 얼럿-->
+                    <a href="javascript:alert_open('신청대상자가 아닙니다.&lt;br&gt;지사로 문의하시기 바랍니다.');" class="btn_table btn_blue">신청</a>
+                </td>
+            </tr>
+            <!-- 퍼블: Data가 없을 경우 주석 해제 -->
+            <!-- <tr>
+                <td colspan="3">
+                    <div class="no_data">해당 검색 결과가 없습니다.</div>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<!-- 신청서 table 끝-->

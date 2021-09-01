@@ -1,0 +1,338 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+
+    function calendar() {
+        // 과거 날짜 선택가능하게 common에 기술된 함수 덮어쓰기 함 (2021.8.13) :chan
+        var today = new Date();
+        var picker = tui.DatePicker.createRangePicker({
+            startpicker: {
+                date: today,
+                input: '#startpicker-input',
+                container: '#startpicker-container'
+            },
+            endpicker: {
+                date: today,
+                input: '#endpicker-input',
+                container: '#endpicker-container'
+            },
+        });
+    };
+    calendar();
+    // $('.datepicker-input').focus(function () { // 달력 클릭 시 태블릿 키패드 처리
+    //     var _input = $(this);
+    //     _input.attr("readonly", true);
+    //     setTimeout(function () { _input.attr("readonly", false); }, 50);
+    // });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/regist">신청서</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/reception">접수내역</a>
+    </li>
+</ul>
+
+<!-- 조건설정 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="smartclass_all" name="smartclass" onchange="all_check(this);" checked="checked" />
+                            <label for="smartclass_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk01" name="smartclass" />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>신청기간</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" id="startpicker-input" type="text" aria-label="Date" readonly />
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" id="endpicker-input" type="text" aria-label="Date" readonly />
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month_today" name="month" checked="checked" />
+                            <label for="month_today">당일</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month01" name="month" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>처리현황</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="process_all" name="process" onchange="all_check(this);" checked="checked" />
+                            <label for="process_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="process01" name="process" />
+                            <label for="process01">대기중</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="process02" name="process" />
+                            <label for="process02">지사기각</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="process03" name="process" />
+                            <label for="process03">처리완료</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>신청유형</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>CMS신청/변경/해지</option>
+                        <option>
+                            링고신청</option>
+                        <option>
+                            자녀/생보회원신청</option>
+                        <option>
+                            구비서류신청</option>
+                        <option>
+                            사업자영위확인서 신청</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조건설정 -->
+
+<!-- 접수내역 table 추가 2021.8.4 :chan-->
+<!-- table top start -->
+<div class="btn_top_wrap between">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="selected">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체<strong class="col_blue">1,256</strong>명</span>
+    </span>
+</div>
+<!-- table top end -->
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:7%" />
+            <col style="width:12%" />
+            <col />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>FC구분</th>
+                <th>신청유형</th>
+                <th>분류</th>
+                <th>신청일</th>
+                <th>처리내용</th>
+                <th>처리상태</th>
+                <th>처리일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="gm_font">5</span></td>
+                <td>수학</td>
+                <td>CMS신청/변경/해지</td>
+                <td>신규</td>
+                <td>20201-10-29</td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue">보기</a>
+                </td>
+                <td>접수완료</td>
+                <td>20201-10-29</td>
+            </tr>
+            <tr>
+                <td><span class="gm_font">4</span></td>
+                <td>수학</td>
+                <td>CMS신청/변경/해지</td>
+                <td>신규</td>
+                <td>20201-10-29</td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue">보기</a>
+                </td>
+                <td>접수완료</td>
+                <td>20201-10-29</td>
+            </tr>
+            <tr>
+                <td><span class="gm_font">3</span></td>
+                <td>수학</td>
+                <td>CMS신청/변경/해지</td>
+                <td>신규</td>
+                <td>20201-10-29</td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue">보기</a>
+                </td>
+                <td>접수완료</td>
+                <td>20201-10-29</td>
+            </tr>
+            <tr>
+                <td><span class="gm_font">2</span></td>
+                <td>수학</td>
+                <td>CMS신청/변경/해지</td>
+                <td>신규</td>
+                <td>20201-10-29</td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue">보기</a>
+                </td>
+                <td>접수완료</td>
+                <td>20201-10-29</td>
+            </tr>
+            <tr>
+                <td><span class="gm_font">1</span></td>
+                <td>수학</td>
+                <td>CMS신청/변경/해지</td>
+                <td>신규</td>
+                <td>20201-10-29</td>
+                <td>
+                    <a href="javascript:void(0);" class="btn_table btn_blue">보기</a>
+                </td>
+                <td>접수완료</td>
+                <td>20201-10-29</td>
+            </tr>
+
+            <!-- 퍼블: Data가 없을 경우 주석 해제 -->
+            <!-- <tr>
+                <td colspan="99">
+                    <div class="no_data">해당 검색 결과가 없습니다.</div>
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+<!-- 접수내역 table 끝 -->
+
+<!-- paging start 2021.8.4 :chan -->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">1</li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!-- paging end -->

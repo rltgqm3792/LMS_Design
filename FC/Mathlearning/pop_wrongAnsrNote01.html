@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!--plugin -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <script
+            src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.js"
+            type="text/javascript"></script>
+
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css"  rel="stylesheet" type="text/css"/>
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+
+        <!-- calendar -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                datepicker();
+                $('.datepicker-input').focus(function() { // 달력 클릭 시 태블릿 키패드 처리
+                    var _input = $(this);
+                    _input.attr("readonly", true);
+					setTimeout(function(){ 
+						_input.attr("readonly",false);
+					}, 50);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>오답출제</h1>
+            </header>
+            <section class="pop_content">
+                <div class="table_input">
+                    <table>
+                    <caption>검색폼</caption>
+                    <colgroup>
+                        <col style="width:15%" />
+                        <col/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>스마트교재명<br>(App Book)</th>
+                            <td>초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                        </tr>
+                        <tr>
+                            <th>단원명<br>(AI 맞춤학습)</th>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th>진행상태</th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <span class="frm">
+                                            <input type="checkbox" id="frm11" name="frm1" checked />
+                                            <label for="frm11">완료 (오답 학습 시 정답)</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="frm">
+                                            <input type="checkbox" id="frm12" name="frm1" />
+                                            <label for="frm12">재오답 (오답 학습 시 다시 틀림)</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="frm">
+                                            <input type="checkbox" id="frm13" name="frm1" />
+                                            <label for="frm13">미완료 (오답학습을 하지 않음)</label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>구분<br>(AI 맞춤학습)</th>
+                            <td>
+                                <span class="frm_wrap">
+                                    <span class="frm">
+                                        <input type="checkbox" id="frm21" name="frm2" />
+                                        <label for="frm21">스마트맞춤학습 </label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="frm22" name="frm2" checked/>
+                                        <label for="frm22">주차별맞춤학습 </label>
+                                    </span>
+                                    <span class="frm">
+                                        <input type="checkbox" id="frm23" name="frm2" />
+                                        <label for="frm23">신호등유형학습</label>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                <!-- 테이블스크롤_세로 -->
+                <div class="table_list">
+                    <table class="thead">
+                        <colgroup>
+                            <col style="width:6%;" />
+                            <col style="width:14%;" />
+                            <col style="width:18%;" />
+                            <col />
+                            <col style="width:10%;" />
+                            <col style="width:10%;" />
+                            <col style="width:10%;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="chk_only" id="chk_all" onchange="all_check(this);">
+                                        <label for="chk_all">전체선택</label>
+                                    </span>
+                                </th>
+                                <th>학습일</th>
+                                <th>학습구분</th>
+                                <th>교재/단원명</th>
+                                <th>Page<br>(AppBook)</th>
+                                <th>오답문항</th>
+                                <th>처리상태</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scroll" style="max-height:210px;">
+                        <table class="tbody">
+                            <colgroup>
+                                <col style="width:6%;" />
+                                <col style="width:14%;" />
+                                <col style="width:18%;" />
+                                <col />
+                                <col style="width:10%;" />
+                                <col style="width:10%;" />
+                                <col style="width:10%;" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only2" name="chk_only">
+                                            <label for="chk_only2">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>2020.10.29</td>
+                                    <td>App Book</td>
+                                    <td class="left">초3-1 원리쏙쏙 1호(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                    <td><span class="gm_font">3p</span></td>
+                                    <td><span class="gm_font">2</span></td>
+                                    <td>완료</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only3" name="chk_only">
+                                            <label for="chk_only3">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>2020.10.29</td>
+                                    <td>주차별맞춤학습</td>
+                                    <td class="left">2020년 10월 2주 진도1회차</td>
+                                    <td></td>
+                                    <td><span class="gm_font">9</span></td>
+                                    <td>재오답</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only4" name="chk_only">
+                                            <label for="chk_only4">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>2020.10.28</td>
+                                    <td>스마트맞춤학습</td>
+                                    <td class="left">1. 내림과 나머지가 있는 (몇 십 몇)+(몇) 계산하기 ~ 1. 내림이 없는 나눗셈에서 맞게 계산했는지 확인하기</td>
+                                    <td></td>
+                                    <td><span class="gm_font">2</span></td>
+                                    <td>미완료</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only5" name="chk_only">
+                                            <label for="chk_only5">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>2020.10.28</td>
+                                    <td>신호등유형학습</td>
+                                    <td class="left">1. 내림과 나머지가 있는 (몇 십 몇)+(몇) 계산하기 ~ 1. 내림이 없는 나눗셈에서 맞게 계산했는지 확인하기</td>
+                                    <td></td>
+                                    <td><span class="gm_font">1</span></td>
+                                    <td>완료</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <dl class="box_chk_count">
+                    <dt>선택한 오답문항 수 : </dt>
+                    <dd><em>20</em>문항</dd>
+                </dl>
+                <div class="table_input">
+                    <table>
+                    <caption>출제정보설정폼</caption>
+                    <colgroup>
+                        <col style="width:15%" />
+                        <col/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>출제유형</th>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <span class="frm">
+                                            <input type="checkbox" id="frm31" name="frm3" />
+                                            <label for="frm31">오답문제 (틀린 문제 그대로 출제)</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="frm">
+                                            <input type="checkbox" id="frm32" name="frm3" checked />
+                                            <label for="frm32">유사문제 (틀린 문제의 비슷한 유형의 문제 출제)</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="frm">
+                                            <input type="checkbox" id="frm33" name="frm3" />
+                                            <label for="frm33">오답+유사문제 (틀린 문제와 비슷한 유형의 문제를 동시 출제)</label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>학습일</th>
+                            <td>
+                                <span class="frm_wrap frm_date pos_r">
+                                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                        <input type="text" id="datepicker-input" class="datepicker-input" aria-label="Date-Time"/>
+                                        <label for="datepicker-input" class="tui-ico-date"></label>
+                                    </div>
+                                    <div class="datepicker-wrapper pos_btm" id="wrapper" style="margin-top: -1px;"></div>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:alert_open('오답 문항을 선택해주세요.');" class="btn">출제</a>
+            </section>
+            <!-- alert 팝업 -->
+            <section class="alert_wrap">
+                <div class="alert_container">
+                    <div class="alert_content">
+                        <div class="alert_desc">
+                            <strong></strong>
+                            <span></span>
+                        </div>
+                        <div class="alert_btn">
+                            <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                            <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //alert 팝업 -->
+        </article>
+    </body>
+</html>

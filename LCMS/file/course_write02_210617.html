@@ -1,0 +1,56 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("코스등록");
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>코스ID</th>
+                <td colspan="3"><span class="font_gmarket13">A_001</span></td>
+            </tr>
+            <tr>
+                <th>코스명</th>
+                <td><input type="text"></td>
+                <th>서비스여부<span class="required"></span></th>
+                <td>
+                    <select>
+                        <option>선택</option>
+                        <option>Y</option>
+                        <option>N</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ul class="tab_1depth">
+    <li><a href="index.html?page=file/course_write01">기본정보</a></li>
+    <li class="on"><a href="index.html?page=file/course_write02">차시정보</a></li>
+</ul>
+<!--테이블 상단-->
+<div class="btn_top_wrap between mt_40">
+    <h4 class="tit_h4">차시목록</h4>
+     <p>
+         <a href="javascript:openPop('../lcms/file/pop_now.html','940','670');" class="btn_top">차시등록</a>
+         <a href="" class="btn_top line">수정</a>
+         <a href="" class="btn_top black">삭제</a>
+     </p>
+ </div>
+ <!--//테이블 상단-->
+ <div id="grid"></div>

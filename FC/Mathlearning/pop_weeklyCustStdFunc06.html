@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!--plugin -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <script
+            src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.js"
+            type="text/javascript"></script>
+
+        <!-- calendar -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js"></script>
+
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>출제단원선택</h1>
+            </header>
+            <section class="pop_content">
+                <ul class="process_flow">
+                    <!-- [D] 활성화 : on -->
+                    <li>단원선택<span>01</span></li>
+                    <li class="on">대상자 확인<span>02</span></li>
+                </ul>
+
+                <h2 class="tit_h2">1. 주차선택</h2>
+                <div class="search_wrap type02">
+                    <span class="frm_wrap">
+                        <select>
+                            <option value="">다음주차</option>
+                        </select>
+                    </span>
+                </div>
+                <p class="txt_guide col_red">주차를 선택하면 해당 주차로 맞춰집니다. (이미 해당 주차를 출제한 학생은 다음주차로 출제됩니다.)</p>
+
+                <h2 class="tit_h2">2. 수강생선택</h2>
+                <!-- 테이블스크롤_세로 -->
+                <div class="table_list">
+                    <table class="thead">
+                        <colgroup>
+                            <col style="width:5%">
+                            <col style="width:8%">
+                            <col style="width:12%">
+                            <col>
+                            <col style="width:18%">
+                            <col style="width:10%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span class="frm only">
+                                        <input type="checkbox" id="chk_only1" name="chk_only" onchange="all_check(this);">
+                                        <label for="chk_only1">전체선택</label>
+                                    </span>
+                                </th>
+                                <th>학년</th>
+                                <th>수강생명</th>
+                                <th>이전학습 평균</th>
+                                <th>출제주차</th>
+                                <th>출제여부</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scroll" style="max-height:289px">
+                        <table class="tbody">
+                            <colgroup>
+                                <col style="width:5%">
+                                <col style="width:8%">
+                                <col style="width:12%">
+                                <col>
+                                <col style="width:18%">
+                                <col style="width:10%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>-</td>
+                                    <td>초1</td>
+                                    <td>강다니엘</td>
+                                    <td></td>
+                                    <td>2020년 10월 2주</td>
+                                    <td>불가능</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only3" name="chk_only">
+                                            <label for="chk_only3">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초1</td>
+                                    <td>김소리</td>
+                                    <td></td>
+                                    <td>2020년 10월 2주</td>
+                                    <td>가능</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only4" name="chk_only" checked>
+                                            <label for="chk_only4">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초1</td>
+                                    <td>최강수</td>
+                                    <td></td>
+                                    <td>2020년 10월 2주</td>
+                                    <td>가능</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only5" name="chk_only">
+                                            <label for="chk_only5">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초1</td>
+                                    <td>박필연</td>
+                                    <td></td>
+                                    <td>2020년 10월 2주</td>
+                                    <td>가능</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only6" name="chk_only">
+                                            <label for="chk_only6">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초1</td>
+                                    <td>이진주</td>
+                                    <td></td>
+                                    <td>2020년 10월 2주</td>
+                                    <td>가능</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only7" name="chk_only" checked>
+                                            <label for="chk_only7">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초1</td>
+                                    <td>정소라</td>
+                                    <td></td>
+                                    <td>2020년 10월 2주</td>
+                                    <td>가능</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="checkbox" id="chk_only8" name="chk_only">
+                                            <label for="chk_only8">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초1</td>
+                                    <td>김수진</td>
+                                    <td></td>
+                                    <td>2020년 10월 2주</td>
+                                    <td>가능</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn reset">이전</a>
+                <a href="javascript:alert_open('수강생을 선택해주세요.');" class="btn">출제완료</a>
+            </section>
+            <!-- alert 팝업 -->
+            <section class="alert_wrap">
+                <div class="alert_container">
+                    <div class="alert_content">
+                        <div class="alert_desc">
+                            <strong></strong>
+                            <span></span>
+                        </div>
+                        <div class="alert_btn">
+                            <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                            <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //alert 팝업 -->
+        </article>
+    </body>
+</html>

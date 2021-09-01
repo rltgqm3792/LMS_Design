@@ -1,0 +1,388 @@
+﻿<!-- <%@ Page Title="" Language="C#"
+MasterPageFile="Ucontrol/MemberRegis.master" AutoEventWireup="true"
+CodeFile="Regis_form.aspx.cs" Inherits="Regis_form" %> <%@ Register
+Src="UControl/head.ascx" TagName="head" TagPrefix="uc" %> <asp:Content
+ID="Content1" ContentPlaceHolderID="head" Runat="Server"> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <title>::해법에듀::</title>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/hbedu_m_prt.js"></script>
+        <!-- font css -->
+        <link href="/HBEDU/MemberRegis/Mobile/font/font.css" rel="stylesheet" type="text/css"/>
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/css/hbedu_m_prt.css" rel="stylesheet" type="text/css"/>
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/hbedu_m_prt02.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+
+            //alert
+            function alert_open(tit, content) {
+                $('.alert').addClass('on');
+                $('.ly_alert h1').text(tit);
+                $('.ly_alert p.content').html(content);
+            }
+            function alert_close() {
+                $('.ly_wrap').removeClass('on');
+            }
+        </script>
+
+        <script type="text/javascript">
+            $(function () {
+                //백그라운드 css
+                $("body").css('background', '#fafafa');
+
+                //14세미만 선택시
+                $('#year').change(function () {
+                    var state = $('#year option:selected').val();
+                    $('.parent_agree').hide();
+                    if (state == 'under') {
+                        $('.parent_agree').show();
+
+                    } else {
+                        $('.parent_agree').hide();
+                    }
+                });
+
+                //다음 버튼 활성화 위해 임시적으로 넣었어용
+                $('#st_name').change(function () {
+                    if ($(this).val() == '') {
+                        $('.form_btn').removeClass('on');
+                    } else {
+                        $('.form_btn').addClass('on');
+                        $('.form_btn a').attr('href', 'survey_page.html');
+                    }
+                });
+
+                //학부모휴대폰 클릭시 라인 안생기게 하기
+                $(".desc.phone input").focus(function () {
+                    $(this)
+                        .parent()
+                        .removeClass('on');
+                });
+
+            });
+
+            //유효성 검사
+            function fn_value() {
+                //학부모휴대폰이 맞지 않을 경우 경고ckd 띄우기
+                /*var charLimit = $('#prt_phone').attr("maxlength");
+                if ($('#prt_phone').val().length == charLimit) {
+                    $('.guide.txt').show();
+                    $('p.wrong').hide();
+                    $('#prt_phone').parent().parent().removeClass('wrong');
+                }
+                else {
+                    $('.guide.txt').hide();
+                    $('p.wrong').show();
+                    $('#prt_phone').parent().parent().addClass('wrong');
+                }
+                */
+                //[D] 입력이 없거나 맞지 않을때 레이어 팝어 띄우기 위함
+                if ($('#st_name').val() == "") {
+                    alert_open('', '학생이름을 입력해주세요');
+                    $('#st_name').focus();
+                }
+
+            }
+
+            //보호자 내용 보기
+            function fn_agree() {
+                $('.parent_tit').toggleClass('on');
+                $('.agree_txt').slideToggle();
+            }
+
+            //input number의 maxlength
+            function numberMaxLength(e) {
+                if (e.value.length > e.maxLength) {
+                    e.value = e
+                        .value
+                        .slice(0, e.maxLength);
+                }
+            }
+        </script>
+        <!-- </asp:Content> <asp:Content ID="Content2"
+        ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> <uc:head ID="head"
+        runat="server" /> -->
+
+    </head>
+    <body>
+
+        <article class="regis_wrap">
+
+            <header class="head_sub">
+                <h2>입회정보입력</h2>
+                <ul>
+                    <li class="on">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </header>
+
+            <!-- 입력폼 -->
+            <section class="form_wrap">
+                <ul>
+                    <li>
+                        <div class="tit">학생이름
+                            <span class="ico_point"></span>
+                        </div>
+                        <div class="desc name">
+                            <input type="text" name="st_name" id="st_name" value="박찬호" readonly="readonly" />
+                            <a href="javascript:void(0);" class="btn_del">삭제</a>
+                            <div class="ty_sex">
+                                <p class="ty_rdo">
+                                    <input type="radio" name="rdoSex" id="rdoSexM" checked="checked"/>
+                                    <label for="rdoSexM">남</label>
+                                </p>
+                                <p class="ty_rdo">
+                                    <input type="radio" name="rdoSex" id="rdoSexW"/>
+                                    <label for="rdoSexW">여</label>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tit">생년월일
+                            <span class="ico_point"></span>
+                        </div>
+                        <div class="desc select">
+                            <p class="select">
+                                <select id="year">
+                                    <option value="over" selected="selected">선택</option>
+                                    <option value="over">2005년</option>
+                                    <option value="under">2007년</option>
+                                </select>
+                            </p>
+                            <p class="select">
+                                <select name="">
+                                    <option value="">선택</option>
+                                    <option value="">03월</option>
+                                </select>
+                            </p>
+                            <p class="select">
+                                <select name="">
+                                    <option value="">선택</option>
+                                    <option value="">07일</option>
+                                </select>
+                            </p>
+
+                        </div>
+                    </li>
+                    <!-- 부모동의입니다. -->
+                    <li class="parent_agree" style="display:none;">
+                        <div>
+                            <ul>
+                                <li onclick="fn_agree();" class="parent_tit">
+                                    <div class="tit">보호자 동의
+                                        <span class="txt">14세미만</span>
+                                    </div>
+                                    <ul class="agree_txt">
+                                        <li>
+                                            - 만 14세 미만이면 반드시 보호자(법정대리인)의 동의가 필요합니다.</li>
+                                        <li>
+                                            - 또한 보호자 동의를 진행하시면 어린이의 회원가입데 대한 동의 및 보호자의 개인정보 수집에 동의하는 것을 뜻합니다.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="agree">
+                                        <p class="ty_chk">
+                                            <input type="checkbox" name="agree" id="agree"/>
+                                            <label for="agree">
+                                                상기 만 14세 미만 아동의 법정대리인으로서 위 사항에 대해 동의합니다.
+                                            </label>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tit">학부모명
+                                        <span class="ico_point"></span>
+                                    </div>
+                                    <div class="desc pt_name">
+                                        <input type="text" placeholder="학부모명을 입력해주세요."/>
+                                        <a href="javascript:void(0);" class="btn_del">삭제</a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- //부모동의입니다. -->
+
+                    <li>
+                        <div class="tit">학부모 휴대폰번호</div>
+                        <div class="desc phone">
+                            <input
+                                type="text"
+                                id="prt_phone"
+                                maxlength="8"
+                                readonly="readonly"
+                                value="010-5225-4775"/>
+                        </div>
+                        <p class="guide txt">
+                            출결 및 분석표 정보를 받아볼 수 있습니다.
+                            <br/>
+                            변경은 교실에 문의해주세요.
+                        </p>
+                        <!-- <p class="wrong" style="display:none;"> 잘못된 휴대폰 번호입니다. </p> -->
+                    </li>
+
+                    <li>
+                        <div class="tit">추가 학부모 휴대폰번호</div>
+                        <div class="desc phone">
+                            <input
+                                type="text"
+                                id="prt_phone"
+                                maxlength="8"
+                                readonly="readonly"
+                                value="010-5225-4775"/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="tit">학교</div>
+                        <div class="desc school">
+                            <a href="Pop_search.html" class="btn">학교검색</a><input
+                                type="text"
+                                class=""
+                                placeholder="학교검색을 먼저 눌러주세요"
+                                readonly="readonly"
+                                value="화양초등학교"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tit">학년
+                            <span class="ico_point"></span>
+                        </div>
+                        <div class="desc year">
+                            <p class="txt">4학년</p>
+                            <p class="guide">
+                                변경은 교실에 문의해주세요.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tit">집 전화번호</div>
+                        <div class="desc phone select">
+                            <p class="select">
+                                <select name="">
+                                    <option value="">선택</option>
+                                    <option value="">070</option>
+                                </select>
+                            </p>
+                            <p class="input">
+                                <input
+                                    type="number"
+                                    placeholder="'-'없이 숫자만 입력해주세요."
+                                    pattern="[0-9]*"
+                                    maxlength="8"
+                                    oninput="numberMaxLength(this);"/>
+                                <a href="javascript:void(0);" class="btn_del">삭제</a>
+                            </p>
+
+                        </div>
+                        <p class="ty_chk phone">
+                            <input type="checkbox" name="phone" id="phone"/>
+                            <label for="phone">휴대폰번호와 동일</label>
+                        </p>
+
+                    </li>
+                    <li>
+                        <div class="tit">수강생 휴대폰번호</div>
+                        <div class="desc phone select">
+                            <p class="select">
+                                <select name="">
+                                    <option value="">선택</option>
+                                    <option value="">010</option>
+                                </select>
+                            </p>
+                            <p class="input">
+                                <input
+                                    type="number"
+                                    placeholder="'-'없이 숫자만 입력해주세요."
+                                    pattern="[0-9]*"
+                                    maxlength="8"
+                                    oninput="numberMaxLength(this);"/>
+                                <a href="javascript:void(0);" class="btn_del">삭제</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tit">간편 ID</div>
+                        <div class="desc id">
+                            <input type="text" class="" placeholder="아이디를 입력해 주세요."/>
+                            <a href="" class="btn">중복체크</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="tit">이메일</div>
+                        <div class="desc email">
+                            <p class="email_input">
+                                <input type="email" pattern="[^ @]*@[^ @]*" placeholder="이메일을 입력해주세요."/>
+                                <a href="javascript:void(0);" class="btn_del">삭제</a>
+                            </p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tit">주소</div>
+                        <div class="desc address">
+                            <p>
+                                <a href="javascript:void(0);" class="btn">주소검색</a><input type="text" class="" placeholder="주소검색을 먼저 눌러주세요." readonly="readonly"/></p>
+                            <p class="address">
+                                <input type="text" placeholder="상세주소 입력"/>
+                                <a href="javascript:void(0);" class="btn_del">삭제</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <!--//입력폼-->
+
+            <!--버튼-->
+            <section class="form_btn">
+                <a href="javascript:fn_value();">다음</a>
+            </section>
+            <!--//버튼-->
+
+            <!-- </asp:Content> -->
+
+        </article>
+
+        <!-- 레이어 alert -->
+        <article class="ly_wrap alert">
+            <!-- alert -->
+            <section class="ly_alert">
+                <!-- 타이틀 -->
+                <h1>타이틀이 어쩌고 저쩌고</h1>
+                <!-- //타이틀 -->
+
+                <p class="content">
+                    컨텐츠가 들어갑니다.
+                </p>
+                <div class="btn">
+                    <a href="javascript:alert_close();" class="btn_cancel">취소</a>
+                    <a href="Regis_form.html" class="btn_submit">입력완료</a>
+                </div>
+            </section>
+            <!-- //alert -->
+            <div class="mask"></div>
+        </article>
+        <!-- //레이어 alert -->
+
+    </body>
+</html>

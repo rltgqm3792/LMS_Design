@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+
+        <!--plugin -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css" rel="stylesheet" type="text/css" />
+        <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>당일출석부</h1>
+            </header>
+            <section class="pop_content">
+
+                <!-- 조건설정 -->
+                <h2 class="tit_h2">조회조건 설정</h2>
+                <div class="search_wrap">
+                    <ul class="info_group">
+                        <li>
+                            <dl>
+                                <dt>FC구분</dt>
+                                <dd>
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm all">
+                                            <input type="checkbox" id="smartclass_all" name="smartclass" onchange="all_check(this);" checked="checked" />
+                                            <label for="smartclass_all">전체</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="smartclass_chk01" name="smartclass" />
+                                            <label for="smartclass_chk01">수학</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="smartclass_chk02" name="smartclass" />
+                                            <label for="smartclass_chk02">영어</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="smartclass_chk03" name="smartclass" />
+                                            <label for="smartclass_chk03">전과목</label>
+                                        </span>
+                                    </span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>학년</dt>
+                                <dd>
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm all">
+                                            <input type="checkbox" id="class_all" name="class" onchange="all_check(this);" checked="checked" />
+                                            <label for="class_all">전체</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="class_chk01" name="class" />
+                                            <label for="class_chk01">초등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="class_chk02" name="class" />
+                                            <label for="class_chk02">중등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="class_chk03" name="class" />
+                                            <label for="class_chk03">고등</label>
+                                        </span>
+                                    </span>
+                                    <select>
+                                        <option>전체학년</option>
+                                        <option>초1</option>
+                                        <option>초2</option>
+                                        <option>초3</option>
+                                        <option>초4</option>
+                                        <option>초5</option>
+                                        <option>초6</option>
+                                        <option>중1</option>
+                                        <option>중2</option>
+                                        <option>중3</option>
+                                        <option>고1</option>
+                                        <option>고2</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>일자<span class="required"></span></dt>
+                                <dd>
+                                    <span class="txt_guide02">2021.05.01 (목)</span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>수강생</dt>
+                                <dd>
+                                    <form name="form">
+                                        <select name="selectstd" onchange="sel_std(this.form)">
+                                            <option selected="selected" value="0">수강생명</option>
+                                            <option value="1">수강생 번호</option>
+                                        </select>
+                                        <input type="text" name="inputname_std" class="input_address" placeholder="수강생명 or 수강생번호를 입력하세요." />
+                                    </form>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_bottom_wrap right">
+                    <button class="btn_search">검색</button>
+                </div>
+                <!-- //조건설정 -->
+
+                <!-- 포인트정보 -->
+                <h4 class="tit_h4">
+                    포인트 정보<span class="tit_sub">문자가능건수 : 588건(장문 333건)</span>
+                    <a href="javascript:openPop02('smsPointPop.html','800','650');" class="btn_top btn_ico sms"><span>SMS 포인트 충전</span></a>
+                    <!-- 출결 SMS 미사용중입니다. -->
+                </h4>
+                <!-- //포인트정보 -->
+
+                <div class="btn_top_wrap left">
+                    <select>
+                        <option value="">20</option>
+                    </select>
+                </div>
+
+                <!-- 수강생목록 테이블-->
+                <!-- 출석부SMS전송 입실 -->
+                <div class="time_sel">
+                    <select>
+                        <option value="">10</option>
+                    </select>
+                    <span>:</span>
+                    <select>
+                        <option value="">00</option>
+                    </select>
+                </div>
+                <br />
+
+                <!-- 출석부SMS전송 퇴실 -->
+                <div class="time_sel">
+                    <select>
+                        <option value="">10</option>
+                    </select>
+                    <span>:</span>
+                    <select>
+                        <option value="">30</option>
+                    </select>
+                </div>
+                <br />
+
+                <!-- 결석/지각 -->
+                <a href="" class="btn_table red">결석</a>
+                <a href="" class="btn_table orange">지각</a>
+                <br />
+
+                <div class="time_sel">
+                    <select>
+                        <option value="">10</option>
+                    </select>
+                    <span>:</span>
+                    <select>
+                        <option value="">30</option>
+                    </select>
+                    <a href="" class="btn_table btn_gray02 left_spc_s">취소</a>
+                </div>
+                <br />
+                <span class="col_red">결석</span>
+                <a href="" class="btn_table btn_gray02 left_spc_s">취소</a>
+                <br />
+
+                <!-- 시간 -->
+                <span class="gm_font col_red">15:20</span>
+
+                <div id="grid"></div>
+                <!-- //수강생목록 테이블-->
+
+            </section>
+
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+
+        </article>
+    </body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+                              
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>출결키패드</h1>
+            </header>
+            <section class="pop_content">
+
+                <div class="atd_box">
+                    <strong>11월 21일 월요일</strong>
+                        출결 확인
+                        <!-- 출석 미완료 -->
+                        <!-- 퇴실 완료 -->
+                </div>
+                <div class="pop_txt_top">
+                    출결번호 4자리 숫자 입력 후 확인버튼을 클릭해주세요.<br/>
+                    처음 입력 시 출석 처리, 두번째 입력 시 퇴실 처리가 됩니다.
+                </div>
+
+                <div class="btn_top_wrap between atd_input">
+                    <input type="text" maxlength="4" placeholder="키패드 4자리 숫자 입력하세요." class="input_w100" />
+                    <a href="javascript:alert_open('박찬호님 퇴실 처리되었습니다');" class="btn_top">확인</a>
+                </div> 
+                
+                <div class="pop_txt_bottom">
+                    <p>
+                       동시 가맹점의 경우 출결번호가 중복되지 않도록 재설정해주시기 바랍니다.
+                   </p>
+                </div>
+
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            </section>
+
+            <!-- alert 팝업 -->
+            <section class="alert_wrap">
+                <div class="alert_container">
+                    <div class="alert_content">
+                        <div class="alert_desc">
+                            <strong></strong>
+                            <span></span>
+                        </div>
+                        <div class="alert_btn">
+                            <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                            <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //alert 팝업 -->
+
+        </article>
+    </body>
+</html>

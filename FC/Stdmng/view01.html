@@ -1,0 +1,855 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('수강생 통계');
+        $('.group_title h2').text('월별');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=stdmng/view01">월별</a>
+    </li>
+    <li>
+        <a href="index.html?page=stdmng/view02">유형별</a>
+    </li>
+</ul>
+
+<!-- [D]컨텐츠 정보가 들어갑니다. -->
+<h4 class="tit_h4">조회조건 설정</h4>
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC 구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="search11" name="srch_class" checked />
+                            <label for="search11">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="search12" name="srch_class"/>
+                            <label for="search12">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="search13" name="srch_class"/>
+                            <label for="search13">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option value="">2021</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input
+                                type="checkbox"
+                                id="class_srch_all"
+                                name="class_srch"
+                                onclick="all_check(this)"
+                                checked="checked"/>
+                            <label for="class_srch_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch01" name="class_srch"/>
+                            <label for="class_srch01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch02" name="class_srch"/>
+                            <label for="class_srch02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch03" name="class_srch"/>
+                            <label for="class_srch03">고등</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>유형</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="radio21" name="radio2" checked="checked"/>
+                            <label for="radio21">실수강생</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="radio22" name="radio2"/>
+                            <label for="radio22">과금수강생</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search big">적용</button>
+</div>
+<!-- //조회 -->
+
+<!-- data -->
+<h4 class="tit_h4">Data(초등/중등/고등)</h4>
+
+<div class="table_list tfoot_center">
+    <table>
+        <colgroup>
+            <col style="width: 8%"/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>계</th>
+                <th>예비초</th>
+                <th>초1</th>
+                <th>초2</th>
+                <th>초3</th>
+                <th>초4</th>
+                <th>초5</th>
+                <th>초6</th>
+                <th>중1</th>
+                <th>중2</th>
+                <th>중3</th>
+                <th>고1</th>
+                <th>고2</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>비율</td>
+                <td>
+                    <span class="gm_font">100%</span>
+                </td>
+                <td>
+                    <span class="gm_font">7%</span>
+                </td>
+                <td>
+                    <span class="gm_font">2%</span>
+                </td>
+                <td>
+                    <span class="gm_font">5%</span>
+                </td>
+                <td>
+                    <span class="gm_font">9%</span>
+                </td>
+                <td>
+                    <span class="gm_font">4%</span>
+                </td>
+                <td>
+                    <span class="gm_font">7%</span>
+                </td>
+                <td>
+                    <span class="gm_font">11%</span>
+                </td>
+                <td>
+                    <span class="gm_font">19%</span>
+                </td>
+                <td>
+                    <span class="gm_font">22%</span>
+                </td>
+                <td>
+                    <span class="gm_font">11%</span>
+                </td>
+                <td>
+                    <span class="gm_font">1%</span>
+                </td>
+                <td>
+                    <span class="gm_font">0%</span>
+                </td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th>
+                    1월
+                </th>
+                <td>
+                    <span class="gm_font">50</span>
+                </td>
+                <td>
+                    <span class="gm_font">3</span>
+                </td>
+                <td>
+                    <span class="gm_font">2</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    2월
+                </th>
+                <td>
+                    <span class="gm_font">50</span>
+                </td>
+                <td>
+                    <span class="gm_font">3</span>
+                </td>
+                <td>
+                    <span class="gm_font">2</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    3월
+                </th>
+                <td>
+                    <span class="gm_font">50</span>
+                </td>
+                <td>
+                    <span class="gm_font">3</span>
+                </td>
+                <td>
+                    <span class="gm_font">2</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    4월
+                </th>
+                <td>
+                    <span class="gm_font">50</span>
+                </td>
+                <td>
+                    <span class="gm_font">3</span>
+                </td>
+                <td>
+                    <span class="gm_font">2</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+                <td>
+                    <span class="gm_font">10</span>
+                </td>
+            </tr>
+            <tr>
+                <th>계</th>
+                <td>
+                    <span class="gm_font">134</span>
+                </td>
+                <td>
+                    <span class="gm_font">134</span>
+                </td>
+                <td>
+                    <span class="gm_font">134</span>
+                </td>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    <span class="gm_font">2</span>
+                </td>
+                <td>
+                    <span class="gm_font">3</span>
+                </td>
+                <td>
+                    <span class="gm_font">4</span>
+                </td>
+                <td>
+                    <span class="gm_font">5</span>
+                </td>
+                <td>
+                    <span class="gm_font">6</span>
+                </td>
+                <td>
+                    <span class="gm_font">7</span>
+                </td>
+                <td>
+                    <span class="gm_font">8</span>
+                </td>
+                <td>
+                    <span class="gm_font">9</span>
+                </td>
+                <td>
+                    <span class="gm_font">9</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //data -->
+
+<!-- Graph(수학 - 초등) -->
+<h4 class="tit_h4">Graph(수학 - 초등)</h4>
+
+<!-- Graph -->
+<div class="graph2" style="display: block;">
+
+    <div id="chartdiv" style="height:400px;"></div>
+
+    <script>
+        am4core.ready(function () {
+            am4core.addLicense("CH230677325");
+            am4core.useTheme(am4themes_animated);
+
+            var chart = am4core.create("chartdiv", am4charts.XYChart);
+            chart.fontSize = 14;
+            chart.colors.step = 2;
+
+            chart.data = [
+                {
+                    "year": "1월",
+                    "element": 1,
+                    "element01": 2,
+                    "element02": 3,
+                    "element03": 4,
+                    "element04": 5,
+                    "element05": 6,
+                    "element06": 7,
+                    "middle01": 8,
+                    "middle02": 9,
+                    "middle03": 5,
+                    "high01": 4,
+                    "high02": 3
+                }, {
+                    "year": "2월",
+                    "element": 4,
+                    "element01": 7,
+                    "element02": 3,
+                    "element03": 9,
+                    "element04": 16,
+                    "element05": 11,
+                    "element06": 10,
+                    "middle01": 3,
+                    "middle02": 6,
+                    "middle03": 10,
+                    "high01": 3,
+                    "high02": 0
+                }, {
+                    "year": "3월",
+                    "element": 8,
+                    "element01": 3,
+                    "element02": 9,
+                    "element03": 10,
+                    "element04": 14,
+                    "element05": 6,
+                    "element06": 2,
+                    "middle01": 1,
+                    "middle02": 9,
+                    "middle03": 8,
+                    "high01": 7,
+                    "high02": 6
+                }, {
+                    "year": "4월",
+                    "element": 8,
+                    "element01": 4,
+                    "element02": 8,
+                    "element03": 10,
+                    "element04": 20,
+                    "element05": 15,
+                    "element06": 16,
+                    "middle01": 11,
+                    "middle02": 6,
+                    "middle03": 5,
+                    "high01": 10,
+                    "high02": 15
+                }, {
+                    "year": "5월",
+                    "element": 8,
+                    "element01": 4,
+                    "element02": 5,
+                    "element03": 8,
+                    "element04": 10,
+                    "element05": 11,
+                    "element06": 21,
+                    "middle01": 6,
+                    "middle02": 8,
+                    "middle03": 15,
+                    "high01": 18,
+                    "high02": 6
+                }, {
+                    "year": "6월",
+                    "element": 5,
+                    "element01": 15,
+                    "element02": 6,
+                    "element03": 16,
+                    "element04": 10,
+                    "element05": 11,
+                    "element06": 8,
+                    "middle01": 9,
+                    "middle02": 8,
+                    "middle03": 6,
+                    "high01": 5,
+                    "high02": 4
+                }, {
+                    "year": "7월",
+                    "element": 1,
+                    "element01": 5,
+                    "element02": 3,
+                    "element03": 3,
+                    "element04": 5,
+                    "element05": 3,
+                    "element06": 3,
+                    "middle01": 5,
+                    "middle02": 3,
+                    "middle03": 3,
+                    "high01": 5,
+                    "high02": 3
+                }
+            ];
+
+            var categoryAxis = chart
+                .xAxes
+                .push(new am4charts.CategoryAxis());
+            categoryAxis.dataFields.category = "year";
+            categoryAxis.renderer.opposite = false;
+            categoryAxis.renderer.minGridDistance = 10;
+
+            var valueAxis = chart
+                .yAxes
+                .push(new am4charts.ValueAxis());
+            valueAxis.renderer.inversed = false;
+            valueAxis.title.text = "";
+            valueAxis.renderer.minLabelPosition = 0.01;
+
+            var series1 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series1.dataFields.valueY = "element";
+            series1.dataFields.categoryX = "year";
+            series1.name = "예비초";
+            series1
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series1.tooltipText = " {name}  : {valueY}";
+            series1.legendSettings.valueText = "{valueY}";
+            series1.visible = false;
+            series1.stroke = am4core.color("#ffc24b");
+            series1.fill = am4core.color("#ffc24b");
+
+            var series2 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series2.dataFields.valueY = "element01";
+            series2.dataFields.categoryX = "year";
+            series2.name = '초1';
+            series2
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series2.tooltipText = " {name}  : {valueY}";
+            series2.legendSettings.valueText = "{valueY}";
+            series2.stroke = am4core.color("#ffc24b");
+            series2.fill = am4core.color("#ffc24b");
+
+            var series3 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series3.dataFields.valueY = "element02";
+            series3.dataFields.categoryX = "year";
+            series3.name = '초2';
+            series3
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series3.tooltipText = " {name} : {valueY}";
+            series3.legendSettings.valueText = "{valueY}";
+            series3.stroke = am4core.color("#ffc24b");
+            series3.fill = am4core.color("#ffc24b");
+
+            var series4 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series4.dataFields.valueY = "element03";
+            series4.dataFields.categoryX = "year";
+            series4.name = '초3';
+            series4
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series4.tooltipText = " {name}  : {valueY}";
+            series4.legendSettings.valueText = "{valueY}";
+            series4.stroke = am4core.color("#ffc24b");
+            series4.fill = am4core.color("#ffc24b");
+
+            var series5 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series5.dataFields.valueY = "element04";
+            series5.dataFields.categoryX = "year";
+            series5.name = '초4';
+            series5
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series5.tooltipText = " {name}  : {valueY}";
+            series5.legendSettings.valueText = "{valueY}";
+            series5.stroke = am4core.color("#ffc24b");
+            series5.fill = am4core.color("#ffc24b");
+            
+            var series6 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series6.dataFields.valueY = "element05";
+            series6.dataFields.categoryX = "year";
+            series6.name = '초5';
+            series6
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series6.tooltipText = " {name}  : {valueY}";
+            series6.legendSettings.valueText = "{valueY}";
+            series6.stroke = am4core.color("#ffc24b");
+            series6.fill = am4core.color("#ffc24b");
+
+            var series7 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series7.dataFields.valueY = "element06";
+            series7.dataFields.categoryX = "year";
+            series7.name = '초6';
+            series7
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series7.tooltipText = " {name}  : {valueY}";
+            series7.legendSettings.valueText = "{valueY}";
+            series7.stroke = am4core.color("#ffc24b");
+            series7.fill = am4core.color("#ffc24b");
+            
+            var series8 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series8.dataFields.valueY = "middle01";
+            series8.dataFields.categoryX = "year";
+            series8.name = '중1';
+            series8
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series8.tooltipText = " {name}  : {valueY}";
+            series8.legendSettings.valueText = "{valueY}";
+            series8.stroke = am4core.color("#FE7D6F");
+            series8.fill = am4core.color("#FE7D6F");
+            
+            var series9 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series9.dataFields.valueY = "middle02";
+            series9.dataFields.categoryX = "year";
+            series9.name = '중2';
+            series9
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series9.tooltipText = " {name}  : {valueY}";
+            series9.legendSettings.valueText = "{valueY}";
+            series9.stroke = am4core.color("#FE7D6F");
+            series9.fill = am4core.color("#FE7D6F");
+            
+            var series10 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series10.dataFields.valueY = "middle03";
+            series10.dataFields.categoryX = "year";
+            series10.name = '중3';
+            series10
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series10.tooltipText = " {name}  : {valueY}";
+            series10.legendSettings.valueText = "{valueY}";
+            series10.stroke = am4core.color("#FE7D6F");
+            series10.fill = am4core.color("#FE7D6F");
+            
+            var series11 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series11.dataFields.valueY = "high01";
+            series11.dataFields.categoryX = "year";
+            series11.name = '고1';
+            series11
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series11.tooltipText = " {name}  : {valueY}";
+            series11.legendSettings.valueText = "{valueY}";
+            series11.stroke = am4core.color("#2ECEAD");
+            series11.fill = am4core.color("#2ECEAD");
+            
+            var series12 = chart
+                .series
+                .push(new am4charts.LineSeries());
+            series12.dataFields.valueY = "high02";
+            series12.dataFields.categoryX = "year";
+            series12.name = '고2';
+            series12
+                .bullets
+                .push(new am4charts.CircleBullet());
+            series12.tooltipText = " {name}  : {valueY}";
+            series12.legendSettings.valueText = "{valueY}";
+            series12.stroke = am4core.color("#2ECEAD");
+            series12.fill = am4core.color("#2ECEAD");
+
+            chart.cursor = new am4charts.XYCursor();
+            chart.cursor.behavior = "zoomY";
+
+            let hs1 = series1
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs1.properties.strokeWidth = 5;
+            series1.segments.template.strokeWidth = 2;
+
+            let hs2 = series2
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs2.properties.strokeWidth = 5;
+            series2.segments.template.strokeWidth = 2;
+
+            let hs3 = series3
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs3.properties.strokeWidth = 5;
+            series3.segments.template.strokeWidth = 2;
+
+            let hs4 = series4
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs4.properties.strokeWidth = 5;
+            series4.segments.template.strokeWidth = 2;
+                        
+            let hs5 = series5
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs5.properties.strokeWidth = 5;
+            series5.segments.template.strokeWidth = 2;
+            
+            let hs6 = series6
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs6.properties.strokeWidth = 5;
+            series6.segments.template.strokeWidth = 2;
+            
+            let hs7 = series7
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs7.properties.strokeWidth = 5;
+            series7.segments.template.strokeWidth = 2;
+            
+            let hs8 = series8
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs8.properties.strokeWidth = 5;
+            series8.segments.template.strokeWidth = 2;
+            
+            let hs9 = series9
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs9.properties.strokeWidth = 5;
+            series9.segments.template.strokeWidth = 2;
+            
+            let hs10 = series10
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs10.properties.strokeWidth = 5;
+            series10.segments.template.strokeWidth = 2;
+            
+            let hs11 = series11
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs11.properties.strokeWidth = 5;
+            series11.segments.template.strokeWidth = 2;
+            
+            let hs12 = series12
+                .segments
+                .template
+                .states
+                .create("hover")
+            hs12.properties.strokeWidth = 5;
+            series12.segments.template.strokeWidth = 2;                        
+
+            chart.legend = new am4charts.Legend();
+            chart
+                .legend
+                .itemContainers
+                .template
+                .events
+                .on("over", function (event) {
+                    var segments = event.target.dataItem.dataContext.segments;
+                    segments.each(function (segment) {
+                        segment.isHover = true;
+                    })
+                })
+
+            chart
+                .legend
+                .itemContainers
+                .template
+                .events
+                .on("out", function (event) {
+                    var segments = event.target.dataItem.dataContext.segments;
+                    segments.each(function (segment) {
+                        segment.isHover = false;
+                    })
+                })
+
+        });
+    </script>
+
+   
+</div>
+<!-- //Graph -->

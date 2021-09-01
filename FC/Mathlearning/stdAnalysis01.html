@@ -1,0 +1,100 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('학습통계');
+        $('.group_title h2').text('학습 메뉴별 이용현황');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <span class="frm_wrap">
+                        <select>
+                            <option>2021년</option>
+                        </select>
+                        <select>
+                            <option>10월</option>
+                        </select>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="std_all" name="std" onchange="all_check(this);" />
+                            <label for="std_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std1" name="std" checked />
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std2" name="std" />
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std3" name="std" />
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>메뉴</dt>
+                <dd>
+                    <select>
+                        <option>선택</option>
+                        <option>수트레칭</option>
+                        <option>스마트교재</option>
+                        <option>AI맞춤학습</option>
+                        <option>평가학습</option>
+                        <option>보충학습</option>
+                        <option>분석표</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회-->
+<div class="btn_top_wrap right">
+    <span>
+        <a href="javascript:void(0);" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+    </span>
+</div>
+<div id="grid"></div>

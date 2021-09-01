@@ -1,0 +1,169 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+
+        calendar();
+        $('.datepicker-input').focus(function () { // 달력 클릭 시 태블릿 키패드 처리
+            var _input = $(this);
+            _input.attr("readonly", true);
+            setTimeout(function () { _input.attr("readonly", false); }, 50);
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<!-- 조건설정 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk01" name="smartclass" checked="checked" />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>상태</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="state_all" name="state" onchange="all_check(this);" checked="checked" />
+                            <label for="state_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="state01" name="state" />
+                            <label for="state01">재직중</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="state02" name="state" />
+                            <label for="state02">퇴사</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>등록일</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" id="startpicker-input" type="text" aria-label="Date" />
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input class="datepicker-input" id="endpicker-input" type="text" aria-label="Date" />
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month01" name="month" checked="checked" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>강사명</dt>
+                <dd>
+                    <input type="text" placeholder="강사명을 입력하세요" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조건설정 -->
+
+<!-- 강사목록 테이블-->
+<div class="btn_top_wrap between">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong class="col_blue">4</strong>명</span>
+    </span>
+    <span>
+        <a href="index.html?page=hakwon/teacherSetReg" class="btn_top">강사등록</a>
+        <a href="javascript:alert_confirm('강사 퇴사시 해당 강사의 소속 수강생들은<br /> 원장 소속으로 자동변경됩니다.','퇴사 처리 하시겠습니까?','');" class="btn_top btn_gray02">퇴사</a>
+        <a href="javascript:alert_confirm('강사 삭제시 해당 강사의 소속 수강생들은<br /> 원장 소속으로 자동변경됩니다.','퇴사 처리 하시겠습니까?','');" class="btn_top btn_gray02">삭제</a>
+    </span>
+</div>
+<a href="index.html?page=hakwon/teacherView">박찬호</a>
+
+<div id="grid"></div>
+<!-- //강사목록 테이블-->

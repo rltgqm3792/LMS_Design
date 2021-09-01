@@ -1,0 +1,80 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("코스목록");
+
+        //달력
+        calendar();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>등록일</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="startpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input id="endpicker-input" type="text" aria-label="Date">
+                        <span class="tui-ico-date"></span>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>서비스 여부</dt>
+                <dd>                                                                   
+                    <select>
+                        <option>선택</option>
+                        <option>Y</option>
+                        <option>N</option>
+                    </select>
+                </dd>
+            </dl>
+        </li> 
+        <li>
+            <dl>
+                <dt>직접입력 </dt>
+                <dd><select><option>선택</option></select><input type="text" placeholder="검색어를 입력하세요"></dd>
+            </dl>
+        </li>
+    </ul>    
+    <!-- 초기화,검색 버튼 -->
+    <div class="btn_wrap box_in">
+        <a href="#" class="btn_reset"><br/>초기화</a>
+        <a href="" class="btn_search big">검색</a>
+    </div> 
+    <!-- //초기화,검색 버튼 -->
+</div>
+<!--테이블 상단-->
+<div class="btn_top_wrap between">
+    <p>
+        <select class="h34">
+            <option value="" selected>All</option>
+            <option value="">10</option>
+            <option value="">20</option>
+            <option value="">30</option>
+        </select>
+    </p> 
+    <p>
+        <a href="index.html?page=file/eng_course_write" class="btn_top">코스등록</a>
+        <a href="javascript:openPop('../lcms/file/pop_eng_course.html','800','550');" class="btn_top">코스 일괄등록</a>
+        <a href="" class="btn_top line excel"><span>엑셀 다운로드</span></a>
+        <a href="" class="btn_top black">삭제</a>
+    </p>
+</div>
+<!--//테이블 상단-->
+<div id="grid"></div>

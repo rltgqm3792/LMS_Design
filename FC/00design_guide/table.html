@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+                  
+    <!--plugin -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css"  rel="stylesheet" type="text/css"/>
+    <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css"  rel="stylesheet" type="text/css"/>
+    <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+   
+    <style>
+        /* scrollbar-width: thin; */
+    </style>    
+
+   <script type="text/javascript">
+        $(function(){
+            //top nav 활성화
+            //[D] 개발에서 폴더명 바꾸시면 여기에서 바꾸면 됩니다. 
+            if(folder == 'stdmng'){
+                $('.one_depth .tit').text('수강생관리');
+            }
+            else if(folder == 'mathlearning'){
+                $('.one_depth .tit').text('학습관리(수학)');
+            }
+            else if(folder == 'englearning'){
+                $('.one_depth .tit').text('학습관리(영어)');
+            }
+            else if(folder == 'tclasslearning'){
+                $('.one_depth .tit').text('학습관리(전과목)');
+            }
+            else if(folder == 'order'){
+                $('.one_depth .tit').text('주문관리');
+            }
+            else if(folder == 'education'){
+                $('.one_depth .tit').text('교육관리');
+            }
+            else if(folder == 'community'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'pds'){
+                $('.one_depth .tit').text('커뮤니티');
+            }
+            else if(folder == 'hakwon'){
+                $('.one_depth .tit').text('가맹점관리');
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <!--전체레이아웃-->
+    <article id="wrap" class="contain">
+        <section class="header">
+            <!-- info -->
+            <div class="group_info">
+              <div><a href="#" class="btn_class">수업모드</a></div>
+              <div class="login_off">
+                  <p class="txt1">이용시간(세션)만료  55분 00초 전</p>
+                  <a href="#" class="btn_time">시간연장</a>
+                  <div class="info">
+                      <dl>
+                          <dt><img src="http://image.test.hbedu.co.kr/LMS/FC/img/master/img07.png" src="선생님이미지"></dt>
+                          <dd><a href="#" class="btn_adm_name"><strong>관리자</strong>님 환영합니다.</a></dd>
+                      </dl>
+                      <div class="ly_info">
+                          <ul>
+                              <li><a href="#">비밀번호 변경</a></li>
+                              <li><a href="#">로그아웃</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <a href="#" class="btn_alarm">알림<span>9</span></a>
+              </div>
+          </div>
+          <!-- //info -->
+
+          <!-- top 네비 -->
+          <div id="top_nav" class="top_nav" >
+              <ul>
+                  <li class="home"><a href="#">홈</a></li>
+              
+              </ul>
+          </div>
+      </section>
+        <!-- lnb  -->
+        <section id="gnb" class="gnb_wrap">
+            <!--원뎁스-->
+            <menu class="gnb_1depth">
+                <!--로고-->
+                <h1><a href="index.html">SMART</a></h1>
+                <!--//로고-->
+                <a href="#" class="btn_all_menu">전체메뉴</a>
+                <ul>
+                    <li><a href="javascript:void(0);" class="stdmng" data-tab="gnb_std">수강생 관리</a></li>
+                    <li><a href="javascript:void(0);" class="mathlearning" data-tab="gnb_math">학습관리(수학)</a></li>
+                    <li><a href="javascript:void(0);" class="englearning" data-tab="gnb_eng">학습관리(영어)</a></li>
+                    <li><a href="javascript:void(0);" class="tclasslearning" data-tab="gnb_tclass">학습관리(전과목)</a></li>
+                    <li><a href="javascript:void(0);" class="order" data-tab="gnb_order">주문관리</a></li>
+                    <li><a href="javascript:void(0);" class="education" data-tab="gnb_edu">가맹점교육관리</a></li>
+                    <li><a href="javascript:void(0);" class="community" data-tab="gnb_cmn">커뮤니티</a></li>
+                    <li><a href="javascript:void(0);" class="pds" data-tab="gnb_pds">자료실</a></li>
+                    <li><a href="javascript:void(0);" class="hakwon" data-tab="gnb_hakwon">가맹점관리</a></li>
+                </ul>
+            </menu>
+            <!--//원뎁스-->
+        </section>
+        <section id="container" class="content">
+            
+            <!-- [D]컨텐츠 정보가 들어갑니다. -->
+            <div class="wrap_sub">
+                
+                <!--tit_main-->
+                <div class="group_title">
+                    <h2 class="tit_main">지사/관리자 디자인 가이드</h2>
+                </div>
+                <!--//tit_main-->
+                
+                <!-- 1Depth Tab -->
+                <ul class="tab_1depth">
+                    <!-- [D] 활성화 : on-->
+                    <li><a href="tab.html">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                    <li><a href="search.html">검색</a></li>
+                    <li class="on"><a href="table.html">테이블</a></li>
+                    <li><a href="table_regis.html">가입테이블</a></li>
+                    <li><a href="std_list01.html">진행중 학습 리스트</a></li>
+                </ul>
+                <!-- // 1Depth Tab -->
+
+                <!-- tit_sub -->
+                <h3 class="tit_h3">-- 테이블상단영역 --</h3>
+                <!-- //tit_sub  -->
+                <!-- 기본 -->
+                <div class="btn_top_wrap">
+                    <select>
+                        <option value="">10</option>
+                        <option value="" selected>20</option>
+                        <option value="">50</option>
+                        <option value="">100</option>
+                    </select>
+                    <span class="list_num">전체 <strong class="col_blue">25</strong>개</span>
+                </div>
+                <!-- // 기본 -->
+
+                <div class="btn_top_wrap between">
+                    <span>
+                        <select>
+                            <option value="">10</option>
+                            <option value="" selected>20</option>
+                            <option value="">50</option>
+                            <option value="">100</option>
+                        </select>
+                        <span class="list_num">전체 <strong class="col_blue">25</strong>개</span>
+                        <span class="list_num">
+                            확인 <strong class="col_blue">25</strong>개
+                            <span class="bar">
+                                미확인 <strong class="col_red">25</strong>개
+                            </span>
+                        </span>
+                    </span>
+                    <span>
+                        <select>
+                            <option value="">학년선택</option>
+                        </select>
+                        <select>
+                            <option value="">학기선택</option>
+                        </select>
+                        <select>
+                            <option value="">단원명선택</option>
+                        </select>
+                        <a href="#" class="btn_top btn_del">삭제</a>
+                    </span>
+                </div>
+
+                <div class="btn_top_wrap between">
+                    <span>
+                        <select>
+                            <option value="">10</option>
+                            <option value="" selected>20</option>
+                            <option value="">50</option>
+                            <option value="">100</option>
+                        </select>
+                        <h4 class="tit_h4">예비 수강생목록
+                            <div class="tooltip_area">
+                                <button class="btn_tooltip small">tooltip</button>
+                                <div class="tooltip_cont">
+                                    <p class="tit">보상안내</p>
+                                    <ul class="bu_type">
+                                        <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                                        <li>4개 : 미션 완료 추가보상 500골드</li>
+                                        <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                                    </ul>
+                                    <button class="close">툴팁닫기</button>
+                                </div>
+                            </div>
+                            <span class="tit_sub">
+                                전체 <strong class="col_blue">1,256</strong>명 (수학 00명, 영어 00명, 전과목 00명)
+                            </span>
+                        </h4>
+                    </span>
+                    <span>
+                        <button class="btn_top btn_del">삭제</button>
+                    </span>
+                </div>
+
+                <h4 class="tit_h4">출제 내용
+                    <div class="tooltip_area">
+                        <button class="btn_tooltip small">tooltip</button>
+                        <div class="tooltip_cont right">
+                            <p class="tit">일괄출제란 : 출제된 단원의 다음학습자동출제를 의미합니다.</p>
+                            <ul class="bu_type">
+                                <li>다음단원을 2주차까지 출제된 경우 일괄출제가 불가능합니다.</li>
+                                <li>커리큘럼을 변경하여 처음 다원을 시작할 경우 수강생별 맞춤출제에게 출제 후 가능합니다.</li>
+                            </ul>
+                            <button class="close">툴팁닫기</button>
+                        </div>
+                    </div>
+                    <span class="tit_sub">제시된 다음주차/다음단원을 일괄로 출제합니다. (최대 8명까지 선택가능)</span>
+                </h4>                
+
+                <div class="btn_top_wrap between">
+                    <h4 class="tit_h4">퉅팁 width클래스 추가 / 2뎁스 리스트 
+                        <div class="tooltip_area">
+                            <button class="btn_tooltip small">tooltip</button>
+                            <div class="tooltip_cont right w650">
+                                <ul class="bu_type">
+                                    <li>날짜별 출석부에서 시간 입력, 지각/결석 체크 시 학부모에게 문자 전송되지 않습니다.<br/>
+                                        (출결키패드 및 당일 출석부에서 체크 시에만 문자 전송됩니다.)</li>
+                                    <li>퇴실
+                                        <ul>
+                                            <li>퇴실 인식 시간이 설정되어 있지 않은 경우 수업 시간이 15분 이상 되었을 경우 퇴실 처리 가능합니다.</li>
+                                            <li>퇴실 인식 시간이 미설정 되어 있을 경우 30분으로 기본 세팅됩니다.)</li>
+                                        </ul>
+                                    </li>
+                                    <li>입실
+
+                                        <ul>
+                                            <li>당일 내 입실만 되고, 퇴실 처리가 안된 건은 24:00 이후 설정된 퇴실인식시간에 맞게 퇴실 처리됩니다.<br /> (단, 퇴실 문자전송 안됩니다.)</li>
+                                        </ul>
+                                    </li>
+                                    <li>퇴실인식시간 미설정의 경우 30분으로 설정)</li>
+                                </ul>
+                                <button class="close">툴팁닫기</button>
+                            </div>
+                        </div>
+                    </h4>
+                </div>
+
+                <div class="btn_top_wrap between">
+                    <h4 class="tit_h4">퉅팁 링크 타입 오른쪽 열림
+                        <div class="tooltip_area">
+                            <button type="button" class="btn_tooltip link"><span>김철수 (100001234, 초3)외 8인</span></button>
+                            <div class="tooltip_cont right">
+                                <p class="tit">8명</p>
+                                <ul class="bu_type">
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                </ul>
+                                <button class="close">툴팁닫기</button>
+                            </div>
+                        </div>
+                    </h4>
+                    <h4 class="tit_h4">퉅팁 링크 타입 왼쪽 열림
+                        <div class="tooltip_area">
+                            <button type="button" class="btn_tooltip link"><span>김철수 (100001234, 초3)외 8인</span></button>
+                            <div class="tooltip_cont">
+                                <p class="tit">8명</p>
+                                <ul class="bu_type">
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                    <li>김준호(100001234, 초4)</li>
+                                </ul>
+                                <button class="close">툴팁닫기</button>
+                            </div>
+                        </div>
+                    </h4>
+                </div>
+                 
+                 <!-- tit_sub -->
+                 <h3 class="tit_h3">-- 테이블디자인_type-01 --</h3>
+                 <!-- //tit_sub  -->
+ 
+                 <!--테이블 상단-->
+                 <div class="btn_top_wrap between">
+                    <span>
+                        <select>
+                            <option value="">10</option>
+                            <option value="" selected>20</option>
+                            <option value="">50</option>
+                            <option value="">100</option>
+                        </select>
+                        <select>
+                            <option value="">라인타입</option>
+                        </select>
+                        <span class="list_num">전체 <strong class="col_blue">25</strong>개</span>
+                    </span>
+                    <span>
+                        <span class="txt">
+                            보상안내
+                            <div class="tooltip_area">
+                                <button class="btn_tooltip small">tooltip</button>
+                                <div class="tooltip_cont">
+                                    <p class="tit">보상안내</p>
+                                    <ul class="bu_type">
+                                        <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                                        <li>4개 : 미션 완료 추가보상 500골드</li>
+                                        <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                                    </ul>
+                                    <button class="close">툴팁닫기</button>
+                                </div>
+                            </div>
+                        </span>
+                        <span class="txt">
+                            보상안내
+                            <div class="tooltip_area">
+                                <button class="btn_tooltip small">tooltip</button>
+                                <div class="tooltip_cont">
+                                    <p class="tit">보상안내</p>
+                                    <ul class="bu_type">
+                                        <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                                        <li>4개 : 미션 완료 추가보상 500골드</li>
+                                        <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                                    </ul>
+                                    <button class="close">툴팁닫기</button>
+                                </div>
+                            </div>
+                        </span>
+                        <button class="btn_top btn_del">삭제</button>
+                    </span>
+                 </div>
+                 <!--//테이블 상단-->
+
+                 <!-- 테이블 세로라인 없음-->
+                 <div class="table_list board">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col style="width: 5%" />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std_all" onchange="all_check(this);"/>
+                                        <label for="std_all">전체선택</label>
+                                    </span>
+                                 </th>
+                                 <th>FC구분</th>
+                                 <th>수강생번호</th>
+                                 <th>수강생명</th>
+                                 <th>ID</th>
+                                 <th>학년</th>
+                                 <th>비밀번호</th>
+                                 <th>현재학습</th>
+                                 <th>시간표</th>
+                                 <th>클래스</th>
+                                 <th>강사정보</th>
+                                 <th>휴대폰</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                             <tr class="select">
+                                 <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std1"/>
+                                        <label for="std1">선택</label>
+                                    </span>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><a href="#" class="gm_font link">M00002652</a></td>
+                                 <td>김해법</td>
+                                 <td><span class="gm_font">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table">초기화</a></td>
+                                 <td>
+                                     <a href="" class="ico_img file">파일</a>
+                                     <a href="" class="ico_img album">앨범</a>
+                                     <a href="" class="ico_img image">이미지</a>
+                                     <a href="" class="ico_img printer">프린트</a>
+                                     <a href="" class="ico_img download">다운로드</a>
+                                     <a href="" class="ico_img readme">리드미</a>
+                                     <a href="" class="ico_img new">New</a>
+                                 </td>
+                                 <td><a href="" class="btn_table">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="gm_font">010-5585-5585</span></td>
+                             </tr>
+                             <tr class="error">
+                                 <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="std" id="std2"/>
+                                        <label for="std2">선택</label>
+                                    </span>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><span class="gm_font">M00002652</span></td>
+                                 <td>김해법</td>
+                                 <td><span class="gm_font">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table">초기화</a></td>
+                                 <td><a href="" class="btn_table">보기</a></td>
+                                 <td><a href="" class="btn_table">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="gm_font">010-5585-5585</span></td>
+                             </tr>
+                             <tr>
+                                <td>
+                                   <span class="frm only">
+                                       <input type="checkbox" name="std" id="std2"/>
+                                       <label for="std2">선택</label>
+                                   </span>
+                                </td>
+                                <td>해법수학</td>
+                                <td><span class="gm_font">M00002652</span></td>
+                                <td>김해법</td>
+                                <td><span class="gm_font">HB01</span></td>
+                                <td>초등3</td>
+                                <td><a href="" class="btn_table">초기화</a></td>
+                                <td><a href="" class="btn_table">보기</a></td>
+                                <td><a href="" class="btn_table">보기</a></td>
+                                <td>울산1</td>
+                                <td>이수학</td>
+                                <td><span class="gm_font">010-5585-5585</span></td>
+                            </tr>
+                         </tbody>
+                     </table>
+                 </div>
+                 <div class="paging">
+                     <a href="" class="btn_paging back"></a>
+                     <a href="" class="btn_paging pre"></a>
+                     <ul>
+                       <li><a href="">1</a></li>
+                       <li><a href="">2</a></li>
+                       <li><a href="">3</a></li>
+                       <li class="on">4</li>
+                       <li><a href="">5</a></li>
+                       <li><a href="">6</a></li>
+                       <li><a href="">7</a></li>
+                       <li><a href="">8</a></li>
+                       <li><a href="">9</a></li>
+                     </ul>
+                     <a href="" class="btn_paging next"></a>
+                     <a href="" class="btn_paging forward"></a>
+                 </div>
+ 
+                 <!-- tit_sub -->
+                 <h3 class="tit_h3">--테이블디자인_type-02
+                     <span class="tit_sub">
+                         <span class="ico_time">마지막 저장날짜 : 2020-10-28</span>
+                     </span>
+                 </h3>
+                 <h3 class="tit_h3">--테이블디자인_type-02</h3>
+                 <!-- //tit_sub  -->
+                 <!-- 기본테이블 -->
+                 <div class="table_list">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col style="width: 5%" />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th>
+                                     <span class="frm only">
+                                         <input type="checkbox" name="board2" id="all_chk2" onchange="all_check(this);"/>
+                                         <label for="all_chk2">전체선택</label>
+                                     </span>
+                                 </th>
+                                 <th>
+                                    <div class="btn_sort">
+                                    FC구분
+                                       <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                                    </div>
+                                </th>
+                                 <th>
+                                    <div class="btn_sort">
+                                    수강생번호
+                                       <a href="javascript:void(0);" class="sort_up">오름차순 정렬</a>
+                                        <a href="javascript:void(0);" class="sort_down">내림차순 정렬</a>
+                                    </div>
+                                </th>
+                                 <th>
+                                    수강생명
+                                </th>
+                                 <th>ID</th>
+                                 <th>학년</th>
+                                 <th>비밀번호</th>
+                                 <th>현재학습</th>
+                                 <th>시간표</th>
+                                 <th>클래스</th>
+                                 <th>강사정보</th>
+                                 <th>휴대폰</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="board2" id="chk2"/>
+                                        <label for="chk2">선택</label>
+                                    </span>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><span class="gm_font">M00002652</span></td>
+                                 <td>김해법</td>
+                                 <td><span class="gm_font">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table">초기화</a></td>
+                                 <td><a href="" class="btn_table">보기</a></td>
+                                 <td><a href="" class="btn_table">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="gm_font">010-5585-5585</span></td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="board2" id="chk3"/>
+                                        <label for="chk3">선택</label>
+                                    </span>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><span class="gm_font">M00002652</span></td>
+                                 <td>김해법</td>
+                                 <td><span class="gm_font">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table">초기화</a></td>
+                                 <td><a href="" class="btn_table">보기</a></td>
+                                 <td><a href="" class="btn_table">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="gm_font">010-5585-5585</span></td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+ 
+                 <div class="btn_bottom_wrap right">
+                     <span><a href="" class="btn_basic">가입</a></span>
+                 </div>
+
+                 <div class="group">
+                    <!-- 분할 -->
+                    <div class="col_group">
+                        <div>
+                            <div class="table_list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>1</th>
+                                            <th>1</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="table_list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>1</th>
+                                            <th>1</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col_group col3">
+                        <div>
+                            <div class="table_list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>1</th>
+                                            <th>1</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="table_list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>1</th>
+                                            <th>1</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="table_list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>1</th>
+                                            <th>1</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //분할 -->
+                </div>
+ 
+                 <!-- tit_sub -->
+                 <h3 class="tit_h3">--테이블디자인_type-03</h3>
+                 <!-- //tit_sub  -->
+                 
+                 <div class="table_list column">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th rowspan="2">구분</th>
+                                 <th colspan="8">1Depth 컬럼</th>
+                             </tr>
+                             <tr>
+                                 <th colspan="4">1Depth 컬럼</th>
+                                 <th colspan="4">2Depth 컬럼</th>
+                             </tr>
+                         </thead>
+                         <tfoot>
+                             <tr>
+                                 <th>합계</th>
+                                 <td colspan="8" class="right">
+                                     <span class="gm_font">182,312,467</span>
+                                 </td>
+                             </tr>
+                         </tfoot>
+                         <tbody>
+                           <tr>
+                             <td>세로칼럼</td>
+                             <td><input type="text" class="input_money" value="금액입력 우측정렬"/></td>
+                             <td>초1 독산교실<br>초1 독산교실</td>
+                             <td>초1 독산교실</td>
+                             <td>
+                                <div class="num_choice">
+                                    <a href="" class="btn_table btn_minus"></a>
+                                    <input type="text" class="input_num" value="1" readOnly="readOnly"/>
+                                    <a href="" class="btn_table btn_plus"></a>
+                                </div>
+                             </td>
+                             <td><span class="gm_font">100,000</span></td>
+                             <td><span class="gm_font">2020-06-21</span></td>
+                             <td>이민호</td>
+                             <td><span class="gm_font">100%</span></td>
+                           </tr>
+                           <tr>
+                             <td>세로칼럼</td>
+                             <td><span class="gm_font">0356499</span></td>
+                             <td>초1 독산교실</td>
+                             <td>초1 독산교실</td>
+                             <td>
+                                <div class="num_choice">
+                                    <a href="" class="btn_table btn_minus"></a>
+                                    <input type="text" class="input_num" value="1" readOnly="readOnly"/>
+                                    <a href="" class="btn_table btn_plus"></a>
+                                </div>
+                             </td>
+                             <td><span class="gm_font">100,000</span></td>
+                             <td><span class="gm_font">2020-06-21</span></td>
+                             <td>이민호</td>
+                             <td><span class="gm_font">100%</span></td>
+                           </tr>
+                           
+                         </tbody>
+                     </table>
+                 </div>
+                 <div class="btn_bottom_wrap between">
+                    <span><a href="" class="btn_basic btn_line">목록</a></span>
+                    <span>
+                        <a href="" class="btn_basic btn_del">삭제</a>
+                        <a href="" class="btn_basic">저장</a>
+                    </span>
+                </div>
+ 
+                  <!-- tit_sub -->
+                  <h3 class="tit_h3">--테이블디자인_type-04</h3>
+                  <!-- //tit_sub  -->
+                  
+                  <div class="table_list column">
+                      <table>
+                          <caption></caption>
+                          <colgroup>
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                  <th rowspan="3" class="btl">구분</th>
+                                  <th colspan="8">1Depth 컬럼</th>
+                                  <th rowspan="3" class="total">total</th>
+                              </tr>
+                              <tr>
+                                  <th colspan="4">1Depth 컬럼</th>
+                                  <th colspan="4">2Depth 컬럼</th>
+                              </tr>
+                              <tr>
+                                 <th colspan="4">1Depth 컬럼</th>
+                                 <th colspan="4">2Depth 컬럼</th>
+                                 
+                             </tr>
+                          </thead>
+                          
+                          <tbody>
+                            <tr>
+                              <td>세로칼럼</td>
+                              <td><span class="gm_font">0356499</span></td>
+                              <td>초1 독산교실</td>
+                              <td>초1 독산교실</td>
+                              <td><span class="gm_font">100</span></td>
+                              <td><span class="gm_font">100,000</span></td>
+                              <td><span class="gm_font">2020-06-21</span></td>
+                              <td>이민호</td>
+                              <td><span class="gm_font">100%</span></td>
+                              <td class="total"><span class="gm_font">100</span></td>
+                            </tr>
+                            <tr>
+                              <td>세로칼럼</td>
+                              <td><span class="gm_font">0356499</span></td>
+                              <td>초1 독산교실</td>
+                              <td>초1 독산교실</td>
+                              <td><span class="gm_font">100</span></td>
+                              <td><span class="gm_font">100,000</span></td>
+                              <td><span class="gm_font">2020-06-21</span></td>
+                              <td>이민호</td>
+                              <td><span class="gm_font">100%</span></td>
+                              <td class="total"><span class="gm_font">100</span></td>
+                            </tr>
+                            
+                          </tbody>
+                      </table>
+                 </div>
+ 
+                 <!-- tit_sub -->
+                 <h3 class="tit_h3">--테이블디자인_type-05</h3>
+                 <!-- //tit_sub  -->
+                 <!-- 기본테이블 -->
+                 <div class="table_list">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col style="width: 5%" />
+                             <col style="width: 15%"/>
+                             <col style="width: 15%"/>
+                             <col />
+                             <col style="width: 10%"/>
+                          
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="board3" id="all_chk3" onchange="all_check(this);"/>
+                                        <label for="all_chk3">전체선택</label>
+                                    </span>
+                                 </th>
+                                 <th>FC구분</th>
+                                 <th>수강생번호</th>
+                                 <th>수강생명</th>
+                                 <th>ID</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="board3" id="chk31"/>
+                                        <label for="chk31">선택</label>
+                                    </span>
+                                 </td>
+                                 <td>
+                                     <input type="text">
+                                 </td>
+                                 <td>
+                                     <select>
+                                         <option>단원선택을 해볼까요??</option>
+                                     </select>
+                                 </td>
+                                 <td>
+                                     <a href="" class="btn_table">테이블내 버튼 디폴트스타일</a>
+                                     <a href="" class="btn_table red">입실</a>
+                                     <a href="" class="btn_table purple">퇴실</a>
+                                     <a href="" class="btn_table bluish">문제</a>
+                                     <a href="" class="btn_table green">풀이</a>
+                                     <a href="" class="btn_table orange">해답</a>
+                                     <a href="" class="btn_table blue">등록</a>
+                                     <a href="" class="btn_table ico"><span class="search">검색</span></a>
+                                     <a href="" class="btn_table ico_score"><span class="circle">맞음</span></a>
+                                     <a href="" class="btn_table ico_score"><span class="wrong">틀림</span></a>
+                                     <a href="" class="btn_table ico_score"><span class="triangle">부분</span></a>
+                                     <a href="" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    <a href="" class="btn_table man_chk">대상자선정</a>
+                                    <a href="" class="btn_table man">대상자보기</a>
+                                 </td>
+                                 <td><span class="gm_font">HB01</span></td>                         
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+                
+                <h3 class="tit_h3">--테이블디자인_type-06</h3>
+                <div class="table_list">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:15%" />
+                            <col />
+                            <col style="width:15%" />
+                            <col />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>수강생명</th>
+                                <td class="left">
+                                    <span class="name">박찬호</span>
+                                    <span class="gm_font">M098765432</span>
+                                    <span class="std_grade">초3</span>
+                                </td>
+                                <th>구분</th>
+                                <td>스마트맞춤학습</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                 <h3 class="tit_h3">데이터 없음_테이블</h3>
+                 <div class="table_list">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width: 5%" />
+                            <col style="width: 15%"/>
+                            <col style="width: 15%"/>
+                            <col />
+                            <col style="width: 10%"/>
+                         
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span class="frm only">
+                                        <input type="checkbox" name="board4" id="all_chk4" onchange="all_check(this);"/>
+                                        <label for="all_chk4">전체선택</label>
+                                    </span>
+                                </th>
+                                <th>FC구분</th>
+                                <th>수강생번호</th>
+                                <th>수강생명</th>
+                                <th>ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="no_data">
+                                        해당 검색 결과가 없습니다.
+                                    </div>
+                                </td>                  
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="tit_h3">테이블 type 07</h3>
+                <div class="table_list table_bd_none">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width: 13%"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <span class="dot">대상교재1</span>
+                                </th>
+                                <td class="left">
+                                    ABC Phonics, Little Top Storybook, Topstory book, Tell Me, Top Readers, Top Plus
+                                    Reading
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <span class="dot">대상교재2</span>
+                                </th>
+                                <td class="left">
+                                    Speak Up, Survival English, Storytelling Readers, Global Readers, Speech Contest
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <span class="dot">대상교재3</span>
+                                </th>
+                                <td class="left">
+                                    Reading Secret, My Firlst Diary, Reading Pro
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <span class="dot">신청기간</span>
+                                </th>
+                                <td class="left">
+                                    <strong>YYYY.MM.DD ~ YYYY.MM.DD</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <span class="dot">신청방법</span>
+                                </th>
+                                <td class="left">
+                                    HB TALK 쿠폰 구매 후 회원 별 신청 → 월 2회/4회/8회 선택하여 신청 (1회당 6,000원 공제)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="tit_h3">table_list 기본width : select, input</h3>
+                  <!--테이블-->
+        <div class="table_list select_wauto">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width: 30%"/>
+                    <col/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>주문 예정교재</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>교재1</td>
+                        <td>
+                            <select>
+                                <option>aaa</option>
+                            </select>
+                            <input type="text" value="(신)해법계산2학년 B1 SET(01~02)" />
+                        </td>
+                    </tr>
+                    <tr>                        
+                        <td>Program1</td>
+                        <td class="left">
+                            <input type="text" value="Cognitive Level" />
+                            <input type="text" value="Level선택" class="input_w20" />
+                            <input type="text" value="LA1_39_1_School English" class="input_w50" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--//테이블-->
+
+                <h3 class="tit_h3">데이터 없음_테이블이외</h3>
+                <div class="no_data">
+                     해당 검색 결과가 없습니다.
+                </div>
+
+                <h3 class="tit_h3">세로스크롤 테이블</h3>
+                 <!-- 테이블스크롤_세로 -->
+                <div class="table_list">
+                    <table class="thead">
+                        <colgroup>
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                            <col style="width:20%;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>1Depth</th>
+                                <th>1월</th>
+                                <th>2월</th>
+                                <th>3월</th>
+                                <th>4월</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scroll" style="max-height:150px;">
+                        <table class="tbody">
+                            <colgroup>
+                                <col style="width:20%;" />
+                                <col style="width:20%;" />
+                                <col style="width:20%;" />
+                                <col style="width:20%;" />
+                                <col style="width:20%;" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h3 class="tit_h3">가로 스크롤 테이블</h3>
+
+                <!-- 테이블 스크롤 가로 -->
+                <div class="table_list flex">
+                    <div class="left" style="width:30%;">
+                        <table>
+                            <colgroup>
+                                <col style="width:30%;" />
+                                <col style="width:30%;" />
+                                <col style="width:40%;" />
+                            </colgroup>
+                            <tr>
+                                <th>주문일</th>
+                                <th>주문번호</th>
+                                <th>주문자</th>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">2020.02.12</span></td>
+                                <td><span class="gm_font">200112341</span></td>
+                                <td>이해법</td>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">2020.02.12</span></td>
+                                <td><span class="gm_font">200112341</span></td>
+                                <td>이해법</td>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">2020.02.12</span></td>
+                                <td><span class="gm_font">200112341</span></td>
+                                <td>이해법</td>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">2020.02.12</span></td>
+                                <td><span class="gm_font">200112341</span></td>
+                                <td>이해법</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="right" style="width:70%;">
+                        <table>
+                            <colgroup>
+                                <col style="width:350px;" />
+                                <col style="width:350px;" />
+                                <col style="width:350px;" />
+                            </colgroup>
+                            <tr>
+                                <th>1월</th>
+                                <th>2월</th>
+                                <th>3월</th>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">100</span></td>
+                                <td><span class="gm_font">247</span></td>
+                                <td><span class="gm_font">1,480</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">100</span></td>
+                                <td><span class="gm_font">247</span></td>
+                                <td><span class="gm_font">1,480</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">100</span></td>
+                                <td><span class="gm_font">247</span></td>
+                                <td><span class="gm_font">1,480</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="gm_font">100</span></td>
+                                <td><span class="gm_font">247</span></td>
+                                <td><span class="gm_font">1,480</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <h3 class="tit_h3">전체 스크롤 테이블</h3>
+                
+                <div class="table_scroll" style="max-height:300px;">
+                    <div class="table_list" style="min-width:2000px;">
+                        <table>
+                            <colgroup>
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                    <th>1Depth</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="gm_font">1</span></td>
+                                    <td class="left">스마트교재</td>
+                                    <td class="left">
+                                        초3-1 원리쏙쏙 1호<br>
+                                        (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)
+                                    </td>
+                                    <td><span class="gm_font">12, 15, 18p</span></td>
+                                    <td><a href="javascript:openPop('mathlearning/pop_audio_list.html','800','650');">1개</a></td>
+                                    <td><span class="gm_font">124</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="gm_font">1</span></td>
+                                    <td class="left">스마트교재</td>
+                                    <td class="left">
+                                        초3-1 원리쏙쏙 1호<br>
+                                        (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)
+                                    </td>
+                                    <td><span class="gm_font">12, 15, 18p</span></td>
+                                    <td><a href="javascript:openPop('mathlearning/pop_audio_list.html','800','650');">1개</a></td>
+                                    <td><span class="gm_font">124</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="gm_font">1</span></td>
+                                    <td class="left">스마트교재</td>
+                                    <td class="left">
+                                        초3-1 원리쏙쏙 1호<br>
+                                        (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)
+                                    </td>
+                                    <td><span class="gm_font">12, 15, 18p</span></td>
+                                    <td><a href="javascript:openPop('mathlearning/pop_audio_list.html','800','650');">1개</a></td>
+                                    <td><span class="gm_font">124</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="gm_font">1</span></td>
+                                    <td class="left">스마트교재</td>
+                                    <td class="left">
+                                        초3-1 원리쏙쏙 1호<br>
+                                        (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)
+                                    </td>
+                                    <td><span class="gm_font">12, 15, 18p</span></td>
+                                    <td><a href="javascript:openPop('mathlearning/pop_audio_list.html','800','650');">1개</a></td>
+                                    <td><span class="gm_font">124</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="gm_font">1</span></td>
+                                    <td class="left">스마트교재</td>
+                                    <td class="left">
+                                        초3-1 원리쏙쏙 1호<br>
+                                        (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)
+                                    </td>
+                                    <td><span class="gm_font">12, 15, 18p</span></td>
+                                    <td><a href="javascript:openPop('mathlearning/pop_audio_list.html','800','650');">1개</a></td>
+                                    <td><span class="gm_font">124</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="gm_font">1</span></td>
+                                    <td class="left">스마트교재</td>
+                                    <td class="left">
+                                        초3-1 원리쏙쏙 1호<br>
+                                        (Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)
+                                    </td>
+                                    <td><span class="gm_font">12, 15, 18p</span></td>
+                                    <td><a href="javascript:openPop('mathlearning/pop_audio_list.html','800','650');">1개</a></td>
+                                    <td><span class="gm_font">124</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                    <td><span class="gm_font">65 / 90</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+
+
+            <!-- 테이블 tr hover -->
+             
+             <h3 class="tit_h3">테이블 tr hover</h3>
+             <div class="table_list table_select">
+                 <table class="thead">
+                     <colgroup>
+                         <col style="width:61%;" />
+                         <col style="width:13%;" />
+                         <col style="width:13%;" />
+                         <col style="width:13%;" />
+                     </colgroup>
+                     <thead>
+                         <tr>
+                             <th>학교명</th>
+                             <th>구분</th>
+                             <th>시도</th>
+                             <th>구군</th>
+                         </tr>
+                     </thead>
+                 </table>
+                 <div class="scroll" style="max-height:150px;">
+                     <table class="tbody">
+                         <colgroup>
+                             <col style="width:61%;" />
+                             <col style="width:13%;" />
+                             <col style="width:13%;" />
+                             <col style="width:13%;" />
+                         </colgroup>
+                         <tbody>
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                             <tr onclick="">
+                                 <td>서울강동2동초등학교</td>
+                                 <td>초등</td>
+                                 <td>서울</td>
+                                 <td>강동구</td>
+                             </tr>   
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+             <!-- //테이블 -->
+			<!-- 리스트 컨트롤 테이블 -->
+			<h3 class="tit_h3">리스트 컨트롤 테이블</h3>
+			<div class="table_list table_inner">
+				<table class="thead">
+					<caption></caption>
+					<colgroup>
+						<col style="width: 10%;"/>
+						<col style="width: 10%;"/>
+						<col style="width: 50%;"/>
+						<col style="width: 15%;"/>
+						<col style="width: 15%;"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th></th>
+							<th>순서</th>
+							<th>단원</th>
+							<th>시작일</th>
+							<th>완료일</th>
+						</tr>
+					</thead>
+				</table>
+				<div class="scroll" style="max-height:300px;">
+					<table class="tbody">
+						<caption></caption>
+						<colgroup>
+							<col style="width: 10%;"/>
+							<col style="width: 10%;"/>
+							<col style="width: 50%;"/>
+							<col style="width: 15%;"/>
+							<col style="width: 15%;"/>
+						</colgroup>
+						<tbody>
+							<tr class="select">
+								<td>
+									<span class="frm only">
+										<input type="checkbox" name="std" id="std1" checked="checked">
+										<label for="std1">선택</label>
+									</span>
+								</td>
+								<td>
+									<span class="gm_font">1</span>
+								</td>
+								<td class="left">1. 인물의 마음을 짐작해요</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+							</tr>
+							<tr class="disabled">
+								<td>
+									<span class="frm only">
+										<input type="checkbox" name="std" id="std2"  disabled="disabled">
+										<label for="std2">선택</label>
+									</span>
+								</td>
+								<td>
+									<span class="gm_font">2</span>
+								</td>
+								<td class="left">1. 인물의 마음을 짐작해요</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="frm only">
+										<input type="checkbox" name="std" id="std3">
+										<label for="std3">선택</label>
+									</span>
+								</td>
+								<td>
+									<span class="gm_font">3</span>
+								</td>
+								<td class="left">
+									1. 인물의 마음을 짐작해요
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="frm only">
+										<input type="checkbox" name="std" id="std4">
+										<label for="std4">선택</label>
+									</span>
+								</td>
+								<td>
+									<span class="gm_font">3</span>
+								</td>
+								<td class="left">
+									1. 인물의 마음을 짐작해요
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="frm only">
+										<input type="checkbox" name="std" id="std5">
+										<label for="std5">선택</label>
+									</span>
+								</td>
+								<td>
+									<span class="gm_font">3</span>
+								</td>
+								<td class="left">
+									1. 인물의 마음을 짐작해요
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="frm only">
+										<input type="checkbox" name="std" id="std6">
+										<label for="std6">선택</label>
+									</span>
+								</td>
+								<td>
+									<span class="gm_font">3</span>
+								</td>
+								<td class="left">
+									1. 인물의 마음을 짐작해요
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="frm only">
+										<input type="checkbox" name="std" id="std7">
+										<label for="std7">선택</label>
+									</span>
+								</td>
+								<td>
+									<span class="gm_font">3</span>
+								</td>
+								<td class="left">
+									1. 인물의 마음을 짐작해요
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+								<td>
+									<span class="gm_font">2021.03.01</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="list_btn_wrap">
+				<span><button class="down_end">맨아래</button></span>
+				<span><button class="down">아래</button></span>
+				<span><button class="up">위</button></span>
+				<span><button class="up_top">멘위</button></span>
+			</div>
+            <!--//리스트 컨틀로 테이블-->
+ 
+            <br />
+            <br />
+
+        <!-- 체크박스 썸네일 리스트 -->
+        <ul class="record_list">
+            <li>
+                <div class="top_area">
+                    <span class="frm">
+                        <input type="checkbox" id="record_chk1" name="record_chk">
+                        <label for="record_chk1">2021-03-03</label>
+                    </span>
+                    <span class="btn_area">
+                        <a href="#url" class="btn_down">다운로드</a>
+                        <div class="ly_area">
+                            <a href="#url" class="btn_trans">전송</a>
+                            <div class="transmission_area" style="display: none;">
+                                <ul>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">SMS전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">카카오플러스 전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">학부모앱 전송</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="btn_play">
+                    <a href="javascript:openPop('mathlearning/pop_record.html','850','650');">팝업창열기</a>
+                </div>
+                <p class="tit">6 - 3 단위 계단함수(Heaviside 함수) 제2이동정리(t-이동)</p>
+            </li>
+            <li>
+                <div class="top_area">
+                    <span class="frm">
+                        <input type="checkbox" id="record_chk1" name="record_chk">
+                        <label for="record_chk1">2021-03-03</label>
+                    </span>
+                    <span class="btn_area">
+                        <a href="#url" class="btn_down">다운로드</a>
+                        <div class="ly_area">
+                            <a href="#url" class="btn_trans">전송</a>
+                            <div class="transmission_area" style="display: none;">
+                                <ul>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">SMS전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">카카오플러스 전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">학부모앱 전송</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="btn_play">
+                    <a href="javascript:openPop('mathlearning/pop_record.html','850','650');">팝업창열기</a>
+                </div>
+                <p class="tit">6 - 3 단위 계단함수(Heaviside 함수) 제2이동정리(t-이동)</p>
+            </li>
+            <li>
+                <div class="top_area">
+                    <span class="frm">
+                        <input type="checkbox" id="record_chk1" name="record_chk">
+                        <label for="record_chk1">2021-03-03</label>
+                    </span>
+                    <span class="btn_area">
+                        <a href="#url" class="btn_down">다운로드</a>
+                        <div class="ly_area">
+                            <a href="#url" class="btn_trans">전송</a>
+                            <div class="transmission_area" style="display: none;">
+                                <ul>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">SMS전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">카카오플러스 전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">학부모앱 전송</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="btn_play">
+                    <a href="javascript:openPop('mathlearning/pop_record.html','850','650');">팝업창열기</a>
+                </div>
+                <p class="tit">6 - 3 단위 계단함수(Heaviside 함수) 제2이동정리(t-이동)</p>
+            </li>
+            <li>
+                <div class="top_area">
+                    <span class="frm">
+                        <input type="checkbox" id="record_chk1" name="record_chk">
+                        <label for="record_chk1">2021-03-03</label>
+                    </span>
+                    <span class="btn_area">
+                        <a href="#url" class="btn_down">다운로드</a>
+                        <div class="ly_area">
+                            <a href="#url" class="btn_trans">전송</a>
+                            <div class="transmission_area" style="display: none;">
+                                <ul>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">SMS전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">카카오플러스 전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">학부모앱 전송</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="btn_play">
+                    <a href="javascript:openPop('mathlearning/pop_record.html','850','650');">팝업창열기</a>
+                </div>
+                <p class="tit">6 - 3 단위 계단함수(Heaviside 함수) 제2이동정리(t-이동)</p>
+            </li>
+            <li>
+                <div class="top_area">
+                    <span class="frm">
+                        <input type="checkbox" id="record_chk1" name="record_chk">
+                        <label for="record_chk1">2021-03-03</label>
+                    </span>
+                    <span class="btn_area">
+                        <a href="#url" class="btn_down">다운로드</a>
+                        <div class="ly_area">
+                            <a href="#url" class="btn_trans">전송</a>
+                            <div class="transmission_area" style="display: none;">
+                                <ul>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">SMS전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">카카오플러스 전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">학부모앱 전송</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="btn_play">
+                    <a href="javascript:openPop('mathlearning/pop_record.html','850','650');">팝업창열기</a>
+                </div>
+                <p class="tit">6 - 3 단위 계단함수(Heaviside 함수) 제2이동정리(t-이동)</p>
+            </li>
+            <li>
+                <div class="top_area">
+                    <span class="frm">
+                        <input type="checkbox" id="record_chk1" name="record_chk">
+                        <label for="record_chk1">2021-03-03</label>
+                    </span>
+                    <span class="btn_area">
+                        <a href="#url" class="btn_down">다운로드</a>
+                        <div class="ly_area">
+                            <a href="#url" class="btn_trans">전송</a>
+                            <div class="transmission_area" style="display: none;">
+                                <ul>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">SMS전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">카카오플러스 전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">학부모앱 전송</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="btn_play">
+                    <a href="javascript:openPop('mathlearning/pop_record.html','850','650');">팝업창열기</a>
+                </div>
+                <p class="tit">6 - 3 단위 계단함수(Heaviside 함수) 제2이동정리(t-이동)</p>
+            </li>
+            <li>
+                <div class="top_area">
+                    <span class="frm">
+                        <input type="checkbox" id="record_chk1" name="record_chk">
+                        <label for="record_chk1">2021-03-03</label>
+                    </span>
+                    <span class="btn_area">
+                        <a href="#url" class="btn_down">다운로드</a>
+                        <div class="ly_area">
+                            <a href="#url" class="btn_trans">전송</a>
+                            <div class="transmission_area" style="display: none;">
+                                <ul>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">SMS전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">카카오플러스 전송</a></li>
+                                    <li><a href="javascript:alert_open('전송이 완료되었습니다');">학부모앱 전송</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="btn_play">
+                    <a href="javascript:openPop('mathlearning/pop_record.html','850','650');">팝업창열기</a>
+                </div>
+                <p class="tit">6 - 3 단위 계단함수(Heaviside 함수) 제2이동정리(t-이동)</p>
+            </li>
+        </ul>
+        <!-- //체크박스 썸네일 리스트 -->
+
+
+		 </div>
+			
+         </section>
+     </article>
+ </body>
+ </html>

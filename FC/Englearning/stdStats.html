@@ -1,0 +1,947 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('학습통계');
+		$('.group_title h2').text('학습통계');
+		calendar();
+	});
+	$(document).ready(function () {
+		Website.run();
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 검색 -->
+<div class="search_wrap">
+	<div class="top_area">
+		<div class="teacher">
+			<span>홍지후 원장님</span>
+			<span class="bar">총 수강생 106명</span>
+		</div>
+	</div>
+	<ul class="info_group">
+		<li>
+			<select>
+				<option>전체교사</option>
+			</select>
+			<select>
+				<option>Group전체</option>
+			</select>
+			<select>
+				<option>Sub전체</option>
+			</select>
+			<select>
+				<option>전체레벨</option>
+			</select>
+			<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+				<input id="startpicker-input" type="text" aria-label="Date" />
+				<label for="startpicker-input" class="tui-ico-date"></label>
+				<div id="startpicker-container" style="margin-left: -1px;"></div>
+			</div>
+			<span class="line">~</span>
+			<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+				<input id="endpicker-input" type="text" aria-label="Date" />
+				<label for="endpicker-input" class="tui-ico-date"></label>
+				<div id="endpicker-container" style="margin-left: -1px;"></div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!-- //검색 -->
+<!--학습통계-->
+<div class="stdstats_info">
+	<div class="info_wrap">
+		<div class="inner">
+			<li>레벨평균 학습시간</li>
+			<li class="between">
+				<span class="icon_stds01">레벨시간</span>
+				<span><em class="num">68</em><em>시간</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>일 평균 학습시간</li>
+			<li class="between">
+				<span class="icon_stds02">일 시간</span>
+				<span><em class="num">1</em><em>시간</em><em class="num">30</em><em>분</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>Daily Test 평균 성취율</li>
+			<li class="between">
+				<span class="icon_stds03">성취율</span>
+				<span><em class="num">68</em><em>%</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>Level Test 최초 시험 통과율</li>
+			<li class="between">
+				<span class="icon_stds04">통과율</span>
+				<span><em class="num">68</em><em>%</em></span>
+			</li>
+		</div>
+	</div>
+</div>
+<!--//학습통계-->
+<div class="graph_group02">
+	<li>
+		<!--학년별 레벨 분포도-->
+		<h4 class="tit_h4">학년별 레벨 분포도</h4>
+		<div class="column_graph hig_633">
+			<div class="bullet_wrap">
+				<span class="bul_col bul_color01">Starter</span>
+				<span class="bul_col bul_color02">Beginner</span>
+				<span class="bul_col bul_color03">Intermediate</span>
+				<span class="bul_col bul_color04">Advanced</span>
+				<span class="bul_col bul_color05">Master</span>
+			</div>
+			<dl>
+				<dt><span class="name">예비초</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:30%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:20%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:15%"><em class="tooltip">Advanced</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">초1</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">초2</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">초3</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:13%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:15%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+						<span class="bar cloum_color05" style="width:10%"><em class="tooltip">Master</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">초4</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:13%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:15%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+						<span class="bar cloum_color05" style="width:10%"><em class="tooltip">Master</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">초5</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:13%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:15%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+						<span class="bar cloum_color05" style="width:10%"><em class="tooltip">Master</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">초6</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:13%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:15%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+						<span class="bar cloum_color05" style="width:10%"><em class="tooltip">Master</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">중1</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:13%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:15%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+						<span class="bar cloum_color05" style="width:10%"><em class="tooltip">Master</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">중2</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:13%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:15%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+						<span class="bar cloum_color05" style="width:10%"><em class="tooltip">Master</em></span>
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span class="name">중3</span></dt>
+				<dd>
+					<div class="bar_graph graph_tooltip">
+						<span class="bar cloum_color01" style="width:13%"><em class="tooltip">Starter</em></span>
+						<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+						<span class="bar cloum_color03" style="width:15%"><em class="tooltip">Intermediate</em></span>
+						<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+						<span class="bar cloum_color05" style="width:10%"><em class="tooltip">Master</em></span>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!--//학년별 레벨 분포도-->
+	</li>
+	<li>
+		<!--전체레벨 별 분포도-->
+		<div>
+			<h4 class="tit_h4">전체 레벨 별 분포도</h4>
+			<div class="column_graph02">
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:20%"><a href="javascript:openPop('englearning/pop_stdStats01.html','600','360');">
+							<p><em>Starter</em><br>20%(18명)</p>
+						</a></span>
+					<span class="bar cloum_color02" style="width:20%"><a href="javascript:openPop('englearning/pop_stdStats01.html','600','360');">
+							<p><em>Beginner</em><br>20%(18명)</p>
+						</a></span>
+					<span class="bar cloum_color03" style="width:20%"><a href="javascript:openPop('englearning/pop_stdStats01.html','600','360');">
+							<p><em>Intermediate</em><br>20%(18명)</p>
+						</a></span>
+					<span class="bar cloum_color04" style="width:20%"><a href="javascript:openPop('englearning/pop_stdStats01.html','600','360');">
+							<p><em>Advanced</em><br>20%(18명)</p>
+						</a></span>
+					<span class="bar cloum_color05" style="width:20%"><a href="javascript:openPop('englearning/pop_stdStats01.html','600','360');">
+							<p><em>Master</em><br>20%(18명)</p>
+						</a></span>
+				</div>
+			</div>
+		</div>
+		<!--//전체레벨 별 분포도-->
+		<!--전체 평균 학습 시간-->
+		<div class="mg_top_30">
+			<div class="btn_top_wrap between">
+				<h4 class="tit_h4">전체 평균 학습 시간</h4>
+				<a href="javascript:openPop('englearning/pop_stdStats02.html','900','600');" class="btn_top btn_ico look"><span>상세보기</span></a>
+			</div>
+			<div class="table_list">
+				<table>
+					<colgroup>
+						<col style="width:25%;" />
+						<col style="width:25%;" />
+						<col style="width:25%;" />
+						<col style="width:25%;" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>총 접속시간</th>
+							<th>스마터</th>
+							<th>다북스</th>
+							<th>중등영어<br>문제은행</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td rowspan="3">60hrs<br>45min.</td>
+							<th>평균 학습 차시</th>
+							<th>평균학습 권 수</th>
+							<th>평균 문제 수</th>
+						</tr>
+						<tr>
+							<td>15차시</td>
+							<td>8권</td>
+							<td>480문제</td>
+						</tr>
+						<tr>
+							<td>400min</td>
+							<td>260min</td>
+							<td>360min</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--//전체 평균 학습 시간-->
+		<!--학습과정 평균 성취율 현황-->
+		<div class="mg_top_30">
+			<div class="btn_top_wrap between">
+				<h4 class="tit_h4">학습과정 평균 성취율 현황</h4>
+				<a href="javascript:openPop('englearning/pop_stdStats03.html','900','600');" class="btn_top btn_ico look"><span>상세보기</span></a>
+			</div>
+			<div class="between_group">
+				<div class="basic_box std_wrap">
+					<span class="tit">스마터 Activity<br>평균 성취율</span>
+					<span class="num col_blue"><em>92</em>%</span>
+				</div>
+				<div class="basic_box std_wrap">
+					<span class="tit">스마터 Daily Test<br>점수 평균</span>
+					<span class="num col_blue"><em>92</em>%</span>
+				</div>
+				<div class="basic_box std_wrap mg_top_20">
+					<span class="tit">스마터 Level Test 평균<br>(직전레벨 기준)</span>
+					<span class="num col_blue"><em>92</em>점</span>
+				</div>
+				<div class="basic_box std_wrap mg_top_20">
+					<span class="tit">Level Test<br>최초 시험 통과율</span>
+					<span class="num col_blue"><em>92</em>%</span>
+				</div>
+			</div>
+		</div>
+		<!--//학습과정 평균 성취율 현황-->
+	</li>
+</div>
+<div class="graph_group02">
+	<li>
+		<h4 class="tit_h4">레벨별 학습 진행 현황(진도율)</h4>
+		<div class="graph_box">
+			<div id="scrollbar2">
+				<div class="viewport viewport01 chart_scroll">
+					<div class=" overview">
+						<div id="column_chart01" style="width: 1100px; height:324px"></div>
+					</div>
+				</div>
+				<div class="scrollbar">
+					<div class="track">
+						<div class="thumb">
+							<div class="end"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				am4core.ready(function () {
+					am4core.addLicense("CH230677325");
+					am4core.useTheme(am4themes_animated);
+
+					var chart = am4core.create("column_chart01", am4charts.XYChart);
+					chart.fontSize = 13;
+					chart.fontFamily = "NotoSans";
+					chart.autoMargins = false;
+					chart.urlTarget = "_blank";
+
+					chart.data = [{
+						"category": "1",
+						"per": 90,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "2",
+						"per": 54,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "3",
+						"per": 29,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "4",
+						"per": 64,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "5",
+						"per": 84,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "6",
+						"per": 90,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "7",
+						"per": 74,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "8",
+						"per": 60,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "9",
+						"per": 53,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"grade": "10",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "11",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "12",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "13",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "14",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "15",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "16",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "17",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "18",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "19",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}, {
+						"category": "20",
+						"per": 24,
+						"gourl": "javascript:openPop('englearning/pop_stdStats04.html','800','670');"
+					}];
+
+					var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+					xAxis.dataFields.category = 'category';
+					xAxis.renderer.cellStartLocation = 0;
+					xAxis.renderer.cellEndLocation = 1.0;
+					xAxis.renderer.grid.template.location = 0;
+					xAxis.renderer.minGridDistance = 50;
+					xAxis.renderer.grid.template.opacity = 0;
+					xAxis.renderer.baseGrid.disabled = true;
+					xAxis.renderer.labels.template.disabled = false;
+					xAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+					var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+					yAxis.min = 0;
+					yAxis.max = 100;
+					yAxis.renderer.baseGrid.disabled = true;
+					yAxis.renderer.labels.template.disabled = true;
+					yAxis.renderer.grid.template.opacity = 0;
+
+
+					var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+					var series = chart.series.push(new am4charts.ColumnSeries());
+					series.dataFields.valueY = "per";
+					series.dataFields.categoryX = "category";
+					series.dataFields.urlField = "gourl";
+					series.name = "Visits";
+					series.columns.template.width = am4core.percent(60);
+					series.columns.template.fillOpacity = 1;
+					series.columns.template.url = '{urlField}';
+					series.fill = am4core.color("#a081f5");
+
+
+					var columnTemplate = series.columns.template;
+					columnTemplate.strokeWidth = 0;
+					columnTemplate.strokeOpacity = 1;
+
+					var bullet = series.bullets.push(new am4charts.LabelBullet());
+					bullet.label.verticalCenter = "top";
+					bullet.dy = -20;
+					bullet.label.text = '{valueY}점';
+					bullet.label.fill = am4core.color('#222');
+					bullet.label.fontSize = 12;
+					bullet.label.truncate = false;
+					bullet.label.hideOversized = false;
+
+					var label = categoryAxis.renderer.labels.template;
+					label.truncate = false;
+					label.wrap = true;
+
+					categoryAxis.events.on("sizechanged", function (ev) {
+						var axis = ev.target;
+						var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+						axis.renderer.labels.template.maxWidth = cellWidth;
+					});
+
+				});
+			</script>
+			<!--//그래프-->
+		</div>
+	</li>
+	<li>
+		<h4 class="tit_h4">학업 성취율</h4>
+		<div class="graph_box">
+			<div class="bullet_wrap">
+				<span class="bul_col bul_area01">우리가맹점</span>
+				<span class="bul_col bul_area02">지역</span>
+				<span class="bul_col bul_area03">전국</span>
+			</div>
+			<div id="column_chart02" style="height:307px;"></div>
+			<script>
+				am4core.ready(function () {
+					// license
+					am4core.addLicense("CH230677325");
+
+					// Themes begin
+					am4core.useTheme(am4themes_animated);
+					// Themes end
+					var chart = am4core.create('column_chart02', am4charts.XYChart)
+					chart.fontSize = 13;
+					chart.fontFamily = "NotoSans";
+					chart.autoMargins = false;
+
+					chart.data = [
+						{
+							category: 'Activity \n평균 성취율',
+							first: 66,
+							second: 26,
+							third: 80
+						},
+						{
+							category: 'Daily Test \n점수 평균',
+							first: 30,
+							second: 70,
+							third: 66
+						},
+						{
+							category: 'Level Test\n점수 평균\n(최초응시)',
+							first: 27,
+							second: 45,
+							third: 66
+						},
+						{
+							category: 'Level Test \n최초 시험 통과율',
+							first: 27,
+							second: 45,
+							third: 66
+						}
+					]
+
+					var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+					xAxis.dataFields.category = 'category';
+					xAxis.renderer.cellStartLocation = 0.1;
+					xAxis.renderer.cellEndLocation = 0.9;
+					xAxis.renderer.grid.template.location = 0;
+					xAxis.renderer.minGridDistance = 40;
+					xAxis.renderer.grid.template.opacity = 0;
+					xAxis.renderer.baseGrid.disabled = true;
+					xAxis.renderer.labels.template.fill = am4core.color("#767676");
+					xAxis.renderer.labels.template.textAlign = "middle";
+
+					chart.colors.list = [
+						am4core.color("#0093ff"),
+						am4core.color("#1bbcbc"),
+						am4core.color("#8697af"),
+					];
+
+					var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+					yAxis.min = 0;
+					yAxis.renderer.baseGrid.disabled = true;
+					yAxis.renderer.labels.template.disabled = true;
+					yAxis.renderer.grid.template.opacity = 0;
+					function createSeries(value, name) {
+						var series = chart.series.push(new am4charts.ColumnSeries())
+						series.dataFields.valueY = value;
+						series.dataFields.categoryX = 'category';
+						series.sequencedInterpolation = true;
+						series.name = name;
+
+						var bullet = series.bullets.push(new am4charts.LabelBullet())
+						bullet.interactionsEnabled = false;
+						bullet.dy = -20;
+						bullet.label.text = '{valueY}%';
+						bullet.label.fontSize = 12;
+						bullet.label.truncate = false;
+						bullet.label.hideOversized = false;
+						return series;
+					}
+					createSeries('first', 'The First');
+					createSeries('second', 'The Second');
+					createSeries('third', 'The Third');
+
+				}); // end am4core.ready()
+			</script>
+			<!--//그래프-->
+		</div>
+	</li>
+</div>
+<div class="graph_group02">
+	<li>
+		<div class="between_group">
+			<!--출석율-->
+			<div class="half">
+				<h4 class="tit_h4">출석율</h4>
+				<div class="graph_box">
+					<div class="bullet_wrap">
+						<span class="bul_col bul_area01">우리가맹점</span>
+						<span class="bul_col bul_area02">지역</span>
+						<span class="bul_col bul_area03">전국</span>
+					</div>
+					<div id="column_chart03" style="height:305px;"></div>
+					<script>
+						am4core.ready(function () {
+							// license
+							am4core.addLicense("CH230677325");
+
+							// Themes begin
+							am4core.useTheme(am4themes_animated);
+							// Themes end
+							var chart = am4core.create('column_chart03', am4charts.XYChart)
+							chart.fontSize = 13;
+							chart.fontFamily = "NotoSans";
+
+							chart.data = [
+								{
+									category: '출석율',
+									first: 66,
+									second: 26,
+									third: 80
+								}
+							]
+							var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+							xAxis.dataFields.category = 'category';
+							xAxis.renderer.cellStartLocation = 0.1;
+							xAxis.renderer.cellEndLocation = .8;
+							xAxis.renderer.grid.template.location = 0;
+							xAxis.renderer.minGridDistance = 40;
+							xAxis.renderer.grid.template.opacity = 0;
+							xAxis.renderer.baseGrid.disabled = true;
+							//xAxis.renderer.labels.template.disabled = true;
+							xAxis.renderer.textAlign = "center";
+							xAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+							chart.colors.list = [
+								am4core.color("#0093ff"),
+								am4core.color("#1bbcbc"),
+								am4core.color("#8697af"),
+							];
+
+							var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+							yAxis.min = 0;
+							yAxis.renderer.baseGrid.disabled = true;
+							yAxis.renderer.labels.template.disabled = true;
+							yAxis.renderer.grid.template.opacity = 0;
+
+							function createSeries(value, name) {
+								var series = chart.series.push(new am4charts.ColumnSeries())
+								series.dataFields.valueY = value;
+								series.dataFields.categoryX = 'category';
+								series.sequencedInterpolation = true;
+								series.name = name;
+
+								var bullet = series.bullets.push(new am4charts.LabelBullet())
+								bullet.interactionsEnabled = false;
+								bullet.dy = -20;
+								bullet.label.text = '{valueY}%';
+								bullet.label.fontSize = 12;
+								bullet.label.truncate = false;
+								bullet.label.hideOversized = false;
+
+								return series;
+							}
+							createSeries('first', 'The First');
+							createSeries('second', 'The Second');
+							createSeries('third', 'The Third');
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+			</div>
+			<!--//출석율-->
+			<!--미션 성취율-->
+			<div class="half">
+				<h4 class="tit_h4">미션 성취율</h4>
+				<div class="graph_box">
+					<div class="bullet_wrap">
+						<span class="bul_col bul_area01">우리가맹점</span>
+						<span class="bul_col bul_area02">지역</span>
+						<span class="bul_col bul_area03">전국</span>
+					</div>
+					<div id="column_chart04" style="height:307px;"></div>
+					<script>
+						am4core.ready(function () {
+							// license
+							am4core.addLicense("CH230677325");
+
+							// Themes begin
+							am4core.useTheme(am4themes_animated);
+							// Themes end
+							var chart = am4core.create('column_chart04', am4charts.XYChart)
+							chart.fontSize = 13;
+							chart.fontFamily = "NotoSans";
+
+							chart.data = [
+								{
+									category: '미션성취율',
+									first: 66,
+									second: 26,
+									third: 80
+								}
+							]
+							var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+							xAxis.dataFields.category = 'category';
+							xAxis.renderer.cellStartLocation = 0.1;
+							xAxis.renderer.cellEndLocation = .8;
+							xAxis.renderer.grid.template.location = 0;
+							xAxis.renderer.minGridDistance = 40;
+							xAxis.renderer.grid.template.opacity = 0;
+							xAxis.renderer.baseGrid.disabled = true;
+							//xAxis.renderer.labels.template.disabled = true;
+							xAxis.renderer.textAlign = "center";
+							xAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+							chart.colors.list = [
+								am4core.color("#0093ff"),
+								am4core.color("#1bbcbc"),
+								am4core.color("#8697af"),
+							];
+
+							var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+							yAxis.min = 0;
+							yAxis.renderer.baseGrid.disabled = true;
+							yAxis.renderer.labels.template.disabled = true;
+							yAxis.renderer.grid.template.opacity = 0;
+
+							function createSeries(value, name) {
+								var series = chart.series.push(new am4charts.ColumnSeries())
+								series.dataFields.valueY = value;
+								series.dataFields.categoryX = 'category';
+								series.sequencedInterpolation = true;
+								series.name = name;
+
+								var bullet = series.bullets.push(new am4charts.LabelBullet())
+								bullet.interactionsEnabled = false;
+								bullet.dy = -20;
+								bullet.label.text = '{valueY}%';
+								bullet.label.fontSize = 12;
+								bullet.label.truncate = false;
+								bullet.label.hideOversized = false;
+
+								return series;
+							}
+
+
+
+							createSeries('first', 'The First');
+							createSeries('second', 'The Second');
+							createSeries('third', 'The Third');
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+			</div>
+			<!--//미션 성취율-->
+		</div>
+	</li>
+	<li>
+		<div class="between_group">
+			<!--평균 학습시간-->
+			<div class="half">
+				<h4 class="tit_h4">평균 학습시간</h4>
+				<div class="graph_box">
+					<div class="bullet_wrap">
+						<span class="bul_col bul_area01">우리가맹점</span>
+						<span class="bul_col bul_area02">지역</span>
+						<span class="bul_col bul_area03">전국</span>
+					</div>
+					<div id="column_chart05" style="height:307px;"></div>
+					<script>
+						am4core.ready(function () {
+							// license
+							am4core.addLicense("CH230677325");
+
+							// Themes begin
+							am4core.useTheme(am4themes_animated);
+							// Themes end
+							var chart = am4core.create('column_chart05', am4charts.XYChart)
+							chart.fontSize = 13;
+							chart.fontFamily = "NotoSans";
+
+							var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+							xAxis.dataFields.category = 'category';
+							xAxis.renderer.cellStartLocation = 0.1;
+							xAxis.renderer.cellEndLocation = .8;
+							xAxis.renderer.grid.template.location = 0;
+							xAxis.renderer.minGridDistance = 40;
+							xAxis.renderer.grid.template.opacity = 0;
+							xAxis.renderer.baseGrid.disabled = true;
+							xAxis.renderer.textAlign = "center";
+							xAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+							chart.colors.list = [
+								am4core.color("#0093ff"),
+								am4core.color("#1bbcbc"),
+								am4core.color("#8697af"),
+							];
+
+							var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+							yAxis.min = 0;
+							yAxis.renderer.baseGrid.disabled = true;
+							yAxis.renderer.labels.template.disabled = true;
+							yAxis.renderer.grid.template.opacity = 0;
+
+							function createSeries(value, name) {
+								var series = chart.series.push(new am4charts.ColumnSeries())
+								series.dataFields.valueY = value;
+								series.dataFields.categoryX = 'category';
+								series.sequencedInterpolation = true;
+								series.name = name;
+
+								var bullet = series.bullets.push(new am4charts.LabelBullet())
+								bullet.interactionsEnabled = false;
+								bullet.dy = -20;
+								bullet.label.text = '{valueY}h';
+								bullet.label.fill = am4core.color('#0093ff')
+								bullet.label.fill = am4core.color('#1bbcbc')
+								bullet.label.fill = am4core.color('#8697af')
+								bullet.label.fontSize = 12;
+								bullet.label.truncate = false;
+								bullet.label.hideOversized = false;
+
+								return series;
+							}
+
+							chart.data = [
+								{
+									category: '평균 학습시간',
+									first: 66,
+									second: 26,
+									third: 80
+								}
+							]
+
+							createSeries('first', 'The First');
+							createSeries('second', 'The Second');
+							createSeries('third', 'The Third');
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+			</div>
+			<!--//평균 학습시간-->
+			<!--골드 사용/적립-->
+			<div class="half">
+				<h4 class="tit_h4">학업 성취율</h4>
+				<div class="graph_box">
+					<div class="bullet_wrap">
+						<span class="bul_col bul_area01">우리가맹점</span>
+						<span class="bul_col bul_area02">지역</span>
+						<span class="bul_col bul_area03">전국</span>
+					</div>
+					<div id="column_chart06" style="height:307px;"></div>
+					<script>
+						am4core.ready(function () {
+							// license
+							am4core.addLicense("CH230677325");
+
+							// Themes begin
+							am4core.useTheme(am4themes_animated);
+							// Themes end
+							var chart = am4core.create('column_chart06', am4charts.XYChart)
+							chart.fontSize = 13;
+							chart.fontFamily = "NotoSans";
+
+							var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+							xAxis.dataFields.category = 'category';
+							xAxis.renderer.cellStartLocation = 0.1;
+							xAxis.renderer.cellEndLocation = 1.0;
+							xAxis.renderer.grid.template.location = 0;
+							xAxis.renderer.minGridDistance = 40;
+							xAxis.renderer.grid.template.opacity = 0;
+							xAxis.renderer.baseGrid.disabled = true;
+							//xAxis.renderer.labels.template.disabled = true;
+							xAxis.renderer.textAlign = "center";
+							xAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+							chart.colors.list = [
+								am4core.color("#0093ff"),
+								am4core.color("#1bbcbc"),
+								am4core.color("#8697af"),
+							];
+
+							var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+							yAxis.min = 0;
+							yAxis.renderer.baseGrid.disabled = true;
+							yAxis.renderer.labels.template.disabled = true;
+							yAxis.renderer.grid.template.opacity = 0;
+
+							function createSeries(value, name) {
+								var series = chart.series.push(new am4charts.ColumnSeries())
+								series.dataFields.valueY = value;
+								series.dataFields.categoryX = 'category';
+								series.sequencedInterpolation = true;
+								series.name = name;
+
+								var bullet = series.bullets.push(new am4charts.LabelBullet())
+								bullet.interactionsEnabled = false;
+								bullet.dy = -20;
+								bullet.label.text = '{valueY}p';
+								bullet.label.fill = am4core.color('#0093ff')
+								bullet.label.fill = am4core.color('#1bbcbc')
+								bullet.label.fill = am4core.color('#8697af')
+								bullet.label.fontSize = 12;
+								bullet.label.truncate = false;
+								bullet.label.hideOversized = false;
+
+								return series;
+							}
+
+							chart.data = [
+								{
+									category: '사용',
+									first: 667,
+									second: 26,
+									third: 80
+								},
+								{
+									category: '적립',
+									first: 30,
+									second: 70,
+									third: 66
+								}
+							]
+
+							createSeries('first', 'The First');
+							createSeries('second', 'The Second');
+							createSeries('third', 'The Third');
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+			</div>
+			<!--//골드 사용/적립-->
+		</div>
+	</li>
+</div>

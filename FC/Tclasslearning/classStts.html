@@ -1,0 +1,1014 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('학습관리현황');
+        $('.group_title h2').text('우리교실 학습 관리');
+         // 달력
+         datepicker();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 인포 박스 -->
+<div class="s_group search_wrap">
+	<div class="top_area">
+		<div class="student">
+			<div class="teacher">
+				<span class="name">홍지후 원장님</span>
+				<span class="bar">총 수강생 106명</span>
+			</div>
+			<div class="right_area">
+				<a href="javascript:void(0);" onClick="javascript:openPop('tclasslearning/classSttsTimePop.html','800','670');" class="btn_table btn_gray02">우리교실 시간표</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 인포 박스 -->
+
+<!-- 1Depth Tab -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li class="on">
+        <a href="index.html?page=tclasslearning/classStts">교실현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/gradeStts01">학년별 현황</a>
+    </li>
+</ul>
+<!-- // 1Depth Tab -->
+
+<!-- 조회  -->
+ <div class="search_wrap type02">
+	 <span class="frm_wrap">
+		 <div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+			<input type="text" id="datepicker-input" aria-label="Date-Time"/>
+			<label for="datepicker-input" class="tui-ico-date"></label>
+		</div>
+		<div id="wrapper" style="margin-top: -1px;"></div>
+	 </span>
+	 <button class="btn_search small">조회</button>
+ </div>
+ <!-- //조회  -->
+
+<!-- 컨텐츠 -->
+<div class="btn_top_wrap s_group">
+	<h3 class="tit_h3">우리교실 랭킹</h3>
+</div>
+<div class="box_order">
+	<!-- 우리교실 랭킹 -->
+	<div class="ranking_flow">
+		<li>
+			<ul class="rank_data">
+				<li class="rank rank1">1</li>
+				<li class="info">
+					<ul>
+						<li class="name">김정호<span>100점</span></li>
+						<li class="graph"><span class="bar02" style="width:100%;"></span></li>
+						<li class="tx"><span class="gm_font">M098765432</span> <span class="std_grade">초3</span></li>
+					</ul>
+				</li>		
+			</ul>
+		</li>
+		<li>
+			<ul class="rank_data">
+				<li class="rank rank2">2</li>
+				<li class="info">
+					<ul>
+						<li class="name">김정호<span>75점</span></li>
+						<li class="graph"><span class="bar02" style="width:75%;"></span></li>
+						<li class="tx"><span class="gm_font">M098765432</span> <span class="std_grade">초3</span></li>
+					</ul>
+				</li>		
+			</ul>
+		</li>
+		<li>
+			<ul class="rank_data">
+				<li class="rank rank2">3</li>
+				<li class="info">
+					<ul>
+						<li class="name">김정호<span>50점</span></li>
+						<li class="graph"><span class="bar02" style="width:50%;"></span></li>
+						<li class="tx"><span class="gm_font">M098765432</span> <span class="std_grade">초3</span></li>
+					</ul>
+				</li>		
+			</ul>
+		</li>
+	</div>
+	<!-- //우리교실 랭킹 -->
+</div>
+<div class="graph_group">
+	<li>
+		<!--요일별 학습 평균 시간-->
+		<div class="graph_box">
+			<div class="btn_top_wrap between">
+            	<h4 class="tit_h4">요일별 학습 평균 시간</h4>
+				<span class="time_sel">
+					<select>
+						<option>학년 선택</option>
+						<option>7세</option>
+						<option>초1</option>
+						<option>초2</option>
+						<option>초3</option>
+						<option>초4</option>
+						<option>초5</option>
+						<option>초6</option>
+						<option>중1</option>
+						<option>중2</option>
+						<option>중3</option>
+					</select>
+					<select>
+						<option>과목별 선택</option>
+						<option>전체</option>
+						<option>국어</option>
+						<option>수학</option>
+						<option>사회</option>
+						<option>과학</option>
+						<option>봄여름가을겨울</option>
+					</select>
+				</span>
+        	</div>
+			<!--그래프-->
+			<div id="column_chart01" style="height:300px"></div>
+			<script>
+			am4core.ready(function() {
+				am4core.addLicense("CH230677325");
+				am4core.useTheme(am4themes_animated);
+
+				var chart = am4core.create("column_chart01", am4charts.XYChart);
+				chart.fontSize= 13; 
+				chart.fontFamily = "NotoSans";
+
+				chart.data = [{
+				  "week": "월",
+				  "time": 50,
+				  "color": am4core.color("#8697af")
+				}, {
+				  "week": "화",
+				  "time": 54,
+				  "color": am4core.color("#8697af")
+				}, {
+				  "week": "수",
+				  "time": 29,
+				  "color": am4core.color("#8697af")
+				}, {
+				  "week": "목",
+				  "time": 30,
+				  "color": am4core.color("#8697af")
+				}, {
+				  "week": "금",
+				  "time": 25,
+				  "color": am4core.color("#8697af")
+				}, {
+				  "week": "토",
+				  "time": 10,
+				  "color": am4core.color("#00a2ff")
+				}, {
+				  "week": "일",
+				  "time": 15,
+				  "color": am4core.color("#ff5858"),
+				}];
+				
+
+				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				categoryAxis.dataFields.category = "week";
+				categoryAxis.renderer.grid.template.location = 0;
+				categoryAxis.renderer.minGridDistance = 30;
+				categoryAxis.renderer.grid.template.opacity = 0;
+
+				var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+				yAxis.renderer.grid.template.opacity = 0;
+				yAxis.renderer.baseGrid.disabled = true;
+				yAxis.renderer.labels.template.disabled = true;
+
+				var series = chart.series.push(new am4charts.ColumnSeries());
+				series.dataFields.valueY = "time";
+				series.dataFields.categoryX = "week";
+				series.name = "Visits";
+				series.columns.template.width = am4core.percent(50);
+				series.columns.template.fillOpacity = 1;
+				
+				series.columns.template.adapter.add("fill", function(fill, target) {
+					return target.dataItem ? target.dataItem.dataContext.color : fill;
+				});
+
+				var columnTemplate = series.columns.template;
+				columnTemplate.strokeWidth = 0;
+				columnTemplate.strokeOpacity = 0;
+
+				var bullet = series.bullets.push(new am4charts.LabelBullet());
+				bullet.label.verticalCenter = "top";
+				bullet.dy = -20;
+				bullet.label.text = '{valueY}분';
+				bullet.label.fill = am4core.color('#222');
+
+				var label = categoryAxis.renderer.labels.template;
+				label.truncate = false;
+				label.wrap = true;
+
+				categoryAxis.events.on("sizechanged", function(ev) {
+					var axis = ev.target;
+					var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+					axis.renderer.labels.template.maxWidth = cellWidth;
+				});
+			});
+			</script>
+			<!--//그래프-->
+		</div>
+		<!--//요일별 학습 평균 시간-->
+	</li>
+	<li>
+		<!--과목별 평균점수-->
+		<div class="graph_box">
+			<div class="btn_top_wrap between">
+            	<h4 class="tit_h4">과목별 평균점수</h4>
+				<span class="time_sel">
+					<select>
+						<option>학년 선택</option>
+						<option>7세</option>
+						<option>초1</option>
+						<option>초2</option>
+						<option>초3</option>
+						<option>초4</option>
+						<option>초5</option>
+						<option>초6</option>
+						<option>중1</option>
+						<option>중2</option>
+						<option>중3</option>
+					</select>
+				</span>
+        	</div>
+			<!--그래프-->
+			<div id="column_chart02" style="height:300px"></div>
+			<script>
+			am4core.ready(function() {
+				am4core.addLicense("CH230677325");
+				am4core.useTheme(am4themes_animated);
+
+				var chart = am4core.create("column_chart02", am4charts.XYChart);
+				chart.fontSize= 13; 
+				chart.fontFamily = "NotoSans";
+
+				chart.data = [{
+				  "subject": "국어",
+				  "per": 90,
+				  "color": am4core.color("#5a90ee")
+				}, {
+				  "subject": "수학",
+				  "per": 54,
+				  "color": am4core.color("#49c7c7")
+				}, {
+				  "subject": "사회",
+				  "per": 29,
+				  "color": am4core.color("#ff7da5")
+				}, {
+				  "subject": "과학",
+				  "per": 64,
+				  "color": am4core.color("#869eec")
+				}, {
+				  "subject": "봄여름가을겨울",
+				  "per": 84,
+				  "color": am4core.color("#a081f5")
+				}];
+
+				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				categoryAxis.dataFields.category = "subject";
+				categoryAxis.renderer.grid.template.location = 0;
+				categoryAxis.renderer.minGridDistance = 30;
+				categoryAxis.renderer.grid.template.opacity = 0;
+
+				var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+				yAxis.renderer.grid.template.opacity = 0;
+				yAxis.renderer.baseGrid.disabled = true;
+				yAxis.renderer.labels.template.disabled = true;
+				
+
+				var series = chart.series.push(new am4charts.ColumnSeries());
+				series.dataFields.valueY = "per";
+				series.dataFields.categoryX = "subject";
+				series.name = "Visits";
+				series.columns.template.width = am4core.percent(50);
+				series.columns.template.fillOpacity = 1;
+				series.columns.template.adapter.add("fill", function(fill, target) {
+					return target.dataItem ? target.dataItem.dataContext.color : fill;
+				});
+
+				var columnTemplate = series.columns.template;
+				columnTemplate.strokeWidth = 0;
+				columnTemplate.strokeOpacity = 1;
+
+				var bullet = series.bullets.push(new am4charts.LabelBullet());
+				bullet.label.verticalCenter = "top";
+				bullet.dy = -20;
+				bullet.label.text = '{valueY}점';
+				bullet.label.fill = am4core.color('#222');     
+
+				var label = categoryAxis.renderer.labels.template;
+				label.truncate = false;
+				label.wrap = true;
+
+				categoryAxis.events.on("sizechanged", function(ev) {
+					var axis = ev.target;
+					var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+					axis.renderer.labels.template.maxWidth = cellWidth;
+				});
+			});
+			</script>
+			<!--//그래프-->
+		</div>
+		<!--//과목별 평균점수-->
+	</li>
+	<li>
+		<!--과목별 평균 진도율-->
+		<div class="graph_box">
+			<div class="btn_top_wrap between">
+            	<h4 class="tit_h4">과목별 평균 진도율</h4>
+            	<span class="time_sel">
+            	<select>
+					<option>학년 선택</option>
+					<option>7세</option>
+					<option>초1</option>
+					<option>초2</option>
+					<option>초3</option>
+					<option>초4</option>
+					<option>초5</option>
+					<option>초6</option>
+					<option>중1</option>
+					<option>중2</option>
+					<option>중3</option>
+            	</select>
+				<select>
+					<option>과목별 선택</option>
+					<option>전체</option>
+					<option>국어</option>
+					<option>수학</option>
+					<option>사회</option>
+					<option>과학</option>
+					<option>봄여름가을겨울</option>
+            	</select>
+				</span>
+        	</div>
+			<!--그래프-->
+			<div id="column_chart03" style="height:300px"></div>
+			<script>
+			am4core.ready(function() {
+				am4core.addLicense("CH230677325");
+				am4core.useTheme(am4themes_animated);
+
+				var chart = am4core.create("column_chart03", am4charts.XYChart);
+				chart.fontSize= 13; 
+				chart.fontFamily = "NotoSans";
+
+				chart.data = [{
+				  "subject": "국어",
+				  "per": 90,
+				  "color": am4core.color("#5a90ee")
+				}, {
+				  "subject": "수학",
+				  "per": 54,
+				  "color": am4core.color("#49c7c7")
+				}, {
+				  "subject": "사회",
+				  "per": 29,
+				  "color": am4core.color("#ff7da5")
+				}, {
+				  "subject": "과학",
+				  "per": 64,
+				  "color": am4core.color("#869eec")
+				}, {
+				  "subject": "봄여름가을겨울",
+				  "per": 84,
+				  "color": am4core.color("#a081f5")
+				}];
+
+				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				categoryAxis.dataFields.category = "subject";
+				categoryAxis.renderer.grid.template.location = 0;
+				categoryAxis.renderer.minGridDistance = 30;
+				categoryAxis.renderer.grid.template.opacity = 0;
+
+				var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+				yAxis.renderer.grid.template.opacity = 0;
+				yAxis.renderer.baseGrid.disabled = true;
+				yAxis.renderer.labels.template.disabled = true;
+
+				var series = chart.series.push(new am4charts.ColumnSeries());
+				series.dataFields.valueY = "per";
+				series.dataFields.categoryX = "subject";
+				series.name = "Visits";
+				series.columns.template.width = am4core.percent(50);
+				series.columns.template.fillOpacity = 1;
+				series.columns.template.adapter.add("fill", function(fill, target) {
+					return target.dataItem ? target.dataItem.dataContext.color : fill;
+				});
+
+				var columnTemplate = series.columns.template;
+				columnTemplate.strokeWidth = 0;
+				columnTemplate.strokeOpacity = 1;
+
+				var bullet = series.bullets.push(new am4charts.LabelBullet());
+				bullet.label.verticalCenter = "top";
+				bullet.dy = -20;
+				bullet.label.text = '{valueY}%';
+				bullet.label.fill = am4core.color('#222');     
+
+				var label = categoryAxis.renderer.labels.template;
+				label.truncate = false;
+				label.wrap = true;
+
+				categoryAxis.events.on("sizechanged", function(ev) {
+					var axis = ev.target;
+					var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+					axis.renderer.labels.template.maxWidth = cellWidth;
+				});
+			});
+			</script>
+			<!--//그래프-->
+		</div>
+		<!--//과목별 평균 진도율-->
+	</li>
+	<li>
+		<!--학년별 성취도 평균-->
+		<div class="graph_box">
+			<div class="btn_top_wrap between">
+            	<h4 class="tit_h4">학년별 성취도 평균</h4>
+            	<span class="time_sel">
+            	<select>
+					<option>학년 선택</option>
+					<option>7세</option>
+					<option>초1</option>
+					<option>초2</option>
+					<option>초3</option>
+					<option>초4</option>
+					<option>초5</option>
+					<option>초6</option>
+					<option>중1</option>
+					<option>중2</option>
+					<option>중3</option>
+            	</select>
+				</span>
+        	</div>
+			<!--그래프-->
+			<div id="column_chart04" style="height:300px"></div>
+			<script>
+			am4core.ready(function() {
+				am4core.addLicense("CH230677325");
+				am4core.useTheme(am4themes_animated);
+
+				var chart = am4core.create("column_chart04", am4charts.XYChart);
+				chart.fontSize= 13; 
+				chart.fontFamily = "NotoSans";
+
+				chart.data = [{
+				  "grade": "7세",
+				  "per": 90,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "초1",
+				  "per": 54,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "초2",
+				  "per": 29,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "초3",
+				  "per": 64,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "초4",
+				  "per": 84,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "초5",
+				  "per": 90,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "초6",
+				  "per": 74,
+				  "color": am4core.color("#2949b3")	
+				}, {
+				  "grade": "중1",
+				  "per": 60,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "중2",
+				  "per": 53,
+				  "color": am4core.color("#2949b3")
+				}, {
+				  "grade": "중3",
+				  "per": 24,
+				  "color": am4core.color("#2949b3")
+				}];
+				
+
+				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				categoryAxis.dataFields.category = "grade";
+				categoryAxis.renderer.grid.template.location = 0;
+				categoryAxis.renderer.minGridDistance = 30;
+				categoryAxis.renderer.grid.template.opacity = 0;
+
+				var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+				yAxis.renderer.grid.template.opacity = 0;
+				yAxis.renderer.baseGrid.disabled = true;
+				yAxis.renderer.labels.template.disabled = true;
+
+				var series = chart.series.push(new am4charts.ColumnSeries());
+				series.dataFields.valueY = "per";
+				series.dataFields.categoryX = "grade";
+				series.name = "Visits";
+				series.columns.template.width = am4core.percent(50);
+				series.columns.template.fillOpacity = 1;
+				series.columns.template.adapter.add("fill", function(fill, target) {
+					return target.dataItem ? target.dataItem.dataContext.color : fill;
+				});
+
+				var columnTemplate = series.columns.template;
+				columnTemplate.strokeWidth = 0;
+				columnTemplate.strokeOpacity = 1;
+
+				var bullet = series.bullets.push(new am4charts.LabelBullet());
+				bullet.label.verticalCenter = "top";
+				bullet.dy = -20;
+				bullet.label.text = '{valueY}점';
+				bullet.label.fill = am4core.color('#222');     
+
+				var label = categoryAxis.renderer.labels.template;
+				label.truncate = false;
+				label.wrap = true;
+
+				categoryAxis.events.on("sizechanged", function(ev) {
+					var axis = ev.target;
+					var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+					axis.renderer.labels.template.maxWidth = cellWidth;
+				});
+			});
+			</script>
+			<!--//그래프-->
+		</div>
+		<!--//학년별 성취도 평균-->
+	</li>
+	<li class="full">
+		<!--일별 평균 점수-->
+		<div class="graph_box">
+			<div class="btn_top_wrap between">
+				<h4 class="tit_h4">일별 평균 점수</h4>
+				<span class="time_sel">
+				<select>
+					<option>학년 선택</option>
+					<option>7세</option>
+					<option>초1</option>
+					<option>초2</option>
+					<option>초3</option>
+					<option>초4</option>
+					<option>초5</option>
+					<option>초6</option>
+					<option>중1</option>
+					<option>중2</option>
+					<option>중3</option>
+				</select>
+				</span>
+			</div>
+			<!--그래프-->
+			<div id="chartdiv" style="height:400px;"></div>
+			<script>
+				am4core.ready(function () {
+					am4core.addLicense("CH230677325");
+					am4core.useTheme(am4themes_animated);
+
+					var chart = am4core.create("chartdiv", am4charts.XYChart);
+					chart.fontSize = 14;
+
+					chart.data = [
+						{
+							"year": "1",
+							"all": 1,
+							"ko": 5,
+							"math": 3,
+							"social": 3,
+							"science": 2,
+							"etc":3
+						}, {
+							"year": "2",
+							"all": 1,
+							"ko": 2,
+							"math": 6,
+							"social": 2,
+							"science": 3,
+							"etc":2
+						}, {
+							"year": "3",
+							"all": 2,
+							"ko": 3,
+							"math": 1,
+							"social": 6,
+							"science": 5,
+							"etc":5
+						}, {
+							"year": "4",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						 }, {
+							"year": "5",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						 }, {
+							"year": "6",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						 }, {
+							"year": "7",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						 }, {
+							"year": "8",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						 }, {
+							"year": "9",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						 }, {
+							"year": "10",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "11",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "12",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "13",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "14",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "15",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "16",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "17",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "18",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "19",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "20",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "21",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "22",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "23",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "24",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+
+							"etc":6
+						}, {
+							"year": "25",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "26",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "28",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "29",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}, {
+							"year": "30",
+							"all": 3,
+							"ko": 4,
+							"math": 1,
+							"social": 15,
+							"science": 1,
+							"etc":6
+						}
+					];
+
+					var categoryAxis = chart
+						.xAxes
+						.push(new am4charts.CategoryAxis());
+					categoryAxis.dataFields.category = "year";
+					categoryAxis.renderer.opposite = false;
+					categoryAxis.renderer.minGridDistance = 10;
+
+					var valueAxis = chart
+						.yAxes
+						.push(new am4charts.ValueAxis());
+					valueAxis.renderer.inversed = false;
+					valueAxis.title.text = "";
+					valueAxis.renderer.minLabelPosition = 0.01;
+
+					var series1 = chart
+						.series
+						.push(new am4charts.LineSeries());
+					series1.dataFields.valueY = "all";
+					series1.dataFields.categoryX = "year";
+					series1.name = "전체";
+					series1
+						.bullets
+						.push(new am4charts.CircleBullet());
+					series1.tooltipText = " {name}  : {valueY}";
+					series1.legendSettings.valueText = "{valueY}";
+					//series1.visible = false;
+					series1.smoothing = "monotoneX";
+					series1.fill = am4core.color("#a5a5a5");
+					series1.stroke = am4core.color("#a5a5a5"); 
+
+					var series2 = chart
+						.series
+						.push(new am4charts.LineSeries());
+					series2.dataFields.valueY = "ko";
+					series2.dataFields.categoryX = "year";
+					series2.name = '국어';
+					series2
+						.bullets
+						.push(new am4charts.CircleBullet());
+					series2.tooltipText = " {name}  : {valueY}";
+					series2.legendSettings.valueText = "{valueY}";
+					series2.smoothing = "monotoneX";
+					series2.fill = am4core.color("#f67fd3");
+					series2.stroke = am4core.color("#f67fd3"); 
+
+					var series3 = chart
+						.series
+						.push(new am4charts.LineSeries());
+					series3.dataFields.valueY = "math";
+					series3.dataFields.categoryX = "year";
+					series3.name = '수학';
+					series3
+						.bullets
+						.push(new am4charts.CircleBullet());
+					series3.tooltipText = " {name} : {valueY}";
+					series3.legendSettings.valueText = "{valueY}";
+					series3.smoothing = "monotoneX";
+					series3.fill = am4core.color("#00a2ff");
+					series3.stroke = am4core.color("#00a2ff"); 
+
+					var series4 = chart
+						.series
+						.push(new am4charts.LineSeries());
+					series4.dataFields.valueY = "social";
+					series4.dataFields.categoryX = "year";
+					series4.name = '사회';
+					series4
+						.bullets
+						.push(new am4charts.CircleBullet());
+					series4.tooltipText = " {name}  : {valueY}";
+					series4.legendSettings.valueText = "{valueY}";
+					series4.smoothing = "monotoneX";
+					series4.fill = am4core.color("#90c724");
+					series4.stroke = am4core.color("#90c724");
+
+					var series5 = chart
+						.series
+						.push(new am4charts.LineSeries());
+					series5.dataFields.valueY = "science";
+					series5.dataFields.categoryX = "year";
+					series5.name = '과학';
+					series5
+						.bullets
+						.push(new am4charts.CircleBullet());
+					series5.tooltipText = " {name}  : {valueY}";
+					series5.legendSettings.valueText = "{valueY}";
+					series5.smoothing = "monotoneX";
+					series5.fill = am4core.color("#788ad4")
+					series5.stroke = am4core.color("#788ad4");
+
+					var series6 = chart
+						.series
+						.push(new am4charts.LineSeries());
+					series6.dataFields.valueY = "etc";
+					series6.dataFields.categoryX = "year";
+					series6.name = '봄여름가을겨울';
+					series6
+						.bullets
+						.push(new am4charts.CircleBullet());
+					series6.tooltipText = " {name}  : {valueY}";
+					series6.legendSettings.valueText = "{valueY}";
+					series6.smoothing = "monotoneX";
+					series6.fill = am4core.color("#f7941d")
+					series6.stroke = am4core.color("#f7941d");
+
+					chart.cursor = new am4charts.XYCursor();
+					chart.cursor.behavior = "zoomY";
+
+					let hs1 = series1
+						.segments
+						.template
+						.states
+						.create("hover")
+					hs1.properties.strokeWidth = 5;
+					series1.segments.template.strokeWidth = 2;
+					series1.lineColor = "#a5a5a5";
+					series1.bulletBorderColor = "#a5a5a5";
+					series1.bulletColor = "#a5a5a5";
+
+					let hs2 = series2
+						.segments
+						.template
+						.states
+						.create("hover")
+					hs2.properties.strokeWidth = 5;
+					series2.segments.template.strokeWidth = 2;
+
+					let hs3 = series3
+						.segments
+						.template
+						.states
+						.create("hover")
+					hs3.properties.strokeWidth = 5;
+					series3.segments.template.strokeWidth = 2;
+
+					let hs4 = series4
+						.segments
+						.template
+						.states
+						.create("hover")
+					hs4.properties.strokeWidth = 5;
+					series4.segments.template.strokeWidth = 2;
+
+					let hs5 = series5
+						.segments
+						.template
+						.states
+						.create("hover")
+					hs5.properties.strokeWidth = 5;
+					series5.segments.template.strokeWidth = 2;
+
+					let hs6 = series6
+						.segments
+						.template
+						.states
+						.create("hover")
+					hs6.properties.strokeWidth = 5;
+					series6.segments.template.strokeWidth = 2;
+
+					chart.legend = new am4charts.Legend();
+					chart
+						.legend
+						.itemContainers
+						.template
+						.events
+						.on("over", function (event) {
+							var segments = event.target.dataItem.dataContext.segments;
+							segments.each(function (segment) {
+								segment.isHover = true;
+							})
+						})
+
+					chart
+						.legend
+						.itemContainers
+						.template
+						.events
+						.on("out", function (event) {
+							var segments = event.target.dataItem.dataContext.segments;
+							segments.each(function (segment) {
+								segment.isHover = false;
+							})
+						})
+
+				});
+			</script>
+			<!--//그래프-->
+		</div>
+		<!--//일별 평균 점수-->
+	</li>
+</div>

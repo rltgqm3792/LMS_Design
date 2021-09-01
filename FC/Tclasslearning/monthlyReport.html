@@ -1,0 +1,101 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('교실운영');
+		$('.group_title h2').text('교실운영');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li class="on"><a href="index.html?page=tclasslearning/weeklyReport">학부모리포트</a></li>
+	<li><a href="index.html?page=tclasslearning/compensation">보상관리</a></li>
+	<li><a href="index.html?page=tclasslearning/eBook">교사용e-북보기</a></li>
+	<li><a href="index.html?page=tclasslearning/questionSet">질문하기관리</a></li>
+	<li><a href="index.html?page=tclasslearning/communitySet">커뮤니티관리</a></li>
+	<li><a href="index.html?page=tclasslearning/mathSet">수학난이도관리</a></li>
+	<li><a href="index.html?page=tclasslearning/reportSet">분석표관리</a></li>
+</ul>
+
+<ul class="tab_2depth">
+	<li><a href="index.html?page=tclasslearning/weeklyReport">주간 리포트</a></li>
+	<li class="on"><a href="index.html?page=tclasslearning/monthlyReport">월간 리포트</a></li>
+</ul>
+
+<!--검색-->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>년도</dt>
+				<dd>
+					<select>
+						<option>2021년</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>월</dt>
+				<dd>
+					<select>
+						<option>1월</option>
+						<option>2월</option>
+						<option>3월</option>
+						<option>4월</option>
+						<option>5월</option>
+						<option>6월</option>
+						<option>7월</option>
+						<option>8월</option>
+						<option>9월</option>
+						<option>10월</option>
+						<option>11월</option>
+						<option>12월</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>학년</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>예비초</option>
+						<option>초1</option>
+						<option>초2</option>
+						<option>초3</option>
+						<option>초4</option>
+						<option>초5</option>
+						<option>초6</option>
+						<option>중1</option>
+						<option>중2</option>
+						<option>중3</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!--//검색-->
+
+<div class="btn_top_wrap right">
+	<a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+	<a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+	<a href="javascript:alert_open('OOO의 학부모 휴대폰으로 SMS전송이 완료되었습니다.');" class="btn_top btn_ico sms"><span>SMS전송</span></a>
+	<a href="javascript:alert_open('OOO의 학부모 알림장 전송이 완료되었습니다.');" class="btn_top btn_ico palram"><span>학부모알림장</span></a>
+</div>
+
+<!--테이블-->
+<div id="grid"></div>
+<!--//테이블-->

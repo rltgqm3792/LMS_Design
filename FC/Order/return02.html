@@ -1,0 +1,628 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('반품/오배송 신청');
+        $('.group_title h2').text('반품/오배송 신청');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 가이드 -->
+<dl class="box_reg_guide">
+    <dt>반품/오배송 운영프로세스안내
+        <a class="btn_slide">열기/닫기</a>
+    </dt>
+    <dd>
+        <div class="table_list column">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col style="width:10%;"/>
+                    <col style="width:90%;"/>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>접수</th>
+                        <td class="left">
+
+                            <div class="exchg_wrap">
+                                <div class="exchg_tit">검수</div>
+
+                                <div class="table_type02">
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:20%;"/>
+                                            <col style="width:80%;"/>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    <strong>단순 반품</strong><br/>
+                                                    (도착 7일이내)</th>
+                                                <td>사용 메뉴명) 반품/교환 예시) 책을 안 쓰려고 할 때<br/>
+                                                    <span class="txt_guide col_red">반품 배송료 가맹점 부담</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <strong>교환</strong><br/>
+                                                    (도착 7일이내)</th>
+                                                <td>사용 메뉴명) 반품/교환 예시) 책을 바꾸려고 할때 사유를 '교환' 선택<br/>
+                                                    <span class="txt_guide col_red">워크북 안받기 상태 학생만 가능, 반품 배송료 가맹점 부담</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <strong>오배송</strong><br/>
+                                                    (도착 7일이내)</th>
+                                                <td>사용 메뉴명) 반품/교환 예시) 물건이 주문과 다른 것으로 도착<br/>
+                                                    <span class="txt_guide col_red">반품 배송료 본사 부담</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <strong>파손</strong><br/>
+                                                    (도착 7일이내)</th>
+                                                <td>사용 메뉴명) 반품/교환 예시) 물건이 파손되어 도착<br/>
+                                                    <span class="txt_guide col_red">반품 배송료 본사 부담</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <strong>불량</strong><br/>
+                                                    (도착 7일이내)</th>
+                                                <td>사용 메뉴명) 반품/교환 예시) 사용중 불량 발견, 인쇄 오류, 페이지 누락 등<br/>
+                                                    <span class="txt_guide col_red">파일 첨부 필수, 반품 배송료 본사 부담</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>반품</th>
+                        <td class="left">
+                            <p class="box_reg_tit">반품 안내(반품서 동송 필수!!)</p>
+                            <ul class="ul_box_reg">
+                                <li>반품서 주소 : 인천 서구 정서진로 47(오류동 1575-2) ㈜해법에듀 물류팀 앞(032-717-8633)</li>
+                                <li>반품기한 : 익월 25일까지 물류센터 도착 필수</li>
+                            </ul>
+                            <p class="txt_guide col_red">미 반품시 반품 접수가 기각되거나 일부 교재(미과금 휴회 주문, 교환)는 유상처리 될 수 있습니다.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </dd>
+</dl>
+<!-- //가이드 -->
+
+<!-- 2Depth Tab -->
+<ul class="tab_2depth">
+    <li class="on">
+        <a href="index.html?page=order/return01">반품/오배송 신청</a>
+    </li>
+    <li>
+        <a href="index.html?page=order/returnLIst">반품/오배송 접수 리스트</a>
+    </li>
+</ul>
+<!-- // 2Depth Tab -->
+
+<div class="table_input table_th_txtcenter">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%;"/>
+            <col/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    신청구분 선택
+                </th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input
+                                type="radio"
+                                id="rdo_return01"
+                                name="rdo_return"
+                                onclick="movepage('index.html?page=order/return01');"/>
+                            <label for="rdo_return01">반품/교환</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="rdo_return02" name="rdo_return" checked="checked"/>
+                            <label for="rdo_return02">오배송</label>
+                        </span>
+                        <span class="frm">
+                            <input
+                                type="radio"
+                                id="rdo_return03"
+                                name="rdo_return"
+                                onclick="movepage('index.html?page=order/return03');"/>
+                            <label for="rdo_return03">불량</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 오배송 -->
+<div class="table_list">
+    <table class="thead">
+        <caption></caption>
+        <colgroup>
+            <col style="width:4%;"/>
+            <col style="width:15%;"/>
+            <col style="width:15%;"/>
+            <col style="width:15%;"/>
+            <col style="width:17%;"/>
+            <col style="width:10%;"/>
+            <col style="width:10%;"/>
+            <col style="width:17%;"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>전표번호</th>
+                <th>주문일자</th>
+                <th>배송완료 일자</th>
+                <th>주문번호</th>
+                <th>주문수량</th>
+                <th>주문금액</th>
+                <th>주문처리일</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="max-height:150px;">
+        <table class="tbody">
+            <caption></caption>
+            <colgroup>
+                <col style="width:4%;"/>
+                <col style="width:15%;"/>
+                <col style="width:15%;"/>
+                <col style="width:15%;"/>
+                <col style="width:17%;"/>
+                <col style="width:10%;"/>
+                <col style="width:10%;"/>
+                <col style="width:17%;"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">10364532215</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456789</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,200</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">10364532215</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456789</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,200</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">10364532215</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456789</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,200</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">10364532215</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456789</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,200</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">10364532215</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456789</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">4</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,200</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.11.22</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="table_scroll" style="max-height:330px;">
+    <div class="table_list" style="min-width:1200px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:4%;"/>
+                <col style="width:4%;"/>
+                <col style="width:12%;"/>
+                <col style="width:8%;"/>
+                <col style="width:9%;"/>
+                <col style="width:19%;"/>
+                <col style="width:4%;"/>
+                <col style="width:6%;"/>
+                <col style="width:15%;"/>
+                <col/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std_all" onchange="all_check(this);"/>
+                            <label for="std_all">전체선택</label>
+                        </span>
+                    </th>
+                    <th>No.</th>
+                    <th>송장번호</th>
+                    <th>학생이름</th>
+                    <th>학습월</th>
+                    <th>교재명(수학)/워크북(영어)</th>
+                    <th>수량</th>
+                    <th>금액</th>
+                    <th>사유</th>
+                    <th>상세</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456781988</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        2021년 5월
+                    </td>
+                    <td>
+                        원리쏙쏙3-1-1
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,500</span>
+                    </td>
+                    <td>
+                        <select>
+                            <option>선택</option>
+                            <option>누락</option>
+                            <option>결함/파손</option>
+                            <option>다른 상품 오배송</option>
+                            <option>기타</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!-- 다른 상품 오배송 책 선택 -->
+                        <select>
+                            <option>오배송된 책 선택</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456781988</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        2021년 5월
+                    </td>
+                    <td>
+                        원리쏙쏙3-1-1
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,500</span>
+                    </td>
+                    <td>
+                        <select>
+                            <option>선택</option>
+                            <option>누락</option>
+                            <option>결함/파손</option>
+                            <option>다른 상품 오배송</option>
+                            <option>기타</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!-- 기타 -->
+                        <input type="text" placeholder="사유를 입력해 주세요."/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456781988</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        2021년 5월
+                    </td>
+                    <td>
+                        원리쏙쏙3-1-1
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,500</span>
+                    </td>
+                    <td>
+                        <select>
+                            <option>선택</option>
+                            <option>누락</option>
+                            <option>결함/파손</option>
+                            <option>다른 상품 오배송</option>
+                            <option>기타</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!-- 기타 -->
+                        <input type="text" placeholder="사유를 입력해 주세요."/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456781988</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        2021년 5월
+                    </td>
+                    <td>
+                        원리쏙쏙3-1-1
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,500</span>
+                    </td>
+                    <td>
+                        <select>
+                            <option>선택</option>
+                            <option>누락</option>
+                            <option>결함/파손</option>
+                            <option>다른 상품 오배송</option>
+                            <option>기타</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!--비활성-->
+                        <input type="text" disabled="disabled"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">123456781988</span>
+                    </td>
+                    <td>
+                        박찬호
+                    </td>
+                    <td>
+                        2021년 5월
+                    </td>
+                    <td>
+                        원리쏙쏙3-1-1
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2,500</span>
+                    </td>
+                    <td>
+                        <select>
+                            <option>선택</option>
+                            <option>누락</option>
+                            <option>결함/파손</option>
+                            <option>다른 상품 오배송</option>
+                            <option>기타</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!--비활성-->
+                        <input type="text" disabled="disabled"/>
+                    </td>
+                </tr>          
+                <!-- <tr> 
+                    <td colspan="10"> 
+                        <div class="no_data">해당 검색 결과가 없습니다.</div> 
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- //오배송 -->
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:20%;"/>
+            <col style="width:30%;"/>
+            <col style="width:20%;"/>
+            <col style="width:30%;"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    총수량
+                </th>
+                <td>
+                    <span class="gm_font">3</span>
+                </td>
+                <th>
+                    반품 총액
+                </th>
+                <td>
+                    <span class="gm_font">5,000</span>
+                    원
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_bottom_wrap right">
+    <a href="javascript:alert_open('접수가 완료되었습니다.');" class="btn_basic">접수하기</a>
+</div>

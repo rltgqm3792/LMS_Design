@@ -1,0 +1,89 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('시간표 관리');
+    });
+    calendar(); //달력
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조건설정 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk01" name="smartclass" checked />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>강사</dt>
+                <dd>
+                    <select>
+                        <option>강사 선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>클래스</dt>
+                <dd>
+                    <select>
+                        <option>클래스 선택</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조건설정 -->
+
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">수학 시간표</h4>
+    <span>
+        <span>
+            <a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+            <a href="javascript:openPop('hakwon/schdulMngPop01.html','1000','670');" class="btn_top btn_line">시간표 변경</a>
+            <a href="javascript:openPop('hakwon/schdulMngPop02.html','850','650');" class="btn_top btn_line">시간표 일괄변경</a>
+        </span>
+    </span>
+</div>
+
+<!-- 수학시간표 캘린더 -->
+<ul class="time_list">
+    <li><a href="javascript:openPop('hakwon/classMngPop.html','800','650');">심화학습반 (8명)</a></li>
+    <li>박찬호(초등3)</li>
+    <li>박찬호(초등3)</li>
+    <li>박찬호(초등3)</li>
+    <li>박찬호(초등3)</li>
+</ul>
+
+<div id="calendar"></div>
+<!-- //수학시간표 캘린더 -->

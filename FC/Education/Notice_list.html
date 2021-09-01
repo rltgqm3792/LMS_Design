@@ -1,0 +1,228 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('공지사항');
+        // 달력
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 조회 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date" />
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date" />
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month01" name="month" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>직접입력</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                        <option>작성자</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해 주세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <!-- //조회 -->
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회 -->
+
+<!-- 테이블상단 -->
+<div class="btn_top_wrap">
+    <select>
+        <option value="">10</option>
+        <option value="" selected="">20</option>
+        <option value="">50</option>
+        <option value="">100</option>
+    </select>
+    <span class="list_num">전체<strong class="col_blue">25</strong>개</span>
+</div>
+<!-- 테이블상단 -->
+
+<!-- 테이블 -->
+<div class="table_list">
+    <table>
+        <colgroup>
+            <col style="width:7%" />
+            <col style="width:10%" />
+            <col />
+            <col style="width:6%" />
+            <col style="width:10%" />
+            <col style="width:12%" />
+            <col style="width:10%" />
+            <col style="width:10%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>FC</th>
+                <th>제목</th>
+                <th>파일</th>
+                <th>교육신청</th>
+                <th>작성자</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tr_notice">
+                <td>
+                    <span class="table_bullet red_bullet">공지</span>
+                </td>
+                <td>수학</td>
+                <td class="subject">
+                    <a href="index.html?page=education/Notice_view">2021년 3월 사전교육시행 안내</a>
+                    <span class="ico_img new">new</span>
+                </td>
+                <td>
+                    <span class="ico_img file">첨부파일</span>
+                </td>
+                <td>
+                    <a href="index.html?page=education/EduApply" class="btn_table btn_blue">신청</a>
+                    <!-- 신청대상자 아닐시 얼럿-->
+                    <!--a href="javascript:alert_open('신청대상자가 아닙니다.','지사로 문의하시기 바랍니다.');"
+                    class="btn_table">신청</a-->
+                </td>
+                <td>수학사업부</td>
+                <td class="gm_font">2020.07.14</td>
+                <td class="gm_font">233,000</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>수학</td>
+                <td class="subject">
+                    <a href="index.html?page=education/Notice_view">2021년 3월 사전교육시행 안내</a>
+                    <span class="ico_img new">new</span>
+                </td>
+                <td>
+                    <span class="ico_img file">첨부파일</span>
+                </td>
+                <td>
+                    <!-- 신청대상자 아닐시 얼럿-->
+                    <a href="javascript:alert_open('신청대상자가 아닙니다. <br />지사로 문의하시기 바랍니다.');" class="btn_table btn_blue">신청</a>
+                </td>
+                <td>수학사업부</td>
+                <td class="gm_font">2020.07.14</td>
+                <td class="gm_font">233,000</td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <div class="no_data">해당 검색 결과가 없습니다.</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //테이블-->
+
+<!-- 페이징 -->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li>
+            <a href="">1</a>
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!-- //페이징 -->

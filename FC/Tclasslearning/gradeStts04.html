@@ -1,0 +1,343 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('학습관리현황');
+        $('.group_title h2').text('우리교실 학습관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 인포 박스 -->
+<div class="s_group search_wrap">
+	<div class="top_area">
+		<div class="teacher02">
+			<div class="info">
+				<span class="name">홍지후 원장님</span>
+				<span class="bar">총 수강생 106명</span>
+			</div>
+			<div class="right_area">
+				<a href="javascript:void(0);" onClick="javascript:openPop('tclasslearning/classSttsTimePop.html','800','670');" class="btn_table btn_gray02">우리교실 시간표</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 인포 박스 -->
+
+<!-- 1Depth Tab -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=tclasslearning/classStts">교실현황</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=tclasslearning/gradeStts01">학년별 현황</a>
+    </li>
+</ul>
+<!-- // 1Depth Tab -->
+
+<!-- 2Depth Tab -->
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=tclasslearning/gradeStts01">과목별 학습현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/gradeStts02">서술형 학습특강</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/gradeStts03">단원평가</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=tclasslearning/gradeStts04">중간*기말 성취도 평가</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/gradeStts05">기초학력 진단평가</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/gradeStts06">전국학력평가</a>
+    </li>
+</ul>
+<!-- // 2Depth Tab -->
+
+<!-- 조회 -->
+<div class="search_wrap type02">
+	<select>
+		<option>학년 선택</option>
+		<option>7세</option>
+		<option>초1</option>
+		<option>초2</option>
+		<option>초3</option>
+		<option>초4</option>
+		<option>초5</option>
+		<option>초6</option>
+		<option>중1</option>
+		<option>중2</option>
+		<option>중3</option>
+	</select>
+	<select>
+		<option>학기 선택</option>
+		<option>1학기</option>
+		<option>2학기</option>
+	</select>
+	<button class="btn_search small mg_left_5">조회</button>
+</div>
+<!-- // 조회 -->
+
+<!-- 테이블 -->
+<div class="table_scroll">
+	<div class="table_list">
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col style="4%" />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col />
+			</colgroup>
+			<thead>
+				<tr>
+					<th rowspan="2">No</th>
+					<th rowspan="2">학년</th>
+					<th rowspan="2">수강생</th>
+					<th colspan="4">1학기 중간 성취도 평가</th>
+					<th colspan="4">1학기 기말 성취도 평가</th>
+				</tr>
+				<tr>
+					<th>국어</th>
+					<th>수학</th>
+					<th>사회</th>
+					<th>과학</th>
+					<th>국어</th>
+					<th>수학</th>
+					<th>사회</th>
+					<th>과학</th>
+				</tr>			
+			</thead>
+			<tbody>
+				<tr>
+					<td><span class="gm_font">1</span></td>
+					<td><span class="gm_font">4</span></td>
+					<td>이해법<br><span class="gm_font">H0000001</span></td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td><span class="gm_font">2</span></td>
+					<td><span class="gm_font">4</span></td>
+					<td>이해법<br><span class="gm_font">H0000001</span></td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="gm_font">3</span></td>
+					<td><span class="gm_font">4</span></td>
+					<td>이해법<br><span class="gm_font">H0000001</span></td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="gm_font">4</span></td>
+					<td><span class="gm_font">4</span></td>
+					<td>이해법<br><span class="gm_font">H0000001</span></td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="gm_font">5</span></td>
+					<td><span class="gm_font">4</span></td>
+					<td>이해법<br><span class="gm_font">H0000001</span></td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+					<td>
+						<span class="gm_font">2021.03.02</span>
+						<p><a href="#" class="btn_table result">7 /10</a></p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<!-- // 테이블 -->
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li>
+            <a href="">1</a>
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

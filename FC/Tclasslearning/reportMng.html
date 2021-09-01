@@ -1,0 +1,154 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('평가관리');
+        $('.group_title h2').text('평가관리');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <li>
+        <a href="index.html?page=tclasslearning/lessonCompl">단원마무리 학습</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/examEval">중간*기말성취도평가</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/fundamentalEval">기초학력 진단평가</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=tclasslearning/testNotice">전국학력 평가</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/wrongAnsrNoteCreate">오답노트</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/testDiag">진단평가</a>
+    </li>
+</ul>
+
+<ul class="tab_2depth">
+    <li>
+        <a href="index.html?page=tclasslearning/testNotice">시험요강</a>
+    </li>
+    <li>
+        <a href="index.html?page=tclasslearning/appAccept">응시접수</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=tclasslearning/reportMng">분석표 관리</a>
+    </li>
+</ul>
+
+<!--검색-->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>예비초</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>회원구분</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>정규수강생</option>
+                        <option>휴회수강생</option>
+                        <option>예비수강생</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>접수구분</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>미접수</option>
+                        <option>접수완료</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색-->
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 15%" />
+            <col style="width: 35%" />
+            <col style="width: 15%" />
+            <col style="width: 35%" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>점수등록기간</th>
+                <td class="left">
+                    <span class="gm_font">2021-03-09 ~ 2021-03-31</span>
+                </td>
+                <th>분석표 오픈</th>
+                <td class="left">
+                    <span class="gm_font">2021-04-01</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_top_wrap right">
+    <a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+    <a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+    <a href="javascript:alert_open('OOO의 학부모 휴대폰으로 SMS전송이 완료되었습니다.');" class="btn_top btn_ico sms"><span>SMS전송</span></a>
+    <a href="javascript:alert_open('OOO의 학부모 알림장 전송이 완료되었습니다.');" class="btn_top btn_ico palram"><span>학부모알림장</span></a>
+    <a href="javascript:openPop('Tclasslearning/reportPrizeAllPop.html','650','460');" class="btn_top btn_ico medal"><span>상장 일괄발급</span></a>
+</div>
+
+<!--테이블-->
+<!-- 점수등록 -->
+<a href="javascript:openPop('Tclasslearning/scoreRegPop.html','1000','670');" class="btn_table btn_blue">등록</a>
+<br />
+
+<!-- 평균점수 -->
+<a href="" class="gm_font">95</a>
+<br />
+
+<!-- 분석표 -->
+<a href="javascript:openPop('Tclasslearning/reportMngPop.html','1020','670');" class="btn_table btn_blue">생성</a>
+<a href="javascript:openPop('Tclasslearning/reportMngPop.html','1020','670');" class="btn_table">확인</a>
+<br />
+
+<!-- 상장 -->
+<a href="javascript:openPop('Tclasslearning/reportPrizeAllPop.html','700','530');" class="btn_table btn_line"><span>발급</span></a>
+
+<div id="grid"></div>
+<!--//테이블-->

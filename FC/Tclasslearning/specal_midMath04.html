@@ -1,0 +1,178 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('특별학습관리');
+		$('.group_title h2').text('특별학습관리');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li><a href="index.html?page=tclasslearning/specal_nonsul">생각이 열리는 논술</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_krHistory01">이야기 한국사</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_spareMid">예비중</a></li>
+	<li class="on"><a href="index.html?page=tclasslearning/specal_midMath01">중학수학</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_vod">실험동영상</a></li>
+</ul>
+<!-- 2depth tab -->
+<ul class="tab_2depth">
+	<li><a href="index.html?page=tclasslearning/specal_midMath01">중학 단원평가</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_midMath02">중학 출제 마법사</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_midMath03">중학 시험 대비</a></li>
+	<li class="on"><a href="index.html?page=tclasslearning/specal_midMath04">중학 동영상 강의</a></li>
+	<li><a href="index.html?page=tclasslearning/specal_midMath05">중학 회원별 학습</a></li>
+</ul>
+<!-- //2depth tab -->
+<div class="box_guide">
+	<ul>
+		<li>해당 동영상 콘텐츠는 학생에게 보여지는 동영상과 같은 영상이며 , 수업 연구용으로 제공됩니다.</li>
+		<li>동영상 강의를 원활하게 보기 위해서는 모니터 해상도를 최소 1024 X 768 이상으로 맞춰 주세요.</li>
+	</ul>
+</div>
+<!--검색-->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>학년</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm">
+							<input type="radio" id="subject01" name="subject" checked />
+							<label for="subject01">중1</label>
+						</span>
+						<span class="frm">
+							<input type="radio" id="subject02" name="subject" />
+							<label for="subject02">중2</label>
+						</span>
+						<span class="frm">
+							<input type="radio" id="subject03" name="subject" />
+							<label for="subject03">중3</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>학기</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm">
+							<input type="radio" id="class_chk01" name="class" checked />
+							<label for="class_chk01">1학기</label>
+						</span>
+						<span class="frm">
+							<input type="radio" id="class_chk02" name="class" />
+							<label for="class_chk02">2학기</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>호</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm all">
+							<input type="checkbox" id="chk_all" name="chk" onchange="all_check(this);" checked="checked" />
+							<label for="class_all">전체</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="chk01" name="chk" />
+							<label for="chk01">1호</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="chk02" name="chk" />
+							<label for="chk02">2호</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="chk03" name="class" />
+							<label for="chk03">3호</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="chk04" name="class" />
+							<label for="chk04">4호</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="chk05" name="class" />
+							<label for="chk05">5호</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!--//검색-->
+<!--테이블-->
+!--[D] 데이터 테이블 적용 후 제거--
+<div class="table_list">
+	<table>
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>학년</th>
+				<th>학기</th>
+				<th>교재</th>
+				<th>소단원</th>
+				<th>강의명</th>
+				<th>동영상</th>
+				<th>재생시간(분)</th>
+				<th>쪽수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="gm_font">1</td>
+				<td>중1</td>
+				<td>1학기</td>
+				<td>1호</td>
+				<td>01.다각형</td>
+				<td>(개념) 다각형</td>
+				<td><a href="javascript:openPop('Tclasslearning/pop_specal_krHistoryVideo.html','800','630');" class="btn_top btn_ico play"><span>2021.02.21</span></a></td>
+				<td class="gm_font">31</td>
+				<td class="gm_font">3~5</td>
+			</tr>
+			<tr>
+				<td class="gm_font">1</td>
+				<td>중1</td>
+				<td>1학기</td>
+				<td>1호</td>
+				<td>01.다각형</td>
+				<td>(개념) 다각형</td>
+				<td><a href="javascript:openPop('Tclasslearning/pop_specal_krHistoryVideo.html','800','630');" class="btn_top btn_ico play"><span>play</span></a></td>
+				<td class="gm_font">31</td>
+				<td class="gm_font">3~5</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="paging">
+	<a href="" class="btn_paging back"></a>
+	<a href="" class="btn_paging pre"></a>
+	<ul>
+		<li><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">4</a></li>
+		<li><a href="">5</a></li>
+		<li><a href="">6</a></li>
+		<li><a href="">7</a></li>
+		<li><a href="">8</a></li>
+		<li><a href="">9</a></li>
+	</ul>
+	<a href="" class="btn_paging next"></a>
+	<a href="" class="btn_paging forward"></a>
+</div>

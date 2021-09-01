@@ -1,0 +1,592 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('휴회생 관리');
+        $('.group_title h2').text('휴회현황');
+
+        calendar(); //달력 2개
+        $('.datepicker-input').focus(function () { // 달력 클릭 시 태블릿 키패드 처리
+            var _input = $(this);
+            _input.attr("readonly", true);
+            setTimeout(function () { _input.attr("readonly", false); }, 50);
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<h4 class="tit_h4">조회조건 설정</h4>
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option>휴회일</option>
+                        <option>입회일</option>
+                    </select>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input class="datepicker-input" id="startpicker-input" type="text" aria-label="Date" />
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input class="datepicker-input" id="endpicker-input" type="text" aria-label="Date" />
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month_01" name="month" />
+                            <label for="month_01" checked>1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month_03" name="month" />
+                            <label for="month_03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month_06" name="month" />
+                            <label for="month_06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>처리현황</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="all_stat" name="prc_stat" onchange="all_check(this);" checked="checked" />
+                            <label for="all_stat">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="prc_stat01" name="prc_stat" />
+                            <label for="prc_stat01">대기중</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="prc_stat02" name="prc_stat" />
+                            <label for="prc_stat02">지사기각</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="prc_stat03" name="prc_stat" />
+                            <label for="prc_stat03">처리완료</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="prc_stat04" name="prc_stat" />
+                            <label for="prc_stat04">휴회철회</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>휴회사유</dt>
+                <dd>
+                    <select>
+                        <option>선택</option>
+                        <option>시스템불만(부적응)</option>
+                        <option>경제적 이유(고 회비)</option>
+                        <option>차량 미운행</option>
+                        <option>가맹점 환경 불만</option>
+                        <option>전FC구분 학원으로 이동</option>
+                        <option>과외로 이동</option>
+                        <option>시험결과 불만족</option>
+                        <option>기타</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="class_all" name="class" onchange="all_check(this);" checked="checked" />
+                            <label for="class_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk01" name="class" />
+                            <label for="class_chk01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk02" name="class" />
+                            <label for="class_chk02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_chk03" name="class" />
+                            <label for="class_chk03">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>직접입력</dt>
+                <dd>
+                    <form name="form">
+                        <select name="selectstd" onChange="sel_std(this.form)">
+                            <option selected="selected" value="0">수강생명</option>
+                            <option value="1">수강생 번호</option>
+                            <option value="1">수강생 ID</option>
+                        </select>
+                        <input type="text" name="inputname_std" class="input_address" placeholder="수강생명 or 수강생번호 or 수강생 ID을 입력하세요.">
+                    </form>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회 -->
+<!--테이블 탑-->
+<div class="btn_top_wrap between">
+    <span>
+        <select>
+            <option value="">10</option>
+            <option value="" selected="selected">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체<strong class="col_blue">200</strong>명 (수학 00명, 영어 00명, 전과목 00명)</span>
+    </span>
+    <span>
+        <a href="javascript:alert_open('휴회철회가 완료되었습니다.');" class="btn_top">휴회 철회</a>
+    </span>
+</div>
+<!--//테이블 탑-->
+<!--테이블-->
+<div class="table_scroll" style="max-height:350px;">
+    <div class="table_list" style="min-width:1450px;">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width: 4%" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std_all" onchange="all_check(this);" />
+                            <label for="std_all">전체선택</label>
+                        </span>
+                    </th>
+                    <th>No.</th>
+                    <th>FC구분</th>
+                    <th>수강생번호</th>
+                    <th>수강생명</th>
+                    <th>ID</th>
+                    <th>학년</th>
+                    <th>입회일</th>
+                    <th>휴회신청일</th>
+                    <th>휴회사유</th>
+                    <th>복회예정일</th>
+                    <th>자동복회여부</th>
+                    <th>재원기간</th>
+                    <th>처리현황</th>
+                    <th>휴회철회</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> Y </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> - </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> - </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> - </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> - </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> - </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> - </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>가맹점해지</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> - </td>
+                    <td> 2년 11개월 </td>
+                    <td> 처리완료 </td>
+                    <td>
+                        <a href="" class="btn_table">철회</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">15</span>
+                    </td>
+                    <td> 수학 </td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td> 박찬호 </td>
+                    <td>
+                        <span class="gm_font">jbg000000</span>
+                    </td>
+                    <td>중등2</td>
+                    <td>
+                        <span class="gm_font">2021.02.05</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td>단기휴회</td>
+                    <td>
+                        <span class="gm_font">2021.02.10</span>
+                    </td>
+                    <td> N </td>
+                    <td> 2년 11개월 </td>
+                    <td> 대기중 </td>
+                    <td> - </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="15">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>                  
+                </tr> -->
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--//테이블-->

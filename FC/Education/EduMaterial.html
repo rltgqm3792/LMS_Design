@@ -1,0 +1,165 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('교육일정');
+        // 달력
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=education/EduApplyCalendar">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=education/EduComplete">수료현황</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=education/EduMaterial">교육자료</a>
+    </li>
+</ul>
+
+<!-- 조회 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date" />
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date" />
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="month01" name="month" />
+                            <label for="month01">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month03" name="month" />
+                            <label for="month03">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="month06" name="month" />
+                            <label for="month06">6개월</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="subject_all" name="subject" onchange="all_check(this);" checked="checked" />
+                            <label for="subject_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject01" name="subject" />
+                            <label for="subject01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject02" name="subject" />
+                            <label for="subject02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="subject03" name="subject" />
+                            <label for="subject03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>카테고리</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="category_all" name="category" onchange="all_check(this);" checked="checked" />
+                            <label for="category_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category01" name="category" />
+                            <label for="category01">사전교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category02" name="category" />
+                            <label for="category02">신입입문교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category03" name="category" />
+                            <label for="category03">The 큰 도전</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category04" name="category" />
+                            <label for="category04">리더스클럽콘서트</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category05" name="category" />
+                            <label for="category05">전문가 과정</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category06" name="category" />
+                            <label for="category06">지사월교육</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="category07" name="category" />
+                            <label for="category07">기타</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>직접입력</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                        <option>작성자</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력해 주세요." />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//조회 -->
+
+<div class="btn_top_wrap">
+    <h4 class="tit_h4">교육자료 목록<span class="tit_sub">전체 <strong class="col_blue">4</strong>개 </span>
+    </h4>
+</div>
+
+<!-- 제목 -->
+<a href="index.html?page=education/EduMaterial_view">신입 사전교육 매뉴얼</a>
+
+<a href="javascript:alert_open('권한이 없습니다.');" class="ico_img file">파일</a>
+
+<div id="grid"></div>

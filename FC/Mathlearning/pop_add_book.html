@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath" />
+        <meta name="robots" content="index,nofollow" />
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법" />
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>추가 스마트교재</h1>
+            </header>
+            <section class="pop_content">
+                <!--CONTENTS-->
+                <div class="search_wrap">
+                    <ul class="info_group">
+                        <li>
+                            <dl>
+                                <dt>학년</dt>
+                                <dd>
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm">
+                                            <input type="radio" id="rdo1" name="radio1" checked>
+                                            <label for="rdo1">초등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="rdo2" name="radio1">
+                                            <label for="rdo2">중등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="rdo3" name="radio1">
+                                            <label for="rdo3">고등</label>
+                                        </span>
+                                    </span>
+                                    <select>
+                                        <option value="">초1</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>학기</dt>
+                                <dd>
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm">
+                                            <input type="radio" id="rdo11" name="radio2" checked>
+                                            <label for="rdo11">1학기</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="rdo12" name="radio2">
+                                            <label for="rdo12">2학기</label>
+                                        </span>
+                                    </span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>유형</dt>
+                                <dd>
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm">
+                                            <input type="radio" id="rdo21" name="radio3" checked>
+                                            <label for="rdo21">원리쏙쏙</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="rdo22" name="radio3">
+                                            <label for="rdo22">유형특강</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="rdo23" name="radio3">
+                                            <label for="rdo23">유형완성</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="rdo24" name="radio3">
+                                            <label for="rdo24">실력점프</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="rdo25" name="radio3">
+                                            <label for="rdo25">계산</label>
+                                        </span>
+                                    </span>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_bottom_wrap right"><button class="btn_search">검색</button></div>
+
+                <div class="table_list">
+                    <table class="thead">
+                        <colgroup>
+                            <col style="width:10%">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>선택</th>
+                                <th>단원명</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scroll" style="max-height:286px">
+                        <table class="tbody">
+                            <colgroup>
+                                <col style="width:10%">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo41" name="radiobutton">
+                                            <label for="rdo41">선택</label>
+                                        </span>
+                                    </td>
+                                    <td class="left">초3-1 원리쏙쏙 1호<br>(Ⅵ-3. 사각형의 성질 평행사변형 여러 가지 사각형)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--//CONTENTS-->
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn">선택완료</a>
+            </section>
+        </article>
+    </body>
+
+</html>

@@ -1,0 +1,117 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('보충심화문제');
+        $('.group_title h2').text('보충심화문제');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li><a href="index.html?page=tclasslearning/suple_testMagician01">출제마법사</a></li>
+	<li class="on"><a href="index.html?page=tclasslearning/suple_testMagician02">영역/단원별 집중체크</a></li>
+	<li><a href="index.html?page=tclasslearning/suple_testMagician03">단원보충문제</a></li>
+	<li><a href="index.html?page=tclasslearning/suple_testMagician04">서술형문제</a></li>
+	<li><a href="index.html?page=tclasslearning/suple_testMagician05">계산력 문제</a></li>
+	<li><a href="index.html?page=tclasslearning/suple_testMagician06">필수 오답 문제</a></li>
+</ul>
+
+<div class="box_guide">
+	<div>
+		<ul>
+			<li>영역 / 단원 별 집중체크는 수학에 한하여 학년과 영역을 선택하여 교사가 직접 문제지를 만들 수 있습니다.</li>
+		</ul>
+	</div>
+</div>
+
+<div class="btn_top_wrap between">
+	<span>
+		<select>
+			<option>전체</option>
+			<option>7세</option>
+			<option>초1</option>
+			<option>초2</option>
+			<option>초3</option>
+			<option>초4</option>
+			<option>초5</option>
+			<option>초6</option>
+			<option>예비</option>
+		</select>
+	</span>
+	<span>
+		<a href="#" class="btn_top btn_del">삭제</a>
+		<a href="javascript:openPop('Tclasslearning/pop_suple_testMagicianTest02.html','800','630');" class="btn_top">시험 출제</a>
+	</span>
+</div>
+<!--테이블-->
+!--[D] 데이터 테이블 적용 후 제거--
+<div class="table_list">
+    <table>
+		<thead>
+			<tr>
+				<th>
+					<span class="frm only all">
+						<input type="checkbox" name="chk" id="chkall"  onclick="all_check(this);">
+						<label for="chkall">전체 선택</label>
+					</span>
+				</th>
+				<th>학년</th>
+				<th>학기</th>
+				<th>영역</th>
+				<th>출제범위</th>
+				<th>시험지명</th>
+				<th>문항수</th>
+				<th>난이도</th>
+				<th>생성일</th>
+				<th>시험지</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<span class="frm only">
+						<input type="checkbox" name="chk" id="chk1">
+						<label for="chk1">선택</label>
+					</span>
+				</td>
+				<td>중1</td>
+				<td>1학기</td>
+				<td>수와 연산</td>
+				<td class="gm_font">1-3</td>
+				<td>3단원 모음</td>
+				<td class="gm_font">10</td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">2021.01.03</td>
+				<td>
+					<a href="" class="btn_table bluish">문제</a>
+					<a href="" class="btn_table green">풀이</a>
+					<a href="" class="btn_table orange">정답</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <li><a href="">6</a></li>
+      <li><a href="">7</a></li>
+      <li><a href="">8</a></li>
+      <li><a href="">9</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

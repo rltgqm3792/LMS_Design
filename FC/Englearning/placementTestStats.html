@@ -1,0 +1,786 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('학습통계');
+		$('.group_title h2').text('Placement Test 통계');
+		calendar();
+	});
+	$(document).ready(function () {
+		Website.run();
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 검색 -->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+				<input id="startpicker-input" type="text" aria-label="Date" />
+				<label for="startpicker-input" class="tui-ico-date"></label>
+				<div id="startpicker-container" style="margin-left: -1px;"></div>
+			</div>
+			<span class="line">~</span>
+			<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+				<input id="endpicker-input" type="text" aria-label="Date" />
+				<label for="endpicker-input" class="tui-ico-date"></label>
+				<div id="endpicker-container" style="margin-left: -1px;"></div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!-- //검색 -->
+<!--학습통계-->
+<h4 class="tit_h4">Placement Test 통계</h4>
+<div class="stdstats_info">
+	<div class="info_wrap">
+		<div class="inner">
+			<li>시험 응시 인원</li>
+			<li class="between">
+				<span class="icon_stdst01">응시인원</span>
+				<span><em class="num">150</em><em>명</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>정규수강생 등록 수</li>
+			<li class="between">
+				<span class="icon_stdst02">등록수</span>
+				<span><em class="num">19</em><em>명</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>정규수강생 전환율</li>
+			<li class="between">
+				<span class="icon_stdst03">전환율</span>
+				<span><em class="num">35</em><em>%</em></span>
+			</li>
+		</div>
+	</div>
+	<div class="info_wrap">
+		<div class="inner">
+			<li>평균시험 응시시간</li>
+			<li class="between">
+				<span class="icon_stdst04">응시시간</span>
+				<span><em class="num">1</em><em>시간</em><em class="num">30</em><em>분</em></span>
+			</li>
+		</div>
+	</div>
+</div>
+<!--//학습통계-->
+<div class="graph_group02">
+	<li>
+		<!--A-G 시험 분포도-->
+		<div>
+			<h4 class="tit_h4">A-G 시험 분포도</h4>
+			<div class="column_graph03">
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:14.3%">
+						<p>A</p>
+						<p><em>Starter</em><br>20%(18명)</p>
+					</span>
+					<span class="bar cloum_color02" style="width:14.3%">
+						<p>B</p>
+						<p><em>Beginner</em><br>20%(18명)</p>
+					</span>
+					<span class="bar cloum_color03" style="width:14.3%">
+						<p>C</p>
+						<p><em>Intermediate</em><br>20%(18명)</p>
+					</span>
+					<span class="bar cloum_color04" style="width:14.3%">
+						<p>D</p>
+						<p><em>Advanced</em><br>20%(18명)</p>
+					</span>
+					<span class="bar cloum_color05" style="width:14.3%">
+						<p>E</p>
+						<p><em>Master</em><br>20%(18명)</p>
+					</span>
+					<span class="bar cloum_color06" style="width:14.2%">
+						<p>F</p>
+						<p><em>Master</em><br>20%(18명)</p>
+					</span>
+					<span class="bar cloum_color07" style="width:14.3%">
+						<p>G</p>
+						<p><em>Master</em><br>20%(18명)</p>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--//A-G 시험 분포도-->
+		<!--배정 레벨 분포도-->
+		<div class="mg_top_30">
+			<h4 class="tit_h4">배정 레벨 분포도</h4>
+			<div class="graph_box">
+				<div id="chartdiv" style="height:250px;"></div>
+				<script type="text/javascript">
+					$(function () {
+						am4core.ready(function () {
+							am4core.addLicense("CH230677325");
+							am4core.useTheme(am4themes_animated);
+
+							var chart = am4core.create("chartdiv", am4charts.XYChart);
+							chart.padding(50, 50, 30, 30);
+							chart.fontSize = 13;
+
+							chart.data = [
+								{
+									"subject": "5",
+									"regular": 10
+								}, {
+									"subject": "10",
+									"regular": 90
+								}, {
+									"subject": "15",
+									"regular": 20
+								}, {
+									"subject": "20",
+									"regular": 30
+								}, {
+									"subject": "25",
+									"regular": 50
+								}, {
+									"subject": "30",
+									"regular": 30
+								}, {
+									"subject": "35",
+									"regular": 10
+								}, {
+									"subject": "40",
+									"regular": 70
+								}, {
+									"subject": "45",
+									"regular": 10
+								}, {
+									"subject": "50",
+									"regular": 40
+								}, {
+									"subject": "55",
+									"regular": 60
+								}
+							];
+
+							var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+							categoryAxis.dataFields.category = "subject";
+							categoryAxis.renderer.opposite = false;
+							categoryAxis.renderer.minGridDistance = 10;
+							categoryAxis.renderer.grid.template.stroke = am4core.color("#ffffff");
+							categoryAxis.renderer.labels.template.fill = am4core.color("#767676");
+
+							var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+							valueAxis.renderer.inversed = false;
+							valueAxis.title.text = "";
+							valueAxis.renderer.minLabelPosition = 0.01;
+							valueAxis.renderer.labels.template.fill = am4core.color("#767676");
+							valueAxis.strokeWidth = 0;
+							valueAxis.renderer.grid.template.stroke = am4core.color("#848484");
+
+							var series1 = chart.series.push(new am4charts.LineSeries());
+							series1.dataFields.valueY = "regular";
+							series1.dataFields.categoryX = "subject";
+							// series1.name = "단원";
+							series1.bullets.push(new am4charts.CircleBullet());
+							series1.tooltipText = " {name}  {valueY}";
+							series1.legendSettings.valueText = "{valueY}";
+							series1.visible = false;
+							series1.stroke = am4core.color("#0093ff");
+							series1.strokeWidth = 1;
+							series1.fill = am4core.color("#0093ff");
+
+							chart.cursor = new am4charts.XYCursor();
+							chart.cursor.behavior = "zoomY";
+
+							let hs1 = series1.segments.template.states.create("hover")
+							hs1.properties.strokeWidth = 2;
+							series1.segments.template.strokeWidth = 2;
+
+							// chart.legend = new am4charts.Legend();
+							// chart.legend.itemContainers.template.events.on("over", function (event) {
+							//     var segments = event.target.dataItem.dataContext.segments;
+							//     segments.each(function (segment) {
+							//         segment.isHover = true;
+							//     })
+							// })
+							// chart.legend.itemContainers.template.events.on("out", function (event) {
+							//     var segments = event.target.dataItem.dataContext.segments;
+							//     segments.each(function (segment) {
+							//         segment.isHover = false;
+							//     })
+							// })
+
+						});
+
+					});
+				</script>
+			</div>
+		</div>
+		<!--//배정 레벨 분포도-->
+	</li>
+	<li>
+		<!--응시 상세 내용-->
+		<h4 class="tit_h4">응시 상세 내용</h4>
+		<div class="table_scroll" style="max-height:497px">
+			<div class="table_list">
+				<table>
+					<colgroup>
+						<col style="width: 15%" />
+						<col style="width: 15%" />
+						<col style="width: 15%" />
+						<col style="width: 15%" />
+						<col style="width: 10%" />
+						<col style="width: 10%" />
+						<col style="width: 10%" />
+						<col style="width: 10%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>응시일</th>
+							<th>이름</th>
+							<th>학년</th>
+							<th>원생<br>상태</th>
+							<th>응시<br>테스트</th>
+							<th>점수</th>
+							<th>추천<br>레벨</th>
+							<th>배정<br>레벨</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+						<tr>
+							<td>2021.03.22</td>
+							<td>감수용</td>
+							<td>초1</td>
+							<td>휴회생</td>
+							<td>G</td>
+							<td>60</td>
+							<td>S1-2</td>
+							<td>S1_3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--//응시 상세 내용-->
+	</li>
+</div>
+<div class="graph_group02">
+	<li>
+		<!--기초영어 학습조사 통계-->
+		<h4 class="tit_h4">기초영어 학습조사 통계</h4>
+		<div class="table_list">
+			<table>
+				<colgroup>
+					<col style="width: 32%;" />
+					<col style="width: 12%;" />
+					<col style="width: 12%;" />
+					<col style="width: 12%;" />
+					<col style="width: 12%;" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th></th>
+						<th>6개월이상</th>
+						<th>12개월이상</th>
+						<th>18개월이상</th>
+						<th>24개월이상</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>해외귀국</th>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>영어유치원</th>
+						<td></td>
+						<td></td>
+						<td>3</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>과외</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>공부방</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<th>어학원</th>
+						<td></td>
+						<td></td>
+						<td>gs</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>보습학원</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>영어도서관</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>학습지</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>학교, 홈스쿨링</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--//기초영어 학습조사 통계-->
+	</li>
+	<li>
+		<h4 class="tit_h4">테스트 그룹별 평균 점수(지역/전국 비교)</h4>
+		<div class="graph_box">
+			<div class="bullet_wrap">
+				<span class="bul_col bul_area01">우리가맹점</span>
+				<span class="bul_col bul_area02">지역</span>
+				<span class="bul_col bul_area03">전국</span>
+			</div>
+			<div id="scrollbar2">
+				<div class="viewport viewport02">
+					<div class="overview">
+						<div id="column_chart02" style="width:1250px;height:345px;"></div>
+					</div>
+				</div>
+				<div class="scrollbar">
+					<div class="track">
+						<div class="thumb">
+							<div class="end"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				am4core.ready(function () {
+					// license
+					am4core.addLicense("CH230677325");
+
+					// Themes begin
+					am4core.useTheme(am4themes_animated);
+					// Themes end
+					var chart = am4core.create('column_chart02', am4charts.XYChart)
+					chart.fontSize = 13;
+					chart.fontFamily = "NotoSans";
+					chart.autoMargins = false;
+					chart.maskBullets = false;
+					chart.padding(20, 0, 0, 0);
+
+					chart.data = [
+						{
+							category: 'S',
+							first: 66,
+							second: 26,
+							third: 100
+						},
+						{
+							category: 'M',
+							first: 30,
+							second: 70,
+							third: 66
+						},
+						{
+							category: 'A',
+							first: 27,
+							second: 45,
+							third: 66
+						},
+						{
+							category: 'R',
+							first: 27,
+							second: 45,
+							third: 66
+						},
+						{
+							category: 'T',
+							first: 27,
+							second: 45,
+							third: 66
+						},
+						{
+							category: 'H',
+							first: 27,
+							second: 45,
+							third: 66
+						},
+						{
+							category: 'B',
+							first: 27,
+							second: 45,
+							third: 66
+						}
+					]
+
+					var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+					xAxis.dataFields.category = 'category';
+					xAxis.renderer.cellStartLocation = 0.1;
+					xAxis.renderer.cellEndLocation = 0.8;
+					xAxis.renderer.grid.template.location = 0;
+					xAxis.renderer.minGridDistance = 40;
+					xAxis.renderer.grid.template.opacity = 0;
+					xAxis.renderer.baseGrid.disabled = true;
+					xAxis.renderer.labels.template.fontWeight = "bold";
+					//xAxis.renderer.labels.template.disabled = true;
+
+					chart.colors.list = [
+						am4core.color("#0093ff"),
+						am4core.color("#1bbcbc"),
+						am4core.color("#8697af"),
+					];
+
+					var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+					yAxis.min = 0;
+					yAxis.max = 100;
+					yAxis.renderer.baseGrid.disabled = true;
+					yAxis.renderer.labels.template.disabled = false;
+					yAxis.renderer.grid.template.opacity = 0.5;
+					function createSeries(value, name) {
+						var series = chart.series.push(new am4charts.ColumnSeries())
+						series.dataFields.valueY = value;
+						series.dataFields.categoryX = 'category';
+						series.sequencedInterpolation = true;
+						series.name = name
+
+						var bullet = series.bullets.push(new am4charts.LabelBullet())
+						bullet.interactionsEnabled = false;
+						bullet.dy = -10;
+						bullet.label.text = '{valueY}점';
+						bullet.label.fontSize = 12;
+						bullet.label.truncate = false;
+						bullet.label.hideOversized = false;
+						return series;
+					}
+					createSeries('first', 'The First');
+					createSeries('second', 'The Second');
+					createSeries('third', 'The Third');
+
+				}); // end am4core.ready()
+			</script>
+			<!--//그래프-->
+		</div>
+	</li>
+</div>
+<!--배정 레벨 분포도 (지역/전국 비교)-->
+<div class="graph_group">
+	<div class="btn_top_wrap between">
+		<h4 class="tit_h4">배정 레벨 분포도 (지역/전국 비교)</h4>
+		<div class="bullet_wrap">
+			<span class="bul_col bul_color01">Starter</span>
+			<span class="bul_col bul_color02">Beginner</span>
+			<span class="bul_col bul_color03">Intermediate</span>
+			<span class="bul_col bul_color04">Advanced</span>
+			<span class="bul_col bul_color05">Master</span>
+		</div>
+	</div>
+	<div class="column_graph">
+		<dl>
+			<dt><span class="name"><em>S</em></span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:15%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:20%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:15%"><em class="tooltip">Advanced</em></span>
+					<span class="bar cloum_color05" style="width:15%"><em class="tooltip">Master</em></span>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span class="name">전국</span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	<div class="column_graph">
+		<dl>
+			<dt><span class="name"><em>M</em></span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:30%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:20%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:15%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span class="name">전국</span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	<div class="column_graph mg_top_30">
+		<dl>
+			<dt><span class="name"><em>A</em></span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:30%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:20%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:15%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span class="name">전국</span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	<div class="column_graph">
+		<dl>
+			<dt><span class="name"><em>T</em></span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:30%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:20%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:15%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span class="name">전국</span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	<div class="column_graph">
+		<dl>
+			<dt><span class="name"><em>H</em></span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:30%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:20%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:15%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span class="name">전국</span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	<div class="column_graph">
+		<dl>
+			<dt><span class="name"><em>B</em></span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:30%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:20%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:15%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt><span class="name">전국</span></dt>
+			<dd>
+				<div class="bar_graph graph_tooltip">
+					<span class="bar cloum_color01" style="width:3%"><em class="tooltip">Starter</em></span>
+					<span class="bar cloum_color02" style="width:37%"><em class="tooltip">Beginner</em></span>
+					<span class="bar cloum_color03" style="width:35%"><em class="tooltip">Intermediate</em></span>
+					<span class="bar cloum_color04" style="width:25%"><em class="tooltip">Advanced</em></span>
+				</div>
+			</dd>
+		</dl>
+	</div>
+</div>
+<!--//배정 레벨 분포도 (지역/전국 비교)-->

@@ -1,0 +1,149 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("프로그램 등록");
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>프로그램명</th>
+                <td><input type="text"></td>
+                <th>서비스여부<span class="required"></span></th>
+                <td><select><option>선택</option></select></td>
+            </tr>
+            <tr>
+                <th>프로그램ID</th>
+                <td colspan="3"><span class="font_gmarket13">SE_002</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ul class="tab_1depth">
+    <li class="on"><a href="index.html?page=file/program_write01">기본정보</a></li>
+    <li><a href="index.html?page=file/program_write02">차시정보</a></li>
+    <li><a href="index.html?page=file/program_write03">스텝정보</a></li>
+</ul>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>Cognitive Level</th>
+                <td colspan="3">
+                    <label for="level_rdo01" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo01" />
+                        <span>Being Ready</span>
+                    </label>
+                    <label for="level_rdo02" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo02" />
+                        <span>Recognizing</span>
+                    </label>
+                    <label for="level_rdo03" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo03" />
+                        <span>Understanding</span>
+                    </label>
+                    <label for="level_rdo04" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo04" />
+                        <span>Applying</span>
+                    </label>
+                    <label for="level_rdo05" class="rdo_idt">
+                        <input type="radio" name="level" id="level_rdo05" />
+                        <span>Analyzing</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>Group</th>
+                <td><select><option>선택</option></select></td>
+                <th>Sub Group</th>
+                <td><select><option>선택</option></select></td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td><select><option>선택</option></select></td>
+                <th>Month</th>
+                <td><select><option>선택</option></select></td>
+            </tr>
+            <tr>
+                <th>Skill</th>
+                <td><select><option>선택</option></select></td>
+                <th>차시수</th>
+                <td><select><option>선택</option></select></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>
+                    <label for="type_rdo01" class="rdo_idt">
+                        <input type="radio" name="type" id="type_rdo01" />
+                        <span>Main</span>
+                    </label>
+                    <label for="type_rdo02" class="rdo_idt">
+                        <input type="radio" name="type" id="type_rdo02" />
+                        <span>Sub</span>
+                    </label>
+                    <label for="type_rdo03" class="rdo_idt">
+                        <input type="radio" name="type" id="type_rdo03" />
+                        <span>Special</span>
+                    </label>
+                </td>
+                <th>Program Type</th>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <th>워크북</th>
+                <td colspan="3">
+                    <label for="work_rdo01" class="rdo_idt">
+                        <input type="radio" name="work" id="work_rdo01" />
+                        <span>No</span>
+                    </label>
+                    <label for="work_rdo02" class="rdo_idt">
+                        <input type="radio" name="work" id="work_rdo02" />
+                        <span>Yes</span>
+                    </label>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <th>등록일</th>
+                <td></td>
+                <th>등록자</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>마지막 수정일</th>
+                <td></td>
+                <th>마지막 수정자</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic black">취소</a>
+        <a href="" class="btn_basic">저장</a>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>
+<a href="javascript:openPop('../lcms/file/pop_program_select.html','940','670');">프로그램 선택</a>

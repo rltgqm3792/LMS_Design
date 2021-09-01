@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!--plugin -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <script
+            src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.js"
+            type="text/javascript"></script>
+
+        <!-- calendar 
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js"></script> -->
+
+        <!-- 페이지에 관련된 스크립트 -->
+        <script type="text/javascript">
+            $(function(){
+                $(".btn_onoff", ".pop_smp_grad .box_wrap .add_group").click(function(e){
+                    $(this).closest(".add_group").toggleClass("on", 400, "easeOutSine");
+                });
+
+                $(".btn_onoff", ".pop_smp_grad .std_wrap .std_group").click(function(e){
+                    var stdWrap = $(this).closest(".std_wrap");
+                    if(stdWrap.hasClass("std_group_on")) {
+                        $(".std_group", stdWrap).animate({left:'-220px'}, 500, "linear", function() {
+                            stdWrap.removeClass("std_group_on").find(".std_group").css({ width:'25px'}).find(".btn_onoff").css({right:'-212px'});
+                        });
+                    } else {
+                        $(this).animate({right:'-25px'}, 414, "linear");
+                        $(".std_group", stdWrap).animate({left:'0'}, 500, "linear", function() {
+                            stdWrap.addClass("std_group_on").find(".std_group").css({width:'220px'});
+                        });
+                    }
+                });
+            });
+            
+            function studentSelect(obj) {
+                $(obj).addClass("on").closest(".std_list").find("> li > a").not($(obj)).removeClass("on");
+                $(".box_info", ".pop_smp_grad .top_area").hide();
+                $(".nodata", ".pop_smp_grad .std_wrap .view_group").hide();
+                $(".answer_area", ".pop_smp_grad .std_wrap .view_group").hide();
+                $(".book_area", ".pop_smp_grad .std_wrap .view_group").show();
+            }
+
+            function showAnswer(idx) {
+                if($(".pop_smp_grad .std_wrap").hasClass("std_group_on")) {
+                    $(".btn_onoff", ".pop_smp_grad .std_wrap .std_group").click();
+                }
+                $(".nodata", ".pop_smp_grad .std_wrap .view_group").hide();
+                $(".book_area", ".pop_smp_grad .std_wrap .view_group").hide();
+                $(".box_info", ".pop_smp_grad .top_area").show();
+                $(".answer_area", ".pop_smp_grad .std_wrap .view_group").show().find("> p").hide().eq(idx).show();
+            }
+        </script>
+        <!-- //페이지에 관련된 스크립트 -->
+
+    </head>
+    <body>
+        <article class="Popup">
+            <section class="pop_content pop_smp_grad">
+
+                <!-- box wrap -->
+                <div class="box_wrap">
+                    <div class="top_area">
+                        <h2 class="tit_main">온라인 간편채점</h2>
+                        <ul class="box_info">
+                            <li><span class="name">오승환</span></li>
+                            <li><span class="book">수학은셀파유형 1학년 11호</span></li>
+                            <li><span class="page">5p,8p,9p</span></li>
+                        </ul>
+                        <div class="print_wrap">
+                            <select>
+                                <option>1쪽 출력 </option>
+                            </select>
+                            <a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+                        </div>
+                        <div class="btn_wrap col3">
+                            <a href="javascript:showAnswer(1);" class="btn_paper"><span>문제지</span></a>
+                            <a href="javascript:showAnswer(0);" class="btn_quick_answ"><span>빠른<br>정답</span></a>
+                            <a href="javascript:showAnswer(1);" class="btn_answ"><span>풀이</span></a>
+                        </div>
+                    </div>
+                    <!-- std_wrap -->
+                    <div class="std_wrap std_group_on">
+                        <!--학생리스트-->
+                        <div class="std_group">
+                            <button type="button" class="btn_onoff"><span>수강생선택열기</span></button>
+                            <!--검색-->
+                            <div class="search_group">
+                                <p class="select_group">
+                                    <select>
+                                        <option>전체교사</option>
+                                    </select>
+                                </p>
+                                <p class="year_group">
+                                    <span class="frm_wrap frm_btn">
+                                        <span class="frm">
+                                            <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                                            <label for="chk_all">전체</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="chk_year1" name="year">
+                                            <label for="chk_year1">초등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="chk_year2" name="year">
+                                            <label for="chk_year2">중등</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="checkbox" id="chk_year3" name="year">
+                                            <label for="chk_year3">고등</label>
+                                        </span>
+                                    </span>
+                                </p>
+                                <p class="select_group">
+                                    <select>
+                                        <option>학년별</option>
+                                        <option>입실별</option>
+                                        <option>시간대별</option>
+                                    </select>
+                                </p>
+                                <p class="input_group">
+                                    <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+                                </p>
+                                <p class="list_align right">
+                                    <a href="">학년별</a>
+                                    <a href="">이름순</a>
+                                </p>
+                            </div>
+                            <!--//검색-->
+                            <!--리스트-->
+                            <ul class="std_list">
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                                        <span class="std_grade">초1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                        <span class="label">예비</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade">초1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade">초1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade mid">중1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                        <span class="label">예비</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade mid">중1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade mid">중1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade high">고1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade high">고1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade high">고1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade high">고1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:" onclick="studentSelect(this);">
+                                        <span class="std_grade high">고1</span>
+                                        <span class="name">오승환</span>
+                                        <span class="std_num">M098765432</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--//리스트-->
+                        </div>
+                        <!--//학생리스트-->
+                        <!--상세보기-->
+                        <div class="view_group">
+                            <p class="nodata" style="display:none;">
+                                <span>수강생을 선택해주세요.</span>
+                            </p>
+                            <!-- 교재 선택/페이지 선택 영역 -->
+                            <div class="book_area" style="display:block;">
+                                <ul class="tab_2depth">
+                                    <!-- [D] 활성화 : on-->
+                                    <li class="on"><a href="javascript:void(0);">주차별맞춤학습</a></li>
+                                    <li><a href="javascript:void(0);">스마트맞춤학습</a></li>
+                                </ul>
+                                <div class="search_calendar">
+                                    <button class="prev" disabled>이전달</button>
+                                    <span class="txt">2021. 1월. 3주차</span>
+                                    <button class="next">다음달</button>
+                                </div>
+                                <div class="learn_group">
+                                    <!-- 시험지 종류 별 아이콘 클래스
+                                        내신 : grade01
+                                        평가 : grade02
+                                        서+논술 : grade03
+                                        학습일 : grade04
+                                        출제일 : grade05
+                                    -->
+                                    <a href="javascript:void(0);" class="ico grade01 complete">
+                                        <p class="cont">
+                                            <span class="tit">내신1회</span>
+                                            <span class="score"><em>100</em>점</em></span>
+                                        </p>
+                                    </a>
+                                    <a href="javascript:void(0);" class="ico grade01 wait">
+                                        <p class="cont">
+                                            <span class="tit">내신2회</span>
+                                            <span class="score">채점대기중</span>
+                                        </p>
+                                    </a>
+                                    <a href="javascript:void(0);" class="ico grade02">
+                                        <p class="cont">
+                                            <span class="tit">평가</span>
+                                        </p>
+                                    </a>
+                                    <a href="javascript:void(0);" class="ico grade03">
+                                        <p class="cont">
+                                            <span class="tit">서+논술</span>
+                                        </p>
+                                    </a>
+                                    <a href="javascript:void(0);" class="ico grade04 wait">
+                                        <p class="cont">
+                                            <span class="tit">학습일</span>
+                                            <span class="date">2020.10.03</span>
+                                            <span class="score">채점대기중</span>
+                                        </p>
+                                    </a>
+                                    <a href="javascript:void(0);" class="ico grade05">
+                                        <p class="cont">
+                                            <span class="tit">출제일</span>
+                                            <span class="date">2020.10.03</span>
+                                        </p>
+                                    </a>
+                                    <a href="javascript:void(0);">
+                                        <p class="cont">
+                                            <span class="tit">내신3회</span>
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- //교재 선택/페이지 선택 영역 -->
+                            <!-- 빠른정답/풀이 영역 -->
+                            <div class="answer_area">
+                                <p><img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/temp/img_answer_sample01.jpg" alt="교재이미지"></p>
+                                <p><img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/temp/img_answer_sample02.jpg" alt="교재이미지"></p>
+                            </div>
+                            <!-- //빠른정답/풀이 영역 -->
+                        </div>
+                        <!--//상세보기-->
+                        <!-- std_wrap -->
+                        <div class="r_box">
+                            <div class="box_score">
+                                <strong>86점</strong>
+                            </div>
+                            <!-- 채점 이미지 적용 클래스
+                                정답 : st01 | 오답 : st02 | 부분정답 : st03 -->
+                            <dl class="box_grade chk_all">
+                                <dt>일괄채점</dt>
+                                <dd>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="wrong">오답</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="triangle">부분정답</span></button>
+                                </dd>
+                            </dl>
+                            <dl class="box_grade">
+                                <dd>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">1</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">2</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">3</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">4</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">5</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">6</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">7</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">8</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">9</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">10</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">11</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">12</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">13</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">14</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">15</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">16</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">17</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">18</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">19</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">20</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">21</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">22</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">23</span></button>
+                                    <button type="buton" class="btn_table ico_score"><span class="circle">24</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">25</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">26</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">27</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">28</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">29</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">30</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">31</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">32</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">33</span></button>
+                                    <button type="button" class="btn_table ico_score"><span class="circle">34</span></button>
+                                </dd>
+                            </dl>
+                            <div class="pop_btn_group">
+                                <a href="javascript:void(0);" class="btn">채점저장</a>
+                                <a href="javascript:void(0);" class="btn cancel">채점저장 <br>후 삭제</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add_group">
+                        <button type="button" class="btn_onoff"><span>더보기</span></button>
+                        <div class="list_items">
+                            <div class="scroll-y">
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>수학은셀파유형 1 수학은셀파유형 1</span>
+                                        <span>4p, 5p, 6p, 7p, 8p 4p, 5p, 6p, 7p, 8p</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:" class="item complete" onclick="showAnswer(0)">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item active">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>수학은셀파유형 1 수학은셀파유형 1</span>
+                                        <span>4p, 5p, 6p, 7p, 8p 4p, 5p, 6p, 7p, 8p</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>수학은셀파유형 1 수학은셀파유형 1</span>
+                                        <span>4p, 5p, 6p, 7p, 8p 4p, 5p, 6p, 7p, 8p</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>수학은셀파유형 1 수학은셀파유형 1</span>
+                                        <span>4p, 5p, 6p, 7p, 8p 4p, 5p, 6p, 7p, 8p</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>수학은셀파유형 1 수학은셀파유형 1</span>
+                                        <span>4p, 5p, 6p, 7p, 8p 4p, 5p, 6p, 7p, 8p</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>수학은셀파유형 1 수학은셀파유형 1</span>
+                                        <span>4p, 5p, 6p, 7p, 8p 4p, 5p, 6p, 7p, 8p</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>수학은셀파유형 1 수학은셀파유형 1</span>
+                                        <span>4p, 5p, 6p, 7p, 8p 4p, 5p, 6p, 7p, 8p</span>
+                                    </p>
+                                </a>
+                                <a href="javascript:void(0);" class="item">
+                                    <button type="button" class="btn_del"><span>삭제</span></button>
+                                    <p>
+                                        <strong class="name">오승환</strong>
+                                        <span>2020년 05월 3주</span>
+                                        <span>진도3회</span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="btm_area">
+                            <ul class="sort">
+                                <li><a href="javascript:void(0);" class="active">선택순</a></li>
+                                <li><a href="javascript:void(0);">수강생순</a></li>
+                                <li><a href="javascript:void(0);">학년순</a></li>
+                            </ul>
+                            <a href="" class="btn_top btn_ico del_all"><span>모두삭제</span></a>
+                            <a href="" class="btn_top btn_ico del_all"><span>일괄삭제</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //box wrap -->
+            </section>
+            <!-- 레이어팝업 -->
+            <section class="ly_popup ly_pop_book_select"></section>
+            <!-- //레이어팝업 -->
+        </article>
+    </body>
+</html>

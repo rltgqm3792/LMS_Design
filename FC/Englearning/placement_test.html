@@ -1,0 +1,257 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('수강생별 학습설정');
+        $('.group_title h2').text('PLACEMENT TEST');
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<div class="box_guide placement_test flex_bottom">
+    <p class="ico_type"><strong class="col_blue">Placement Test</strong> 는 표준화된 진단평가를 통해 스마트 해법영어의<br>
+        <strong>정확한 학습 레벨을 배정하기 위해 실시</strong>하는 테스트입니다.
+    </p>
+    <span>
+        Placement Test 프로세스
+        <div class="tooltip_area">
+            <button class="btn_tooltip">tooltip</button>
+            <div class="tooltip_cont placement_toopltip">
+                <ol>
+                    <li>
+                        <span class="step">STEP <em>01</em></span>
+                        <strong class="tit">수강생 정보 등록</strong>
+                        <span class="txt">예비수강생 정보 연동:<br>이름, 수강생코드, 학년<br>정보 매칭</span>
+                    </li>
+                    <li>
+                        <span class="step">STEP <em>02</em></span>
+                        <strong class="tit">기초 영어 학습 조사</strong>
+                        <span class="txt">영어 학습 기간,<br>방법[기관]에 따른 점수 측정</span>
+                    </li>
+                    <li>
+                        <span class="step">STEP <em>03</em></span>
+                        <strong class="tit">TEST 그룹 배정 및 실시</strong>
+                        <span class="txt">- 7개의 테스트 그룹<br>- 학년+가산점에 따른 그룹 배정</span>
+                    </li>
+                    <li>
+                        <span class="step">STEP <em>04</em></span>
+                        <strong class="tit">스마트영어 학습 레벨 배정</strong>
+                        <span class="txt">- 레벨테스트에 따라 추천<br>학습 레벨 확인<br>- 학습 레벨 수정 가능</span>
+                    </li>
+                    <li>
+                        <span class="step">STEP <em>05</em></span>
+                        <strong class="tit">TEST REPORT</strong>
+                    </li>
+                </ol>
+                <button class="close">툴팁닫기</button>
+            </div>
+        </div>
+    </span>
+</div>
+
+<!-- 검색영역  -->
+<div class="group search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>수강생</dt>
+                <dd>
+                    <span class="frm_wrap">
+                        <select>
+                            <option value="">전체</option>
+                        </select>
+                        <input type="text" class="input_name" placeholder="수강생이름을 입력하세요">
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>응시일</dt>
+                <dd>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+                        <input id="startpicker-input" type="text" aria-label="Date" />
+                        <label for="startpicker-input" class="tui-ico-date"></label>
+                        <div id="startpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                    <span class="line">~</span>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+                        <input id="endpicker-input" type="text" aria-label="Date" />
+                        <label for="endpicker-input" class="tui-ico-date"></label>
+                        <div id="endpicker-container" style="margin-left: -1px;"></div>
+                    </div>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!--//검색영역 -->
+
+<div class="btn_top_wrap between">
+    <select>
+        <option value="">전체</option>
+    </select>
+    <span>
+        <button class="btn_top btn_ico print"><span>프린트</span></button>
+        <button class="btn_top btn_ico sms"><span>SMS전송</span></button>
+    </span>
+</div>
+
+<div class="table_scroll" style="max-height:600px">
+    <div class="table_list" style="min-width:1400px">
+        <table>
+            <colgroup>
+                <col style="width:3%">
+                <col style="width:8%">
+                <col style="width:10%">
+                <col style="width:6%">
+                <col style="width:6%">
+                <col style="width:10%">
+                <col>
+                <col style="width:8%">
+                <col style="width:8%">
+                <col style="width:9%">
+                <col style="width:9%">
+                <col style="width:9%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <span class="frm only">
+                            <input type="checkbox" id="chk_all" name="chk1" onclick="all_check(this);">
+                            <label for="chk_all">전체선택</label>
+                        </span>
+                    </th>
+                    <th>응시일</th>
+                    <th>수강생</th>
+                    <th>원생상태</th>
+                    <th>학년</th>
+                    <th>휴대전화(학부모)</th>
+                    <th>학교명</th>
+                    <th>입회일</th>
+                    <th>휴회일</th>
+                    <th>기초영어 학습조사</th>
+                    <th>Placement Test</th>
+                    <th>Placement Test<br>재응시</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" id="chk1" name="chk1">
+                            <label for="chk1">전체선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">2021.03.18</span></td>
+                    <td>김해법<p class="row gm_font">M0000265242</p>
+                    </td>
+                    <td>재원생</td>
+                    <td>초등5</td>
+                    <td><span class="gm_font">010-9234-2345</span></td>
+                    <td>서울중동초등학교</td>
+                    <td><span class="gm_font">2021.01.01</span></td>
+                    <td>-</td>
+                    <td><a href="javascript:openPop('englearning/pop_basic_eng02.html','800','650')" class="btn_table">결과보기</a></td>
+                    <td><a href="javascript:openPop('englearning/pop_placement_test.html','800','410')" class="btn_table btn_blue">진행하기</a></td>
+                    <td>
+                        <span class="btn_row">
+                            <a href="javascript:openPop('englearning/pop_placement_testResult.html','850','650')" class="btn_table">결과보기</a>
+                            <a href="javascript:openPop('englearning/pop_placement_report.html','1020','670')" class="btn_table">분석표</a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" id="chk2" name="chk1">
+                            <label for="chk2">전체선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">2021.03.18</span></td>
+                    <td>김해법<p class="row gm_font">M0000265242</p>
+                    </td>
+                    <td>재원생</td>
+                    <td>초등5</td>
+                    <td><span class="gm_font">010-9234-2345</span></td>
+                    <td>서울중동초등학교</td>
+                    <td><span class="gm_font">2021.01.01</span></td>
+                    <td>-</td>
+                    <td><a href="javascript:openPop('englearning/pop_basic_eng.html','850','500')" class="btn_table btn_blue">진행하기</a></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" id="chk2" name="chk1">
+                            <label for="chk2">전체선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">2021.03.18</span></td>
+                    <td>김해법<p class="row gm_font">M0000265242</p>
+                    </td>
+                    <td>재원생</td>
+                    <td>초등5</td>
+                    <td><span class="gm_font">010-9234-2345</span></td>
+                    <td>서울중동초등학교</td>
+                    <td><span class="gm_font">2021.01.01</span></td>
+                    <td>-</td>
+                    <td><a href="javascript:openPop('englearning/pop_basic_eng02.html','800','650')" class="btn_table">결과보기</a></td>
+                    <td>
+                        <span class="btn_row">
+                            <a href="javascript:openPop('englearning/pop_placement_testResult.html','850','650')" class="btn_table">결과보기</a>
+                            <a href="javascript:openPop('englearning/pop_placement_report.html','1020','670')" class="btn_table">분석표</a>
+                        </span>
+                    </td>
+                    <td><a href="javascript:openPop('englearning/pop_placement_test.html','600','410')" class="btn_table btn_line"> 재응시</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">
+            1
+        </li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

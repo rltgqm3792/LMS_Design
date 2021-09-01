@@ -1,0 +1,148 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('문제은행');
+		$('.group_title h2').text('우리교실 문제지 목록');
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<ul class="tab_1depth">
+	<li class="on"><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_problemPaper01">영역 & 단원평가</a></li>
+	<li><a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_problemPaper02">어휘평가</a></li>
+</ul>
+<h3 class="tit_h4">문제지 정보</h3>
+<!-- 검색 -->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>구분</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>단원평가(고정)</option>
+						<option>단원평가(맞춤)</option>
+						<option>영역평가</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>과정</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>중1</option>
+						<option>중2</option>
+						<option>중3</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>관련도서</dt>
+				<dd>
+					<select>
+						<option>전체</option>
+						<option>금성</option>
+						<option>능률(김)</option>
+						<option>능률(양)</option>
+						<option>다락원</option>
+						<option>동아(윤)</option>
+						<option>동아(이)</option>
+						<option>미래엔</option>
+						<option>비상</option>
+						<option>와이비엠(박)</option>
+						<option>와이비엠(송)</option>
+						<option>지학사</option>
+						<option>천재(이)</option>
+						<option>천재(정)</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>문제지명</dt>
+				<dd>
+					<span class="frm_wrap">
+						<input type="text" class="txt_search" required="reauired" placeholder="문제지명을 입력하세요.">
+					</span>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!-- // 검색 -->
+<div class="btn_top_wrap between">
+	<span class="list_num">전체 <strong class="col_blue">1,256</strong></span>
+	<span>
+		<a href="#" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+		<!--[D] 체크박스 선택시 삭제,문제,정답/해설 활성화 -->
+		<a href="javascript:alert_confirm('해당 문제정보를 삭제하시겠습니까?','','');" class="btn_top btn_gray02"><span>삭제</span></a>
+		<a href="javascript:alert_confirm('일괄인쇄를 진행하시겠습니까?','','');" class="btn_top btn_ico print"><span>문제 인쇄</span></a>
+		<a href="javascript:alert_confirm('일괄인쇄를 진행하시겠습니까?','','');" class="btn_top btn_ico print btn_disabled"><span>비활성 button</span></a>
+		<a href="javascript:alert_confirm('일괄인쇄를 진행하시겠습니까?','','');" class="btn_top btn_ico print"><span>정답/해설 인쇄</span></a>
+	</span>
+</div>
+<!--테이블--> !--[D] 데이터 테이블 적용 후 제거-- <div class="table_list">
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<span class="frm only all">
+						<input type="checkbox" name="chk" id="chkall" onclick="all_check(this);">
+						<label for="chkall">전체 선택</label>
+					</span>
+				</th>
+				<th>구분</th>
+				<th>과정</th>
+				<th>도서</th>
+				<th>문제지명</th>
+				<th>출제일</th>
+				<th>회차</th>
+				<th>문항수</th>
+				<th>대상자 일괄 인쇄</th>
+				<th>대상자 선택</th>
+				<th>대상자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<span class="frm only">
+						<input type="checkbox" name="chk" id="chk1">
+						<label for="chk1">선택</label>
+					</span>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_problempaper.html','800','670');">문제지명</a></td>
+				<td class="gm_font">2021.03.19</td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">20</td>
+				<td><a href="javascript:openPop('Englearning/popup_programTest.html','1000','670');" class="btn_table bluish">문제</a> <a href="#" class="btn_table orange">정답/해설</a></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_tagetSelect.html','910','670');" class="btn_table man_chk">대상자선정</a></td>
+				<td><a href="javascript:openPop('Englearning/pop_pbank_tagetView.html','910','670');" class="btn_table man">대상자보기</a> <a href="#" class="btn_table man disabled">대상자미지정</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--//테이블-->
+<div class="btn_bottom_wrap right">
+	<span>
+		<a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_Questions01" class="btn_basic">단원평가(고정) 만들기</a>
+		<a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/pbank_questions02" class="btn_basic">새 문제지 만들기</a>
+	</span>
+</div>

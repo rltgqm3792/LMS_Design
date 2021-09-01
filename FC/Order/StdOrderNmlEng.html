@@ -1,0 +1,494 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('교재주문');
+        $('.group_title h2').text('일반 주문');
+    });
+
+    /* 주문관리 체크박스 홍보판촉물 */
+    $(".order_prm").on('change', function () {
+        if ($(this).prop('checked')) {
+            $('.box_guide').show();
+        } else {
+            $('.box_guide').hide();
+        }
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title pos_wrap">
+    <h2 class="tit_main"></h2>
+    <!-- 툴팁 -->
+    <div class="tooltip_area">
+        <button class="btn_tooltip">tooltip</button>
+        <div class="tooltip_cont">
+            <p class="tit">보상안내</p>
+            <ul class="bu_type">
+                <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                <li>4개 : 미션 완료 추가보상 500골드</li>
+                <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+            </ul>
+            <button class="close">툴팁닫기</button>
+        </div>
+    </div>
+    <!-- // 툴팁 -->
+</div>
+<!-- //타이틀-->
+<ul class="tab_2depth_search">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=order/StdOrderNml">수학</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=order/StdOrderNmlEng">영어</a>
+    </li>
+    <li>
+        <a href="">전과목</a>
+    </li>
+</ul>
+<!-- 컨텐츠 -->
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>일반주문 선택</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="order_nml01" name="order_nml" />
+                            <label for="order_nml01">연구용</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="order_nml02" name="order_nml" />
+                            <label for="order_nml02">지도서</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="order_nml03" name="order_nml" />
+                            <label for="order_nml03">다북스</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="order_nml04" name="order_nml" />
+                            <label for="order_nml04">데일리노트</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="order_nml05" class="order_prm" name="order_nml" />
+                            <label for="order_nml05">홍보판촉물</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>영역</dt>
+                <dd>
+                    <select>
+                        <option>전체</option>
+                        <option>Word</option>
+                        <option>Grammer</option>
+                        <option>Reading</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>레벨</dt>
+                <dd>
+                    <select>
+                        <option>Cognitive Level</option>
+                    </select>
+                    <select>
+                        <option>Level </option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>교재명</dt>
+                <dd>
+                    <input type="text" placeholder="교재명을 입력하세요" />
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search">검색</button>
+</div>
+<!-- //조회 -->
+<!-- 주문접수기간 -->
+<div class="box_guide dpnone">
+    <div>
+        <ul>
+            <li>주문접수기간 : YYYY.MM.DD ~ YYYY.MM.DD</li>
+            <li>발송 예정일 :YYYY.MM.DD</li>
+        </ul>
+    </div>
+</div>
+<!-- //주문접수기간 -->
+<h4 class="tit_h4">교재선택</h4>
+<!-- 테이블 -->
+<div class="table_scroll" style="max-height:300px;">
+    <div class="table_list" style="min-width:1400px;">
+        <table class="table_td_sumbg">
+            <caption></caption>
+            <colgroup>
+                <col style="width:3%;" />
+                <col style="width:3%;" />
+                <col style="width:11%;" />
+                <col style="width:7%;" />
+                <col style="width:7%;" />
+                <col />
+                <col style="width:15%;" />
+                <col style="width:7%;" />
+                <col style="width:10%;" />
+                <col style="width:7%;" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std_all" onchange="all_check(this);" />
+                            <label for="std_all">전체선택</label>
+                        </span>
+                    </th>
+                    <th>No</th>
+                    <th>Cognitive<br />Level</th>
+                    <th>Level</th>
+                    <th>이미지</th>
+                    <th>교재명</th>
+                    <th>상세</th>
+                    <th>단가</th>
+                    <th>수량</th>
+                    <th>합계</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1" />
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:openPop('Order/pop_Std_img.html','800','650');" class="ico_img picture">교재 이미지</a>
+                    </td>
+                    <td>HB 지도서(ABC Phonics + Warm)</td>
+                    <td></td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                    <td>
+                        <div class="num_choice">
+                            <a href="" class="btn_table btn_minus"></a>
+                            <input type="text" class="input_num" value="1" readOnly="readOnly" />
+                            <a href="" class="btn_table btn_plus"></a>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="gm_font">1,500</span>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="11">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>                  
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- // 테이블 -->
+<div class="btn_bottom_wrap right">
+    <a href="index.html?page=order/StdOrderBsk" class="btn_basic">장바구니 담기</a>
+</div>

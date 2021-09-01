@@ -1,0 +1,180 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+		$('.nav_two .two_tit').text('단어학습현황');
+		$('.group_title h2').text('단어학습현황');
+		// 달력
+		calendar();
+	});
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+	<h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<!-- 검색 -->
+<div class="search_wrap">
+	<ul class="info_group">
+		<li>
+			<dl>
+				<dt>레벨</dt>
+				<dd>
+					<select>
+						<option>Cognitive Level</option>
+						<option>Being Ready</option>
+						<option>Recognizing</option>
+						<option>Understanding</option>
+						<option>Applying</option>
+						<option>Analyzing</option>
+					</select>
+					<select>
+						<option>전체</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>학년</dt>
+				<dd>
+					<span class="frm_wrap frm_btn">
+						<span class="frm all">
+							<input type="checkbox" name="grade" id="grade" onclick="all_check(this)">
+							<label for="grade">전체</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="grade" id="grade1">
+							<label for="grade1">초등</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="grade" id="grade2">
+							<label for="grade2">중등</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" name="grade" id="grade3">
+							<label for="grade3">고등</label>
+						</span>
+					</span>
+					<select>
+						<option>전체</option>
+						<option>1학년</option>
+						<option>2학년</option>
+						<option>3학년</option>
+					</select>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>학습일</dt>
+				<dd>
+					<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+						<input id="startpicker-input" type="text" aria-label="Date" />
+						<label for="startpicker-input" class="tui-ico-date"></label>
+						<div id="startpicker-container" style="margin-left: -1px;"></div>
+					</div>
+					<span class="line">~</span>
+					<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+						<input id="endpicker-input" type="text" aria-label="Date" />
+						<label for="endpicker-input" class="tui-ico-date"></label>
+						<div id="endpicker-container" style="margin-left: -1px;"></div>
+					</div>
+					<span class="frm_wrap frm_btn">
+						<span class="frm all">
+							<input type="checkbox" id="radio21" name="radio2" onclick="all_check(this)" />
+							<label for="radio21">전체</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="radio22" name="radio2" />
+							<label for="radio22">1개월</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="radio23" name="radio2" />
+							<label for="radio23">3개월</label>
+						</span>
+						<span class="frm">
+							<input type="checkbox" id="radio24" name="radio2" />
+							<label for="radio24">6개월</label>
+						</span>
+					</span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>수강생</dt>
+				<dd>
+					<select>
+						<option>수강생명</option>
+						<option>수강생 번호</option>
+					</select>
+					<input type="text" class="input_std" placeholder="수강생 이름을 입력하세요.">
+				</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="btn_bottom_wrap right">
+	<button class="btn_search">검색</button>
+</div>
+<!-- // 검색 -->
+<!--테이블-->
+!--[D] 데이터 테이블 적용 후 제거--
+<div class="table_list">
+	<table>
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>학생코드</th>
+				<th>학년</th>
+				<th>초기레벨</th>
+				<th>현재레벨</th>
+				<th>랭킹레벨</th>
+				<th>전체랭킹</th>
+				<th>총 게임 수</th>
+				<th>승</th>
+				<th>패</th>
+				<th>승률</th>
+				<th>최근사용일</th>
+				<th>상세보기</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>김미소</td>
+				<td class="gm_font">M0000091</td>
+				<td>초등3</td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">1/20</td>
+				<td class="gm_font">1/500</td>
+				<td class="gm_font">6</td>
+				<td class="gm_font">5</td>
+				<td class="gm_font">1</td>
+				<td class="gm_font">83%</td>
+				<td class="gm_font">2021.03.01</td>
+				<td><a href="javascript:openPop('Englearning/pop_wordLearning.html','800','670');" class="btn_table">보기</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="paging">
+	<a href="" class="btn_paging back"></a>
+	<a href="" class="btn_paging pre"></a>
+	<ul>
+		<li><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">4</a></li>
+		<li><a href="">5</a></li>
+		<li><a href="">6</a></li>
+		<li><a href="">7</a></li>
+		<li><a href="">8</a></li>
+		<li><a href="">9</a></li>
+	</ul>
+	<a href="" class="btn_paging next"></a>
+	<a href="" class="btn_paging forward"></a>
+</div>

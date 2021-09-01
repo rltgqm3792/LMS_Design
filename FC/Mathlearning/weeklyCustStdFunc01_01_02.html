@@ -1,0 +1,298 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('주차별맞춤일괄기능');
+        $('.group_title h2').text('주차별 맞춤 일괄기능');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/smartCustStd">스마트맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStd">주차별맞춤학습</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc01_01">주차별맞춤일괄기능</a></li>
+    <li><a href="javascript:openPop('Mathlearning/onlineGrad.html',screen.width,screen.height);">온라인간편채점</a></li>
+    <li><a href="index.html?page=mathlearning/wrongAnsrNote">오답노트</a></li>
+    <li><a href="index.html?page=mathlearning/signalLightType">신호등유형학습</a></li>
+</ul>
+
+<!-- 탭메뉴 -->
+<ul class="tab_2depth s_group">
+    <!-- [D] 활성화 : on-->
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc01_01">그룹출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc02">일괄출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc03">날짜별 진도출력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc04">날짜별기타출력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc05">답안입력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc06">학습정보수정</a></li>
+</ul>
+<!-- // 탭메뉴 -->
+
+<h4 class="tit_h4">그룹관리</h4>
+<div class="search_wrap type02">
+    <span class="frm_wrap">
+        <select>
+            <option value="">초1</option>
+        </select>
+        <select>
+            <option value="">그룹 없음</option>
+        </select>
+    </span>
+</div>
+
+<div class="btn_top_wrap between group">
+    <span>
+        <h5 class="tit_h5">그룹변경</h5>
+        <select>
+            <option value="">초1 오후1시반</option>
+        </select>
+        <!-- 선택된그룹에수강생을선택하고버튼클릭시 알림 -->
+        <a href="javascript:alert_confirm('변경 시 수강생의 정보가 <br>변경할 그룹의 정보로 모두 변경됩니다','','');" class="btn_top">그룹추가/변경</a>
+        <!-- // 선택된그룹에수강생을선택하고버튼클릭시 알림 -->
+        <!-- 미선택시 알림
+        <a href="javascript:alert_open('대상자를 선택해주세요.');" class="btn_top">그룹추가/변경</a>
+        // 미선택시 알림 -->
+    </span>
+    <span>
+        <button class="btn_top" onclick="openPop('Mathlearning/pop_weeklyCustStdFunc01.html','750', '657');">신규 그룹생성</button>
+        <!-- 대상자 미선택시 알림
+        <button class="btn_top" onclick="alert_open('대상자를 선택해주세요.');">신규 그룹생성</button>
+        // 대상자 미선택시 알림 -->
+    </span>
+</div>
+
+<!-- 테이블스크롤_세로 -->
+<div class="table_list">
+    <table class="thead">
+        <colgroup>
+            <col style="width:5%" />
+            <col style="width:10%" />
+            <col style="width:6%" />
+            <col style="width:9%" />
+            <col style="width:9%" />
+            <col />
+            <col style="width:7%" />
+            <col style="width:6%" />
+            <col style="width:7%" />
+            <col style="width:7%" />
+            <col style="width:6%" />
+            <col style="width:7%" />
+            <col style="width:9%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <span class="frm only">
+                        <input type="checkbox" name="group" id="group_all" onchange="all_check(this);">
+                        <label for="group_all">전체선택</label>
+                    </span>
+                </th>
+                <th>그룹명</th>
+                <th>학년</th>
+                <th>수강생명</th>
+                <th>커리큘럼</th>
+                <th>최근 단원</th>
+                <th>학습주차</th>
+                <th>단계</th>
+                <th>학습주기</th>
+                <th>단원주기</th>
+                <th>문항</th>
+                <th>계/서</th>
+                <th>그룹탈퇴</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="max-height:310px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width:5%" />
+                <col style="width:10%" />
+                <col style="width:6%" />
+                <col style="width:9%" />
+                <col style="width:9%" />
+                <col />
+                <col style="width:7%" />
+                <col style="width:6%" />
+                <col style="width:7%" />
+                <col style="width:7%" />
+                <col style="width:6%" />
+                <col style="width:7%" />
+                <col style="width:9%" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group1">
+                            <label for="group1">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>강다니엘</td>
+                    <td>진도</td>
+                    <td class="left">[01]. 자연수의 성질</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">10/12</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group2">
+                            <label for="group2">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>김소리</td>
+                    <td>서술형</td>
+                    <td class="left">[01]01. 소인수분해, 최대공약수, 최소공배수</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0/4</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group3">
+                            <label for="group3">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>최강수</td>
+                    <td>서술형</td>
+                    <td class="left">[01]. 자연수의 성질</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0/4</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group4">
+                            <label for="group4">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>박필연</td>
+                    <td>내신대비</td>
+                    <td class="left">[01]. 자연수의 성질</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0/4</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group5">
+                            <label for="group5">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>이진주</td>
+                    <td>중기말</td>
+                    <td class="left">[01]. 자연수의 성질</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0/4</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group6">
+                            <label for="group6">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>정소라</td>
+                    <td>진도</td>
+                    <td class="left">[01]. 자연수의 성질</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0/4</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group7">
+                            <label for="group7">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>김수진</td>
+                    <td>서술형</td>
+                    <td class="left">[01]. 자연수의 성질</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">20</span></td>
+                    <td><span class="gm_font">0/4</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="group" id="group8">
+                            <label for="group8">선택</label>
+                        </span>
+                    </td>
+                    <td>중1 오후반</td>
+                    <td>초1</td>
+                    <td>김지연</td>
+                    <td>중기말</td>
+                    <td class="left">[01]. 자연수의 성질</td>
+                    <td><span class="gm_font">1/2</span></td>
+                    <td><span class="gm_font">3</span></td>
+                    <td><span class="gm_font">4+1</span></td>
+                    <td>표준</td>
+                    <td><span class="gm_font">20</span></td>
+                    <td><span class="gm_font">0/4</span></td>
+                    <td><a href="javascript:alert_move('해당 그룹에서 삭제하시겠습니까?','','삭제','취소','');" class="btn_table">탈퇴</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="btn_bottom_wrap right">
+    <span>
+       <a href="" class="btn_basic btn_line">돌아가기</a>
+   </span>
+</div>

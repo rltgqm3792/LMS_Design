@@ -1,0 +1,341 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=hakwon/regist">신청서</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/reception">접수내역</a>
+    </li>
+</ul>
+
+<!-- 유선전화/휴대폰 링고신청 -->
+<h4 class="tit_h4">유선전화/휴대폰 링고신청</h4>
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>
+                분류 선택 시 노출 되는 번호는 기본정보 값에 등록되어 있는 번호 입니다.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 가이드 -->
+<dl class="box_reg_guide">
+    <dt>링고 신청 안내
+        <a class="btn_slide">열기/닫기</a>
+    </dt>
+    <dd>
+        <!-- 가이드내 탭-->
+        <ul class="tab_guide">
+            <li class="on">
+                <a href="javascript:void(0);">유선전화</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">휴대폰</a>
+            </li>
+        </ul>
+        <div class="tab_guide_cont tab_2depth_cont">
+            <!-- tab01-->
+            <div class="tab_cont">
+                <p class="tit">1) 신청방법</p>
+                <ul class="ul_box_reg">
+                    <li>비즈링 부가 서비스는 가맹점에서 직접 합니다. (이미 신청이 되어 있는 경우에는 2)의 음원 등록 요청만 하시면 됩니다.
+                        <ul>
+                            <li>KT : 가맹점에서 직접 100번에 전화하여 비즈링고 서비스 가입</li>
+                            <li>SKT : 가맹점에서 직접 브로드밴드는 106번, 텔레콤은 080-816-2000번에 전화하여 뮤직링 서비스 가입</li>
+                            <li>LG U+ : 업체에서 서비스 신청 대행까지 가능합니다.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        본 페이지 유사 전화 링고신청서를 통해 음원 등록을 요청합니다.</li>
+                    <li>
+                        본사에서 각 통신사에 음원 변경을 요청합니다. (신청 후 적용까지 5일 정도 소요됩니다.)</li>
+                </ul>
+                <p class="txt_guide col_red">
+                    추후 해지는 통신사로 본인이 직접 하셔야 합니다.
+                    <br/>(각 통신사에서 전화번호 명의자에게 비용 청구 합니다. 요금 변경이 있을 수 있으니, 정확한 요금은 통신사를 통해 확인해 주시기 바랍니다.)</p>
+                <p class="tit">2) 유선전화 요금안내</p>
+                <div class="table_list column">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:15%;"/>
+                            <col style="width:50;"/>
+                            <col style="width:35%;"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>통신사</th>
+                                <th>부가서비스 이용 요금 (매월, 부가세 포함)
+                                </th>
+                                <th>음원 변경 시 추가 비용 발생 여부
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>KT</th>
+                                <td>상품에 따라 요금 상이<br/>
+                                    플러스 6,600원 / 프리미엄 4,400원 / 일반상품 2,420원
+                                </td>
+                                <td class="center">X</td>
+                            </tr>
+                            <tr>
+                                <th>SK</th>
+                                <td>1,320원</td>
+                                <td class="center">X</td>
+                            </tr>
+                            <tr>
+                                <th>LG</th>
+                                <td>2,200원</td>
+                                <td class="center">
+                                    35 이하 20,000원<br/>35초과 50,000원
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //tab01-->
+            <!-- tab02-->
+            <div class="tab_cont">
+                <p class="tit">1) 신청방법</p>
+                <ul class="ul_box_reg">
+                    <li>비즈링 부가 서비스는 가맹점에서 직접 합니다. (이미 신청이 되어 있는 경우에는 2)의 음원 등록 요청만 하시면 됩니다.
+                        <ul>
+                            <li>KT : 가맹점에서 직접 100번에 전화하여 비즈링고 서비스 가입</li>
+                            <li>SKT : 가맹점에서 직접 브로드밴드는 106번, 텔레콤은 080-816-2000번에 전화하여 뮤직링 서비스 가입</li>
+                            <li>LG U+ : 업체에서 서비스 신청 대행까지 가능합니다.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        본 페이지 유사 전화 링고신청서를 통해 음원 등록을 요청합니다.</li>
+                    <li>
+                        본사에서 각 통신사에 음원 변경을 요청합니다. (신청 후 적용까지 5일 정도 소요됩니다.)</li>
+                </ul>
+                <p class="txt_guide col_red">
+                    추후 해지는 통신사로 본인이 직접 하셔야 합니다.
+                    <br/>(각 통신사에서 전화번호 명의자에게 비용 청구 합니다. 요금 변경이 있을 수 있으니, 정확한 요금은 통신사를 통해 확인해 주시기 바랍니다.)</p>
+                <p class="tit">2) 휴대폰 요금안내</p>
+                <ul class="ul_box_reg">
+                    <li>(각 통신사에서 전화번호 명의자에게 비용 청구 합니다. 요금 변경이 있을 수 있으니, 정확한 요금은 통신사를 통해 확인해 주시기 바랍니다.)</li>
+                    <li>KT, SK, LG : 매월 3,850원(부가세 포함)</li>
+                </ul>
+            </div>
+            <!-- //tab02-->
+        </div>
+        <!-- //가이드내 탭-->
+    </dd>
+</dl>
+<!-- //가이드 -->
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 11%"/>
+            <col style="width: 52%"/>
+            <col style="width: 10%"/>
+            <col style="width: 27%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>신청유형</th>
+                <td colspan="3">
+                    유선전화/휴대폰 링고신청
+                </td>
+            </tr>
+            <tr>
+                <th>FC구분
+                </th>
+                <td colspan="3">
+                    <span class="frm_wrap">
+                        <span class="frm">
+                            <input type="checkbox" id="class01" name="class" checked="checked"/>
+                            <label for="class01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class02" name="class"/>
+                            <label for="class02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class03" name="class"/>
+                            <label for="class03">전과목</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>분류
+                </th>
+                <td colspan="3">
+                    <!-- 분류 테이블-->
+                    <table class="table_sub">
+                        <colgroup>
+                            <col style="width:20%"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>수학</th>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input
+                                                type="radio"
+                                                id="classification01"
+                                                name="classification"
+                                                checked="checked"/>
+                                            <label for="classification01">유선전화 032) 797-0111</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="classification02" name="classification"/>
+                                            <label for="classification02">휴대폰 010-0000-0000</label>
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>영어</th>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input
+                                                type="radio"
+                                                id="classification01"
+                                                name="classification"
+                                                checked="checked"/>
+                                            <label for="classification01">유선전화 032) 797-0111</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="classification02" name="classification"/>
+                                            <label for="classification02">휴대폰 010-0000-0000</label>
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>전과목</th>
+                                <td>
+                                    <span class="frm_wrap">
+                                        <span class="frm">
+                                            <input
+                                                type="radio"
+                                                id="classification01"
+                                                name="classification"
+                                                checked="checked"/>
+                                            <label for="classification01">유선전화 032) 797-0111</label>
+                                        </span>
+                                        <span class="frm">
+                                            <input type="radio" id="classification02" name="classification"/>
+                                            <label for="classification02">휴대폰 010-0000-0000</label>
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //분류 테이블-->
+                </td>
+            </tr>
+            <tr>
+                <th>가맹점명</th>
+                <td>신도림테크노수학교실 / 신도림테크노영어교실 / 신도림테크노전과목교실</td>
+                <th>아이디</th>
+                <td><span class="gm_font">M098765543</span>
+                </td>
+            </tr>
+            <tr>
+                <th>원장이름</th>
+                <td>김병헌</td>
+                <th>생년월일</th>
+                <td><span class="gm_font">2021.05.01</span></td>
+            </tr>
+            <tr>
+                <th>통신사</th>
+                <td colspan="3">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="mobile01" name="mobile" checked="checked"/>
+                            <label for="mobile01">SKT</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="mobile02" name="mobile"/>
+                            <label for="mobile02">KT</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="mobile03" name="mobile"/>
+                            <label for="mobile03">LG U+</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>신청 음원</th>
+                <td colspan="3">
+                    <select>
+                        <option>선택</option>
+                    </select>
+                    <a href="" class="btn_table btn_gray">음원듣기</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <span>
+        <a href="index.html?page=hakwon/regist" class="btn_basic btn_line">목록</a>
+        <a
+            href="javascript:alert_confirm('유선전화/휴대폰 링고 신청을 하시겠습니까?');"
+            class="btn_basic">신청완료</a>
+    </span>
+</div>
+<!-- //유선전화/휴대폰 링고신청 -->

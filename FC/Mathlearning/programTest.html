@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!--plugin -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <script
+            src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.js"
+            type="text/javascript"></script>
+
+        <!-- calendar -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js"></script>
+
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>문제지 출력</h1>
+            </header>
+            <section class="pop_content">
+
+                <!-- 1Depth Tab -->
+                <ul class="tab_1depth">
+                    <!-- [D] 활성화 : on-->
+                    <li class="on"><a href="javascript:void(0);">문제</a></li>
+                    <li><a href="javascript:void(0);">풀이</a></li>
+                    <li><a href="javascript:void(0);">해답</a></li>
+                </ul>
+                <!-- // 1Depth Tab -->
+
+                <div class="btn_top_wrap">
+                    <a href="" class="btn_top btn_line">PDF뷰어 다운로드</a>
+                    <a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+                </div>
+
+                <div class="col_group pop_prog_test">
+                    <div class="box_l">
+                        <div class="table_input">
+                            <table>
+                            <caption>필기공간 설정</caption>
+                            <colgroup>
+                                <col style="width:16%" />
+                                <col/>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>필기공간</th>
+                                    <td>
+                                        <div class="num_choice">
+                                            <a href="javascript:void(0);" class="btn_table btn_minus"></a>
+                                            <input type="text" value="3" readOnly="readOnly"/>
+                                            <a href="javascript:void(0);" class="btn_table btn_plus"></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="cont_print group">
+                        </div>
+                    </div>
+                    <div class="box_r">
+                        <div class="table_list">
+                            <table>
+                            <caption>일괄채점</caption>
+                            <colgroup>
+                                <col style="width:14%" />
+                                <col/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>일괄채점</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="line_score">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <button type="button" class="btn_table ico_score"><span class="wrong">오답</span></button>
+                                        <button type="button" class="btn_table ico_score"><span class="triangle">부분정답</span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="table_list">
+                            <table>
+                            <caption>채점</caption>
+                            <colgroup>
+                                <col style="width:30%" />
+                                <col/>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>6</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>7</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>8</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>9</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>10</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>11</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>12</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>13</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>14</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>15</th>
+                                    <td class="left">
+                                        <button type="button" class="btn_table ico_score"><span class="circle">정답</span></button>
+                                        <a href="javascript:void(0);" class="btn_table ico_bug_report"><span>버그신고</span></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="javascript:window.close();" class="btn">저장</a>
+                <a href="javascript:window.close();" class="btn save_close">저장후 닫기</a>
+            </section>
+        </article>
+    </body>
+</html>

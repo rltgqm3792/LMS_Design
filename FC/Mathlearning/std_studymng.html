@@ -1,0 +1,740 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('학습관리');
+        $('.group_title h2').text('수강생별 학습설정');
+
+        calendar();
+        $('.datepicker-input').focus(function() { // 달력 클릭 시 태블릿 키패드 처리
+            var _input = $(this);
+            _input.attr("readonly", true);
+            setTimeout(function(){ 
+                _input.attr("readonly",false);
+            }, 50);
+        });
+        datepicker();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year3" name="year">
+                        <label for="chk_year3">고등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년</option>
+                    <option>예비초</option>
+                    <option>초1</option>
+                    <option>초2</option>
+                    <option>초3</option>
+                    <option>초4</option>
+                    <option>초5</option>
+                    <option>초6</option>
+                    <option>중1</option>
+                    <option>중2</option>
+                    <option>중3</option>
+                    <option>고1</option>
+                    <option>고2</option>
+                    <option>고3</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        
+        <!--검색영역-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="flag_wrap">
+                            <span class="std_grade">초3</span>
+                        </span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="info_group full">
+                <li>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" class="datepicker-input" type="text" aria-label="Date"/>
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" class="datepicker-input" type="text" aria-label="Date"/>
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                    </span>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="period1" name="period" checked="">
+                            <label for="period1">전일</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="period2" name="period">
+                            <label for="period2">1개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="period3" name="period">
+                            <label for="period3">3개월</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="period4" name="period">
+                            <label for="period4">6개월</label>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="btn_bottom_wrap right">
+            <button class="btn_search small">조회</button>
+        </div>
+        <!--//검색영역-->
+
+        <p class="no_data">해당 검색기간내의 학습 이력이 존재하지 않습니다.</p>
+
+        <!-- 탭메뉴 -->
+        <ul class="tab_2depth">
+            <!-- [D] 활성화 : on-->
+            <li class="on"><a href="index.html?page=mathlearning/std_studymng">종합분석</a></li>
+            <li><a href="index.html?page=mathlearning/std_dayStudy">일별 학습현황</a></li>
+            <li><a href="index.html?page=mathlearning/std_unit">단원</a></li>
+            <li><a href="index.html?page=mathlearning/std_smartBook">스마트교재</a></li>
+            <li><a href="index.html?page=mathlearning/std_AI">AI 맞춤</a></li>
+            <li><a href="index.html?page=mathlearning/std_addStudy">보충학습</a></li>
+            <li><a href="index.html?page=mathlearning/std_test">평가학습</a></li>
+            <li><a href="index.html?page=mathlearning/std_correct">첨삭관리</a></li>
+            <li><a href="index.html?page=mathlearning/std_record">개념녹음</a></li>
+        </ul>
+        <!-- // 탭메뉴 -->
+
+        <!-- 학습정보 -->
+        <ul class="std_study_group">
+            <!--요약정보-->
+            <li>
+                <h4 class="tit_h4">
+                    <strong>요약정보</strong>
+                </h4>
+                <div class="table_list">
+                    <table>
+                        <colgroup>
+                            <col style="width:12%">
+                            <col style="width:22%">
+                            <col style="width:22%">
+                            <col style="width:22%">
+                            <col style="width:22%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>학습일</th>
+                                <th>일 평균<br>학습시간</th>
+                                <th>총 학습<br>문항 수</th>
+                                <th>첨삭<br>요청횟수</th>
+                                <th>문제당<br>평균 풀이시간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong class="col_blue">1일</strong></td>
+                                <td>57분</td>
+                                <td>12,392개</td>
+                                <td>560회</td>
+                                <td>3분</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <!--//요약정보-->
+            <!--학습시간 평균분포-->
+            <li>
+                <h4 class="tit_h4">
+                    <strong>학습시간 평균분포</strong>
+                </h4>
+                <div class="bar_graph02">
+                    <div class="bar">
+                        <span style="width:40%"><span>스마트교재<em>40%</em></span></span>
+                        <span style="width:25%"><span>AI맞춤학습<em>25%</em></span></span>
+                        <span style="width:15%"><span>평가학습<em>15%</em></span></span>
+                        <span style="width:20%"><span>보충학습<em>20%</em></span></span>
+                    </div>
+                </div>
+            </li>
+            <!--//학습시간 평균분포-->
+            <!--학습 성취 정보-->
+            <li class="w100">
+                <h4 class="tit_h4">
+                    <strong>학습성취정보</strong>
+                </h4>
+                <div class="table_list">
+                    <table>
+                        <colgroup>
+                            <col style="width:50%">
+                            <col style="width:50%">
+                        </colgroup>
+                    <thead>
+                        <tr>
+                            <th>정답률</th>
+                            <th>오답처리율</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align:middle"><div id="chart1" style="width:100%;height:200px" ></div></td>
+                            <td style="vertical-align:middle"><div id="chart2" style="width:100%;height:200px" ></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <!--//학습 성취 정보-->
+            <!--유형별 분석-->
+            <li class="w100">
+                <h4 class="tit_h4">
+                    <strong>유형별 분석</strong>
+                </h4>
+                <div class="table_list">
+                    <table>
+                        <colgroup>
+                            <col style="width:33.3%">
+                            <col style="width:33.3%">
+                            <col style="width:33.3%">
+                        </colgroup>
+                    <thead>
+                        <tr>
+                            <th>내용영역별</th>
+                            <th>평가영역별</th>
+                            <th>난이도별</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align:middle"><div id="chart11" style="width:100%;height:200px" ></div></td>
+                            <td style="vertical-align:middle"><div id="chart12" style="width:100%;height:200px" ></div></td>
+                            <td style="vertical-align:middle"><div id="chart13" style="width:100%;height:200px" ></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+             <!--//유형별 분석-->
+            <!--최근 학습 활동-->
+            <li>
+                <h4 class="tit_h4">
+                    <strong>최근 학습 활동</strong>
+                </h4>
+                <div class="calendar_type02">
+					<button class="btn_ico prev">전날</button>
+					<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+						<input type="text" id="datepicker-input" aria-label="Date-Time"/>
+						<label for="datepicker-input" class="btn_calender"></label>
+					</div>
+					<div id="wrapper" class="cal_wrap"></div>
+					<button class="btn_ico next">다음날</button>
+				</div> 
+                <div class="study_list">
+                    <div class="tit">
+                        <span class="name">수트레칭</span>
+                        <span class="status">학습완료</span>
+                        <!-- <span class="date">2021-03-03</span> -->
+                    </div>
+                    <ul class="sub_study">
+                        <!-- loop -->
+                        <li>
+                            <div class="book_tit">스마트교재 <span class="sub_name">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형</span></div>
+                            <ul>
+                                <li>개념영상 <a href="javascript:openPop('mathlearning/pop_video_list.html','800','670');">1개</a></li>
+                                <li>개념녹음 <a href="javascript:openPop('mathlearning/pop_audio_list.html','800','670');">3개</a></li>
+                                <li>스마트맞춤 <a href="" class="exam">출제하기</a></li>
+                                <li>오답 <span class="complete">출제완료</span></li>
+                            </ul>
+                        </li>
+                        <!-- //loop -->
+                        <li>
+                            <div class="book_tit">스마트교재 <span class="sub_name">초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형 초3-1 원리쏙쏙 1호 (Ⅵ-3. 사각형의 성질 평행사변형</span></div>
+                            <ul>
+                                <li>개념영상 <span class="complete">학습완료</span></li>
+                                <li>개념녹음 <a href="javascript:openPop('mathlearning/pop_audio_list.html','800','650');">3개</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!--//최근 학습 활동-->
+            <!--단원평가 결과-->
+             <li>
+                <h4 class="tit_h4">
+                    <strong>단원평가 결과</strong>
+                </h4>
+                <div class="no_data">해당 검색기간내의 학습 이력이 존재하지 않습니다.</div>
+                <ul class="unit_list">
+                    <li>
+                        <span class="tit">초3-1 10. 피타고라스의 정리 (1~3수준/1회차)</span>
+                        <span class="date">2021-03-03 <em class="time">45분 학습</em></span>
+                        <span class="score"><strong>97</strong>점</span>
+                    </li>
+                    <li>
+                        <span class="tit">초3-1 10. 피타고라스의 정리 (1~3수준/1회차)</span>
+                        <span class="date">2021-03-03 <em class="time">45분 학습</em></span>
+                        <span class="score"><strong>100</strong>점</span>
+                    </li>
+                    <li>
+                        <span class="tit">초3-1 10. 피타고라스의 정리 (1~3수준/1회차)</span>
+                        <span class="date">2021-03-03 <em class="time">45분 학습</em></span>
+                        <span class="score"><strong>86</strong>점</span>
+                    </li>
+                    <li>
+                        <span class="tit">초3-1 10. 피타고라스의 정리 (1~3수준/1회차)</span>
+                        <span class="date">2021-03-03 <em class="time">45분 학습</em></span>
+                        <span class="score"><strong>100</strong>점</span>
+                    </li>
+                    <li>
+                        <span class="tit">초3-1 10. 피타고라스의 정리 (1~3수준/1회차)</span>
+                        <span class="date">2021-03-03 <em class="time">45분 학습</em></span>
+                        <span class="score"><strong>88</strong>점</span>
+                    </li>
+                </ul>
+             </li>
+             <!--//단원평가결과-->
+        </ul>
+        <!-- //학습정보 -->
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->
+
+<script>
+    am4core.ready(function() {
+        am4core.addLicense("CH230677325");
+        am4core.useTheme(am4themes_animated);
+
+        /*** PIE CHART1 ***/
+        var chart = am4core.create("chart1", am4charts.PieChart);   
+        var pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "litres";
+        pieSeries.dataFields.category = "level";
+
+        chart.innerRadius = am4core.percent(30);
+        chart.radius = am4core.percent(80);        
+
+        pieSeries.slices.template.stroke = am4core.color("#fff");
+        pieSeries.slices.template.strokeWidth = 1;
+        pieSeries.slices.template.strokeOpacity = 1;
+        pieSeries.slices.template
+        .cursorOverStyle = [
+            {
+                "property": "cursor",
+                "value": "pointer"
+            }
+        ];
+
+        pieSeries.labels.template.disabled = true;
+        pieSeries.slices.template.tooltipText = "";
+        pieSeries.ticks.template.disabled = true;
+
+        var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+        shadow.opacity = 0;
+
+        var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+        var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+        hoverShadow.opacity = 0.7;
+        hoverShadow.blur = 5;
+
+        chart.legend = new am4charts.Legend();
+
+        chart.data = [{
+            "level": "상",
+            "litres": 40
+        },{
+            "level": "중",
+            "litres": 36
+        }, {
+            "level": "하",
+            "litres": 24
+        }];
+
+        /***  PIE CHART2 ***/
+        var chart = am4core.create("chart2", am4charts.PieChart);  
+        var pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "litres";
+        pieSeries.dataFields.category = "level";
+
+        chart.innerRadius = am4core.percent(30);
+        chart.radius = am4core.percent(80);
+
+        pieSeries.slices.template.stroke = am4core.color("#fff");
+        pieSeries.slices.template.strokeWidth = 1;
+        pieSeries.slices.template.strokeOpacity = 1;
+        pieSeries.slices.template
+        .cursorOverStyle = [
+            {
+                "property": "cursor",
+                "value": "pointer"
+            }
+        ];
+
+        pieSeries.labels.template.disabled = true;
+        pieSeries.slices.template.tooltipText = "";
+        pieSeries.ticks.template.disabled = true;
+
+        var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+        shadow.opacity = 0;
+
+        var hoverState = pieSeries.slices.template.states.getKey("hover");
+
+        var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+        hoverShadow.opacity = 0.7;
+        hoverShadow.blur = 5;
+
+        chart.legend = new am4charts.Legend();
+
+        chart.data = [{
+            "level": "상",
+            "litres": 10
+        },{
+            "level": "중",
+            "litres": 30
+        }, {
+            "level": "하",
+            "litres": 60
+        }];
+
+
+        /*** RADAR CHART1 ***/
+        var chart = am4core.create("chart11", am4charts.RadarChart);
+        chart.radius = "80%";
+        chart.fontSize= 14; 
+        chart.fontFamily = "NotoSans";
+        chart.maskBullets = false;
+        chart.padding(10, 0, 10, 0);
+        chart.radarContainer.dy = 0;
+        chart.radius = am4core.percent(74);
+
+        chart.data = [{
+        "item": "계산력",
+        "litres": 65,
+        "vertical" : -7,
+        "horizon" : 0,
+        }, {
+        "item": "이해력",
+        "litres": 85,
+        "vertical" : -15,
+        "horizon" : 10,
+        }, {
+        "item": "문제해결력",
+        "litres": 55,
+        "vertical" : 8,
+        "horizon" : 0,
+        }, {
+        "item": "추론력",
+        "litres": 65,
+        "vertical" : 15,
+        "horizon" : -10,
+        }];
+
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "item";
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.gridType = "polygons";
+        valueAxis.renderer.axisFills.template.fill = chart.colors.getIndex(2);
+        valueAxis.renderer.axisFills.template.fillOpacity = 0.05;
+        valueAxis.renderer.grid.template.strokeOpacity = 0.6;
+        valueAxis.renderer.grid.template.stroke = am4core.color("#ccc");
+        valueAxis.renderer.minGridDistance = 10;
+        valueAxis.fillOpacity = 0;
+        valueAxis.min = 0;
+        valueAxis.max = 100;
+
+        var series = chart.series.push(new am4charts.RadarSeries());
+        series.dataFields.valueY = "litres";
+        series.dataFields.categoryX = "item";
+        series.name = "Sales";
+        series.stroke = am4core.color("#0092fe");
+        series.strokeWidth = 1;
+        series.fill = am4core.color("#0092fe");
+        series.fillOpacity = 0.1;
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.propertyFields.dy = "vertical";
+        bullet.propertyFields.dx = "horizon";
+        bullet.label.horizontalCenter = "middle";
+        bullet.label.fontSize = 12;
+        bullet.label.text = "[bold]{valueY}%";
+        bullet.dy = "vertical";
+        bullet.dx = "horizon";
+        bullet.label.fill = am4core.color('#0092fe');
+
+        /*** RADAR 2 ***/
+        var chart = am4core.create("chart12", am4charts.RadarChart);
+        chart.radius = "80%";
+        chart.fontSize= 14; 
+        chart.fontFamily = "NotoSans";
+        chart.maskBullets = false;
+        chart.padding(20, 0, 0, 0);
+        chart.radarContainer.dy = 0;
+        chart.radius = am4core.percent(80);
+        
+        chart.data = [{
+        "item": "수와 연산",
+        "litres": 89,
+        "vertical" : -7,
+        "horizon" : 0,
+        }, {
+        "item": "도형",
+        "litres": 32,
+        "vertical" : 7,
+        "horizon" : 20,
+        }, {
+        "item": "측정",
+        "litres": 98,
+        "vertical" : 0,
+        "horizon" : 22,
+        }, {
+        "item": "통계",
+        "litres": 59,
+        "vertical" : 0,
+        "horizon" : -18,
+        }, {
+        "item": "규칙",
+        "litres": 59,
+        "vertical" : 7,
+        "horizon" : -18,
+        }];
+
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "item";
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.gridType = "polygons";
+        valueAxis.renderer.axisFills.template.fill = chart.colors.getIndex(2);
+        valueAxis.renderer.axisFills.template.fillOpacity = 0.05;
+        valueAxis.renderer.grid.template.strokeOpacity = 0.6;
+        valueAxis.renderer.grid.template.stroke = am4core.color("#ccc");
+        valueAxis.renderer.minGridDistance = 10;
+        valueAxis.fillOpacity = 0;
+        valueAxis.min = 0;
+        valueAxis.max = 100;
+
+        var series = chart.series.push(new am4charts.RadarSeries());
+        series.dataFields.valueY = "litres";
+        series.dataFields.categoryX = "item";
+        series.name = "Sales";
+        series.stroke = am4core.color("#0092fe");
+        series.strokeWidth = 1;
+        series.fill = am4core.color("#0092fe");
+        series.fillOpacity = 0.1;
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.propertyFields.dy = "vertical";
+        bullet.propertyFields.dx = "horizon";
+        bullet.label.horizontalCenter = "middle";
+        bullet.label.fontSize = 12;
+        bullet.label.text = "[bold]{valueY}%";
+        bullet.dy = "vertical";
+        bullet.dx = "horizon";
+        bullet.label.fill = am4core.color('#0092fe');
+
+        /*** RADAR 3 ***/
+        var chart = am4core.create("chart13", am4charts.RadarChart);
+        //chart.autoMargins = true;
+        chart.radius = "80%";
+        chart.fontSize= 14; 
+        chart.fontFamily = "NotoSans";
+        chart.maskBullets = false;
+        chart.padding(50, 0, 0, 0);
+        chart.radarContainer.dy = 0;
+        chart.radius = am4core.percent(100);
+
+        chart.data = [{
+        "item": "상",
+        "litres": 55,
+        "vertical" : -7,
+        "horizon" : 0,
+        }, {
+        "item": "중",
+        "litres": 98,
+        "vertical" : -5,
+        "horizon" : 22,
+        }, {
+        "item": "하",
+        "litres": 88,
+        "vertical" : -5,
+        "horizon" : -20,
+        }];
+
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "item";
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.gridType = "polygons";
+        valueAxis.renderer.axisFills.template.fill = chart.colors.getIndex(2);
+        valueAxis.renderer.axisFills.template.fillOpacity = 0.05;
+        valueAxis.renderer.grid.template.strokeOpacity = 0.6;
+        valueAxis.renderer.grid.template.stroke = am4core.color("#ccc");
+        valueAxis.renderer.minGridDistance = 10;
+        valueAxis.fillOpacity = 0;
+        valueAxis.min = 0;
+        valueAxis.max = 100;
+
+        var series = chart.series.push(new am4charts.RadarSeries());
+        series.dataFields.valueY = "litres";
+        series.dataFields.categoryX = "item";
+        series.name = "Sales";
+        series.stroke = am4core.color("#0092fe");
+        series.strokeWidth = 1;
+        series.fill = am4core.color("#0092fe");
+        series.fillOpacity = 0.1;
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.propertyFields.dy = "vertical";
+        bullet.propertyFields.dx = "horizon";
+        bullet.label.horizontalCenter = "middle";
+        bullet.label.fontSize = 12;
+        bullet.label.text = "[bold]{valueY}%";
+        bullet.dy = "vertical";
+        bullet.dx = "horizon";
+        bullet.label.fill = am4core.color('#0092fe');
+        
+    });
+</script>

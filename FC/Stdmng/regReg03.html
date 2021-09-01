@@ -1,0 +1,396 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('nav_two .two_tit').text('수강생 등록');
+        $('.group_title h2').text('정규수강생 등록');
+        datepicker(); //달력 1개시
+        $('#datepicker-input').focus(function() { // 달력 클릭 시 태블릿 키패드 처리
+            var _input = $(this);
+            _input.attr("readonly", true);
+            setTimeout(function(){ _input.attr("readonly",false); }, 50);
+        });
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- [D]컨텐츠 정보가 들어갑니다. -->
+
+<dl class="box_reg_guide">
+    <dt>수강생 등록 안내
+        <a class="btn_slide">열기/닫기</a>
+    </dt>
+    <dd>
+        <ul class="ul_box_reg">
+            <li>
+                정보를 입력하신 후 입회 동의서 전송 버튼을 누르시면 학부모 휴대폰으로 SMS가 전송됩니다.<br/>
+                (단, 22:00~7:59 수강생 등록시에는 8:00에 SMS가 전송됩니다.)
+            </li>
+            <li>
+                입회동의서가 2일 후 AM.12:00까지 제출되어야 수강생으로 정식 등록됩니다.
+            </li>
+            <li>
+                학부모의 입회 동의서 제출일 기준으로 과금이 청구됩니다.
+            </li>
+            <li>
+                입회 동의서 전송 후에는 학년 변경이 되지 않습니다. 정확한 실제 학년을 선택해 주세요.
+            </li>
+        </ul>
+    </dd>
+</dl>
+
+<!--기본정보 폼-->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>수강생 유형</th>
+                <td>정규 수강생</td>
+                <th>수강생명<span class="required"></span>
+                </th>
+                <td>박찬호</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--//기본정보 폼-->
+
+<h4 class="tit_h4">기본 정보</h4>
+
+<!-- [D]수강생등록(신규) 기본정보-->
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    수강생 생년월일<span class="required"></span>
+                </th>
+                <td>
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input" aria-label="Date-Time" />
+                        <label for="datepicker-input" class="tui-ico-date"></label>
+                    </div>
+                    <div id="wrapper" style="margin-top: -1px;"></div>
+                </td>
+                <th>간편ID</th>
+                <td>
+                    <input type="text" placeholder="ID를 입력하세요"/>
+                    <a href="" class="btn_table">중복체크</a>
+                </td>
+            </tr>
+            <tr>
+                <th>성별<span class="required"></span>
+                </th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="man" name="gender" checked="checked"/>
+                            <label for="man">남자</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="woman" name="gender"/>
+                            <label for="woman">여자</label>
+                        </span>
+                    </span>
+                </td>
+                <th>학교</th>
+                <td>                    
+                    <a href="javascript:openPop('Stdmng/schoolPop.html','800','670');" class="btn_table btn_blue">검색</a>
+                    <input type="text" placeholder="학교를 검색해 주세요"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    학년<span class="required"></span>
+                </th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="elementary" name="grade" checked="checked"/>
+                            <label for="elementary">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="middle" name="grade"/>
+                            <label for="middle">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="high" name="grade"/>
+                            <label for="high">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>학년선택</option>
+                        <option>초등1</option>
+                        <option>초등2</option>
+                        <option>초등3</option>
+                        <option>초등4</option>
+                        <option>초등5</option>
+                        <option>초등6</option>
+                        <option>중등1</option>
+                        <option>중등2</option>
+                        <option>중등3</option>
+                        <option>고등1</option>
+                        <option>고등2</option>
+                        <option>고등3</option>
+                    </select>
+                </td>
+                <th>수강생 휴대폰번호</th>
+                <td>
+                    <input type="text" maxlength="12" placeholder="- 없이 숫자만 입력"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    수강생 관계<span class="required"></span>
+                </th>
+                <td>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="father" name="relation" checked="checked"/>
+                            <label for="father">부</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="mother" name="relation"/>
+                            <label for="mother">모</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="etc" name="relation"/>
+                            <label for="etc">기타</label>
+                        </span>
+                    </span>
+                    <!-- 기타 선택시 input-->
+                    <!-- <p class="row"><input type="text" value=""></p> -->
+                </td>
+                <th>추가 학부모번호</th>
+                <td>
+                    <input type="text" maxlength="12" placeholder="- 없이 숫자만 입력"/>
+                </td>
+            </tr>
+            <tr>
+                <th>학부모 휴대폰번호<span class="required"></span>
+                </th>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <th>
+                    이메일
+                </th>
+                <td>
+                    <input type="text" placeholder="" class="input_email_w"/>
+                    @
+                    <select>
+                        <option value="">메일선택</option>
+                    </select>
+                    <input type="text" class="input_email_w"/>
+                </td>
+            </tr>
+            <tr>
+                <th>주소입력</th>
+                <td colspan="3">
+                    <a href="" class="btn_table btn_blue">우편번호</a>
+                    <input type="text" class="input_zip" value="" readonly="readonly"/>
+                    <p class="row">
+                        <input type="text" placeholder="주소를 먼저 검색해 주세요." class="input_address" value="" readonly="readonly"/>
+                    </p>
+                    <p class="row">
+                        <input type="text" placeholder="상세주소" class="input_address02" value=""/>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    등록된 FC
+                </th>
+                <td colspan="5">없음</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //[D]수강생등록(신규) 기본정보-->
+
+<!-- [D]수강생등록(추가) 기본정보-->
+<!-- <div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    수강생 생년월일<span class="required"></span>
+                </th>
+                <td>
+                    <span class="gm_font">2021.05.05</span>
+                </td>
+                <th>간편ID</th>
+                <td>
+                    <span class="gm_font">abcd1234</span>
+                </td>
+            </tr>
+            <tr>
+                <th>성별<span class="required"></span>
+                </th>
+                <td>
+                    남자
+                </td>
+                <th>학교</th>
+                <td>
+                    하남중학교
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    학년<span class="required"></span>
+                </th>
+                <td>
+                    초등5
+                </td>
+                <th>수강생 휴대폰번호</th>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    수강생과의 관계<span class="required"></span>
+                </th>
+                <td>
+                    부
+                </td>
+                <th>학부모 휴대폰번호</th>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+            </tr>
+            <tr>
+                <th>학부모 휴대폰번호<span class="required"></span>
+                </th>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <th>
+                    이메일
+                </th>
+                <td>
+                    abcd1234@naver.com
+                </td>
+            </tr>
+            <tr>
+                <th>주소입력</th>
+                <td colspan="3">
+                    서울시 동작구 사당동 1111
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    등록된 FC
+                </th>
+                <td colspan="3">없음</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<!-- //[D]수강생등록(추가) 기본정보-->
+
+<!-- 2Depth Tab -->
+<ul class="tab_2depth">
+    <!-- [D] 활성화 : on -->
+    <li>
+        <a href="index.html?page=stdmng/regReg01">수학</a>
+    </li>
+    <li>
+        <a href="index.html?page=stdmng/regReg02">영어</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=stdmng/regReg03">전과목</a>
+    </li>
+</ul>
+<!-- // 2Depth Tab -->
+
+<!-- 부가정보 : 전과목 -->
+<h4 class="tit_h4">부가 정보</h4>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>이벤트</th>
+                <td colspan="3">
+                    <input type="text" placeholder="쿠폰을 입력해 주세요"/>
+                    <a href="" class="btn_table">적용</a>
+                    <!-- 쿠폰 적용 -->
+                    <!-- <input type="text" value="MA210415321545" disabled="disabled"/> <a href=""
+                    class="btn_table">취소</a> 수강료 무료(2주) <span class="bar">이벤트 기간 : 2021.0318 ~
+                    2021.03.25</span> -->
+                </td>
+            </tr>
+            <tr>
+                <th>강사<span class="required"></span>
+                </th>
+                <td>
+                    <select>
+                        <option>원장</option>
+                    </select>
+                </td>
+                <th>클래스</th>
+                <td>
+                    <select>
+                        <option>클래스 선택</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    납부일
+                </th>
+                <td>
+                    <select>
+                        <option>납부일 선택</option>
+                    </select>
+                </td>
+                <th>수강료</th>
+                <td>
+                    <input type="text" maxlength="7" placeholder="수강료 입력(숫자)"/>
+                    원(월)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- // 부가정보 : 전과목 -->
+
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="javascript:alert_confirm('학부모 휴대폰번호(010-0000-0000)가 <br/>박찬호 수강생과 동일합니다.’','형제할인을 적용하시겠습니까?’','');" class="btn_basic">입회동의서 전송</a>          
+    </p>
+</div>

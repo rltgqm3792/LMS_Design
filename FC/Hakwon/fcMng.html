@@ -1,0 +1,97 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('마일리지 관리');
+    });
+    monthpicker(); // 월 선택 datepicker 추가 2021.8.2 :chan
+</script>
+<script src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/tui-date-picker.js" type="text/javascript"></script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li>
+        <a href="index.html?page=hakwon/pointMng">수강생 마일리지</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/fcMng">가맹점 마일리지</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/eventMng">마일리지 소진이벤트 현황</a>
+    </li>
+</ul>
+<!-- 기본정보 -->
+<h4 class="tit_h4">기본정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:15%" />
+            <col style="width:35%" />
+            <col style="width:15%" />
+            <col style="width:35%" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>FC구분</th>
+                <td class="left" colspan="3">
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk01" name="smartclass" checked="checked" />
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk02" name="smartclass" />
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="smartclass_chk03" name="smartclass" />
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th>월 선택<span class="required"></span>
+                </th>
+                <td class="left">
+                    <!-- 월 선택 datepicker 추가 2021.8.2 :chan -->
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input-ko" aria-label="Year-Month">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div class="datepicker-cell" id="datepicker-month-ko" style="margin-top: -1px;"></div>
+                </td>
+                <th>현재 보유 마일리지 </th>
+                <td class="left"> 3,000 (이번 달 말 소멸 예정 마일리지 : 3,000) </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //기본정보 -->
+<div class="box_guide">
+    <div>
+        <p class="tit">기본정보</p>
+        <ul>
+            <li>매월 1일 가맹점에 마일리지가 적립, 수강생에게 마일리지를 지급해 줄 수 있습니다.</li>
+            <li>전월 학생의 학습일 수를 기준으로 학생 별 최대 15마일리지가 적립됩니다.</li>
+            <li>적립된 마일리지는 당월 말 소멸되며, 이월되지 않습니다.</li>
+        </ul>
+    </div>
+</div>
+<!-- 마일리지내역 테이블 -->
+<div class="btn_top_wrap right">
+    <span> 마일리지수 <select>
+            <option value="">10</option>
+            <option value="" selected="">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+    </span>
+</div>
+<div id="grid"></div>
+<!-- //마일리지내역 테이블 -->

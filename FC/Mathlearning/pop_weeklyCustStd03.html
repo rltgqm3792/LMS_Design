@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="keywords" content="스마트해법">
+        <meta name="description" content="스마트해법">
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법">
+        <meta property="og:url" content="https://www.hbedu.co.kr/">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!--plugin -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <script
+            src="http://image.test.hbedu.co.kr/LMS/Biz/plugin/datepicker.js"
+            type="text/javascript"></script>
+
+        <!-- calendar -->
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/core.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/charts.js"></script>
+        <script src="http://image.test.hbedu.co.kr/lms/fc/plugin/animated.js"></script>
+
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>내신대비 출제하기</h1>
+            </header>
+            <section class="pop_content">
+
+                <!-- 1Depth Tab -->
+                <ul class="tab_1depth">
+                    <!-- [D] 활성화 : on-->
+                    <li class="on"><a href="javascript:void(0);">대단원</a></li>
+                    <li><a href="javascript:void(0);">중단원</a></li>
+                </ul>
+                <!-- // 1Depth Tab -->
+
+                <div class="search_wrap">
+                    <p class="frm_wrap">
+                        <span class="frm">
+                            <input type="radio" id="radio1" name="radio"/>
+                            <label for="radio1">구간출제</label>
+                        </span>
+                        <span class="frm">
+                            <input type="radio" id="radio2" name="radio"/>
+                            <label for="radio2">개별단원출제</label>
+                        </span>
+                    </p>
+                </div>
+
+                <h2 class="tit_h2">1. 단원선택</h2>
+                <!-- 테이블스크롤_세로 -->
+                <div class="table_list">
+                    <table class="thead">
+                        <colgroup>
+                            <col style="width:10%;" />
+                            <col style="width:16%;" />
+                            <col />
+                            <col style="width:10%;" />
+                            <col style="width:10%;" />
+                            <col style="width:10%;" />
+                            <col style="width:10%;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>선택</th>
+                                <th>학년/학기</th>
+                                <th>단원</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scroll" style="max-height:210px;">
+                        <table class="tbody">
+                            <colgroup>
+                                <col style="width:10%;" />
+                                <col style="width:16%;" />
+                                <col />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>현재</td>
+                                    <td>초2/1학기</td>
+                                    <td class="left">[04]. 길이 재기</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo_only01" name="rdo_only"/>
+                                            <label for="rdo_only01">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초2/1학기</td>
+                                    <td class="left">[05]. 분류하기</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo_only02" name="rdo_only"/>
+                                            <label for="rdo_only02">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초2/1학기</td>
+                                    <td class="left">[01]. 네 자리 수</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo_only03" name="rdo_only"/>
+                                            <label for="rdo_only03">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초2/1학기</td>
+                                    <td class="left">[04]. 길이 재기</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo_only04" name="rdo_only"/>
+                                            <label for="rdo_only04">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초2/1학기</td>
+                                    <td class="left">[02]. 곱셈구구</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="frm only">
+                                            <input type="radio" id="rdo_only05" name="rdo_only"/>
+                                            <label for="rdo_only05">선택</label>
+                                        </span>
+                                    </td>
+                                    <td>초2/1학기</td>
+                                    <td class="left">[03]. 길이 재기</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="table_input s_group">
+                    <table>
+                    <caption>문제지 타이틀 수정</caption>
+                    <colgroup>
+                        <col style="width:14%" />
+                        <col/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>문제지 타이틀</th>
+                            <td>
+                              <input type="text" class="input_address" id="inp_search" />
+                              <label for="inp_search" class="btn_table btn_gray">수정</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="pop_btn_group even_btn3">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <!-- 구간출제-단원1개또는0개선택 -->
+                <a href="javascript:alert_open('첫구간과 끝구간 단원을 선택해주세요.<br>최소 2개~최대 6개의 단원을 <br>선택할 수 있습니다.');" class="btn">출제</a>
+                <!-- 개별출제-단원7개이상선택시
+                <a href="javascript:alert_open('최대 6개 단원만 출제가능합니다.');" class="btn">출제</a>
+                -->
+            </section>
+            <!-- alert 팝업 -->
+            <section class="alert_wrap">
+                <div class="alert_container">
+                    <div class="alert_content">
+                        <div class="alert_desc">
+                            <strong></strong>
+                            <span></span>
+                        </div>
+                        <div class="alert_btn">
+                            <a href="javascript:alert_close();" class="btn_alert submit">확인</a>
+                            <a href="javascript:alert_close();" class="btn_alert cancel">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //alert 팝업 -->
+        </article>
+    </body>
+</html>

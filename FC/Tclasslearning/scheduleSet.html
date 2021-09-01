@@ -1,0 +1,621 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+	$(function () {
+	$('.nav_two .two_tit').text('학습관리현황');
+		$('.group_title h2').text('수강생별 진도관리');
+	});
+</script>
+<!-- 2021.7.20 drag $ drop script 추가 :chan -->
+<script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/dragdrop.js" defer></script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm frm_three">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm frm_three">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm frm_three">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년</option>
+                    <option>예비초</option>
+                    <option>초1</option>
+                    <option>초2</option>
+                    <option>초3</option>
+                    <option>초4</option>
+                    <option>초5</option>
+                    <option>초6</option>
+                    <option>중1</option>
+                    <option>중2</option>
+                    <option>중3</option>
+                    <option>고1</option>
+                    <option>고2</option>
+                    <option>고3</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+
+    <!--상세보기-->
+    <div class="view_group">
+        <!--검색-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="flag_wrap">
+                            <span class="std_grade">초3</span>
+                        </span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>스마트영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//검색-->
+		<ul class="tab_2depth">
+			<!-- [D] 활성화 : on-->
+			<li class="on"><a href="">표준진도</a></li>
+			<li><a href="">자율진도</a></li>
+		</ul>
+        <!-- 타이틀 -->
+		<div class="search_calendar mg_top_30">
+			<button class="prev">이전달</button>
+			<span class="txt">2021년 3월</span>
+			<button class="next">다음달</button>
+		</div>
+
+		<div class="btn_top_wrap between">
+			<div class="bullet_wrap">
+				<span class="bul_col02 bul_color01">대면</span>
+				<span class="bul_col02 bul_color02">비대면</span>
+			</div>
+			<span>
+				<a href="#" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+				<a href="#" class="btn_top btn_ico print"><span>프린트</span></a>
+				<a href="#" class="btn_top btn_ico sms"><span>SMS전송</span></a>
+			</span>
+		</div>
+		<div class="table_calendar">
+			<table>
+				<colgroup>
+					<col style="width:20%">
+					<col style="width:20%">
+					<col style="width:20%">
+					<col style="width:20%">
+					<col style="width:20%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>월요일</th>
+						<th>화요일</th>
+						<th>수요일</th>
+						<th>목요일</th>
+						<th>금요일</th>
+					</tr>
+				</thead>
+				<!-- (2021.7.23 :chan)
+					######### 기본 html 구조
+					######### class="day_wrap"에 미리 가능한 구역 설정값 data-chapter="kor1,eng1,mat1,his1,soc1,sci1"을 설정해야 함
+					######### data-chapter="" : 각 과목별 단원표시 (날짜 기준)과 같은 data-chapter가 있으면 drop 가능한 구역임 (쉼표로 구분)
+					######### data-chapter 과목별 설정값(진도)는 개발자가 임의 값으로 정할 수 있음. 다만 개별 과목별 data-chapter 값과 일치해야 함.
+
+					######### drag 가능하면서 과목이 있는 경우
+					<div class="day_wrap" data-chapter="kor1,eng1,mat1,his1,soc1,sci1">
+						<ul class="subject">
+							<li class="drag" data-chapter="kor1">
+								<span>수학</span>
+								<span>1단원</span>
+							</li>
+							<li class="drag" data-chapter="eng1">
+								<span>영어</span>
+								<span>1단원</span>
+							</li>
+						</ul>
+					</div>
+
+					######### drag 가능하면서 과목이 없는 경우
+					<div class="day_wrap" data-chapter="kor1,eng1,mat1,his1,soc1,sci1">
+						<ul class="subject">
+							<li class="drag" data-chapter=""></li>
+							<li class="drag" data-chapter=""></li>
+						</ul>
+					</div>
+
+					######### drop 불가능 구역 설정
+					######### "disabled" class 추가 (style 설정),
+					######### <li> "drag" class 삭제 (drag, drop 불가)
+					######### data-chapter 값 삭제 (drop 가능한 단원인지 확인을 못하게 함)
+
+					<div class="day_wrap disabled" data-chapter="">
+						<ul class="subject">
+							<li class="" data-chapter=""></li>
+							<li class="" data-chapter=""></li>
+						</ul>
+					</div>
+				-->
+				<tbody>
+					<tr>
+						<td>
+							<div class="day_wrap auto disabled" data-chapter="">
+								<span class="day">28</span>
+								<ul class="subject">
+									<li class="" data-chapter=""></li>
+									<li class="" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto disabled" data-chapter="">
+								<span class="day">29</span>
+								<ul class="subject">
+									<li class="" data-chapter=""></li>
+									<li class="" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto disabled" data-chapter="">
+								<span class="day">30</span>
+								<ul class="subject">
+									<li class="" data-chapter=""></li>
+									<li class="" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto disabled" data-chapter="">
+								<span class="day">31</span>
+								<ul class="subject">
+									<li class="" data-chapter=""></li>
+									<li class="" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto disabled" data-chapter="">
+								<span class="day">1</span>
+								<ul class="subject">
+									<li class="" data-chapter="kor1">
+										<span>국어</span>
+										<span>1단원</span>
+									</li>
+									<li class="" data-chapter="soc1">
+										<span>사회</span>
+										<span>1단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="day_wrap auto disabled" data-chapter="">
+								<span class="day">4</span>
+							    <ul class="subject">
+									<li class="" data-chapter="soc1">
+										<span>사회</span>
+										<span>1단원</span>
+									</li>
+									<li class="" data-chapter="sci1">
+										<span>과학</span>
+										<span>1단원</span>
+									</li>
+								</ul>
+								<span class="bullet"><p class="bul_col02 bul_color01">대면</p></span>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto disabled" data-chapter="">
+								<span class="day">5</span>
+								<ul class="subject">
+									<li class="" data-chapter=""></li>
+									<li class="" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor1,eng1,mat1,his1,soc1,sci1">
+								<span class="day on">6</span>
+								<ul class="subject">
+									<li class="drag" data-chapter=""></li>
+									<li class="drag" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor1,eng1,mat1,his1,soc1,sci1">
+								<span class="day">7</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="kor1">
+										<span>국어</span>
+										<span>1단원</span>
+									</li>
+									<li class="drag" data-chapter="sci1">
+										<span>과학</span>
+										<span>1단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor1,eng1,mat1,his1,soc1,sci1">
+								<span class="day">8</span>
+							    <ul class="subject">
+									<li class="on_red drag" data-chapter="eng1">
+										<span>영어</span>
+										<span>1단원</span>
+									</li>
+									<li class="on_blue drag" data-chapter="his1">
+										<span>역사</span>
+										<span>1단원</span>
+									</li>
+								</ul>
+								<span class="bullet"><p class="bul_col02 bul_color02">비대면</p></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor2,eng2,mat2,his2,soc2,sci2">
+								<span class="day">11</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="mat2">
+										<span>수학</span>
+										<span>2단원</span>
+									</li>
+									<li class="drag" data-chapter="sci2">
+										<span>과학</span>
+										<span>2단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor2,eng2,mat2,his2,soc2,sci2">
+								<span class="day">12</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="eng2">
+										<span>영어</span>
+										<span>2단원</span>
+									</li>
+									<li class="drag" data-chapter="mat2">
+										<span>수학</span>
+										<span>2단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor2,eng2,mat2,his2,soc2,sci2">
+								<span class="day">13</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="mat2">
+										<span>수학</span>
+										<span>2단원</span>
+									</li>
+									<li class="drag" data-chapter="eng2">
+										<span>영어</span>
+										<span>2단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor2,eng2,mat2,his2,soc2,sci2">
+								<span class="day">14</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="soc2">
+										<span>사회</span>
+										<span>2단원</span>
+									</li>
+									<li class="drag" data-chapter="his2">
+										<span>역사</span>
+										<span>2단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor2,eng2,mat2,his2,soc2,sci3">
+								<span class="day">15</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="kor2">
+										<span>국어</span>
+										<span>2단원</span>
+									</li>
+									<li class="drag" data-chapter="sci3">
+										<span>과학</span>
+										<span>3단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor3,eng3,mat3,his3,soc3,sci3">
+								<span class="day">18</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="kor3">
+										<span>국어</span>
+										<span>3단원</span>
+									</li>
+									<li class="drag" data-chapter="sci3">
+										<span>과학</span>
+										<span>3단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor3,eng3,mat3,his3,soc3,sci3">
+								<span class="day">19</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="mat3">
+										<span>수학</span>
+										<span>3단원</span>
+									</li>
+									<li class="drag" data-chapter="his3">
+										<span>역사</span>
+										<span>3단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor3,eng3,mat3,his3,soc3,sci3">
+								<span class="day">20</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="soc3">
+										<span>사회</span>
+										<span>3단원</span>
+									</li>
+									<li class="drag" data-chapter="kor3">
+										<span>국어</span>
+										<span>3단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor3,eng3,mat3,his3,soc3,sci3">
+								<span class="day">21</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="mat3">
+										<span>수학</span>
+										<span>3단원</span>
+									</li>
+									<li class="drag" data-chapter="sci3">
+										<span>과학</span>
+										<span>3단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor3,eng3,mat3,his3,soc3,sci3">
+								<span class="day">22</span>
+								<ul class="subject">
+									<li class="drag" data-chapter=""></li>
+									<li class="drag" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor4,eng4,mat4,his4,soc4,sci4">
+								<span class="day">25</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="eng4">
+										<span>영어</span>
+										<span>4단원</span>
+									</li>
+									<li class="drag" data-chapter="soc4">
+										<span>사회</span>
+										<span>4단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor4,eng4,mat4,his4,soc4,sci4">
+								<span class="day">26</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="his4">
+										<span>역사</span>
+										<span>4단원</span>
+									</li>
+									<li class="drag" data-chapter="kor4">
+										<span>국어</span>
+										<span>4단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor4,eng4,mat4,his4,soc4,sci4">
+								<span class="day">27</span>
+								<ul class="subject">
+									<li class="drag" data-chapter=""></li>
+									<li class="drag" data-chapter=""></li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor5,eng5,mat5,his5,soc5,sci5">
+								<span class="day">29</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="mat5">
+										<span>수학</span>
+										<span>5단원</span>
+									</li>
+									<li class="drag" data-chapter="eng5">
+										<span>영어</span>
+										<span>5단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="day_wrap auto" data-chapter="kor5,eng5,mat5,his5,soc5,sci5">
+								<span class="day">30</span>
+								<ul class="subject">
+									<li class="drag" data-chapter="kor5">
+										<span>국어</span>
+										<span>5단원</span>
+									</li>
+									<li class="drag" data-chapter="sci5">
+										<span>과학</span>
+										<span>5단원</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+        <div class="btn_bottom_wrap between">
+			<div class="list_num">2021.04.02 최종수정</div>
+            <div>
+				<!--// [D] 진도 공유 네 클릭시 팝업 오픈 tclasslearning/scheduleSetPop.html -->
+                <a href="javascript:alert_move('현재 변경한 시간표 저장 후 다른 수강생에게 <br />동일하게 적용할까요?','','네','아니오','');" class="btn_basic btn_line">진도 공유</a>
+                <a href="javascript:alert_confirm('정말 삭제하시겠습니까');" class="btn_basic btn_gray02">삭제</a>
+                <a href="javascript:alert_open('#과목명 #회차 는 #과목명 #회차보다<br/> 먼저 수강할 수 없습니다.');" class="btn_basic">저장</a>
+            </div>
+        </div>
+		<!--달력-->
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

@@ -1,0 +1,312 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('AI맞춤학습');
+        $('.group_title h2').text('주차별 맞춤 일괄기능');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/smartCustStd">스마트맞춤학습</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStd">주차별맞춤학습</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc01_02">주차별맞춤일괄기능</a></li>
+    <li><a href="javascript:openPop('Mathlearning/onlineGrad.html',screen.width,screen.height);">온라인간편채점</a></li>
+    <li><a href="index.html?page=mathlearning/wrongAnsrNote">오답노트</a></li>
+    <li><a href="index.html?page=mathlearning/signalLightType">신호등유형학습</a></li>
+</ul>
+
+<!-- 탭메뉴 -->
+<ul class="tab_2depth s_group">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc01_02">그룹출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc02">일괄출제</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc03">날짜별 진도출력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc04">날짜별기타출력</a></li>
+    <li><a href="index.html?page=mathlearning/weeklyCustStdFunc05">답안입력</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/weeklyCustStdFunc06">학습정보수정</a></li>
+</ul>
+<!-- // 탭메뉴 -->
+<!-- box guide -->
+<div class="box_guide">
+    <div>
+        <p class="tit">필독</p>
+        <ul>
+            <li>수강생을 선택한 후에 변경할 정보를 선택하면 일괄변경이 가능합니다.</li>
+            <li>학습정보는 현재 수강생정보 +-2학년만 변경 가능합니다.</li>
+            <li>예외적으로 현재 수강생 정보가 예비초인 경우는 학습정보가 초1로 설정되어 있고, 더 이상 변경되지 않습니다. 
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- //box guide -->
+
+<h4 class="tit_h4">변경정보설정</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <select>
+                        <option>선택 </option>
+                    </select>
+                    <button class="btn_table btn_gray" onclick="alert_confirm('일괄수정하시겠습니까?','','');">일괄변경</button>
+                    <!-- 미 선택 시 
+                    <button class="btn_table btn_gray" onclick="alert_confirm('수정하실 수강생을 선택해주세요.','','');">일괄변경</button>
+                    // 미 선택 시 -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>단원주기</dt>
+                <dd>
+                    <select>
+                        <option>선택 </option>
+                    </select>
+                    <button class="btn_table btn_gray" onclick="alert_confirm('일괄수정하시겠습니까?','','');">일괄변경</button>
+                    <!-- 미 선택 시 
+                    <button class="btn_table btn_gray" onclick="alert_confirm('수정하실 수강생을 선택해주세요.','','');">일괄변경</button>
+                    // 미 선택 시 -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>계산력</dt>
+                <dd>
+                    <select>
+                        <option>선택 </option>
+                    </select>
+                    <button class="btn_table btn_gray" onclick="alert_confirm('일괄수정하시겠습니까?','','');">일괄변경</button>
+                    <!-- 미 선택 시 
+                    <button class="btn_table btn_gray" onclick="alert_confirm('수정하실 수강생을 선택해주세요.','','');">일괄변경</button>
+                    // 미 선택 시 -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>서술형</dt>
+                <dd>
+                    <select>
+                        <option>선택 </option>
+                    </select>
+                    <button class="btn_table btn_gray" onclick="alert_confirm('일괄수정하시겠습니까?','','');">일괄변경</button>
+                    <!-- 미 선택 시 
+                    <button class="btn_table btn_gray" onclick="alert_confirm('수정하실 수강생을 선택해주세요.','','');">일괄변경</button>
+                    // 미 선택 시 -->
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학습주기/문항수</dt>
+                <dd>
+                    <select>
+                        <option>선택 </option>
+                    </select>
+                    <select>
+                        <option>선택 </option>
+                    </select>
+                    <button class="btn_table btn_gray" onclick="alert_confirm('일괄수정하시겠습니까?','','');">일괄변경</button>
+                    <!-- 미 선택 시 
+                    <button class="btn_table btn_gray" onclick="alert_confirm('수정하실 수강생을 선택해주세요.','','');">일괄변경</button>
+                    // 미 선택 시 -->
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!-- 조회 -->
+<div class="search_wrap s_group">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="std_all" name="std" onchange="all_check(this);" checked/>
+                            <label for="std_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std1" name="std"/>
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std2" name="std"/>
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std3" name="std"/>
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>1학년</option>
+                        <option>2학년</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생</dt>
+                <dd>
+                    <input type="text" placeholder="수강생명/ID를 입력하세요." style="width:200px !important;">
+                    <button class="btn_search small">검색</button>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--//조회-->
+<!-- 테이블스크롤_세로 -->
+<div class="table_list">
+    <table class="thead">
+        <colgroup>
+            <col style="width:5%" />
+            <col style="width:6%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:16%" />
+            <col style="width:10%" />
+            <col />
+            <col style="width:8%" />
+            <col style="width:8%" />
+            <col style="width:8%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std_all" onchange="all_check(this);">
+                        <label for="std_all">전체선택</label>
+                    </span>
+                </th>
+                <th>No</th>
+                <th>실제학년</th>
+                <th>학습학년</th>
+                <th>수강생명</th>
+                <th>단원주기</th>
+                <th>학습주기</th>
+                <th>문항</th>
+                <th>계산력</th>
+                <th>서술형</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="max-height:220px;">
+        <table class="tbody">
+            <colgroup>
+                <col style="width:5%" />
+                <col style="width:6%" />
+                <col style="width:8%" />
+                <col style="width:8%" />
+                <col style="width:16%" />
+                <col style="width:10%" />
+                <col />
+                <col style="width:8%" />
+                <col style="width:8%" />
+                <col style="width:8%" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1">
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">1</span></td>
+                    <td>초1</td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>표준학습</td>
+                    <td>4일진도+1일평가</td>
+                    <td><span class="gm_font">15</span></td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">4</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std2">
+                            <label for="std2">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">2</span></td>
+                    <td>초1</td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>속성학습</td>
+                    <td>4일진도+1일평가</td>
+                    <td><span class="gm_font">20</span></td>
+                    <td><span class="gm_font">0</span></td>
+                    <td><span class="gm_font">4</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std3">
+                            <label for="std3">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">3</span></td>
+                    <td>초1</td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>속성학습</td>
+                    <td>4일진도+1일평가</td>
+                    <td><span class="gm_font">25</span></td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std4">
+                            <label for="std4">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">4</span></td>
+                    <td>초1</td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>표준학습</td>
+                    <td>3일진도+1일평가</td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std5">
+                            <label for="std5">선택</label>
+                        </span>
+                    </td>
+                    <td><span class="gm_font">5</span></td>
+                    <td>초1</td>
+                    <td>초1</td>
+                    <td>김병헌 (100001234)</td>
+                    <td>표준학습</td>
+                    <td>4일진도+1일평가</td>
+                    <td><span class="gm_font">20</span></td>
+                    <td><span class="gm_font">10</span></td>
+                    <td><span class="gm_font">0</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

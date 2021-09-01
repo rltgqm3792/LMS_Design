@@ -1,0 +1,241 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('보충학습');
+        $('.group_title h2').text('스마트출제마법사');
+    });
+
+    // toast-ui tree menu data ("var treeData=" 이름은 바꾸지 말고 내용만 바꿀 것 :chan)
+    // 개발: 단순 JSON-data 형식입니다. 필요한 값은 해당 element에 쓰고 읽으면 됩니다.
+    var treeData = [
+        {
+            text: '초1', children: [
+                {
+                    text: '1학기', state: 'opened', children: [
+                        {
+                            text: '수학 1', children: [
+                                { text: '단원 1 더하기' },
+                                { text: '단원 2 빼기' },
+                                { text: '단원 3 곱하기' }
+                            ]
+                        },
+                        {
+                            text: '영어 1', children: [
+                                { text: '단원 1 ABC' },
+                                { text: '단원 2 DEF' },
+                                { text: '단원 3' }
+                            ]
+                        },
+                        {
+                            text: '국어 1', children: [
+                                { text: '단원 1' },
+                                { text: '단원 2' },
+                                { text: '단원 3' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: '2학기', state: 'closed', children: [
+                        {
+                            text: '사회 1', state: 'opened', children: [
+                                { text: '단원 1 경제와 사회' },
+                                { text: '단원 2 사회와 경제' },
+                                { text: '단원 3 국가와 사회' }
+                            ]
+                        },
+                        { text: '2. 여러 가지 모양' }
+                    ]
+                }
+            ]
+        },
+        {
+            text: '초2', state: 'closed', children: [
+                {
+                    text: '1학기', state: 'opened', children: [
+                        {
+                            text: '1. 9까지의 수', state: 'opened', children: [
+                                { text: '1,2,3,4,5 알아보기' }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            text: '초3', state: 'closed', children: [
+                { text: '1학기' },
+                { text: '2학기' }
+            ]
+        }
+    ];
+</script>
+<!-- tree menu script 추가 2021.7.28 :chan-->
+<script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/toast-ui-custom.js"></script>
+<!-- //페이지에 관련된 스크립트 -->
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/calculationPack01">연산 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/academicPack01">내신대비 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/descriptivePack01">서술형 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/advancedPack01">최상위 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/allSubjPack01">전과목 패키지</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/smartTestMagician01">스마트 출제마법사</a></li>
+    <li><a href="index.html?page=mathlearning/lowGradePack">초등저학년 패키지</a></li>
+    <li><a href="index.html?page=mathlearning/individualHist">수강생별 출제이력</a></li>
+</ul>
+<!-- std_wrap -->
+<div class="std_wrap s_test_magic">
+    <!--그룹리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="year_group">
+                <span class="frm_wrap frm_btn btn3">
+                    <span class="frm">
+                        <input type="radio" id="rd_year1" name="year">
+                        <label for="rd_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="radio" id="rd_year2" name="year">
+                        <label for="rd_year2">중등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="radio" id="rd_year3" name="year">
+                        <label for="rd_year3">고등</label>
+                    </span>
+                </span>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <div id="tree" class="tui-tree-wrap"></div>
+        <!--//리스트-->
+    </div>
+    <!--//그룹리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <h4 class="tit_h4">스마트출제마법사 출제하기</h4>
+        <div class="table_input">
+            <table>
+                <caption>출제정보</caption>
+                <colgroup>
+                    <col style="width: 12%" />
+                    <col />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>선택한 단원</th>
+                        <td>
+                            <!-- 2021.7.28 수정 시작 :chan -->
+                            <ul class="unit_box_wrap">
+                                <li class="unit_box"><span class="data">sample 1</span><button type="button" class="del">삭제</button></li>
+                                <li class="unit_box"><span class="data">sample 2</span><button type="button" class="del">삭제</button></li>
+                            </ul>
+                            <!-- 2021.7.28 수정 끝 :chan -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>수업회차</th>
+                        <td>
+                            <span class="frm_wrap frm_btn">
+                                <span class="frm">
+                                    <input type="radio" id="radio11" name="radio1" checked />
+                                    <label for="radio11">1회차</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio12" name="radio1" />
+                                    <label for="radio12">2회차</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio13" name="radio1" />
+                                    <label for="radio13">3회차</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio14" name="radio1" />
+                                    <label for="radio14">4회차</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio15" name="radio1" />
+                                    <label for="radio15">5회차</label>
+                                </span>
+                            </span>
+                            <a href="javascript:openPop('Mathlearning/pop_smartTestMagician04.html','900','650');" class="btn_table">회차별 단원설정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>문항 수</th>
+                        <td>
+                            <span class="frm_wrap frm_btn">
+                                <span class="frm">
+                                    <input type="radio" id="radio21" name="radio2" checked />
+                                    <label for="radio21">10</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio22" name="radio2" />
+                                    <label for="radio22">15</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio23" name="radio2" />
+                                    <label for="radio23">20</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio24" name="radio2" />
+                                    <label for="radio24">25</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio25" name="radio2" />
+                                    <label for="radio25">30</label>
+                                </span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>레벨</th>
+                        <td>
+                            <span class="frm_wrap frm_btn">
+                                <span class="frm">
+                                    <input type="radio" id="radio31" name="radio3" checked />
+                                    <label for="radio31">Lv1</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio32" name="radio3" />
+                                    <label for="radio32">Lv2</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio33" name="radio3" />
+                                    <label for="radio33">Lv3</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio34" name="radio3" />
+                                    <label for="radio34">Lv4</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio35" name="radio3" />
+                                    <label for="radio35">Lv5</label>
+                                </span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>문제지명</th>
+                        <td><input type="text" class="inp_test_tit" value="[2020.12.01] 초2. 1. 9까지의 수" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn_bottom_wrap right">
+            <span>
+                <a href="javascript:void(0);" class="btn_basic btn_prev"><span>이전</span></a>
+                <a href="index.html?page=mathlearning/smartTestMagician03" class="btn_basic btn_next"><span>다음</span></a>
+            </span>
+        </div>
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

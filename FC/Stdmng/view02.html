@@ -1,0 +1,527 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('수강생 통계');
+        $('.group_title h2').text('유형별');
+    });
+    
+    /* 썸네일, 리스트 형 */
+    $('input[type=radio][name=graph]').on('click', function () {
+        var chkValue = $('input[type=radio][name=graph]:checked').val();
+        if (chkValue == '1') {
+            $('.graph1').css('display', 'block');
+            $('.graph2').css('display', 'none');
+        } else if (chkValue == '2') {
+            $('.graph1').css('display', 'none');
+            $('.graph2').css('display', 'block');
+        }
+    });
+
+    am4core.ready(function () {
+        am4core.addLicense("CH230677325");
+        am4core.useTheme(am4themes_animated);
+
+        /* 그래프1 */
+        var chart = am4core.create("column_chart", am4charts.XYChart);
+        chart.fontSize = 14;
+        chart.fontFamily = "NotoSans";
+
+        chart.data = [
+            {
+                "class": "예비초",
+                "num": 10,
+                "color": am4core.color("#FFC24B")
+            }, {
+                "class": "초1",
+                "num": 3,
+                "color": am4core.color("#FFC24B")
+            }, {
+                "class": "초2",
+                "num": 7,
+                "color": am4core.color("#FFC24B")
+            }, {
+                "class": "초3",
+                "num": 12,
+                "color": am4core.color("#FFC24B")
+            }, {
+                "class": "초4",
+                "num": 5,
+                "color": am4core.color("#FFC24B")
+            }, {
+                "class": "초5",
+                "num": 10,
+                "color": am4core.color("#FFC24B")
+            }, {
+                "class": "초6",
+                "num": 15,
+                "color": am4core.color("#FFC24B")
+            }, {
+                "class": "중1",
+                "num": 25,
+                "color": am4core.color("#FE7D6F")
+            }, {
+                "class": "중2",
+                "num": 30,
+                "color": am4core.color("#FE7D6F")
+            }, {
+                "class": "중3",
+                "num": 15,
+                "color": am4core.color("#FE7D6F")
+            }, {
+                "class": "고1",
+                "num": 2,
+                "color": am4core.color("#2ECEAD")
+            }, {
+                "class": "고2",
+                "num": 0,
+                "color": am4core.color("#2ECEAD")
+            }
+        ];
+
+        var categoryAxis = chart
+            .xAxes
+            .push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "class";
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.minGridDistance = 30;
+
+        var valueAxis = chart
+            .yAxes
+            .push(new am4charts.ValueAxis());
+
+        var series = chart
+            .series
+            .push(new am4charts.ColumnSeries());
+        series.dataFields.valueY = "num";
+        series.dataFields.categoryX = "class";
+        series.name = "Visits";
+        series.columns.template.width = am4core.percent(50);
+        series.columns.template.fillOpacity = 1;
+        series
+            .columns
+            .template
+            .adapter
+            .add("fill", function (fill, target) {
+                return target.dataItem
+                    ? target.dataItem.dataContext.color
+                    : fill;
+            });
+
+        var columnTemplate = series.columns.template;
+        columnTemplate.strokeWidth = 0;
+        columnTemplate.strokeOpacity = 1;
+
+        var bullet = series
+            .bullets
+            .push(new am4charts.LabelBullet());
+        bullet.label.verticalCenter = "top";
+        bullet.dy = -20;
+        bullet.label.text = '{valueY} 명';
+        bullet.label.fill = am4core.color('#222');
+
+        var label = categoryAxis.renderer.labels.template;
+        label.truncate = false;
+        label.wrap = true;
+
+        categoryAxis
+            .events
+            .on("sizechanged", function (ev) {
+                var axis = ev.target;
+                var cellWidth = axis.pixelWidth / (axis.endIndex - axis.startIndex) - 10;
+                axis.renderer.labels.template.maxWidth = cellWidth;
+            });
+
+        /* 그래프2 */
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        chart.fontSize = 14;
+        chart.colors.step = 5;
+
+        chart.data = [
+            {
+                "year": "예비초",
+                "regular": 1,
+                "new": 5,
+                "close": 3,
+                "return": 3
+            }, {
+                "year": "초1",
+                "regular": 1,
+                "new": 2,
+                "close": 6,
+                "return": 2
+            }, {
+                "year": "초2",
+                "regular": 2,
+                "new": 3,
+                "close": 1,
+                "return": 6
+            }, {
+                "year": "초3",
+                "regular": 3,
+                "new": 4,
+                "close": 1,
+                "return": 15
+            }, {
+                "year": "초4",
+                "regular": 5,
+                "new": 1,
+                "close": 2,
+                "return": 10
+            }, {
+                "year": "초5",
+                "regular": 3,
+                "new": 2,
+                "close": 7,
+                "return": 3
+            }, {
+                "year": "초6",
+                "regular": 1,
+                "new": 2,
+                "close": 3,
+                "return": 8
+            }, {
+                "year": "중1",
+                "regular": 2,
+                "new": 1,
+                "close": 5,
+                "return": 3
+            }, {
+                "year": "중2",
+                "regular": 3,
+                "new": 5,
+                "close": 2,
+                "return": 6
+            }, {
+                "year": "중3",
+                "regular": 4,
+                "new": 3,
+                "close": 6,
+                "return": 1
+            }, {
+                "year": "고1",
+                "regular": 1,
+                "new": 2,
+                "close": 4,
+                "return": 0
+            }
+        ];
+
+        var categoryAxis = chart
+            .xAxes
+            .push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "year";
+        categoryAxis.renderer.opposite = false;
+        categoryAxis.renderer.minGridDistance = 10;
+
+        var valueAxis = chart
+            .yAxes
+            .push(new am4charts.ValueAxis());
+        valueAxis.renderer.inversed = false;
+        valueAxis.title.text = "";
+        valueAxis.renderer.minLabelPosition = 0.01;
+
+        var series1 = chart
+            .series
+            .push(new am4charts.LineSeries());
+        series1.dataFields.valueY = "regular";
+        series1.dataFields.categoryX = "year";
+        series1.name = "정규";
+        series1
+            .bullets
+            .push(new am4charts.CircleBullet());
+        series1.tooltipText = " {name}  : {valueY}";
+        series1.legendSettings.valueText = "{valueY}";
+        series1.visible = false;
+
+        var series2 = chart
+            .series
+            .push(new am4charts.LineSeries());
+        series2.dataFields.valueY = "new";
+        series2.dataFields.categoryX = "year";
+        series2.name = '신규';
+        series2
+            .bullets
+            .push(new am4charts.CircleBullet());
+        series2.tooltipText = " {name}  : {valueY}";
+        series2.legendSettings.valueText = "{valueY}";
+
+        var series3 = chart
+            .series
+            .push(new am4charts.LineSeries());
+        series3.dataFields.valueY = "close";
+        series3.dataFields.categoryX = "year";
+        series3.name = '휴회';
+        series3
+            .bullets
+            .push(new am4charts.CircleBullet());
+        series3.tooltipText = " {name} : {valueY}";
+        series3.legendSettings.valueText = "{valueY}";
+
+        var series4 = chart
+            .series
+            .push(new am4charts.LineSeries());
+        series4.dataFields.valueY = "return";
+        series4.dataFields.categoryX = "year";
+        series4.name = '복회';
+        series4
+            .bullets
+            .push(new am4charts.CircleBullet());
+        series4.tooltipText = " {name}  : {valueY}";
+        series4.legendSettings.valueText = "{valueY}";
+
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.behavior = "zoomY";
+
+        let hs1 = series1
+            .segments
+            .template
+            .states
+            .create("hover")
+        hs1.properties.strokeWidth = 5;
+        series1.segments.template.strokeWidth = 2;
+
+        let hs2 = series2
+            .segments
+            .template
+            .states
+            .create("hover")
+        hs2.properties.strokeWidth = 5;
+        series2.segments.template.strokeWidth = 2;
+
+        let hs3 = series3
+            .segments
+            .template
+            .states
+            .create("hover")
+        hs3.properties.strokeWidth = 5;
+        series3.segments.template.strokeWidth = 2;
+
+        let hs4 = series4
+            .segments
+            .template
+            .states
+            .create("hover")
+        hs4.properties.strokeWidth = 5;
+        series4.segments.template.strokeWidth = 2;
+
+        chart.legend = new am4charts.Legend();
+        chart
+            .legend
+            .itemContainers
+            .template
+            .events
+            .on("over", function (event) {
+                var segments = event.target.dataItem.dataContext.segments;
+                segments.each(function (segment) {
+                    segment.isHover = true;
+                })
+            })
+
+        chart
+            .legend
+            .itemContainers
+            .template
+            .events
+            .on("out", function (event) {
+                var segments = event.target.dataItem.dataContext.segments;
+                segments.each(function (segment) {
+                    segment.isHover = false;
+                })
+            })
+
+
+    });
+
+    
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=stdmng/view01">월별</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=stdmng/view02">유형별</a>
+    </li>
+</ul>
+
+<!-- [D]컨텐츠 정보가 들어갑니다. -->
+<h4 class="tit_h4">조회조건 설정</h4>
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC 구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input
+                                type="checkbox"
+                                id="search_all"
+                                name="srch_class"
+                                onclick="all_check(this)"
+                                checked="checked"/>
+                            <label for="search_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search11" name="srch_class"/>
+                            <label for="search11">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search12" name="srch_class"/>
+                            <label for="search12">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="search13" name="srch_class"/>
+                            <label for="search13">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>기간</dt>
+                <dd>
+                    <select>
+                        <option value="">2021</option>
+                    </select>
+                    <select>
+                        <option value="">1월</option>
+                        <option value="">2월</option>
+                        <option value="">3월</option>
+                        <option value="">4월</option>
+                        <option value="">5월</option>
+                        <option value="">6월</option>
+                        <option value="">7월</option>
+                        <option value="">8월</option>
+                        <option value="">9월</option>
+                        <option value="">10월</option>
+                        <option value="">11월</option>
+                        <option value="">12월</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input
+                                type="checkbox"
+                                id="class_srch_all"
+                                name="class_srch"
+                                onclick="all_check(this)"
+                                checked="checked"/>
+                            <label for="class_srch_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch01" name="class_srch"/>
+                            <label for="class_srch01">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch02" name="class_srch"/>
+                            <label for="class_srch02">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="class_srch03" name="class_srch"/>
+                            <label for="class_srch03">고등</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>구분
+                    <div class="tooltip_area">
+                        <button class="btn_tooltip small">tooltip</button>
+                        <div class="tooltip_cont right">
+                            정규수강생은 신규, 복회,
+                            <br/>이벤트 수강생을 포함한 수치입니다.
+                            <button class="close">툴팁닫기</button>
+                        </div>
+                    </div>
+                </dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input
+                                type="checkbox"
+                                id="type2_all"
+                                name="type2"
+                                onclick="all_check(this)"
+                                checked="checked"/>
+                            <label for="type2_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type21" name="type2"/>
+                            <label for="type21">정규</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type22" name="type2"/>
+                            <label for="type22">신규</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type23" name="type2"/>
+                            <label for="type23">복회</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="type24" name="type2"/>
+                            <label for="type24">휴회</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button class="btn_search big">적용</button>
+</div>
+<!-- //조회 -->
+
+<!-- data -->
+<h4 class="tit_h4">Data(2020년 1월)</h4>
+
+<div id="grid"></div>
+<!-- //data -->
+
+<!-- graph_wrap -->
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">수학 (초등/중등/고등)</h4>
+    <span>
+        <label for="graph_01" class="rdo_graph">
+            <input type="radio" name="graph" value="1" id="graph_01" checked="checked"/>
+            <span>그래프1</span>
+        </label>
+        <label for="graph_02" class="rdo_graph_line">
+            <input type="radio" name="graph" value="2" id="graph_02"/>
+            <span>그래프2</span>
+        </label>
+    </span>
+</div>
+
+<!-- Graph1 -->
+<div class="graph1">
+    <div id="column_chart" style="height:350px"></div>
+</div>
+<!-- //Graph1 -->
+
+<!-- Graph2 -->
+<div class="graph2" style="display: none;">
+    <div id="chartdiv" style="height:400px;"></div>
+</div>
+<!-- //Graph2 -->
+<!-- //graph_wrap -->

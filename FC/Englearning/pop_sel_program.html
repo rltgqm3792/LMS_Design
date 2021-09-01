@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="스마트해법">
+    <meta name="description" content="스마트해법">
+    <meta name="apple-mobile-web-app-title" content="Drmath" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta property="og:title" content="스마트해법">
+    <meta property="og:url" content="https://www.hbedu.co.kr/">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="스마트해법"/>
+    <title>::스마트해법::</title>
+    
+    <!-- 스크립트 -->
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+    <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+    
+    <!-- font css -->
+	<link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <article class="Popup">
+        <header class="pop_header">
+            <h1>프로그램 선택</h1>
+        </header>
+        <section class="pop_content">
+            <!--CONTENTS-->
+            <p class="pop_sub_txt">프로그램은 최대 6개까지 선택할 수 있습니다.</p>
+            <div class="table_scroll" style="max-height:425px">
+                <div class="table_list tbl_program_sel">
+                    <table>
+                        <colgroup>
+                            <col style="width:12%">
+                            <col style="width:10%">
+                            <col style="width:6%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:12%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Group</th>
+                                <th>S.Group</th>
+                                <th>Level</th>
+                                <th>Main<br>Program1</th>
+                                <th>Main<br>Program2</th>
+                                <th>Sub<br>Program1</th>
+                                <th>Sub<br>Program2</th>
+                                <th>Special<br>Program1</th>
+                                <th>Special<br>Program2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Prep.</td>
+                                <td>-</td>
+                                <td>0</td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program1" name="program">
+                                        <label for="program1">AAA</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program2" name="program">
+                                        <label for="program2">BBB</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program3" name="program">
+                                        <label for="program3">CCC</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program4" name="program">
+                                        <label for="program4">DDD</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program5" name="program">
+                                        <label for="program5">EEE</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program6" name="program">
+                                        <label for="program6">FFF</lable>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="6">Starter</td>
+                                <td rowspan="3">S1</td>
+                                <td>1</td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program11" name="program">
+                                        <label for="program11">AAA</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program12" name="program">
+                                        <label for="program12">BBB</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program13" name="program">
+                                        <label for="program13">CCC</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program14" name="program">
+                                        <label for="program14">DDD</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program15" name="program">
+                                        <label for="program15">EEE</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program16" name="program">
+                                        <label for="program16">FFF</lable>
+                                    </span>
+                                </td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program21" name="program">
+                                        <label for="program21">AAA</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program22" name="program">
+                                        <label for="program22">BBB</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program23" name="program">
+                                        <label for="program23">CCC</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program24" name="program">
+                                        <label for="program24">DDD</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program25" name="program">
+                                        <label for="program25">EEE</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program26" name="program">
+                                        <label for="program26">FFF</lable>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program31" name="program">
+                                        <label for="program31">AAA</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program32" name="program">
+                                        <label for="program32">BBB</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program33" name="program">
+                                        <label for="program33">CCC</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program34" name="program">
+                                        <label for="program34">DDD</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program35" name="program">
+                                        <label for="program35">EEE</lable>
+                                    </span>
+                                </td>
+                                <td class="pd0">
+                                    <span class="frm frm_full">
+                                        <input type="checkbox" id="program36" name="program">
+                                        <label for="program36">FFF</lable>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">S2</td>
+                                <td>4</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Beginner</td>
+                                <td>LB1</td>
+                                <td>7</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Intermediate</td>
+                                <td>LB1</td>
+                                <td>7</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Advanced</td>
+                                <td>LB1</td>
+                                <td>7</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Master</td>
+                                <td>LB1</td>
+                                <td>7</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--//CONTENTS-->
+        </section>
+        <section class="pop_btn_group">
+            <a href="javascript:window.close();" class="btn cancel">닫기</a>
+            <a href="javascript:window.close();" class="btn">선택완료</a>
+        </section>
+    </article>
+</body>
+</html>

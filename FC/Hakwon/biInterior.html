@@ -1,0 +1,131 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<!-- 조건설정 -->
+<h4 class="tit_h4">BI/인테리어</h4>
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input
+                                type="checkbox"
+                                id="smartclass_chk01"
+                                name="smartclass"
+                                checked="checked"/>
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass"/>
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass"/>
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!-- //조건설정 -->
+
+<!-- 인테리어 리스트 -->
+<div class="btn_top_wrap between">
+    <span class="list_num">전체
+        <strong class="col_blue">25</strong>개
+    </span>
+    <a href="javascript:openPop('hakwon/biInteriorRegPop.html','800','400');" class="btn_top btn_blue">등록하기</a>
+</div>
+
+<h4 class="tit_h4">간판/현판 4건</h4>
+<div class="img_list">
+    <ul>
+        <li>
+            <a href="javascript:openPop('hakwon/biInteriorPop.html','800','650');">
+                <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png"/>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:openPop('hakwon/biInteriorPop.html','800','650');">
+                <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png"/>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:openPop('hakwon/biInteriorPop.html','800','650');">
+                <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png"/>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:openPop('hakwon/biInteriorPop.html','800','650');">
+                <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png"/>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h4 class="tit_h4">기타 2건</h4>
+<div class="img_list">
+    <ul>
+        <li>
+            <a href="javascript:openPop('hakwon/biInteriorPop.html','800','650');">
+                <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png"/>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:openPop('hakwon/biInteriorPop.html','800','650');">
+                <img src="http://image.test.hbedu.co.kr/LMS/FC/img/sub/img_dummy.png"/>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- //인테리어 리스트-->

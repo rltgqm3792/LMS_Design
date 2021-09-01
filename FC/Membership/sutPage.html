@@ -1,0 +1,56 @@
+<script>
+	//alert
+	function alert_open(tit, content) {
+		$('.alert').addClass('on');
+		$('.ly_alert h1').text(tit);
+		$('.ly_alert p.content').html(content);
+	}
+	function alert_close() {
+		$('.ly_wrap').removeClass('on');
+	}
+
+	$(function() {
+		//백그라운드 css
+		$("body").css('background', '#fafafa');
+
+		//서브 타이틀 변경
+		$('.head_sub strong').text('입회설문');
+		$('.head_sub span').text('에 참여해주세요.');
+
+		//선택했을경우 다음 질문 넘어감
+		$('#page01 .ty_rdo input').change(function() {
+			
+			if($(this).prop("checked",true)) {
+
+				console.log($(this).val());
+
+				$("#wtnessPathCcd").val($(this).val());
+				console.log($("#wtnessPathCcd"));				
+				$('#page01').hide();
+				$('#page02').show();
+			}
+		});
+
+		$("#page02 .ty_rdo input").change(function(){
+			if($(this).prop("checked",true)){
+				$("#wtnessReason").val($(this).val());
+
+				console.log($("#wtnessReason").val());
+				}
+		});
+
+	});
+
+	$("#next_Btn").click(function(){
+		$("#wtnessPath").submit();
+
+		});
+
+	
+	$(document).ready(function(){
+		var atnlcstBrandSn = ${AtnlcstBrandSn};
+		console.log(atnlcstBrandSn);
+		$("#atnlcstBrandSn").val(atnlcstBrandSn);
+		
+		});
+</script>

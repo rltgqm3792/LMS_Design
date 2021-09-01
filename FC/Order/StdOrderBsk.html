@@ -1,0 +1,395 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('교재주문');
+        $('.group_title h2').text('장바구니');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+        <!-- 툴팁 -->
+        <div class="tooltip_area">
+            <button class="btn_tooltip">tooltip</button>
+            <div class="tooltip_cont">
+                <p class="tit">보상안내</p>
+                <ul class="bu_type">
+                    <li>1~3개완료 : 미션별 제공 기본 골드</li>
+                    <li>4개 : 미션 완료 추가보상 500골드</li>
+                    <li>5개 : 미션 완료 추가 보상 1,000골드</li>
+                </ul>
+                <button class="close">툴팁닫기</button>
+            </div>
+        </div>
+        <!-- // 툴팁 -->
+</div>
+<!-- //타이틀-->
+
+<!-- 2Depth Tab -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=order/StdOrderBsk">수강생 주문</a>
+    </li>
+    <li>
+        <a href="index.html?page=order/StdOrderBskStd">일반 주문</a>
+    </li>
+</ul>
+<!-- // 2Depth Tab -->
+
+<!-- 주문정보 확인 테이블 -->
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">주문정보 확인</h4>
+    <p>
+        <select>
+            <option>FC 전체</option>
+            <option>수학</option>
+            <option>영어</option>
+            <option>전과목</option>
+        </select>        
+        <a href="javascript:alert_confirm('삭제하면 복구가 불가능합니다.','정말 삭제하시겠습니까?');" class="btn_top btn_gray02">삭제</a>
+    </p>
+</div>
+
+<div class="table_list">
+    <table class="thead">
+        <caption></caption>
+        <colgroup>
+            <col style="width: 5%"/>
+            <col style="width: 6%"/>
+            <col style="width: 6%"/>
+            <col style="width: 12%"/>
+            <col style="width: 8%"/>
+            <col style="width: 7%"/>
+            <col style="width: 9%"/>
+            <col style="width: 10%"/>
+            <col style="width: 6%"/>
+            <col style="width: 23%"/>
+            <col style="width: 8%"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    <span class="frm only">
+                        <input type="checkbox" name="std" id="std_all" onchange="all_check(this);"/>
+                        <label for="std_all">전체선택</label>
+                    </span>
+                </th>
+                <th>No</th>
+                <th>FC구분</th>
+                <th>수강생번호</th>
+                <th>수강생이름</th>
+                <th>학년</th>
+                <th>진도유형</th>
+                <th>학습 학년/레벨</th>
+                <th>월</th>
+                <th>교재명</th>
+                <th>가격(원)</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="scroll" style="max-height:180px;">
+        <table class="tbody">
+            <caption></caption>
+            <colgroup>
+                <col style="width: 5%"/>
+                <col style="width: 6%"/>
+                <col style="width: 6%"/>
+                <col style="width: 12%"/>
+                <col style="width: 8%"/>
+                <col style="width: 7%"/>
+                <col style="width: 9%"/>
+                <col style="width: 10%"/>
+                <col style="width: 6%"/>
+                <col style="width: 23%"/>
+                <col style="width: 8%"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>김해법</td>
+                    <td>
+                        중등2
+                    </td>
+                    <td>자율진도</td>
+                    <td>
+                        중1
+                    </td>
+                    <td>
+                        9월
+                    </td>
+                    <td>
+                        (신)e해법 유형완성 2-2-8호
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>김해법</td>
+                    <td>
+                        중등2
+                    </td>
+                    <td>자율진도</td>
+                    <td>
+                        중1
+                    </td>
+                    <td>
+                        9월
+                    </td>
+                    <td>
+                        (신)e해법 유형완성 2-2-8호
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>김해법</td>
+                    <td>
+                        중등2
+                    </td>
+                    <td>자율진도</td>
+                    <td>
+                        중1
+                    </td>
+                    <td>
+                        9월
+                    </td>
+                    <td>
+                        (신)e해법 유형완성 2-2-8호
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>김해법</td>
+                    <td>
+                        중등2
+                    </td>
+                    <td>자율진도</td>
+                    <td>
+                        중1
+                    </td>
+                    <td>
+                        9월
+                    </td>
+                    <td>
+                        (신)e해법 유형완성 2-2-8호
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="frm only">
+                            <input type="checkbox" name="std" id="std1"/>
+                            <label for="std1">선택</label>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="gm_font">1</span>
+                    </td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>김해법</td>
+                    <td>
+                        중등2
+                    </td>
+                    <td>자율진도</td>
+                    <td>
+                        중1
+                    </td>
+                    <td>
+                        9월
+                    </td>
+                    <td>
+                        (신)e해법 유형완성 2-2-8호
+                    </td>
+                    <td>
+                        <span class="gm_font">4,000</span>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="11">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>                  
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- // 주문정보 확인 테이블 -->
+
+<!-- 주문정보요약 테이블 -->
+<div class="btn_top_wrap">
+    <h4 class="tit_h4">주문정보요약<span class="tit_sub">해당 주문 금액은 후불로 다음달 월초 수금통보서에 FC 별로 나눠서 청구됩니다</span>
+    </h4>
+</div>
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:50%;"/>
+            <col style="width:50%;"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>전체 주문수량 (건)</th>
+                <th>전체 주문금액 (원)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sumbg">
+                    <span class="gm_font">6</span>
+                </td>
+                <td class="sumbg">
+                    <span class="gm_font">16,000</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">FC별 주문정보</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2">수학</th>
+                <th colspan="2">영어</th>
+                <th colspan="2">전과목</th>
+            </tr>
+            <tr>
+                <th>주문수량</th>
+                <th>주문금액</th>
+                <th>주문수량</th>
+                <th>주문금액</th>
+                <th>주문수량</th>
+                <th>주문금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="gm_font">6</span>
+                </td>
+                <td>
+                    <span class="gm_font">16,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">6</span>
+                </td>
+                <td>
+                    <span class="gm_font">16,000</span>
+                </td>
+                <td>
+                    <span class="gm_font">6</span>
+                </td>
+                <td>
+                    <span class="gm_font">16,000</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- // 주문정보요약 테이블 -->
+
+<!-- 월말표지주문 영역 -->
+<div class="box_order">
+    <span class="frm_wrap">
+        <span class="frm">
+            <input type="checkbox" id="frm2" name="frm1"/>
+            <label for="frm2">주문안함</label>
+        </span>
+        <span class="frm">
+            <input type="checkbox" id="frm3" name="frm1"/>
+            <label for="frm3">[해법수학] 월말표지주문 [
+                <strong class="col_blue">20</strong>
+                ]개</label>
+        </span>
+        <span class="frm">
+            <input type="checkbox" id="frm4" name="frm1" disabled="disabled"/>
+            <label for="frm4">[해법영어] 수강생용 교재케이스 [
+                <strong class="col_blue">4</strong>
+                ]개</label>
+        </span>
+    </span>
+</div>
+<!-- 월말표지주문 영역 -->
+
+<div class="btn_bottom_wrap right">
+    <p>
+        <a href="" class="btn_basic btn_gray02">취소</a>
+        <a href="javascript:alert_confirm('전체(0)건을주문하시겠습니까?','','index.html?page=Order/StdOrderDoneList');" class="btn_basic">전체주문</a>
+    </p>
+</div>

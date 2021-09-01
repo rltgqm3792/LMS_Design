@@ -1,0 +1,198 @@
+﻿<!-- <%@ Page Title="" Language="C#"
+MasterPageFile="Ucontrol/MemberRegis.master" AutoEventWireup="true"
+CodeFile="Regis_modify.aspx.cs" Inherits="Regis_modify" %> <%@ Register
+Src="UControl/head.ascx" TagName="head" TagPrefix="uc" %> <asp:Content
+ID="Content1" ContentPlaceHolderID="head" Runat="Server"> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+            <title>::해법에듀::</title>
+            <script
+                type="text/javascript"
+                src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/jquery-2.0.2.min.js"></script>
+            <script
+                type="text/javascript"
+                src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/hbedu_m_prt.js"></script>
+            <!-- font css -->
+            <link
+                href="/HBEDU/MemberRegis/Mobile/font/font.css"
+                rel="stylesheet"
+                type="text/css"/>
+
+            <!-- css -->
+            <link
+                href="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/css/hbedu_m_prt.css"
+                rel="stylesheet"
+                type="text/css"/>
+            <link href="http://image.test.hbedu.co.kr/LMS/FC/css/hbedu_m_prt02.css" rel="stylesheet" type="text/css" />
+
+            <script type="text/javascript">
+
+                //alert
+                function alert_open(tit, content) {
+                    $('.alert').addClass('on');
+                    $('.ly_alert h1').text(tit);
+                    $('.ly_alert p.content').html(content);
+                }
+                function alert_close() {
+                    $('.ly_wrap').removeClass('on');
+                }
+            </script>
+
+            <script type="text/javascript">
+                $(function () {
+                    //백그라운드 css
+                    $("body").css('background', '#fafafa');
+
+                    //서브 타이틀 변경
+                    // $('.head_sub').addClass('nolink');
+                    // $('.head_sub strong').text('수강생');
+                    // $('.head_sub span').text('정보확인');
+
+                    // $('.certifiy_input input').change(function () {
+                    //     if ($(this).val().length > 0) {
+                    //         $('.form_btn').addClass('on');
+                    //     }
+                    // });
+
+                });
+
+                //인증번호입력
+                function fn_certifiy() {
+                    $('.certifiy_input').show();
+                    $('.certifiy .btn').text('재전송');
+                }
+
+                function numberMaxLength(e) {
+                    if (e.value.length > e.maxLength) {
+                        e.value = e
+                            .value
+                            .slice(0, e.maxLength);
+                    }
+                }
+            </script>
+            <!-- </asp:Content> <asp:Content ID="Content2"
+            ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> <uc:head ID="head"
+            runat="server" /> -->
+
+        </head>
+        <body>
+
+            <article class="regis_wrap">
+
+                <header class="head_sub">
+                    <h2>수강생 인증</h2>
+                    <ul>
+                        <li class="on">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </header>
+
+                <!-- 입력폼 -->
+                <section class="form_wrap">
+                    <ul>
+                        <li>
+                            <div class="tit">학생이름
+                                <span class="ico_point"></span>
+                            </div>
+                            <div class="desc pt_name">
+                                <input type="text" placeholder="이름을 입력해주세요."/>
+                                <a href="#" class="btn_del">삭제</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit">학부모 휴대폰번호
+                                <span class="ico_point"></span>
+                            </div>
+                            <div class="desc certifiy select">
+                                <p class="select">
+                                    <select>
+                                        <option value="">선택</option>
+                                        <option value="">010</option>
+                                    </select>
+                                </p>
+                                <p class="input">
+                                    <input
+                                        type="number"
+                                        placeholder="'-'없이 숫자만 입력해주세요."
+                                        pattern="[0-9]*"
+                                        id="prt_phone"
+                                        maxlength="8"
+                                        oninput="numberMaxLength(this);"/>
+                                    <a href="javascript:fn_certifiy();" class="btn">인증하기</a>
+                                </p>
+                            </div>
+                            <div class="certifiy_input" style="display:none;">
+                                <div class="desc under">
+                                    <input
+                                        type="number"
+                                        name="certifiy02"
+                                        placeholder="인증번호를 입력해주세요."
+                                        maxlength="6"
+                                        oninput="numberMaxLength(this);"/>
+                                </div>
+
+                                <p class="guide">
+                                    인증번호가 전송되었습니다.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!--//입력폼-->
+                <!--버튼-->
+                <section class="form_btn">
+                    <a href="javascript:ly_open('no_member');">다음</a>
+                </section>
+                <!--//버튼-->
+
+                <!--레이어팝업 등록정보가 없을경우-->
+                <section class="ly_wrap" id="no_member">
+                    <div class="ly_group no_member">
+                        <div class="no_member">
+                            탈퇴 혹은 등록된 정보가<br/>
+                            존재하지 않습니다.
+                        </div>
+                        <div class="btn_area on">
+                            <a href="Regis_modify_form.html">확인</a>
+                        </div>
+                    </div>
+                    <div class="mask"></div>
+                </section>
+
+                <!-- </asp:Content> -->
+
+            </article>
+
+            <!-- 레이어 alert -->
+            <article class="ly_wrap alert">
+                <!-- alert -->
+                <section class="ly_alert">
+                    <!-- 타이틀 -->
+                    <h1>타이틀이 어쩌고 저쩌고</h1>
+                    <!-- //타이틀 -->
+
+                    <p class="content">
+                        컨텐츠가 들어갑니다.
+                    </p>
+                    <div class="btn">
+                        <a href="javascript:alert_close();" class="btn_cancel">취소</a>
+                        <a href="Regis_form.html" class="btn_submit">입력완료</a>
+                    </div>
+                </section>
+                <!-- //alert -->
+                <div class="mask"></div>
+            </article>
+            <!-- //레이어 alert -->
+
+        </body>
+    </html>

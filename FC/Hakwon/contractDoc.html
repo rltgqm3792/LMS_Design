@@ -1,0 +1,114 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>"가맹사업거래의 공정화에 관한 법률" 및 동법 시행령에 의거하여 정보 공개서 및 가맹계약서는 계약 15일 전까지 열람하셔야 합니다.</li>
+            <li>정보공개서와 가맹계약서를 열람 후, [최종완료] 버튼을 클릭하시면 '정보공개서 & 계약서 수령확인증'이 (주)해법에듀에 발급됩니다.</li>
+            <li>[최종완료] 버튼 클릭 후, 지사확인이 이루지면 완료됩니다.</li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- 조건설정 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>FC구분</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm">
+                            <input
+                                type="checkbox"
+                                id="smartclass_chk01"
+                                name="smartclass"
+                                checked="checked"/>
+                            <label for="smartclass_chk01">수학</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk02" name="smartclass"/>
+                            <label for="smartclass_chk02">영어</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="smartclass_chk03" name="smartclass"/>
+                            <label for="smartclass_chk03">전과목</label>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!-- //조건설정 -->
+
+<!-- 계약서류 테이블-->   
+<h4 class="tit_h4">계약서류</h4>
+
+<!-- 확인 -->
+<a href="" class="btn_table btn_blue">확인</a>
+
+<!-- 계약서 없는 경우 tr -->
+<tr>
+    <td colspan="5">
+        <div class="no_data">
+            확인 가능한 정보공개서 및 계약서가 없습니다.
+        </div>
+    </td>
+</tr>
+
+<div id="grid"></div>
+<!-- //계약서류 테이블-->
+
+<!-- 최종완료 -->
+<div class="btn_bottom_wrap right">
+    <a href="javascript:alert_open('[확인]버튼을 클릭하여 열람정보를 확인해주세요');"  class="btn_basic">최종완료</a>
+</div>
+ <!-- //최종완료 -->

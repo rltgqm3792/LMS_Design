@@ -1,0 +1,323 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('교실운영');
+        $('.group_title h2').text('교실운영');
+        calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <li><a href="index.html?page=tclasslearning/weeklyReport">학부모리포트</a></li>
+    <li><a href="index.html?page=tclasslearning/compensation">보상관리</a></li>
+    <li><a href="index.html?page=tclasslearning/eBook">교사용e-북보기</a></li>
+    <li><a href="index.html?page=tclasslearning/questionSet">질문하기관리</a></li>
+    <li><a href="index.html?page=tclasslearning/communitySet">커뮤니티관리</a></li>
+    <li><a href="index.html?page=tclasslearning/mathSet">수학난이도관리</a></li>
+    <li class="on"><a href="index.html?page=tclasslearning/reportSet">분석표관리</a></li>
+</ul>
+
+<!-- std_wrap -->
+<div class="std_wrap">
+
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>전체교사</option>
+                </select>
+            </p>
+            <p class="year_group year_group02">
+                <span class="frm_wrap frm_btn">
+                    <span class="frm">
+                        <input type="checkbox" id="chk_all" name="year" onchange="all_check(this);">
+                        <label for="chk_all">전체</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year1" name="year">
+                        <label for="chk_year1">초등</label>
+                    </span>
+                    <span class="frm">
+                        <input type="checkbox" id="chk_year2" name="year">
+                        <label for="chk_year2">중등</label>
+                    </span>
+                </span>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년</option>
+                    <option>예비초</option>
+                    <option>초1</option>
+                    <option>초2</option>
+                    <option>초3</option>
+                    <option>초4</option>
+                    <option>초5</option>
+                    <option>초6</option>
+                    <option>중1</option>
+                    <option>중2</option>
+                    <option>중3</option>
+                    <option>고1</option>
+                    <option>고2</option>
+                    <option>고3</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required" placeholder="수강생이름을 검색하세요"><a href="" class="btn_s search">검색</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!--수강생-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="flag_wrap">
+                            <span class="std_grade">초3</span>
+                        </span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//수강생-->
+
+        <!-- 검색 -->
+        <div class="search_wrap">
+            <ul class="info_group">
+                <li>
+                    <dl>
+                        <dt>
+                            구분
+                        </dt>
+                        <dd>
+                            <span class="frm_wrap frm_btn">
+                                <span class="frm all">
+                                    <input type="checkbox" id="category_all" name="category" onchange="all_check(this);" checked="checked">
+                                    <label for="category_all">전체</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="category01" name="category">
+                                    <label for="category01">기초학력 진단평가</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="category02" name="category">
+                                    <label for="category02">중간(기말)성취도평가</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="category03" name="category">
+                                    <label for="category03">단원마무리평가</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="category04" name="category">
+                                    <label for="category04">진단평가</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="category05" name="category">
+                                    <label for="category05">전국학력평가</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="category06" name="category">
+                                    <label for="category06">주간 리포트</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="checkbox" id="category07" name="category">
+                                    <label for="category07">월간 리포트</label>
+                                </span>
+                            </span>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+
+                    <dl>
+                        <dt>
+                            기간
+                        </dt>
+                        <dd>
+                            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                <input id="startpicker-input" type="text" aria-label="Date" />
+                                <label for="startpicker-input" class="tui-ico-date"></label>
+                                <div id="startpicker-container" style="margin-left: -1px;"></div>
+                            </div>
+                            <span class="line">~</span>
+                            <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                <input id="endpicker-input" type="text" aria-label="Date" />
+                                <label for="endpicker-input" class="tui-ico-date"></label>
+                                <div id="endpicker-container" style="margin-left: -1px;"></div>
+                            </div>
+                            <span class="frm_wrap frm_btn">
+                                <span class="frm all">
+                                    <input type="radio" id="radio21" name="radio2" checked />
+                                    <label for="radio21">전체</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio22" name="radio2" />
+                                    <label for="radio22">1개월</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio23" name="radio2" />
+                                    <label for="radio23">3개월</label>
+                                </span>
+                                <span class="frm">
+                                    <input type="radio" id="radio24" name="radio2" />
+                                    <label for="radio24">6개월</label>
+                                </span>
+                            </span>
+                        </dd>
+                    </dl>
+
+                </li>
+            </ul>
+        </div>
+        <div class="btn_bottom_wrap right">
+            <button class="btn_search">검색</button>
+        </div>
+        <!-- //검색 -->
+
+        <div class="btn_top_wrap right">
+            <a href="" class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+            <a href="" class="btn_top btn_ico print"><span>프린트</span></a>
+            <a href="javascript:alert_open('OOO의 학부모 휴대폰으로 SMS전송이 완료되었습니다.');" class="btn_top btn_ico sms"><span>SMS전송</span></a>
+            <a href="javascript:alert_open('OOO의 학부모 알림장 전송이 완료되었습니다.');" class="btn_top btn_ico palram"><span>학부모알림장</span></a>
+        </div>
+
+        <!--테이블-->
+        <!-- 단원마무리 평가 -->
+        <a href="javascript:void(0);" onclick="javascript:openPop('Tclasslearning/lessonComplPop.html','1020','670');" class="btn_table btn_blue">생성</a>
+
+        <!-- 중간 기말성취도 평가-->
+        <a href="javascript:void(0);" onclick="javascript:openPop('Tclasslearning/examEvalPop.html','1020','670');" class="btn_table">확인</a>
+
+        <!-- 기초학력 진단평가 -->
+        <a href="javascript:void(0);" onclick="javascript:openPop('Tclasslearning/fundamentalEvalPop.html','1020','670');" class="btn_table btn_blue">생성</a>
+
+        <!-- 전국학력 평가 -->
+        <a href="javascript:void(0);" onclick="javascript:openPop('Tclasslearning/reportMngPop.html','1020','670');" class="btn_table btn_blue">생성</a>
+
+        <!-- 진단평가 -->
+        <a href="javascript:void(0);" onclick="javascript:openPop('Tclasslearning/testDiagPop.html','1020','670');" class="btn_table btn_blue">생성</a>
+
+        <!-- 주간 리포트 -->
+        <a href="" class="btn_table btn_blue">생성</a>
+
+        <!-- 월간  리포트 -->
+        <a href="" class="btn_table">확인</a>
+
+
+
+        <div id="grid"></div>
+        <!--//테이블-->
+
+    </div>
+</div>
+<!-- std_wrap -->

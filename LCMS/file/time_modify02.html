@@ -1,0 +1,50 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("차시수정");
+
+        //달력
+        calendar();
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+<h4 class="tit_h4">단원 수정</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>프로그램 ID</th>
+                <td><span class="font_gmarket13">SHK_ME41</span></td>
+                <th>서비스여부</th>
+                <td><span class="font_gmarket13">Y</span></td>
+            </tr>
+            <tr>
+                <th>프로그램 명</th>
+                <td colspan="3">수초42_여름방학</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ul class="tab_1depth">
+    <li><a href="index.html?page=file/time_modify01">기본정보</a></li>
+    <li class="on"><a href="index.html?page=file/time_modify02">단원정보</a></li>
+    <li><a href="index.html?page=file/time_modify03">차시정보</a></li>    
+</ul>
+<div id="grid"></div><a href="javascript:openPop('../lcms/file/pop_unit_modify.html','940','600');">단원수정</a>
+<div class="btn_bottom_wrap right mt_40">
+    <p>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>

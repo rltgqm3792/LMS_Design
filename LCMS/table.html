@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="keywords" content="스마트해법"/>
+        <meta name="description" content="스마트해법"/>
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법"/>
+        <meta property="og:url" content="https://www.hbedu.co.kr/"/>
+        <meta property="og:image" content=""/>
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+       
+        <!-- 스크립트 -->
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/LCMS/js/jquery-2.0.2.min.js"></script>
+        <script type="text/javascript" src="http://image.test.hbedu.co.kr/LMS/LCMS/js/common.js"></script>
+        
+        <!-- font css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/font/font.css" rel="stylesheet" type="text/css" />
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/LMS/LCMS/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="http://image.test.hbedu.co.kr/LMS/LCMS/css/lms_w_lcms.css" rel="stylesheet" type="text/css" />
+        
+        <!--plugin -->
+        <link href="http://image.test.hbedu.co.kr/LMS/LCMS/plugin/datepicker.css"  rel="stylesheet" type="text/css"/>
+        <script src="http://image.test.hbedu.co.kr/LMS/LCMS/plugin/datepicker.js" type="text/javascript"></script><!-- calendar -->
+        <script>
+            $(function () {
+                // 달력
+                calendar();
+            });
+        </script>
+    </head>
+    <body>
+        <article id="wrap" class="contain">
+            <!-- 헤더 -->
+            <header id="header">
+                <!-- 로그아웃 -->
+                <div class="top">
+                    스마트해법수학님 반갑습니다.<a href="login.html" class="btn_logout">로그아웃</a >
+                </div>
+                <!-- //로그아웃 -->
+
+                <!-- 네비게이션 -->
+                <div class="gnb">
+                    <h1>
+                        <a href="index.html">스마트해법</a>
+                    </h1>
+                    <nav>
+                        <!-- 원뎁스 -->
+                        <ul>
+                            <li class="on">
+                                <a href="#">스마트해법수학</a>
+                            </li>
+                            <li>
+                                <a href="#">스마트해법영어</a>
+                            </li>
+                            <li>
+                                <a href="#">스마트T클래스</a>
+                            </li>
+                        </ul>
+                        <!-- //원뎁스 -->
+                        <!-- 투뎁스 -->
+                        <menu class="gnb_2depth">
+                            <div class="gnb_2depth_wrap">
+                                <ul>
+                                    <li>
+                                        <a hef="#">코스 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">앱북 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">부가콘텐츠 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">분석표 관리</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a hef="#">코스 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">프로그램 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">부가콘텐츠 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">진단평가 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">미션 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">숙제 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">분석표 관리</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a hef="#">코스 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">과목 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">부가콘텐츠 관리</a>
+                                    </li>
+                                    <li>
+                                        <a hef="#">분석표관리</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </menu>
+                        <!-- //투뎁스 -->
+                    </nav>
+                </div>
+                <!-- //네비게이션 -->
+            </header>
+
+            <!-- [D] 서브콘텐츠 load 방식-->
+            <section class="wrap_sub">
+               <!--tit_main-->
+               <h2 class="tit_main">지사/관리자 디자인 가이드</h2>
+               <!--//tit_main-->
+               
+               <!-- 1Depth Tab -->
+               <ul class="tab_1depth">
+                   <!-- [D] 활성화 : select-->
+                   <li><a href="index.html">타이틀 / 텝 / 팝업 / 레이어팝업</a></li>
+                   <li><a href="search.html">검색</a></li>
+                   <li  class="on"><a href="table.html">테이블</a></li>
+                   <li><a href="table_regis.html">가입테이블</a></li>
+               </ul>
+               <!-- // 1Depth Tab -->
+                
+                 <!-- tit_sub -->
+                 <h3 class="tit_h3">--테이블 디자인--</h3>
+                 <!-- //tit_sub  -->
+                 
+                 <!-- tit_sub -->
+                 <h4 class="tit_h4">--테이블디자인_type-01</h4>
+                 <!-- //tit_sub  -->
+ 
+                 <!--테이블 상단-->
+                 <div class="btn_top_wrap between">
+                     <p>
+                         <select class="line_type num">
+                             <option value="">10</option>
+                             <option value="" selected>20</option>
+                             <option value="">50</option>
+                             <option value="">100</option>
+                         </select>
+                         <span class="list_num">전체 25개</span>
+                         <span class="list_num">
+                             Total :
+                             <strong>1,256</strong>
+                             건
+                         </span>
+                     </p>
+                     <p><a class="btn_top">삭제</a></p>
+                 </div>
+                 <!--//테이블 상단-->
+                 <!-- 테이블 세로라인 없음-->
+                 <div class="table_list board">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col style="width: 5%" />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th>
+                                     <label for="all_chk" class="chk_idt all">
+                                         <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);"/>
+                                         <span>전체</span>
+                                     </label>
+                                 </th>
+                                 <th>FC구분</th>
+                                 <th>수강생번호</th>
+                                 <th>수강생명</th>
+                                 <th>ID</th>
+                                 <th>학년</th>
+                                 <th>비밀번호</th>
+                                 <th>현재학습</th>
+                                 <th>시간표</th>
+                                 <th>클래스</th>
+                                 <th>강사정보</th>
+                                 <th>휴대폰</th>
+                         </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>
+                                     <label for="board01" class="chk_idt">
+                                         <input type="checkbox" name="board" id="board01"/>
+                                         <span></span>
+                                     </label>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><span class="font_gmarket14">M00002652</span></td>
+                                 <td>김해법</td>
+                                 <td><span class="font_gmarket14">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table line">초기화</a></td>
+                                 <td>
+                                     <a href="" class="ico_img file">파일</a>
+                                     <a href="" class="ico_img album">앨범</a>
+                                     <a href="" class="ico_img image">이미지</a>
+                                     <a href="" class="ico_img printer">프린트</a>
+                                     <a href="" class="ico_img download">다운로드</a>
+                                     <a href="" class="ico_img readme">리드미</a>
+                                     <a href="" class="ico_img new">New</a>
+                                 </td>
+                                 <td><a href="" class="btn_table line">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="font_gmarket14">010-5585-5585</span></td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <label for="board01" class="chk_idt">
+                                         <input type="checkbox" name="board" id="board01"/>
+                                         <span></span>
+                                     </label>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><span class="font_gmarket14">M00002652</span></td>
+                                 <td>김해법</td>
+                                 <td><span class="font_gmarket14">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table line">초기화</a></td>
+                                 <td><a href="" class="btn_table line">보기</a></td>
+                                 <td><a href="" class="btn_table line">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="font_gmarket14">010-5585-5585</span></td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+                 <div class="paging">
+                     <a href="" class="btn_paging back"></a>
+                     <a href="" class="btn_paging pre"></a>
+                     <ul>
+                       <li><a href="">1</a></li>
+                       <li><a href="">2</a></li>
+                       <li><a href="">3</a></li>
+                       <li><a href="">4</a></li>
+                       <li><a href="">5</a></li>
+                       <li><a href="">6</a></li>
+                       <li><a href="">7</a></li>
+                       <li><a href="">8</a></li>
+                       <li><a href="">9</a></li>
+                     </ul>
+                     <a href="" class="btn_paging next"></a>
+                     <a href="" class="btn_paging forward"></a>
+                 </div>
+ 
+                 <!-- tit_sub -->
+                 <h4 class="tit_h4">--테이블디자인_type-02</h4>
+                 <!-- //tit_sub  -->
+                 <!-- 기본테이블 -->
+                 <div class="table_list">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col style="width: 5%" />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th>
+                                     <label for="all_chk" class="chk_idt all">
+                                         <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);"/>
+                                         <span>전체</span>
+                                     </label>
+                                 </th>
+                                 <th>FC구분</th>
+                                 <th>수강생번호</th>
+                                 <th>수강생명</th>
+                                 <th>ID</th>
+                                 <th>학년</th>
+                                 <th>비밀번호</th>
+                                 <th>현재학습</th>
+                                 <th>시간표</th>
+                                 <th>클래스</th>
+                                 <th>강사정보</th>
+                                 <th>휴대폰</th>
+                         </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>
+                                     <label for="board01" class="chk_idt">
+                                         <input type="checkbox" name="board" id="board01"/>
+                                         <span></span>
+                                     </label>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><span class="font_gmarket14">M00002652</span></td>
+                                 <td>김해법</td>
+                                 <td><span class="font_gmarket14">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table line">초기화</a></td>
+                                 <td><a href="" class="btn_table line">보기</a></td>
+                                 <td><a href="" class="btn_table line">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="font_gmarket14">010-5585-5585</span></td>
+                             </tr>
+                             <tr>
+                                 <td>
+                                     <label for="board01" class="chk_idt">
+                                         <input type="checkbox" name="board" id="board01"/>
+                                         <span></span>
+                                     </label>
+                                 </td>
+                                 <td>해법수학</td>
+                                 <td><span class="font_gmarket14">M00002652</span></td>
+                                 <td>김해법</td>
+                                 <td><span class="font_gmarket14">HB01</span></td>
+                                 <td>초등3</td>
+                                 <td><a href="" class="btn_table line">초기화</a></td>
+                                 <td><a href="" class="btn_table line">보기</a></td>
+                                 <td><a href="" class="btn_table line">보기</a></td>
+                                 <td>울산1</td>
+                                 <td>이수학</td>
+                                 <td><span class="font_gmarket14">010-5585-5585</span></td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+ 
+ 
+ 
+                 <!-- tit_sub -->
+                 <h4 class="tit_h4 mt_30">--테이블디자인_type-03</h4>
+                 <!-- //tit_sub  -->
+                 
+                 <div class="table_list culumn">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                             <col />
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th rowspan="2" class="btl">구분</th>
+                                 <th colspan="8">1Depth 컬럼</th>
+                             </tr>
+                             <tr>
+                                 <th colspan="4">1Depth 컬럼</th>
+                                 <th colspan="4">2Depth 컬럼</th>
+                             </tr>
+                         </thead>
+                         <tfoot>
+                             <tr>
+                                 <td colspan="7">
+                                     합계
+                                 </td>
+                                 <td colspan="2" class="right">
+                                     <span class="font_gmarket14">182,312,467</span>
+                                 </td>
+                             </tr>
+                         </tfoot>
+                         <tbody>
+                           <tr>
+                             <td>세로칼럼</td>
+                             <td><span class="font_gmarket14">0356499</span></td>
+                             <td>초1 독산교실</td>
+                             <td>초1 독산교실</td>
+                             <td><span class="font_gmarket14">100</span></td>
+                             <td><span class="font_gmarket14">100,000</span></td>
+                             <td><span class="font_gmarket14">2020-06-21</span></td>
+                             <td>이민호</td>
+                             <td><span class="font_gmarket14">100%</span></td>
+                           </tr>
+                           <tr>
+                             <td>세로칼럼</td>
+                             <td><span class="font_gmarket14">0356499</span></td>
+                             <td>초1 독산교실</td>
+                             <td>초1 독산교실</td>
+                             <td><span class="font_gmarket14">100</span></td>
+                             <td><span class="font_gmarket14">100,000</span></td>
+                             <td><span class="font_gmarket14">2020-06-21</span></td>
+                             <td>이민호</td>
+                             <td><span class="font_gmarket14">100%</span></td>
+                           </tr>
+                           
+                         </tbody>
+                     </table>
+                 </div>
+ 
+                  <!-- tit_sub -->
+                  <h4 class="tit_h4 mt_30">--테이블디자인_type-04</h4>
+                  <!-- //tit_sub  -->
+                  
+                  <div class="table_list culumn">
+                      <table>
+                          <caption></caption>
+                          <colgroup>
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                  <th rowspan="3" class="btl">구분</th>
+                                  <th colspan="8">1Depth 컬럼</th>
+                                  <th rowspan="3" class="btl total">total</th>
+                              </tr>
+                              <tr>
+                                  <th colspan="4">1Depth 컬럼</th>
+                                  <th colspan="4">2Depth 컬럼</th>
+                              </tr>
+                              <tr>
+                                 <th colspan="4">1Depth 컬럼</th>
+                                 <th colspan="4">2Depth 컬럼</th>
+                                 
+                             </tr>
+                          </thead>
+                          
+                          <tbody>
+                            <tr>
+                              <td>세로칼럼</td>
+                              <td><span class="font_gmarket14">0356499</span></td>
+                              <td>초1 독산교실</td>
+                              <td>초1 독산교실</td>
+                              <td><span class="font_gmarket14">100</span></td>
+                              <td><span class="font_gmarket14">100,000</span></td>
+                              <td><span class="font_gmarket14">2020-06-21</span></td>
+                              <td>이민호</td>
+                              <td><span class="font_gmarket14">100%</span></td>
+                              <td class="total right"><span class="font_gmarket14">100</span></td>
+                            </tr>
+                            <tr>
+                              <td>세로칼럼</td>
+                              <td><span class="font_gmarket14">0356499</span></td>
+                              <td>초1 독산교실</td>
+                              <td>초1 독산교실</td>
+                              <td><span class="font_gmarket14">100</span></td>
+                              <td><span class="font_gmarket14">100,000</span></td>
+                              <td><span class="font_gmarket14">2020-06-21</span></td>
+                              <td>이민호</td>
+                              <td><span class="font_gmarket14">100%</span></td>
+                              <td class="total right"><span class="font_gmarket14">100</span></td>
+                            </tr>
+                            
+                          </tbody>
+                      </table>
+                 </div>
+ 
+                 <!-- tit_sub -->
+                 <h4 class="tit_h4 mt_30">--테이블디자인_type-05</h4>
+                 <!-- //tit_sub  -->
+                 <!-- 기본테이블 -->
+                 <div class="table_list">
+                     <table>
+                         <caption></caption>
+                         <colgroup>
+                             <col style="width: 5%" />
+                             <col style="width: 15%"/>
+                             <col style="width: 15%"/>
+                             <col />
+                             <col style="width: 10%"/>
+                          
+                         </colgroup>
+                         <thead>
+                             <tr>
+                                 <th>
+                                     <label for="all_chk" class="chk_idt all">
+                                         <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);"/>
+                                         <span>전체</span>
+                                     </label>
+                                 </th>
+                                 <th>FC구분</th>
+                                 <th>수강생번호</th>
+                                 <th>수강생명</th>
+                                 <th>ID</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>
+                                     <label for="board01" class="chk_idt">
+                                         <input type="checkbox" name="board" id="board01"/>
+                                         <span></span>
+                                     </label>
+                                 </td>
+                                 <td>
+                                     <input type="text">
+                                 </td>
+                                 <td>
+                                     <select>
+                                         <option>단원선택을 해볼까요??</option>
+                                     </select>
+                                 </td>
+                                 <td>
+                                     <a href="" class="btn_table">스마트해법</a>
+                                     <a href="" class="btn_table gray">스마트해법</a>
+                                     <a href="" class="btn_table line">초기화</a>
+                                     <a href="" class="btn_table red">입실</a>
+                                     <a href="" class="btn_table purple">퇴실</a>
+                                     <a href="" class="btn_table bluish">문제</a>
+                                     <a href="" class="btn_table green">풀이</a>
+                                     <a href="" class="btn_table orange">해답</a>
+                                     <a href="" class="btn_table blue">등록</a>
+                                     <a href="" class="btn_table ico"><span class="zoom">돋보기</span></a>
+                                     <a href="" class="btn_table ico_score"><span class="circle">맞음</span></a>
+                                     <a href="" class="btn_table ico_score"><span class="wrong">틀림</span></a>
+                                     <a href="" class="btn_table ico_score"><span class="triangle">부분</span></a>
+                                 </td>
+                                 <td><span class="font_gmarket14">HB01</span></td>                         
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+
+                 <h4 class="tit_h4 mt_30">데이터 없음_테이블</h4>
+                 <div class="table_list">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width: 5%" />
+                            <col style="width: 15%"/>
+                            <col style="width: 15%"/>
+                            <col />
+                            <col style="width: 10%"/>
+                         
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label for="all_chk" class="chk_idt all">
+                                        <input type="checkbox" name="board" id="all_chk" onchange="all_check(this);"/>
+                                        <span>전체</span>
+                                    </label>
+                                </th>
+                                <th>FC구분</th>
+                                <th>수강생번호</th>
+                                <th>수강생명</th>
+                                <th>ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="no_data">
+                                        해당 검색 결과가 없습니다.
+                                    </div>
+                                </td>                  
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               
+
+                 <h4 class="tit_h4 mt_30">데이터 없음_테이블이외</h4>
+                 <div class="no_data">
+                     해당 검색 결과가 없습니다.
+                 </div>
+
+             </div>
+         </section>
+     </article>
+ </body>
+ </html>

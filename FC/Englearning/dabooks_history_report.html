@@ -1,0 +1,287 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('다북스');
+        $('.group_title h2').text('도서이력관리');
+         // 달력
+         calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<h3 class="tit_h4">수강생 기본 정보</h3>
+<div class="table_list">
+	<table>
+		<caption></caption>
+		<colgroup>
+			<col style="width:15%" />
+			<col style="width:35%" />
+			<col style="width:15%" />
+			<col style="width:35%" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<th>수강생명</th>
+				<td class="left">
+					<span class="name">박찬호</span>
+					<span class="gm_font">M098765432</span>
+				</td>
+				<th>수강생 ID</th>
+				<td class="left">hjd1090</td>
+			</tr>
+			<tr>
+				<th>입회일</th>
+				<td class="left">2021-03-17</td>
+				<th>레벨</th>
+				<td class="left">Level 1</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--검색-->
+<h3 class="tit_h4">기간 조회</h3>
+<div class="search_wrap type02">
+	<div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+		<input id="startpicker-input" type="text" aria-label="Date">
+		<label for="startpicker-input" class="tui-ico-date"></label>
+		<div id="startpicker-container" style="margin-left: -1px;"></div>
+	</div>
+	<span class="line">~</span>
+	<div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+		<input id="endpicker-input" type="text" aria-label="Date">
+		<label for="endpicker-input" class="tui-ico-date"></label>
+		<div id="endpicker-container" style="margin-left: -1px;"></div>
+	</div>
+	<span class="frm_wrap frm_btn">
+		<span class="frm">
+			<input type="radio" id="month_today" name="month" checked="checked"/>
+			<label for="month_today">당일</label>
+		</span>
+		<span class="frm">
+			<input type="radio" id="month01" name="month"/>
+			<label for="month01">1개월</label>
+		</span>
+		<span class="frm">
+			<input type="radio" id="month03" name="month"/>
+			<label for="month03">3개월</label>
+		</span>
+		<span class="frm">
+			<input type="radio" id="month06" name="month"/>
+			<label for="month06">6개월</label>
+		</span>
+	</span>
+	<span class="mg_left_5"><button class="btn_search small">조회</button></span>
+</div>
+<!--//검색-->
+
+<div class="btn_top_wrap">
+    <span>
+		<select>
+            <option value="">10</option>
+            <option value="" selected="selected">20</option>
+            <option value="">50</option>
+            <option value="">100</option>
+        </select>
+        <span class="list_num">전체 <strong class="col_blue">1,256</strong></span>
+        <span class="tit_sub">※ 도서명을 클릭하시면 학습 진행상황을 확인할 수 있습니다.</span>
+    </span>
+</div>
+<!--테이블-->
+<div class="table_list">
+    <table>
+        <thead>
+            <tr>
+                <th>도서번호</th>
+                <th>도서명</th>
+                <th>레벨</th>
+                <th>시작일</th>
+                <th>종료일</th>
+                <th>최근 학습일</th>
+                <th>학습결과</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <!-- 2021.7.7 아래 link, popup으로 변경 :chan -->
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+					<span class="dabooks_btn">
+                        <!-- <a href="http://sale.hbenglish.co.kr/Views/Learning/Dabooks/popWord.aspx?hakbunID=H9999190009%20&type=01&bID=0018&studyMonth=202103&bookTitle=Visiting%20Grandma%20and%20Grandpa"  target="_blank" class="ico_word_list">Word List</a> -->
+                        <!-- <a href="http://sale.hbenglish.co.kr/Views/Learning/Dabooks/popWord.aspx?hakbunID=H9999190009%20&type=00&bID=0018&studyMonth=202103&bookTitle=Visiting%20Grandma%20and%20Grandpa" target="_blank" class="ico_word_sheet">Word Sheet</a> -->
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>007</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>009</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+            <tr>
+                <td>010</td>
+                <td><a href="javascript:openPop('Englearning/pop_study_dabooks.html','674','500');">It's a Party!</a></td>
+                <td>LEVEL 1</td>
+                <td>2020.10.10</td>
+                <td>2020.10.10</td>
+                <td>2021.03.17</td>
+                <td>
+                    <span class="dabooks_btn">
+                        <!-- 2021.6.29 pop up window로 변경 : chan -->
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_list2.html','674','782');" class="ico_word_list" title="Word List" aria-label="Word List"></button>
+                        <button type="button" onclick="openPop('Englearning/pop_dabooks_word_sheet2.html','674','782');" class="ico_word_sheet" title="Word Sheet" aria-label="Word Sheet"></button>
+					</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--//테이블-->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <li><a href="">6</a></li>
+      <li><a href="">7</a></li>
+      <li><a href="">8</a></li>
+      <li><a href="">9</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+
+<div class="btn_bottom_wrap right">
+    <a href="http://design.hbedu.co.kr/LMS/fc/index.html?page=englearning/dabooks_history" class="btn_basic btn_line">목록</a>
+</div>

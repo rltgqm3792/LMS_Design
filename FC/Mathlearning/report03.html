@@ -1,0 +1,141 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+        $('.nav_two .two_tit').text('분석표');
+        $('.group_title h2').text('단원평가 분석표');
+
+        calendar(); //달력
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : on-->
+    <li><a href="index.html?page=mathlearning/report01">입학진단평가 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report02">일일리포트</a></li>
+    <li class="on"><a href="index.html?page=mathlearning/report03">단원평가 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report04">기간별 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report05">신호등유형학습 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report06">영역별 분석표</a></li>
+    <li><a href="index.html?page=mathlearning/report07">HME학습 컨설팅평가 분석표</a></li>
+</ul>
+
+<!-- 조회 -->
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>학년</dt>
+                <dd>
+                    <span class="frm_wrap frm_btn">
+                        <span class="frm all">
+                            <input type="checkbox" id="std_all" name="std" onchange="all_check(this);" />
+                            <label for="std_all">전체</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std1" name="std" checked />
+                            <label for="std1">초등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std2" name="std" />
+                            <label for="std2">중등</label>
+                        </span>
+                        <span class="frm">
+                            <input type="checkbox" id="std3" name="std" />
+                            <label for="std3">고등</label>
+                        </span>
+                    </span>
+                    <select>
+                        <option>전체학년</option>
+                        <option>초1</option>
+                        <option>초2</option>
+                        <option>초3</option>
+                        <option>초4</option>
+                        <option>초5</option>
+                        <option>초6</option>
+                        <option>중1</option>
+                        <option>중2</option>
+                        <option>중3</option>
+                        <option>고1</option>
+                        <option>고2</option>
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학습일</dt>
+                <dd>
+                    <span class="frm_wrap frm_date">
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date"/>
+                            <label for="startpicker-input" class="tui-ico-date"></label>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="line">~</span>
+                        <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date"/>
+                            <label for="endpicker-input" class="tui-ico-date"></label>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </div>
+                        <span class="frm_wrap frm_btn">
+                            <span class="frm">
+                                <input type="radio" id="today" name="radio2" checked="checked"/>
+                                <label for="today">당일</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="radio21" name="radio2" />
+                                <label for="radio21">1개월</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="radio22" name="radio2" />
+                                <label for="radio22">3개월</label>
+                            </span>
+                            <span class="frm">
+                                <input type="radio" id="radio23" name="radio2" />
+                                <label for="radio23">6개월</label>
+                            </span>
+                        </span>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생</dt>
+                <dd>
+                    <input type="text">
+                    <a href="" class="btn_table btn_blue">검색</a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--//조회-->
+<div class="btn_top_wrap between group">
+    <span>
+        <select>
+            <option value="">수강생명순</option>
+        </select>
+    </span>
+    <span class="mix_link_btn">
+        <a href="javascript:void(0);" class="link">일괄전송</a>
+        <a href="javascript:void(0);" class="btn_top btn_ico app"><span>학부모앱</span></a>
+        <a href="javascript:void(0);" class="btn_top btn_ico talk"><span>알림톡</span></a>
+        <a href="javascript:void(0);" class="btn_top btn_ico sms"><span>SMS</span></a>
+        <a href="javascript:void(0);" class="btn_top btn_gray">분석표 일괄출력</a>
+    </span>
+</div>
+<div id="grid"></div>
+
+<!-- 그리드 테이블 내 버튼 -->
+<a href="javascript:openPop('mathlearning/pop_report03.html','1020','795');" class="btn_table btn_preview">보기</a>
+<a href="javascript:void(0);" class="btn_table btn_blue">전송</a>
+<a href="javascript:void(0);" class="btn_table btn_blue">재전송</a>
+<!-- // 그리드 테이블 내 버튼 -->

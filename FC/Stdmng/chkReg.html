@@ -1,0 +1,351 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('nav_two .two_tit').text('수강생 등록');
+        $('.group_title h2').text('수강생 등록여부 확인');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- [D]컨텐츠 정보가 들어갑니다. -->
+<div class="box_guide">
+    <div>
+        <p class="tit">신규 또는 예비 수강생 등록은 검색 후 이용 가능합니다.</p>
+        <ul>
+            <li>[수강생명]과 [학부모 휴대폰 번호]는 반드시 입력해야 합니다.</li>
+        </ul>
+    </div>
+    <div>
+        <a href="javascript:void(0);" class="btn_top">입회원서 다운로드</a>
+        <a href="javascript:openPop('Stdmng/chkRegPop.html','800','670');" class="btn_top">입회 시 SMS 문자 발송 내역</a>
+    </div>
+</div>
+
+<!-- 조회조건 -->
+<h4 class="tit_h4">조회조건 설정</h4>
+
+<div class="search_wrap">
+    <ul class="info_group">
+        <li>
+            <dl>
+                <dt>등록FC<span class="required"></span></dt>
+                <dd>                   
+                    <select>
+                        <option>전체</option>
+                        <option>수학</option>
+                        <option>영어</option>
+                        <option>전과목</option>
+                    </select>
+                </dd>
+                </span>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>수강생명<span class="required"></span></dt>
+                <dd>
+                    <span class="frm_wrap frm_search">
+                    <input type="text" placeholder="수강생명 입력"/>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>학부모 휴대폰 번호<span class="required"></span></dt>
+                <dd>
+                    <span class="frm_wrap frm_search">
+                    <input type="text" maxlength="12" placeholder="- 없이 숫자만 입력"/>
+                    </span>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<div class="btn_bottom_wrap right">
+    <button onclick="alert_confirm('등록된 정보가 없습니다.','신규수강생으로 등록하시겠습니까?','index.html?page=stdmng/regReg01');" class="btn_search">조회</button>
+</div>
+<!-- //조회조건 -->
+
+
+<h4 class="tit_h4">수강검색 결과</h4>
+
+<div class="table_scroll" style="max-height:300px;">
+    <div class="table_list" style="min-width:1300px;">
+        <table>
+            <colgroup>
+                <col style="width: 3%"/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col/>
+                <col style="width: 6%"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>FC구분</th>
+                    <th>수강생번호</th>
+                    <th>수강생명</th>
+                    <th>간편 ID</th>
+                    <th>입회일</th>
+                    <th>입회동의 여부</th>
+                    <th>휴회일</th>
+                    <th>재원기간</th>
+                    <th>연락처(학부모)</th>
+                    <th>가맹점</th>
+                    <th>원장명</th>
+                    <th>상태</th>
+                    <th>등록하기</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="gm_font">1</span></td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">ABCDE</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        1년 2개월
+                    </td>
+                    <td>
+                        <span class="gm_font">010-5585-5585</span><br/>
+                        <span class="gm_font">(010-5585-5585)</span>
+                    </td>
+                    <td>구로천재학원<br/>
+                        <span class="gm_font">(HK0234)</span>
+                    </td>
+                    <td>김원*</td>
+                    <td>휴회</td>
+                    <td>
+                        <a href="index.html?page=stdmng/regReg01" class="btn_table btn_blue">등록</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="gm_font">1</span></td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">ABCDE</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">-</span>
+                    </td>
+                    <td>
+                        1년 2개월
+                    </td>
+                    <td>
+                        <span class="gm_font">010-5585-5585</span><br/>
+                        <span class="gm_font">(010-5585-5585)</span>
+                    </td>
+                    <td>구로천재학원<br/>
+                        <span class="gm_font">(HK0234)</span>
+                    </td>
+                    <td>김원*</td>
+                    <td>휴회</td>
+                    <td>                        
+                        <a href="" class="btn_table">복회</a> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="gm_font">1</span></td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">ABCDE</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">-</span>
+                    </td>
+                    <td>
+                        1년 2개월
+                    </td>
+                    <td>
+                        <span class="gm_font">010-5585-5585</span><br/>
+                        <span class="gm_font">(010-5585-5585)</span>
+                    </td>
+                    <td>구로천재학원<br/>
+                        <span class="gm_font">(HK0234)</span>
+                    </td>
+                    <td>김원*</td>
+                    <td>휴회</td>
+                    <td>
+                        <span class="col_red">불가능</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="gm_font">1</span></td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">ABCDE</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">-</span>
+                    </td>
+                    <td>
+                        1년 2개월
+                    </td>
+                    <td>
+                        <span class="gm_font">010-5585-5585</span><br/>
+                        <span class="gm_font">(010-5585-5585)</span>
+                    </td>
+                    <td>구로천재학원<br/>
+                        <span class="gm_font">(HK0234)</span>
+                    </td>
+                    <td>김원*</td>
+                    <td>휴회</td>
+                    <td>
+                        <a href="index.html?page=stdmng/regReg01" class="btn_table btn_blue">등록</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="gm_font">1</span></td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">ABCDE</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">-</span>
+                    </td>
+                    <td>
+                        1년 2개월
+                    </td>
+                    <td>
+                        <span class="gm_font">010-5585-5585</span><br/>
+                        <span class="gm_font">(010-5585-5585)</span>
+                    </td>
+                    <td>구로천재학원<br/>
+                        <span class="gm_font">(HK0234)</span>
+                    </td>
+                    <td>김원*</td>
+                    <td>휴회</td>
+                    <td>
+                        <a href="index.html?page=stdmng/regReg01" class="btn_table btn_blue">등록</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="gm_font">1</span></td>
+                    <td>수학</td>
+                    <td>
+                        <span class="gm_font">M00002652</span>
+                    </td>
+                    <td>
+                        <a href="index.html?page=Stdmng/info">김해법</a>
+                    </td>
+                    <td>
+                        <span class="gm_font">ABCDE</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">2021.03.15</span>
+                    </td>
+                    <td>
+                        <span class="gm_font">-</span>
+                    </td>
+                    <td>
+                        1년 2개월
+                    </td>
+                    <td>
+                        <span class="gm_font">010-5585-5585</span><br/>
+                        <span class="gm_font">(010-5585-5585)</span>
+                    </td>
+                    <td>구로천재학원<br/>
+                        <span class="gm_font">(HK0234)</span>
+                    </td>
+                    <td>김원*</td>
+                    <td>휴회</td>
+                    <td>
+                        <a href="index.html?page=stdmng/regReg01" class="btn_table btn_blue">등록</a>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="15">
+                        <div class="no_data">
+                            해당 검색 결과가 없습니다.
+                        </div>
+                    </td>                  
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- //[D]컨텐츠 정보가 들어갑니다. -->

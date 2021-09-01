@@ -1,0 +1,1102 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('수강생별 학습현황');
+        $('.group_title h2').text('수강생별 학습현황');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- std_wrap -->
+<div class="std_wrap">
+    <!--학생리스트-->
+    <div class="std_group">
+        <!--검색-->
+        <div class="search_group">
+            <p class="select_group">
+                <select>
+                    <option>클래스전체</option>
+                </select>
+            </p>
+            <p class="select_group between">
+                <select>
+                    <option>Group</option>
+					<option>Starter</option>
+                </select>
+                <select>
+                    <option>Sub</option>
+                </select>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>Level</option>
+					<option>0</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+                </select>
+            </p>
+            <p class="select_group">
+                <select>
+                    <option>학년</option>
+                </select>
+            </p>
+            <p class="input_group">
+                <input type="text" class="txt_search" required="required"  placeholder="수강생이름을 조회하세요"><a href="" class="btn_s search">조회</a>
+            </p>
+            <p class="list_align right">
+                <a href="">학년별</a>
+                <a href="">이름순</a>
+            </p>
+        </div>
+        <!--//검색-->
+        <!--리스트-->
+        <ul class="std_list">
+            <li>
+                <a href="" class="on">
+                    <!-- [D] 기본은 초등학교, 중등 class="mid" 고등 class="high" 추가-->
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade">초1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                    <span class="label">예비</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade mid">중1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="std_grade high">고1</span>
+                    <span class="name">오승환</span>
+                    <span class="std_num">M098765432</span>
+                </a>
+            </li>
+        </ul>
+        <!--//리스트-->
+    </div>
+    <!--//학생리스트-->
+    <!--상세보기-->
+    <div class="view_group">
+        <!--수강생-->
+        <div class="search_wrap">
+            <div class="top_area">
+                <div class="student">
+                    <div class="info">
+						<!--//[D]기본 std_grade 뒤 중등 mid, 고등 high 추가-->
+                        <span class="name">박찬호</span>
+                        <span class="gm_font">M098765432</span>
+                        <span class="std_grade">초3</span>
+                        <span class="std_level">Lv.1</span>
+                    </div>
+                    <div class="tab_area">
+                        <p class="tit">수강중인 학습</p>
+                        <ul>
+                            <li>수학</li>
+                            <li>영어</li>
+                            <li>전과목</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//수강생-->
+		<!-- 2depth영역 -->
+		<ul class="tab_2depth">
+			<li class="on"><a href="index.html?page=englearning/std_LearningStatus01">학습 관리현황</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus02">출석</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus03">완료학습</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus04">녹음음원</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus05">음성인식</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus06">녹화영상</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus07">미션</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus08">보상</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus09">메시지</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus10">숙제</a></li>
+			<li><a href="index.html?page=englearning/std_LearningStatus11">질문</a></li>
+		</ul>
+		<!-- //2depth영역 -->
+        <!-- 레벨정보 -->
+        <div class="level_info">
+            <div class="box">
+                <h3 class="tit_h4">학습레벨</h3>
+                <div class="inner">
+                    <ul class="month">
+                        <li>연속 수강개월 수 <span><em class="num">241</em><em class="txt">개월</em></span></li>
+                        <li>상승레벨 수 <span><em class="lv">Lv.<em class="num">68</em><em class="ico_level up">상승</em><!-- <em class="ico_level down">하락</em> --></em></span></li>
+                    </ul>
+                    <dl class="info">
+                        <dt>학습시작일</dt>
+                        <dd>2018년 11월 09일</dd>
+                        <dt>배정레벨</dt>
+                        <dd>LB1_12</dd>
+                        <dt>현재레벨</dt>
+                        <dd>LB1_40</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="box">
+                <h3 class="tit_h4">레벨 진도율</h3>
+                <div class="inner">
+                    <div class="now_level"><strong>LB1_62</strong><span class="txt">현재 레벨</span></div>
+                    <dl class="rate">
+                        <dt>진도율</dt>
+                        <dd>
+                            <div class="bar_graph">
+                                <li class="graph"><span class="bar" style="width:59%;"></span></li>
+                                <em class="txt">59.0%</em>
+                            </div>
+                        </dd>
+                    </dl>
+                    <ul class="date">
+                        <li><span>학습 시작일</span> 2018년 1월 9일</li>
+                        <li><span>레벨테스트 응시 예정일</span> 2020년 2월 9일</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //레벨정보 -->
+		<!--요약정보-->
+        <div class="group btn_top_wrap between">
+            <h3 class="tit_h4">요약정보</h3>
+        </div>
+        <div class="table_list">
+			<table>
+				<colgroup>
+					<col />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>주 평균<br>학습일 수</th>
+						<th>출석률</th>
+						<th>일 평균 학습/<br>총 학습시간</th>
+						<th>스텝 별<br>평균 학습시간</th>
+						<th>평균 Daily test<br>점수</th>
+						<th>평균 Level test<br>점수</th>
+						<th>레벨별 숙제<br>평균 진행율</th>
+						<th>레벨 별 미션<br>평균 진행율</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>주5일</td>
+						<td>57%</td>
+						<td>57분/2000분</td>
+						<td>8분</td>
+						<td>65점</td>
+						<td>70점</td>
+						<td class="gm_font">54%</td>
+						<td class="gm_font">40%</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--//요약정보-->
+		<!--그래프-->
+		<div class="graph_group">
+			<li>
+				<div class="btn_top_wrap between">
+					<h4 class="tit_h4">레벨 별 총 학습 시간</h4>
+				</div>
+				<!--요일별 학습 평균 시간-->
+				<div class="graph_box">
+					<div class="btn_top_wrap right">
+						<span class="lb1_sort">
+							<span class="item">학생</span>
+							<span class="item">전국평균</span>
+						</span>
+					</div>
+					<!--그래프-->
+					<div id="column_chart01" style="height:300px"></div>
+					<script>
+						am4core.ready(function() {
+						// license
+						am4core.addLicense("CH230677325");
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+						var chart = am4core.create('column_chart01', am4charts.XYChart)
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+						chart.colors.step = 2;
+
+						var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+						xAxis.dataFields.category = 'category'
+						xAxis.renderer.cellStartLocation = 0.2;
+						xAxis.renderer.cellEndLocation = .8;
+						xAxis.renderer.minGridDistance = 30;
+						xAxis.renderer.grid.template.location = 0;
+						xAxis.renderer.grid.template.opacity = 0;
+
+						chart.colors.list = [
+							am4core.color("#0093ff"),
+							am4core.color("#8697af"),
+						];
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.min = 0;
+						yAxis.max = 100;
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						function createSeries(value, name,textColor) {
+							var series = chart.series.push(new am4charts.ColumnSeries())
+							series.dataFields.valueY = value
+							series.dataFields.categoryX = 'category'
+							series.name = name
+
+							series.events.on("hidden", arrangeColumns);
+							series.events.on("shown", arrangeColumns);
+
+							var bullet = series.bullets.push(new am4charts.LabelBullet())
+							bullet.interactionsEnabled = false
+							bullet.dy = -20;
+							bullet.label.text = '{valueY}h';
+							bullet.label.fill = textColor;
+							bullet.label.truncate = false;
+							bullet.label.hideOversized = false;
+
+							return series;
+						}
+
+						chart.data = [
+							{
+								category: 'LB_24',
+								first: 66,
+								second: 66
+							},
+							{
+								category: 'LB_20',
+								first: 30,
+								second: 70
+							},
+							{
+								category: 'LB_21',
+								first: 27,
+								second: 45
+							}
+						]
+
+						createSeries('first', 'The First','#0093ff');
+						createSeries('second', 'The Second','#8697af');
+						//createSeries('third', 'The Third');
+
+						function arrangeColumns() {
+							var series = chart.series.getIndex(0);
+
+							var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+							if (series.dataItems.length > 1) {
+								var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+								var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+								var delta = ((x1 - x0) / chart.series.length) * w;
+								if (am4core.isNumber(delta)) {
+									var middle = chart.series.length / 2;
+
+									var newIndex = 0;
+									chart.series.each(function(series) {
+										if (!series.isHidden && !series.isHiding) {
+											series.dummyData = newIndex;
+											newIndex++;
+										}
+										else {
+											series.dummyData = chart.series.indexOf(series);
+										}
+									})
+									var visibleCount = newIndex;
+									var newMiddle = visibleCount / 2;
+
+									var columnTemplate = series.columns.template;
+									columnTemplate.fillOpacity = 1.0;
+									columnTemplate.strokeOpacity = 0;
+
+									chart.series.each(function(series) {
+										var trueIndex = chart.series.indexOf(series);
+										var newIndex = series.dummyData;
+
+										var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+										series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.columns.template.strokeOpacity = 0;
+										series.fillOpacity = 1.0;
+									})                    
+								}
+							}
+						}
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//요일별 학습 평균 시간-->
+			</li>
+			<li>
+				<div class="btn_top_wrap between">
+					<h4 class="tit_h4">일 평균 학습시간</h4>
+				</div>
+				<!--일 평균 학습시간-->
+				<div class="graph_box">
+					<div class="btn_top_wrap right">
+						<span class="lb1_sort">
+							<span class="item">학생</span>
+							<span class="item">전국평균</span>
+						</span>
+					</div>
+					<!--그래프-->
+					<div id="column_chart02" style="height:300px"></div>
+					<script>
+						am4core.ready(function() {
+						// license
+						am4core.addLicense("CH230677325");
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+						var chart = am4core.create('column_chart02', am4charts.XYChart)
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+						chart.colors.step = 2;
+
+						var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+						xAxis.dataFields.category = 'category'
+						xAxis.renderer.cellStartLocation = 0.2;
+						xAxis.renderer.cellEndLocation = .8;
+						xAxis.renderer.grid.template.location = 0;
+						xAxis.renderer.grid.template.opacity = 0;
+						xAxis.renderer.minGridDistance = 30; //화면줄어들었을때도 그리드 유지
+						
+
+						chart.colors.list = [
+							am4core.color("#0093ff"),
+							am4core.color("#8697af"),
+						];
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.min = 0;
+						yAxis.max = 100;
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						function createSeries(value, name, textColor) {
+							var series = chart.series.push(new am4charts.ColumnSeries())
+							series.dataFields.valueY = value
+							series.dataFields.categoryX = 'category'
+							series.name = name
+
+							series.events.on("hidden", arrangeColumns);
+							series.events.on("shown", arrangeColumns);
+
+							var bullet = series.bullets.push(new am4charts.LabelBullet())
+							bullet.interactionsEnabled = false
+							bullet.dy = -20;
+							bullet.label.text = '{valueY}m';
+							bullet.label.fill = textColor;
+							bullet.label.truncate = false;
+							bullet.label.hideOversized = false;
+
+							return series;
+						}
+
+						chart.data = [
+							{
+								category: 'LB_24',
+								first: 66,
+								second: 66
+							},
+							{
+								category: 'LB_20',
+								first: 30,
+								second: 70
+							},
+							{
+								category: 'LB_21',
+								first: 27,
+								second: 45
+							}
+						]
+
+						createSeries('first', 'The First','#0093ff');
+						createSeries('second', 'The Second','#8697af');
+						//createSeries('third', 'The Third');
+
+						function arrangeColumns() {
+							var series = chart.series.getIndex(0);
+
+							var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+							if (series.dataItems.length > 1) {
+								var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+								var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+								var delta = ((x1 - x0) / chart.series.length) * w;
+								if (am4core.isNumber(delta)) {
+									var middle = chart.series.length / 2;
+
+									var newIndex = 0;
+									chart.series.each(function(series) {
+										if (!series.isHidden && !series.isHiding) {
+											series.dummyData = newIndex;
+											newIndex++;
+										}
+										else {
+											series.dummyData = chart.series.indexOf(series);
+										}
+									})
+									var visibleCount = newIndex;
+									var newMiddle = visibleCount / 2;
+
+									var columnTemplate = series.columns.template;
+									columnTemplate.fillOpacity = 1.0;
+									columnTemplate.strokeOpacity = 0;
+
+									chart.series.each(function(series) {
+										var trueIndex = chart.series.indexOf(series);
+										var newIndex = series.dummyData;
+
+										var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+										series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.columns.template.strokeOpacity = 0;
+										series.fillOpacity = 1.0;
+									})                    
+								}
+							}
+						}
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//요일별 학습 평균 시간-->
+			</li>
+			<li>
+				<div class="btn_top_wrap between">
+					<h4 class="tit_h4">레벨 별 Daily Test 성취율</h4>
+				</div>
+				<!--레벨 별 Daily Test 성취율-->
+				<div class="graph_box">
+					<div class="btn_top_wrap right">
+						<span class="lb1_sort">
+							<span class="item">학생</span>
+							<span class="item">전국평균</span>
+						</span>
+					</div>
+					<!--그래프-->
+					<div id="column_chart03" style="height:300px"></div>
+					<script>
+						am4core.ready(function() {
+						// license
+						am4core.addLicense("CH230677325");
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+						var chart = am4core.create('column_chart03', am4charts.XYChart)
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+						chart.colors.step = 2;
+
+						var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+						xAxis.dataFields.category = 'category'
+						xAxis.renderer.cellStartLocation = 0.2;
+						xAxis.renderer.cellEndLocation = .8;
+						xAxis.renderer.grid.template.location = 0;
+						xAxis.renderer.grid.template.opacity = 0;
+						xAxis.renderer.minGridDistance = 30; //화면줄어들었을때도 그리드 유지
+						
+
+						chart.colors.list = [
+							am4core.color("#0093ff"),
+							am4core.color("#8697af"),
+						];
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.min = 0;
+						yAxis.max = 100;
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						function createSeries(value, name,textColor) {
+							var series = chart.series.push(new am4charts.ColumnSeries())
+							series.dataFields.valueY = value
+							series.dataFields.categoryX = 'category'
+							series.name = name
+
+							series.events.on("hidden", arrangeColumns);
+							series.events.on("shown", arrangeColumns);
+
+							var bullet = series.bullets.push(new am4charts.LabelBullet())
+							bullet.interactionsEnabled = false
+							bullet.dy = -20;
+							bullet.label.text = '{valueY}%';
+							bullet.label.fill = textColor;
+							bullet.label.truncate = false;
+							bullet.label.hideOversized = false;
+
+							return series;
+						}
+
+						chart.data = [
+							{
+								category: 'LB_24',
+								first: 66,
+								second: 66
+							},
+							{
+								category: 'LB_20',
+								first: 30,
+								second: 70
+							},
+							{
+								category: 'LB_21',
+								first: 27,
+								second: 45
+							}
+						]
+
+						createSeries('first', 'The First','#0093ff');
+						createSeries('second', 'The Second','#8697af');
+						//createSeries('third', 'The Third');
+
+						function arrangeColumns() {
+							var series = chart.series.getIndex(0);
+
+							var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+							if (series.dataItems.length > 1) {
+								var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+								var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+								var delta = ((x1 - x0) / chart.series.length) * w;
+								if (am4core.isNumber(delta)) {
+									var middle = chart.series.length / 2;
+
+									var newIndex = 0;
+									chart.series.each(function(series) {
+										if (!series.isHidden && !series.isHiding) {
+											series.dummyData = newIndex;
+											newIndex++;
+										}
+										else {
+											series.dummyData = chart.series.indexOf(series);
+										}
+									})
+									var visibleCount = newIndex;
+									var newMiddle = visibleCount / 2;
+
+									var columnTemplate = series.columns.template;
+									columnTemplate.fillOpacity = 1.0;
+									columnTemplate.strokeOpacity = 0;
+
+									chart.series.each(function(series) {
+										var trueIndex = chart.series.indexOf(series);
+										var newIndex = series.dummyData;
+
+										var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+										series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.columns.template.strokeOpacity = 0;
+										series.fillOpacity = 1.0;
+									})                    
+								}
+							}
+						}
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//레벨 별 Daily Test 성취율-->
+			</li>
+			<li>
+				<div class="btn_top_wrap between">
+					<h4 class="tit_h4">레벨 Level Test 성취율</h4>
+				</div>
+				<!--레벨 Level Test 성취율-->
+				<div class="graph_box">
+					<div class="btn_top_wrap right">
+						<span class="lb1_sort">
+							<span class="item">학생</span>
+							<span class="item">전국평균</span>
+						</span>
+					</div>
+					<!--그래프-->
+					<div id="column_chart04" style="height:300px"></div>
+					<script>
+						am4core.ready(function() {
+						// license
+						am4core.addLicense("CH230677325");
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+						var chart = am4core.create('column_chart04', am4charts.XYChart)
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+						chart.colors.step = 2;
+
+						var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+						xAxis.dataFields.category = 'category'
+						xAxis.renderer.cellStartLocation = 0.2;
+						xAxis.renderer.cellEndLocation = .8;
+						xAxis.renderer.grid.template.location = 0;
+						xAxis.renderer.grid.template.opacity = 0;
+						xAxis.renderer.minGridDistance = 30; //화면줄어들었을때도 그리드 유지
+						
+
+						chart.colors.list = [
+							am4core.color("#0093ff"),
+							am4core.color("#8697af"),
+						];
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.min = 0;
+						yAxis.max = 100;
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						function createSeries(value, name, textColor) {
+							var series = chart.series.push(new am4charts.ColumnSeries())
+							series.dataFields.valueY = value
+							series.dataFields.categoryX = 'category'
+							series.name = name
+
+							series.events.on("hidden", arrangeColumns);
+							series.events.on("shown", arrangeColumns);
+
+							var bullet = series.bullets.push(new am4charts.LabelBullet())
+							bullet.interactionsEnabled = false
+							bullet.dy = -20;
+							bullet.label.text = '{valueY}%';
+							bullet.label.fill = textColor;
+							bullet.label.truncate = false;
+							bullet.label.hideOversized = false;
+
+							return series;
+						}
+
+						chart.data = [
+							{
+								category: 'LB_24',
+								first: 66,
+								second: 66
+							},
+							{
+								category: 'LB_20',
+								first: 30,
+								second: 70
+							},
+							{
+								category: 'LB_21',
+								first: 27,
+								second: 45
+							}
+						]
+
+						createSeries('first', 'The First','#0093ff');
+						createSeries('second', 'The Second','#8697af');
+						//createSeries('third', 'The Third');
+
+						function arrangeColumns() {
+							var series = chart.series.getIndex(0);
+
+							var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+							if (series.dataItems.length > 1) {
+								var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+								var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+								var delta = ((x1 - x0) / chart.series.length) * w;
+								if (am4core.isNumber(delta)) {
+									var middle = chart.series.length / 2;
+
+									var newIndex = 0;
+									chart.series.each(function(series) {
+										if (!series.isHidden && !series.isHiding) {
+											series.dummyData = newIndex;
+											newIndex++;
+										}
+										else {
+											series.dummyData = chart.series.indexOf(series);
+										}
+									})
+									var visibleCount = newIndex;
+									var newMiddle = visibleCount / 2;
+
+									var columnTemplate = series.columns.template;
+									columnTemplate.fillOpacity = 1.0;
+									columnTemplate.strokeOpacity = 0;
+
+									chart.series.each(function(series) {
+										var trueIndex = chart.series.indexOf(series);
+										var newIndex = series.dummyData;
+
+										var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+										series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.columns.template.strokeOpacity = 0;
+										series.fillOpacity = 1.0;
+									})                    
+								}
+							}
+						}
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//레벨 Level Test 성취율-->
+			</li>
+			<li>
+				<div class="btn_top_wrap between">
+					<h4 class="tit_h4">레벨 별 숙제 수행율</h4>
+				</div>
+				<!--레벨 별 숙제 수행율-->
+				<div class="graph_box">
+					<div class="btn_top_wrap right">
+						<span class="lb1_sort">
+							<span class="item">학생</span>
+							<span class="item">전국평균</span>
+						</span>
+					</div>
+					<!--그래프-->
+					<div id="column_chart05" style="height:300px"></div>
+					<script>
+						am4core.ready(function() {
+						// license
+						am4core.addLicense("CH230677325");
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+						var chart = am4core.create('column_chart05', am4charts.XYChart)
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+						chart.colors.step = 2;
+
+						var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+						xAxis.dataFields.category = 'category'
+						xAxis.renderer.cellStartLocation = 0.2;
+						xAxis.renderer.cellEndLocation = .8;
+						xAxis.renderer.grid.template.location = 0;
+						xAxis.renderer.grid.template.opacity = 0;
+						xAxis.renderer.minGridDistance = 30; //화면줄어들었을때도 그리드 유지
+						
+
+						chart.colors.list = [
+							am4core.color("#0093ff"),
+							am4core.color("#8697af"),
+						];
+
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.min = 0;
+						yAxis.max = 100;
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						function createSeries(value, name,textColor) {
+							var series = chart.series.push(new am4charts.ColumnSeries())
+							series.dataFields.valueY = value
+							series.dataFields.categoryX = 'category'
+							series.name = name
+
+							series.events.on("hidden", arrangeColumns);
+							series.events.on("shown", arrangeColumns);
+
+							var bullet = series.bullets.push(new am4charts.LabelBullet())
+							bullet.interactionsEnabled = false
+							bullet.dy = -20;
+							bullet.label.text = '{valueY}%';
+							bullet.label.fill = textColor;
+							bullet.label.truncate = false;
+							bullet.label.hideOversized = false;
+
+							return series;
+						}
+
+						chart.data = [
+							{
+								category: 'LB_24',
+								first: 66,
+								second: 66
+							},
+							{
+								category: 'LB_20',
+								first: 30,
+								second: 70
+							},
+							{
+								category: 'LB_21',
+								first: 27,
+								second: 45
+							}
+						]
+
+						createSeries('first', 'The First','#0093ff');
+						createSeries('second', 'The Second','#8697af');
+						//createSeries('third', 'The Third');
+
+						function arrangeColumns() {
+							var series = chart.series.getIndex(0);
+
+							var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+							if (series.dataItems.length > 1) {
+								var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+								var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+								var delta = ((x1 - x0) / chart.series.length) * w;
+								if (am4core.isNumber(delta)) {
+									var middle = chart.series.length / 2;
+
+									var newIndex = 0;
+									chart.series.each(function(series) {
+										if (!series.isHidden && !series.isHiding) {
+											series.dummyData = newIndex;
+											newIndex++;
+										}
+										else {
+											series.dummyData = chart.series.indexOf(series);
+										}
+									})
+									var visibleCount = newIndex;
+									var newMiddle = visibleCount / 2;
+
+									var columnTemplate = series.columns.template;
+									columnTemplate.fillOpacity = 1.0;
+									columnTemplate.strokeOpacity = 0;
+
+									chart.series.each(function(series) {
+										var trueIndex = chart.series.indexOf(series);
+										var newIndex = series.dummyData;
+
+										var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+										series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.columns.template.strokeOpacity = 0;
+										series.fillOpacity = 1.0;
+									})                    
+								}
+							}
+						}
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//레벨 별 숙제 수행율-->
+			</li>
+			<li>
+				<div class="btn_top_wrap between">
+					<h4 class="tit_h4">레벨 별 미션 수행율</h4>
+				</div>
+				<!--레벨 별 미션 수행율-->
+				<div class="graph_box">
+					<div class="btn_top_wrap right">
+						<span class="lb1_sort">
+							<span class="item">학생</span>
+							<span class="item">전국평균</span>
+						</span>
+					</div>
+					<!--그래프-->
+					<div id="column_chart06" style="height:300px"></div>
+					<script>
+						am4core.ready(function() {
+						// license
+						am4core.addLicense("CH230677325");
+
+						// Themes begin
+						am4core.useTheme(am4themes_animated);
+						// Themes end
+						var chart = am4core.create('column_chart06', am4charts.XYChart)
+						chart.fontSize= 13; 
+						chart.fontFamily = "NotoSans";
+						chart.colors.step = 2;
+
+						var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+						xAxis.dataFields.category = 'category'
+						xAxis.renderer.cellStartLocation = 0.2;
+						xAxis.renderer.cellEndLocation = .8;
+						xAxis.renderer.grid.template.location = 0;
+						xAxis.renderer.grid.template.opacity = 0;
+						xAxis.renderer.minGridDistance = 30; //화면줄어들었을때도 그리드 유지
+						
+
+						chart.colors.list = [
+							am4core.color("#0093ff"),
+							am4core.color("#8697af"),
+						];
+							
+						var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+						yAxis.min = 0;
+						yAxis.max = 100;
+						yAxis.renderer.grid.template.opacity = 0;
+						yAxis.renderer.baseGrid.disabled = true;
+						yAxis.renderer.labels.template.disabled = true;
+
+						function createSeries(value, name, textColor) {
+							var series = chart.series.push(new am4charts.ColumnSeries())
+							series.dataFields.valueY = value
+							series.dataFields.categoryX = 'category'
+							series.name = name
+
+							series.events.on("hidden", arrangeColumns);
+							series.events.on("shown", arrangeColumns);
+
+							var bullet = series.bullets.push(new am4charts.LabelBullet())
+							bullet.interactionsEnabled = false
+							bullet.dy = -20;
+							bullet.label.text = '{valueY}%';
+							bullet.label.fill = textColor;
+							bullet.label.truncate = false;
+							bullet.label.hideOversized = false;
+
+							return series;
+						}
+
+						chart.data = [
+							{
+								category: 'LB_24',
+								first: 66,
+								second: 66
+							},
+							{
+								category: 'LB_20',
+								first: 30,
+								second: 70
+							},
+							{
+								category: 'LB_21',
+								first: 27,
+								second: 45
+							}
+						]
+
+						createSeries('first', 'The First','#0093ff');
+						createSeries('second', 'The Second','#8697af');
+						//createSeries('third', 'The Third');
+
+						function arrangeColumns() {
+							var series = chart.series.getIndex(0);
+
+							var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+							if (series.dataItems.length > 1) {
+								var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+								var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+								var delta = ((x1 - x0) / chart.series.length) * w;
+								if (am4core.isNumber(delta)) {
+									var middle = chart.series.length / 2;
+
+									var newIndex = 0;
+									chart.series.each(function(series) {
+										if (!series.isHidden && !series.isHiding) {
+											series.dummyData = newIndex;
+											newIndex++;
+										}
+										else {
+											series.dummyData = chart.series.indexOf(series);
+										}
+									})
+									var visibleCount = newIndex;
+									var newMiddle = visibleCount / 2;
+
+									var columnTemplate = series.columns.template;
+									columnTemplate.fillOpacity = 1.0;
+									columnTemplate.strokeOpacity = 0;
+
+									chart.series.each(function(series) {
+										var trueIndex = chart.series.indexOf(series);
+										var newIndex = series.dummyData;
+
+										var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+										series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+										series.columns.template.strokeOpacity = 0;
+										series.fillOpacity = 1.0;
+									})                    
+								}
+							}
+						}
+
+						}); // end am4core.ready()
+					</script>
+					<!--//그래프-->
+				</div>
+				<!--//레벨 별 미션 수행율-->
+			</li>
+		</div>
+		<!--//그래프-->
+    </div>
+    <!--//상세보기-->
+</div>
+<!-- std_wrap -->

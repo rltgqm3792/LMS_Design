@@ -1,0 +1,159 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+<div class="transfer">
+    [자동이체] 진행
+</div>
+
+<!-- 가맹점 기본정보 -->
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">가맹점 기본정보</h4>
+    <a class="btn_top btn_ico excel"><span>엑셀다운로드</span></a>
+</div>
+
+    <!-- 판촉물 대금 -->
+    <a href="index.html?page=Order/StdOrderDoneList" class="gm_font">100</a> <br/>
+    <!-- 기타금액 : 기타대금 상세 팝업 -->
+    <a href="javascript:openPop('hakwon/paymentEtcPop.html','800','500');" class="gm_font">200</a>
+
+<div id="grid"></div>
+<!-- //가맹점 기본정보 -->
+
+
+<!-- 보증금 분할입금 청구서 -->
+    <h4 class="tit_h4">보증금 분할입금 청구서</h4>
+        <div class="table_list">
+            <table>
+                <caption></caption>
+                <colgroup>
+                    <col/>
+                    <col/>
+                    <col/>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>누적입금액</th>
+                        <th>당월청구금액</th>
+                        <th>입금계좌</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>               
+                        <td><span class="gm_font">300,000</span></td>    
+                        <td><span class="gm_font">100,000</span></td>    
+                        <td>우리은행 222-111111-33-444 예금주 : ㈜해법에듀</td>    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="txt_guide">보증금은 카드결제가 되지 않습니다.<br/>
+            자동이체 대상 가맹점은 수금에 통합청구됩니다. </p>
+<!-- //보증금 분할입금 청구서 -->
+
+
+<!-- 결제정보 -->
+<h4 class="tit_h4">결제정보</h4>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+            <col style="width: 13%"/>
+            <col style="width: 37%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>입금계좌</th>
+                <td colspan="3">
+                    우리은행 222-111111-33-444 예금주 : ㈜해법에듀
+                </td>
+            </tr>
+            <tr>
+                <th>결제하기</th>
+                <td colspan="3">
+                    <a href="" class="btn_table btn_gray">카드결제</a>
+                    <a href="" class="btn_table btn_gray">실시간 계좌이체</a>
+                    <a href="" class="btn_table btn_gray">가상계좌</a>
+
+                    <p class="row">
+                        <span class="txt_guide col_red">보증금 분할납부의 경우 카드결제가 불가능합니다.(수금통보액만 별도로 카드결제 가능합니다.)</span><br/>
+                        <span class="txt_guide col_red">실시간 계좌이체/가상계좌 결제 시 수금통보액과 보증금 분할 입금액(당월청구금액)이 함께 결제됩니다.</span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>입금마감일</th>
+                <td>
+                    2020년 12월 05일 
+                </td>
+                <th>입금여부</th>
+                <td>
+                    미입금
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //결제정보 -->
+
+<!-- 상세내역 -->
+<div class="btn_top_wrap between">
+    <h4 class="tit_h4">상세내역<span class="tit_sub">추가 교재비 : 교재2(해법학습) 및 교재3에 대한 추가 교재비</span></h4>
+</div>
+
+    <!-- 추가교재비 : 유가주문내역 팝업 -->
+    <a href="javascript:openPop('hakwon/paymentAddPop.html','800','500');" class="gm_font">21,000</a>
+
+    <div id="grid"></div>  
+<!-- //상세내역-->
+
+<div class="btn_bottom_wrap right">
+    <a href="index.html?page=hakwon/paymentInfo" class="btn_basic btn_line">목록</a>
+</div>

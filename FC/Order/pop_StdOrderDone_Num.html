@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="keywords" content="스마트해법"/>
+        <meta name="description" content="스마트해법"/>
+        <meta name="apple-mobile-web-app-title" content="Drmath"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta property="og:title" content="스마트해법"/>
+        <meta property="og:url" content="https://www.hbedu.co.kr/"/>
+        <meta property="og:image" content=""/>
+        <meta property="og:description" content="스마트해법"/>
+        <title>::스마트해법::</title>
+
+        <!-- 스크립트 -->
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/jquery-3.6.0.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/common.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/LMS/FC/js/lms_w_tch.js"></script>
+
+        <!-- font css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/common.css"
+            rel="stylesheet"
+            type="text/css"/>
+        <link
+            href="http://image.test.hbedu.co.kr/LMS/FC/css/lms_w_tch.css"
+            rel="stylesheet"
+            type="text/css"/>
+                  
+            <!--plugin -->
+            <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.css"  rel="stylesheet" type="text/css"/>
+            <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-date-picker.js" type="text/javascript"></script>
+            <link href="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.css"  rel="stylesheet" type="text/css"/>
+            <script src="http://image.test.hbedu.co.kr/LMS/FC/plugin/tui-time-picker.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <article class="Popup">
+            <header class="pop_header">
+                <h1>주문번호 상세보기</h1>
+            </header>
+            <section class="pop_content">
+
+                <!-- 2Depth Tab -->
+                <ul class="tab_2depth">
+                    <!-- [D] 활화 : select-->
+                    <li class="on">
+                        <a href="javascript:void(0);">학생별</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">교재(물품)별</a>
+                    </li>
+                </ul>
+                <!-- // 2Depth Tab -->
+
+                <div class="tab_2depth_cont">
+                    <!-- 학생별 테이블 -->
+                    <div class="tab_cont">
+                        <div class="table_list">
+                            <table>
+                                <caption></caption>
+                                <colgroup>
+                                    <col style="width:13%;"/>
+                                    <col style="width:20%;"/>
+                                    <col style="width:13%;"/>
+                                    <col style="width:20%;"/>
+                                    <col style="width:13%;"/>
+                                    <col style="width:20%;"/>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>주문번호</th>
+                                        <td>
+                                            <span class="gm_font">202102200299</span></td>
+                                        <th>주문날짜</th>
+                                        <td>
+                                            <span class="gm_font">2020.02.20</span></td>
+                                        <th>주문상태</th>
+                                        <td>본사승인</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table_scroll" style="max-height:340px;">
+                            <div class="table_list" style="min-width:1200px;">
+                                <table>
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col style="width:4%"/>
+                                        <col style="width:10%"/>
+                                        <col style="width:10%"/>
+                                        <col style="width:8%"/>
+                                        <col style="width:5%"/>
+                                        <col style="width:%"/>
+                                        <col style="width:4%"/>
+                                        <col style="width:6%"/>
+                                        <col style="width:6%"/>
+                                        <col style="width:6%"/>
+                                        <col style="width:10%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>전표번호</th>
+                                            <th>수강생(코드)</th>
+                                            <th>등록일</th>
+                                            <th>학년</th>
+                                            <th>교재(물품)명</th>
+                                            <th>수량</th>
+                                            <th>교재구분</th>
+                                            <th>정가</th>
+                                            <th>결제금액</th>
+                                            <th>주문완료여부</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6">총 합계</td>
+                                            <td class="center">
+                                                <span class="gm_font">16</span></td>
+                                            <td class="right" colspan="4">
+                                                <span class="gm_font">59,750</span></td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span><br/>(합배)</td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span></td>
+                                            <td>홍길동(H1234567890)</td>
+                                            <td>
+                                                <span class="gm_font">2020.02.20</span></td>
+                                            <td>중2</td>
+                                            <td>
+                                                Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">12</span></td>
+                                            <td>추</td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td colspan="11">
+                                                <div class="no_data">
+                                                    해당 검색 결과가 없습니다.
+                                                </div>
+                                            </td>                  
+                                        </tr> -->    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //학생별 테이블 -->
+
+                    <!-- 교재(물품)별 테이블 -->
+                    <div class="tab_cont">
+                        <div class="table_list">
+                            <table>
+                                <caption></caption>
+                                <colgroup>
+                                    <col style="width:13%;"/>
+                                    <col style="width:16%;"/>
+                                    <col style="width:13%;"/>
+                                    <col style="width:20%;"/>
+                                    <col style="width:13%;"/>
+                                    <col style="width:20%;"/>
+                                    <col style="width:20%;"/>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>주문번호</th>
+                                        <td>
+                                            <span class="gm_font">202102200299</span></td>
+                                        <th>주문날짜</th>
+                                        <td>
+                                            <span class="gm_font">2020.02.20</span></td>
+                                        <th>주문상태</th>
+                                        <td>본사승인</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table_list">
+                            <table class="thead">
+                                <caption></caption>
+                                <colgroup>
+                                    <col style="width:5%"/>
+                                    <col style="width:17%"/>
+                                    <col />
+                                    <col style="width:6%"/>
+                                    <col style="width:10%"/>
+                                    <col style="width:10%"/>
+                                    <col style="width:15%"/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>전표번호</th>
+                                        <th>교재(물품)명</th>
+                                        <th>수량</th>
+                                        <th>정가</th>
+                                        <th>결제금액</th>
+                                        <th>주문완료여부</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <div class="scroll" style="max-height:300px;">
+                                <table class="tbody">
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col style="width:5%"/>
+                                        <col style="width:17%"/>
+                                        <col />
+                                        <col style="width:6%"/>
+                                        <col style="width:10%"/>
+                                        <col style="width:10%"/>
+                                        <col style="width:15%"/>
+                                    </colgroup>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3">총 합계</td>
+                                            <td class="center"><span class="gm_font">16</span></td>
+                                            <td class="right" colspan="3"><span class="gm_font">69,750</span></td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>(합배)
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">-</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">20201020039</span>
+                                            </td>
+                                            <td>Listening Secret(Orange)-2SET</td>
+                                            <td>
+                                                <span class="gm_font">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="gm_font">5,000</span></td>
+                                            <td>
+                                                <span class="gm_font">4,650</span></td>
+                                            <td>
+                                                품절(입고대기)</td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td colspan="7">
+                                                <div class="no_data">
+                                                    해당 검색 결과가 없습니다.
+                                                </div>
+                                            </td>                  
+                                        </tr> -->                            
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 교재(물품)별 테이블 -->
+                </div>
+
+            </section>
+            <section class="pop_btn_group">
+                <a href="javascript:window.close();" class="btn cancel">닫기</a>
+                <a href="" class="btn">인쇄하기</a>
+            </section>
+        </article>
+    </body>
+</html>

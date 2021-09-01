@@ -1,0 +1,310 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit,.group_title h2').text('가맹점 정보');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="index.html?page=hakwon/basicInfo">기본정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/regist">신청하기</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/paymentInfo">납입정보</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/creditCardSet">카드 등록관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/teacherSet">강사관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/tabletPossesion">Tablet PC 보유현황</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/smsSend">SMS관리</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/contractDoc">계약서류</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/biInterior">BI/인테리어</a>
+    </li>
+    <li>
+        <a href="index.html?page=hakwon/modHist">변경이력</a>
+    </li>
+</ul>
+
+
+<!-- 공통정보 -->
+<h4 class="tit_h4">공통정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>아이디</th>
+                <td>
+                    userid
+                </td>
+                <th>비밀번호</th>
+                <td>
+                    <a href="javascript:openPop('hakwon/passwordPop.html','850','450');" class="btn_table btn_gray">비밀번호 변경</a>
+                </td>
+            </tr>
+            <tr>
+                <th>원장 이름</th>
+                <td>
+                    김한국
+                </td>
+                <th>성별</th>
+                <td>
+                    남성
+                </td>
+            </tr>
+            <tr>
+                <th>연수원코드</th>
+                <td>
+                    202104120909
+                </td>
+                <th>생년월일</th>
+                <td>
+                    1978-02-22
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- //공통정보 -->
+
+<ul class="tab_2depth_search">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a href="">수학</a>
+    </li>
+    <li>
+        <a href="">영어</a>
+    </li>
+    <li>
+        <a href="">전과목</a>
+    </li>
+</ul>
+
+<!-- 기본정보 테이블 -->
+<h4 class="tit_h4">기본정보</h4>
+<div class="box_guide">
+    <div>
+        <ul>
+            <li>아래 정보로 세금계산서 및 계산서가 발행됩니다. (사업자 미등록 시 주민번호로 발행)</li>
+            <li>사업자등록증, 교육청서류 등록 및 수정은 구비서류 제출 탭을 이용해 주세요.</li>
+        </ul>
+    </div>
+</div>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>가맹 형태</th>
+                <td>
+                    교습소
+                </td>
+                <th>FC 구분</th>
+                <td>
+                    수학
+                </td>
+            </tr>
+            <tr>
+                <th>가맹점명</th>
+                <td>
+                    해법에듀 가산점 (강남지사점)
+                </td>
+                <th>소속 지사명</th>
+                <td>
+                    서울 수학 강남 지사
+                </td>
+            </tr>
+            <tr>
+                <th>사업자번호</th>
+                <td>
+                    110-092-253648
+                </td>
+                <th>사업장 전화번호</th>
+                <td>
+                    02-963-8520
+                </td>
+            </tr>
+            <tr>
+                <th>업태</th>
+                <td>
+                    출판 (08)
+                </td>
+                <th>업종</th>
+                <td>
+                    교육 (08)
+                </td>
+            </tr>
+            <tr>
+                <th>계약일</th>
+                <td>
+                    2020-01-01
+                </td>
+                <th>사업장오픈일</th>
+                <td>
+                    2020-01-08
+                </td>
+            </tr>
+            <tr>
+                <th>관할학교</th>
+                <td colspan="3">
+                    홍익 초등학교, 강남 초등학교
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //기본정보 테이블 -->
+
+<!-- 수정가능 정보 -->
+<div class="btn_top_wrap">
+    <h4 class="tit_h4">수정가능 정보</h4>
+
+    <span class="frm_wrap">
+        <!-- <span class="frm"> <input type="checkbox" id="class_same01"
+        name="class_same"/> <label for="class_same01">스마트수학을 동일하게 적용</label> </span> -->
+        <span class="frm">
+            <input type="checkbox" id="class_same02" name="class_same"/>
+            <label for="class_same02">스마트영어를 동일하게 적용</label>
+        </span>
+        <span class="frm">
+            <input type="checkbox" id="class_same03" name="class_same"/>
+            <label for="class_same03">전과목을 동일하게 적용</label>
+        </span>
+    </span>
+</div>
+
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+            <col style="width: 11%"/>
+            <col style="width: 39%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>휴대전화번호</th>
+                <td>
+                    <input type="text"/>
+                </td>
+                <th>이메일</th>
+                <td>
+                    <input type="text" placeholder="이메일 입력" class="input_email"/>
+                    @
+                    <select>
+                        <option value="">메일선택</option>
+                    </select>
+                    <input type="text" class="input_email_w"/></td>
+            </tr>
+            <tr>
+                <th>사업장 주소</th>
+                <td colspan="3">
+                    <span class="frm">
+                        <input type="checkbox" id="address_same" name=""/>
+                        <label for="address_same">배송지 주소와 동일</label>
+                    </span>
+                    <p class="row">
+                        <a href="" class="btn_table btn_blue">우편검색</a>
+                        <input type="text" class="input_zip" value="35162" readonly="readonly"/>
+                        <span class="frm_wrap frm_search">
+                            <input
+                                type="text"
+                                class="input_address"
+                                value="서울특별시 금천구 가산로9길 109"
+                                readonly="readonly"/>
+                            <button class="btn_s_search">검색</button>
+                        </span>
+                    </p>
+                    <p class="row">
+                        <input type="text" class="input_address02" value="해법에듀 2층"/>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>배송지 주소</th>
+                <td colspan="3">
+                    <span class="frm">
+                        <input type="checkbox" id="address_same" name=""/>
+                        <label for="address_same">사업장 주소와 동일</label>
+                    </span>
+                    <p class="row">
+                        <a href="" class="btn_table btn_blue">우편검색</a>
+                        <input type="text" class="input_zip" value="35162" readonly="readonly"/>
+                        <span class="frm_wrap frm_search">
+                            <input
+                                type="text"
+                                class="input_address"
+                                value="서울특별시 금천구 가산로9길 109"
+                                readonly="readonly"/>
+                            <button class="btn_s_search">검색</button>
+                        </span>
+                    </p>
+                    <p class="row">
+                        <input type="text" class="input_address02" value="해법에듀 2층"/>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right">
+    <a href="javascript:alert_confirm('현재 입력된 정보로 수정하시겠습니까?');" class="btn_basic">수정완료</a>
+</div>
+<!--// 수정가능 정보 -->
+
+<!-- 가맹점 추가서류 -->
+<h4 class="tit_h4">가맹점 추가서류<span class="tit_sub col_red">구비서류 제출은 서비스신청/서류제출 탭에서 가능합니다.</span></h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup></colgroup>
+        <tbody>
+            <tr>
+                <th>사업자등록증</th>
+                <th>교육청인가 서류</th>
+                <th>기타 서류 (개인과외 교습자료)</th>
+            </tr>
+            <tr>
+                <td><a href="" target="_blank">가산점 사업자 등록증.jpg</a></td>
+                <td><a href="" target="_blank">학원설립 허가증.jpg</a></td>
+                <td><a href="" target="_blank">개인과외 교습소 신고 필증.jpg</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- //가맹점 추가서류 -->

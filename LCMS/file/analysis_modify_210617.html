@@ -1,0 +1,101 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        //타이틀 텍스트
+        $(".align_right h2").text("분석표 수정");
+
+    });
+</script>
+
+
+<div class="align_right">
+    <h2 class="tit_main"></h2>
+</div>
+
+<h4 class="tit_h4">분석표 기본정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>진단평가 명</th>
+                <td colspan="3">
+                    <span class="font_gmarket13">Placement Test</span>
+                </td>
+            </tr>
+            <tr>
+                <th>진단평가 ID</th>
+                <td><span class="font_gmarket13">Placement Test A_01</span></td>
+                <th>분석표 ID</th>
+                <td><span class="font_gmarket13">Placement Test A_01</span></td>
+            </tr>
+            <tr>
+                <th>분석표명<span class="required"></span></th>    
+                <td><input type="text"></td>
+                <th>서비스 여부<span class="required"></span></th>
+                <td>                                                                                                 
+                    <select>
+                        <option>선택</option>
+                        <option>Y</option>
+                        <option>N</option>
+                    </select>   
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h4 class="tit_h4">분석표 상세정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width:10%">
+            <col style="width:40%">
+            <col style="width:10%">
+            <col style="width:40%">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>영역<span class="required"></span></th>
+                <td><select><option>선택</option></select></td>
+                <th>대분류<span class="required"></span></th>
+                <td><select><option>선택</option></select></td>
+            </tr>
+            <tr>
+                <th>구간 별 점수<span class="required"></span></th>
+                <td><input type="text">초과&nbsp;&nbsp;<input type="text">이하</td>
+                <th>단계<span class="required"></span></th>
+                <td>                                                                                                 
+                    <select>
+                        <option>선택</option>
+                        <option>상</option>
+                        <option>중</option>
+                        <option>하</option>
+                    </select>   
+                </td>
+            </tr>
+            <tr>
+                <th>총평(고정노출)<span class="required"></span></th>
+                <td colspan="3"><input type="text" class="input_full"></td>
+            </tr>
+            <tr>
+                <th>랜덤 제공1<span class="required"></span></th>
+                <td colspan="3"><input type="text" class="input_90">
+                    <a href="" class="input_plus">추가</a>
+                    <a href="" class="input_minus">삭제</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn_bottom_wrap right mt_40">
+    <p>        
+        <a href="" class="btn_basic line">수정</a>
+        <a href="" class="btn_basic line">목록</a>
+    </p>
+</div>

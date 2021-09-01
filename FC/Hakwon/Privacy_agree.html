@@ -1,0 +1,373 @@
+﻿<!-- <%@ Page Title="" Language="C#"
+MasterPageFile="Ucontrol/MemberRegis.master" AutoEventWireup="true"
+CodeFile="Privacy_agree.aspx.cs" Inherits="Privacy_agree" %> <asp:Content
+ID="Content1" ContentPlaceHolderID="head" Runat="Server"> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <title>::해법에듀::</title>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/jquery-2.0.2.min.js"></script>
+        <script
+            type="text/javascript"
+            src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/hbedu_m_prt.js"></script>
+        <!-- font css -->
+        <link
+            href="/HBEDU/MemberRegis/Mobile/font/font.css"
+            rel="stylesheet"
+            type="text/css"/>
+
+        <!-- css -->
+        <link href="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/css/hbedu_m_prt.css" rel="stylesheet" type="text/css" />        
+        <link href="http://image.test.hbedu.co.kr/LMS/FC/css/hbedu_m_prt02.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+
+            //alert
+            function alert_open(tit, content) {
+                $('.alert').addClass('on');
+                $('.ly_alert h1').text(tit);
+                $('.ly_alert p.content').html(content);
+            }
+            function alert_close() {
+                $('.ly_wrap').removeClass('on');
+            }
+        </script>
+
+        <script type="text/javascript">
+            $(function () {
+                //체크박스 전체 선택 해지
+                $('#chk_all').click(function () {
+                    var chk = $(this).is(":checked")
+                    if (chk) {
+                        $(".ty_chk input[type=checkbox]").prop("checked", true);
+                    } else {
+                        $(".ty_chk input[type=checkbox]").prop("checked", false);
+                    }
+                });
+            });
+        </script>
+
+        <!-- </asp:Content> <asp:Content ID="Content2"
+        ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> -->
+
+    </head>
+    <body>
+
+        <article class="regis_wrap">
+
+            <!-- 로고 -->
+            <header class="head_logo">
+                <div class="logo edu">해법에듀</div>
+            </header>
+            <!-- //로고 -->
+
+            <!-- 이미지 -->
+            <section class="img_wrap edu">
+                <h1>입회를 환영합니다.</h1>
+            </section>
+            <!-- //이미지 -->
+
+            <!-- 동의 -->
+            <section class="agree_wrap">
+                <!-- 동의체크 -->
+                <dl class="agree">
+                    <!-- <dt>
+                        <span class="ty_chk">
+                            <input type="checkbox" id="chk_all"/>
+                            <label for="chk_all">전체동의</label>
+                        </span>
+                    </dt> -->
+                    <dd>
+                        <span class="ty_chk">
+                            <input type="checkbox" id="privacy_01"/>
+                            <label for="privacy_01">개인정보 수집 및 이용동의
+                                <strong class="on">(필수)</strong>
+                            </label>
+                        </span>
+                        <span class="btn">
+                            <a href="javascript:ly_open('ly_privacy01')">보기</a>
+                        </span>
+                    </dd>
+
+                    <!-- <dd>
+                        <span class="ty_chk">
+                            <input type="checkbox" id="privacy_02"/>
+                            <label for="privacy_02">개인정보 제3자 제공동의
+                                <strong>(선택)</strong>
+                            </label>
+                        </span>
+                        <span class="btn">
+                            <a href="javascript:ly_open('ly_privacy02')">보기</a>
+                        </span>
+                    </dd>
+
+                    <dd>
+                        <span class="ty_chk">
+                            <input type="checkbox" id="privacy_03"/>
+                            <label for="privacy_03">이벤트 및 마케팅 활용동의
+                                <strong>(선택)</strong>
+                            </label>
+                        </span>
+                        <span class="btn">
+                            <a href="javascript:ly_open('ly_privacy03')">보기</a>
+                        </span>
+                    </dd>
+
+                    <dd>
+                        <span class="ty_chk">
+                            <input type="checkbox" id="privacy_04"/>
+                            <label for="privacy_04">추가 동의
+                                <strong>(선택)</strong>
+                            </label>
+                        </span>
+                        <span class="btn">
+                            <a href="javascript:ly_open('ly_privacy04')">보기</a>
+                        </span>
+                    </dd> -->
+
+                </dl>
+                <!-- //동의체크 -->
+
+                <!-- 버튼 -->
+                <div class="btn_area">
+                    <!-- <a href="javascript:alert_open('','필수사항을 선택해주세요','')">확인</a> -->
+                    <a href="javascript:alert_open('','강사등록이 완료되었습니다.','')">동의</a>
+                </div>
+                <!-- //버튼 -->
+            </section>
+            <!-- //동의 -->
+
+            <!--레이어팝업_개인정보수집동의-->
+            <section class="ly_wrap" id="ly_privacy01">
+                <!--레이어-->
+                <div class="ly_group">
+
+                    <!--타이틀-->
+                    <h1>개인정보 수집 및 이용동의
+                        <strong>(필수)</strong>
+                    </h1>
+                    <!--타이틀-->
+
+                    <!--가이드-->
+                    <p class="top_guide">
+                        <strong>스마트 해법</strong>(이하 ‘해법에듀’)에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 목적, 개인정보의
+                        보유기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+                    </p>
+                    <!--//가이드-->
+                    <!--컨텐츠-->
+                    <div class="contents_wrap">
+                        <h2>개인정보 수집,이용 동의</h2>
+                        <p class="guide">
+                            해법에듀는 통합 LMS 서비스 이용을 위하여 아래와 같이 개인정보를 수집,이용합니다.
+                        </p>
+                        <div class="privacy_cont">
+                            <h3>회원</h3>
+                            <h4>회원가입</h4>
+                            <h5>필수 수집항목</h5>
+                            <p>
+                                가맹점 정보: 아이디, 비밀번호, 성명, 성별, 사업자번호, 전화번호, 휴대전화번호, 이메일주소, 주소<br />
+                            강사 정보: 한글이름, 아이디, 비밀번호, 휴대전화번호, 성별, 이메일주소
+                            </p>
+                            <h5>선택 수집항목</h5>
+                            <p>강사 정보: 영문이름, 전화번호, 주소, 경력사항</p>
+                            <h5>이용목적</h5>
+                            <p>이용자의 식별 및 회원서비스 제공<br/>
+                                서비스 이용에 대한 공지, 학습 컨텐츠 제공 등
+                                </p>
+                            <h5>보유기간</h5>
+                            <p>회원 탈퇴 후 즉시</p>
+
+                            <h3>기타</h3>
+                            <h5>구분</h5>
+                            <p>자동생성정보</p>
+                            <h5>수집항목</h5>
+                            <p>IP주소, 쿠키, 접속일시, 접속단말기/브라우저정보, 기타 서비스 이용기록</p>
+                            <h5>이용목적</h5>
+                            <p>서비스 이용기록 및 통계분석<br />개인정보 침해사고 대비</p>
+                            <h5>보유기간</h5>
+                            <p>법정의무 보관기간</p>
+                        </div>
+
+                        <p class="guide_txt">
+                            위의 개인정보 수집‧이용에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 통합 LMS 서비스 이용이 제한됩니다.
+                        </p>
+                    </div>
+                    <!--//컨텐츠-->
+                    <!--버튼-->
+                    <div class="btn_area">
+                        <a href="javascript:ly_close('ly_privacy01');">닫기</a>
+                    </div>
+                    <!-- // 버튼-->
+                </div>
+                <!--//레이어-->
+                <div class="mask"></div>
+            </section>
+            <!--//레이어팝업-->
+
+            <!--레이어팝업_제3자 제공동의-->
+            <section class="ly_wrap" id="ly_privacy02">
+                <!--레이어-->
+                <div class="ly_group">
+
+                    <!--타이틀-->
+                    <h1>개인정보 제3자 제공 동의
+                        <strong>(선택)</strong>
+                    </h1>
+                    <!--타이틀-->
+
+                    <!--가이드-->
+                    <p class="top_guide">
+                        해법에듀는 다음과 같이 개인정보를 제3자에게 제공하고 있습니다. 정보 주체께서는 아래와 같은 목적으로 제3자에게 개인정보를 제공하는 것에
+                        동의하지 않을 수 있으며 동의하지 않더라도 서비스 이용이 가능합니다.
+
+                    </p>
+                    <!--//가이드-->
+                    <!--컨텐츠-->
+                    <div class="contents_wrap">
+
+                        <div class="table_wrap">
+                            <table>
+                                <colgroup>
+                                    <col style="width:30%"/>
+                                    <col style="width:70%"/>
+                                </colgroup>
+                                <tr>
+                                    <th>제공받는 자</th>
+                                    <td>
+                                        <strong>㈜천재교육, ㈜천재교과서</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제공항목</th>
+                                    <td>이름, 이메일,휴대전화번호
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>제공목적</th>
+                                    <td>
+                                        <strong>TM, SMS등을 통한 정보제공 및 이벤트 안내, 경품제공 등</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>보유기간</th>
+                                    <td>
+                                        <strong>이벤트 종료 및 제공목적 달성 시 까지</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p class="guide_txt">
+                            위의 개인정보 제공에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 원활한 서비스 제공에 제한을 받을 수 있습니다.
+
+                        </p>
+                    </div>
+                    <!--//컨텐츠-->
+                    <!--버튼-->
+                    <div class="btn_area">
+                        <a href="javascript:ly_close('ly_privacy01');">닫기</a>
+                    </div>
+                    <!-- // 버튼-->
+                </div>
+                <!--//레이어-->
+                <div class="mask"></div>
+            </section>
+            <!--//레이어팝업-->
+
+            <!--레이어팝업_마케팅활용동의-->
+            <section class="ly_wrap" id="ly_privacy03">
+                <!--레이어-->
+                <div class="ly_group">
+
+                    <!--타이틀-->
+                    <h1>마케팅 활용 동의
+                        <strong>(선택)</strong>
+                    </h1>
+                    <!--타이틀-->
+
+                    <!--가이드-->
+                    <p class="top_guide">
+                        아래의 개인정보가 명시된 목적에 따른 마케팅 활용에 이용 될 수 있으며, 본 사항에 동의하지 않더라도 회원가입이나 서비스 이용이 가능합니다
+
+                    </p>
+                    <!--//가이드-->
+                    <!--컨텐츠-->
+                    <div class="contents_wrap">
+
+                        <div class="table_wrap">
+                            <table>
+                                <colgroup>
+                                    <col style="width:30%"/>
+                                    <col style="width:70%"/>
+                                </colgroup>
+                                <tr>
+                                    <th>수집항목</th>
+                                    <td>이름, 휴대전화번호,이메일, 학교</td>
+                                </tr>
+                                <tr>
+                                    <th>수집목적</th>
+                                    <td>해법에듀에서 제공하는 이벤트 및 광고성 정보 제공
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>보유기간</th>
+                                    <td>
+                                        <strong>회원탈퇴 또는 홍보목적 달성 시 까지</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p class="guide_txt">
+                            위의 개인정보 제공에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 원활한 서비스 제공에 제한을 받을 수 있습니다.<br/>
+                            마케팅 활용 동의는 언제든지 철회 가능합니다.
+
+                        </p>
+                    </div>
+                    <!--//컨텐츠-->
+                    <!--버튼-->
+                    <div class="btn_area">
+                        <a href="javascript:ly_close('ly_privacy01');">닫기</a>
+                    </div>
+                    <!-- // 버튼-->
+                </div>
+                <!--//레이어-->
+                <div class="mask"></div>
+            </section>
+            <!--//레이어팝업-->
+
+        </article>
+
+        <!-- 레이어 alert -->
+        <article class="ly_wrap alert">
+            <!-- alert -->
+            <section class="ly_alert">
+                <!-- 타이틀 -->
+                <h1>타이틀이 어쩌고 저쩌고</h1>
+                <!-- //타이틀 -->
+
+                <p class="content">
+                    컨텐츠가 들어갑니다.
+                </p>
+                <div class="btn">
+                    <a href="javascript:alert_close();" class="btn_cancel">확인</a>
+                </div>
+            </section>
+            <!-- //alert -->
+            <div class="mask"></div>
+        </article>
+        <!-- //레이어 alert -->
+
+    </body>
+</html>
+
+<!-- </asp:Content> -->

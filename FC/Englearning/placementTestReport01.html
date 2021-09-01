@@ -1,0 +1,118 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function(){
+		$('.nav_two .two_tit').text('분석표');
+        $('.group_title h2').text('분석표');
+         // 달력
+         calendar();
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<ul class="tab_1depth">
+	<li class="on"><a href="index.html?page=englearning/placementTestReport01">Placement Test Report</a></li>
+	<li><a href="index.html?page=englearning/placementTestReport02">Progress Report</a></li>
+	<li><a href="index.html?page=englearning/placementTestReport03">다북스 Report</a></li>
+	<li><a href="index.html?page=englearning/placementTestReport04">문제은행 Report</a></li>
+</ul>
+<!-- 검색 -->
+<div class="search_wrap type02">
+	<div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+		<input id="startpicker-input" type="text" aria-label="Date"/>
+		<label for="startpicker-input" class="tui-ico-date"></label>
+		<div id="startpicker-container" style="margin-left: -1px;"></div>
+	</div>
+	<span class="line">~</span>
+	<div class="tui-datepicker-input tui-datetime-input tui-has-focus frm_date">
+		<input id="endpicker-input" type="text" aria-label="Date"/>
+		<label for="endpicker-input" class="tui-ico-date"></label>
+		<div id="endpicker-container" style="margin-left: -1px;"></div>
+	</div>
+	<select>
+		<option>수강생명</option>
+	</select>
+	<input type="text" class="txt_search" required="required"  placeholder="수강생이름을 조회하세요">
+	<button class="btn_search small">조회</button>
+</div>
+<!-- // 검색 -->
+<!--[D] 체크박스 클릭시 활성화-->
+<div class="btn_top_wrap right">
+    <span>
+		<a href="#" class="btn_top btn_ico print"><span>프린트</span></a>
+		<a href="#" class="btn_top btn_ico sms"><span>SMS전송</span></a>
+    </span>
+</div>
+<!--테이블-->
+!--[D] 데이터 테이블 적용 후 제거--
+<div class="table_list">
+    <table>
+		<thead>
+			<tr>
+				<th>
+					<span class="frm only all">
+						<input type="checkbox" name="chk" id="chkall"  onclick="all_check(this);">
+						<label for="chkall">전체 선택</label>
+					</span>
+				</th>
+				<th>수강생</th>
+				<th>원생상태</th>
+				<th>학년</th>
+				<th>휴대전화(학부모)</th>
+				<th>학교명</th>
+				<th>입회일</th>
+				<th>추천레벨</th>
+				<th>배정레벨</th>
+				<th>코멘트</th>
+				<th>분석표</th>
+				<th>SMS전송</th>
+				<th>카톡전송</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<span class="frm only">
+						<input type="checkbox" name="chk" id="chk1">
+						<label for="chk1">선택</label>
+					</span>
+				</td>
+				<td>홍길동<p class="gm_font">M0000265242</p></td>
+				<td>재원생</td>
+				<td>초5</td>
+				<td class="gm_font">010-3214-56987</td>
+				<td>서울중동초등학교</td>
+				<td class="gm_font">2021.03.19</td>
+				<td class="gm_font">S1-2</td>
+				<td class="gm_font">S1-3</td>
+				<td><a href="javascript:void(0);" onClick="javascript:openPop('Englearning/pop_placement_report.html','1020','670');" class="btn_table btn_line">작성</a></td>
+				<td><a href="javascript:void(0);" onClick="javascript:openPop('Englearning/pop_placement_report.html','1020','670');" class="btn_table btn_line">보기</a></td>
+				<td><a href="javascript:alert_open('모바일 분석표를 학부모님께 전송하였습니다.');" class="btn_table btn_blue">전송</a></td>
+				<td><a href="javascript:alert_open('모바일 분석표를 학부모님께 전송하였습니다.');" class="btn_table btn_blue">전송</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--//테이블-->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <li><a href="">6</a></li>
+      <li><a href="">7</a></li>
+      <li><a href="">8</a></li>
+      <li><a href="">9</a></li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>

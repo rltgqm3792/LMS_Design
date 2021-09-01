@@ -1,0 +1,730 @@
+<!-- 페이지에 관련된 스크립트 -->
+<script type="text/javascript">
+    $(function () {
+        $('.nav_two .two_tit').text('수강생 등록');
+        $('.group_title h2').text('정규수강생 일괄등록');
+    });
+</script>
+<!-- //페이지에 관련된 스크립트 -->
+
+<!--타이틀-->
+<div class="group_title">
+    <h2 class="tit_main"></h2>
+</div>
+<!-- //타이틀-->
+
+<!-- 1Depth Tab -->
+<ul class="tab_1depth">
+    <!-- [D] 활성화 : select-->
+    <li>
+        <a href="index.html?page=Stdmng/enbReg01">수학</a>
+    </li>
+    <li>
+        <a href="index.html?page=Stdmng/enbReg02">영어</a>
+    </li>
+    <li class="on">
+        <a href="index.html?page=Stdmng/enbReg03">전과목</a>
+    </li>
+</ul>
+<!-- // 1Depth Tab -->
+
+<!-- 수강생일괄업로드 -->
+<!-- Process -->
+<ul class="process_flow">
+    <!-- [D] 활성화 : select-->
+    <li class="on">
+        <a>수강생 일괄업로드</a>
+    </li>
+</ul>
+<!-- //Process -->
+
+<div class="box_guide">
+    <div>
+        <strong>등록 불가능한 경우</strong>
+        <ul>
+            <li>빈 공란으로 둔 경우</li>
+            <li>엑셀내 제공된 형식에 맞지 않게 입력한 경우</li>
+            <li>학부모 휴대폰 번호에 ‘–’를 포함하지 않은 경우<br/>
+                ex) 010-1234-5678 (O) , 01012345678(X)</li>
+            <li>학부모 휴대폰 번호가 이미 3개 이상 등록된 경우</li>
+            <li>
+                <span class="col_blue">등록가능 수강생만 업로드 할 경우 [업로드 완료] 버튼을 클릭해 주세요.</span>
+            </li>
+            <li>
+                <span class="col_blue">등록불가 수강생의 정보수정이 필요한 경우 엑셀파일 수정 후 엑셀을 다시 업로드해주세요.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="box_guide blue">
+    <div>
+        <span class="guide03">샘플 파일 양식을 다운받아 입력한 후 업로드가 가능합니다.</span>
+    </div>
+    <div>
+        <a href="" class="btn_top btn_blue">샘플파일 다운로드</a>
+    </div>
+</div>
+
+<div class="search_wrap">
+    <ul class="info_group">         
+        <li>
+            <dl>
+                <dt>파일 선택</dt>
+                <dd>
+                    <span class="frm_wrap">
+                        <label for="fileUpload" class="btn_table btn_gray">찾아보기</label>
+                        <input
+                            type="file"
+                            name="files"
+                            id="fileUpload"
+                            style="display: none"
+                            onChange="fileChange()"/>
+                        <input type="text" class="input_file" id="fileNm" readonly="readonly"/>
+                        <a href="" class="btn_table btn_blue">업로드 완료</a>
+                    </span>
+                </dd>                  
+            </dl>
+        </li> 
+    </ul>
+</div>
+
+<p class="txt_guide">파일 확인 결과,
+    <strong class="col_blue">256명</strong>의 수강생 정보를 업로드가 가능합니다.</p>
+<!-- <p class="txt_guide">파일 확인 결과, 업로드 불가능한 정보가 <strong
+class="col_red">3건</strong>이 있습니다.</p> -->
+
+<h4 class="tit_h4">수강생 등록 불가 목록</h4>
+
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 5%"/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>수강생명</th>
+                <th>수강생 생년월일</th>
+                <th>성별</th>
+                <th>학년</th>
+                <th>학부모 전화번호</th>
+                <th>수강생과 관계</th>
+                <th>사유</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    이미 등록된 수강생
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    학부모 휴대폰 번호가 동일한 FC 에 이미 3개 이상 등록
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="gm_font">1</span>
+                </td>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.20</span>
+                </td>
+                <td>남</td>
+                <td>중등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    필수값 입력누락
+                </td>
+            </tr>
+            <!-- <tr>
+                <td colspan="7">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+
+<!--페이징-->
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">1</li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div>
+<!--//페이징-->
+
+<!-- 수강생 등록가능 목록-->
+<!-- <h4 class="tit_h4">수강생 등록 가능 목록</h4>
+<div class="table_list">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+            <col/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>수강생명</th>
+                <th>수강생 생년월일</th>
+                <th>성별</th>
+                <th>학년</th>
+                <th>학부모 휴대폰번호</th>
+                <th>수강생과 관계</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    모
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    박찬호
+                </td>
+                <td>
+                    <span class="gm_font">2013.09.05</span>
+                </td>
+                <td>남</td>
+                <td>초등2</td>
+                <td>
+                    <span class="gm_font">010-0000-0000</span>
+                </td>
+                <td>
+                    부
+                </td>
+                <td>
+                    <a
+                        href="javascript:alert_confirm('삭제 후 복구가
+불가능합니다.','정말 삭제할까요?','');"
+                        class="btn_table">삭제</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <div class="no_data">
+                        해당 검색 결과가 없습니다.
+                    </div>
+                </td>                  
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="paging">
+    <a href="" class="btn_paging back"></a>
+    <a href="" class="btn_paging pre"></a>
+    <ul>
+        <li class="on">1</li>
+        <li>
+            <a href="">2</a>
+        </li>
+        <li>
+            <a href="">3</a>
+        </li>
+        <li>
+            <a href="">4</a>
+        </li>
+        <li>
+            <a href="">5</a>
+        </li>
+        <li>
+            <a href="">6</a>
+        </li>
+        <li>
+            <a href="">7</a>
+        </li>
+        <li>
+            <a href="">8</a>
+        </li>
+        <li>
+            <a href="">9</a>
+        </li>
+    </ul>
+    <a href="" class="btn_paging next"></a>
+    <a href="" class="btn_paging forward"></a>
+</div> -->
+<!-- //수강생 등록가능 목록-->
+
+<h4 class="tit_h4">부가 정보</h4>
+<div class="table_input">
+    <table>
+        <caption></caption>
+        <colgroup>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+            <col style="width: 12%"/>
+            <col style="width: 38%"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>강사<span class="required"></span>
+                </th>
+                <td>
+                    <select>
+                        <option>강사 선택</option>
+                    </select>
+                </td>
+                <th>클래스</th>
+                <td>
+                    <select>
+                        <option>클래스 선택</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    납부일
+                </th>
+                <td>
+                    <select>
+                        <option>납부일 선택</option>
+                    </select>
+                </td>
+                <th>수강료</th>
+                <td>
+                    <input type="text" maxlength="7" placeholder="수강료 입력(숫자)"/>
+                    원(월)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="btn_bottom_wrap right">
+        <a href="javascript:alert_open('수강생 일괄 등록이 완료되었습니다.');" class="btn_basic">입회동의서 전송</a> 
+</div>

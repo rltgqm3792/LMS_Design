@@ -1,0 +1,115 @@
+﻿<!-- <%@ Page Title="" Language="C#"
+MasterPageFile="Ucontrol/MemberRegis.master" AutoEventWireup="true"
+CodeFile="Regis_modify_end.aspx.cs" Inherits="Regis_modify_end" %> <asp:Content
+ID="Content1" ContentPlaceHolderID="head" Runat="Server"> </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1"
+Runat="Server"> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+        <meta name="format-detection" content="telephone=no">
+            <title>::해법에듀::</title>
+            <script
+                type="text/javascript"
+                src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/jquery-2.0.2.min.js"></script>
+            <script
+                type="text/javascript"
+                src="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/js/hbedu_m_prt.js"></script>
+            <!-- font css -->
+            <link
+                href="/HBEDU/MemberRegis/Mobile/font/font.css"
+                rel="stylesheet"
+                type="text/css"/>
+
+            <!-- css -->
+            <link
+                href="http://image.test.hbedu.co.kr/HBEDU/MemberRegis/Mobile/css/hbedu_m_prt.css"
+                rel="stylesheet"
+                type="text/css"/>
+            <link href="http://image.test.hbedu.co.kr/LMS/FC/css/hbedu_m_prt02.css" rel="stylesheet" type="text/css" />
+
+            <script type="text/javascript">
+
+                //alert
+                function alert_open(tit, content) {
+                    $('.alert').addClass('on');
+                    $('.ly_alert h1').text(tit);
+                    $('.ly_alert p.content').html(content);
+                }
+                function alert_close() {
+                    $('.ly_wrap').removeClass('on');
+                }
+            </script>
+
+        </head>
+        <body>
+
+            <article class="regis_wrap">
+                
+                <header class="head_sub end">
+                    <h2>수정 완료</h2>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li class="on">3</li>
+                    </ul>
+                </header>
+
+                <!-- 로고 -->
+                <header class="head_logo">
+                    <!-- [D] 사업단별 로고 틀림 class 추가 : ehb-수학 hbe-영어 spc-우등생 hbc-중국어 hbm-해수교 -->
+                    <div class="logo hbe"></div>
+                </header>
+                <!-- //로고 -->
+
+                <article class="end_wrap">
+                    <!-- 이미지 -->
+                    <section class="img_modify_wrap">
+                        <h1>
+                            수강생 등록이 완료되었습니다.
+                            <span>입회를 축하드립니다.</span>
+                        </h1>
+
+                    </section>
+                    <!-- //이미지 -->
+
+                    <!--버튼-->
+                    <section class="btn_area">
+                        <a href="Privacy_agree.html">완료</a>
+                    </section>
+                    <!--//버튼-->
+                </article>
+                <!-- </asp:Content> -->
+
+            </article>
+
+            <!-- 레이어 alert -->
+            <article class="ly_wrap alert">
+                <!-- alert -->
+                <section class="ly_alert">
+                    <!-- 타이틀 -->
+                    <h1>타이틀이 어쩌고 저쩌고</h1>
+                    <!-- //타이틀 -->
+
+                    <p class="content">
+                        컨텐츠가 들어갑니다.
+                    </p>
+                    <div class="btn">
+                        <a href="javascript:alert_close();" class="btn_cancel">취소</a>
+                        <a href="Regis_form.html" class="btn_submit">입력완료</a>
+                    </div>
+                </section>
+                <!-- //alert -->
+                <div class="mask"></div>
+            </article>
+            <!-- //레이어 alert -->
+
+        </body>
+    </html>
